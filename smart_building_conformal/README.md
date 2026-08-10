@@ -86,7 +86,7 @@ All artefacts are written under `outputs/`:
 | `data_profiles/` | file inventory, target-selection audit, split summary, preprocessing summary, injected-event catalog |
 | `metrics/` | point-forecast, CQR, EnbPI, combined interval, alert, robustness and bootstrap metrics |
 | `predictions/` | test predictions for the point models and both conformal methods |
-| `figures/` | Figures 4–7 and the metric comparison chart |
+| `figures/` | Figures 4–7 and the metric comparison chart (from the run); Figures 2–3 and the graphical-abstract assets (from `scripts/`) |
 | `models/` | fitted models, hyperparameters, LSTM training history and config |
 | `report/` | `report_ready_results.md`, `result_placeholders_filled.md`, seed log, environment versions, test results |
 
@@ -96,8 +96,21 @@ All artefacts are written under `outputs/`:
 configs/    experiment configuration (all settings)
 data/       raw / interim / processed (git-ignored)
 src/        pipeline modules
+scripts/    standalone figure generators (schematics only)
 tests/      chronology, leakage, metric and alert tests
 outputs/    generated results (created by the run)
+```
+
+## Standalone figures
+
+`scripts/` holds generators for the figures that are **schematics rather than
+results**: they read no data, no fitted model and no file under
+`outputs/metrics`, and they never overwrite the experiment's own figures 4–7.
+
+```bash
+python scripts/generate_methodology_figures.py           # Figures 2-3
+python scripts/generate_graphical_abstract.py            # graphical abstract
+python scripts/generate_graphical_abstract_elements.py   # its separate elements
 ```
 
 ## Methodology notes
