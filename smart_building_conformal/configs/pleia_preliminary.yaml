@@ -1,0 +1,131 @@
+# Configuration for the preliminary PLEIAData conformal-forecasting experiment.
+# Every setting used by the pipeline is recorded here for reproducibility.
+
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+  outputs_dir: outputs
+
+dataset:
+  zenodo_record_id: "7620136"
+  # The authors' analysis-ready long-format file: one row per (room, 10-min step)
+  # with the indoor-temperature target and covariates already merged.
+  room_all_file: "Data_Nature/processed_data/data-room10T-all.csv"
+  csv_sep: ";"
+  timestamp_col: "Date"
+  block_col: "block"
+  room_col: "room"
+  # Variable codes documented in the PLEIAData paper / accompanying notebook:
+  #   V2  = indoor temperature (deg C)   -> target
+  #   V12 = user setpoint temperature
+  #   V4  = HVAC state (fraction of units ON)
+  #   V5_* = one-hot operation mode
+  #   tmed/hrmed/radmed = outdoor temperature / humidity / solar radiation
+  target_var: "V2"
+
+target_selection:
+  # All rooms in the processed file share a full, gap-filled span, so span and
+  # coverage tie. Selection therefore: (1) drop near-constant/dead sensors via a
+  # minimum standard deviation, (2) prefer the least forward-filled series (lowest
+  # fraction of consecutive-duplicate values, a proxy for genuine 10-min coverage),
+  # (3) break remaining ties on the (block, room) key. No forecasting performance
+  # is consulted.
+  min_std: 0.5
+  min_valid_obs: 5000
+
+resample:
+  freq: "10min"
+  season_steps: 144        # steps in one day at 10-min sampling (24*60/10)
+
+outliers:
+  # Physically implausible indoor temperatures are treated as corrupted. These
+  # bounds match the dataset authors' own cleaning of V2.
+  target_min: 15.0
+  target_max: 40.0
+
+missing:
+  max_short_gap_steps: 3   # interpolate gaps up to 3 steps; longer gaps stay NaN
+
+covariates:
+  outdoor_temp: "tmed"
+  humidity: "hrmed"
+  radiation: "radmed"
+  hvac_state: "V4"
+  setpoint: "V12"
+  hvac_mode_onehot: ["V5_0", "V5_1", "V5_2"]
+  # Presence and CO2 exist only in the raw tables and would require an additional
+  # room-level join; they are excluded from the preliminary target to avoid
+  # speculative joins (documented decision).
+
+features:
+  target_lags: [1, 2, 3, 6, 12]
+  rolling_windows: [6, 144]     # ~1 hour and 1 day
+  include_weekly: true
+
+split:
+  train_frac: 0.6
+  calib_frac: 0.2               # test is the remaining 0.2
+
+horizons: [1, 3, 6]             # 10, 30, 60 minutes ahead
+coverage_levels: [0.90, 0.95]
+
+models:
+  xgboost:
+    search_iter: 20
+    cv_splits: 3
+    seeds: 5
+  lstm:
+    seq_len: 24
+    hidden_size: 64
+    dropout: 0.2
+    batch_size: 256
+    learning_rate: 0.001
+    max_epochs: 30
+    patience: 5
+    val_fraction: 0.2
+    seeds: 3                    # fewer than XGBoost due to CPU training cost
+
+conformal:
+  cqr:
+    seeds: 5
+  enbpi:
+    n_resamplings: 20
+    block_length: 48
+    base_n_estimators: 200
+    base_max_depth: 5
+    base_learning_rate: 0.05
+    update_step: 48            # observed residuals folded in every 48 steps (8 h)
+    seeds: 3                   # reduced from 5 due to repeated ensemble refits
+    n_jobs: 4
+
+alerts:
+  primary_method: "cqr"        # conformal intervals used to drive alerts
+  primary_level: 0.95
+  primary_horizon: 1
+  detection_tolerance_steps: 6
+  max_false_alerts_per_day: 1.0
+  events:
+    instances_per_type: 3
+    level_shift_sds: [0.5, 1.0, 2.0]
+    level_shift_steps: 12
+    drift_sds: [1.0, 2.0]
+    drift_steps: 36
+    spike_sd: 4.0
+    stuck_steps: 18
+    warmup_steps: 6
+    guard_steps: 6
+
+robustness:
+  horizon: 1
+  drift_sd: 1.0
+  max_short_gap_steps: 3
+
+bootstrap:
+  n_boot: 1000
+  ci: 0.95
+
+plotting:
+  window_steps: 144            # length of the fixed continuous window in figures

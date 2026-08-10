@@ -1,0 +1,11 @@
+{
+  "seq_len": 24,
+  "hidden_size": 64,
+  "dropout": 0.2,
+  "batch_size": 256,
+  "learning_rate": 0.001,
+  "max_epochs": 30,
+  "patience": 5,
+  "val_fraction": 0.2,
+  "seeds": 3
+}
