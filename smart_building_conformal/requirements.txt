@@ -19,6 +19,11 @@ matplotlib>=3.7
 # IO / utilities
 joblib>=1.3
 h5py>=3.9
+# PyTables: the RICO acquisition files are pandas/PyTables HDF stores, so this is
+# the canonical reader for pandas.read_hdf. src/datasets/rico.py falls back to a
+# documented h5py block reader if it is unavailable, but that path is slower and
+# depends on pandas' internal storage layout.
+tables>=3.9
 requests>=2.31
 pyarrow>=14.0
 pyyaml>=6.0

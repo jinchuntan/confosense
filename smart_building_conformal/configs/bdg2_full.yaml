@@ -1,0 +1,10 @@
+# Building Data Genome 2 full-study configuration.
+#
+# Extends the master study config and narrows it to BDG2. The building subset is
+# selected reproducibly from metadata and data-quality criteria only; see
+# outputs/full_study/bdg2/data_profiles/subset_selection.csv for the full audit.
+#
+#   python -m src.run_study --config configs/bdg2_full.yaml --all
+
+extends: study_full.yaml
+only_datasets: [bdg2]

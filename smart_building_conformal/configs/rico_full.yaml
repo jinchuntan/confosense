@@ -1,0 +1,11 @@
+# RICO HVAC full-study configuration.
+#
+# Extends the master study config and narrows it to RICO. Runs are partitioned
+# whole (never split across train/calibration/test) and the seasonal-naive
+# baseline is reported as not applicable, because a four-hour run contains no
+# daily cycle.
+#
+#   python -m src.run_study --config configs/rico_full.yaml --all
+
+extends: study_full.yaml
+only_datasets: [rico]

@@ -48,13 +48,29 @@ def fit_cqr(
 
 
 def cqr_interval(model: ConformalizedQuantileRegressor, X: pd.DataFrame) -> dict:
-    """Return point/lower/upper for an already-conformalized CQR model."""
+    """Return point/lower/upper for an already-conformalized CQR model.
+
+    Quantile regressors can produce crossing quantiles, and MAPIE's conformal
+    correction does not always restore the ordering — it reports "ill-sorted
+    predictions" and returns the pair as-is. A crossed pair is not an interval:
+    its width is negative, it can never cover, and it corrupts the Winkler score.
+    The bounds are therefore ordered here, and the number repaired is returned as
+    ``n_crossed_repaired`` so the fix is visible in the outputs rather than
+    silent.
+
+    On the preliminary PLEIAData target this repairs nothing (0 of 60,634
+    intervals cross), so it leaves that experiment bit-identical; it matters on
+    RICO, where about 1% of CQR intervals cross.
+    """
     point, intervals = model.predict_interval(X.to_numpy())
     arr = np.asarray(intervals)
+    raw_lo, raw_hi = arr[:, 0, 0], arr[:, 1, 0]
+    crossed = int(np.sum(raw_lo > raw_hi))
     return {
         "point": np.asarray(point).ravel(),
-        "lower": arr[:, 0, 0],
-        "upper": arr[:, 1, 0],
+        "lower": np.minimum(raw_lo, raw_hi),
+        "upper": np.maximum(raw_lo, raw_hi),
+        "n_crossed_repaired": crossed,
     }
 
 

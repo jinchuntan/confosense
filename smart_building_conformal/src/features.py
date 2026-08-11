@@ -25,7 +25,7 @@ def build_supervised(
     df: pd.DataFrame,
     horizon: int,
     freq: pd.Timedelta,
-    season_steps: int,
+    season_steps: int | None,
     cfg: dict,
 ) -> dict:
     """Assemble the supervised learning matrices for one horizon.
@@ -36,6 +36,11 @@ def build_supervised(
       ``meta``   origin/target times plus leak-free baseline predictions,
       ``feature_names`` ordered list of feature columns.
     All frames share the same (post-filtering) index.
+
+    ``season_steps`` may be ``None`` for a series with no meaningful seasonal
+    cycle — a RICO four-hour run, for instance. The seasonal lag features are
+    then omitted and ``seasonal_naive_pred`` is returned as NaN, so the baseline
+    is reported as *not applicable* rather than faked with an invented lag.
     """
     target = df["target"].astype(float)
     grid = df.index
@@ -48,10 +53,11 @@ def build_supervised(
         feats[f"target_lag_{k}"] = target.shift(k)
 
     # Daily (and optional weekly) seasonal lag relative to the *target* time.
-    daily_lag = target.shift(season_steps - horizon)
-    feats["target_daily_lag"] = daily_lag
-    if cfg.get("include_weekly", False):
-        feats["target_weekly_lag"] = target.shift(7 * season_steps - horizon)
+    # Skipped entirely when the series carries no valid seasonal cycle.
+    if season_steps is not None:
+        feats["target_daily_lag"] = target.shift(season_steps - horizon)
+        if cfg.get("include_weekly", False):
+            feats["target_weekly_lag"] = target.shift(7 * season_steps - horizon)
 
     # Rolling statistics over a short window and a full daily window (ending at t).
     for w in cfg["rolling_windows"]:
@@ -85,8 +91,10 @@ def build_supervised(
             "target_time": target_time,
             "y_true": y.to_numpy(),
             "persistence_pred": baselines.persistence_prediction(target, grid),
-            "seasonal_naive_pred": baselines.seasonal_naive_prediction(
-                target, target_time, season_steps, freq
+            "seasonal_naive_pred": (
+                baselines.seasonal_naive_prediction(target, target_time, season_steps, freq)
+                if season_steps is not None
+                else np.full(len(grid), np.nan)
             ),
         },
         index=grid,

@@ -1,0 +1,10 @@
+# PLEIAData full-study configuration.
+#
+# Extends the master study config and narrows it to the two PLEIAData targets:
+# the preliminary indoor-temperature series (unchanged, so preliminary and full
+# results stay comparable) and the building energy-consumption target.
+#
+#   python -m src.run_study --config configs/pleia_full.yaml --all
+
+extends: study_full.yaml
+only_datasets: [pleia, pleia_energy]
