@@ -12,12 +12,16 @@ because an interval method can easily be asymmetric and a signed breakdown is
 what exposes that. Every injected event records its dataset, target, type,
 severity, index and timestamp bounds, duration, realised magnitude and seed.
 
-**Rule selection that never sees the test set.** :func:`rule_surface` scores every
-candidate k-of-m rule on *calibration* data with its own injected events;
-:func:`select_rule` freezes one operating rule from that surface alone. The same
-surface is then computed on test data for reporting, but it is labelled
-``post_hoc_sensitivity`` and is never fed back into the choice — the distinction
-is carried in the output rows themselves, not just in prose.
+**Rule selection that never sees the test set — and never reuses the conformal
+calibration sample.** :func:`chronological_subsplit` divides the original
+calibration partition in two along the time axis: an earlier block that
+conformalizes the interval model, and a later block on which candidate rules are
+scored. :func:`rule_surface` scores every candidate k-of-m rule on that later
+block with its own injected events; :func:`select_rule` freezes one operating
+rule from that surface alone. The same surface is then computed on test data for
+reporting, but it is labelled ``post_hoc_sensitivity`` and is never fed back into
+the choice — the distinction is carried in the output rows themselves, not just
+in prose.
 
 **Two false-alarm measures, kept apart.** ``far`` is the point-level False Alarm
 Rate, FP / (FP + TN) over timesteps outside any event window.
@@ -66,6 +70,85 @@ def parse_rules(names: list[str] | None) -> dict[str, tuple[int, int]]:
             raise ValueError(f"invalid alert rule {name!r}: need 1 <= k <= m")
         out[name] = (k, m)
     return out
+
+
+# --------------------------------------------------------------------------- #
+# Nested calibration split
+# --------------------------------------------------------------------------- #
+def chronological_subsplit(
+    origin_time,
+    target_time,
+    fraction: float = 0.6,
+    *,
+    min_samples: int = 200,
+) -> dict:
+    """Divide a calibration partition into a conformal block and a later rule block.
+
+    Scoring alert rules on the same observations that conformalized the interval
+    model makes the calibration violation rate optimistic: those residuals are
+    exactly the ones the conformal quantile was fitted to cover. The fix is a
+    nested split *inside* the original calibration period, so the rule is chosen
+    on genuinely out-of-conformal-calibration observations while the test set
+    stays untouched.
+
+    The cut is chronological, never shuffled. ``fraction`` of the windows —
+    ordered by target time — form the conformal block; the boundary time is the
+    last target time in that block. A window joins the rule block only when its
+    *origin* is strictly later than that boundary, which guarantees that every
+    rule-block timestamp, forecast origin and target alike, postdates every
+    conformal-block target. Windows straddling the boundary belong to neither and
+    are dropped: that is the embargo, and it is exact rather than an approximate
+    h-step guess.
+
+    Returns the two boolean masks over the calibration partition plus the
+    diagnostics needed to report the split, or ``usable=False`` when either side
+    is too small to support a defensible choice.
+    """
+    o = pd.DatetimeIndex(pd.Series(origin_time).reset_index(drop=True))
+    t = pd.DatetimeIndex(pd.Series(target_time).reset_index(drop=True))
+    n = len(t)
+    if n != len(o):
+        raise ValueError(f"origin_time ({len(o)}) and target_time ({n}) differ in length")
+    if not 0.0 < fraction < 1.0:
+        raise ValueError(f"fraction must lie strictly between 0 and 1, got {fraction}")
+    if n == 0:
+        raise ValueError("cannot sub-split an empty calibration partition")
+
+    ordered = np.sort(t.to_numpy())
+    cut_pos = max(1, min(n - 1, int(round(fraction * n))))
+    boundary = pd.Timestamp(ordered[cut_pos - 1])
+
+    # DatetimeIndex comparisons already yield ndarrays; np.asarray keeps this
+    # working whichever pandas container the caller passed in.
+    conformal = np.asarray(t <= boundary)
+    rule = np.asarray(o > boundary)
+    embargoed = ~conformal & ~rule
+
+    n_conf, n_rule = int(conformal.sum()), int(rule.sum())
+    usable = n_conf >= min_samples and n_rule >= min_samples
+    return {
+        "conformal_mask": conformal,
+        "rule_mask": rule,
+        "embargoed_mask": embargoed,
+        "boundary_time": boundary,
+        "n_calibration": n,
+        "n_conformal": n_conf,
+        "n_rule": n_rule,
+        "n_embargoed": int(embargoed.sum()),
+        "requested_fraction": float(fraction),
+        "realised_fraction": n_conf / n if n else float("nan"),
+        "min_samples": int(min_samples),
+        "usable": bool(usable),
+        "conformal_last_target": (pd.Timestamp(t[conformal].max()) if n_conf else pd.NaT),
+        "rule_first_origin": (pd.Timestamp(o[rule].min()) if n_rule else pd.NaT),
+        "rule_last_target": (pd.Timestamp(t[rule].max()) if n_rule else pd.NaT),
+        "reason": (
+            "chronological nested split of the calibration partition"
+            if usable else
+            f"nested split rejected: {n_conf} conformal and {n_rule} rule-block "
+            f"windows, below the minimum of {min_samples}"
+        ),
+    }
 
 
 # --------------------------------------------------------------------------- #

@@ -589,22 +589,13 @@ class DatasetStudy:
                 f"{method!r} does not retain one; configure alerts.primary_method "
                 "as 'cqr'"
             )
-        self.manifest.note_limitation(
-            f"{self.dataset_id}: the calibration intervals used to score alert "
-            "rules come from the model conformalized on that same calibration "
-            "partition, so calibration violation rates are mildly optimistic. "
-            "The rule is still frozen before any test observation is seen, and "
-            "the preliminary experiment uses the same construction."
-        )
-
         w = self.windows[h]
         idx, X, y, meta = w["idx"], w["X"], w["y"], w["meta"]
-        ca, te = idx["calibration"], idx["test"]
-        model = self.artifacts["intervals"][h][key]["model"]
-        ci = conformal_cqr.cqr_interval(model, _sub(X, ca))
+        tr, ca, te = idx["train"], idx["calibration"], idx["test"]
         ti = self.artifacts["intervals"][h][key]
 
         y_ca, y_te = y[ca], y[te]
+        o_ca = pd.DatetimeIndex(meta.loc[ca, "origin_time"])
         t_ca = pd.DatetimeIndex(meta.loc[ca, "target_time"])
         t_te = pd.DatetimeIndex(meta.loc[te, "target_time"])
         g_te = meta.loc[te, "group_id"].to_numpy()
@@ -617,16 +608,65 @@ class DatasetStudy:
         budget = float(acfg.get("max_false_alerts_per_day", 1.0))
         ctx = self._ctx(h, conformal_method=method, nominal_coverage=level)
 
-        # ---- calibration surface -> frozen rule ----
+        # ---- nested split: conformalize early, tune the rule late ----
+        # Scoring rules on the observations that conformalized the interval model
+        # makes the calibration violation rate optimistic — those residuals are
+        # precisely the ones the conformal quantile was fitted to cover. So the
+        # calibration period is cut chronologically: an earlier block
+        # conformalizes a *separate* CQR model, and rules are scored on the later
+        # block, which that model has never seen. The test partition is not
+        # touched by any part of this.
+        scfg = acfg.get("selection", {})
+        split = alert_study.chronological_subsplit(
+            o_ca, t_ca,
+            fraction=float(scfg.get("calibration_conformal_fraction", 0.6)),
+            min_samples=int(scfg.get("min_samples_per_block", 200)),
+        )
+        X_ca = _sub(X, ca)
+        if split["usable"]:
+            conf_m, rule_m = split["conformal_mask"], split["rule_mask"]
+            sel_model = conformal_cqr.fit_cqr(
+                _sub(X, tr), pd.Series(y[tr]),
+                _sub(X_ca, conf_m), pd.Series(y_ca[conf_m]), level, self.seed)
+            ci = conformal_cqr.cqr_interval(sel_model, _sub(X_ca, rule_m))
+            y_sel, t_sel, g_sel = y_ca[rule_m], t_ca[rule_m], g_ca[rule_m]
+            sel_partition = "calibration_rule_block"
+        else:
+            # Too few windows on one side to choose defensibly. Fall back to the
+            # pooled construction rather than select on a handful of points, and
+            # say so in the limitations instead of leaving it implicit.
+            sel_model = self.artifacts["intervals"][h][key]["model"]
+            ci = conformal_cqr.cqr_interval(sel_model, X_ca)
+            y_sel, t_sel, g_sel = y_ca, t_ca, g_ca
+            sel_partition = "calibration_pooled_fallback"
+            self.manifest.note_limitation(
+                f"{self.dataset_id}: {split['reason']}; the alert rule was scored "
+                "on the full calibration partition, which also conformalized the "
+                "interval model, so its calibration violation rate is optimistic."
+            )
+
+        # ---- rule-block surface -> frozen rule ----
         pert_ca, cat_ca = alert_study.inject_events(
-            y_ca, scale, freq, t_ca, acfg["events"], seed=self.seed + 50,
+            y_sel, scale, freq, t_sel, acfg["events"], seed=self.seed + 50,
             dataset=self.dataset_id, target=self.prepared.series[0].target_id,
-            partition="calibration", group_ids=g_ca)
+            partition=sel_partition, group_ids=g_sel)
         surface_ca = alert_study.rule_surface(
             pert_ca, ci["lower"], ci["upper"], cat_ca, rules, freq, tol,
             context=ctx, role="calibration_selection")
+        surface_ca["selection_partition"] = sel_partition
+        surface_ca["n_selection_windows"] = len(y_sel)
         chosen, reason = alert_study.select_rule(surface_ca, budget)
         k, m = rules[chosen]
+
+        split_row = {**ctx, **{key_: val for key_, val in split.items()
+                               if not key_.endswith("_mask")},
+                     "selection_partition": sel_partition,
+                     "conformalized_on": ("calibration_early_block"
+                                          if split["usable"] else "calibration_full"),
+                     "test_first_target": t_te.min(), "test_last_target": t_te.max(),
+                     "selected_rule": chosen}
+        _write(pd.DataFrame([split_row]),
+               self.out / "metrics" / "alert_selection_split.csv")
 
         # ---- test: clean, then injected; every rule scored post hoc ----
         pert_te, cat_te = alert_study.inject_events(
@@ -655,9 +695,70 @@ class DatasetStudy:
         self.artifacts["alerts"] = {
             "rule": (k, m), "rule_name": chosen, "horizon": h, "level": level,
             "method": method, "scale": scale, "catalog_test": cat_te,
-            "perturbed_test": pert_te,
+            "perturbed_test": pert_te, "split": split_row,
         }
         return surface_ca
+
+    # ------------------------------------------------------------------ #
+    def rehydrate_primary_intervals(self) -> dict:
+        """Rebuild only the CQR artefacts the post-interval stages consume.
+
+        ``alerts``, ``recalibration`` and ``robustness`` all read one object: the
+        CQR model conformalized at the operating horizon and level, plus its test
+        interval. Re-running the whole ``intervals`` stage to recover it costs
+        hours — 2.6 of them on BDG2, almost entirely EnbPI's online updates — for
+        a single :func:`fit_cqr` call.
+
+        The refit is only trustworthy if it reproduces the fit the study actually
+        reported, so the regenerated test bounds are checked against the persisted
+        ``interval_predictions.csv`` and the largest discrepancy is returned. A
+        mismatch beyond floating-point noise raises rather than letting a
+        re-audited rule be scored against a model the outputs never saw.
+        """
+        acfg = self.cfg["alerts"]
+        h = int(acfg.get("primary_horizon", self.horizons[0]))
+        level = float(acfg.get("primary_level", self.levels[-1]))
+        w = self.windows[h]
+        idx, X, y, meta = w["idx"], w["X"], w["y"], w["meta"]
+        tr, ca, te = idx["train"], idx["calibration"], idx["test"]
+
+        model = conformal_cqr.fit_cqr(
+            _sub(X, tr), pd.Series(y[tr]), _sub(X, ca), pd.Series(y[ca]),
+            level, self.seed)
+        res = conformal_cqr.cqr_interval(model, _sub(X, te))
+
+        check = {"verified_against_persisted": False, "max_abs_diff": float("nan"),
+                 "n_compared": 0}
+        path = self.out / "predictions" / "interval_predictions.csv"
+        if path.exists():
+            saved = pd.read_csv(path)
+            saved = saved[(saved["conformal_method"] == "cqr")
+                          & (saved["horizon"] == h)
+                          & (np.isclose(saved["nominal_coverage"], level))]
+            if len(saved) == len(res["lower"]):
+                diff = max(
+                    float(np.nanmax(np.abs(saved["lower"].to_numpy() - res["lower"]))),
+                    float(np.nanmax(np.abs(saved["upper"].to_numpy() - res["upper"]))),
+                )
+                check = {"verified_against_persisted": True, "max_abs_diff": diff,
+                         "n_compared": len(saved)}
+                if diff > 1e-8:
+                    raise ValueError(
+                        f"{self.dataset_id}: refitted CQR at h={h} level={level} "
+                        f"differs from the persisted interval predictions by "
+                        f"{diff:.3e}; the reported outputs were produced by a "
+                        "different fit, so reusing this model would be dishonest"
+                    )
+            else:
+                check["reason"] = (f"row count {len(saved)} != {len(res['lower'])}; "
+                                   "skipped the exactness check")
+        else:
+            check["reason"] = "no persisted interval predictions to check against"
+
+        self.artifacts.setdefault("intervals", {}).setdefault(h, {})[("cqr", level)] = {
+            "model": model, **res}
+        self.artifacts["rehydration"] = {"horizon": h, "level": level, **check}
+        return self.artifacts["rehydration"]
 
     def _train_scale(self, h: int) -> float:
         """Target dispersion from the **training** partition only."""
@@ -762,6 +863,14 @@ class DatasetStudy:
                 lower, upper, ti["point"], n_updates,
                 np.zeros(len(y_te), dtype=int), strategy, settings)
             im = M.interval_metrics(y_te, res.lower, res.upper, level)
+            # The calibration replay chooses one (update_every, window) pair
+            # across both adaptive strategies. When a *periodic* configuration
+            # wins, `window` is None, and running "rolling" with an unbounded
+            # window reproduces periodic exactly. Reporting those two rows as
+            # independent strategies would claim a rolling-window result the
+            # study never obtained, so the degeneracy is flagged in the data
+            # rather than left for a reader to infer from a blank column.
+            degenerate = (strategy == "rolling" and settings["window"] is None)
             rows.append({
                 **self._ctx(h), "conformal_method": "cqr",
                 "nominal_coverage": level, "recalibration_strategy": strategy,
@@ -771,7 +880,21 @@ class DatasetStudy:
                 "min_samples": settings["min_samples"],
                 "settings_source": settings["selection"],
                 "residual_delay_steps": h,
+                "strategy_is_distinct": not degenerate,
+                "degeneracy_note": (
+                    "the calibration replay selected an unwindowed configuration, "
+                    "so rolling reduced to the same unbounded update procedure as "
+                    "periodic; no distinct rolling-window result was identified"
+                    if degenerate else ""
+                ),
             })
+            if degenerate:
+                self.manifest.note_limitation(
+                    f"{self.dataset_id}: rolling recalibration is not a distinct "
+                    "result — the calibration replay selected an unwindowed "
+                    "configuration, so the rolling row reproduces periodic "
+                    "exactly. It must not be reported as a second strategy."
+                )
             prof = recal.recovery_profile(
                 y_te, res.lower, res.upper, level,
                 shift_index=len(y_te) // 2,
@@ -999,6 +1122,20 @@ class DatasetStudy:
         if self.prepared is None:
             print(f"  [{self.dataset_id}] preparation unavailable; later stages skipped")
             return
+
+        # A targeted re-run (``--stage alerts,robustness``) skips ``intervals``
+        # but still needs its CQR artefact. Rebuild just that one model and
+        # verify it against the persisted predictions, rather than spending hours
+        # recomputing methods this invocation does not touch.
+        needs_cqr = any(self.wants(s) for s in
+                        ("alerts", "recalibration", "robustness"))
+        if needs_cqr and not self.wants("intervals"):
+            print(f"  [{self.dataset_id}] rehydrating primary CQR intervals ...")
+            chk = self.rehydrate_primary_intervals()
+            print(f"    verified against persisted predictions: "
+                  f"{chk['verified_against_persisted']} "
+                  f"(max |diff| = {chk['max_abs_diff']:.3e}, n = {chk['n_compared']})")
+
         for name, fn in [("point", self.stage_point),
                          ("intervals", self.stage_intervals),
                          ("alerts", self.stage_alerts),

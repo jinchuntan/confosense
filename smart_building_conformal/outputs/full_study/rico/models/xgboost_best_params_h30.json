@@ -1,0 +1,25 @@
+{
+  "best_params": {
+    "subsample": 0.8,
+    "reg_lambda": 5.0,
+    "reg_alpha": 1.0,
+    "n_estimators": 800,
+    "min_child_weight": 1,
+    "max_depth": 3,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.6
+  },
+  "best_cv_mae": 0.7799405019796545,
+  "refit_n_jobs": 1,
+  "search_n_jobs": -1,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "xgboost_version": "3.2.0",
+  "tree_method": "hist",
+  "determinism_note": "refit_n_jobs=1 makes the fit independent of thread count; any other value reintroduces thread-order nondeterminism"
+}

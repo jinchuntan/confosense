@@ -1,0 +1,17 @@
+dataset,target,target_kind,units,sampling_freq,horizon_steps,horizon_minutes,point_model,applicable,note,mae,rmse,pct_mae_improvement,pct_rmse_improvement,n_seeds,n_test,mae_std,rmse_std,seeds_used
+rico,B.RTD3,temperature,degC,0 days 00:01:00,5,5.0,persistence,True,,0.12217194570135746,0.21505500065675487,0.0,0.0,1,9282.0,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,5,5.0,seasonal_naive,False,not applicable: no series contains a full seasonal cycle,,,,,0,,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,5,5.0,xgboost,True,,0.09326326480792321,0.1258560508507058,23.662290657218403,41.477273038824976,5,9282.0,0.0,0.0,"42,43,44,45,46"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,5,5.0,attention_lstm,True,,0.44428280442690304,0.5467110147875794,-263.65370288276137,-154.21915933969575,3,9072.0,0.020196594521089888,0.041158791406854044,"42,43,44"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,15,15.0,persistence,True,,0.3495373504852178,0.6014576441242295,0.0,0.0,1,8862.0,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,15,15.0,seasonal_naive,False,not applicable: no series contains a full seasonal cycle,,,,,0,,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,15,15.0,xgboost,True,,0.21983323842993277,0.3199663865733188,37.10736831850257,46.80150968249553,5,8862.0,0.0,0.0,"42,43,44,45,46"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,15,15.0,attention_lstm,True,,0.5194297548691763,0.6761412960623827,-48.60493568087037,-12.417109112795226,3,8652.0,0.07246795860890447,0.08408799043622948,"42,43,44"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,30,30.0,persistence,True,,0.6581389698736638,1.1031032293914644,0.0,0.0,1,8232.0,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,30,30.0,seasonal_naive,False,not applicable: no series contains a full seasonal cycle,,,,,0,,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,30,30.0,xgboost,True,,0.3532899824592879,0.5145127696462712,46.31985057394408,53.35769527842773,5,8232.0,0.014696860785306097,0.029302436024614638,"42,43,44,45,46"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,30,30.0,attention_lstm,True,,0.7510530098748903,0.9453452124515769,-14.117693109566549,14.301292275874852,3,8022.0,0.15901016614003424,0.1804262660602186,"42,43,44"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,60,60.0,persistence,True,,1.2028686173264487,1.8901494505716396,0.0,0.0,1,6972.0,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,60,60.0,seasonal_naive,False,not applicable: no series contains a full seasonal cycle,,,,,0,,,,
+rico,B.RTD3,temperature,degC,0 days 00:01:00,60,60.0,xgboost,True,,0.61628408440214,0.9040041756395637,48.76546985057092,52.172873136239836,5,6972.0,0.008983834102512328,0.021238896260191174,"42,43,44,45,46"
+rico,B.RTD3,temperature,degC,0 days 00:01:00,60,60.0,attention_lstm,True,,0.9238169242206742,1.1648792092327929,23.19885057156181,38.371052676258095,3,6762.0,0.15437421223906697,0.18566501563188517,"42,43,44"

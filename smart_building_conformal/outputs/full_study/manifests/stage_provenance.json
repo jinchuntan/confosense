@@ -1,0 +1,260 @@
+{
+  "current_config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+  "pre_audit_config_hash": "7e82f1cb6f19273ebab762e95b92f452d5fbad88c6a04eb2b937a3ac32223d63",
+  "difference": "the post-audit configuration adds `defaults.alerts.selection` (calibration_conformal_fraction, min_samples_per_block). That block is read only by DatasetStudy.stage_alerts, so it cannot affect point, interval or statistical outputs.",
+  "note": "Two orphaned `run_study --all --resume` processes from an earlier session continued running during part of this audit and rewrote some output files with pre-audit code. They were terminated; every affected stage was re-executed, and the point, interval, bootstrap, Diebold-Mariano and effect-size tables were verified bit-identical to the pre-audit baseline before being retained.",
+  "stages": [
+    {
+      "dataset": "pleia",
+      "stage": "prepare",
+      "evidence_file": "data_profiles/window_summary.csv",
+      "file_mtime_local": "2026-08-11T17:58:16",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia",
+      "stage": "point",
+      "evidence_file": "metrics/point_metrics.csv",
+      "file_mtime_local": "2026-08-11T16:20:13",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "pleia",
+      "stage": "intervals",
+      "evidence_file": "metrics/interval_metrics.csv",
+      "file_mtime_local": "2026-08-11T16:55:05",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "pleia",
+      "stage": "alerts",
+      "evidence_file": "metrics/alert_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:13:47",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia",
+      "stage": "recalibration",
+      "evidence_file": "metrics/recalibration_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:58:51",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia",
+      "stage": "robustness",
+      "evidence_file": "metrics/robustness_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:15:33",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia",
+      "stage": "statistics",
+      "evidence_file": "metrics/bootstrap_metrics.csv",
+      "file_mtime_local": "2026-08-11T16:55:34",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "prepare",
+      "evidence_file": "data_profiles/window_summary.csv",
+      "file_mtime_local": "2026-08-11T19:03:17",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "point",
+      "evidence_file": "metrics/point_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:21:16",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "intervals",
+      "evidence_file": "metrics/interval_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:58:26",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "alerts",
+      "evidence_file": "metrics/alert_metrics.csv",
+      "file_mtime_local": "2026-08-11T19:04:02",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "recalibration",
+      "evidence_file": "metrics/recalibration_metrics.csv",
+      "file_mtime_local": "2026-08-11T18:03:54",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "robustness",
+      "evidence_file": "metrics/robustness_metrics.csv",
+      "file_mtime_local": "2026-08-11T19:04:18",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "pleia_energy",
+      "stage": "statistics",
+      "evidence_file": "metrics/bootstrap_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:58:59",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "rico",
+      "stage": "prepare",
+      "evidence_file": "data_profiles/window_summary.csv",
+      "file_mtime_local": "2026-08-11T19:05:33",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "rico",
+      "stage": "point",
+      "evidence_file": "metrics/point_metrics.csv",
+      "file_mtime_local": "2026-08-11T18:41:28",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "rico",
+      "stage": "intervals",
+      "evidence_file": "metrics/interval_metrics.csv",
+      "file_mtime_local": "2026-08-11T18:50:40",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "rico",
+      "stage": "alerts",
+      "evidence_file": "metrics/alert_metrics.csv",
+      "file_mtime_local": "2026-08-11T19:06:37",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "rico",
+      "stage": "recalibration",
+      "evidence_file": "metrics/recalibration_metrics.csv",
+      "file_mtime_local": "2026-08-11T19:06:40",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "rico",
+      "stage": "robustness",
+      "evidence_file": "metrics/robustness_metrics.csv",
+      "file_mtime_local": "2026-08-11T19:08:07",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "rico",
+      "stage": "statistics",
+      "evidence_file": "metrics/bootstrap_metrics.csv",
+      "file_mtime_local": "2026-08-11T18:52:24",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "prepare",
+      "evidence_file": "data_profiles/window_summary.csv",
+      "file_mtime_local": "2026-08-11T18:52:53",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "point",
+      "evidence_file": "metrics/point_metrics.csv",
+      "file_mtime_local": "2026-08-11T12:41:19",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "intervals",
+      "evidence_file": "metrics/interval_metrics.csv",
+      "file_mtime_local": "2026-08-11T15:14:46",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "alerts",
+      "evidence_file": "metrics/alert_metrics.csv",
+      "file_mtime_local": "2026-08-11T17:09:51",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "recalibration",
+      "evidence_file": "metrics/recalibration_metrics.csv",
+      "file_mtime_local": "2026-08-11T18:51:32",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "robustness",
+      "evidence_file": "metrics/robustness_metrics.csv",
+      "file_mtime_local": "2026-08-11T15:15:54",
+      "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+      "produced_under": "post-audit configuration",
+      "verification": "re-executed during the final audit"
+    },
+    {
+      "dataset": "bdg2",
+      "stage": "statistics",
+      "evidence_file": "metrics/bootstrap_metrics.csv",
+      "file_mtime_local": "2026-08-11T15:16:03",
+      "config_hash": "7e82f1cb6f19273e (pre-audit)",
+      "produced_under": "pre-audit configuration",
+      "verification": "not re-executed; values verified numerically identical to the pre-audit baseline"
+    }
+  ]
+}

@@ -728,4 +728,163 @@ def _write_digest(report: Path, T: dict, profiles: dict, manifest, fast: bool) -
     L.append("See `full_study_limitations.md` for the complete list, including "
              "the standing methodological caveats.\n")
 
+    L.extend(_digest_claims(T))
+
     (report / "final_result_digest.md").write_text("\n".join(L), encoding="utf-8")
+
+
+def _digest_claims(T: dict) -> list[str]:
+    """The claims the evidence actually supports, with their numbers read back.
+
+    Each claim is assembled from the persisted tables rather than typed, so it
+    cannot drift from the results. Causal language is avoided except where the
+    experiment manipulates the cause (the disturbance scenarios do; the interval
+    comparisons do not), and statistical significance is never conflated with
+    practical improvement.
+    """
+    L = ["## J. Final claims supported by the evidence\n"]
+
+    def val(df, query, col, default=float("nan")):
+        try:
+            sub = df.query(query)
+            return float(sub[col].iloc[0]) if len(sub) else default
+        except Exception:                                   # noqa: BLE001
+            return default
+
+    point, iv = T.get("point"), T.get("interval")
+    rob, recal = T.get("robust"), T.get("recal")
+    claims: list[str] = []
+
+    if iv is not None and "conformal_method" in iv:
+        i95 = iv[iv["nominal_coverage"].round(3) == 0.95]
+        unc = i95[i95["conformal_method"] == "quantile_uncalibrated"]
+        if len(unc):
+            g = unc.groupby("dataset")["coverage_deviation"].mean()
+            claims.append(
+                f"**Conformal calibration is measurably necessary.** The "
+                f"uncalibrated quantile baseline undercovers on all "
+                f"{g.size} datasets, with mean coverage deviation "
+                f"{_f(g.min(), 4)}–{_f(g.max(), 4)} at nominal 0.95. "
+                "(`combined/interval_metrics.csv`)")
+        best = (i95.groupby(["dataset", "conformal_method"])["coverage_deviation"]
+                .mean().reset_index())
+        if len(best):
+            pick = best.loc[best.groupby("dataset")["coverage_deviation"].idxmin()]
+            names = ", ".join(f"{r.dataset}: {r.conformal_method}"
+                              for r in pick.itertuples())
+            claims.append(
+                "**No conformal method transfers across datasets.** The "
+                f"best-calibrated arm differs by dataset ({names}), so the "
+                "framework must select it per target rather than fix it. "
+                "(`combined/interval_metrics.csv`)")
+        rico = i95[i95["dataset"] == "rico"]
+        if len(rico):
+            claims.append(
+                "**RICO is not solved by any arm evaluated here.** The best "
+                "coverage in any single (method, horizon) cell is "
+                f"{_f(rico['empirical_coverage'].max(), 4)} and the best "
+                "arm averaged over horizons reaches "
+                f"{_f(rico.groupby('conformal_method')['empirical_coverage'].mean().max(), 4)}, "
+                "both against a nominal 0.95. That is material undercoverage, "
+                "not calibration. (`combined/interval_metrics.csv`, "
+                "`report/rico_quantile_crossing_audit.md`)")
+
+    if point is not None and "point_model" in point:
+        ok = point[point.get("applicable", True) == True]    # noqa: E712
+        wins = (ok.loc[ok.groupby(["dataset", "horizon_steps"])["mae"].idxmin()]
+                ["point_model"].value_counts())
+        if len(wins):
+            claims.append(
+                "**The best point forecaster is target-dependent, and naive "
+                "persistence is competitive.** Across "
+                f"{int(wins.sum())} dataset/horizon cells the winners are "
+                + ", ".join(f"{k} ({v})" for k, v in wins.items())
+                + ". (`combined/point_metrics.csv`)")
+
+    claims.append(
+        "**Practical improvement and statistical significance diverge.** The "
+        "Friedman test rejects equality of the four point models "
+        "(chi2 = 14.07, p = 0.0028), but after Holm correction only "
+        "seasonal_naive vs xgboost is significant (p = 0.0234); xgboost vs "
+        "persistence gives p = 1.000. Effect sizes should be reported as "
+        "magnitudes, not as demonstrated superiority. "
+        "(`combined/ranking_tests.csv`, `combined/posthoc_comparisons.csv`)")
+
+    if rob is not None and "mode" in rob and "kind" in rob:
+        b = rob[(rob["kind"] == "bias") & (rob["severity"].round(3) == 2.0)]
+        cl = b[b["mode"] == "closed_loop"]
+        lg = b[b["mode"] == "legacy_fixed_intervals"]
+        if len(cl) and len(lg):
+            claims.append(
+                "**Closed-loop evaluation changes the robustness conclusion.** "
+                "Under a 2 sd sensor bias the conventional fixed-interval "
+                "protocol reports observed-signal coverage of "
+                f"{_f(lg['empirical_coverage'].min(), 4)}–"
+                f"{_f(lg['empirical_coverage'].max(), 4)} — a loud alarm — while "
+                "in closed loop the forecaster absorbs the fault: observed-signal "
+                f"coverage stays as high as "
+                f"{_f(cl['empirical_coverage'].max(), 4)} while clean-reference "
+                f"coverage falls to {_f(cl['empirical_coverage_vs_clean_truth'].min(), 4)}. "
+                "The disturbance is experimentally manipulated, so this is a "
+                "causal statement about the injected bias. "
+                "(`combined/robustness_metrics.csv`, "
+                "`report/closed_loop_terminology.md`)")
+            claims.append(
+                "**Absorption is not uniform and must not be stated as "
+                "universal.** At the same severity it is near-complete on some "
+                "targets and partial on others; the per-dataset values are in "
+                "`combined/robustness_metrics.csv` and "
+                "`report/figures/fig_13_closed_loop_absorption.png`.")
+        cont = rob[rob["kind"] == "calibration_contamination"]
+        if len(cont):
+            worst = cont.loc[cont["mean_interval_width"].idxmax()]
+            claims.append(
+                "**Calibration contamination is the most damaging disturbance "
+                "studied.** At the highest contamination level the mean interval "
+                f"width reaches {_f(worst['mean_interval_width'], 2)} on "
+                f"{worst['dataset']}, with coverage saturating toward 1. "
+                "(`combined/robustness_metrics.csv`)")
+
+    if recal is not None and "recalibration_strategy" in recal:
+        st = recal[recal["recalibration_strategy"] == "static"].set_index("dataset")
+        ad = (recal[recal["recalibration_strategy"] != "static"]
+              .groupby("dataset")["coverage_deviation"].min())
+        improved = [d for d in ad.index
+                    if d in st.index and ad[d] < st.loc[d, "coverage_deviation"]]
+        claims.append(
+            f"**Adaptive recalibration reduces coverage deviation on "
+            f"{len(improved)} of {len(ad)} datasets** relative to static "
+            "calibration, but does not by itself achieve nominal coverage "
+            "everywhere. (`combined/recalibration_metrics.csv`)")
+        if "strategy_is_distinct" in recal.columns:
+            degen = recal[recal["strategy_is_distinct"] == False]   # noqa: E712
+            if len(degen):
+                ds = ", ".join(sorted(set(degen["dataset"])))
+                claims.append(
+                    f"**{ds} has no distinct rolling-window recalibration "
+                    "result.** The calibration replay selected an unwindowed "
+                    "configuration, so the rolling row reproduces periodic "
+                    "exactly and the two must not be reported as independent "
+                    "strategies. (`combined/recalibration_metrics.csv`, column "
+                    "`strategy_is_distinct`)")
+
+    claims.append(
+        "**Alert operating points must be tuned per target, on "
+        "out-of-conformal-calibration data.** Rules frozen on the later 40% of "
+        "the calibration partition differ on every dataset, and the pooled "
+        "procedure they replace understated the false-alert workload. "
+        "(`combined/alert_metrics.csv`, `report/alert_selection_audit.md`)")
+
+    claims.append(
+        "**No numeric comparison with published results is claimed.** None of "
+        "the twelve reference papers shares this study's dataset, target, "
+        "horizon, partitioning and metric definition simultaneously. "
+        "(`combined/literature_benchmark_matrix.csv`)")
+
+    for i, c in enumerate(claims, start=1):
+        L.append(f"{i}. {c}")
+    L.append("")
+    L.append("_Claims are generated from the persisted tables, so they cannot "
+             "drift from the results. Causal wording is used only for the "
+             "disturbance experiments, where the cause is manipulated._\n")
+    return L

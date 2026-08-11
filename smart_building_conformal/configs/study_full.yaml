@@ -90,6 +90,17 @@ defaults:
     detection_tolerance_steps: 6
     max_false_alerts_per_day: 1.0
     candidate_rules: ["1-of-1", "2-of-3", "3-of-5", "4-of-7"]
+    selection:
+      # Nested, chronological split *inside* the calibration partition: the
+      # earlier 60% conformalizes a separate CQR model, the later 40% scores the
+      # candidate rules. Scoring rules on the same residuals that set the
+      # conformal quantile would report an optimistic violation rate. 60/40
+      # leaves both blocks in the thousands of windows on every dataset here;
+      # below `min_samples_per_block` the study falls back to the pooled
+      # construction and records that as a limitation rather than choosing a
+      # rule from too few points.
+      calibration_conformal_fraction: 0.6
+      min_samples_per_block: 200
     events:
       instances_per_type: 3
       spike_sds: [4.0]

@@ -1,0 +1,7 @@
+test,method_a,method_b,n_blocks,mean_rank_a,mean_rank_b,median_difference,p_value,p_value_holm,significant_holm_5pct
+wilcoxon_holm_posthoc,attention_lstm,persistence,9,2.4444444444444446,2.2222222222222223,-0.0247533425272939,1.0,1.0,False
+wilcoxon_holm_posthoc,attention_lstm,seasonal_naive,9,2.4444444444444446,3.7777777777777777,-0.42079793920047814,0.07421875,0.37109375,False
+wilcoxon_holm_posthoc,attention_lstm,xgboost,9,2.4444444444444446,1.5555555555555556,0.28096851252245003,0.07421875,0.37109375,False
+wilcoxon_holm_posthoc,persistence,seasonal_naive,9,2.2222222222222223,3.7777777777777777,-0.5333190562352854,0.12890625,0.38671875,False
+wilcoxon_holm_posthoc,persistence,xgboost,9,2.2222222222222223,1.5555555555555556,0.026167397996104402,1.0,1.0,False
+wilcoxon_holm_posthoc,seasonal_naive,xgboost,9,3.7777777777777777,1.5555555555555556,0.9453859557969582,0.00390625,0.0234375,True

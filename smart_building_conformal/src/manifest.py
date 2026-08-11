@@ -146,7 +146,42 @@ class RunManifest:
             prov["retrieved_at"] = pd.Timestamp.utcnow().isoformat()
         self.provenance[dataset_id] = prov
 
+    def merge_limitations(self) -> list[str]:
+        """Carry limitations across invocations, replacing per dataset.
+
+        A study is normally run one dataset at a time, and a later targeted
+        re-run only knows about its own dataset. Without merging, the limitations
+        report would shrink to whatever the last command happened to touch.
+        Blind accumulation is equally wrong: a limitation that a re-run has
+        *fixed* would linger forever. So entries attributable to a dataset in
+        this invocation are replaced wholesale, entries for other datasets are
+        retained, and unattributed entries are kept if still unique.
+        """
+        path = self.manifest_dir / "limitations.json"
+        stored: list[dict] = []
+        if path.exists():
+            try:
+                stored = json.loads(path.read_text(encoding="utf-8")).get("entries", [])
+            except json.JSONDecodeError:
+                stored = []
+
+        covered = set(self.datasets)
+        fresh = [{"dataset": text.split(":", 1)[0].strip()
+                  if text.split(":", 1)[0].strip() in covered else "_global",
+                  "text": text} for text in self.limitations]
+        kept = [e for e in stored if e.get("dataset") not in covered]
+
+        merged, seen = [], set()
+        for e in kept + fresh:
+            if e["text"] not in seen:
+                seen.add(e["text"])
+                merged.append(e)
+        path.write_text(json.dumps({"entries": merged}, indent=2), encoding="utf-8")
+        self.limitations = [e["text"] for e in merged]
+        return self.limitations
+
     def write(self) -> dict:
+        self.merge_limitations()
         payload = {
             "config_path": self.config_path,
             "config_hash": config_hash(self.config),

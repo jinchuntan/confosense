@@ -1,0 +1,16 @@
+dataset,point_model,mean_rank_mae,mean_rank_rmse,mean_pct_mae_improvement,n_blocks
+bdg2,attention_lstm,2.3333333333333335,1.6666666666666667,14.67936864954926,3
+bdg2,persistence,2.6666666666666665,3.0,0.0,3
+bdg2,seasonal_naive,3.3333333333333335,3.6666666666666665,-18.197279932939317,3
+bdg2,xgboost,1.6666666666666667,1.6666666666666667,18.984475663576685,3
+pleia,attention_lstm,3.0,3.0,-168.84977129839865,3
+pleia,persistence,1.0,1.0,0.0,3
+pleia,seasonal_naive,4.0,4.0,-364.4794696409329,3
+pleia,xgboost,2.0,2.0,-45.993539238237695,3
+pleia_energy,attention_lstm,2.0,2.0,21.950663904191913,3
+pleia_energy,persistence,3.0,3.0,0.0,3
+pleia_energy,seasonal_naive,4.0,4.0,-43.962102925234966,3
+pleia_energy,xgboost,1.0,1.0,24.07350455707915,3
+rico,attention_lstm,2.75,2.5,-75.79437027540912,4
+rico,persistence,2.25,2.5,0.0,4
+rico,xgboost,1.0,1.0,38.963744850058994,4

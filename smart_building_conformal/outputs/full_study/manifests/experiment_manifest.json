@@ -1,0 +1,234 @@
+{
+  "config_path": "configs/study_full.yaml",
+  "config_hash": "140f6a34fd22ee3b3555bb62fe0f73f64e530e53d858f95f4b9ddf68ad4efb42",
+  "fast_mode": false,
+  "datasets": [
+    "pleia",
+    "pleia_energy",
+    "rico",
+    "bdg2"
+  ],
+  "git": {
+    "commit": "2c0961daa449dd2a2f415a196d577e81649d53d8",
+    "branch": "main",
+    "dirty": true,
+    "n_modified_files": 11
+  },
+  "packages": {
+    "python": "3.11.9",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0+cpu",
+    "mapie": "1.4.1",
+    "matplotlib": "3.11.1",
+    "pyarrow": "25.0.0",
+    "h5py": "3.16.0",
+    "tables": "3.11.1"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "machine": "AMD64",
+    "cpu_count": 8,
+    "device": "cpu",
+    "OMP_NUM_THREADS": "unset",
+    "MKL_NUM_THREADS": "unset",
+    "OPENBLAS_NUM_THREADS": "unset",
+    "NUMEXPR_NUM_THREADS": "unset",
+    "torch_num_threads": 4
+  },
+  "seed": 42,
+  "started_at": "2026-08-11T11:12:25.855858+00:00",
+  "ended_at": "2026-08-11T11:13:05.429027+00:00",
+  "runtime_seconds": 39.57,
+  "stages": [
+    {
+      "name": "pleia:point",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia:intervals",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia:alerts",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia:recalibration",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia:robustness",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia:statistics",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia_energy:point",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia_energy:intervals",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia_energy:alerts",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia_energy:recalibration",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia_energy:robustness",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "pleia_energy:statistics",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "rico:point",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "rico:intervals",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "rico:alerts",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "rico:recalibration",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "rico:robustness",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "rico:statistics",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "bdg2:point",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "bdg2:intervals",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "bdg2:alerts",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "bdg2:recalibration",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "bdg2:robustness",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "bdg2:statistics",
+      "status": "skipped",
+      "seconds": 0.0,
+      "reason": "dataset already complete (--resume)"
+    },
+    {
+      "name": "combined:tables",
+      "status": "completed",
+      "seconds": 0.0,
+      "reason": "",
+      "rows_per_table": {
+        "point_metrics.csv": 52,
+        "interval_metrics.csv": 130,
+        "alert_metrics.csv": 48,
+        "robustness_metrics.csv": 132,
+        "recalibration_metrics.csv": 12,
+        "bootstrap_metrics.csv": 48,
+        "statistical_tests.csv": 48,
+        "effect_sizes.csv": 48
+      }
+    },
+    {
+      "name": "combined:rankings",
+      "status": "completed",
+      "seconds": 0.0,
+      "reason": ""
+    },
+    {
+      "name": "combined:figures",
+      "status": "completed",
+      "seconds": 0.0,
+      "reason": "",
+      "details": {
+        "n": 13
+      }
+    },
+    {
+      "name": "combined:report",
+      "status": "completed",
+      "seconds": 0.0,
+      "reason": ""
+    }
+  ],
+  "n_completed": 4,
+  "n_failed": 0,
+  "n_skipped": 24,
+  "limitations": []
+}

@@ -1,0 +1,87 @@
+{
+  "bdg2": {
+    "dataset_id": "bdg2",
+    "official_source": "buds-lab/building-data-genome-project-2 (authors' repository)",
+    "doi": "10.1038/s41597-020-00712-x",
+    "download_url": "https://media.githubusercontent.com/media/buds-lab/building-data-genome-project-2/master/data/meters/raw/electricity.csv",
+    "retrieved_at": "2026-08-11T10:50:18.480944+00:00",
+    "archive_name": "electricity.csv, metadata.csv",
+    "checksum": "electricity=039d909d8981e2d6;meta=992d0b29f24f96ad",
+    "checksum_algorithm": "sha256",
+    "license": "MIT (repository); see the paper for data terms",
+    "citation": "Miller, C. et al. (2020). The Building Data Genome Project 2, energy meter data from the ASHRAE Great Energy Predictor III competition. Scientific Data, 7, 368.",
+    "preprocessing": [
+      "observed modal sampling interval 0 days 01:00:00",
+      "subset of 10 buildings selected by documented quality criteria only (see subset_selection.csv)",
+      "gaps up to 3 steps interpolated within a building only",
+      "each building split chronologically into train/calibration/test"
+    ],
+    "notes": [],
+    "target_description": "BDG2 hourly whole-building electricity consumption (kWh)"
+  },
+  "pleia": {
+    "dataset_id": "pleia",
+    "official_source": "Zenodo record 7620136",
+    "doi": "10.5281/zenodo.7620136",
+    "download_url": "https://zenodo.org/records/7620136",
+    "retrieved_at": "2026-08-11T09:58:15.831447+00:00",
+    "archive_name": "data-room10T-all.csv",
+    "checksum": "19729174d9cfa711961cdf0d26e19d37f24953e39ac15545997231805cf3f53d",
+    "checksum_algorithm": "sha256",
+    "license": "see the Zenodo record",
+    "citation": "Zamora-Martinez, F. et al. PLEIAData: consumption, HVAC, temperature, weather and motion sensor data for smart buildings. Zenodo, 2023.",
+    "preprocessing": [
+      "physically implausible values outside [15.0, 40.0] degC removed",
+      "gaps up to 3 steps interpolated in time",
+      "resampled onto a regular 10min grid"
+    ],
+    "notes": [],
+    "target_description": "PLEIAData indoor temperature, block B room 11 variable V2"
+  },
+  "pleia_energy": {
+    "dataset_id": "pleia",
+    "official_source": "Zenodo record 7620136",
+    "doi": "10.5281/zenodo.7620136",
+    "download_url": "https://zenodo.org/records/7620136",
+    "retrieved_at": "2026-08-11T11:03:17.172470+00:00",
+    "archive_name": "consB-10T.csv",
+    "checksum": "f990048f05fc86761fcdf05a7e4761143f43fced101ec1addfb05d7b6ab2ca68",
+    "checksum_algorithm": "sha256",
+    "license": "see the Zenodo record",
+    "citation": "Zamora-Martinez, F. et al. PLEIAData: consumption, HVAC, temperature, weather and motion sensor data for smart buildings. Zenodo, 2023.",
+    "preprocessing": [
+      "target 'dif_cons' (per-interval consumption increment) from block B",
+      "0 negative increments masked as meter resets",
+      "gaps up to 3 steps interpolated in time"
+    ],
+    "notes": [
+      "cons_total (cumulative meter) deliberately not used as a target: it is near-monotonic and would make persistence trivially accurate."
+    ],
+    "target_description": "PLEIAData block B interval energy consumption (dif_cons)"
+  },
+  "rico": {
+    "dataset_id": "rico",
+    "official_source": "Zenodo record 14871584 (SINTEF AS Digital)",
+    "doi": "10.1016/j.dib.2025.111678",
+    "download_url": "https://zenodo.org/records/14871584",
+    "retrieved_at": "2026-08-11T11:05:20.727846+00:00",
+    "archive_name": "RICO_Acquisition_1_07-2023.hdf, RICO_Acquisition_2_10-2023.hdf, RICO_Acquisition_3_01-2024.hdf, RICO_Acquisition_4_02-2024.hdf, RICO_Acquisition_5_05-2024.hdf",
+    "checksum": "RICO_Acquisition_1_07-2023.hdf=8bca0a980e09d285;RICO_Acquisition_2_10-2023.hdf=ba60e4318aa7eae1;RICO_Acquisition_3_01-2024.hdf=dde9247f4fffad2b;RICO_Acquisition_4_02-2024.hdf=5af7fe7f00c57a6e;RICO_Acquisition_5_05-2024.hdf=2c037cea7a3fa5ae",
+    "checksum_algorithm": "sha256",
+    "license": "CC BY 4.0",
+    "citation": "Thiry, Z., Ruocco, M., Nocente, A., Oksavik, O. A. (2025). The RICO dataset: A multivariate HVAC indoors and outdoors time-series dataset. Data in Brief, 61, 111678.",
+    "preprocessing": [
+      "runs = maximal contiguous Flag==1 blocks within (Acquisition Phase, Scheduler Step)",
+      "runs shorter than 120 samples or irregularly sampled were rejected",
+      "target = B.RTD3 (Pt100 air thermometer, 110 cm from the floor)",
+      "gaps up to 3 steps interpolated within a run only",
+      "seasonal-naive not applicable: a 4 h run contains no daily cycle"
+    ],
+    "notes": [
+      "80 scheduler point(s) carried no Flag==1 sample and were excluded on the authors' own quality flag. Acquisition phase 2 is entirely unflagged, which matches the recording bug documented in the dataset README; excluding it is the authors' judgement, not ours."
+    ],
+    "target_description": "RICO indoor air temperature, B.RTD3 (Pt100 air thermometer, 110 cm from the floor)",
+    "target_rationale": "B.RTD3 is the documented Pt100 air thermometer at 110 cm, the standard seated-occupant measurement height for indoor air temperature, inside the actively controlled cell B. Chosen from the README's sensor documentation before any model was fitted; no forecast metric was consulted. B.RTD1 is excluded because the README places it in cell A, which was not under control, and B.RTD6 is a globe thermometer measuring operative rather than air temperature.",
+    "target_column": "B.RTD3"
+  }
+}

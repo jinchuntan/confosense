@@ -240,3 +240,115 @@ def test_rule_surface_labels_its_role_and_scores_every_candidate():
                 "false_alert_events_per_day", "mean_detection_delay_min",
                 "median_detection_delay_min", "k", "m"):
         assert col in surf.columns
+
+
+# --------------------------------------------------------------------------- #
+# Nested calibration split: the rule must not be tuned on the conformal sample
+# --------------------------------------------------------------------------- #
+def _calib_times(n, h=3):
+    """Windows at a fixed horizon: target = origin + h steps."""
+    origin = pd.date_range("2021-09-01", periods=n, freq="10min")
+    target = origin + h * FREQ
+    return origin, target
+
+
+def test_subsplit_puts_every_rule_timestamp_after_every_conformal_timestamp():
+    """The whole point: rule tuning must see only post-conformal observations."""
+    o, t = _calib_times(1000)
+    s = alert_study.chronological_subsplit(o, t, 0.6, min_samples=10)
+    conf, rule = s["conformal_mask"], s["rule_mask"]
+    assert conf.any() and rule.any()
+    assert not (conf & rule).any(), "a window landed in both blocks"
+
+    # Strictly later on every timestamp that exists, origins included.
+    assert o[rule].min() > t[conf].max()
+    assert t[rule].min() > t[conf].max()
+    assert s["rule_first_origin"] > s["conformal_last_target"]
+
+
+def test_subsplit_embargoes_the_windows_that_straddle_the_boundary():
+    """A window whose origin precedes the cut but whose target follows it
+    overlaps both blocks and must be dropped, not assigned."""
+    o, t = _calib_times(1000, h=3)
+    s = alert_study.chronological_subsplit(o, t, 0.6, min_samples=10)
+    assert s["n_embargoed"] > 0
+    assert (s["n_conformal"] + s["n_rule"] + s["n_embargoed"]) == s["n_calibration"]
+    straddling = s["embargoed_mask"]
+    assert (o[straddling] <= s["boundary_time"]).all()
+    assert (t[straddling] > s["boundary_time"]).all()
+
+
+def test_subsplit_is_chronological_not_shuffled():
+    o, t = _calib_times(500)
+    s = alert_study.chronological_subsplit(o, t, 0.6, min_samples=10)
+    conf = np.flatnonzero(s["conformal_mask"])
+    rule = np.flatnonzero(s["rule_mask"])
+    # Times are already sorted here, so a chronological cut is a contiguous
+    # prefix and suffix; a shuffled split would interleave the positions.
+    assert conf.max() < rule.min()
+    assert np.array_equal(conf, np.arange(conf.min(), conf.max() + 1))
+
+
+def test_subsplit_honours_the_requested_fraction():
+    o, t = _calib_times(1000)
+    for frac in (0.5, 0.6, 0.8):
+        s = alert_study.chronological_subsplit(o, t, frac, min_samples=10)
+        assert abs(s["realised_fraction"] - frac) < 0.02
+
+
+def test_subsplit_reports_unusable_rather_than_selecting_from_a_handful():
+    o, t = _calib_times(50)
+    s = alert_study.chronological_subsplit(o, t, 0.6, min_samples=200)
+    assert s["usable"] is False
+    assert "below the minimum" in s["reason"]
+
+
+def test_subsplit_rejects_degenerate_fractions_and_empty_input():
+    o, t = _calib_times(100)
+    for bad in (0.0, 1.0, -0.5, 1.5):
+        with pytest.raises(ValueError):
+            alert_study.chronological_subsplit(o, t, bad)
+    empty = pd.DatetimeIndex([])
+    with pytest.raises(ValueError):
+        alert_study.chronological_subsplit(empty, empty, 0.6)
+
+
+def test_subsplit_never_touches_test_observations():
+    """The split is defined on calibration windows alone; no test timestamp can
+    enter either block."""
+    o, t = _calib_times(1000)
+    test_start = t.max() + pd.Timedelta("1D")
+    s = alert_study.chronological_subsplit(o, t, 0.6, min_samples=10)
+    for mask in (s["conformal_mask"], s["rule_mask"]):
+        assert (t[mask] < test_start).all()
+        assert (o[mask] < test_start).all()
+    assert s["rule_last_target"] < test_start
+
+
+def test_subsplit_is_deterministic():
+    o, t = _calib_times(777)
+    a = alert_study.chronological_subsplit(o, t, 0.6, min_samples=10)
+    b = alert_study.chronological_subsplit(o, t, 0.6, min_samples=10)
+    assert np.array_equal(a["conformal_mask"], b["conformal_mask"])
+    assert np.array_equal(a["rule_mask"], b["rule_mask"])
+    assert a["boundary_time"] == b["boundary_time"]
+
+
+def test_selected_rule_is_deterministic_under_a_fixed_seed():
+    """Same intervals, same injected events, same seed -> same frozen rule."""
+    n = 900
+    clean = _clean(n)
+    times = _times(n)
+    rules = alert_study.parse_rules(["1-of-1", "2-of-3", "3-of-5", "4-of-7"])
+
+    def choose():
+        pert, cat = alert_study.inject_events(
+            clean, 1.0, FREQ, times, {"instances_per_type": 2}, seed=7,
+            dataset="d", target="t", partition="calibration_rule_block")
+        surf = alert_study.rule_surface(
+            pert, clean - 1.0, clean + 1.0, cat, rules, FREQ, 5,
+            context={"dataset": "d"}, role="calibration_selection")
+        return alert_study.select_rule(surf, 1.0)
+
+    first, second = choose(), choose()
+    assert first == second

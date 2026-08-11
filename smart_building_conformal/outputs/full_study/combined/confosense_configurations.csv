@@ -1,0 +1,5 @@
+dataset,point_forecaster,conformal_best_calibrated,conformal_best_winkler,alert_rule,recalibration
+pleia,persistence,cqr,cqr,4-of-7,rolling
+pleia_energy,xgboost,recentred_enbpi_updated,cqr,2-of-3,rolling
+rico,xgboost,recentred_enbpi_updated,recentred_enbpi_updated,2-of-3,periodic
+bdg2,xgboost,recentred_enbpi_updated,quantile_uncalibrated,1-of-1,periodic

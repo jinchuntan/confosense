@@ -1,0 +1,10 @@
+column,term,definition,present
+empirical_coverage,observed-signal coverage,fraction of test steps where the interval contains the reading the monitor actually received (the perturbed signal). This is what the alert logic reacts to.,True
+coverage_deviation,observed-signal coverage deviation,|observed-signal coverage - nominal|.,True
+empirical_coverage_vs_clean_truth,clean-reference coverage,"fraction of test steps where the interval contains the value the sensor should have reported, i.e. the unperturbed observation.",True
+coverage_deviation_vs_clean_truth,clean-reference coverage deviation,|clean-reference coverage - nominal|.,True
+mae,observed-signal MAE,mean absolute error of the point forecast against the perturbed signal.,True
+mae_vs_clean_truth,clean-reference MAE,mean absolute error of the point forecast against the unperturbed observation: how wrong the forecast is about physical reality.,True
+rmse_vs_clean_truth,clean-reference RMSE,"as above, squared-error form.",True
+alert_rate,alert rate,fraction of test steps at which the frozen k-of-m rule fires.,True
+false_alert_events_per_day,false-alert workload,"contiguous alert clusters outside any injected event window, per day.",True

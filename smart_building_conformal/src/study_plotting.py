@@ -224,29 +224,96 @@ def fig_alert_tradeoff(combined: Path, out: Path, made: list[str]) -> None:
 
 
 def fig_robustness(combined: Path, out: Path, made: list[str]) -> None:
+    """Coverage under disturbance, against both reference signals.
+
+    Two different quantities share the word "coverage" in this study and they
+    must never appear on one axis without saying which is which:
+
+    * **observed-signal coverage** (``empirical_coverage``) — does the interval
+      contain the reading the sensor actually reported?
+    * **clean-reference coverage** (``empirical_coverage_vs_clean_truth``) — does
+      it contain the value the sensor *should* have reported?
+
+    Plotting only the first, as an earlier version of this figure did, makes a
+    closed-loop run look healthy at exactly the moment the forecast has been
+    captured by the fault.
+    """
     df = _load(combined / "robustness_metrics.csv")
     if df is None or "empirical_coverage" not in df:
         return
     df = df[df["mode"].isin(["legacy_fixed_intervals", "closed_loop"])]
     if df.empty:
         return
+    panels = [("empirical_coverage", "observed-signal coverage"),
+              ("empirical_coverage_vs_clean_truth", "clean-reference coverage")]
+    panels = [(c, lab) for c, lab in panels if c in df.columns]
     datasets = sorted(df["dataset"].unique())
-    fig, axes = plt.subplots(len(datasets), 1,
-                             figsize=(8.5, 2.8 * len(datasets)), squeeze=False)
-    for ax, ds in zip(axes[:, 0], datasets):
+    fig, axes = plt.subplots(len(datasets), len(panels),
+                             figsize=(6.0 * len(panels), 2.8 * len(datasets)),
+                             squeeze=False)
+    for r, ds in enumerate(datasets):
         sub = df[df["dataset"] == ds]
-        piv = sub.pivot_table(index="scenario", columns="mode",
-                              values="empirical_coverage")
-        piv = piv.reindex(sorted(piv.index, key=lambda s: (s != "clean", s)))
-        piv.plot(kind="bar", ax=ax, color=[PALETTE[0], PALETTE[1]], width=0.8)
         level = sub["nominal_coverage"].iloc[0] if "nominal_coverage" in sub else 0.95
-        ax.axhline(level, color="black", ls="--", lw=0.9)
-        ax.set_ylabel("empirical coverage")
-        ax.set_title(f"{ds} — coverage under disturbance (dashed = nominal)")
-        ax.set_xlabel("")
-        ax.tick_params(axis="x", rotation=45, labelsize=7)
-        ax.legend(fontsize=7)
+        for c, (col, label) in enumerate(panels):
+            ax = axes[r, c]
+            piv = sub.pivot_table(index="scenario", columns="mode", values=col)
+            piv = piv.reindex(sorted(piv.index, key=lambda s: (s != "clean", s)))
+            piv.plot(kind="bar", ax=ax, color=[PALETTE[1], PALETTE[0]], width=0.8)
+            ax.axhline(level, color="black", ls="--", lw=0.9)
+            ax.set_ylim(0, 1.05)
+            ax.set_ylabel(label)
+            ax.set_title(f"{ds} — {label} (dashed = nominal)", fontsize=9)
+            ax.set_xlabel("")
+            ax.tick_params(axis="x", rotation=45, labelsize=7)
+            ax.legend(fontsize=7)
     _save(fig, out / "fig_07_robustness_degradation.png", made)
+
+
+def fig_closed_loop_absorption(combined: Path, out: Path, made: list[str]) -> None:
+    """The bias sweep, with both coverage definitions and clean-reference MAE.
+
+    This is the figure behind the study's headline robustness claim, so it shows
+    the quantities the claim rests on side by side rather than asking a reader to
+    hold two tables in mind.
+    """
+    df = _load(combined / "robustness_metrics.csv")
+    if df is None or "kind" not in df:
+        return
+    b = df[(df["kind"] == "bias")
+           & df["mode"].isin(["legacy_fixed_intervals", "closed_loop"])].copy()
+    if b.empty or "empirical_coverage_vs_clean_truth" not in b.columns:
+        return
+    b["sigma"] = b["severity"].astype(float)
+    datasets = sorted(b["dataset"].unique())
+    fig, axes = plt.subplots(len(datasets), 2,
+                             figsize=(11.0, 3.1 * len(datasets)), squeeze=False)
+    fig.subplots_adjust(hspace=0.55, wspace=0.28)
+    for r, ds in enumerate(datasets):
+        sub = b[b["dataset"] == ds].sort_values("sigma")
+        level = sub["nominal_coverage"].iloc[0]
+        ax = axes[r, 0]
+        for mode, style in (("legacy_fixed_intervals", "--o"), ("closed_loop", "-s")):
+            m = sub[sub["mode"] == mode]
+            ax.plot(m["sigma"], m["empirical_coverage"], style, color=PALETTE[1],
+                    label=f"observed-signal ({mode})", ms=4)
+            ax.plot(m["sigma"], m["empirical_coverage_vs_clean_truth"], style,
+                    color=PALETTE[0], label=f"clean-reference ({mode})", ms=4)
+        ax.axhline(level, color="black", ls=":", lw=0.9)
+        ax.set_ylim(-0.05, 1.05)
+        ax.set_ylabel("coverage")
+        ax.set_xlabel("sensor bias (training sd)")
+        ax.set_title(f"{ds} — coverage under sensor bias", fontsize=9)
+        ax.legend(fontsize=6)
+
+        ax = axes[r, 1]
+        for mode, style in (("legacy_fixed_intervals", "--o"), ("closed_loop", "-s")):
+            m = sub[sub["mode"] == mode]
+            ax.plot(m["sigma"], m["mae_vs_clean_truth"], style, ms=4, label=mode)
+        ax.set_ylabel(f"clean-reference MAE ({sub['units'].iloc[0]})")
+        ax.set_xlabel("sensor bias (training sd)")
+        ax.set_title(f"{ds} — forecast error against the clean reference", fontsize=9)
+        ax.legend(fontsize=6)
+    _save(fig, out / "fig_13_closed_loop_absorption.png", made)
 
 
 def fig_recalibration_recovery(out_root: Path, out: Path, made: list[str]) -> None:
@@ -351,7 +418,7 @@ def build_all(out_root: Path) -> list[str]:
 
     for fn in (fig_point_comparison, fig_coverage_vs_width, fig_coverage_deviation,
                fig_winkler, fig_alert_sensitivity, fig_alert_tradeoff,
-               fig_robustness, fig_rankings):
+               fig_robustness, fig_closed_loop_absorption, fig_rankings):
         try:
             fn(combined, figures, made)
         except Exception as exc:                            # noqa: BLE001

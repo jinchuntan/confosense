@@ -1,0 +1,2 @@
+test,scope,n_blocks,n_methods,statistic,p_value,n_blocks_dropped,mean_ranks
+friedman,point models across dataset/target/horizon blocks,9,4,14.066666666666663,0.002815798207988862,4,"{'attention_lstm': 2.4444444444444446, 'persistence': 2.2222222222222223, 'seasonal_naive': 3.7777777777777777, 'xgboost': 1.5555555555555556}"

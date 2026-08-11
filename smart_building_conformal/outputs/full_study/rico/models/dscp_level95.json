@@ -1,0 +1,35 @@
+{
+  "n_clusters": 2,
+  "silhouette": 0.559065239842466,
+  "horizons": [
+    5,
+    15,
+    30,
+    60
+  ],
+  "merge_map": {
+    "0": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "n_calibration": 6806,
+  "reference": "Yu et al. 2025, Applied Soft Computing 184:113825",
+  "implementation_source": "arXiv:2503.21251v1 (no official code found)",
+  "nonconformity": "signed error y - yhat",
+  "direct_horizon_adaptation": true,
+  "neighbours_rule": "smallest cluster size (paper)",
+  "neighbours_used": 2949,
+  "cluster_sizes": [
+    2949,
+    3857
+  ]
+}

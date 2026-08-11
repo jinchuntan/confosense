@@ -219,3 +219,51 @@ def test_incompatible_config_still_starts_clean(tmp_path):
     other = ResumeLedger(path, config_hash(CFG_B), enabled=True)
     assert not other.done("pleia:point")
     assert other.mismatches
+
+
+# --------------------------------------------------------------------------- #
+# Leakage-safe alert-rule selection (structural guarantees in the runner)
+# --------------------------------------------------------------------------- #
+def test_alert_selection_conformalizes_on_the_early_calibration_block_only():
+    """The selection model must be fitted on the conformal sub-block.
+
+    If it were handed the whole calibration partition the nested split would be
+    decorative: the rule would again be scored against residuals the conformal
+    quantile had already been fitted to cover.
+    """
+    import inspect
+    from src.study_runner import DatasetStudy
+
+    src = inspect.getsource(DatasetStudy.stage_alerts)
+    assert "chronological_subsplit" in src
+    assert "_sub(X_ca, conf_m)" in src, "selection model was not fitted on the early block"
+    assert "_sub(X_ca, rule_m)" in src, "rule surface was not scored on the later block"
+
+
+def test_alert_selection_never_reads_the_test_partition():
+    """Everything between the split and select_rule must come from calibration."""
+    import inspect
+    from src.study_runner import DatasetStudy
+
+    src = inspect.getsource(DatasetStudy.stage_alerts)
+    selection = src[src.index("chronological_subsplit"):src.index("select_rule")]
+    for forbidden in ("y_te", "ti[", "_sub(X, te)", "t_te"):
+        assert forbidden not in selection, (
+            f"{forbidden!r} appears in the rule-selection block; the test set "
+            "must not influence the frozen rule"
+        )
+
+
+def test_rehydration_refuses_a_model_that_disagrees_with_persisted_outputs():
+    """A targeted re-run reuses a refitted CQR only if it reproduces the study.
+
+    Without this guard, a re-audited alert rule could be scored against a model
+    the published outputs were never produced by.
+    """
+    import inspect
+    from src.study_runner import DatasetStudy
+
+    src = inspect.getsource(DatasetStudy.rehydrate_primary_intervals)
+    assert "interval_predictions.csv" in src
+    assert "raise ValueError" in src
+    assert "1e-8" in src
