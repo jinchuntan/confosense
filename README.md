@@ -13,22 +13,31 @@ The code and outputs live in
 [`smart_building_conformal/README.md`](smart_building_conformal/README.md) for
 setup, commands and a description of every generated artefact.
 
-## Two experiments
+## What lives here
 
-The repository holds two experiments, kept separate so neither overwrites the
-other:
+Three separate runs, kept apart so none overwrites another:
 
 - **Preliminary PLEIAData experiment** — the completed indoor-temperature study
   used in the progress report and Proposal Defence. Reproduced by
   `python -m src.run_experiment --config configs/pleia_preliminary.yaml`;
   outputs live in `outputs/`. Treated as a frozen, reproducible baseline.
-- **Full dissertation framework** — a multi-dataset study across PLEIAData
-  (temperature and energy), RICO HVAC and a reproducibly selected Building Data
-  Genome 2 subset, adding DSCP, an uncalibrated interval baseline, alert-rule
-  sensitivity, closed-loop robustness, recalibration strategies and statistical
-  comparison. Run with
-  `python -m src.run_study --config configs/study_full.yaml --all`;
+- **Core dissertation experiments** — the multi-dataset study whose results the
+  dissertation reports, across **four settings**: PLEIAData temperature,
+  PLEIAData energy, RICO HVAC and a reproducibly selected Building Data Genome 2
+  subset. Adds DSCP, an uncalibrated interval baseline, alert-rule sensitivity,
+  closed-loop robustness, recalibration strategies and statistical comparison.
+  Run with `python -m src.run_study --config configs/study_full.yaml --all`;
   outputs live in `outputs/full_study/`.
+- **Auxiliary pipeline validation** — a lightweight portability check on the UCI
+  Occupancy Detection dataset, run with
+  `python -m src.run_uci_auxiliary --config configs/uci_auxiliary.yaml`; outputs
+  live in `outputs/auxiliary_uci/`.
+
+**The auxiliary check is not a fifth dataset.** It asks only whether the generic
+pipeline ingests an independent public dataset with a small adapter. It is
+excluded from the cross-dataset benchmark, the statistical comparison and the
+alerting benchmark, and it changes no dissertation conclusion. See
+[`outputs/auxiliary_uci/report/dissertation_positioning.md`](smart_building_conformal/outputs/auxiliary_uci/report/dissertation_positioning.md).
 
 ## Data
 
@@ -40,6 +49,11 @@ recorded in `outputs/full_study/manifests/dataset_sources.json`.
   for smart buildings.
   Article: <https://www.nature.com/articles/s41597-023-02023-3> ·
   Zenodo: <https://zenodo.org/records/7620136> (DOI 10.5281/zenodo.7620136)
+- **UCI Occupancy Detection** — *auxiliary portability check only, not a core
+  dataset.* Candanedo & Feldheim (2016), *Energy and Buildings* 112, 28–39;
+  UCI Machine Learning Repository dataset 357
+  (DOI 10.24432/C5X01N), CC BY 4.0. Provenance in
+  `outputs/auxiliary_uci/manifests/dataset_source.json`.
 - **RICO** — a multivariate HVAC indoor/outdoor time-series dataset of 4-hour
   controlled experimental runs, published by SINTEF AS Digital.
   Thiry, Ruocco, Nocente & Oksavik (2025), *Data in Brief* 61, 111678

@@ -1,0 +1,67 @@
+# Auxiliary UCI Occupancy pipeline-portability check.
+#
+# NOT a fifth primary benchmark. This configuration exists to demonstrate that
+# the generic ConfoSense pipeline ingests an independent public building-sensor
+# dataset with only a small adapter. It writes exclusively to
+# outputs/auxiliary_uci/ and never touches outputs/full_study/.
+#
+# Deliberately narrow: two point forecasters, two interval methods, two short
+# horizons, one nominal level pair. No DSCP, no EnbPI, no alert-rule search, no
+# robustness matrix, no recalibration comparison.
+
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+  output_dir: outputs/auxiliary_uci
+
+dataset: uci_occupancy
+adapter: uci_occupancy
+
+uci_occupancy:
+  subdir: uci_occupancy
+  freq: "1min"                 # verified from the timestamps, not assumed
+  target_column: "Temperature"
+  covariates: ["Humidity", "Light", "CO2", "HumidityRatio"]
+  auto_download: true
+
+split:
+  train_frac: 0.6
+  calib_frac: 0.2              # test is the remaining 0.2
+  # Cut once on the pooled timeline: the three archive members are disjoint and
+  # already ordered in time, so a single global cut keeps
+  # train < calibration < test in wall-clock order. A per-series split would
+  # interleave them across segments.
+
+# Verified sampling interval is one minute, so 5 and 15 steps are 5 and 15
+# minutes. Two horizons only.
+horizons: [5, 15]
+
+coverage_levels: [0.90, 0.95]  # 0.90 is free: the same fit is conformalized twice
+
+features:
+  target_lags: [1, 2, 3, 5, 10]
+  rolling_windows: [10, 30]
+  include_weekly: false        # segments span days, not weeks
+
+models:
+  xgboost:
+    search_iter: 10            # modest: this is a portability check
+    cv_splits: 3
+    seeds: 3
+    refit_n_jobs: 1            # single-threaded refit: removes XGBoost's
+                               # thread-order nondeterminism, as in the main study
+    search_n_jobs: -1
+
+conformal:
+  cqr:
+    seeds: 1                   # one fit; multi-seed spread is not the question here
+
+bootstrap:
+  n_boot: 1000
+  ci: 0.95
+
+plotting:
+  window_steps: 240            # four hours at one-minute sampling

@@ -32,7 +32,7 @@ def get_adapter(dataset_id: str) -> DatasetAdapter:
     """Instantiate the adapter registered under ``dataset_id``."""
     # Imported lazily so that a missing optional dependency in one adapter does
     # not prevent the others from being used.
-    from . import bdg2, pleia, rico  # noqa: F401
+    from . import bdg2, pleia, rico, uci_occupancy  # noqa: F401
 
     key = dataset_id.lower()
     if key not in _REGISTRY:
@@ -43,7 +43,7 @@ def get_adapter(dataset_id: str) -> DatasetAdapter:
 
 
 def available() -> list[str]:
-    from . import bdg2, pleia, rico  # noqa: F401
+    from . import bdg2, pleia, rico, uci_occupancy  # noqa: F401
 
     return sorted(_REGISTRY)
 

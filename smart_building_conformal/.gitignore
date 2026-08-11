@@ -42,3 +42,7 @@ Thumbs.db
 
 # Reproducibility spot-check runs (verification only, never reported).
 outputs/repro_check/
+
+# Auxiliary UCI Occupancy portability check: per-observation dumps and figures
+# are regenerable; the metrics, profiles, manifests and report are tracked.
+outputs/auxiliary_uci/predictions/

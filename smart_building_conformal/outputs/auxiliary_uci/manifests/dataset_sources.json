@@ -1,0 +1,26 @@
+{
+  "uci_occupancy": {
+    "dataset_id": "uci_occupancy",
+    "official_source": "UCI Machine Learning Repository, dataset 357",
+    "doi": "10.24432/C5X01N",
+    "download_url": "https://archive.ics.uci.edu/static/public/357/occupancy+detection.zip",
+    "retrieved_at": "2026-08-11T21:26:01.922252+00:00",
+    "archive_name": "occupancy+detection.zip",
+    "checksum": "4ae3f46aa98eedff564a9f6924d1635173e2fd2c816004342a9be93076d3a81a",
+    "checksum_algorithm": "sha256",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "citation": "Candanedo, L. M. and Feldheim, V. (2016). Accurate occupancy detection of an office room from light, temperature, humidity and CO2 measurements using statistical learning models. Energy and Buildings, 112, 28-39. Dataset: Candanedo, L. (2016). Occupancy Detection [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5X01N",
+    "preprocessing": [
+      "timestamps rounded to the minute (source carries ~1 s jitter)",
+      "each archive member kept as a separate segment; no concatenation across the 7 h 08 min and 1 d 05 h 15 min recording gaps",
+      "target is Temperature (degC); Occupancy is not used",
+      "no resampling, interpolation or outlier removal was required: every segment is gap-free and complete after rounding"
+    ],
+    "notes": [
+      "auxiliary pipeline-portability check, not a primary benchmark",
+      "chronological order of the members is datatest, datatraining, datatest2 \u2014 the file named 'datatraining' is the middle segment"
+    ],
+    "target_description": "Temperature (degC), the documented indoor air temperature channel of the UCI Occupancy Detection office room. Selected because it is a continuous environmental variable compatible with this framework \u2014 not on any forecasting-performance criterion. Occupancy is a binary label and is not used, since ConfoSense is evaluated here as a continuous-variable forecasting and uncertainty framework.",
+    "target_rationale": "single documented continuous temperature channel; no performance criterion entered the choice"
+  }
+}

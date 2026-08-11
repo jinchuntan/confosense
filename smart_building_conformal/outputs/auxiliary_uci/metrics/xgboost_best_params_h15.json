@@ -1,0 +1,20 @@
+{
+  "best_params": {
+    "subsample": 0.8,
+    "reg_lambda": 5.0,
+    "reg_alpha": 1.0,
+    "n_estimators": 400,
+    "min_child_weight": 1,
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.8
+  },
+  "best_cv_mae": 0.22112749199958134,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "refit_n_jobs": 1,
+  "xgboost_version": "3.2.0"
+}

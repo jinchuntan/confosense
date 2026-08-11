@@ -1,0 +1,28 @@
+{
+  "strategy": "pooled_chronological",
+  "fractions": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "boundary_train_end": "2015-02-12 16:16:00",
+  "boundary_calib_end": "2015-02-15 12:48:00",
+  "rationale": "segments are disjoint and already ordered in time, so a single cut on the pooled timeline keeps train < calibration < test in wall-clock order with no interleaving between segments",
+  "segment_gaps": [
+    {
+      "from_segment": "datatest",
+      "to_segment": "datatraining",
+      "gap": "0 days 07:08:00"
+    },
+    {
+      "from_segment": "datatraining",
+      "to_segment": "datatest2",
+      "gap": "1 days 05:15:00"
+    }
+  ],
+  "segment_order": [
+    "datatest",
+    "datatraining",
+    "datatest2"
+  ]
+}
