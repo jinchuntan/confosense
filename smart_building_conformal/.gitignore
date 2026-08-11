@@ -39,3 +39,6 @@ outputs/full_study/**/predictions/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Reproducibility spot-check runs (verification only, never reported).
+outputs/repro_check/
