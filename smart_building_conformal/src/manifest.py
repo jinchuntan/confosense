@@ -171,9 +171,36 @@ class RunManifest:
         }
         with open(self.manifest_dir / "experiment_manifest.json", "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2, default=str)
-        if self.provenance:
-            with open(self.manifest_dir / "dataset_sources.json", "w", encoding="utf-8") as f:
-                json.dump(self.provenance, f, indent=2, default=str)
+
+        # Provenance is *merged*, not overwritten. A study is normally executed
+        # one dataset at a time so that failures stay isolated, and each of those
+        # invocations only knows about its own dataset; overwriting would leave
+        # the final manifest describing whichever dataset happened to run last,
+        # losing the sources and checksums of all the others.
+        prov_path = self.manifest_dir / "dataset_sources.json"
+        merged = {}
+        if prov_path.exists():
+            try:
+                merged = json.loads(prov_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                merged = {}
+        merged.update(self.provenance)
+        if merged:
+            with open(prov_path, "w", encoding="utf-8") as f:
+                json.dump(merged, f, indent=2, default=str)
+
+        # Likewise, append a one-line summary of every invocation so the stage
+        # record of a multi-command study survives; experiment_manifest.json
+        # describes only the most recent invocation.
+        history = {k: payload[k] for k in
+                   ("config_path", "config_hash", "fast_mode", "datasets",
+                    "started_at", "ended_at", "runtime_seconds", "n_completed",
+                    "n_failed", "n_skipped")}
+        history["git_commit"] = payload["git"]["commit"]
+        history["stages"] = [{"name": s["name"], "status": s["status"],
+                              "seconds": s["seconds"]} for s in payload["stages"]]
+        with open(self.manifest_dir / "run_history.jsonl", "a", encoding="utf-8") as f:
+            f.write(json.dumps(history, default=str) + "\n")
         return payload
 
 
@@ -182,19 +209,29 @@ class ResumeLedger:
     """Per-stage completion ledger guarded by a configuration hash."""
 
     def __init__(self, path: Path, cfg_hash: str, enabled: bool):
+        """Load any compatible ledger, whether or not resume is requested.
+
+        ``enabled`` governs only whether :meth:`done` reports a stage as
+        reusable. The existing file is loaded regardless, because :meth:`mark`
+        rewrites it: if a run started from an empty ledger it would erase every
+        previously recorded stage the moment it marked its first one. That is
+        how an ordinary ``--stage prepare`` invocation, which does not pass
+        ``--resume``, silently destroyed the completion record of a finished
+        multi-hour study.
+        """
         self.path = path
         self.cfg_hash = cfg_hash
         self.enabled = enabled
         self.state: dict = {"config_hash": cfg_hash, "stages": {}}
         self.mismatches: list[str] = []
-        if enabled and path.exists():
+        if path.exists():
             try:
                 loaded = json.loads(path.read_text(encoding="utf-8"))
             except json.JSONDecodeError:
                 loaded = {}
             if loaded.get("config_hash") == cfg_hash:
                 self.state = loaded
-            else:
+            elif enabled:
                 # Different configuration: start clean rather than mixing runs.
                 self.mismatches.append(
                     f"resume ledger at {path} was written under configuration hash "

@@ -157,3 +157,65 @@ def test_blank_retrieval_time_is_stamped_not_left_empty(tmp_path):
     prov = json.loads((tmp_path / "manifests" / "dataset_sources.json")
                       .read_text(encoding="utf-8"))
     assert prov["pleia"]["retrieved_at"].strip(), "retrieval time was left blank"
+
+
+def test_provenance_is_merged_across_invocations_not_overwritten(tmp_path):
+    """Datasets are usually run one command at a time; each must survive."""
+    RunManifest("cfg.yaml", CFG_A, tmp_path, datasets=["pleia"]).__class__
+    a = RunManifest("cfg.yaml", CFG_A, tmp_path, datasets=["pleia"])
+    a.add_provenance("pleia", {"official_source": "Zenodo 7620136", "checksum": "aaa"})
+    a.write()
+    b = RunManifest("cfg.yaml", CFG_A, tmp_path, datasets=["rico"])
+    b.add_provenance("rico", {"official_source": "Zenodo 14871584", "checksum": "bbb"})
+    b.write()
+
+    prov = json.loads((tmp_path / "manifests" / "dataset_sources.json")
+                      .read_text(encoding="utf-8"))
+    assert set(prov) == {"pleia", "rico"}, "an earlier dataset's provenance was lost"
+    assert prov["pleia"]["checksum"] == "aaa"
+    assert prov["rico"]["checksum"] == "bbb"
+
+
+def test_run_history_records_every_invocation(tmp_path):
+    for ds in ("pleia", "rico", "bdg2"):
+        m = RunManifest("cfg.yaml", CFG_A, tmp_path, datasets=[ds])
+        m.record(f"{ds}:point", "completed", 1.0)
+        m.write()
+    lines = (tmp_path / "manifests" / "run_history.jsonl").read_text(
+        encoding="utf-8").strip().splitlines()
+    assert len(lines) == 3
+    seen = [json.loads(x)["datasets"][0] for x in lines]
+    assert seen == ["pleia", "rico", "bdg2"]
+    assert all(json.loads(x)["fast_mode"] is False for x in lines)
+
+
+def test_a_run_without_resume_does_not_erase_the_ledger(tmp_path):
+    """Regression: --stage prepare (no --resume) wiped a finished study's record.
+
+    mark() rewrites the whole file, so a run that started from an empty ledger
+    destroyed every previously recorded stage. The file must be loaded even when
+    resume is off, so marking merges instead of replacing.
+    """
+    path = tmp_path / "ledger.json"
+    first = ResumeLedger(path, config_hash(CFG_A), enabled=True)
+    for s in ("pleia:point", "pleia:intervals", "rico:point"):
+        first.mark(s)
+
+    # A later invocation without --resume marks one stage of its own.
+    second = ResumeLedger(path, config_hash(CFG_A), enabled=False)
+    assert not second.done("pleia:point")          # resume off: not reusable...
+    second.mark("pleia:prepare")
+
+    # ...but the earlier record must still be on disk afterwards.
+    third = ResumeLedger(path, config_hash(CFG_A), enabled=True)
+    for s in ("pleia:point", "pleia:intervals", "rico:point", "pleia:prepare"):
+        assert third.done(s), f"{s} was erased by a non-resume invocation"
+
+
+def test_incompatible_config_still_starts_clean(tmp_path):
+    """Loading always must not resurrect stages from a different configuration."""
+    path = tmp_path / "ledger.json"
+    ResumeLedger(path, config_hash(CFG_A), enabled=True).mark("pleia:point")
+    other = ResumeLedger(path, config_hash(CFG_B), enabled=True)
+    assert not other.done("pleia:point")
+    assert other.mismatches
