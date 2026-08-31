@@ -402,7 +402,15 @@ class DatasetStudy:
                 enb_seeds = [
                     conformal_enbpi.run_enbpi(
                         X_tr, y_tr, X_ca, y_ca, X_te, pd.Series(y_te),
-                        self.levels, self.cfg["conformal"]["enbpi"], s)
+                        self.levels, self.cfg["conformal"]["enbpi"], s,
+                        test_groups=gid,
+                        test_origin_times=pd.DatetimeIndex(
+                            meta.loc[te, "origin_time"]),
+                        test_target_times=pd.DatetimeIndex(tt),
+                        calib_groups=meta.loc[ca, "group_id"].to_numpy(),
+                        calib_target_times=pd.DatetimeIndex(
+                            meta.loc[ca, "target_time"]),
+                        horizon=h)
                     for s in range(self.seed,
                                    self.seed + int(self.cfg["conformal"]["enbpi"]["seeds"]))
                 ]
