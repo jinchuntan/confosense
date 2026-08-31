@@ -99,6 +99,23 @@ def test_exposure_events_never_cross_group_boundary():
         assert g[s] == g[en], "an event spanned two groups"
 
 
+def test_short_runs_still_get_a_viable_catalogue():
+    # Five short RICO-like runs of 130 steps each: per-group exposure rounds to
+    # zero events, but the block viability floor keeps the catalogue non-empty and
+    # records the realised incidence honestly.
+    groups = np.concatenate([[f"run{i}"] * 130 for i in range(5)])
+    y = np.zeros(len(groups))
+    meta = _block(groups)
+    scale = {f"run{i}": 1.0 for i in range(5)}; scale["__pooled__"] = 1.0
+    _, cat, alloc = E.exposure_event_catalogue(
+        y, meta, pd.Timedelta("1min"), scale, incidence_per_day=0.5, seed=3,
+        dataset="rico", min_events=8)
+    assert alloc["placed"] >= 1 and not cat.empty
+    assert alloc["viability_floor_applied"] is True
+    assert alloc["realised_incidence_per_asset_day"] > alloc[
+        "requested_incidence_per_asset_day"]
+
+
 def test_exposure_allocation_is_deterministic():
     groups = np.array(["a"] * 1000)
     y = np.zeros(len(groups)); meta = _block(groups)

@@ -236,35 +236,62 @@ class NotApplicable(Exception):
 # Exposure-based event catalogue (D4)
 # --------------------------------------------------------------------------- #
 def exposure_event_catalogue(y, meta_block, freq, scale_map, incidence_per_day,
-                             seed, dataset, *, warmup=6, guard=6):
-    """Inject a group-safe, exposure-proportional synthetic-event catalogue.
+                             seed, dataset, *, warmup=6, guard=6, min_events=8):
+    """Inject a group-safe, exposure-proportional synthetic-event catalogue (D4).
 
-    The event count follows monitored asset-time (incidence x asset-days), events
-    stay inside a group, and attempted/placed/rejected counts are recorded. A copy
-    of ``y`` is perturbed; the clean array is returned untouched for the paired
-    background-workload measurement.
+    The **block** event budget follows monitored asset-time,
+    ``round(incidence x total_asset_days)``, with a viability floor
+    (``min_events``) so a block of short runs — RICO's 2-4 h experiments would
+    otherwise round to zero events per run and starve selection — still carries a
+    balanced catalogue. The budget is distributed across the groups that are long
+    enough to host an event, proportional to their asset-time (largest remainder).
+    Events stay inside a group; attempted / placed / rejected and the requested vs
+    realised incidence are recorded. A copy of ``y`` is perturbed; the clean array
+    is returned untouched for the paired background-workload measurement.
     """
     y = np.asarray(y, dtype=float)
     groups = meta_block["group_id"].to_numpy()
     freq_min = pd.Timedelta(freq) / pd.Timedelta(minutes=1)
     perturbed = y.copy()
-    rows = []
-    attempted = placed = rejected = 0
-    eid = 0
-    for g in pd.unique(groups):
-        gpos = np.nonzero(groups == g)[0]
-        asset_days = (len(gpos) * freq_min) / (60.0 * 24.0)
-        n_events = int(np.floor(incidence_per_day * asset_days + 0.5))  # det. round
-        if n_events < 1:
+    dur = max(1, int(round(60.0 / freq_min)))
+    min_len = warmup + guard + dur + 1
+
+    uniq = list(pd.unique(groups))
+    gpos = {g: np.nonzero(groups == g)[0] for g in uniq}
+    asset_days = {g: (len(gpos[g]) * freq_min) / (60.0 * 24.0) for g in uniq}
+    total_days = sum(asset_days.values())
+    hostable = [g for g in uniq if len(gpos[g]) >= min_len]
+    if not hostable:
+        return perturbed, pd.DataFrame(), {
+            "attempted": 0, "placed": 0, "rejected": 0,
+            "requested_incidence_per_asset_day": incidence_per_day,
+            "realised_incidence_per_asset_day": 0.0,
+            "reason": "no group long enough to host an event"}
+
+    budget = max(int(np.floor(incidence_per_day * total_days + 0.5)), int(min_events))
+    floor_applied = budget > int(np.floor(incidence_per_day * total_days + 0.5))
+    # Largest-remainder allocation across hostable groups by asset-time.
+    host_days = np.array([asset_days[g] for g in hostable], float)
+    share = host_days / host_days.sum() * budget
+    alloc = np.floor(share).astype(int)
+    rem = budget - int(alloc.sum())
+    for j in np.argsort(-(share - np.floor(share)))[:max(0, rem)]:
+        alloc[j] += 1
+
+    rows, attempted, placed, rejected, eid = [], 0, 0, 0, 0
+    for g, n_g in zip(hostable, alloc):
+        if n_g < 1:
             continue
-        specs = _balanced_specs(n_events, freq)
+        specs = _balanced_specs(int(n_g), freq)
         attempted += len(specs)
         scale = float(scale_map.get(g, scale_map.get("__pooled__", 1.0)))
         rng = np.random.default_rng(seed + hash(str(g)) % 10_000)
-        local = base_place(specs, len(gpos), warmup, guard, seed + eid)
+        local = base_place(specs, len(gpos[g]), warmup, guard, seed + eid + 1)
+        placed_here = {e["start_index"] for e in local}
+        rejected += len(specs) - len(local)
         for e in local:
             s, en = e["start_index"], e["end_index"]
-            gs, ge = gpos[s], gpos[en]
+            gs, ge = gpos[g][s], gpos[g][en]
             if groups[gs] != groups[ge]:
                 rejected += 1
                 continue
@@ -276,9 +303,12 @@ def exposure_event_catalogue(y, meta_block, freq, scale_map, incidence_per_day,
             placed += 1
             eid += 1
     catalog = pd.DataFrame(rows)
-    return perturbed, catalog, {"attempted": attempted, "placed": placed,
-                                "rejected": rejected,
-                                "requested_incidence_per_asset_day": incidence_per_day}
+    return perturbed, catalog, {
+        "attempted": attempted, "placed": placed, "rejected": rejected,
+        "requested_incidence_per_asset_day": incidence_per_day,
+        "realised_incidence_per_asset_day":
+            (placed / total_days) if total_days else 0.0,
+        "viability_floor_applied": bool(floor_applied)}
 
 
 def _balanced_specs(n_events, freq):
