@@ -1,0 +1,101 @@
+# FROZEN PROTOCOL — corrected final dissertation study (PREDECLARATION)
+#
+# Status: predeclared before any corrected outer-fold result was inspected.
+# This file fixes the candidate grids and the selection policy. It is hashed into
+# config_hash.txt; the hash must not change once outer evaluation begins, except to
+# repair a verified code defect (logged in report/RESULTS_CHANGELOG.md).
+#
+# It does NOT contain results. It is the design the corrected run must obey.
+
+meta:
+  audited_commit: "06fe967be2be8d7898812c0c2d6e464d4e942351"
+  repair_branch: "fix/final-dissertation-study"
+  output_root: "outputs/final_dissertation_v2"
+  preserve: "outputs/full_study is never overwritten (pre-repair diagnostic study)"
+
+seeds: [42, 43, 44, 45, 46]          # aggregate across ALL; never select the best
+
+partitioning:
+  embargo: "horizon"                  # steps, both sides of every boundary
+  pleia:        {scheme: purged_rolling_origin}
+  pleia_energy: {scheme: purged_rolling_origin}
+  rico:         {scheme: whole_run_group_blocked, nested_subsplit: whole_run}
+  bdg2:         {scheme: within_building_target_time_aligned,
+                 portability: leave_building_out_separate_analysis}
+
+point_models: [persistence, seasonal_naive, xgboost, attention_lstm]
+features:
+  target_lags_include_zero: true      # y_t is available at origin (now enforced)
+
+interval:
+  candidates: [quantile_uncalibrated, cqr, recentred_enbpi_static,
+               recentred_enbpi_updated, dscp]
+  quality_levels: [0.90, 0.95]        # kept for methodological comparison regardless
+  operating_levels: [0.95, 0.975, 0.99, 0.995]   # operational alert level selected here
+  min_calibration_for_level: 400      # skip a level without enough calibration points
+
+recalibration:
+  strategies: [static, periodic, rolling]
+  residual_delay: "horizon"           # only observable residuals used
+  group_safe: true
+  feed_selected_stream_into_alerts: true   # end-to-end; the selected stream IS consumed
+
+# Alert rules are declared in PHYSICAL TIME and converted to steps per dataset freq.
+alert_rules_physical:
+  - {name: "1min-1of1",  window_minutes: 1,   required_violations: 1}
+  - {name: "5min-2of5",  window_minutes: 5,   required_violations: 2}
+  - {name: "15min-3of5", window_minutes: 15,  required_violations: 3}
+  - {name: "30min-3of7", window_minutes: 30,  required_violations: 3}
+  - {name: "60min-4of7", window_minutes: 60,  required_violations: 4}
+  episode:
+    min_alert_duration_minutes: 0
+    clear_duration_minutes: 0
+    cooldown_gap_minutes: 0           # merge alert steps within this gap into one episode
+    latching: false
+
+event_injection:
+  incidence_events_per_stream_day: 0.5   # SAME declared incidence across datasets for
+                                         # comparable precision/F1
+  balance: {across: [event_type, severity], within: group}
+  types:      [random_missing, block_missing, dropout, stuck, bias, level_shift, drift]
+  severities_sd: [0.5, 1.0, 2.0]     # in per-group training robust-sigma units
+  scale: {estimator: mad_to_sigma, scope: per_group, source: train_only}
+  duration_physical: true
+  placement: {inside_eligible_groups: true, retry_on_boundary: true, drop_silently: false}
+  seeds: [42, 43, 44, 45, 46]
+  keep_clean_counterfactual: true     # background workload measured on unmodified obs
+
+matching:
+  build_episodes_before_matching: true
+  one_to_one: true
+  onset_aware: true                   # an alarm active before onset gets no credit
+  overlapping_tolerance: explicit
+
+selection_policy:
+  scope: inner_calibration_only       # outer test never enters selection
+  workload_constraint:
+    metric: background_alert_episodes_per_asset_day
+    max: 1.0
+  min_recall: 0.60                     # macro synthetic-event recall floor
+  utility: macro_f_beta                # beta declared below; not raw F1-maximisation
+  beta: 1.0
+  confidence_bound_handling: use_lower_ci_of_recall_and_upper_ci_of_workload
+  delay_tie_break: median_detection_delay_ascending
+  on_no_feasible: report_no_feasible_configuration   # do not force-select
+
+metrics:
+  primary: [synthetic_event_recall_macro, recall_by_type_severity,
+            background_episodes_per_asset_day, bdg2_per_building_day,
+            bdg2_portfolio_per_calendar_day, detection_delay_median_q90,
+            proportion_time_in_alert]
+  secondary: [precision_at_declared_incidence, precision_incidence_sensitivity,
+              raw_catalogue_precision_labelled_prevalence_dependent]
+  resampling: {series: moving_block, rico: run_level, bdg2: building_level}
+  report: [point_estimate, ci95, exposure_size, per_group, macro, micro]
+
+robustness:
+  variants: [fixed_interval, closed_loop]
+  perturbations: [missingness, dropout, stuck, bias, level_shift, drift,
+                  calibration_contamination, recovery_after_recalibration]
+  affect_only_corruptible_information: true
+  keep_clean_counterfactual: true
