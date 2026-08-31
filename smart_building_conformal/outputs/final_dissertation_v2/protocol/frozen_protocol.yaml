@@ -166,6 +166,19 @@ robustness:
   affect_only_corruptible_information: true
   keep_clean_counterfactual: true
 
+ablation:
+  # Predeclared end-to-end benchmark (amendment 002), evaluated under the SAME
+  # outer folds and injected-event catalogues. Selection/tuning is inner-data only;
+  # the reporting comparison is fixed before any outer-test result is inspected.
+  levels:
+    - {name: baseline,       interval: quantile_uncalibrated, alerting: single,   recalibration: none}
+    - {name: conformal_only, interval: cqr,                   alerting: single,   recalibration: none}
+    - {name: temporal,       interval: cqr,                   alerting: k_of_m,   recalibration: none}
+    - {name: full,           interval: selected,             alerting: k_of_m,   recalibration: selected}
+  operational_comparison: recall_at_matched_background_budget
+  comparison_alternative: background_alerts_per_asset_day_at_matched_recall
+  fixed_before_outer_results: true
+
 honesty_clause: >-
   The original test outputs were inspected and used to diagnose the pipeline, so
   they are no longer a pristine holdout. Corrected performance is therefore

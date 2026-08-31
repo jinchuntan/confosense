@@ -221,6 +221,27 @@ class Robustness(_Strict):
     keep_clean_counterfactual: bool
 
 
+class AblationLevel(_Strict):
+    name: Literal["baseline", "conformal_only", "temporal", "full"]
+    interval: str
+    alerting: str
+    recalibration: str
+
+
+class Ablation(_Strict):
+    levels: List[AblationLevel] = Field(min_length=4, max_length=4)
+    operational_comparison: str
+    comparison_alternative: str
+    fixed_before_outer_results: bool
+
+    @field_validator("fixed_before_outer_results")
+    @classmethod
+    def _must_be_fixed(cls, v):
+        if v is not True:
+            raise ValueError("the reporting comparison must be fixed pre-outer-results")
+        return v
+
+
 class Protocol(_Strict):
     schema_version: int = Field(ge=2)
     meta: Meta
@@ -238,6 +259,7 @@ class Protocol(_Strict):
     metrics: Metrics
     statistics: Statistics
     robustness: Robustness
+    ablation: Ablation
     honesty_clause: str
 
     @model_validator(mode="after")
