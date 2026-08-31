@@ -677,10 +677,14 @@ def evaluate_ablation(pipe, meta, X, y, tr_ca, te, cfg, freq, scale_map, policy)
 # --------------------------------------------------------------------------- #
 def _policy_from_cfg(cfg, fast):
     pr = cfg.get("protocol", {})
-    levels = (cfg.get("defaults", {}).get("coverage_levels")
-              or cfg.get("coverage_levels", [0.9, 0.95]))
     if fast:
-        levels = levels[:2]
+        # Two levels keep the integration smoke quick; not a results run.
+        levels = (cfg.get("defaults", {}).get("coverage_levels")
+                  or cfg.get("coverage_levels", [0.9, 0.95]))[:2]
+    else:
+        # The full run selects the operating alert level among the protocol's
+        # operating levels (all > 0.95 supported), per D1/D10.
+        levels = list(pr.get("operating_levels", [0.95, 0.975, 0.99, 0.995]))
     return {"operating_levels": list(levels),
             "incidence": float(pr.get("event_incidence_per_asset_day", 0.5)),
             "min_recall": float(pr.get("min_recall", 0.6)),
