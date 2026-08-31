@@ -367,18 +367,36 @@ PHYSICAL_RULES = [
 # --------------------------------------------------------------------------- #
 def _all_intervals(X_tr, y_tr, X_ca, y_ca, X_ev, y_ev, levels, *,
                    groups_ev, o_ev, t_ev, groups_ca, t_ca, horizon):
-    """All (method, level) interval streams on ``X_ev`` plus applicability notes."""
-    out, notes = {}, {}
-    for method in INTERVAL_METHODS:
-        for level in levels:
-            try:
-                out[(method, level)] = _interval(
-                    method, X_tr, y_tr, X_ca, y_ca, X_ev, y_ev, level,
-                    groups_ev=groups_ev, o_ev=o_ev, t_ev=t_ev,
-                    groups_ca=groups_ca, t_ca=t_ca, horizon=horizon)
-            except NotApplicable as na:
-                notes[(method, level)] = str(na)
-    return out, notes
+    """All (method, level) interval streams on ``X_ev`` + calib points + notes.
+
+    Fits are shared: one CQR model per level yields the CQR and uncalibrated
+    quantile streams and the calibration-block point used by the recalibration
+    residual pool; one EnbPI call yields the static and updated streams for every
+    level. DSCP is recorded not-applicable at a single operating horizon.
+    """
+    out, notes, calib_pts = {}, {}, {}
+    for level in levels:
+        m = conformal_cqr.fit_cqr(X_tr, pd.Series(y_tr), X_ca, pd.Series(y_ca),
+                                  level, seed=0)
+        out[("cqr", level)] = conformal_cqr.cqr_interval(m, X_ev)
+        out[("quantile_uncalibrated", level)] = \
+            conformal_quantile.quantile_interval(m, X_ev)
+        calib_pts[level] = conformal_cqr.cqr_interval(m, X_ca)["point"]
+        for method in ("dscp",):
+            notes[(method, level)] = ("dscp requires >= 2 horizons; not applicable "
+                                      "to single-horizon alert operation")
+    enb = conformal_enbpi.run_enbpi(
+        X_tr, pd.Series(y_tr), X_ca, pd.Series(y_ca), X_ev, pd.Series(y_ev),
+        list(levels), {"n_resamplings": 5, "block_length": 24,
+                       "base_n_estimators": 60}, seed=0,
+        test_groups=groups_ev, test_origin_times=o_ev, test_target_times=t_ev,
+        calib_groups=groups_ca, calib_target_times=t_ca, horizon=horizon)
+    for level in levels:
+        for variant, name in (("static", "recentred_enbpi_static"),
+                              ("updated", "recentred_enbpi_updated")):
+            out[(name, level)] = {k: enb[variant][level][k]
+                                  for k in ("point", "lower", "upper")}
+    return out, notes, calib_pts
 
 
 def _recalibrated_stream(strategy, point, y_ca, point_ca, groups_ev, o_ev, t_ev,
@@ -433,7 +451,7 @@ def select_on_inner(dataset, horizon, seed, fold_i, meta, X, y, inner, cfg,
     best_point = min(point_scores, key=point_scores.get)
 
     # ---- interval streams on inner-selection ----
-    intervals, notes = _all_intervals(
+    intervals, notes, calib_pts = _all_intervals(
         Xtr, ytr, Xca, yca, Xse, yse, levels, groups_ev=g_se, o_ev=o_se,
         t_ev=t_se, groups_ca=g_ca, t_ca=t_ca, horizon=horizon)
 
@@ -446,8 +464,7 @@ def select_on_inner(dataset, horizon, seed, fold_i, meta, X, y, inner, cfg,
     rows = []
     for (method, level), iv in intervals.items():
         point = np.asarray(iv["point"], float)
-        point_ca = _method_point_on(method, Xtr, ytr, Xca, yca, level, horizon,
-                                    g_ca, t_ca)
+        point_ca = calib_pts[level]          # shared CQR calib point (see _all_intervals)
         for recal in ("static", "periodic", "rolling"):
             if recal == "static":
                 lo, hi = iv["lower"], iv["upper"]
@@ -507,23 +524,16 @@ def select_on_inner(dataset, horizon, seed, fold_i, meta, X, y, inner, cfg,
     return {"decision": "selected", "pipeline": pipe, **common}
 
 
-def _method_point_on(method, Xtr, ytr, Xca, yca, level, horizon, g_ca, t_ca):
-    """The interval method's own point prediction on the calibration block."""
-    if method in ("cqr", "quantile_uncalibrated"):
-        m = conformal_cqr.fit_cqr(Xtr, pd.Series(ytr), Xca, pd.Series(yca),
-                                  level, seed=0)
-        return conformal_cqr.cqr_interval(m, Xca)["point"]
-    # EnbPI: recentred point == base model prediction; approximate with the same
-    # HistGBR quantile-model midpoint for the recalibration residual pool.
-    m = conformal_cqr.fit_cqr(Xtr, pd.Series(ytr), Xca, pd.Series(yca), level, seed=0)
-    return conformal_cqr.cqr_interval(m, Xca)["point"]
-
-
 # --------------------------------------------------------------------------- #
 # Outer evaluation of the frozen pipeline (C3/E) + ablation
 # --------------------------------------------------------------------------- #
 def _fit_interval_on(method, level, X, y, tr_ca, te, meta, horizon):
-    """Fit ``method`` at ``level`` on train+calib (tr_ca) and score on test (te)."""
+    """Fit ``method`` at ``level`` on train+calib and score on test.
+
+    Returns the interval stream, the (calib idx, calib meta), and a shared CQR
+    calibration point for the recalibration residual pool (one extra fit, reused
+    by every recalibration strategy so the outer evaluation stays cheap).
+    """
     m_tr = meta.iloc[tr_ca]
     n = len(tr_ca)
     order = np.argsort(m_tr["origin_time"].to_numpy(), kind="stable")
@@ -537,7 +547,10 @@ def _fit_interval_on(method, level, X, y, tr_ca, te, meta, horizon):
         t_ev=pd.DatetimeIndex(m_te["target_time"]),
         groups_ca=m_ca["group_id"].to_numpy(),
         t_ca=pd.DatetimeIndex(m_ca["target_time"]), horizon=horizon)
-    return iv, (ica, m_ca)
+    cqr_m = conformal_cqr.fit_cqr(X.iloc[itr], pd.Series(y[itr]), X.iloc[ica],
+                                  pd.Series(y[ica]), level, seed=0)
+    calib_point = conformal_cqr.cqr_interval(cqr_m, X.iloc[ica])["point"]
+    return iv, (ica, m_ca), calib_point
 
 
 def evaluate_outer(pipe, meta, X, y, tr_ca, te, cfg, freq, scale_map, policy):
@@ -547,17 +560,13 @@ def evaluate_outer(pipe, meta, X, y, tr_ca, te, cfg, freq, scale_map, policy):
     o_te = pd.DatetimeIndex(m_te["origin_time"]); t_te = pd.DatetimeIndex(m_te["target_time"])
     tol = int(cfg.get("alerts", {}).get("detection_tolerance_steps", 6))
 
-    iv, (ica, m_ca) = _fit_interval_on(pipe.interval_method, pipe.operating_level,
-                                       X, y, tr_ca, te, meta, pipe.horizon)
+    iv, (ica, m_ca), point_ca = _fit_interval_on(
+        pipe.interval_method, pipe.operating_level, X, y, tr_ca, te, meta,
+        pipe.horizon)
     point = np.asarray(iv["point"], float)
     if pipe.recalibration == "static":
         lo, hi = iv["lower"], iv["upper"]
     else:
-        point_ca = _method_point_on(pipe.interval_method, X.iloc[tr_ca[:1]],
-                                    y[tr_ca[:1]], X.iloc[ica], y[ica],
-                                    pipe.operating_level, pipe.horizon,
-                                    m_ca["group_id"].to_numpy(),
-                                    pd.DatetimeIndex(m_ca["target_time"]))
         lo, hi = _recalibrated_stream(
             pipe.recalibration, point, y[ica], point_ca, g_te, o_te, t_te,
             m_ca["group_id"].to_numpy(), pd.DatetimeIndex(m_ca["target_time"]),
@@ -606,17 +615,13 @@ def evaluate_ablation(pipe, meta, X, y, tr_ca, te, cfg, freq, scale_map, policy)
     rows = []
     for level_name, (method, rule, recal) in specs.items():
         try:
-            iv, (ica, m_ca) = _fit_interval_on(method, lvl, X, y, tr_ca, te, meta,
-                                               pipe.horizon)
+            iv, (ica, m_ca), point_ca = _fit_interval_on(method, lvl, X, y, tr_ca,
+                                                          te, meta, pipe.horizon)
         except NotApplicable as na:
             rows.append({"ablation": level_name, "applicable": False, "reason": str(na)})
             continue
         lo, hi = iv["lower"], iv["upper"]
         if recal != "static":
-            point_ca = _method_point_on(method, X.iloc[tr_ca[:1]], y[tr_ca[:1]],
-                                        X.iloc[ica], y[ica], lvl, pipe.horizon,
-                                        m_ca["group_id"].to_numpy(),
-                                        pd.DatetimeIndex(m_ca["target_time"]))
             lo, hi = _recalibrated_stream(
                 recal, np.asarray(iv["point"], float), y[ica], point_ca, g_te,
                 pd.DatetimeIndex(m_te["origin_time"]),
