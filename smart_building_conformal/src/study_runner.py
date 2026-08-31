@@ -178,6 +178,7 @@ class DatasetStudy:
             w = windowing.build_dataset_windows(prepared, h, fcfg)
             self.windows[h] = w
             summaries.append(windowing.window_summary(w))
+            windowing.persist_feature_schema(w, self.dataset_id, prof)
             if w["skipped_groups"]:
                 self.manifest.note_limitation(
                     f"{self.dataset_id} h={h}: {len(w['skipped_groups'])} group(s) "

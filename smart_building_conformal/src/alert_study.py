@@ -151,6 +151,74 @@ def chronological_subsplit(
     }
 
 
+def group_blocked_subsplit(
+    group_ids,
+    origin_time,
+    target_time,
+    fraction: float = 0.6,
+    *,
+    min_samples: int = 200,
+) -> dict:
+    """Nested calibration subsplit that cuts at **whole-group** granularity (A2).
+
+    For a group-partitioned dataset (RICO runs) a purely chronological cut can
+    split a single run across the conformal and rule blocks, so one run's
+    observations would set the conformal quantile *and* score the rule. Here whole
+    groups are assigned instead: groups are ordered by their earliest origin, the
+    first ``fraction`` of groups (by count) conformalize, the rest score rules, and
+    no group ever appears in both blocks. An embargo still drops rule-block rows
+    whose target precedes the last conformal-block target time.
+    """
+    g = np.asarray(pd.Series(group_ids).reset_index(drop=True))
+    o = pd.DatetimeIndex(pd.Series(origin_time).reset_index(drop=True))
+    t = pd.DatetimeIndex(pd.Series(target_time).reset_index(drop=True))
+    if not (len(g) == len(o) == len(t)):
+        raise ValueError("group_ids, origin_time and target_time must align")
+    if not 0.0 < fraction < 1.0:
+        raise ValueError(f"fraction must lie strictly in (0, 1), got {fraction}")
+    if len(g) == 0:
+        raise ValueError("cannot sub-split an empty calibration partition")
+
+    first_origin = {grp: o[g == grp].min() for grp in pd.unique(g)}
+    ordered_groups = sorted(first_origin, key=lambda k: first_origin[k])
+    n_conf_groups = max(1, min(len(ordered_groups) - 1,
+                               int(round(fraction * len(ordered_groups)))))
+    conf_groups = set(ordered_groups[:n_conf_groups])
+    rule_groups = set(ordered_groups[n_conf_groups:])
+
+    conformal = np.isin(g, list(conf_groups))
+    rule = np.isin(g, list(rule_groups))
+    # Embargo: a rule-block row whose target precedes the last conformal target is
+    # dropped, so the rule block strictly postdates the conformal block in time.
+    if conformal.any():
+        boundary = pd.Timestamp(t[conformal].max())
+        embargoed = rule & np.asarray(t <= boundary)
+        rule = rule & ~embargoed
+    else:
+        embargoed = np.zeros(len(g), dtype=bool)
+
+    n_conf, n_rule = int(conformal.sum()), int(rule.sum())
+    usable = (n_conf >= min_samples and n_rule >= min_samples
+              and len(conf_groups) >= 1 and len(rule_groups) >= 1)
+    return {
+        "conformal_mask": conformal,
+        "rule_mask": rule,
+        "embargoed_mask": embargoed if isinstance(embargoed, np.ndarray)
+        else np.asarray(embargoed),
+        "conformal_groups": sorted(map(str, conf_groups)),
+        "rule_groups": sorted(map(str, rule_groups)),
+        "n_conformal": n_conf,
+        "n_rule": n_rule,
+        "n_embargoed": int(np.asarray(embargoed).sum()),
+        "usable": bool(usable),
+        "granularity": "whole_group",
+        "reason": ("whole-run nested split of the calibration partition"
+                   if usable else
+                   f"group-blocked split rejected: {n_conf} conformal / {n_rule} "
+                   f"rule windows or too few groups"),
+    }
+
+
 # --------------------------------------------------------------------------- #
 # Event injection
 # --------------------------------------------------------------------------- #

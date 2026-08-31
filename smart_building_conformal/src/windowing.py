@@ -216,6 +216,42 @@ def subset(obj, mask: np.ndarray):
     return np.asarray(obj)[mask]
 
 
+def feature_schema(windows: dict, dataset_id: str) -> dict:
+    """Ordered feature schema plus a stable hash, for reproducibility (audit B2).
+
+    The exact column order a model saw at each horizon is part of the experiment:
+    without it a re-run cannot prove it built the same design matrix. This records
+    the names in order and a hash over that ordered list.
+    """
+    import hashlib
+    import json
+
+    names = list(windows["feature_names"])
+    schema = {
+        "dataset": dataset_id,
+        "horizon": int(windows["horizon"]),
+        "n_features": len(names),
+        "feature_names_in_order": names,
+        "n_embargoed": int(windows.get("n_embargoed", 0)),
+    }
+    schema["schema_hash"] = hashlib.sha256(
+        json.dumps(names, separators=(",", ":")).encode("utf-8")).hexdigest()
+    return schema
+
+
+def persist_feature_schema(windows: dict, dataset_id: str, out_dir) -> "Path":
+    """Write ``data_profiles/feature_schema_h{h}.json`` and return its path."""
+    import json
+    from pathlib import Path
+
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / f"feature_schema_h{int(windows['horizon'])}.json"
+    path.write_text(json.dumps(feature_schema(windows, dataset_id), indent=2),
+                    encoding="utf-8")
+    return path
+
+
 def window_summary(windows: dict) -> pd.DataFrame:
     """Per-partition row counts, used for the split-integrity audit files."""
     meta = windows["meta"]

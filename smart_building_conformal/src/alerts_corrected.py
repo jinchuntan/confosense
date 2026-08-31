@@ -294,6 +294,45 @@ def precision_prevalence_dependent(n_detected: int, n_background: int) -> dict:
 # --------------------------------------------------------------------------- #
 # D7 — feasibility-constrained selection with abstention
 # --------------------------------------------------------------------------- #
+def per_group_robust_scale(
+    y_train: np.ndarray,
+    groups_train: np.ndarray,
+    *,
+    min_points: int = 20,
+) -> dict:
+    """Per-group MAD-to-sigma dispersion from **training** data only (D5).
+
+    Event severities are expressed in per-group robust-sigma units so a
+    perturbation means the same thing relative to each asset's own variability,
+    and the scale is estimated only from training observations — never from the
+    calibration/test residuals or the injected values. A group with too few
+    training points (or a degenerate, zero-MAD group) falls back to the pooled
+    training MAD-to-sigma, and the fallback is reported in the returned dict.
+    """
+    y = np.asarray(y_train, dtype=float)
+    g = np.asarray(groups_train)
+    k = 1.4826                                 # MAD -> sigma for a normal
+
+    def mad_sigma(v):
+        v = v[np.isfinite(v)]
+        if len(v) < min_points:
+            return None
+        s = k * np.median(np.abs(v - np.median(v)))
+        return float(s) if s > 0 else None
+
+    pooled = mad_sigma(y) or (float(np.nanstd(y)) if np.isfinite(np.nanstd(y))
+                              and np.nanstd(y) > 0 else 1.0)
+    out, fell_back = {}, []
+    for grp in pd.unique(g):
+        s = mad_sigma(y[g == grp])
+        if s is None:
+            s = pooled
+            fell_back.append(grp)
+        out[grp] = s
+    return {"scale": out, "pooled_fallback": pooled,
+            "groups_using_fallback": list(fell_back), "source": "train_only"}
+
+
 NO_FEASIBLE = "no_feasible_configuration"
 
 

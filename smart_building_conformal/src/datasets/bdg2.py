@@ -269,11 +269,37 @@ class Bdg2Adapter(DatasetAdapter):
         max_gap = cfg.get("missing", {}).get("max_short_gap_steps", 3)
         season_steps = int(bcfg.get("season_steps", 24))  # daily cycle at 1 h
 
-        # Optional per-site weather covariates.
+        # Per-site weather covariates. If weather is *configured* it must be
+        # present and usable: silently dropping configured covariates would let a
+        # run claim a weather-informed model while training on none. When the file
+        # is genuinely unavailable the caller may set ``weather_optional: true`` to
+        # proceed weatherless, but that is a loud, recorded choice, not a default.
         weather = None
         wpath = raw_dir / "weather.csv"
-        if bcfg.get("use_weather", True) and wpath.exists():
-            weather = pd.read_csv(wpath, parse_dates=["timestamp"])
+        use_weather = bcfg.get("use_weather", True)
+        weather_optional = bcfg.get("weather_optional", False)
+        self._weather_status = "not_configured"
+        if use_weather:
+            if not wpath.exists():
+                if bcfg.get("auto_download", True):
+                    try:
+                        download(raw_dir, names=["weather.csv"])
+                    except Exception:                       # noqa: BLE001
+                        pass
+            if wpath.exists():
+                weather = pd.read_csv(wpath, parse_dates=["timestamp"])
+                self._weather_status = "loaded"
+            elif weather_optional:
+                self._weather_status = "configured_missing_proceeding_weatherless"
+            else:
+                raise FileNotFoundError(
+                    f"BDG2 weather is configured (use_weather: true) but "
+                    f"{wpath} is absent. Fetch it "
+                    "(`python -m src.fetch_datasets --dataset bdg2`), or set "
+                    "bdg2.weather_optional: true to run weatherless and record the "
+                    "limitation. Configured weather variables are never dropped "
+                    "silently."
+                )
 
         series_list = []
         for _, row in chosen.iterrows():
@@ -361,5 +387,8 @@ class Bdg2Adapter(DatasetAdapter):
                 "n_selected": len(series_list),
                 "observed_freq": str(freq),
                 "season_steps": season_steps,
+                "weather_status": self._weather_status,
+                "n_buildings_with_weather": sum(
+                    1 for s in series_list if s.covariates),
             },
         )
