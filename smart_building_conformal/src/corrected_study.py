@@ -378,7 +378,8 @@ def alert_on_stream(observed, lower, upper, groups, meta_block, catalog, rule,
         match["n_background_episodes"], groups, freq_min)
     return {"rule": rule_name, "k": k, "m": m,
             **recall, **workload, "n_detected": match["n_detected"],
-            "n_events": match["n_events"], "lower": lower, "upper": upper}
+            "n_events": match["n_events"], "lower": lower, "upper": upper,
+            "per_event": match["per_event"]}
 
 
 SINGLE_RULE = {"name": "single", "immediate": True, "required": 1}
@@ -624,7 +625,21 @@ def evaluate_outer(pipe, meta, X, y, tr_ca, te, cfg, freq, scale_map, policy):
            "background_episodes_per_asset_day": sc["background_episodes_per_asset_day"],
            "n_detected": sc["n_detected"], "n_events": sc["n_events"],
            "events_placed": alloc["placed"]}
-    return row, {"lower": lo, "upper": hi}
+    # Per-group and per-event detail so a downstream CI stage can resample the
+    # correct units (runs for RICO, buildings for BDG2, blocks for series).
+    ge = np.asarray(g_te)
+    per_group = []
+    tag = dict(dataset=pipe.dataset, seed=pipe.seed, outer_fold=pipe.outer_fold)
+    for g in pd.unique(ge):
+        gm = ge == g
+        per_group.append({**tag, "group_id": g,
+                          "empirical_coverage": M.empirical_coverage(
+                              y[te][gm], np.asarray(lo)[gm], np.asarray(hi)[gm]),
+                          "n": int(gm.sum())})
+    per_event = sc["per_event"].copy()
+    for k_, v_ in tag.items():
+        per_event[k_] = v_
+    return row, {"lower": lo, "upper": hi}, pd.DataFrame(per_group), per_event
 
 
 def evaluate_ablation(pipe, meta, X, y, tr_ca, te, cfg, freq, scale_map, policy):
@@ -711,6 +726,7 @@ def run_dataset(dataset_id, cfg, prepared, out_dir, seeds, n_outer, freq, fast):
 
     folds = make_outer_folds(meta, scheme, n_outer, horizon, freq)
     sel_rows, outer_rows, abl_rows, alloc_rows, prov = [], [], [], [], []
+    pg_frames, pe_frames = [], []
     for seed in seeds:
         for fi, fold in enumerate(folds):
             trc = np.concatenate([fold["train"], fold["calibration"]])
@@ -735,10 +751,12 @@ def run_dataset(dataset_id, cfg, prepared, out_dir, seeds, n_outer, freq, fast):
                                  "decision": "no_feasible_configuration",
                                  "reason": sel["reason"]})
                 pipe = sel["best_effort"]
-            row, _bounds = evaluate_outer(pipe, meta, X, y, trc, fold["test"], cfg,
-                                          freq, scale_map, policy)
+            row, _bounds, pg, pe = evaluate_outer(pipe, meta, X, y, trc,
+                                                  fold["test"], cfg, freq,
+                                                  scale_map, policy)
             row["operational_feasible"] = feasible
             outer_rows.append(row)
+            pg_frames.append(pg); pe_frames.append(pe)
             for r in evaluate_ablation(pipe, meta, X, y, trc, fold["test"], cfg,
                                        freq, scale_map, policy):
                 r["operational_feasible"] = feasible
@@ -750,6 +768,12 @@ def run_dataset(dataset_id, cfg, prepared, out_dir, seeds, n_outer, freq, fast):
     pd.DataFrame(outer_rows).to_csv(out / "outer_metrics.csv", index=False)
     pd.DataFrame(abl_rows).to_csv(out / "ablation.csv", index=False)
     pd.DataFrame(alloc_rows).to_csv(out / "event_allocation.csv", index=False)
+    if pg_frames:
+        pd.concat(pg_frames, ignore_index=True).to_csv(
+            out / "outer_per_group_coverage.csv", index=False)
+    if pe_frames:
+        pd.concat(pe_frames, ignore_index=True).to_csv(
+            out / "outer_per_event.csv", index=False)
     (out / "provenance.json").write_text(json.dumps(prov, indent=2, default=str),
                                          encoding="utf-8")
     return {"n_folds": len(folds), "n_outer_rows": len(outer_rows),
