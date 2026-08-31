@@ -1,0 +1,50 @@
+# Executable corrected-study configuration (the AUTHORITATIVE methodology for the
+# final dissertation study). It extends the shared study_full.yaml for the
+# mechanical dataset/adapter details, but every field the frozen protocol fixes is
+# overridden here so a corrected run cannot silently inherit the old, uncorrected
+# study_full.yaml methodology.
+#
+# Provenance: this file is checked against
+#   outputs/final_dissertation_v2/protocol/frozen_protocol.yaml
+# by src/protocol.assert_config_implements_protocol and by
+#   tests/test_protocol.py::test_executable_config_implements_protocol
+# The resolved runtime config must implement every protocol field.
+
+extends: study_full.yaml
+
+# Corrected study writes only under the corrected output root; outputs/full_study
+# is never touched.
+paths:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+  full_study_dir: outputs/final_dissertation_v2/runs
+
+# Pointer to the frozen protocol this config compiles from. The hash is the
+# canonical protocol hash from src.protocol.protocol_hash (recorded in
+# protocol/config_hash.txt); a test asserts they match.
+protocol_ref:
+  path: outputs/final_dissertation_v2/protocol/frozen_protocol.yaml
+  hash: "1e4506d203c9543a2ccf50dd0c64bf3c2cf09195f9c25f1a232ae5fd2b55d9ea"
+  amendment: outputs/final_dissertation_v2/protocol/protocol_amendment_001.md
+
+defaults:
+  # Operating levels selected on inner data plus the methodological quality
+  # levels — the union, so every level the protocol allows exists at runtime.
+  coverage_levels: [0.90, 0.95, 0.975, 0.99, 0.995]
+
+  features:
+    # target_lag_0 (y_t) is injected centrally in windowing.feature_config; the
+    # protocol requires it and windowing enforces it regardless of this flag.
+    target_lags_include_zero: true
+
+  alerts:
+    # Operating alert level is selected on inner data (protocol), not hard-wired.
+    primary_level_selected_on_inner: true
+    # Rules are declared in physical time in the protocol and converted per
+    # dataset frequency at runtime (src.alerts.convert_physical_rule).
+    rules_are_physical_time: true
+
+  bootstrap:
+    n_boot: 2000        # final CIs use >= 2000 group-appropriate replicates
+    ci: 0.95

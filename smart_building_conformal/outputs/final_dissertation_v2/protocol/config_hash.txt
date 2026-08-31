@@ -1,3 +1,5 @@
-sha256(protocol/frozen_protocol.yaml) = f710c96c1a90ea76ab7dc3fc003769c35eba589ea018b78faeb914b16402f5ac
+canonical_protocol_hash(src.protocol.protocol_hash) = 1e4506d203c9543a2ccf50dd0c64bf3c2cf09195f9c25f1a232ae5fd2b55d9ea
+executable_config = configs/study_final_dissertation_v2.yaml
 audited_commit = 06fe967be2be8d7898812c0c2d6e464d4e942351
-status = predeclared; not yet executed
+superseded_session1_raw_bytes_hash = f710c96c1a90ea76ab7dc3fc003769c35eba589ea018b78faeb914b16402f5ac  # invalid YAML; see protocol_amendment_001.md
+status = predeclared and validated; not yet executed

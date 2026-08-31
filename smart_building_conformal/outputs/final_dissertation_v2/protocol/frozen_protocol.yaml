@@ -1,11 +1,17 @@
-# FROZEN PROTOCOL — corrected final dissertation study (PREDECLARATION)
-#
-# Status: predeclared before any corrected outer-fold result was inspected.
-# This file fixes the candidate grids and the selection policy. It is hashed into
-# config_hash.txt; the hash must not change once outer evaluation begins, except to
-# repair a verified code defect (logged in report/RESULTS_CHANGELOG.md).
-#
-# It does NOT contain results. It is the design the corrected run must obey.
+## FROZEN PROTOCOL v2 — corrected final dissertation study (PREDECLARATION)
+##
+## Status: predeclared and repaired BEFORE any corrected outer-fold result was
+## inspected (see protocol_amendment_001.md). This file fixes the candidate
+## grids, the nested evaluation design and the selection policy. It is parsed and
+## strictly validated by src/protocol.py, hashed into config_hash.txt, and
+## compiled into the executable runtime config
+## configs/study_final_dissertation_v2.yaml. The hash must not change once outer
+## evaluation begins, except to repair a verified code defect logged in
+## report/RESULTS_CHANGELOG.md with the affected folds re-run.
+##
+## It contains NO results. It is the design the corrected run must obey.
+
+schema_version: 2
 
 meta:
   audited_commit: "06fe967be2be8d7898812c0c2d6e464d4e942351"
@@ -13,89 +19,155 @@ meta:
   output_root: "outputs/final_dissertation_v2"
   preserve: "outputs/full_study is never overwritten (pre-repair diagnostic study)"
 
-seeds: [42, 43, 44, 45, 46]          # aggregate across ALL; never select the best
+# Distinct seed ledgers: model init, event-catalogue placement, bootstrap resampling.
+seeds:
+  model: [42, 43, 44, 45, 46]        # aggregate across ALL; never select the best
+  event_catalogue: [42, 43, 44, 45, 46]
+  bootstrap: 20240601                 # single fixed generator seed for CI resampling
 
+# --------------------------------------------------------------------------- #
+# Nested evaluation. Outer folds estimate performance; inner folds select the
+# whole pipeline. Outer-test rows never enter any fitting or selection function.
 partitioning:
-  embargo: "horizon"                  # steps, both sides of every boundary
-  pleia:        {scheme: purged_rolling_origin}
-  pleia_energy: {scheme: purged_rolling_origin}
-  rico:         {scheme: whole_run_group_blocked, nested_subsplit: whole_run}
-  bdg2:         {scheme: within_building_target_time_aligned,
-                 portability: leave_building_out_separate_analysis}
+  embargo:
+    mode: "horizon"                   # embargo width = forecast horizon in steps
+    sided: "both"                     # purge straddling origins on both sides of a boundary
+    definition: >-
+      No label or residual observed inside an earlier block (train or inner
+      calibration) may have target_time reaching into a later block (inner
+      selection or outer test). Enforced by windowing.apply_horizon_embargo.
+  outer_folds: 3
+  inner_folds: 2
+  min_train_windows: 400
+  min_calibration_windows: 400
+  min_selection_windows: 200
+  datasets:
+    pleia:
+      scheme: purged_rolling_origin
+      unit: window
+    pleia_energy:
+      scheme: purged_rolling_origin
+      unit: window
+    rico:
+      scheme: whole_run_group_blocked   # a run is never split across partitions
+      unit: run
+      nested_subsplit: whole_run
+    bdg2:
+      scheme: within_building_target_time_aligned
+      unit: window
+      portability: leave_building_out_separate_analysis   # only if explicitly claimed
 
 point_models: [persistence, seasonal_naive, xgboost, attention_lstm]
+
 features:
-  target_lags_include_zero: true      # y_t is available at origin (now enforced)
+  target_lags_include_zero: true      # y_t available at origin (enforced in windowing.feature_config)
+  persist_schema: true                # data_profiles/feature_schema_h{h}.json per dataset/horizon
 
 interval:
   candidates: [quantile_uncalibrated, cqr, recentred_enbpi_static,
                recentred_enbpi_updated, dscp]
+  quantile_uncalibrated_is_diagnostic: true   # never described as conformal
   quality_levels: [0.90, 0.95]        # kept for methodological comparison regardless
-  operating_levels: [0.95, 0.975, 0.99, 0.995]   # operational alert level selected here
-  min_calibration_for_level: 400      # skip a level without enough calibration points
+  operating_levels: [0.95, 0.975, 0.99, 0.995]   # operational alert level selected on inner data
+  min_calibration_for_level: 400      # a level without enough calibration points is not_applicable
 
 recalibration:
   strategies: [static, periodic, rolling]
-  residual_delay: "horizon"           # only observable residuals used
-  group_safe: true
-  feed_selected_stream_into_alerts: true   # end-to-end; the selected stream IS consumed
+  residual_delay: "horizon"           # only residuals with target_time <= origin are used
+  group_safe: true                    # residual state isolated per run/building
+  feed_selected_stream_into_alerts: true   # end-to-end: the selected stream IS consumed by alerts
 
-# Alert rules are declared in PHYSICAL TIME and converted to steps per dataset freq.
+# Alert rules declared in PHYSICAL TIME; converted to steps per dataset frequency.
+# A rule needing more violations than the window has steps is marked not_applicable
+# with a recorded reason (never silently coerced).
 alert_rules_physical:
-  - {name: "1min-1of1",  window_minutes: 1,   required_violations: 1}
-  - {name: "5min-2of5",  window_minutes: 5,   required_violations: 2}
-  - {name: "15min-3of5", window_minutes: 15,  required_violations: 3}
-  - {name: "30min-3of7", window_minutes: 30,  required_violations: 3}
-  - {name: "60min-4of7", window_minutes: 60,  required_violations: 4}
-  episode:
-    min_alert_duration_minutes: 0
-    clear_duration_minutes: 0
-    cooldown_gap_minutes: 0           # merge alert steps within this gap into one episode
-    latching: false
+  - {name: "1min-1of1",   window_minutes: 1,   required_violations: 1}
+  - {name: "5min-2of5",   window_minutes: 5,   required_violations: 2}
+  - {name: "15min-3of5",  window_minutes: 15,  required_violations: 3}
+  - {name: "30min-3of7",  window_minutes: 30,  required_violations: 3}
+  - {name: "60min-4of7",  window_minutes: 60,  required_violations: 4}
+  - {name: "180min-3of6", window_minutes: 180, required_violations: 3}
+  - {name: "360min-4of6", window_minutes: 360, required_violations: 4}
+
+alert_episode:
+  min_alert_duration_minutes: 0
+  clear_duration_minutes: 0
+  cooldown_gap_minutes: 0             # merge alert steps within this wall-clock gap into one episode
+  latching: false
 
 event_injection:
-  incidence_events_per_stream_day: 0.5   # SAME declared incidence across datasets for
-                                         # comparable precision/F1
-  balance: {across: [event_type, severity], within: group}
-  types:      [random_missing, block_missing, dropout, stuck, bias, level_shift, drift]
-  severities_sd: [0.5, 1.0, 2.0]     # in per-group training robust-sigma units
-  scale: {estimator: mad_to_sigma, scope: per_group, source: train_only}
+  # Exposure-aware incidence: events allocated proportionally to valid monitored
+  # asset-time, balanced across type x severity over the full dataset, never
+  # silently dropped. Short RICO runs receive fewer events accordingly.
+  allocation: exposure_proportional
+  incidence_events_per_asset_day: 0.5
+  balance:
+    across: [event_type, severity]
+    scope: dataset                    # balance across the whole dataset/fold catalogue, not per short run
+  preserve_group_boundaries: true
+  n_catalogues: 5                     # fixed event catalogues (frozen before outer eval)
+  types: [random_missing, block_missing, stuck, dropout, bias, level_shift, drift]
+  severities_sd: [0.5, 1.0, 2.0]      # in per-group TRAIN-ONLY robust-sigma units
+  scale:
+    estimator: mad_to_sigma
+    scope: per_group
+    source: train_only                # never calibration/test/injected values
+    fallback: pooled_train_only       # documented fallback when a group's train MAD is degenerate
   duration_physical: true
-  placement: {inside_eligible_groups: true, retry_on_boundary: true, drop_silently: false}
-  seeds: [42, 43, 44, 45, 46]
-  keep_clean_counterfactual: true     # background workload measured on unmodified obs
+  placement:
+    inside_eligible_groups: true
+    retry_on_boundary: true
+    drop_silently: false
+    record_counts: [attempted, placed, rejected]
+  keep_clean_counterfactual: true     # background workload measured on the paired unmodified stream
 
 matching:
   build_episodes_before_matching: true
   one_to_one: true
-  onset_aware: true                   # an alarm active before onset gets no credit
-  overlapping_tolerance: explicit
+  onset_aware: true                   # an episode active before onset earns no detection credit
+  overlapping_tolerance_steps: 0      # extra steps beyond detection_tolerance allowed for overlap; 0 = none
 
 selection_policy:
-  scope: inner_calibration_only       # outer test never enters selection
+  scope: inner_selection_only         # outer test never enters selection
   workload_constraint:
     metric: background_alert_episodes_per_asset_day
     max: 1.0
   min_recall: 0.60                     # macro synthetic-event recall floor
-  utility: macro_f_beta                # beta declared below; not raw F1-maximisation
+  utility: macro_f_beta
   beta: 1.0
   confidence_bound_handling: use_lower_ci_of_recall_and_upper_ci_of_workload
   delay_tie_break: median_detection_delay_ascending
-  on_no_feasible: report_no_feasible_configuration   # do not force-select
+  on_no_feasible: report_no_feasible_configuration   # never force-select the least-bad candidate
 
 metrics:
   primary: [synthetic_event_recall_macro, recall_by_type_severity,
             background_episodes_per_asset_day, bdg2_per_building_day,
             bdg2_portfolio_per_calendar_day, detection_delay_median_q90,
             proportion_time_in_alert]
-  secondary: [precision_at_declared_incidence, precision_incidence_sensitivity,
-              raw_catalogue_precision_labelled_prevalence_dependent]
+  secondary: [precision_at_declared_incidence, precision_incidence_sensitivity]
+  forbidden_terms: [false_positive_rate_real, real_fault_precision]
   resampling: {series: moving_block, rico: run_level, bdg2: building_level}
   report: [point_estimate, ci95, exposure_size, per_group, macro, micro]
 
+statistics:
+  bootstrap_replicates: 2000          # >= 2000 for final CIs
+  block_length_method: political_centred_sqrt_n   # moving-block length = round(sqrt(n_effective))
+  multiple_comparison: holm
+  ci_method: percentile
+  macro_aggregation: equal_group_mean
+  micro_aggregation: exposure_weighted
+  min_events_for_recall_ci: 5
+  cross_target_summary: skill_relative_to_persistence   # never average raw MAE across units
+
 robustness:
   variants: [fixed_interval, closed_loop]
-  perturbations: [missingness, dropout, stuck, bias, level_shift, drift,
+  perturbations: [random_missing, block_missing, stuck, dropout, bias, level_shift, drift,
                   calibration_contamination, recovery_after_recalibration]
   affect_only_corruptible_information: true
   keep_clean_counterfactual: true
+
+honesty_clause: >-
+  The original test outputs were inspected and used to diagnose the pipeline, so
+  they are no longer a pristine holdout. Corrected performance is therefore
+  estimated through fully nested post-audit evaluation and is not presented as
+  validation on an untouched holdout.
