@@ -10,7 +10,8 @@ All files under `outputs/full_study/report/figures/`.
 | fig_04_winkler_comparison.png | Winkler score by method and dataset | Ch. 5 - intervals | Winkler and coverage disagree on two datasets | True |
 | fig_05_alert_rule_sensitivity.png | k-of-m rule sensitivity | Ch. 5 - alerting | Precision/recall trade monotonically with k | True |
 | fig_06_alert_tradeoff.png | Recall against false-alert workload | Ch. 5 - alerting | RICO cannot meet a 1/day budget at any rule | True |
-| fig_07_robustness_degradation.png | Coverage under every disturbance, both reference signals | Ch. 5 - robustness | Observed-signal and clean-reference diverge in closed loop | True |
+| fig_07a_observed_signal_coverage.png | Figure 9(a): observed-signal coverage under every disturbance, per dataset (fixed interval vs closed loop) | Ch. 5 - robustness | Closed loop holds observed-signal coverage where fixed intervals fall | True |
+| fig_07b_clean_reference_coverage.png | Figure 9(b): clean-reference coverage under every disturbance, per dataset (fixed interval vs closed loop) | Ch. 5 - robustness | Against the clean signal the pattern reverses: closed loop absorbs the fault | True |
 | fig_08_recalibration_recovery.png | Coverage recovery after a disturbance | Ch. 5 - recalibration | Adaptive strategies recover faster than static | True |
 | fig_09_cross_dataset_rankings.png | Mean ranks across datasets | Ch. 5 - statistics | XGBoost first, seasonal naive last | True |
 | fig_10_rico_interval_timeline.png | RICO interval timeline | Ch. 5 / Appendix | Interval behaviour within one experimental run | True |

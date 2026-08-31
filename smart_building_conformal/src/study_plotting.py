@@ -223,50 +223,151 @@ def fig_alert_tradeoff(combined: Path, out: Path, made: list[str]) -> None:
     _save(fig, out / "fig_06_alert_tradeoff.png", made)
 
 
-def fig_robustness(combined: Path, out: Path, made: list[str]) -> None:
-    """Coverage under disturbance, against both reference signals.
+# Figure 9(a,b) layout constants. Every display string is mapped to the exact
+# CSV value; the mapping is checked against the CSV before anything is drawn, so
+# an internal name can never leak into a label and a renamed scenario fails loudly
+# instead of vanishing from the plot.
+_ROB_DATASETS = [
+    ("pleia", "PLEIAData temperature"),
+    ("pleia_energy", "PLEIAData energy"),
+    ("rico", "RICO HVAC"),
+    ("bdg2", "BDG2 electricity"),
+]
+_ROB_MODES = [
+    ("legacy_fixed_intervals", "Fixed interval", PALETTE[0]),
+    ("closed_loop", "Closed loop", PALETTE[1]),
+]
+_ROB_SCENARIOS = [
+    ("clean", "Clean"),
+    ("random_missing_5pct", "Random missing 5%"),
+    ("random_missing_10pct", "Random missing 10%"),
+    ("random_missing_20pct", "Random missing 20%"),
+    ("block_missing_5pct", "Block missing 5%"),
+    ("block_missing_10pct", "Block missing 10%"),
+    ("dropout_5pct", "Communication dropout 5%"),
+    ("stuck_5pct", "Stuck sensor 5%"),
+    ("bias_0.5sd", "Sensor bias 0.5 SD"),
+    ("bias_1.0sd", "Sensor bias 1 SD"),
+    ("bias_2.0sd", "Sensor bias 2 SD"),
+    ("level_shift_1.0sd", "Level shift 1 SD"),
+    ("level_shift_2.0sd", "Level shift 2 SD"),
+    ("drift_1.0sd", "Gradual drift 1 SD"),
+    ("drift_2.0sd", "Gradual drift 2 SD"),
+]
+_ROB_NOMINAL = 0.95
 
-    Two different quantities share the word "coverage" in this study and they
-    must never appear on one axis without saying which is which:
 
-    * **observed-signal coverage** (``empirical_coverage``) — does the interval
-      contain the reading the sensor actually reported?
-    * **clean-reference coverage** (``empirical_coverage_vs_clean_truth``) — does
-      it contain the value the sensor *should* have reported?
+def _robustness_subfigure(df: pd.DataFrame, value_col: str, coverage_label: str,
+                          stem: str, out: Path, made: list[str]) -> int:
+    """Draw one coverage definition as a 2x2 horizontal grouped-bar figure.
 
-    Plotting only the first, as an earlier version of this figure did, makes a
-    closed-loop run look healthy at exactly the moment the forecast has been
-    captured by the fault.
+    One dataset per panel, fixed-interval against closed-loop, scenarios on the
+    y-axis in the fixed logical order, coverage on the x-axis. Saves PNG and PDF.
+    Returns the number of finite values actually plotted.
     """
-    df = _load(combined / "robustness_metrics.csv")
-    if df is None or "empirical_coverage" not in df:
+    y = np.arange(len(_ROB_SCENARIOS))
+    bar_h = 0.38
+    scen_labels = [lab for _, lab in _ROB_SCENARIOS]
+    plotted = 0
+
+    with plt.rc_context({
+        "font.size": 9.5, "axes.titlesize": 10.5, "axes.labelsize": 9.5,
+        "xtick.labelsize": 9, "ytick.labelsize": 9, "legend.fontsize": 9.5,
+    }):
+        fig, axes = plt.subplots(2, 2, figsize=(6.6, 8.8), sharex=True, sharey=True,
+                                 constrained_layout=True)
+        for ax, (ds_key, ds_label) in zip(axes.ravel(), _ROB_DATASETS):
+            sub = df[df["dataset"] == ds_key]
+            for i, (mode_key, mode_label, color) in enumerate(_ROB_MODES):
+                # First mode sits on the upper side of each scenario group.
+                offset = (0.5 - i) * bar_h
+                vals = []
+                for scen_key, _ in _ROB_SCENARIOS:
+                    rows = sub[(sub["mode"] == mode_key) & (sub["scenario"] == scen_key)]
+                    if len(rows) > 1:
+                        raise ValueError(
+                            f"{ds_key}/{mode_key}/{scen_key}: {len(rows)} rows; "
+                            "expected one (refusing to average silently)")
+                    v = float(rows[value_col].iloc[0]) if len(rows) else np.nan
+                    vals.append(v)
+                    plotted += int(np.isfinite(v))
+                ax.barh(y + offset, vals, height=bar_h, color=color,
+                        label=mode_label, zorder=3)
+            ax.axvline(_ROB_NOMINAL, color="black", ls="--", lw=0.9, zorder=2)
+            ax.set_xlim(0.0, 1.05)
+            ax.set_title(ds_label)
+            ax.grid(axis="x", alpha=0.3)
+            ax.grid(axis="y", visible=False)
+
+        # Shared y ordering, set once on the shared axis; Clean at the top.
+        axes[0, 0].set_yticks(y)
+        axes[0, 0].set_yticklabels(scen_labels)
+        axes[0, 0].invert_yaxis()
+
+        handles, labels = axes[0, 0].get_legend_handles_labels()
+        fig.legend(handles, labels, loc="outside upper center", ncol=2, frameon=False)
+        fig.supxlabel(coverage_label)
+
+        out.mkdir(parents=True, exist_ok=True)
+        for ext in ("png", "pdf"):
+            path = out / f"{stem}.{ext}"
+            fig.savefig(path, bbox_inches="tight")
+            made.append(str(path))
+        plt.close(fig)
+    return plotted
+
+
+def fig_robustness(combined: Path, out: Path, made: list[str]) -> None:
+    """Figure 9(a) and 9(b): coverage under every disturbance, per dataset.
+
+    Two quantities share the word "coverage" and must never appear on one axis,
+    so they are drawn as two separate 2x2 figures:
+
+    * **9(a) observed-signal coverage** (``empirical_coverage``) — does the
+      interval contain the reading the sensor actually reported?
+    * **9(b) clean-reference coverage** (``empirical_coverage_vs_clean_truth``) —
+      does it contain the value the sensor *should* have reported?
+
+    Reporting only the first makes a closed-loop run look healthy at exactly the
+    moment the forecast has been captured by the fault, which is why the two are
+    kept apart. Every value is read straight from ``robustness_metrics.csv`` and
+    is neither recomputed nor rounded.
+    """
+    full = _load(combined / "robustness_metrics.csv")
+    if full is None or "empirical_coverage" not in full.columns:
         return
-    df = df[df["mode"].isin(["legacy_fixed_intervals", "closed_loop"])]
-    if df.empty:
-        return
-    panels = [("empirical_coverage", "observed-signal coverage"),
-              ("empirical_coverage_vs_clean_truth", "clean-reference coverage")]
-    panels = [(c, lab) for c, lab in panels if c in df.columns]
-    datasets = sorted(df["dataset"].unique())
-    fig, axes = plt.subplots(len(datasets), len(panels),
-                             figsize=(6.0 * len(panels), 2.8 * len(datasets)),
-                             squeeze=False)
-    for r, ds in enumerate(datasets):
-        sub = df[df["dataset"] == ds]
-        level = sub["nominal_coverage"].iloc[0] if "nominal_coverage" in sub else 0.95
-        for c, (col, label) in enumerate(panels):
-            ax = axes[r, c]
-            piv = sub.pivot_table(index="scenario", columns="mode", values=col)
-            piv = piv.reindex(sorted(piv.index, key=lambda s: (s != "clean", s)))
-            piv.plot(kind="bar", ax=ax, color=[PALETTE[1], PALETTE[0]], width=0.8)
-            ax.axhline(level, color="black", ls="--", lw=0.9)
-            ax.set_ylim(0, 1.05)
-            ax.set_ylabel(label)
-            ax.set_title(f"{ds} — {label} (dashed = nominal)", fontsize=9)
-            ax.set_xlabel("")
-            ax.tick_params(axis="x", rotation=45, labelsize=7)
-            ax.legend(fontsize=7)
-    _save(fig, out / "fig_07_robustness_degradation.png", made)
+
+    wanted = [m for m, _, _ in _ROB_MODES]
+    df = full[full["mode"].isin(wanted)].copy()
+    outside = full[~full["mode"].isin(wanted)]
+
+    # Validation: nothing may be dropped except rows outside the two required
+    # modes, and the display mapping must correspond to real CSV values.
+    assert len(df) + len(outside) == len(full)
+    assert set(outside["mode"].unique()) <= {"calibration_contamination"}, (
+        f"unexpected modes excluded: {sorted(set(outside['mode'].unique()))}")
+    assert set(df["dataset"].unique()) == {d for d, _ in _ROB_DATASETS}, (
+        f"unexpected datasets: {sorted(set(df['dataset'].unique()))}")
+    assert set(df["scenario"].unique()) == {s for s, _ in _ROB_SCENARIOS}, (
+        "scenario set differs from the mapped display order: "
+        f"{sorted(set(df['scenario'].unique()))}")
+    expected_rows = len(_ROB_DATASETS) * len(_ROB_MODES) * len(_ROB_SCENARIOS)
+    assert len(df) == expected_rows, (
+        f"expected {expected_rows} in-scope rows, found {len(df)}")
+
+    specs = [
+        ("empirical_coverage", "Observed-signal coverage",
+         "fig_07a_observed_signal_coverage"),
+        ("empirical_coverage_vs_clean_truth", "Clean-reference coverage",
+         "fig_07b_clean_reference_coverage"),
+    ]
+    for col, label, stem in specs:
+        if col not in df.columns:
+            continue
+        n = _robustness_subfigure(df, col, label, stem, out, made)
+        print(f"    [fig_robustness] {stem}: plotted {n} values "
+              f"({len(_ROB_DATASETS)} datasets x {len(_ROB_MODES)} modes "
+              f"x {len(_ROB_SCENARIOS)} scenarios)")
 
 
 def fig_closed_loop_absorption(combined: Path, out: Path, made: list[str]) -> None:

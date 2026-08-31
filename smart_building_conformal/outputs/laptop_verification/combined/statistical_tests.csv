@@ -1,0 +1,9 @@
+dataset,target,target_kind,units,sampling_freq,horizon_steps,horizon_minutes,model_a,model_b,n,loss,horizon,mean_loss_a,mean_loss_b,dm_statistic,p_value,mean_loss_differential,better_model,p_value_holm,significant_holm_5pct
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,1,10.0,xgboost,persistence,10108,absolute,1,0.3559210476688495,0.202601899485556,50.253551078665446,0.0,0.1533191481832935,b,0.0,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,1,10.0,attention_lstm,persistence,10108,absolute,1,1.0366382144117336,0.202601899485556,102.50776816859448,0.0,0.8340363149261777,b,0.0,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,1,10.0,xgboost,attention_lstm,10108,absolute,1,0.3559210476688495,1.0366382144117336,-88.910087132365,0.0,-0.6807171667428841,a,0.0,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,1,10.0,seasonal_naive,persistence,10108,absolute,1,1.476810447170558,0.202601899485556,79.25016529231561,0.0,1.2742085476850018,b,0.0,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,3,30.0,xgboost,persistence,10106,absolute,3,0.5701231844562505,0.3750940035622403,29.384786842413305,3.418143806424121e-182,0.1950291808940103,b,3.418143806424121e-182,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,3,30.0,attention_lstm,persistence,10106,absolute,3,1.0998896997611451,0.3750940035622403,51.042453832237456,0.0,0.7247956961989049,b,0.0,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,3,30.0,xgboost,attention_lstm,10106,absolute,3,0.5701231844562505,1.0998896997611451,-39.63012159808626,0.0,-0.5297665153048946,a,0.0,True
+pleia,B-room11-V2,temperature,degC,0 days 00:10:00,3,30.0,seasonal_naive,persistence,10106,absolute,3,1.4770631308133784,0.3750940035622403,40.44334313848052,0.0,1.101969127251138,b,0.0,True

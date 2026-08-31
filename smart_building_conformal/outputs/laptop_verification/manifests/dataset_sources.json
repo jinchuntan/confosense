@@ -1,0 +1,21 @@
+{
+  "pleia": {
+    "dataset_id": "pleia",
+    "official_source": "Zenodo record 7620136",
+    "doi": "10.5281/zenodo.7620136",
+    "download_url": "https://zenodo.org/records/7620136",
+    "retrieved_at": "2026-08-11T22:08:04.736787+00:00",
+    "archive_name": "data-room10T-all.csv",
+    "checksum": "19729174d9cfa711961cdf0d26e19d37f24953e39ac15545997231805cf3f53d",
+    "checksum_algorithm": "sha256",
+    "license": "see the Zenodo record",
+    "citation": "Zamora-Martinez, F. et al. PLEIAData: consumption, HVAC, temperature, weather and motion sensor data for smart buildings. Zenodo, 2023.",
+    "preprocessing": [
+      "physically implausible values outside [15.0, 40.0] degC removed",
+      "gaps up to 3 steps interpolated in time",
+      "resampled onto a regular 10min grid"
+    ],
+    "notes": [],
+    "target_description": "PLEIAData indoor temperature, block B room 11 variable V2"
+  }
+}

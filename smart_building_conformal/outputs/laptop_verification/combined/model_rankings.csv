@@ -1,0 +1,5 @@
+dataset,point_model,mean_rank_mae,mean_rank_rmse,mean_pct_mae_improvement,n_blocks
+pleia,attention_lstm,3.0,3.0,-302.4465237759644,2
+pleia,persistence,1.0,1.0,0.0,2
+pleia,seasonal_naive,4.0,4.0,-461.3535498743932,2
+pleia,xgboost,2.0,2.0,-63.83491353466498,2

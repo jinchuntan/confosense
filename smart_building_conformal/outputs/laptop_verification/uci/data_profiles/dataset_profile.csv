@@ -1,0 +1,4 @@
+dataset,source_file,group_id,target_id,units,n_rows,start,end,freq,missing_fraction,mean,std,min,max,season_steps,seasonal_naive_supported
+uci_occupancy,datatest.txt,datatest,datatest:Temperature,degC,2665,2015-02-02 14:19:00,2015-02-04 10:43:00,0 days 00:01:00,0.0,21.433876288751897,1.0280241758909994,20.2,24.4083333333333,,False
+uci_occupancy,datatraining.txt,datatraining,datatraining:Temperature,degC,8143,2015-02-04 17:51:00,2015-02-10 09:33:00,0 days 00:01:00,0.0,20.61908364034549,1.0169164411058473,19.0,23.18,,False
+uci_occupancy,datatest2.txt,datatest2,datatest2:Temperature,degC,9752,2015-02-11 14:48:00,2015-02-18 09:19:00,0 days 00:01:00,0.0,21.001768440661742,1.0206932150237178,19.5,24.39,,False

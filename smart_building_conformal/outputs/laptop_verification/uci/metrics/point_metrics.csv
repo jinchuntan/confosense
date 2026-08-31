@@ -1,0 +1,5 @@
+dataset,target,units,sampling_freq,horizon_steps,horizon_minutes,point_model,mae,rmse,pct_mae_improvement,pct_rmse_improvement,n_test,n_seeds,mae_std,seeds_used
+uci_occupancy,Temperature,degC,0 days 00:01:00,5,5.0,persistence,0.03161748234721211,0.05061270014221719,0.0,0.0,4107,1,,
+uci_occupancy,Temperature,degC,0 days 00:01:00,5,5.0,xgboost,0.039100434884033745,0.0540400380842903,-23.667135968153552,-6.771695508128581,4107,3,0.00018448793343614126,"42,43,44"
+uci_occupancy,Temperature,degC,0 days 00:01:00,15,15.0,persistence,0.06371019445122468,0.09566797161249847,0.0,0.0,4097,1,,
+uci_occupancy,Temperature,degC,0 days 00:01:00,15,15.0,xgboost,0.06348682272031735,0.08584135409255236,0.3506059474961167,10.271585520542509,4097,3,0.0002030732451860263,"42,43,44"

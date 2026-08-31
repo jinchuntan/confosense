@@ -1,0 +1,4 @@
+dataset,group_id,target_id,n_rows,start,end,freq,season_steps,seasonal_naive_supported,n_train,n_calibration,n_test
+uci_occupancy,datatest,datatest:Temperature,2665,2015-02-02 14:19:00,2015-02-04 10:43:00,0 days 00:01:00,,False,2665,0,0
+uci_occupancy,datatraining,datatraining:Temperature,8143,2015-02-04 17:51:00,2015-02-10 09:33:00,0 days 00:01:00,,False,8143,0,0
+uci_occupancy,datatest2,datatest2:Temperature,9752,2015-02-11 14:48:00,2015-02-18 09:19:00,0 days 00:01:00,,False,1528,4112,4112
