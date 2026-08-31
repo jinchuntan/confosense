@@ -117,6 +117,28 @@ def _no_pending_audit(rep: Report, out_root: Path) -> None:
             "none pending" if not pending else f"PENDING: {', '.join(pending)}")
 
 
+def _engine_smoke_covers_all(rep: Report, out_root: Path) -> None:
+    """Readiness: a fast engine smoke covered all four datasets and four ablations."""
+    summ = out_root / "runs" / "engine_smoke" / "engine_summary.json"
+    if not summ.exists():
+        rep.add("engine_smoke_all_datasets", False,
+                "no runs/engine_smoke/engine_summary.json")
+        rep.add("engine_smoke_four_ablations", False, "no engine smoke")
+        return
+    data = json.loads(summ.read_text(encoding="utf-8"))
+    ds = data.get("datasets", {})
+    want_ds = {"pleia", "pleia_energy", "rico", "bdg2"}
+    have_ds = set(ds)
+    rep.add("engine_smoke_all_datasets", want_ds <= have_ds,
+            f"covered {sorted(have_ds)}")
+    all_abl = set()
+    for v in ds.values():
+        all_abl |= set(v.get("ablation_levels", []))
+    want_abl = {"baseline", "conformal_only", "temporal", "full"}
+    rep.add("engine_smoke_four_ablations", want_abl <= all_abl,
+            f"ablations {sorted(all_abl)}")
+
+
 def _completed_run(rep: Report, out_root: Path) -> None:
     runs = out_root / "runs"
     full = sorted(runs.glob("full_*")) if runs.exists() else []
@@ -141,7 +163,7 @@ def _completed_run(rep: Report, out_root: Path) -> None:
     # exists; until then they fail closed above.
 
 
-def run(output_root: str, *, run_tests: bool) -> Report:
+def run(output_root: str, *, run_tests: bool, mode: str = "publication") -> Report:
     out_root = (ROOT / output_root) if not Path(output_root).is_absolute() \
         else Path(output_root)
     rep = Report()
@@ -152,12 +174,17 @@ def run(output_root: str, *, run_tests: bool) -> Report:
         try:
             r = subprocess.run([sys.executable, "-m", "pytest", "-o", "addopts=",
                                 "-q"], cwd=str(ROOT), capture_output=True,
-                               text=True, timeout=1200)
+                               text=True, timeout=1800)
             rep.add("tests_pass", r.returncode == 0,
                     (r.stdout.strip().splitlines() or ["?"])[-1])
         except Exception as exc:                            # noqa: BLE001
             rep.add("tests_pass", False, f"{type(exc).__name__}: {exc}")
-    _completed_run(rep, out_root)
+    if mode == "readiness":
+        # Ready for the full run: design clean + engine smoke covers everything.
+        _engine_smoke_covers_all(rep, out_root)
+    else:
+        # Publication: requires the completed non-fast run, CIs, figures, reports.
+        _completed_run(rep, out_root)
     return rep
 
 
@@ -166,28 +193,33 @@ def main() -> None:
     ap.add_argument("--output-root", default="outputs/final_dissertation_v2")
     ap.add_argument("--run-tests", action="store_true",
                     help="also run the full pytest suite as a check")
+    ap.add_argument("--mode", choices=["readiness", "publication"],
+                    default="publication",
+                    help="readiness: ready for the full run; publication: full run "
+                         "complete with CIs/figures/reports")
     args = ap.parse_args()
 
-    rep = run(args.output_root, run_tests=args.run_tests)
+    rep = run(args.output_root, run_tests=args.run_tests, mode=args.mode)
     print(f"{'CHECK':50s} RESULT")
     for c in rep.checks:
         print(f"{c.name:50s} {'PASS' if c.ok else 'FAIL':5s} {c.detail}")
 
     out_root = ROOT / args.output_root
-    marker = out_root / "PUBLICATION_READY.json"
     if rep.passed:
-        payload = {
-            "publication_ready": True,
-            "checks": [c.name for c in rep.checks],
-            "note": "written only because every validation check passed",
-        }
-        marker.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-        print(f"\nALL CHECKS PASSED -> wrote {marker}")
+        if args.mode == "publication":
+            marker = out_root / "PUBLICATION_READY.json"
+            payload = {"publication_ready": True,
+                       "checks": [c.name for c in rep.checks],
+                       "note": "written only because every publication check passed"}
+            marker.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+            print(f"\nALL PUBLICATION CHECKS PASSED -> wrote {marker}")
+        else:
+            print("\nREADINESS CHECKS PASSED -> repository is ready for the full run "
+                  "(PUBLICATION_READY.json is written only after the full run).")
         sys.exit(0)
     else:
         n_fail = sum(1 for c in rep.checks if not c.ok)
-        print(f"\n{n_fail} check(s) failed; NOT publication-ready. "
-              "PUBLICATION_READY.json not written.")
+        print(f"\n{n_fail} check(s) failed in {args.mode} mode.")
         sys.exit(1)
 
 

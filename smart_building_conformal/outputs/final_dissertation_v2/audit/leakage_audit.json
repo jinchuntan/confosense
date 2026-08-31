@@ -29,10 +29,10 @@
         "src/alert_study.py:117-123"
       ],
       "verdict": "PARTIAL",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "test": "test_rico_alert_subsplit_keeps_runs_whole",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "e8f445b"
+      "commit": "e8f445b",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "A3",
@@ -96,13 +96,14 @@
         "src/conformal_enbpi.py:128-135"
       ],
       "verdict": "CONFIRMED",
-      "status": "FIXED",
+      "status": "WIRED_IN_ENGINE",
       "fix": "gate updates by target_time<=origin using residuals.availability_frontier; per-group state",
       "tests": [
         "test_enbpi_no_early_residual",
         "test_enbpi_no_cross_group_update"
       ],
-      "commit": "69037dd"
+      "commit": "69037dd",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "C2",
@@ -121,8 +122,9 @@
         "src/study_runner.py stage order intervals->alerts->recalibration"
       ],
       "verdict": "CONFIRMED",
-      "status": "PENDING",
-      "action": "end-to-end integration OR document recalibration as diagnostic-only"
+      "status": "WIRED_IN_ENGINE",
+      "action": "end-to-end integration OR document recalibration as diagnostic-only",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D1",
@@ -131,7 +133,8 @@
         "src/study_runner.py:578-591"
       ],
       "verdict": "CONFIRMED",
-      "status": "PENDING"
+      "status": "WIRED_IN_ENGINE",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D2",
@@ -141,11 +144,11 @@
         "src/robustness_study.py:229"
       ],
       "verdict": "CONFIRMED",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "priority": "high",
       "test": "test_no_cross_group_alert_state",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "20fbeb8"
+      "commit": "20fbeb8",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D3",
@@ -154,10 +157,10 @@
         "src/alert_study.py:42-47"
       ],
       "verdict": "CONFIRMED",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "test": "test_physical_time_rule_conversion",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "20fbeb8"
+      "commit": "20fbeb8",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D4",
@@ -166,8 +169,9 @@
         "src/alert_study.py:157-188"
       ],
       "verdict": "CONFIRMED",
-      "status": "PENDING",
-      "test": "test_event_incidence_matched"
+      "status": "WIRED_IN_ENGINE",
+      "test": "test_event_incidence_matched",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D5",
@@ -176,10 +180,10 @@
         "src/study_runner.py:763-768"
       ],
       "verdict": "CONFIRMED",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "test": "test_per_group_event_scale",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "e8f445b"
+      "commit": "e8f445b",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D6",
@@ -188,10 +192,10 @@
         "src/alerts.py:168-213"
       ],
       "verdict": "CONFIRMED",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "test": "test_onset_aware_one_to_one_matching",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "20fbeb8"
+      "commit": "20fbeb8",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D7",
@@ -200,10 +204,10 @@
         "src/alert_study.py:331-366"
       ],
       "verdict": "PARTIAL",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "test": "test_no_feasible_configuration",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "20fbeb8"
+      "commit": "20fbeb8",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "D8",
@@ -212,10 +216,10 @@
         "src/alerts.py:190-208"
       ],
       "verdict": "CONFIRMED",
-      "status": "IMPLEMENTED_TESTED_NOT_WIRED",
+      "status": "WIRED_IN_ENGINE",
       "test": "test_macro_recall_and_background_terms",
-      "note_impl": "corrected primitive implemented and unit-tested; wiring into the nested end-to-end alert stage is the remaining step",
-      "commit": "20fbeb8"
+      "commit": "20fbeb8",
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     },
     {
       "id": "E",
@@ -224,11 +228,12 @@
         "stage tables reported separately"
       ],
       "verdict": "CONFIRMED",
-      "status": "PENDING",
+      "status": "WIRED_IN_ENGINE",
       "tests": [
         "test_end_to_end_pipeline_evaluated",
         "test_selected_config_equals_evaluated_config"
-      ]
+      ],
+      "engine_evidence": "src/corrected_study.py (commit ef97905); tests/test_corrected_engine.py + test_alerts_corrected.py"
     }
   ],
   "summary": {
@@ -257,6 +262,28 @@
       "D1",
       "D4",
       "E"
+    ],
+    "wired_in_engine": [
+      "A2",
+      "C1",
+      "C3",
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6",
+      "D7",
+      "D8",
+      "E"
+    ],
+    "still_pending": [],
+    "remaining_execution_steps": [
+      "full non-fast run",
+      "2000-replicate CIs",
+      "figures",
+      "report suite",
+      "PUBLICATION_READY.json"
     ]
   }
 }
