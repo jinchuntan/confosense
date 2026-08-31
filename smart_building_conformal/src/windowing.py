@@ -27,14 +27,53 @@ from .datasets.base import PARTITIONS, PreparedDataset, PreparedSeries
 
 
 def feature_config(cfg: dict, covariates: list[str]) -> dict:
-    """Translate a study config's ``features`` block into the builder's schema."""
+    """Translate a study config's ``features`` block into the builder's schema.
+
+    Lag 0 (the value ``y_t`` observed at the forecast origin) is always included:
+    it is available at prediction time — persistence uses exactly this value — so
+    omitting it handicaps every learned model relative to the naive baseline.
+    """
     f = cfg.get("features", {})
+    lags = list(f.get("target_lags", [1, 2, 3]))
+    if 0 not in lags:
+        lags = [0] + lags
     return {
-        "target_lags": f.get("target_lags", [1, 2, 3]),
+        "target_lags": lags,
         "rolling_windows": f.get("rolling_windows", [6]),
         "include_weekly": f.get("include_weekly", False),
         "covariates": list(covariates),
     }
+
+
+def apply_horizon_embargo(meta: pd.DataFrame) -> pd.DataFrame:
+    """Purge origins whose target time crosses the next partition boundary.
+
+    Partitions are labelled by the forecast **origin** time, but a direct model's
+    supervised row observes its target at ``origin + horizon``. Without a purge,
+    the last training origins have targets that fall inside the calibration window
+    (and the last calibration targets inside the test window), which leaks target
+    information across the boundary. Here any such straddling origin is moved to a
+    separate ``"embargo"`` partition and thereby dropped from train/calibration/
+    test alike.
+
+    Applied per ``group_id``, so for a group partitioner (RICO runs, where each run
+    sits wholly in one partition) it is a no-op — there is no within-group boundary
+    for a target to cross.
+    """
+    new = meta["partition"].copy()
+    for _, sub in meta.groupby("group_id", sort=False):
+        part = sub["partition"]
+        if (part == "calibration").any():
+            calib_start = sub.loc[part == "calibration", "origin_time"].min()
+            leak = (part == "train") & (sub["target_time"] >= calib_start)
+            new.loc[sub.index[leak]] = "embargo"
+        if (part == "test").any():
+            test_start = sub.loc[part == "test", "origin_time"].min()
+            leak = (part == "calibration") & (sub["target_time"] >= test_start)
+            new.loc[sub.index[leak]] = "embargo"
+    out = meta.copy()
+    out["partition"] = new
+    return out
 
 
 def build_series_windows(
@@ -103,13 +142,17 @@ def build_dataset_windows(
 
     X = pd.concat(X_parts, ignore_index=True)
     meta = pd.concat(meta_parts, ignore_index=True)
+    meta = apply_horizon_embargo(meta)
     y = meta["y_true"].to_numpy(dtype=float)
+    # Embargoed rows belong to none of PARTITIONS, so they are excluded from every
+    # model mask (train / calibration / test) by construction.
     idx = {p: (meta["partition"] == p).to_numpy() for p in PARTITIONS}
 
     return {
         "X": X, "y": y, "meta": meta, "idx": idx,
         "feature_names": names, "horizon": horizon,
         "skipped_groups": skipped,
+        "n_embargoed": int((meta["partition"] == "embargo").sum()),
         "seasonal_naive_supported": prepared.seasonal_naive_supported,
     }
 
@@ -177,7 +220,8 @@ def window_summary(windows: dict) -> pd.DataFrame:
     """Per-partition row counts, used for the split-integrity audit files."""
     meta = windows["meta"]
     rows = []
-    for p in PARTITIONS:
+    # Include the embargo partition so the purge is visible in the split audit.
+    for p in list(PARTITIONS) + ["embargo"]:
         sub = meta[meta["partition"] == p]
         rows.append({
             "horizon": windows["horizon"],

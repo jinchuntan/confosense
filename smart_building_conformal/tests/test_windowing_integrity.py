@@ -127,6 +127,51 @@ def test_seasonal_features_absent_when_no_seasonal_cycle_exists():
     assert not ds.seasonal_naive_supported
 
 
+def test_no_target_time_leakage_across_partitions_chronological():
+    """The horizon embargo must stop a train/calibration *target* from landing in
+    the next partition, not merely the origin."""
+    series = [_series(600, f"b{i}", "2021-01-01", season=24, freq="1h")
+              for i in range(2)]
+    ds = PreparedDataset("synthetic", series,
+                         ChronologicalPartitioner(fractions=(0.6, 0.2, 0.2)),
+                         Provenance("synthetic", "s"))
+    w = windowing.build_dataset_windows(ds, horizon=6, fcfg=FCFG)
+    meta = w["meta"]
+    assert w["n_embargoed"] > 0, "embargo never fired; boundary rows would leak"
+    for gid, sub in meta.groupby("group_id"):
+        tr = sub[sub["partition"] == "train"]
+        ca = sub[sub["partition"] == "calibration"]
+        te = sub[sub["partition"] == "test"]
+        assert tr["target_time"].max() < ca["origin_time"].min(), \
+            f"{gid}: a training target reaches the calibration window"
+        assert ca["target_time"].max() < te["origin_time"].min(), \
+            f"{gid}: a calibration target reaches the test window"
+
+
+def test_horizon_embargo_is_noop_for_group_partitioner():
+    """RICO-style whole-run splits have no within-group boundary to cross."""
+    ds = grouped_dataset()
+    w = windowing.build_dataset_windows(ds, horizon=10, fcfg=FCFG)
+    assert w["n_embargoed"] == 0
+    assert "embargo" not in set(w["meta"]["partition"])
+
+
+def test_feature_config_injects_lag_zero_equal_to_yt():
+    """y_t is available at the origin (persistence uses it) and must be a feature."""
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2, 3], "rolling_windows": [6]}},
+        covariates=["tmed"],
+    )
+    assert 0 in fcfg["target_lags"]
+    ds = grouped_dataset()
+    w = windowing.build_dataset_windows(ds, horizon=5, fcfg=fcfg)
+    assert "target_lag_0" in w["X"].columns
+    frames = {s.group_id: s.frame for s in ds.series}
+    for _, row in w["meta"].sample(20, random_state=1).iterrows():
+        yt = frames[row["group_id"]]["target"].loc[row["origin_time"]]
+        assert np.isclose(w["X"].loc[row.name, "target_lag_0"], yt)
+
+
 def test_series_too_short_are_reported_not_silently_dropped():
     short = [_series(20, "tiny", "2021-04-01", season=None, freq="1min")]
     long = [_series(300, f"ok{i}", f"2021-04-{i+2:02d}", season=None, freq="1min")
