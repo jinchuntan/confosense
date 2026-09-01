@@ -1,8 +1,9 @@
-canonical_protocol_hash(src.protocol.protocol_hash) = 07bf304aceeafc7411b570f21c26a48a8d33515cdd3badad35c4f1a61a932c7b
+canonical_protocol_hash(src.protocol.protocol_hash) = 10437ab054199d64c74edb5e62a4011f707fedb96b7d6440d6047f42ea500a8d
 executable_config = configs/study_final_dissertation_v2.yaml
 audited_commit = 06fe967be2be8d7898812c0c2d6e464d4e942351
 amendment_history:
   - session1_raw_bytes = f710c96c1a90ea76ab7dc3fc003769c35eba589ea018b78faeb914b16402f5ac  # invalid YAML; amendment 001
   - amendment_001_executable = 1e4506d203c9543a2ccf50dd0c64bf3c2cf09195f9c25f1a232ae5fd2b55d9ea
-  - amendment_002_ablation = 07bf304aceeafc7411b570f21c26a48a8d33515cdd3badad35c4f1a61a932c7b  # active
+  - amendment_002_ablation = 07bf304aceeafc7411b570f21c26a48a8d33515cdd3badad35c4f1a61a932c7b  # superseded
 status = predeclared and validated; not yet executed
+amendment_003_robustness_extension = 10437ab054199d64c74edb5e62a4011f707fedb96b7d6440d6047f42ea500a8d  # active; supersedes 07bf304a...

@@ -242,6 +242,38 @@ class Ablation(_Strict):
         return v
 
 
+class RobustnessExtension(_Strict):
+    fault_types: List[str] = Field(min_length=1)
+    severities_sd: List[float] = Field(min_length=1)
+    zero_severity_control: bool
+    fault_window_fraction: List[float]
+    segments: dict
+    random_missing_fraction: float = Field(gt=0, lt=1)
+    contamination_rates: List[float] = Field(min_length=1)
+    recovery_policies: List[str] = Field(min_length=1)
+    recovery_fault: dict
+    recovery_definition: str
+    residual_delay: Literal["horizon"]
+    group_safe: bool
+    coverage_reference: Literal["clean_ground_truth"]
+    background_exposure_excludes_fault_window: bool
+    primary_endpoints: List[str] = Field(min_length=1)
+    secondary_endpoints: List[str]
+    multiplicity: str
+    abstention_treatment: str
+    seeds: str
+    paired_bootstrap_replicates: int = Field(ge=2000)
+
+    @model_validator(mode="after")
+    def _window_valid(self):
+        lo, hi = self.fault_window_fraction
+        if not (0.0 < lo < hi < 1.0):
+            raise ValueError("fault_window_fraction must satisfy 0 < lo < hi < 1")
+        if self.zero_severity_control is not True:
+            raise ValueError("zero-severity control is mandatory")
+        return self
+
+
 class Protocol(_Strict):
     schema_version: int = Field(ge=2)
     meta: Meta
@@ -260,6 +292,7 @@ class Protocol(_Strict):
     statistics: Statistics
     robustness: Robustness
     ablation: Ablation
+    robustness_extension: RobustnessExtension
     honesty_clause: str
 
     @model_validator(mode="after")

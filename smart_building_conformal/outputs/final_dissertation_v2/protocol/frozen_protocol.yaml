@@ -179,6 +179,40 @@ ablation:
   comparison_alternative: background_alerts_per_asset_day_at_matched_recall
   fixed_before_outer_results: true
 
+robustness_extension:
+  # Predeclared robustness/contamination/recovery extension (amendment 003),
+  # evaluated through the SAME end-to-end pipeline objects frozen per unit in the
+  # core run full_20260831_220811 (deterministic refit; corrupted readings feed
+  # the lagged inputs causally). Fixed BEFORE any robustness result was viewed.
+  fault_types: [random_missing, dropout, stuck, level_shift, drift]
+  severities_sd: [1.0, 2.0]           # per-group TRAIN-ONLY robust-sigma units
+  zero_severity_control: true         # must reproduce the clean cell exactly
+  fault_window_fraction: [0.25, 0.55] # contiguous window of each group's test span
+  segments: {pre: [0.0, 0.25], during: [0.25, 0.55], post: [0.55, 1.0]}
+  random_missing_fraction: 0.2        # of in-window steps, gap-filled last value
+  contamination_rates: [0.05, 0.10]   # of calibration targets, +2sd bias; test stream clean
+  recovery_policies: [static, periodic, rolling]
+  recovery_fault: {type: level_shift, severity_sd: 2.0}
+  recovery_definition: >-
+    first post-fault origin at which rolling empirical coverage (window = min(one
+    day of steps, quarter of the post segment)) returns within 0.05 of the unit's
+    pre-fault segment coverage; censored if never within the test span
+  residual_delay: horizon             # recalibration consumes only observable corrupted residuals
+  group_safe: true
+  coverage_reference: clean_ground_truth   # faults corrupt the sensor, not reality
+  background_exposure_excludes_fault_window: true
+  primary_endpoints: [delta_coverage_during_vs_pre, delta_background_per_day_post_vs_pre,
+                      fault_detected, time_to_recovery_steps]
+  secondary_endpoints: [interval_width_mean, winkler_score, post_fault_cascade_episodes,
+                        point_mae_vs_persistence]
+  multiplicity: holm_within_primary_family_per_dataset
+  abstention_treatment: >-
+    units whose core selection abstained are evaluated with their recorded
+    best-effort diagnostic pipeline and carry operational_feasible=false; never
+    dropped, never pooled with feasible units in headline rows
+  seeds: all_five_model_seeds_aggregated_before_inference
+  paired_bootstrap_replicates: 2000
+
 honesty_clause: >-
   The original test outputs were inspected and used to diagnose the pipeline, so
   they are no longer a pristine holdout. Corrected performance is therefore
