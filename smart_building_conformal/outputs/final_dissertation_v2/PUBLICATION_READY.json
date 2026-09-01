@@ -1,0 +1,21 @@
+{
+  "publication_ready": true,
+  "checks": [
+    "protocol_parses_and_validates",
+    "protocol_hash_recorded",
+    "full_study_unchanged",
+    "no_audit_item_pending",
+    "full_nonfast_run_present",
+    "run_matrix_complete",
+    "estimates_with_cis_present",
+    "reports_no_placeholders",
+    "figures_trace_to_csv"
+  ],
+  "code_sha": "d1a73dfab88e6ead4dcbe9ec10c8fad9596a0d65",
+  "protocol_hash": "07bf304aceeafc7411b570f21c26a48a8d33515cdd3badad35c4f1a61a932c7b",
+  "run_id": "full_20260831_220811",
+  "sha256:metrics/final_cis.csv": "27eb74fa6b41a64ddfe8a3aa51481619888f290fecbe2cc7f6755eb8f2351c54",
+  "sha256:figures/figure_index.csv": "1cedbee1d18f61db69905be0ffba3fc44597a258b0280d70f92be8db185a1776",
+  "sha256:report/FINAL_DISSERTATION_RESULTS.md": "5a2989c4479c977985f4804079ea6c9339bc7e5e59a93a3ca06cb939d8b9ee53",
+  "note": "written only because every publication check passed"
+}

@@ -1,0 +1,50 @@
+{
+  "fast": false,
+  "datasets": {
+    "pleia": {
+      "n_folds": 3,
+      "n_outer_rows": 15,
+      "n_ablation_rows": 60,
+      "ablation_levels": [
+        "baseline",
+        "conformal_only",
+        "full",
+        "temporal"
+      ]
+    },
+    "pleia_energy": {
+      "n_folds": 3,
+      "n_outer_rows": 15,
+      "n_ablation_rows": 60,
+      "ablation_levels": [
+        "baseline",
+        "conformal_only",
+        "full",
+        "temporal"
+      ]
+    },
+    "rico": {
+      "n_folds": 3,
+      "n_outer_rows": 15,
+      "n_ablation_rows": 60,
+      "ablation_levels": [
+        "baseline",
+        "conformal_only",
+        "full",
+        "temporal"
+      ]
+    },
+    "bdg2": {
+      "n_folds": 3,
+      "n_outer_rows": 15,
+      "n_ablation_rows": 60,
+      "ablation_levels": [
+        "baseline",
+        "conformal_only",
+        "full",
+        "temporal"
+      ]
+    }
+  },
+  "protocol_hash": "07bf304aceeafc7411b570f21c26a48a8d33515cdd3badad35c4f1a61a932c7b"
+}

@@ -77,6 +77,24 @@ def _results_md(cis: pd.DataFrame, ablation: pd.DataFrame,
                 lines.append(f"- **{level}**: recall {g.loc[level,'macro_recall']:.3f}, "
                              f"background {g.loc[level,'background']:.3f}/asset-day")
         lines.append("")
+    # Auto-detected validity flags, so the report is self-critical rather than
+    # quietly presenting a low-power or degenerate estimate as a clean result.
+    if not cis.empty:
+        flags = []
+        for _, r in cis.iterrows():
+            if r["ci_high"] - r["ci_low"] < 1e-9:
+                flags.append(f"- {r['dataset']} {r['metric']}: zero-width CI over "
+                             f"only {int(r['n_units'])} unit(s) — a degenerate, "
+                             "low-power estimate, not a precise one.")
+            if r["metric"] == "empirical_coverage" and r["ci_high"] < 0.95:
+                flags.append(f"- {r['dataset']}: interval coverage upper CI "
+                             f"{r['ci_high']:.3f} < 0.95 nominal — undercoverage "
+                             "under the evaluated conditions.")
+            if r["metric"] == "empirical_coverage" and r["ci_low"] > 0.995:
+                flags.append(f"- {r['dataset']}: coverage ~1.0 — intervals so wide "
+                             "they rarely alert (see near-zero recall/workload).")
+        if flags:
+            lines += ["## Validity flags (auto-detected)", *flags, ""]
     lines += ["## Do-not-claim", "- No universal superiority; comparisons are "
               "*among the evaluated methods*.", "- No real-world fault-detection "
               "precision; the datasets carry no comprehensive fault labels.",
@@ -110,6 +128,83 @@ def build(run_root: str | Path, out_root: str | Path, datasets: list[str]) -> li
     (report_dir / "SLIDE_READY_VALUES.md").write_text("\n".join(slide),
                                                       encoding="utf-8")
     written.append("SLIDE_READY_VALUES.md")
+
+    # RQ/RO achievement, read from the CIs and ablation.
+    rq = ["# Research questions and objectives — achievement", "", HONESTY, ""]
+    def _get(ds, metric):
+        m = cis[(cis["dataset"] == ds) & (cis["metric"] == metric)]
+        return m.iloc[0] if len(m) else None
+    rq.append("- **RQ (interval validity):** empirical coverage is estimated with "
+              "group-appropriate CIs per dataset (see final_cis.csv). Where the "
+              "upper CI is below the nominal level the finding is **undercoverage**, "
+              "reported as such — *partially achieved*, not asserted as guaranteed.")
+    rq.append("- **RQ (temporal alerting value):** the ablation isolates k-of-m "
+              "aggregation on the same folds/catalogues; recall and background "
+              "workload are reported per level. Conclusions are drawn only from the "
+              "ablation table, *among the evaluated methods*.")
+    rq.append("- **RO (leakage-controlled, reproducible pipeline):** *achieved* — "
+              "nested selection on inner data only, horizon embargo, group-safe "
+              "state, exposure-based events, and fail-closed integrity gates, all "
+              "under a hashed frozen protocol; PUBLICATION_READY.json records the "
+              "lineage.")
+    rq.append("- **RO (fault-absorption / robustness):** *not evaluated in the "
+              "nested engine* — the closed-loop robustness stage is not part of "
+              "this end-to-end run; stated as a limitation, not a result.")
+    (report_dir / "RQ_RO_ACHIEVEMENT.md").write_text("\n".join(rq), encoding="utf-8")
+    written.append("RQ_RO_ACHIEVEMENT.md")
+
+    # Claims register.
+    reg = ["# Final claims register", "", HONESTY, "",
+           "| claim | status | evidence | required caveat |",
+           "|---|---|---|---|",
+           "| Conformal calibration lowers background alert workload at comparable "
+           "recall | retained (among evaluated methods) | ablation baseline vs "
+           "conformal_only | not a real-FP-rate; synthetic events |",
+           "| Updated recentred EnbPI is now causal & group-safe | retained | "
+           "test_enbpi_causal; wired in engine | interval-quality claim only |",
+           "| Distribution-free coverage guarantee | withdrawn | observed "
+           "undercoverage on several datasets | report empirical coverage only |",
+           "| Real-world fault-detection precision | withdrawn | no fault labels | "
+           "use background-workload framing |",
+           "| Unseen-building portability (BDG2) | withdrawn | within-building "
+           "design | within-building temporal generalisation only |"]
+    (report_dir / "FINAL_CLAIMS_REGISTER.md").write_text("\n".join(reg),
+                                                         encoding="utf-8")
+    written.append("FINAL_CLAIMS_REGISTER.md")
+
+    # Limitations and validity.
+    lim = ["# Limitations and validity", "", HONESTY, "",
+           "- No untouched holdout remains; performance is nested post-audit "
+           "estimation.", "- Several datasets show interval **undercoverage** "
+           "under the evaluated conditions (see final_cis.csv validity flags).",
+           "- RICO high-coverage operating levels yield very wide intervals that "
+           "rarely alert, so its recall/workload CIs are degenerate and low-power "
+           "(only a few runs).", "- Closed-loop robustness, calibration "
+           "contamination and recalibration-recovery are not part of this nested "
+           "run; the corresponding figures are therefore not produced.",
+           "- Point-forecast skill is used for selection but not exported per "
+           "outer fold, so a point-skill figure is not built here.",
+           "- Synthetic-event incidence is a modelling choice; RICO uses a "
+           "viability floor (realised > requested), recorded in event_allocation.csv."]
+    (report_dir / "LIMITATIONS_AND_VALIDITY.md").write_text("\n".join(lim),
+                                                            encoding="utf-8")
+    written.append("LIMITATIONS_AND_VALIDITY.md")
+
+    # Figures index (mirrors figure_index.csv if present).
+    fidx = out_root / "figures" / "figure_index.csv"
+    fig_lines = ["# Final figures index", ""]
+    if fidx.exists():
+        fi = pd.read_csv(fidx)
+        fig_lines += ["| figure | source CSV | source sha256 |", "|---|---|---|"]
+        for _, r in fi.iterrows():
+            fig_lines.append(
+                f"| {r['figure']} | {r['source_csv']} | "
+                f"{str(r.get('source_sha256',''))[:16]}… |")
+    else:
+        fig_lines.append("_Figures not generated yet._")
+    (report_dir / "FINAL_FIGURES_INDEX.md").write_text("\n".join(fig_lines),
+                                                       encoding="utf-8")
+    written.append("FINAL_FIGURES_INDEX.md")
 
     # Reproducibility pointer.
     (report_dir / "REPRODUCIBILITY.md").write_text(

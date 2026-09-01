@@ -141,26 +141,90 @@ def _engine_smoke_covers_all(rep: Report, out_root: Path) -> None:
 
 def _completed_run(rep: Report, out_root: Path) -> None:
     runs = out_root / "runs"
-    full = sorted(runs.glob("full_*")) if runs.exists() else []
+    full = [p for p in sorted(runs.glob("full_*"))
+            if (p / "engine_summary.json").exists()] if runs.exists() else []
     if not full:
         rep.add("full_nonfast_run_present", False,
-                "no runs/full_* directory; corrected full study has not completed")
-        rep.add("run_matrix_complete", False, "no run to validate")
-        rep.add("estimates_with_cis_present", False, "no run to validate")
-        rep.add("reports_no_placeholders", False, "no reports generated yet")
-        rep.add("figures_trace_to_csv", False, "no figures generated yet")
+                "no runs/full_* with engine_summary.json; full study not complete")
+        for c in ("run_matrix_complete", "estimates_with_cis_present",
+                  "reports_no_placeholders", "figures_trace_to_csv"):
+            rep.add(c, False, "no completed run to validate")
         return
     run = full[-1]
-    manifest = run / "manifests" / "run_manifest.json"
-    ok = manifest.exists()
-    fast = True
-    if ok:
-        m = json.loads(manifest.read_text(encoding="utf-8"))
-        fast = bool(m.get("fast", True))
-    rep.add("full_nonfast_run_present", ok and not fast,
-            f"run={run.name}, fast={fast}")
-    # Deeper run-matrix / CI / report / figure checks are enforced once a run
-    # exists; until then they fail closed above.
+    summ = json.loads((run / "engine_summary.json").read_text(encoding="utf-8"))
+    fast = bool(summ.get("fast", True))
+    rep.add("full_nonfast_run_present", not fast, f"run={run.name}, fast={fast}")
+
+    want_ds = {"pleia", "pleia_energy", "rico", "bdg2"}
+    ds = summ.get("datasets", {})
+    complete = want_ds <= set(ds) and all(
+        v.get("n_outer_rows", 0) > 0
+        and {"baseline", "conformal_only", "temporal", "full"}
+        <= set(v.get("ablation_levels", [])) for v in ds.values())
+    rep.add("run_matrix_complete", complete,
+            f"datasets {sorted(ds)}; folds "
+            f"{sorted({v.get('n_folds') for v in ds.values()})}")
+
+    cis = out_root / "metrics" / "final_cis.csv"
+    ok_cis = False
+    if cis.exists():
+        import csv
+        with open(cis, encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+        ok_cis = bool(rows) and all(
+            r.get("estimate") not in (None, "") and r.get("ci_low") not in (None, "")
+            and r.get("ci_high") not in (None, "") for r in rows)
+    rep.add("estimates_with_cis_present", ok_cis,
+            f"{cis.name} {'ok' if ok_cis else 'missing/incomplete'}")
+
+    results = out_root / "report" / "FINAL_DISSERTATION_RESULTS.md"
+    placeholders = ("TODO", "TBD", "XXX", "PLACEHOLDER", "FIXME", "{{", "___",
+                    "<PLACEHOLDER", "lorem ipsum")
+    ok_rep = False
+    if results.exists():
+        text = results.read_text(encoding="utf-8")
+        ok_rep = ("holdout" in text and
+                  not any(tok in text for tok in placeholders))
+    rep.add("reports_no_placeholders", ok_rep,
+            "results report clean" if ok_rep else "missing/placeholder in report")
+
+    figidx = out_root / "figures" / "figure_index.csv"
+    ok_fig = False
+    if figidx.exists():
+        import csv
+        with open(figidx, encoding="utf-8") as f:
+            frows = list(csv.DictReader(f))
+        ok_fig = bool(frows) and all(r.get("source_sha256") for r in frows)
+    rep.add("figures_trace_to_csv", ok_fig,
+            f"{len(frows) if ok_fig else 0} figures traced" if ok_fig
+            else "no figure_index or missing source hashes")
+
+
+def _lineage(out_root: Path) -> dict:
+    """Code / protocol / run / artefact lineage for the publication marker."""
+    info: dict = {}
+    try:
+        info["code_sha"] = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=str(ROOT), capture_output=True,
+            text=True).stdout.strip()
+    except Exception:                                       # noqa: BLE001
+        info["code_sha"] = "unknown"
+    try:
+        from . import protocol as P
+        info["protocol_hash"] = P.protocol_hash(
+            out_root / "protocol" / "frozen_protocol.yaml")
+    except Exception:                                       # noqa: BLE001
+        info["protocol_hash"] = "unknown"
+    runs = out_root / "runs"
+    full = [p for p in sorted(runs.glob("full_*"))
+            if (p / "engine_summary.json").exists()] if runs.exists() else []
+    info["run_id"] = full[-1].name if full else None
+    for rel in ("metrics/final_cis.csv", "figures/figure_index.csv",
+                "report/FINAL_DISSERTATION_RESULTS.md"):
+        p = out_root / rel
+        if p.exists():
+            info[f"sha256:{rel}"] = _sha256_file(p)
+    return info
 
 
 def run(output_root: str, *, run_tests: bool, mode: str = "publication") -> Report:
@@ -210,6 +274,7 @@ def main() -> None:
             marker = out_root / "PUBLICATION_READY.json"
             payload = {"publication_ready": True,
                        "checks": [c.name for c in rep.checks],
+                       **_lineage(out_root),
                        "note": "written only because every publication check passed"}
             marker.write_text(json.dumps(payload, indent=2), encoding="utf-8")
             print(f"\nALL PUBLICATION CHECKS PASSED -> wrote {marker}")

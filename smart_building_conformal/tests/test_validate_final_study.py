@@ -16,13 +16,23 @@ def test_validator_passes_design_checks_now():
     assert by["full_study_unchanged"].ok
 
 
-def test_validator_fails_closed_without_completed_run():
+def test_publication_mode_passes_now_that_the_full_run_exists():
     rep = V.run("outputs/final_dissertation_v2", run_tests=False,
                 mode="publication")
     by = {c.name: c for c in rep.checks}
-    # No corrected full run has completed, so publication-readiness must be false.
+    # The corrected non-fast run, its CIs, figures and reports all exist.
+    assert by["full_nonfast_run_present"].ok
+    assert by["run_matrix_complete"].ok
+    assert by["estimates_with_cis_present"].ok
+    assert rep.passed
+
+
+def test_validator_fails_closed_on_empty_output_root(tmp_path):
+    # The fail-closed mechanism itself: an output root with no run/CIs/reports
+    # must not be declared publication-ready.
+    (tmp_path / "protocol").mkdir()
+    rep = V.run(str(tmp_path), run_tests=False, mode="publication")
     assert not rep.passed
-    assert not by["full_nonfast_run_present"].ok
 
 
 def test_no_audit_item_pending_now_passes():

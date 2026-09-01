@@ -1,0 +1,16 @@
+dataset,seed,outer_fold,decision,reason,point_model,interval_method,operating_level,recalibration,rule_name,config_hash
+pleia_energy,42,0,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,42,1,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,42,2,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,43,0,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,43,1,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,43,2,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,44,0,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,44,1,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,44,2,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,45,0,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,45,1,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,45,2,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,
+pleia_energy,46,0,selected,,xgboost,quantile_uncalibrated,0.95,static,k3_w30,1cd2a7993be8b7b8d69981df530ded8fe3be6eb564a5077ba9e8b468edde1bfb
+pleia_energy,46,1,selected,,xgboost,cqr,0.975,static,k3_w30,6c285c06bdd67900a5056d4ca9191ee294ea052a4b31b32e3dc2e2884f9545d1
+pleia_energy,46,2,no_feasible_configuration,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day,,,,,,

@@ -67,15 +67,15 @@ def fig_recall_vs_workload(run_root: Path, datasets, out_dir: Path, index: list)
                   "source_sha256": _sha(src) if src.exists() else ""})
 
 
-def fig_coverage_with_cis(run_root: Path, out_dir: Path, index: list):
+def fig_coverage_with_cis(cis: Path, out_dir: Path, index: list):
     """Empirical coverage per dataset with 95% CIs and the nominal line."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    cis = run_root.parent / "metrics" / "final_cis.csv"
-    if not cis.exists():
+    if not Path(cis).exists():
         return
+    cis = Path(cis)
     df = pd.read_csv(cis)
     cov = df[df["metric"] == "empirical_coverage"]
     if cov.empty:
@@ -96,14 +96,69 @@ def fig_coverage_with_cis(run_root: Path, out_dir: Path, index: list):
                   "source_sha256": _sha(cis)})
 
 
+def fig_recall_by_stratum(run_root: Path, datasets, out_dir: Path, index: list):
+    """Synthetic-event recall by event type x severity, per dataset."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    ev = _concat(run_root, datasets, "outer_per_event.csv")
+    if ev.empty or "detected" not in ev:
+        return
+    ev["stratum"] = ev["event_type"].astype(str) + "|" + ev["severity"].astype(str)
+    piv = ev.groupby(["dataset", "stratum"])["detected"].mean().unstack("dataset")
+    fig, ax = plt.subplots(figsize=(9, 5))
+    piv.plot(kind="bar", ax=ax, color=CB[:piv.shape[1]], edgecolor="black",
+             linewidth=0.3)
+    ax.set_ylabel("synthetic-event recall")
+    ax.set_xlabel("event type | severity")
+    ax.set_title("Recall by event type and severity")
+    ax.legend(title="dataset", frameon=False)
+    ax.grid(alpha=0.25, axis="y")
+    p = out_dir / "fig_recall_by_stratum.png"
+    fig.tight_layout(); fig.savefig(p, dpi=150); plt.close(fig)
+    src = run_root / (datasets[0] if datasets else "") / "outer_per_event.csv"
+    index.append({"figure": p.name, "source_csv": "outer_per_event.csv (all datasets)",
+                  "source_sha256": _sha(src) if src.exists() else ""})
+
+
+def fig_selected_configs(run_root: Path, datasets, out_dir: Path, index: list):
+    """Distribution of inner-selected interval methods (feasible folds only)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    sel = _concat(run_root, datasets, "selection.csv")
+    if sel.empty or "interval_method" not in sel:
+        return
+    chosen = sel[sel["decision"] == "selected"]
+    if chosen.empty:
+        return
+    counts = chosen["interval_method"].value_counts()
+    fig, ax = plt.subplots(figsize=(7, 4))
+    ax.bar(counts.index, counts.values, color=CB[2], edgecolor="black", linewidth=0.3)
+    ax.set_ylabel("folds selecting this method")
+    ax.set_title("Inner-selected interval method (feasible folds)")
+    ax.grid(alpha=0.25, axis="y")
+    p = out_dir / "fig_selected_configs.png"
+    fig.tight_layout(); fig.savefig(p, dpi=150); plt.close(fig)
+    src = run_root / (datasets[0] if datasets else "") / "selection.csv"
+    index.append({"figure": p.name, "source_csv": "selection.csv (all datasets)",
+                  "source_sha256": _sha(src) if src.exists() else ""})
+
+
 def build_all(run_root: str | Path, datasets: list[str],
-              out_dir: str | Path) -> pd.DataFrame:
+              out_dir: str | Path, cis_path: str | Path | None = None) -> pd.DataFrame:
     """Generate every buildable primary figure and write ``figure_index.csv``."""
     run_root = Path(run_root); out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    if cis_path is None:
+        cis_path = out_dir.parent / "metrics" / "final_cis.csv"
     index: list[dict] = []
     fig_recall_vs_workload(run_root, datasets, out_dir, index)
-    fig_coverage_with_cis(run_root, out_dir, index)
+    fig_coverage_with_cis(Path(cis_path), out_dir, index)
+    fig_recall_by_stratum(run_root, datasets, out_dir, index)
+    fig_selected_configs(run_root, datasets, out_dir, index)
     idx = pd.DataFrame(index)
     if not idx.empty:
         idx.to_csv(out_dir / "figure_index.csv", index=False)

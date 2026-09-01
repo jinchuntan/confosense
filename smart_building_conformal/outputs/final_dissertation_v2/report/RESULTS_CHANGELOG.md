@@ -54,9 +54,25 @@ executable and implemented the corrected code with regression tests.
   NOT ready (no completed non-fast run; C3/D1/D4/E pending). Commit `3d3b8a7`.
 - **Tests:** full suite 224 passed, 1 skipped (was 198 after session-1 protocol).
 
-## Still pending (require the nested end-to-end engine)
-C3/E end-to-end recalibration→alert integration and single evaluated pipeline
-object; D1 remove hard-wired CQR@95% operating choice; D4 exposure-based event
-allocation wired into the run; wiring A2/D2/D3/D5/D6/D7/D8 into that engine; then
-the nested multi-seed full run, 2000-replicate CIs, 10 figures and the report
-suite. `outputs/full_study/` remains byte-for-byte unchanged throughout.
+## Session 3 — nested engine, full run, CIs, figures, reports, PUBLICATION_READY
+- **Nested end-to-end engine** `src/corrected_study.py`: rolling-origin / whole-run
+  folds, inner selection of interval method + operating level + recalibration +
+  physical-time rule (D1/D7), C3/E outer evaluation feeding the selected
+  recalibrated stream into alerting with fail-closed hash/bounds gates, D4
+  exposure events (block-level with a short-run viability floor), 4-level ablation.
+- **Amendment 002**: predeclared four-level ablation; protocol hash
+  `07bf304a…`. Audit: every leakage item now FIXED or WIRED_IN_ENGINE (none pending).
+- **Full non-fast run** (`full_20260831_220811`): 4 datasets × 3 outer folds × 5
+  seeds, exit 0. **2000-replicate group-appropriate CIs** in `metrics/final_cis.csv`
+  (run-level for RICO, building-level for BDG2, moving-block for the series).
+- **Figures** (4) in `figures/` traced to source CSV hashes; **reports** in
+  `report/` (FINAL_DISSERTATION_RESULTS, SLIDE_READY_VALUES, RQ_RO_ACHIEVEMENT,
+  FINAL_CLAIMS_REGISTER, LIMITATIONS_AND_VALIDITY, FINAL_FIGURES_INDEX,
+  REPRODUCIBILITY, VALIDATION_REPORT) — every number read from a CSV.
+- **`validate_final_study --mode publication` passes all 9 checks →
+  `PUBLICATION_READY.json`** (with code/protocol/run/artefact lineage).
+- Headline (corrected, honest): coverage frequently **below nominal**
+  (undercoverage flagged); RICO high-coverage intervals barely alert (degenerate,
+  low-power); 48/60 outer folds abstained (`no_feasible_configuration`). Numbers
+  live only in the CSVs/reports; none is hand-entered.
+- `outputs/full_study/` remains byte-for-byte unchanged (`0bf904c3…`).

@@ -1,0 +1,16 @@
+dataset,seed,outer_fold,decision,point_model,interval_method,operating_level,recalibration,rule_name,config_hash,reason
+pleia,42,0,selected,persistence,recentred_enbpi_updated,0.99,static,single,819d66331748e160921e175d93d09692d9fea3b2a72c808c490d87ba54395e3a,
+pleia,42,1,no_feasible_configuration,,,,,,,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day
+pleia,42,2,selected,persistence,recentred_enbpi_updated,0.95,static,k3_w180,dd713859e5aeb9ab91ae34e834d6bf73dc502c1768e6ed597c1af8694c3886eb,
+pleia,43,0,selected,persistence,recentred_enbpi_updated,0.99,static,single,e25e9d86d7d90b9720cdfe1368ff41745a3a6a6f99b227b2f2f93c3dee1440f7,
+pleia,43,1,no_feasible_configuration,,,,,,,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day
+pleia,43,2,selected,persistence,recentred_enbpi_updated,0.95,static,k3_w180,77c120353816aa8bebf0472f5c7cf41dcfca77f3c5ee699b455db74e39b37bf8,
+pleia,44,0,selected,persistence,cqr,0.995,static,single,e8d0e376f58cf2b50c1c10abf52364a593743dca96b84e1767083b1b403d58d1,
+pleia,44,1,no_feasible_configuration,,,,,,,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day
+pleia,44,2,selected,persistence,cqr,0.975,static,k3_w30,125bf6275d29c8a5cd4698951f8457785555e6b6c75924e7c55feeba41ed998f,
+pleia,45,0,selected,persistence,cqr,0.95,static,k3_w30,12a12666b67714a95bad9f034040e237fab9799c68f72dc6b1a9f7e484843b70,
+pleia,45,1,no_feasible_configuration,,,,,,,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day
+pleia,45,2,selected,persistence,cqr,0.99,periodic,k3_w30,66ccdc6e50d2b5ac814ab779b3bc5a9f6a15cdef5f2d02a480c82cb0c10d9a61,
+pleia,46,0,selected,persistence,cqr,0.995,static,single,ace79354d5b609f5c1bce8044ab496f8e7ede704d31f473ba9d7e57963cb696e,
+pleia,46,1,no_feasible_configuration,,,,,,,no candidate met macro recall >= 0.6 and background workload <= 1.0/asset-day
+pleia,46,2,selected,persistence,cqr,0.995,static,single,6c55f0a95b32c1084ab4e5068f8eba7d8e78aefa9117fc4b35ef1005a97ece6f,
