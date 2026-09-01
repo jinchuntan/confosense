@@ -1,0 +1,2 @@
+per_unit_point_mae_rmse_exported,reason,selection_frequencies_available,runtime_instrumented,consequence
+False,select_on_inner computed inner-selection MAE for the point-model choice but the engine did not persist point predictions or MAE/RMSE per outer unit,True,wall-clock only (whole run); no per-stage timing or peak memory,RQ1 point-accuracy evidence must come from the extension run (which will export outer point MAE/RMSE vs persistence) or be cited from the pre-repair diagnostic study with that label

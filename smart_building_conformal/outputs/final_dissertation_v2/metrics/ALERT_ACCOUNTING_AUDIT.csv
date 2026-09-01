@@ -1,0 +1,5 @@
+dataset,n_units,n_events_total,n_detected_total,recomputed_macro_recall,reported_macro_recall,recomputed_micro_recall,recomputed_expwt_coverage,reported_coverage,mean_unit_background_per_day,reported_background_per_day,total_test_asset_days_all_units,implied_total_background_episodes,denominator_includes_event_windows,n_strata
+pleia,15,510,356,0.662963,0.662963,0.698039,0.84619,0.84619,1.6851,1.6851,1031.98,1739.0,True,12
+pleia_energy,15,510,380,0.725926,0.725926,0.745098,0.78626,0.78626,10.4414,10.4414,1032.05,10776.0,True,12
+rico,15,36,15,0.333333,0.333333,0.416667,1.0,1.0,0.0,0.0,2.3,0.0,True,3
+bdg2,15,10830,4052,0.373028,0.373028,0.374146,0.890649,0.890649,1.4327,1.4327,21669.17,31045.0,True,12

@@ -1,0 +1,13 @@
+dataset,fold,scheme,n_train,n_calib,n_test,test_asset_days,test_groups,n_test_groups,test_origin_start,test_origin_end
+pleia,0,chronological,29720,9907,9907,68.8,(single-series),1,2021-10-10 04:40:00,2021-12-17 23:40:00
+pleia,1,chronological,22290,7430,9907,68.8,(single-series),1,2021-08-02 09:30:00,2021-10-10 04:30:00
+pleia,2,chronological,14860,4953,9907,68.8,(single-series),1,2021-05-25 14:20:00,2021-08-02 09:20:00
+pleia_energy,0,chronological,29720,9907,9909,68.81,(single-series),1,2021-10-10 04:30:00,2021-12-17 23:50:00
+pleia_energy,1,chronological,22290,7430,9907,68.8,(single-series),1,2021-08-02 09:20:00,2021-10-10 04:20:00
+pleia_energy,2,chronological,14860,4953,9907,68.8,(single-series),1,2021-05-25 14:10:00,2021-08-02 09:10:00
+rico,0,whole_run_group_blocked,34034,11492,221,0.15,P5S59,1,2024-05-18 03:15:00,2024-05-18 06:55:00
+rico,1,whole_run_group_blocked,34034,11271,221,0.15,P5S58,1,2024-05-17 23:15:00,2024-05-18 02:55:00
+rico,2,whole_run_group_blocked,33813,11271,221,0.15,P5S57,1,2024-05-17 19:15:00,2024-05-17 22:55:00
+bdg2,0,chronological,103996,34666,34672,1444.67,Eagle_assembly_Benny;Eagle_assembly_Ian;Fox_education_Henrietta;Hog_assembly_Colette;Hog_assembly_Dona;Lamb_assembly_Bertie;Lamb_assembly_Cesar;Moose_education_Ricardo;Mouse_health_Estela;Mouse_health_Justin,10,2017-08-08 11:00:00,2017-12-31 22:00:00
+bdg2,1,chronological,77998,25999,34670,1444.58,Eagle_assembly_Benny;Eagle_assembly_Ian;Fox_education_Henrietta;Hog_assembly_Colette;Hog_assembly_Dona;Lamb_assembly_Bertie;Lamb_assembly_Cesar;Moose_education_Ricardo;Mouse_health_Estela;Mouse_health_Justin,10,2017-03-16 14:00:00,2017-08-08 11:00:00
+bdg2,2,chronological,51994,17331,34670,1444.58,Eagle_assembly_Benny;Eagle_assembly_Ian;Fox_education_Henrietta;Hog_assembly_Colette;Hog_assembly_Dona;Lamb_assembly_Bertie;Lamb_assembly_Cesar;Moose_education_Ricardo;Mouse_health_Estela;Mouse_health_Justin,10,2016-10-23 01:00:00,2017-03-16 14:00:00

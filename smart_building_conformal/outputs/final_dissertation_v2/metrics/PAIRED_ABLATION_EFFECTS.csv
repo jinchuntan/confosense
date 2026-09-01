@@ -1,0 +1,21 @@
+contrast,n_units,recall_diff_mean,recall_diff_ci95,workload_diff_mean,workload_diff_ci95,unit,status
+conformal_only - baseline,12,0.0044,"[-0.0557, 0.0697]",-2.5099,"[-4.7433, -0.7782]","dataset-fold (seed-aggregated), pooled cluster-naive",EXPLORATORY (Amendment-002 endpoint = recall at matched background budget; matched-budget curves not computed by core run)
+conformal_only - baseline,3,0.1065,"NA(n=3, descriptive)",-2.1444,"NA(n=3, descriptive)",pleia folds,DESCRIPTIVE
+conformal_only - baseline,3,-0.0491,"NA(n=3, descriptive)",-7.5084,"NA(n=3, descriptive)",pleia_energy folds,DESCRIPTIVE
+conformal_only - baseline,3,-0.0444,"NA(n=3, descriptive)",0.0,"NA(n=3, descriptive)",rico folds,DESCRIPTIVE
+conformal_only - baseline,3,0.0046,"NA(n=3, descriptive)",-0.3869,"NA(n=3, descriptive)",bdg2 folds,DESCRIPTIVE
+temporal - conformal_only,12,-0.0729,"[-0.1373, -0.0222]",-0.5655,"[-1.0337, -0.1439]","dataset-fold (seed-aggregated), pooled cluster-naive",EXPLORATORY (Amendment-002 endpoint = recall at matched background budget; matched-budget curves not computed by core run)
+temporal - conformal_only,3,-0.0509,"NA(n=3, descriptive)",-0.8178,"NA(n=3, descriptive)",pleia folds,DESCRIPTIVE
+temporal - conformal_only,3,-0.0407,"NA(n=3, descriptive)",-0.5755,"NA(n=3, descriptive)",pleia_energy folds,DESCRIPTIVE
+temporal - conformal_only,3,-0.2,"NA(n=3, descriptive)",-0.8688,"NA(n=3, descriptive)",rico folds,DESCRIPTIVE
+temporal - conformal_only,3,0.0,"NA(n=3, descriptive)",0.0,"NA(n=3, descriptive)",bdg2 folds,DESCRIPTIVE
+full - baseline,12,-0.064,"[-0.1691, 0.0378]",-2.0593,"[-3.7405, -0.8189]","dataset-fold (seed-aggregated), pooled cluster-naive",EXPLORATORY (Amendment-002 endpoint = recall at matched background budget; matched-budget curves not computed by core run)
+full - baseline,3,0.1046,"NA(n=3, descriptive)",-2.8402,"NA(n=3, descriptive)",pleia folds,DESCRIPTIVE
+full - baseline,3,-0.0935,"NA(n=3, descriptive)",-4.4825,"NA(n=3, descriptive)",pleia_energy folds,DESCRIPTIVE
+full - baseline,3,-0.2889,"NA(n=3, descriptive)",-0.8688,"NA(n=3, descriptive)",rico folds,DESCRIPTIVE
+full - baseline,3,0.0217,"NA(n=3, descriptive)",-0.046,"NA(n=3, descriptive)",bdg2 folds,DESCRIPTIVE
+full - temporal,12,0.0045,"[-0.0272, 0.0339]",1.0161,"[0.2119, 2.1094]","dataset-fold (seed-aggregated), pooled cluster-naive",EXPLORATORY (Amendment-002 endpoint = recall at matched background budget; matched-budget curves not computed by core run)
+full - temporal,3,0.0491,"NA(n=3, descriptive)",0.1221,"NA(n=3, descriptive)",pleia folds,DESCRIPTIVE
+full - temporal,3,-0.0037,"NA(n=3, descriptive)",3.6014,"NA(n=3, descriptive)",pleia_energy folds,DESCRIPTIVE
+full - temporal,3,-0.0444,"NA(n=3, descriptive)",0.0,"NA(n=3, descriptive)",rico folds,DESCRIPTIVE
+full - temporal,3,0.0171,"NA(n=3, descriptive)",0.3409,"NA(n=3, descriptive)",bdg2 folds,DESCRIPTIVE
