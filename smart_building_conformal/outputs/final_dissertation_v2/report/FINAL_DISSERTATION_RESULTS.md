@@ -1,50 +1,54 @@
-# Final dissertation results (corrected study)
+# Final dissertation results (corrected, three-tier)
 
-> The original test outputs were inspected and used to diagnose the pipeline, so they are no longer a pristine holdout. Corrected performance is therefore estimated through fully nested post-audit evaluation and is **not** presented as validation on an untouched holdout.
+> The original test outputs were inspected and used to diagnose the pipeline, so they are no longer a pristine holdout. Corrected performance is estimated through fully nested post-audit evaluation and is **not** presented as validation on an untouched holdout.
 
-Terminology: *synthetic-event recall* and *background alert episodes per monitored asset-day*; coverage is *empirical coverage under the evaluated time-series conditions*; BDG2 is *within-building temporal generalisation* only.
+**Tiers:** *confirmed* = paired/CI-supported on adequate independent units · *descriptive* = correct arithmetic, too few independent units for a CI · *exploratory* = post-hoc or endpoint differs from the frozen one · *unsupported/prohibited* = must not be claimed.
 
-## Headline estimates with 95% CIs
-### bdg2
-- **macro_event_recall**: 0.373 (95% CI 0.336–0.414; n_units=10, boot=2000) [source: metrics/final_cis.csv]
-- **empirical_coverage**: 0.891 (95% CI 0.865–0.915; n_units=10, boot=2000) [source: metrics/final_cis.csv]
-- **background_episodes_per_asset_day**: 1.433 (95% CI 1.379–1.494; n_units=4, boot=2000) [source: metrics/final_cis.csv]
+## Feasibility (all 60 units) — *confirmed accounting*
+Source: `metrics/OUTER_UNIT_LEDGER.csv`.
+- **pleia**: 10/15 units feasible under the frozen policy; abstentions are `no_feasible_configuration` (first-class outcome).
+- **pleia_energy**: 2/15 units feasible under the frozen policy; abstentions are `no_feasible_configuration` (first-class outcome).
+- **rico**: 0/15 units feasible under the frozen policy; abstentions are `no_feasible_configuration` (first-class outcome).
+- **bdg2**: 0/15 units feasible under the frozen policy; abstentions are `no_feasible_configuration` (first-class outcome).
 
+## Headline estimates (corrected inference) — *confirmed only where a CI exists*
+Source: `metrics/final_cis_corrected.csv`; seeds aggregated before inference; resampling unit = run/building/fold.
 ### pleia
-- **macro_event_recall**: 0.663 (95% CI 0.616–0.707; n_units=23, boot=2000) [source: metrics/final_cis.csv]
-- **empirical_coverage**: 0.846 (95% CI 0.743–0.934; n_units=4, boot=2000) [source: metrics/final_cis.csv]
-- **background_episodes_per_asset_day**: 1.685 (95% CI 1.355–2.159; n_units=4, boot=2000) [source: metrics/final_cis.csv]
+- feasible_only · empirical_coverage: 0.794 (NA — insufficient independent groups; n=2) — *descriptive*
+- feasible_only · macro_event_recall_unitmean: 0.671 (NA — insufficient independent groups; n=2) — *descriptive*
+- feasible_only · background_per_asset_day: 1.236 (NA — insufficient independent groups; n=2) — *descriptive*
+- all_60_units · empirical_coverage: 0.846 (NA — insufficient independent groups; n=3) — *descriptive*
+- all_60_units · macro_event_recall_unitmean: 0.698 (NA — insufficient independent groups; n=3) — *descriptive*
+- all_60_units · background_per_asset_day: 1.685 (NA — insufficient independent groups; n=3) — *descriptive*
 
 ### pleia_energy
-- **macro_event_recall**: 0.726 (95% CI 0.657–0.785; n_units=23, boot=2000) [source: metrics/final_cis.csv]
-- **empirical_coverage**: 0.786 (95% CI 0.755–0.811; n_units=4, boot=2000) [source: metrics/final_cis.csv]
-- **background_episodes_per_asset_day**: 10.441 (95% CI 7.075–13.697; n_units=4, boot=2000) [source: metrics/final_cis.csv]
+- feasible_only · empirical_coverage: 0.912 (NA — insufficient independent groups; n=2) — *descriptive*
+- feasible_only · macro_event_recall_unitmean: 0.456 (NA — insufficient independent groups; n=2) — *descriptive*
+- feasible_only · background_per_asset_day: 0.160 (NA — insufficient independent groups; n=2) — *descriptive*
+- all_60_units · empirical_coverage: 0.786 (NA — insufficient independent groups; n=3) — *descriptive*
+- all_60_units · macro_event_recall_unitmean: 0.745 (NA — insufficient independent groups; n=3) — *descriptive*
+- all_60_units · background_per_asset_day: 10.441 (NA — insufficient independent groups; n=3) — *descriptive*
 
 ### rico
-- **macro_event_recall**: 0.333 (95% CI 0.333–0.333; n_units=3, boot=2000) [source: metrics/final_cis.csv]
-- **empirical_coverage**: 1.000 (95% CI 1.000–1.000; n_units=3, boot=2000) [source: metrics/final_cis.csv]
-- **background_episodes_per_asset_day**: 0.000 (95% CI 0.000–0.000; n_units=4, boot=2000) [source: metrics/final_cis.csv]
+- feasible_only: no feasible units
+- all_60_units · empirical_coverage: 1.000 (NA — insufficient independent groups; n=3) — *descriptive*
+- all_60_units · macro_event_recall_unitmean: 0.417 (NA — insufficient independent groups; n=3) — *descriptive*
+- all_60_units · background_per_asset_day: 0.000 (NA — insufficient independent groups; n=3) — *descriptive*
 
-## Operational selection outcomes
-Across outer folds: {'no_feasible_configuration': 48, 'selected': 12}. `no_feasible_configuration` is an honest abstention, not a failure — it means no candidate met the frozen recall/workload policy on inner data.
+### bdg2
+- feasible_only: no feasible units
+- all_60_units · empirical_coverage: 0.891 [0.865, 0.915] (n=10) — *confirmed*
+- all_60_units · macro_event_recall_unitmean: 0.375 [0.334, 0.416] (n=10) — *confirmed*
+- all_60_units · background_per_asset_day: 1.433 (NA — insufficient independent groups; n=3) — *descriptive*
 
-## Ablation (same outer folds and event catalogues)
-- **baseline**: recall 0.613, background 5.449/asset-day
-- **conformal_only**: recall 0.617, background 2.939/asset-day
-- **temporal**: recall 0.544, background 2.374/asset-day
-- **full**: recall 0.549, background 3.390/asset-day
+## Paired ablation (12 units, seed-aggregated) — *exploratory*
+Source: `metrics/PAIRED_ABLATION_EFFECTS.csv` (frozen matched-budget endpoint was not computable from the single-rule core design).
+- conformal_only - baseline: Δrecall 0.0044 [-0.0557, 0.0697], Δworkload -2.5099 [-4.7433, -0.7782]
+- temporal - conformal_only: Δrecall -0.0729 [-0.1373, -0.0222], Δworkload -0.5655 [-1.0337, -0.1439]
+- full - baseline: Δrecall -0.064 [-0.1691, 0.0378], Δworkload -2.0593 [-3.7405, -0.8189]
+- full - temporal: Δrecall 0.0045 [-0.0272, 0.0339], Δworkload 1.0161 [0.2119, 2.1094]
 
-## Validity flags (auto-detected)
-- pleia: interval coverage upper CI 0.934 < 0.95 nominal — undercoverage under the evaluated conditions.
-- pleia_energy: interval coverage upper CI 0.811 < 0.95 nominal — undercoverage under the evaluated conditions.
-- rico macro_event_recall: zero-width CI over only 3 unit(s) — a degenerate, low-power estimate, not a precise one.
-- rico empirical_coverage: zero-width CI over only 3 unit(s) — a degenerate, low-power estimate, not a precise one.
-- rico: coverage ~1.0 — intervals so wide they rarely alert (see near-zero recall/workload).
-- rico background_episodes_per_asset_day: zero-width CI over only 4 unit(s) — a degenerate, low-power estimate, not a precise one.
-- bdg2: interval coverage upper CI 0.915 < 0.95 nominal — undercoverage under the evaluated conditions.
+## Robustness extension (amendment 003) — see ROBUSTNESS_RESULTS.md
 
-## Do-not-claim
-- No universal superiority; comparisons are *among the evaluated methods*.
-- No real-world fault-detection precision; the datasets carry no comprehensive fault labels.
-- No unseen-building generalisation (within-building analysis only).
-- SDG 11 is described only as conceptual alignment, not measured impact.
+## Prohibited claims
+- real-world fault precision; unseen-building portability; distribution-free guarantees as achieved; RICO CIs; sharpness/point claims from the core run; measured SDG-11 impact.
