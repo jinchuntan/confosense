@@ -200,6 +200,71 @@ def _completed_run(rep: Report, out_root: Path) -> None:
             else "no figure_index or missing source hashes")
 
 
+def _extension_checks(rep: Report, out_root: Path) -> None:
+    """Amendment-003 extension: completeness, zero-control identity, denominators."""
+    runs = out_root / "runs"
+    ext = [p for p in sorted(runs.glob("robx_full_*"))
+           if (p / "extension_summary.json").exists()] if runs.exists() else []
+    if not ext:
+        rep.add("extension_run_present", False, "no runs/robx_full_* with summary")
+        for c in ("extension_matrix_complete", "zero_control_identity",
+                  "extension_denominators_sane", "audit_tables_present"):
+            rep.add(c, False, "no extension run")
+        return
+    run = ext[-1]
+    summ = json.loads((run / "extension_summary.json").read_text(encoding="utf-8"))
+    rep.add("extension_run_present", not summ.get("fast", True),
+            f"run={run.name}, fast={summ.get('fast')}")
+    want = {"pleia", "pleia_energy", "rico", "bdg2"}
+    ds = summ.get("datasets", {})
+    fams_ok = all({"clean", "fault", "contamination", "recovery"}
+                  <= set(v.get("families", [])) for v in ds.values())
+    rep.add("extension_matrix_complete", want <= set(ds) and fams_ok,
+            f"datasets {sorted(ds)}")
+    # zero-control identity + denominators from the cells themselves
+    import csv
+    zc_ok, den_ok, checked = True, True, 0
+    for d in want & set(ds):
+        p = run / d / "robustness_cells.csv"
+        if not p.exists():
+            zc_ok = False
+            continue
+        with open(p, encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+        by_unit: dict = {}
+        for r in rows:
+            key = (r.get("outer_fold"), r.get("seed"))
+            by_unit.setdefault(key, {})[r.get("cell")] = r
+        for key, cells in by_unit.items():
+            c0, z0 = cells.get("clean"), cells.get("zero_control")
+            if not c0 or not z0:
+                continue
+            checked += 1
+            for col in ("coverage_all", "mean_width", "winkler"):
+                try:
+                    if abs(float(c0[col]) - float(z0[col])) > 1e-9:
+                        zc_ok = False
+                except (TypeError, ValueError):
+                    zc_ok = False
+            for r in cells.values():
+                cov = r.get("coverage_all")
+                try:
+                    if cov not in (None, "") and not (0.0 <= float(cov) <= 1.0):
+                        den_ok = False
+                except ValueError:
+                    den_ok = False
+    rep.add("zero_control_identity", zc_ok and checked > 0,
+            f"{checked} units checked")
+    rep.add("extension_denominators_sane", den_ok, "coverage in [0,1] everywhere")
+    tables = ["FULL_RUN_INVENTORY.csv", "OUTER_UNIT_LEDGER.csv",
+              "ALERT_ACCOUNTING_AUDIT.csv", "NOMINAL_COVERAGE_AUDIT.csv",
+              "CI_AUDIT.csv", "final_cis_corrected.csv",
+              "PAIRED_ABLATION_EFFECTS.csv"]
+    missing = [t for t in tables if not (out_root / "metrics" / t).exists()]
+    rep.add("audit_tables_present", not missing,
+            "all present" if not missing else f"missing {missing}")
+
+
 def _lineage(out_root: Path) -> dict:
     """Code / protocol / run / artefact lineage for the publication marker."""
     info: dict = {}
@@ -246,6 +311,9 @@ def run(output_root: str, *, run_tests: bool, mode: str = "publication") -> Repo
     if mode == "readiness":
         # Ready for the full run: design clean + engine smoke covers everything.
         _engine_smoke_covers_all(rep, out_root)
+    elif mode == "extension":
+        _completed_run(rep, out_root)
+        _extension_checks(rep, out_root)
     else:
         # Publication: requires the completed non-fast run, CIs, figures, reports.
         _completed_run(rep, out_root)
@@ -257,7 +325,7 @@ def main() -> None:
     ap.add_argument("--output-root", default="outputs/final_dissertation_v2")
     ap.add_argument("--run-tests", action="store_true",
                     help="also run the full pytest suite as a check")
-    ap.add_argument("--mode", choices=["readiness", "publication"],
+    ap.add_argument("--mode", choices=["readiness", "publication", "extension"],
                     default="publication",
                     help="readiness: ready for the full run; publication: full run "
                          "complete with CIs/figures/reports")
