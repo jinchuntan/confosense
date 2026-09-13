@@ -1,3 +1,11 @@
+# Matched overnight batch completed — 14 September 2026
+
+Twelve new paired units validated;18/195 total.96 tuning+24 final new fits;36 point/72 interval cells;72 artifact checks;12 zero-fit resumes.
+
+[Report](../../MATCHED_OVERNIGHT_BATCH_REPORT.md); [evidence index](matched_overnight_20260914/EVIDENCE_INDEX.md). Full study remains incomplete;177 paired units and broader-method obligations remain.
+
+<!-- overnight-20260914: preserved historical status follows -->
+
 # Current status: RICO and BDG2 matched units completed
 
 14 September 2026. Both authorized units (RICO h5/fold2/seed42 and BDG2 h1/fold2/seed42) completed, each with actual exit0, eight tuning/two final learned fits, independent 3-point/6-interval validation, six saved-model checks and zero-fit completed resume. No historical fits or new tiny fits were repeated. The documented nonblocking RAM reference remains in effect.

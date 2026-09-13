@@ -1,6 +1,6 @@
 # Matched overnight batch progress and restart
 
-Updated UTC: 2026-09-13T18:48:01.630088+00:00. Status: **unit_validated**. Validated **9/12 new paired units**; 27 point / 54 interval cells.
+Updated UTC: 2026-09-13T19:01:41.981034+00:00. Status: **science_and_reports_complete**. Validated **12/12 new paired units**; 36 point / 72 interval cells.
 
 The atomic [progress ledger](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/progress.json) and [append-only attempts](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/attempts.jsonl) retain exact commands, process identities, actual exits and receipt paths. A running process is not a successful exit.
 
@@ -23,6 +23,6 @@ The coordinator refuses a concurrent launch, adopts an exact surviving logger, c
 | 7 | bdg2 / 3 / 2 / 42 | validated |
 | 8 | bdg2 / 6 / 2 / 42 | validated |
 | 9 | bdg2 / 1 / 1 / 42 | validated |
-| 10 | pleia / 1 / 2 / 42 | pending or active; see ledger |
-| 11 | pleia / 3 / 2 / 42 | pending or active; see ledger |
-| 12 | pleia / 6 / 2 / 42 | pending or active; see ledger |
+| 10 | pleia / 1 / 2 / 42 | validated |
+| 11 | pleia / 3 / 2 / 42 | validated |
+| 12 | pleia / 6 / 2 / 42 | validated |

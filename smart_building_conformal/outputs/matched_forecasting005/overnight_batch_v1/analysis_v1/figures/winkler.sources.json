@@ -1,0 +1,18 @@
+{
+  "source_csv": "smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/fold2_seed42_all_horizons.csv",
+  "source_sha256": "ab87df24403e2a377b35dda7ddcad11856a56a8a3d9d609d33460a79c09367ae",
+  "script": "review/matched_overnight_20260914/analyze.py",
+  "script_sha256": "21cdf5b5a817f2232ae5d7978f5e4d3a32eb1026b94461742961709e65621f05",
+  "matplotlib_version": "3.11.1",
+  "slice": "outer fold 2; model seed 42; 13 task/horizon combinations; dependent horizons",
+  "files": [
+    {
+      "path": "winkler.png",
+      "sha256": "c830a8b6b9ae94c5e61b35a1650c46e7ec34fee4a182960b781f060e33fc9e08"
+    },
+    {
+      "path": "winkler.pdf",
+      "sha256": "2da0c4e0ef675be88e3a11f6cb7895d41a9de1fea4293bd6f900c6f90ab41f95"
+    }
+  ]
+}
