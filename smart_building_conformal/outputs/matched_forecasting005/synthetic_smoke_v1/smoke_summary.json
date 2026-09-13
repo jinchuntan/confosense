@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "synthetic_learned_fits": 10,
+  "tuning_fits": 8,
+  "final_fits": 2,
+  "real_data_fits": 0,
+  "point_cells": 3,
+  "interval_cells": 6,
+  "completed_resume_fits": 0,
+  "interrupted_before_any_learned_fit": true,
+  "corruption_source_data_rejected": true,
+  "generic_key": [
+    "fixture_energy",
+    3,
+    1,
+    43
+  ],
+  "synthetic_candidates": {
+    "persistence": [
+      {}
+    ],
+    "xgboost": [
+      {
+        "n_estimators": 2,
+        "max_depth": 2
+      },
+      {
+        "n_estimators": 3,
+        "max_depth": 2
+      }
+    ],
+    "attention_lstm": [
+      {
+        "hidden_size": 2,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "max_epochs": 2,
+        "patience": 1
+      },
+      {
+        "hidden_size": 2,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.002,
+        "max_epochs": 2,
+        "patience": 1
+      }
+    ]
+  }
+}

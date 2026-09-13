@@ -1,0 +1,63 @@
+{
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 338075648,
+      "private_bytes": 293519360,
+      "lifetime_peak_rss_bytes": 338993152,
+      "available_ram_bytes": 4535099392,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "code_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "source_hash": "ad9231df2defb119889a2ca56ed97a74201ee9d61284675aff394df1ff2b97bd",
+  "protocol_hash": "a88ffc78d28f7cc4463e3df2b274721b935c62f8a99e45aec8106d4ff2a66e2e",
+  "command": [
+    "C:\\cfs_venv\\Lib\\site-packages\\pytest\\__main__.py",
+    "tests/test_matched_forecasting005.py",
+    "-q"
+  ],
+  "start_utc": "2026-09-13T16:05:32.430782+00:00",
+  "preparation_resources": {
+    "seconds": 0.13602009999885922,
+    "baseline_rss_bytes": 337879040,
+    "peak_rss_bytes": 338042880,
+    "baseline_private_bytes": 293502976,
+    "peak_private_bytes": 293572608,
+    "incremental_peak_rss_bytes": 163840,
+    "lifetime_peak_rss_bytes": 338993152,
+    "min_available_ram_bytes": 4536291328,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.125
+  },
+  "authorization": {
+    "allowed_units": [
+      [
+        "fixture_energy",
+        3,
+        1,
+        43
+      ]
+    ],
+    "real_fitting_authorized": true,
+    "nonblocking_launch_ram": false,
+    "scope": "authorized tiny synthetic integration only"
+  },
+  "cpu_only": true
+}

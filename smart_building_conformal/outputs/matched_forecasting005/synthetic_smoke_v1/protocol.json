@@ -1,0 +1,189 @@
+{
+  "config": {
+    "dataset": "fixture_energy",
+    "horizon": 3,
+    "outer_fold": 1,
+    "model_seed": 43,
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "sequence_length": 24,
+    "inference_batch_size": 32,
+    "threads": 1,
+    "n_jobs": 1,
+    "minimum_launch_available_ram_bytes": 0,
+    "minimum_free_disk_bytes": 0,
+    "minimum_epoch_available_ram_bytes": 0,
+    "prediction_reload_atol": 1e-07,
+    "prediction_reload_rtol": 1e-07,
+    "interval_construction": "ordinary_split_conformal_absolute_error",
+    "candidates": {
+      "persistence": [
+        {}
+      ],
+      "xgboost": [
+        {
+          "n_estimators": 2,
+          "max_depth": 2
+        },
+        {
+          "n_estimators": 3,
+          "max_depth": 2
+        }
+      ],
+      "attention_lstm": [
+        {
+          "hidden_size": 2,
+          "dropout": 0.0,
+          "batch_size": 32,
+          "learning_rate": 0.001,
+          "max_epochs": 2,
+          "patience": 1
+        },
+        {
+          "hidden_size": 2,
+          "dropout": 0.0,
+          "batch_size": 32,
+          "learning_rate": 0.002,
+          "max_epochs": 2,
+          "patience": 1
+        }
+      ]
+    }
+  },
+  "resolved_dataset_config": {
+    "features": {
+      "target_lags": [
+        0,
+        1,
+        3
+      ],
+      "rolling_windows": [
+        4
+      ]
+    },
+    "alerts": {
+      "primary_horizon": 3,
+      "detection_tolerance_steps": 2
+    },
+    "horizons": [
+      3
+    ]
+  },
+  "authorization": {
+    "allowed_units": [
+      [
+        "fixture_energy",
+        3,
+        1,
+        43
+      ]
+    ],
+    "real_fitting_authorized": true,
+    "nonblocking_launch_ram": false,
+    "scope": "authorized tiny synthetic integration only"
+  },
+  "source_hash": "ad9231df2defb119889a2ca56ed97a74201ee9d61284675aff394df1ff2b97bd",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "matrix_hash": "d69e321e2138627a4c0b3f63257e03a3dd25be1ce348ca9547df6367e7458288",
+  "input_hashes": {},
+  "support": {
+    "data_hash": "1e1689360746db4c8919c895331b97581dcb31ba553529959b29928ec894d65f",
+    "roles": {
+      "fit": {
+        "n": 386,
+        "membership_hash": "fc2abc9587331b1f49fcff89f8dc17522e82a5bc7da499e1577d822164b8b464",
+        "row_id_hash": "ed6cbfa02eb213d386f07c365117d8ae4bd9a7b9585183f1216c0f4352f9e77f",
+        "origin_min": "2021-01-01 00:23:00",
+        "origin_max": "2021-01-01 06:48:00",
+        "target_min": "2021-01-01 00:26:00",
+        "target_max": "2021-01-01 06:51:00"
+      },
+      "calibration": {
+        "n": 129,
+        "membership_hash": "75118e7959307029fd5baa429c5c906102bd6d1262f516e2b9982af1ae1ffcf8",
+        "row_id_hash": "042f6d118faa22762c7f2d0bc3ad64f5e1f1a528e37a1fd92713458be6f87796",
+        "origin_min": "2021-01-01 06:53:00",
+        "origin_max": "2021-01-01 09:01:00",
+        "target_min": "2021-01-01 06:56:00",
+        "target_max": "2021-01-01 09:04:00"
+      },
+      "test": {
+        "n": 174,
+        "membership_hash": "efaf228238f5e24a09dc4f38173f12018d3374101b8b47d198d9dbb9ccadd9ec",
+        "row_id_hash": "86aa089cc05d76cdf5582ede42698ca2ea80c1a10d38df34a65e855aaf31944d",
+        "origin_min": "2021-01-01 09:05:00",
+        "origin_max": "2021-01-01 11:58:00",
+        "target_min": "2021-01-01 09:08:00",
+        "target_max": "2021-01-01 12:01:00"
+      },
+      "inner0_train": {
+        "n": 125,
+        "membership_hash": "5a3de7c75fba3ff4d3fb9f09515031caf4d4bf0d085c1f3d71b01be3e400eee9",
+        "row_id_hash": "313b491c99931ea828f11e9e68c39285943b2e53b95cde90ad0172e79b5fec24",
+        "origin_min": "2021-01-01 00:23:00",
+        "origin_max": "2021-01-01 02:27:00",
+        "target_min": "2021-01-01 00:26:00",
+        "target_max": "2021-01-01 02:30:00"
+      },
+      "inner0_validation": {
+        "n": 126,
+        "membership_hash": "eb33376f80e7c448520b6a5822a59b19ad2d73452f48a1865d63ea3e0bdd016a",
+        "row_id_hash": "5d4d29945b4686028f24dde551114f074127264229feb9e5ce478dd39f184859",
+        "origin_min": "2021-01-01 02:31:00",
+        "origin_max": "2021-01-01 04:36:00",
+        "target_min": "2021-01-01 02:34:00",
+        "target_max": "2021-01-01 04:39:00"
+      },
+      "inner1_train": {
+        "n": 251,
+        "membership_hash": "77121dc05bd9ddb5f91c069451359ace8761e3dd3eec49732d335b87a5554dbd",
+        "row_id_hash": "7c9757a5dc30cb207c337bc78767c186266ed04f06f4ec8d11e7de3a78679cf4",
+        "origin_min": "2021-01-01 00:23:00",
+        "origin_max": "2021-01-01 04:36:00",
+        "target_min": "2021-01-01 00:26:00",
+        "target_max": "2021-01-01 04:39:00"
+      },
+      "inner1_validation": {
+        "n": 129,
+        "membership_hash": "f14d0601389b7bd257f9b8268cb162905b0bc0771a1836fc05827cec03214079",
+        "row_id_hash": "6e47ec5f0f17508344bb892d3390283eb58e29f1b324181d312f8d28bba6977b",
+        "origin_min": "2021-01-01 04:40:00",
+        "origin_max": "2021-01-01 06:48:00",
+        "target_min": "2021-01-01 04:43:00",
+        "target_max": "2021-01-01 06:51:00"
+      }
+    },
+    "role_bank_hash": "4c3a97a8b768ba906e61bac726433f6767ffa5b2dc9f9f7cf710128695d01450",
+    "feature_names": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_3",
+      "target_rollmean_4",
+      "target_rollstd_4",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ],
+    "sequence_channels": [
+      "target",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ]
+  }
+}

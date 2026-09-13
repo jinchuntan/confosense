@@ -1,0 +1,4 @@
+{
+  "error": "intentional pre-fit interruption",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_forecasting005.py\", line 276, in execute\n    payload, frames, artifacts = run_model(name, data, roles, cfg, root/'fit_calls.jsonl')\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\tests\\test_matched_forecasting005.py\", line 125, in interrupted\n    if name=='xgboost':raise RuntimeError('intentional pre-fit interruption')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: intentional pre-fit interruption\n"
+}

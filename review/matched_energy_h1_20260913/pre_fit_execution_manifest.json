@@ -1,0 +1,27 @@
+{
+  "status": "ready_before_real_fitting",
+  "source_hash": "7335d436f6e4f8c2144de372e8817d036bae216426c157f5bbdc1eb921927955",
+  "protocol_hash": "4e6c91f9f835e0f37ebf21e4de23c4f65c9911d42d933912d0ce4fbf7500a4c3",
+  "source_archive_sha256": "8e353355ed6bf4b32ffc691463537eef3001f888b036a0a2b87650d06fd32e5a",
+  "synthetic_v1_source_hash": "ad9231df2defb119889a2ca56ed97a74201ee9d61284675aff394df1ff2b97bd",
+  "synthetic_v1_archive_sha256": "e005678fb01ba5e22662bd8f2a04765b21118977dc3dd92b4ef662152fbd251c",
+  "synthetic_v1_archive_method": "reconstructed exact bytes; complete digest equals recorded executed source",
+  "current_regression_checks": 8,
+  "synthetic_smoke_runs": 2,
+  "total_synthetic_learned_fits": 20,
+  "real_fits_so_far": 0,
+  "planned_real_tuning_fits": 8,
+  "planned_real_final_fits": 2,
+  "published_role_banks_verified": 39,
+  "pilot_historical_refits": 0,
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "allowed_unit": [
+    "pleia_energy",
+    1,
+    0,
+    42
+  ],
+  "source_commit": "commit containing this pre-fit manifest; actual run records HEAD",
+  "launch_ram_note": "Later user instruction makes 3 GiB launch reference nonblocking; readiness actually met it. Epoch/disk/numeric controls retained."
+}

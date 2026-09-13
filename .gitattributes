@@ -26,3 +26,11 @@ smart_building_conformal/scripts/verify_support_design005.py -text whitespace=cr
 smart_building_conformal/scripts/check_remaining_study005.py -text whitespace=cr-at-eol
 smart_building_conformal/scripts/finalize_support005.py -text whitespace=cr-at-eol
 smart_building_conformal/tests/test_support_design005.py -text whitespace=cr-at-eol
+smart_building_conformal/src/matched*005.py -text whitespace=cr-at-eol
+smart_building_conformal/scripts/check_matched005_preflight.py -text whitespace=cr-at-eol
+smart_building_conformal/tests/test_matched_forecasting005.py -text whitespace=cr-at-eol
+smart_building_conformal/configs/matched_forecasting005_energy_h1_authorization.json -text whitespace=cr-at-eol
+smart_building_conformal/outputs/matched_forecasting005/** -text -whitespace
+smart_building_conformal/protocols/matched_forecasting005/** -text -whitespace
+review/matched_energy_h1_20260913/** -text -whitespace
+PLEIA_ENERGY_MATCHED_H1_REPORT.md -text whitespace=cr-at-eol

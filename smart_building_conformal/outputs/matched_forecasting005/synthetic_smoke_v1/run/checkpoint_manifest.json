@@ -1,0 +1,74 @@
+{
+  "spec": {
+    "protocol_hash": "a88ffc78d28f7cc4463e3df2b274721b935c62f8a99e45aec8106d4ff2a66e2e",
+    "source_hash": "ad9231df2defb119889a2ca56ed97a74201ee9d61284675aff394df1ff2b97bd",
+    "config": {
+      "dataset": "fixture_energy",
+      "horizon": 3,
+      "outer_fold": 1,
+      "model_seed": 43,
+      "models": [
+        "persistence",
+        "xgboost",
+        "attention_lstm"
+      ],
+      "nominal_levels": [
+        0.9,
+        0.95
+      ],
+      "sequence_length": 24,
+      "inference_batch_size": 32,
+      "threads": 1,
+      "n_jobs": 1,
+      "minimum_launch_available_ram_bytes": 0,
+      "minimum_free_disk_bytes": 0,
+      "minimum_epoch_available_ram_bytes": 0,
+      "prediction_reload_atol": 1e-07,
+      "prediction_reload_rtol": 1e-07,
+      "interval_construction": "ordinary_split_conformal_absolute_error",
+      "candidates": {
+        "persistence": [
+          {}
+        ],
+        "xgboost": [
+          {
+            "n_estimators": 2,
+            "max_depth": 2
+          },
+          {
+            "n_estimators": 3,
+            "max_depth": 2
+          }
+        ],
+        "attention_lstm": [
+          {
+            "hidden_size": 2,
+            "dropout": 0.0,
+            "batch_size": 32,
+            "learning_rate": 0.001,
+            "max_epochs": 2,
+            "patience": 1
+          },
+          {
+            "hidden_size": 2,
+            "dropout": 0.0,
+            "batch_size": 32,
+            "learning_rate": 0.002,
+            "max_epochs": 2,
+            "patience": 1
+          }
+        ]
+      }
+    },
+    "data_hash": "1e1689360746db4c8919c895331b97581dcb31ba553529959b29928ec894d65f",
+    "role_bank_hash": "4c3a97a8b768ba906e61bac726433f6767ffa5b2dc9f9f7cf710128695d01450",
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "xgboost": "3.2.0",
+      "torch": "2.13.0"
+    }
+  },
+  "spec_hash": "5eed11effd710965ba4d132f16a9ae78ddc5b7edeb99ae136d20762623ba5530"
+}

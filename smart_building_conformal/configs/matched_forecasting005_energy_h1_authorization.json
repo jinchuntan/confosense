@@ -1,0 +1,19 @@
+{
+  "version": "matched_energy_h1_authorization_v1",
+  "instruction_commit": "f44d4d1bd784254237bd643b9389fc9ce8c380a3",
+  "instruction_path": "review/NEXT_TASK_MATCHED_ENERGY_H1.md",
+  "parent_review_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "real_fitting_authorized": true,
+  "allowed_units": [["pleia_energy", 1, 0, 42]],
+  "models": ["persistence", "xgboost", "attention_lstm"],
+  "nominal_levels": [0.9, 0.95],
+  "real_tuning_fits": 8,
+  "real_final_learned_fits": 2,
+  "necessary_small_integration_fits_authorized": true,
+  "remaining_queue_authorized": false,
+  "conditional_challenge_authorized": false,
+  "nonblocking_launch_ram": true,
+  "later_user_resource_instruction": "I have closed the relevant tabs, can you not put launch guard and stupid things like this, just get to work",
+  "resource_interpretation": "The historical 3 GiB launch value remains recorded as a reference. Per the later user instruction it does not cause another confirmation stop. Keep the 256 MiB epoch floor, CPU/thread settings and 8 GiB disk check unchanged. Record actual launch RAM and whether the historical reference was met.",
+  "historical_proposal_unchanged": true
+}

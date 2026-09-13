@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\scripts\check_matched005_preflight.py", line 54, in <module>
+    with forbid_fitting():main(a.out)
+                          ^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\scripts\check_matched005_preflight.py", line 25, in main
+    assert m.iloc[rows].row_id.tolist()==chosen.row_id.tolist()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
