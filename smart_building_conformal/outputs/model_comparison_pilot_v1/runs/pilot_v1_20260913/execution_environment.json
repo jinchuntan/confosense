@@ -1,0 +1,32 @@
+{
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 320815104,
+      "private_bytes": 278839296,
+      "lifetime_peak_rss_bytes": 321454080,
+      "available_ram_bytes": 2871582720,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "torch_version": "2.13.0+cpu",
+  "torch_threads": 1,
+  "torch_interop_threads": 1,
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\model_comparison_pilot.py",
+    "run",
+    "--out",
+    "outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913"
+  ],
+  "code_commit": "d4bc1bc4af7b20d990618df09064ac310809a8ab",
+  "start_utc": "2026-09-13T04:20:09.474130+00:00"
+}

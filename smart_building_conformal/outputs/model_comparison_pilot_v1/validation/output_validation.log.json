@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\cfs_venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "src.validate_model_comparison_pilot",
+    "--run",
+    "outputs\\model_comparison_pilot_v1\\runs\\pilot_v1_20260913",
+    "--protocol",
+    "protocols\\model_comparison_pilot_v1\\frozen_protocol.json",
+    "--out",
+    "outputs\\model_comparison_pilot_v1\\validation\\output_validation.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T04:46:00.857278+00:00",
+  "ended_utc": "2026-09-13T04:46:04.153895+00:00",
+  "seconds": 3.298528899999951,
+  "exit_status": 0
+}

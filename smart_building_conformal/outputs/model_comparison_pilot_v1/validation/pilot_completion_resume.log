@@ -1,0 +1,76 @@
+RESUMED h1_f0_s42_persistence
+COMPLETE h1_f0_s42_persistence
+RESUMED h1_f0_s42_xgboost
+COMPLETE h1_f0_s42_xgboost
+RESUMED h1_f0_s42_attention_lstm
+COMPLETE h1_f0_s42_attention_lstm
+RESUMED h3_f0_s42_persistence
+COMPLETE h3_f0_s42_persistence
+RESUMED h3_f0_s42_xgboost
+COMPLETE h3_f0_s42_xgboost
+START h3_f0_s42_attention_lstm; free RAM 3.76 GiB
+h3 attention_lstm: candidate 0, inner fold 0
+  epoch 1, inner MAE 1.23614
+  epoch 5, inner MAE 1.02152
+  epoch 10, inner MAE 0.83937
+  epoch 15, inner MAE 0.80909
+  epoch 20, inner MAE 0.75519
+h3 attention_lstm: candidate 0, inner fold 1
+  epoch 1, inner MAE 2.63473
+  epoch 5, inner MAE 2.15908
+  epoch 10, inner MAE 2.08781
+  epoch 15, inner MAE 2.05315
+h3 attention_lstm: candidate 1, inner fold 0
+  epoch 1, inner MAE 1.52256
+  epoch 5, inner MAE 1.14124
+  epoch 10, inner MAE 0.95252
+  epoch 15, inner MAE 0.90867
+  epoch 20, inner MAE 0.83181
+  epoch 25, inner MAE 0.83883
+  epoch 30, inner MAE 0.80629
+h3 attention_lstm: candidate 1, inner fold 1
+  epoch 1, inner MAE 3.22479
+  epoch 5, inner MAE 2.45995
+  epoch 10, inner MAE 2.27800
+  epoch 15, inner MAE 2.11550
+  epoch 20, inner MAE 2.04438
+  epoch 25, inner MAE 2.09275
+h3 attention_lstm: refit candidate 0, epochs=14
+  final epoch 1
+  final epoch 5
+  final epoch 10
+COMPLETE h3_f0_s42_attention_lstm
+START h6_f0_s42_persistence; free RAM 3.40 GiB
+h6 persistence: refit candidate 0, epochs=None
+COMPLETE h6_f0_s42_persistence
+START h6_f0_s42_xgboost; free RAM 3.39 GiB
+h6 xgboost: candidate 0, inner fold 0
+h6 xgboost: candidate 0, inner fold 1
+h6 xgboost: candidate 1, inner fold 0
+h6 xgboost: candidate 1, inner fold 1
+h6 xgboost: refit candidate 0, epochs=None
+COMPLETE h6_f0_s42_xgboost
+START h6_f0_s42_attention_lstm; free RAM 3.25 GiB
+h6 attention_lstm: candidate 0, inner fold 0
+  epoch 1, inner MAE 1.27510
+  epoch 5, inner MAE 1.17078
+  epoch 10, inner MAE 1.19633
+h6 attention_lstm: candidate 0, inner fold 1
+  epoch 1, inner MAE 2.75055
+  epoch 5, inner MAE 2.47776
+  epoch 10, inner MAE 2.35228
+h6 attention_lstm: candidate 1, inner fold 0
+  epoch 1, inner MAE 1.56822
+  epoch 5, inner MAE 1.23094
+  epoch 10, inner MAE 1.16980
+  epoch 15, inner MAE 1.25923
+h6 attention_lstm: candidate 1, inner fold 1
+  epoch 1, inner MAE 3.30649
+  epoch 5, inner MAE 2.61736
+  epoch 10, inner MAE 2.41345
+  epoch 15, inner MAE 2.26207
+h6 attention_lstm: refit candidate 1, epochs=11
+  final epoch 1
+  final epoch 5
+  final epoch 10
+COMPLETE h6_f0_s42_attention_lstm

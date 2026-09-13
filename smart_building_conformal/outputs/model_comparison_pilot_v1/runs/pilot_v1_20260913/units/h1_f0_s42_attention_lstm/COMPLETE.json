@@ -1,0 +1,18 @@
+{
+  "key": "h1_f0_s42_attention_lstm",
+  "spec_hash": "bdc862e61d946dfc25617c5ea0ec9981ad951dbab47ad4017dffb7c7fd60d2e9",
+  "frames": {
+    "predictions": "predictions.csv.gz",
+    "calibration": "calibration.csv.gz",
+    "tuning": "tuning.csv.gz",
+    "training_history": "training_history.csv.gz"
+  },
+  "hashes": {
+    "calibration.csv.gz": "8c1542bf4273e9e5266339646c57617be680c558d5341cb3d3f22ed5d886f30a",
+    "model.pt": "3d7696dfba4b55fe0e070ce21762f195c57f4e6c38585cea9b1e592b0ad9a346",
+    "payload.json": "e41f3b3960017c56d858d1058f27d0d7efc2865d3d7b2ca022942c7ebc4e1bb6",
+    "predictions.csv.gz": "43acca95c110b5a4eb7a200df18a391cff4619173ddd66b02acc2c8247742981",
+    "training_history.csv.gz": "10d29d9ec552d55c953f04a32bc27f4e46055e20cd929007de2556dd003b5204",
+    "tuning.csv.gz": "19e99bd62be07b04a75055a415f1280db03f13203958980b03be90e3e80b2d86"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "dataset": "bdg2",
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 402505728,
+      "private_bytes": 356999168,
+      "lifetime_peak_rss_bytes": 1036431360,
+      "available_ram_bytes": 3950514176,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "adapter_resources": {
+    "seconds": 5.111506200000008,
+    "baseline_rss_bytes": 350064640,
+    "peak_rss_bytes": 852299776,
+    "baseline_private_bytes": 306098176,
+    "peak_private_bytes": 1001119744,
+    "incremental_peak_rss_bytes": 502235136,
+    "lifetime_peak_rss_bytes": 1036431360,
+    "min_available_ram_bytes": 3449806848,
+    "sample_interval_seconds": 0.05
+  },
+  "total_resources": {
+    "seconds": 11.276594599999953,
+    "baseline_rss_bytes": 349962240,
+    "peak_rss_bytes": 852234240,
+    "baseline_private_bytes": 306028544,
+    "peak_private_bytes": 1001119744,
+    "incremental_peak_rss_bytes": 502272000,
+    "lifetime_peak_rss_bytes": 1036431360,
+    "min_available_ram_bytes": 3450265600,
+    "sample_interval_seconds": 0.05
+  },
+  "horizons": [
+    {
+      "horizon": 1,
+      "rows": 172662,
+      "flat_feature_bytes": 30388644,
+      "lazy_stored_bytes": 7859304,
+      "n_channels": 7,
+      "sequence_length": 24,
+      "equivalent_full_tensor_bytes": 116028864,
+      "traversal_checksum": 1163816670.198631,
+      "models_fitted": 0,
+      "resources": {
+        "seconds": 1.9497450000000072,
+        "baseline_rss_bytes": 388673536,
+        "peak_rss_bytes": 544395264,
+        "baseline_private_bytes": 344494080,
+        "peak_private_bytes": 500781056,
+        "incremental_peak_rss_bytes": 155721728,
+        "lifetime_peak_rss_bytes": 1036431360,
+        "min_available_ram_bytes": 3742130176,
+        "sample_interval_seconds": 0.05
+      }
+    },
+    {
+      "horizon": 3,
+      "rows": 172662,
+      "flat_feature_bytes": 30388644,
+      "lazy_stored_bytes": 7859304,
+      "n_channels": 7,
+      "sequence_length": 24,
+      "equivalent_full_tensor_bytes": 116028864,
+      "traversal_checksum": 1163864635.4206748,
+      "models_fitted": 0,
+      "resources": {
+        "seconds": 1.9651342000000795,
+        "baseline_rss_bytes": 403144704,
+        "peak_rss_bytes": 523939840,
+        "baseline_private_bytes": 357732352,
+        "peak_private_bytes": 479424512,
+        "incremental_peak_rss_bytes": 120795136,
+        "lifetime_peak_rss_bytes": 1036431360,
+        "min_available_ram_bytes": 3764314112,
+        "sample_interval_seconds": 0.05
+      }
+    },
+    {
+      "horizon": 6,
+      "rows": 172662,
+      "flat_feature_bytes": 30388644,
+      "lazy_stored_bytes": 7859304,
+      "n_channels": 7,
+      "sequence_length": 24,
+      "equivalent_full_tensor_bytes": 116028864,
+      "traversal_checksum": 1163928201.4270134,
+      "models_fitted": 0,
+      "resources": {
+        "seconds": 2.0010653000000502,
+        "baseline_rss_bytes": 404365312,
+        "peak_rss_bytes": 544845824,
+        "baseline_private_bytes": 359014400,
+        "peak_private_bytes": 501186560,
+        "incremental_peak_rss_bytes": 140480512,
+        "lifetime_peak_rss_bytes": 1036431360,
+        "min_available_ram_bytes": 3738947584,
+        "sample_interval_seconds": 0.05
+      }
+    }
+  ],
+  "models_fitted": 0,
+  "method": "lazy channels; every eligible sequence traversed in batches of 256"
+}

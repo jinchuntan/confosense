@@ -1,0 +1,2223 @@
+{
+  "backup": "C:\\Users\\nigel\\ConfoSenseBackups\\integration_20260913_102403",
+  "checked_historical_data_and_output_files": 554,
+  "mismatches": [],
+  "records": [
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/Notebook_Scientific_Data_Nature.ipynb",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/consA-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/consA-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/consB-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/consB-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/consC-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/consC-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-model-consumoA-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-model-consumoB-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-model-consumoC-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-room10T-all.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-roomA-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-roomB-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-roomC-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-weather-10T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/data-weather-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/hvac-aggA-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/hvac-aggB-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/hvac-aggC-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/temp-sensorA-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/temp-sensorB-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/processed_data/temp-sensorC-60T.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/data-CO2.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/data-cons.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/data-hvac.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/data-presence.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/data-sensor.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/MU62_dm.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-CO2.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-hvac.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-presence.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-sensor.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/processed/target_dataset.parquet",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/Data_Nature.zip",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/bdg2/electricity.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/bdg2/metadata.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/bdg2/weather.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/rico/README.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/rico/RICO_Acquisition_1_07-2023.hdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/rico/RICO_Acquisition_2_10-2023.hdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/rico/RICO_Acquisition_3_01-2024.hdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/rico/RICO_Acquisition_4_02-2024.hdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/rico/RICO_Acquisition_5_05-2024.hdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/uci_occupancy/datatest.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/uci_occupancy/datatest2.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/uci_occupancy/datatraining.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/data/raw/uci_occupancy/occupancy+detection.zip",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/data_profiles/dataset_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/data_profiles/partition_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/figures/fig_uci_01_point_mae.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/figures/fig_uci_02_cqr_interval.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/manifests/dataset_source.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/manifests/dataset_sources.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/manifests/experiment_manifest.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/manifests/limitations.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/manifests/run_history.jsonl",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/metrics/interval_violation_diagnostic.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/metrics/xgboost_best_params_h15.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/metrics/xgboost_best_params_h5.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/report/dissertation_positioning.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/report/uci_auxiliary_limitations.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/auxiliary_uci/report/uci_auxiliary_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/data_profiles/file_inventory.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/data_profiles/file_inventory.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/data_profiles/preprocessing_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/data_profiles/target_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/figure_2_split_and_sliding_window.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/figure_3_interval_alert_mechanism.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/figure_4_data_split.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/figure_5_point_forecasts.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/figure_6_conformal_intervals.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/figure_7_alert_timeline.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract.svg",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/point_metric_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract/ga_1_sensor_stream.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract/ga_2_conformal_forecast.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract/ga_3_interval_alert.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract/ga_4_monitoring_output.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/figures/graphical_abstract/ga_core_combined.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/PUBLICATION_READY.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/STATUS_AND_RESUME.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/engine_smoke_evidence.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/full_study_baseline_checksums.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/leakage_audit.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/post_run_statistical_audit.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/smoke_evidence.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/figure_index.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_coverage_with_cis.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_recall_by_stratum.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_recall_vs_workload.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_selected_configs.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/ALERT_ACCOUNTING_AUDIT.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/CI_AUDIT.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/final_cis.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/final_cis_corrected.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/FOLD_MEMBERSHIP.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/FULL_RUN_INVENTORY.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/NOMINAL_COVERAGE_AUDIT.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/OUTER_UNIT_LEDGER.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/PAIRED_ABLATION_EFFECTS.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/POINT_EFFICIENCY_EVIDENCE_AUDIT.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/engine_summary.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/run_id.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/config_hash.txt",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/evaluation_design.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/frozen_protocol.yaml",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_001.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_002.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_003.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/provenance/artifact_manifest.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/engine_summary.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/engine_summary.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/ablation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/event_allocation.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/outer_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/outer_per_event.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/outer_per_group_coverage.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/extension_summary.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/bdg2/point_accuracy.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/bdg2/robustness_cells.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/bdg2/unit_timing.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia/point_accuracy.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia/robustness_cells.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia/unit_timing.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia_energy/point_accuracy.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia_energy/robustness_cells.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia_energy/unit_timing.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/rico/point_accuracy.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/rico/robustness_cells.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/rico/unit_timing.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/model_rankings.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/ranking_tests.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/statistical_tests.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/dataset_sources.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/experiment_manifest.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/limitations.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/resume_ledger.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/run_history.jsonl",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/feature_schema_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/feature_schema_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/series_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/target_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_rule_selection_calibration.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_rule_sensitivity_test.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_selection_split.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/diebold_mariano.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/recalibration_recovery.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/recalibration_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level90.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level95.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level97.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level99.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/lstm_history_h1_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/lstm_history_h3_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/xgboost_best_params_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/xgboost_best_params_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/predictions/interval_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/predictions/point_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/final_result_digest.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/full_study_limitations.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/full_study_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/table_ready_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_01_point_forecasting_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_02_coverage_vs_width.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_03_coverage_deviation_by_horizon.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_04_winkler_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_05_alert_rule_sensitivity.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_06_alert_tradeoff.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_08_recalibration_recovery.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_09_cross_dataset_rankings.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_12_pleia_interval_timeline.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_13_closed_loop_absorption.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/data_profiles/series_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/data_profiles/subset_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_rule_selection_calibration.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_rule_sensitivity_test.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_selection_split.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/diebold_mariano.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/recalibration_recovery.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/recalibration_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/metrics/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/dscp_level90.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/dscp_level95.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/lstm_history_h1_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/lstm_history_h3_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/lstm_history_h6_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/xgboost_best_params_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/xgboost_best_params_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/bdg2/models/xgboost_best_params_h6.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/confosense_configurations.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/literature_benchmark_matrix.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/model_rankings.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/pleia_energy_artefact_sensitivity.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/pleia_energy_meter_stalls.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/pleia_energy_target_profile.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/posthoc_comparisons.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/ranking_tests.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/rico_quantile_crossings.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/rico_quantile_crossings_by_run.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/robustness_metric_schema.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/rq_ro_evidence_matrix.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/combined/statistical_tests.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/manifests/dataset_sources.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/manifests/experiment_manifest.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/manifests/limitations.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/manifests/resume_ledger.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/manifests/run_history.jsonl",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/manifests/stage_provenance.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/data_profiles/series_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/data_profiles/target_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/alert_rule_selection_calibration.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/alert_rule_sensitivity_test.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/alert_selection_split.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/diebold_mariano.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/recalibration_recovery.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/recalibration_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/metrics/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/dscp_level90.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/dscp_level95.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/lstm_history_h1_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/lstm_history_h3_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/lstm_history_h6_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/xgboost_best_params_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/xgboost_best_params_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia/models/xgboost_best_params_h6.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/series_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/target_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_rule_selection_calibration.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_rule_sensitivity_test.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_selection_split.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/diebold_mariano.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/recalibration_recovery.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/recalibration_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/metrics/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/dscp_level90.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/dscp_level95.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/lstm_history_h1_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/lstm_history_h3_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/lstm_history_h6_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/xgboost_best_params_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/xgboost_best_params_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/pleia_energy/models/xgboost_best_params_h6.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/alert_selection_audit.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/benchmarking_and_contribution_wording.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/benchmark_comparison.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/chapter4_final_results_and_discussion.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/chapter5_results_blueprint.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/chapter6_discussion_blueprint.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/closed_loop_terminology.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/dissertation_handoff.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_claims_register.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_confosense_configuration.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_dissertation_migration_plan.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_dissertation_structure.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_figures_index.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_result_digest.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_tables_index.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/final_writing_handoff.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/full_study_limitations.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/full_study_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/pleia_energy_audit.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/rico_quantile_crossing_audit.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/rq_ro_evidence_matrix.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/table_figure_placement_map.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/table_ready_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_01_point_forecasting_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_02_coverage_vs_width.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_03_coverage_deviation_by_horizon.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_04_winkler_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_05_alert_rule_sensitivity.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_06_alert_tradeoff.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_07a_observed_signal_coverage.pdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_07a_observed_signal_coverage.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_07b_clean_reference_coverage.pdf",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_07b_clean_reference_coverage.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_07_robustness_degradation.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_08_recalibration_recovery.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_09_cross_dataset_rankings.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_10_rico_interval_timeline.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_11_bdg2_interval_timeline.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_12_pleia_interval_timeline.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_13_closed_loop_absorption.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_alert_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_alert_comparison_300dpi.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_alert_comparison_data.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_window_selection_audit.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/run_audit.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/sensor_audit.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/series_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/alert_rule_selection_calibration.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/alert_rule_sensitivity_test.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/alert_selection_split.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/diebold_mariano.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/recalibration_recovery.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/recalibration_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/metrics/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/dscp_level90.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/dscp_level95.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h15_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h30_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h5_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h60_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h15.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h30.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h5.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h60.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/model_rankings.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/ranking_tests.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/combined/statistical_tests.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/manifests/dataset_sources.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/manifests/experiment_manifest.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/manifests/limitations.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/manifests/resume_ledger.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/manifests/run_history.jsonl",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/injected_event_catalog.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/series_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/split_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/target_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_rule_selection_calibration.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_rule_sensitivity_test.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_selection_split.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/diebold_mariano.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/effect_sizes.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/recalibration_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/recalibration_recovery.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/recalibration_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/metrics/robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/models/dscp_level90.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/models/dscp_level95.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/models/lstm_history_h1_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/models/lstm_history_h3_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/models/xgboost_best_params_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/models/xgboost_best_params_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/predictions/interval_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/pleia/predictions/point_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/final_result_digest.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/full_study_limitations.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/full_study_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/table_ready_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_01_point_forecasting_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_02_coverage_vs_width.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_03_coverage_deviation_by_horizon.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_04_winkler_comparison.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_05_alert_rule_sensitivity.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_06_alert_tradeoff.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_07_robustness_degradation.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_08_recalibration_recovery.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_09_cross_dataset_rankings.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_12_pleia_interval_timeline.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/report/figures/fig_13_closed_loop_absorption.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/dataset_profile.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/partitioning.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/partition_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/window_summary.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/figures/fig_uci_01_point_mae.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/figures/fig_uci_02_cqr_interval.png",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/manifests/dataset_source.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/manifests/dataset_sources.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/manifests/experiment_manifest.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/manifests/limitations.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/manifests/run_history.jsonl",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/metrics/interval_violation_diagnostic.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/metrics/point_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/metrics/xgboost_best_params_h15.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/metrics/xgboost_best_params_h5.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/predictions/interval_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/laptop_verification/uci/predictions/point_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/alert_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/alert_rule_selection.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/bootstrap_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/cqr_interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/enbpi_interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/interval_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/point_forecast_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/metrics/preliminary_robustness_metrics.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/lstm_config.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/lstm_history_h1_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/lstm_history_h3_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/lstm_history_h6_seed42.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/xgboost_best_params_h1.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/xgboost_best_params_h3.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/xgboost_best_params_h6.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/xgboost_h1_seed42.joblib",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/xgboost_h3_seed42.joblib",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/models/xgboost_h6_seed42.joblib",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/predictions/cqr_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/predictions/enbpi_predictions.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/predictions/point_predictions_h1.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/predictions/point_predictions_h3.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/predictions/point_predictions_h6.csv",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/report/environment_versions.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/report/random_seed_log.json",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/report/report_ready_results.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/report/result_placeholders_filled.md",
+      "matches_entry_backup": true
+    },
+    {
+      "path": "smart_building_conformal/outputs/report/test_results.txt",
+      "matches_entry_backup": true
+    }
+  ]
+}

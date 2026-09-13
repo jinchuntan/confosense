@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\cfs_venv\\Scripts\\python.exe",
+    "-B",
+    "scripts/summarise_pilot.py",
+    "--run",
+    "outputs\\model_comparison_pilot_v1\\runs\\pilot_v1_20260913",
+    "--out",
+    "outputs\\model_comparison_pilot_v1\\tables"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T04:46:20.489932+00:00",
+  "ended_utc": "2026-09-13T04:46:21.215501+00:00",
+  "seconds": 0.7261627000000317,
+  "exit_status": 0
+}

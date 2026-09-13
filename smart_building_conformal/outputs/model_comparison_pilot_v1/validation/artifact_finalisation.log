@@ -1,0 +1,178 @@
+RESUMED h1_f0_s42_persistence
+COMPLETE h1_f0_s42_persistence
+RESUMED h1_f0_s42_xgboost
+COMPLETE h1_f0_s42_xgboost
+RESUMED h1_f0_s42_attention_lstm
+COMPLETE h1_f0_s42_attention_lstm
+RESUMED h3_f0_s42_persistence
+COMPLETE h3_f0_s42_persistence
+RESUMED h3_f0_s42_xgboost
+COMPLETE h3_f0_s42_xgboost
+RESUMED h3_f0_s42_attention_lstm
+COMPLETE h3_f0_s42_attention_lstm
+RESUMED h6_f0_s42_persistence
+COMPLETE h6_f0_s42_persistence
+RESUMED h6_f0_s42_xgboost
+COMPLETE h6_f0_s42_xgboost
+RESUMED h6_f0_s42_attention_lstm
+COMPLETE h6_f0_s42_attention_lstm
+{"command": ["C:\\cfs_venv\\Scripts\\python.exe", "-B", "-m", "src.model_comparison_pilot", "run", "--out", "outputs\\model_comparison_pilot_v1\\runs\\pilot_v1_20260913", "--resume"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T04:45:22.109348+00:00", "ended_utc": "2026-09-13T04:46:00.706701+00:00", "seconds": 38.59739680000007, "exit_status": 0}
+{
+  "pilot_outputs_valid": true,
+  "evidence_status": "pilot",
+  "units": 9,
+  "point_cells": 9,
+  "interval_cells": 18,
+  "recomputed_interval_cells": 18,
+  "missing_cells": [],
+  "duplicate_cells": [],
+  "model_support_equal": true,
+  "checkpoint_hashes_verified": true,
+  "global_study_ready": false,
+  "publication_ready": false,
+  "source_hash": "965ff02d8cb67183210632bfbc3a2251c430a2b027b8b44d87df356fd19e3d71",
+  "protocol_hash": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3"
+}
+{"command": ["C:\\cfs_venv\\Scripts\\python.exe", "-B", "-m", "src.validate_model_comparison_pilot", "--run", "outputs\\model_comparison_pilot_v1\\runs\\pilot_v1_20260913", "--protocol", "protocols\\model_comparison_pilot_v1\\frozen_protocol.json", "--out", "outputs\\model_comparison_pilot_v1\\validation\\output_validation.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T04:46:00.857278+00:00", "ended_utc": "2026-09-13T04:46:04.153895+00:00", "seconds": 3.298528899999951, "exit_status": 0}
+{
+  "dataset": "bdg2",
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 402505728,
+      "private_bytes": 356999168,
+      "lifetime_peak_rss_bytes": 1036431360,
+      "available_ram_bytes": 3950514176,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "adapter_resources": {
+    "seconds": 5.111506200000008,
+    "baseline_rss_bytes": 350064640,
+    "peak_rss_bytes": 852299776,
+    "baseline_private_bytes": 306098176,
+    "peak_private_bytes": 1001119744,
+    "incremental_peak_rss_bytes": 502235136,
+    "lifetime_peak_rss_bytes": 1036431360,
+    "min_available_ram_bytes": 3449806848,
+    "sample_interval_seconds": 0.05
+  },
+  "total_resources": {
+    "seconds": 11.276594599999953,
+    "baseline_rss_bytes": 349962240,
+    "peak_rss_bytes": 852234240,
+    "baseline_private_bytes": 306028544,
+    "peak_private_bytes": 1001119744,
+    "incremental_peak_rss_bytes": 502272000,
+    "lifetime_peak_rss_bytes": 1036431360,
+    "min_available_ram_bytes": 3450265600,
+    "sample_interval_seconds": 0.05
+  },
+  "horizons": [
+    {
+      "horizon": 1,
+      "rows": 172662,
+      "flat_feature_bytes": 30388644,
+      "lazy_stored_bytes": 7859304,
+      "n_channels": 7,
+      "sequence_length": 24,
+      "equivalent_full_tensor_bytes": 116028864,
+      "traversal_checksum": 1163816670.198631,
+      "models_fitted": 0,
+      "resources": {
+        "seconds": 1.9497450000000072,
+        "baseline_rss_bytes": 388673536,
+        "peak_rss_bytes": 544395264,
+        "baseline_private_bytes": 344494080,
+        "peak_private_bytes": 500781056,
+        "incremental_peak_rss_bytes": 155721728,
+        "lifetime_peak_rss_bytes": 1036431360,
+        "min_available_ram_bytes": 3742130176,
+        "sample_interval_seconds": 0.05
+      }
+    },
+    {
+      "horizon": 3,
+      "rows": 172662,
+      "flat_feature_bytes": 30388644,
+      "lazy_stored_bytes": 7859304,
+      "n_channels": 7,
+      "sequence_length": 24,
+      "equivalent_full_tensor_bytes": 116028864,
+      "traversal_checksum": 1163864635.4206748,
+      "models_fitted": 0,
+      "resources": {
+        "seconds": 1.9651342000000795,
+        "baseline_rss_bytes": 403144704,
+        "peak_rss_bytes": 523939840,
+        "baseline_private_bytes": 357732352,
+        "peak_private_bytes": 479424512,
+        "incremental_peak_rss_bytes": 120795136,
+        "lifetime_peak_rss_bytes": 1036431360,
+        "min_available_ram_bytes": 3764314112,
+        "sample_interval_seconds": 0.05
+      }
+    },
+    {
+      "horizon": 6,
+      "rows": 172662,
+      "flat_feature_bytes": 30388644,
+      "lazy_stored_bytes": 7859304,
+      "n_channels": 7,
+      "sequence_length": 24,
+      "equivalent_full_tensor_bytes": 116028864,
+      "traversal_checksum": 1163928201.4270134,
+      "models_fitted": 0,
+      "resources": {
+        "seconds": 2.0010653000000502,
+        "baseline_rss_bytes": 404365312,
+        "peak_rss_bytes": 544845824,
+        "baseline_private_bytes": 359014400,
+        "peak_private_bytes": 501186560,
+        "incremental_peak_rss_bytes": 140480512,
+        "lifetime_peak_rss_bytes": 1036431360,
+        "min_available_ram_bytes": 3738947584,
+        "sample_interval_seconds": 0.05
+      }
+    }
+  ],
+  "models_fitted": 0,
+  "method": "lazy channels; every eligible sequence traversed in batches of 256"
+}
+{"command": ["C:\\cfs_venv\\Scripts\\python.exe", "-B", "-m", "src.model_comparison_pilot", "bdg2-memory", "--out", "outputs\\model_comparison_pilot_v1\\validation\\bdg2_preparation_memory.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T04:46:04.245162+00:00", "ended_utc": "2026-09-13T04:46:20.388319+00:00", "seconds": 16.145112999999924, "exit_status": 0}
+ horizon_minutes          model      mae     rmse  coverage_90  mpiw_90  winkler_90  coverage_95  mpiw_95  winkler_95  tuning_seconds  final_fit_seconds
+              10    persistence 0.203775 0.327465     0.920460 1.000000    1.559806     0.959625 1.400000    1.984233        0.000000           0.000492
+              10        xgboost 0.244526 0.353310     0.887150 0.995648    1.633467     0.936308 1.271245    2.076634        4.353504           1.283386
+              10 attention_lstm 0.361099 0.486622     0.872413 1.380417    2.177183     0.922782 1.668120    2.685691      252.915650          82.527715
+              30    persistence 0.377349 0.609906     0.892702 1.600000    2.944908     0.941758 2.200000    3.825517        0.000000           0.000872
+              30        xgboost 0.561276 0.729868     0.765721 1.593843    3.432689     0.880287 2.075964    4.120763        4.189542           1.242101
+              30 attention_lstm 0.653140 0.879213     0.821036 2.101978    4.057246     0.897042 2.631016    5.088480      241.380854          68.477164
+              60    persistence 0.548117 0.877601     0.893913 2.400000    4.219925     0.940244 3.200000    5.547431        0.000000           0.000418
+              60        xgboost 0.758970 0.985810     0.775310 2.269616    4.437112     0.881902 2.793571    5.371069        4.982808           1.329513
+              60 attention_lstm 1.246394 1.567652     0.719188 3.290865    7.819548     0.807308 3.911872   10.048866      164.952227          51.452613
+
+Cost totals and same-cost 15-repetition scenario (not an ETA):
+                tuning_seconds  final_fit_seconds  calibration_seconds  inference_seconds  max_sampled_rss_bytes  model_compute_seconds  same_cost_15_repetitions_seconds
+model                                                                                                                                                                    
+attention_lstm      659.248731         202.457492             1.278027           1.333033              714498048             864.317284                      12964.759253
+persistence           0.000000           0.001783             0.015825           0.012268              693755904               0.029877                          0.448149
+xgboost              13.525854           3.855000             0.316662           0.311200              702578688              18.008716                        270.130746
+{"command": ["C:\\cfs_venv\\Scripts\\python.exe", "-B", "scripts/summarise_pilot.py", "--run", "outputs\\model_comparison_pilot_v1\\runs\\pilot_v1_20260913", "--out", "outputs\\model_comparison_pilot_v1\\tables"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T04:46:20.489932+00:00", "ended_utc": "2026-09-13T04:46:21.215501+00:00", "seconds": 0.7261627000000317, "exit_status": 0}
+{"command": ["C:\\cfs_venv\\Scripts\\python.exe", "-B", "-m", "src.pilot_figure", "--run", "outputs\\model_comparison_pilot_v1\\runs\\pilot_v1_20260913", "--out", "outputs\\model_comparison_pilot_v1\\figures"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T04:46:21.314238+00:00", "ended_utc": "2026-09-13T04:46:23.370784+00:00", "seconds": 2.0564090000000306, "exit_status": 0}
+{
+  "preparation_rows": 9,
+  "bdg2_rows": 5,
+  "command_rows": 7,
+  "models_fitted": 0,
+  "output": "outputs\\model_comparison_pilot_v1\\tables"
+}
+Completed: nine point cells, eighteen interval cells, checkpoint reuse, BDG2 memory and exports.

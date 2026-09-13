@@ -1,0 +1,4 @@
+# Immutable pilot evidence uses byte hashes; checkout must not convert line endings.
+smart_building_conformal/outputs/model_comparison_pilot_v1/** -text
+smart_building_conformal/protocols/model_comparison_pilot_v1/** -text
+smart_building_conformal/configs/model_comparison_pilot_v1.json -text

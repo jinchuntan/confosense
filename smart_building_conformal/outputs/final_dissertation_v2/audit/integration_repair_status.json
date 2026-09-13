@@ -7,9 +7,9 @@
   "missing_extension": "robx_full_20260902_080752",
   "historical_publication_marker": "preserved; does not apply to repaired code",
   "unresolved": [
-    "two-inner-fold aggregation",
-    "model-specific 90/95 calibration pairing",
-    "multi-horizon quality and DSCP execution",
+    "core operational two-inner-fold aggregation",
+    "full four-task model-specific 90/95 calibration pairing and comparison",
+    "multi-horizon DSCP and seasonal execution",
     "confidence-bound feasibility and matched-budget endpoint",
     "core synthetic event family and clean-counterfactual workload",
     "multi-group recovery estimand"
@@ -24,5 +24,17 @@
     "full_skipped": 1,
     "warnings": 3,
     "full_seconds": 46.12
+  },
+  "model_comparison_pilot": {
+    "status": "complete",
+    "scope": "PLEIA temperature; horizons 1/3/6; outer fold 0; seed 42",
+    "point_cells": 9,
+    "interval_cells": 18,
+    "output_validation_passed": true,
+    "completion_exit_status": 0,
+    "initial_launch_exit_status": null,
+    "report_repository_relative": "MODEL_COMPARISON_PILOT_REPORT.md",
+    "outputs_project_relative": "outputs/model_comparison_pilot_v1",
+    "global_scope_completed": false
   }
 }

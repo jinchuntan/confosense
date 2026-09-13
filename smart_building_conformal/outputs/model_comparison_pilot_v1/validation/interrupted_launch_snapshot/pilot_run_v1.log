@@ -1,0 +1,75 @@
+START h1_f0_s42_persistence; free RAM 2.71 GiB
+h1 persistence: refit candidate 0, epochs=None
+COMPLETE h1_f0_s42_persistence
+START h1_f0_s42_xgboost; free RAM 2.67 GiB
+h1 xgboost: candidate 0, inner fold 0
+h1 xgboost: candidate 0, inner fold 1
+h1 xgboost: candidate 1, inner fold 0
+h1 xgboost: candidate 1, inner fold 1
+h1 xgboost: refit candidate 0, epochs=None
+COMPLETE h1_f0_s42_xgboost
+START h1_f0_s42_attention_lstm; free RAM 2.60 GiB
+h1 attention_lstm: candidate 0, inner fold 0
+  epoch 1, inner MAE 1.18368
+  epoch 5, inner MAE 0.83006
+  epoch 10, inner MAE 0.64997
+  epoch 15, inner MAE 0.56215
+  epoch 20, inner MAE 0.53623
+  epoch 25, inner MAE 0.53230
+  epoch 30, inner MAE 0.50097
+h1 attention_lstm: candidate 0, inner fold 1
+  epoch 1, inner MAE 2.60085
+  epoch 5, inner MAE 1.88482
+  epoch 10, inner MAE 1.74184
+  epoch 15, inner MAE 1.78407
+h1 attention_lstm: candidate 1, inner fold 0
+  epoch 1, inner MAE 1.46643
+  epoch 5, inner MAE 1.03903
+  epoch 10, inner MAE 0.82467
+  epoch 15, inner MAE 0.67238
+  epoch 20, inner MAE 0.63958
+  epoch 25, inner MAE 0.58460
+  epoch 30, inner MAE 0.56441
+h1 attention_lstm: candidate 1, inner fold 1
+  epoch 1, inner MAE 3.18084
+  epoch 5, inner MAE 2.37463
+  epoch 10, inner MAE 2.05756
+  epoch 15, inner MAE 2.05383
+  epoch 20, inner MAE 2.06342
+  epoch 25, inner MAE 1.84404
+  epoch 30, inner MAE 1.84986
+h1 attention_lstm: refit candidate 0, epochs=20
+  final epoch 1
+  final epoch 5
+  final epoch 10
+  final epoch 15
+  final epoch 20
+COMPLETE h1_f0_s42_attention_lstm
+START h3_f0_s42_persistence; free RAM 3.67 GiB
+h3 persistence: refit candidate 0, epochs=None
+COMPLETE h3_f0_s42_persistence
+START h3_f0_s42_xgboost; free RAM 3.69 GiB
+h3 xgboost: candidate 0, inner fold 0
+h3 xgboost: candidate 0, inner fold 1
+h3 xgboost: candidate 1, inner fold 0
+h3 xgboost: candidate 1, inner fold 1
+h3 xgboost: refit candidate 0, epochs=None
+COMPLETE h3_f0_s42_xgboost
+START h3_f0_s42_attention_lstm; free RAM 3.67 GiB
+h3 attention_lstm: candidate 0, inner fold 0
+  epoch 1, inner MAE 1.23614
+  epoch 5, inner MAE 1.02152
+  epoch 10, inner MAE 0.83937
+  epoch 15, inner MAE 0.80909
+  epoch 20, inner MAE 0.75519
+h3 attention_lstm: candidate 0, inner fold 1
+  epoch 1, inner MAE 2.63473
+  epoch 5, inner MAE 2.15908
+  epoch 10, inner MAE 2.08781
+  epoch 15, inner MAE 2.05315
+h3 attention_lstm: candidate 1, inner fold 0
+  epoch 1, inner MAE 1.52256
+  epoch 5, inner MAE 1.14124
+  epoch 10, inner MAE 0.95252
+  epoch 15, inner MAE 0.90867
+  epoch 20, inner MAE 0.83181
