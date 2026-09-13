@@ -71,7 +71,7 @@ def run(out,config,resume=False):
         decision=payload['decision'],operational_feasible=payload['operational_feasible'],
         fixture_feasible_selection=payload['selection_acceptance']['feasible_selection'],
         source_hash=spec['source_hash'],config_hash=spec['config_hash'],design_hash=spec['design_hash'],
-        evaluated_commit=payload['evaluated_commit'],run_id=out.name,scientific_readiness=False)
+        evaluated_commit=payload['evaluated_commit'],run_id=out.name)
     # Validation reports are separate from the immutable completed unit.
     filename='resume_validation.json' if resume else 'output_validation.json'
     path=out/filename
