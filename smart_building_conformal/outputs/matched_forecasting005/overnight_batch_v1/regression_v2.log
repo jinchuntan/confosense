@@ -1,0 +1,32 @@
+...F...................                                                  [100%]
+================================== FAILURES ===================================
+__________________ test_lock_refuses_concurrent_coordinator ___________________
+
+tmp_path = WindowsPath('C:/Users/nigel/AppData/Local/Temp/pytest-of-nigel/pytest-50/test_lock_refuses_concurrent_c0')
+
+    def test_lock_refuses_concurrent_coordinator(tmp_path):
+        with exclusive_lock(tmp_path/'lock'):
+            with pytest.raises(RuntimeError,match='another coordinator'):
+>               with exclusive_lock(tmp_path/'lock'):pass
+
+..\review\matched_overnight_20260914\test_coordinator.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Users/nigel/AppData/Local/Temp/pytest-of-nigel/pytest-50/test_lock_refuses_concurrent_c0/lock')
+
+    @contextlib.contextmanager
+    def exclusive_lock(path):
+        import msvcrt
+        path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
+        f=path.open('a+b');f.seek(0)
+>       if not f.read(1):f.write(b'0');f.flush()
+               ^^^^^^^^^
+E       PermissionError: [Errno 13] Permission denied
+
+..\review\matched_overnight_20260914\coordinator.py:42: PermissionError
+=========================== short test summary info ===========================
+FAILED ::test_lock_refuses_concurrent_coordinator - PermissionError: [Errno 1...

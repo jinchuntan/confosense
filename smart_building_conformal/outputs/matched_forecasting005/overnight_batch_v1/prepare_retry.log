@@ -1,0 +1,1167 @@
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "1ffa2b29dc13b120254046c80e97d22647f7b50e5487694b306f692a84d92e14",
+  "role_bank_hash": "2d8a91b93c1a8b8aa8ef5a6496971ee12250108a24504ff6b046cf70b7262f75",
+  "roles": {
+    "fit": {
+      "n": 14855,
+      "membership_hash": "9fc9e18746429e574996b5d318c420366de84a249898bc72faa113826ebf5288",
+      "row_id_hash": "558cff0744ce974849383acc7967f940020b64bfac9013ed4a208009b2708bf5",
+      "origin_min": "2021-01-07 23:30:00",
+      "origin_max": "2021-04-21 03:10:00",
+      "target_min": "2021-01-08 00:00:00",
+      "target_max": "2021-04-21 03:40:00"
+    },
+    "calibration": {
+      "n": 4952,
+      "membership_hash": "314903ce4f8c8409c5417c2d6b829e4549971bebc3d6a0dc881d54aa3c565364",
+      "row_id_hash": "4229dfd898ed95c9f9693260d3cb9bb25c08cf354ea18d6e850f1422de1405f1",
+      "origin_min": "2021-04-21 04:00:00",
+      "origin_max": "2021-05-25 13:10:00",
+      "target_min": "2021-04-21 04:30:00",
+      "target_max": "2021-05-25 13:40:00"
+    },
+    "test": {
+      "n": 9907,
+      "membership_hash": "f7a8b2ab436b98d9e3c4127b8c0c687d2944e7cc7512d2ddf6c76666e097c7ea",
+      "row_id_hash": "c2d53e2fc20a6e6e5143df383f37e38aeb9e86b2de67c63088da1d4583d4b1dd",
+      "origin_min": "2021-05-25 13:50:00",
+      "origin_max": "2021-08-02 08:50:00",
+      "target_min": "2021-05-25 14:20:00",
+      "target_max": "2021-08-02 09:20:00"
+    },
+    "inner0_train": {
+      "n": 4948,
+      "membership_hash": "ebf7520964f58026cc222578bba1f1d2a33b67198299f1c5bba1566bd6784377",
+      "row_id_hash": "894b35f84e79ef291432eb4ec2ea7a1f5f02cfd69a67e241ecae730eafa5e89a",
+      "origin_min": "2021-01-07 23:30:00",
+      "origin_max": "2021-02-11 08:00:00",
+      "target_min": "2021-01-08 00:00:00",
+      "target_max": "2021-02-11 08:30:00"
+    },
+    "inner0_validation": {
+      "n": 4949,
+      "membership_hash": "2aa22d1ba1125056fdd68d6b2027eacd834f9664eaae2b53cff2a9faa7ddf126",
+      "row_id_hash": "41af3db740ef555be369e15e8e0eabcc34559abc88a624a17301e8eed7414656",
+      "origin_min": "2021-02-11 08:40:00",
+      "origin_max": "2021-03-17 17:20:00",
+      "target_min": "2021-02-11 09:10:00",
+      "target_max": "2021-03-17 17:50:00"
+    },
+    "inner1_train": {
+      "n": 9897,
+      "membership_hash": "78a72344eb383f72004edb224f83c552a272dfeaffbb94ff79fcbecf0505fce1",
+      "row_id_hash": "581506cccfe66c620c944cd60584ec2109d04279aca39b38d38f40d6b80f9d9a",
+      "origin_min": "2021-01-07 23:30:00",
+      "origin_max": "2021-03-17 17:20:00",
+      "target_min": "2021-01-08 00:00:00",
+      "target_max": "2021-03-17 17:50:00"
+    },
+    "inner1_validation": {
+      "n": 4952,
+      "membership_hash": "5e7ec7b15735ad3fbb7d39223dba2b0d10397023ec6e05681ca69c5b3cfa1106",
+      "row_id_hash": "72c8599283ed3e772db63a8669d21aa9c29578597a29d0cc7558d3f93476d419",
+      "origin_min": "2021-03-17 18:00:00",
+      "origin_max": "2021-04-21 03:10:00",
+      "target_min": "2021-03-17 18:30:00",
+      "target_max": "2021-04-21 03:40:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "3", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h3_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:44:13.401395+00:00", "logger_pid": 13448, "child_pid": 27908, "ended_utc": "2026-09-13T17:44:22.631859+00:00", "seconds": 9.230680900000152, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "45c20ac2ea3ebec21844295e8ee7adc51484f1134040e1864ee0068833924297",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 376279040,
+    "private_bytes": 330731520,
+    "lifetime_peak_rss_bytes": 408547328,
+    "available_ram_bytes": 4235530240,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46811926528,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 4.078772000000754,
+    "baseline_rss_bytes": 324169728,
+    "peak_rss_bytes": 399405056,
+    "baseline_private_bytes": 281735168,
+    "peak_private_bytes": 354631680,
+    "incremental_peak_rss_bytes": 75235328,
+    "lifetime_peak_rss_bytes": 408547328,
+    "min_available_ram_bytes": 4209639424,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 3.96875
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "3", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h3_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:44:22.749798+00:00", "logger_pid": 1760, "child_pid": 528, "ended_utc": "2026-09-13T17:44:31.068101+00:00", "seconds": 8.322578000006615, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "ca819e9cb10c685d7ce5286d8ed34afe6e70fd34aab9a6c95d5a4f3367012ead",
+  "role_bank_hash": "17388d3fc0eb13d4265cd50d42d6e7474b004321277d6027e30ba7f2f8e58674",
+  "roles": {
+    "fit": {
+      "n": 14850,
+      "membership_hash": "c21c125ed8b2b56ebab6814a8c4c6928ac9b4775caaa9582d3c5ea87dcb4ad99",
+      "row_id_hash": "81ae297f2155a20502ed6b8c4f4e4ee7495737057e22b71392aeb2aa2ddc47a5",
+      "origin_min": "2021-01-07 23:00:00",
+      "origin_max": "2021-04-21 01:50:00",
+      "target_min": "2021-01-08 00:00:00",
+      "target_max": "2021-04-21 02:50:00"
+    },
+    "calibration": {
+      "n": 4951,
+      "membership_hash": "1b95885bd959657f0d1505f6455c91dfcaf78fa9649478e989853104b5d655ff",
+      "row_id_hash": "0ee87531d3a77d326c99ffdf39a8bb6058827ab4d41014255a2219c6f898c125",
+      "origin_min": "2021-04-21 03:10:00",
+      "origin_max": "2021-05-25 12:10:00",
+      "target_min": "2021-04-21 04:10:00",
+      "target_max": "2021-05-25 13:10:00"
+    },
+    "test": {
+      "n": 9907,
+      "membership_hash": "061c08c3374dc0f9d45dfa8547f11e8a31a823c67efe645c11e25597c6f32a22",
+      "row_id_hash": "de4207e52d512c374af24bbef6311e23f19f23ecb4445280cc7d8e7442dfa6fc",
+      "origin_min": "2021-05-25 13:20:00",
+      "origin_max": "2021-08-02 08:20:00",
+      "target_min": "2021-05-25 14:20:00",
+      "target_max": "2021-08-02 09:20:00"
+    },
+    "inner0_train": {
+      "n": 4944,
+      "membership_hash": "ef4c97630e1a30ed5ea78b5d3220a444b45a45deea3db4bc05921facedfefdd0",
+      "row_id_hash": "328842348301366ce8fe85db3fa1025816d1385a1911ecdf0085057400431be3",
+      "origin_min": "2021-01-07 23:00:00",
+      "origin_max": "2021-02-11 06:50:00",
+      "target_min": "2021-01-08 00:00:00",
+      "target_max": "2021-02-11 07:50:00"
+    },
+    "inner0_validation": {
+      "n": 4944,
+      "membership_hash": "987b5f86df7c4ef83440458fc6052673b666f7afaa8cafe432b957312a7baf1a",
+      "row_id_hash": "3fca8ca2b13c38ef70b28003e66e17aaa36980997b69268ed2b7829d5d5eaec1",
+      "origin_min": "2021-02-11 08:00:00",
+      "origin_max": "2021-03-17 15:50:00",
+      "target_min": "2021-02-11 09:00:00",
+      "target_max": "2021-03-17 16:50:00"
+    },
+    "inner1_train": {
+      "n": 9888,
+      "membership_hash": "2dc694d5d8c75613f988358567fc902a59612824bf4fe52e48f329877f9414ae",
+      "row_id_hash": "2827d1ac25edee475ef3b63d536bcbb06ff0c60d11e75fbecbab90adb8c43ffc",
+      "origin_min": "2021-01-07 23:00:00",
+      "origin_max": "2021-03-17 15:50:00",
+      "target_min": "2021-01-08 00:00:00",
+      "target_max": "2021-03-17 16:50:00"
+    },
+    "inner1_validation": {
+      "n": 4950,
+      "membership_hash": "572dcac44c6e1158610a08b78ecb5c1149b22c6d871aff27ae12237385d67cc1",
+      "row_id_hash": "ad6053be09fd9bdb574b94eeacd9604602b0c455963142350f227dfa3ec50447",
+      "origin_min": "2021-03-17 17:00:00",
+      "origin_max": "2021-04-21 01:50:00",
+      "target_min": "2021-03-17 18:00:00",
+      "target_max": "2021-04-21 02:50:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:44:31.409931+00:00", "logger_pid": 24028, "child_pid": 26772, "ended_utc": "2026-09-13T17:44:40.619258+00:00", "seconds": 9.21207449999929, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "2209e00bc338132a6a2a2933be0893ff9f893cbddb45082541941604ab05632b",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 386109440,
+    "private_bytes": 341516288,
+    "lifetime_peak_rss_bytes": 410722304,
+    "available_ram_bytes": 4220608512,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46809174016,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 4.523779800001648,
+    "baseline_rss_bytes": 324030464,
+    "peak_rss_bytes": 401608704,
+    "baseline_private_bytes": 282013696,
+    "peak_private_bytes": 356724736,
+    "incremental_peak_rss_bytes": 77578240,
+    "lifetime_peak_rss_bytes": 410722304,
+    "min_available_ram_bytes": 4209373184,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 4.265625
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:44:40.734644+00:00", "logger_pid": 12600, "child_pid": 26376, "ended_utc": "2026-09-13T17:44:49.491413+00:00", "seconds": 8.760541600000579, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "7e4af27dc022bb221d3b1e6ac6c130c46417825d4cf4e768c0617fa61a5e9667",
+  "role_bank_hash": "9518d3e3e4e1177df814581d4389340b2e13bea0f7456bc9375d6104e6e3bf31",
+  "roles": {
+    "fit": {
+      "n": 12322,
+      "membership_hash": "43b916ba9404ba05674434bee730459042f5429db85147bf7480e4994566518e",
+      "row_id_hash": "78091d5eff830e5cec75e981f2374fa92a1411659cefc3dbe1f2a66d39d9d20a",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-07 22:45:00",
+      "target_min": "2023-07-26 15:39:00",
+      "target_max": "2023-08-07 23:00:00"
+    },
+    "calibration": {
+      "n": 4242,
+      "membership_hash": "33982386d1966661ed68b05d6d47cf1b0655579aae4145632efa839b722621cd",
+      "row_id_hash": "b24b1ffac74ec3618d19e253737eb069d0f486f2215540f259dccc4a7533bdc7",
+      "origin_min": "2023-08-07 23:24:00",
+      "origin_max": "2023-08-12 02:45:00",
+      "target_min": "2023-08-07 23:39:00",
+      "target_max": "2023-08-12 03:00:00"
+    },
+    "test": {
+      "n": 8282,
+      "membership_hash": "94377b43ba0ad98a55be4a3e803052ff54825de93fe43932bd54dd5a5999210f",
+      "row_id_hash": "70ee9d673d19e218dbcf71db42bc92f130090496931b95a3f5272b32330ac9ff",
+      "origin_min": "2023-08-12 07:24:00",
+      "origin_max": "2024-02-04 10:45:00",
+      "target_min": "2023-08-12 07:39:00",
+      "target_max": "2024-02-04 11:00:00"
+    },
+    "inner0_train": {
+      "n": 4040,
+      "membership_hash": "5829454b8cc8ac6982c945339d4310a9a179cdd14bcd461b9599ce0e6d31a025",
+      "row_id_hash": "8b5377dedc5eef41e49d14b9d7048a8d4b20a24cc3f0213b3b402a19a9daf73e",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-07-30 22:45:00",
+      "target_min": "2023-07-26 15:39:00",
+      "target_max": "2023-07-30 23:00:00"
+    },
+    "inner0_validation": {
+      "n": 4040,
+      "membership_hash": "6649edb21bb9388ae4121dd285b20bb3005dcbe0c29f1f6f44aeabe295515229",
+      "row_id_hash": "e40b4a7e2ed7d0eff6a01bcacf6dd491fd4801938e5c53b8aeade8bf81122560",
+      "origin_min": "2023-07-30 23:24:00",
+      "origin_max": "2023-08-03 22:45:00",
+      "target_min": "2023-07-30 23:39:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_train": {
+      "n": 8080,
+      "membership_hash": "f9a21800560e18a5ee7609e4a2a91977dcc135238791f272cd6cd8c2fe8fb273",
+      "row_id_hash": "9180db22b831fe0e7ca58b24616399502cd01d6e796e73eda4fa4cf2184cfcec",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-03 22:45:00",
+      "target_min": "2023-07-26 15:39:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_validation": {
+      "n": 4242,
+      "membership_hash": "869e32a55876afd5037cfa569780a029ba6195f2b33156bd33c1e987f35d2fdc",
+      "row_id_hash": "57e398b6b31b811e1694aff2168883e9bc8e05d8adeeda9dcf5e072c177a184c",
+      "origin_min": "2023-08-03 23:24:00",
+      "origin_max": "2023-08-07 22:45:00",
+      "target_min": "2023-08-03 23:39:00",
+      "target_max": "2023-08-07 23:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "15", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h15_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:44:49.849003+00:00", "logger_pid": 9884, "child_pid": 27680, "ended_utc": "2026-09-13T17:45:05.780297+00:00", "seconds": 15.936068499999237, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "03d1d452482977385b92c01bd2a2ba832e17ca51725e86b5a2d03b6d5399184a",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 430100480,
+    "private_bytes": 385462272,
+    "lifetime_peak_rss_bytes": 489046016,
+    "available_ram_bytes": 4182855680,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46807080960,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 17.79794850000326,
+    "baseline_rss_bytes": 324857856,
+    "peak_rss_bytes": 479301632,
+    "baseline_private_bytes": 282599424,
+    "peak_private_bytes": 431161344,
+    "incremental_peak_rss_bytes": 154443776,
+    "lifetime_peak_rss_bytes": 489046016,
+    "min_available_ram_bytes": 4145471488,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 17.34375
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "15", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h15_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:45:05.908381+00:00", "logger_pid": 28380, "child_pid": 25976, "ended_utc": "2026-09-13T17:45:27.906392+00:00", "seconds": 21.9987129000001, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "eeb750317701dae7f55594ab5587faa8c9ebea97e3975d6b334e974d3ade445f",
+  "role_bank_hash": "1e2ca90b7a53d0080a55f9a00d7855611ae30d8d8cbc8448efdaed67a04ba02c",
+  "roles": {
+    "fit": {
+      "n": 11407,
+      "membership_hash": "3d3d4fbb4d8f672ec67c556a83ae19646d5a6de50b7cef115aeeb5cfb30d6489",
+      "row_id_hash": "6694a63ad907e314cbbc07e2400b311ddd6b4f95f7a83bc06ccbfbeb0182f11d",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-07 22:30:00",
+      "target_min": "2023-07-26 15:54:00",
+      "target_max": "2023-08-07 23:00:00"
+    },
+    "calibration": {
+      "n": 3927,
+      "membership_hash": "1342cd8dc9aab44620a5efca7a56fe3be333047033313391a9fdd3a20a8b7ca6",
+      "row_id_hash": "f9b289627840a6d96ddd5e6badfd891669d409792d950a9f947a49ad9da2cce1",
+      "origin_min": "2023-08-07 23:24:00",
+      "origin_max": "2023-08-12 02:30:00",
+      "target_min": "2023-08-07 23:54:00",
+      "target_max": "2023-08-12 03:00:00"
+    },
+    "test": {
+      "n": 7667,
+      "membership_hash": "4290f7193c9add8034e3beb246e9dc5ec1c5c7bc64043a75f4aef0370f2da91a",
+      "row_id_hash": "c55446a7da7e2c214397a68556bddc7f23f1100285beae4d6b6b40dd40de0584",
+      "origin_min": "2023-08-12 07:24:00",
+      "origin_max": "2024-02-04 10:30:00",
+      "target_min": "2023-08-12 07:54:00",
+      "target_max": "2024-02-04 11:00:00"
+    },
+    "inner0_train": {
+      "n": 3740,
+      "membership_hash": "198603de0d21c28b727a91bb36f1d71531516714d0ef322aad814988637b63aa",
+      "row_id_hash": "9d917672abf8233ef65c066aade1c65e97bc2f98f30ac865e3880f9148611e97",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-07-30 22:30:00",
+      "target_min": "2023-07-26 15:54:00",
+      "target_max": "2023-07-30 23:00:00"
+    },
+    "inner0_validation": {
+      "n": 3740,
+      "membership_hash": "1587766cd9a1b662669f11a62c95e7d2fd19b24001ef93ceaa6cfb25ca8059b0",
+      "row_id_hash": "0097da66de91d3a060f37562847bdc9aac7b47a0108c449f7bb67c62b7b490ce",
+      "origin_min": "2023-07-30 23:24:00",
+      "origin_max": "2023-08-03 22:30:00",
+      "target_min": "2023-07-30 23:54:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_train": {
+      "n": 7480,
+      "membership_hash": "e8aa89ac449919910789c941c06679a8faba7d42a3be6a5e7d1c598619b933ac",
+      "row_id_hash": "39428fb6ae40555288f096d7afd6fd9eb71c9e5d48b714de4c1f38d81aebc06c",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-03 22:30:00",
+      "target_min": "2023-07-26 15:54:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_validation": {
+      "n": 3927,
+      "membership_hash": "0c1086ba100d4a63d10c3054ddcf3d1803ca6464fc6960b4acbf90b625f25618",
+      "row_id_hash": "776e68499bf8cfa868629e2b39477d8a3b6a9656f0f716467b99404358cfdea4",
+      "origin_min": "2023-08-03 23:24:00",
+      "origin_max": "2023-08-07 22:30:00",
+      "target_min": "2023-08-03 23:54:00",
+      "target_max": "2023-08-07 23:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "30", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h30_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:45:28.217958+00:00", "logger_pid": 27888, "child_pid": 7312, "ended_utc": "2026-09-13T17:45:42.642343+00:00", "seconds": 14.422965899997507, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "1ad851efbc64721175170cedc494487931981286fb015270b140f28c8c0a751b",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 425263104,
+    "private_bytes": 381644800,
+    "lifetime_peak_rss_bytes": 483127296,
+    "available_ram_bytes": 4255453184,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46804914176,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 17.29781329999969,
+    "baseline_rss_bytes": 324734976,
+    "peak_rss_bytes": 467951616,
+    "baseline_private_bytes": 282460160,
+    "peak_private_bytes": 422567936,
+    "incremental_peak_rss_bytes": 143216640,
+    "lifetime_peak_rss_bytes": 483127296,
+    "min_available_ram_bytes": 4188033024,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 16.8125
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "30", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h30_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:45:42.756991+00:00", "logger_pid": 22716, "child_pid": 22884, "ended_utc": "2026-09-13T17:46:04.174578+00:00", "seconds": 21.42812309999863, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "0c5fe27756b43d49f61814b8caa31857212c601f949748975dc68470e36cac57",
+  "role_bank_hash": "639ceecb5bf9b521418ca6a7fdd7b58284343f14208c4fd7e92beae3218dfb9b",
+  "roles": {
+    "fit": {
+      "n": 9577,
+      "membership_hash": "3b2ee7b2aa12c1ffb1d92fa0d145bb40ec7eda5553d5aea200e775ff319f45fe",
+      "row_id_hash": "917983dc467388ac885978e9b74c0f5ae88208d9e772efb9a39ac7017ffda1e5",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-07 22:00:00",
+      "target_min": "2023-07-26 16:24:00",
+      "target_max": "2023-08-07 23:00:00"
+    },
+    "calibration": {
+      "n": 3297,
+      "membership_hash": "19a46d1f1e763d33d1e2c9dbf5a850710435131d3255b74cb7409a8b19d08a11",
+      "row_id_hash": "4a3e49a4d097af747bc134411c84fb6696c6a47b21c1662b14e547fb2301bda0",
+      "origin_min": "2023-08-07 23:24:00",
+      "origin_max": "2023-08-12 02:00:00",
+      "target_min": "2023-08-08 00:24:00",
+      "target_max": "2023-08-12 03:00:00"
+    },
+    "test": {
+      "n": 6437,
+      "membership_hash": "96e3e48ce62ca523eaae571b05e9ad301988a1f12a3ac66ae726426480decd2d",
+      "row_id_hash": "11822b6b9a8ddf1e52a552fb0d6807f186a45a3e449b33787f74c1ab55098a86",
+      "origin_min": "2023-08-12 07:24:00",
+      "origin_max": "2024-02-04 10:00:00",
+      "target_min": "2023-08-12 08:24:00",
+      "target_max": "2024-02-04 11:00:00"
+    },
+    "inner0_train": {
+      "n": 3140,
+      "membership_hash": "e1a9b7343d9985a4ced316edb7ca5ace194bf2d2e7e084f168c35f13e080aa6d",
+      "row_id_hash": "906ab9a1ce19f9094aefe6e85d3d493ca1b0ddbbfc4ec199202eb446fe8e10a3",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-07-30 22:00:00",
+      "target_min": "2023-07-26 16:24:00",
+      "target_max": "2023-07-30 23:00:00"
+    },
+    "inner0_validation": {
+      "n": 3140,
+      "membership_hash": "39d39957ce206e9dc8190020883a07fd168cf109f8d1fef65ca5b15ba45f3e7b",
+      "row_id_hash": "406473e2a41452b02d46fde11295f5af4f59560a02cff20d21cc7edb15b284d6",
+      "origin_min": "2023-07-30 23:24:00",
+      "origin_max": "2023-08-03 22:00:00",
+      "target_min": "2023-07-31 00:24:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_train": {
+      "n": 6280,
+      "membership_hash": "c3047313f13abd432da4994930a13dcfbc9e03a7b7b859795cb091b4566b1a2c",
+      "row_id_hash": "1291fe31555aec90de912a6b974688464079c6c237fe80da5387b28dbf887b01",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-03 22:00:00",
+      "target_min": "2023-07-26 16:24:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_validation": {
+      "n": 3297,
+      "membership_hash": "a6ae4c6f274995caa3ad0f21a8955eef12dc85407e9117f47e34988102374fe8",
+      "row_id_hash": "b2de499abb1d5fd66ddd772d071f835e97be3afc0f2f49bebe556b036ece718e",
+      "origin_min": "2023-08-03 23:24:00",
+      "origin_max": "2023-08-07 22:00:00",
+      "target_min": "2023-08-04 00:24:00",
+      "target_max": "2023-08-07 23:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "60", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h60_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:46:04.484069+00:00", "logger_pid": 25096, "child_pid": 24336, "ended_utc": "2026-09-13T17:46:18.107802+00:00", "seconds": 13.620436400000472, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "1313d1f837d1a817bae522e566b1ae780eac3779acb6c6ce8a1d3c571d0498f2",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 419102720,
+    "private_bytes": 373096448,
+    "lifetime_peak_rss_bytes": 471789568,
+    "available_ram_bytes": 4267597824,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46803238912,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 16.694061000001966,
+    "baseline_rss_bytes": 324288512,
+    "peak_rss_bytes": 458784768,
+    "baseline_private_bytes": 282054656,
+    "peak_private_bytes": 410959872,
+    "incremental_peak_rss_bytes": 134496256,
+    "lifetime_peak_rss_bytes": 471789568,
+    "min_available_ram_bytes": 4232589312,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 16.46875
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "60", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h60_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:46:18.247138+00:00", "logger_pid": 26236, "child_pid": 12052, "ended_utc": "2026-09-13T17:46:39.071127+00:00", "seconds": 20.822799499997927, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "9f5a2d248e63aadf2db9e2701591a2d16924b87085f18ded69819a86cfadad9c",
+  "role_bank_hash": "c1131a9d34af97210a5165e90d03721d8528ad05e9579d3299c486047d4e9b55",
+  "roles": {
+    "fit": {
+      "n": 51634,
+      "membership_hash": "24548642307cad42aa249770e9c2f9976be06ca00a3344af4cc76eb72d8340b5",
+      "row_id_hash": "ffa384f38312c9dc3d731360d923fcf346a931431bf149fc831c4adea813d691",
+      "origin_min": "2016-01-07 21:00:00",
+      "origin_max": "2016-08-11 19:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-08-11 22:00:00"
+    },
+    "calibration": {
+      "n": 17360,
+      "membership_hash": "d0abd97ca8d625e40fb2a1cb4a703de04db6f055eefe3ab56cd15b66319b5aba",
+      "row_id_hash": "863c0af90269298b0e6f5a2f56b55eaff6d6133311914cf4e057fa69feec07d4",
+      "origin_min": "2016-08-12 00:00:00",
+      "origin_max": "2016-10-23 07:00:00",
+      "target_min": "2016-08-12 03:00:00",
+      "target_max": "2016-10-23 10:00:00"
+    },
+    "test": {
+      "n": 34640,
+      "membership_hash": "ac209fd38c4629ceb7d8ca27dc61c0e078efffe969b14c5a757d27aa8ff1b6c5",
+      "row_id_hash": "c96bb83824e1a9ba2a796cae7018992bad567e577c67a2840e377bec1990828c",
+      "origin_min": "2016-10-23 11:00:00",
+      "origin_max": "2017-03-17 05:00:00",
+      "target_min": "2016-10-23 14:00:00",
+      "target_max": "2017-03-17 08:00:00"
+    },
+    "inner0_train": {
+      "n": 17073,
+      "membership_hash": "8e295ef626f371c07b1ec49afd7f2693659cd6afde4f22be484735f11239b065",
+      "row_id_hash": "e1dc0b63558312fca058d40b4bfa82e47e74c4313fcadb1123b077c3d0c819f3",
+      "origin_min": "2016-01-07 21:00:00",
+      "origin_max": "2016-03-20 00:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-03-20 03:00:00"
+    },
+    "inner0_validation": {
+      "n": 17195,
+      "membership_hash": "c1889776e05fcec42d92ea64731f69999ff88e2a223554807aa3617934c1addb",
+      "row_id_hash": "3e1e48c2f2fee5c8f54852c9b499600ff5daf14d9974942119e4e5e818d41013",
+      "origin_min": "2016-03-20 04:00:00",
+      "origin_max": "2016-05-31 08:00:00",
+      "target_min": "2016-03-20 07:00:00",
+      "target_max": "2016-05-31 11:00:00"
+    },
+    "inner1_train": {
+      "n": 34268,
+      "membership_hash": "95b32a00537cd05f86880ccdef0381bf1831d69289c8361feb735b598d2d9ff1",
+      "row_id_hash": "6a6104fa7e43733847fe9b10a19040ca38296c59a9f9056b38739bc2e0aab954",
+      "origin_min": "2016-01-07 21:00:00",
+      "origin_max": "2016-05-31 08:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-05-31 11:00:00"
+    },
+    "inner1_validation": {
+      "n": 17306,
+      "membership_hash": "5974dd749dae94b806e58e7445c48c198e82f3cba50cd0d6c54572d87fcd2191",
+      "row_id_hash": "ce214c17538c51e016a687e3548b8d719a95205251378923f0db0f3b4a862fb9",
+      "origin_min": "2016-05-31 12:00:00",
+      "origin_max": "2016-08-11 19:00:00",
+      "target_min": "2016-05-31 15:00:00",
+      "target_max": "2016-08-11 22:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "3", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:46:39.373736+00:00", "logger_pid": 17116, "child_pid": 27132, "ended_utc": "2026-09-13T17:47:02.803548+00:00", "seconds": 23.431443199995556, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "9f6ebede3e1cdfa1160ebb06d88768caf7c37e45b8bec777807b19531e87a260",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 443138048,
+    "private_bytes": 400207872,
+    "lifetime_peak_rss_bytes": 1032769536,
+    "available_ram_bytes": 4013740032,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46793547776,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 18.485570099997858,
+    "baseline_rss_bytes": 325140480,
+    "peak_rss_bytes": 870227968,
+    "baseline_private_bytes": 283361280,
+    "peak_private_bytes": 998227968,
+    "incremental_peak_rss_bytes": 545087488,
+    "lifetime_peak_rss_bytes": 1032769536,
+    "min_available_ram_bytes": 3822276608,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 17.859375
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "3", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:47:02.912809+00:00", "logger_pid": 9356, "child_pid": 28404, "ended_utc": "2026-09-13T17:47:25.603187+00:00", "seconds": 22.691273899996304, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "79cd64593080031680a39460f2948bf4cd4b4562c85f66f5d8f6565610b946b8",
+  "role_bank_hash": "9abcf13664a5dbd8c96c390b879095bce984f2809c147423d9338c3ecce0555b",
+  "roles": {
+    "fit": {
+      "n": 51584,
+      "membership_hash": "ee0d65d4d8fd886cddd0836feb6cc554b3a0668bb8646e26ad368612e89933cf",
+      "row_id_hash": "2238d76a4dbf3773688730ddc491de3cefe37795d6a581e2848ae721c331e6bf",
+      "origin_min": "2016-01-07 18:00:00",
+      "origin_max": "2016-08-11 11:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-08-11 17:00:00"
+    },
+    "calibration": {
+      "n": 17350,
+      "membership_hash": "cb99d3f6083f8add3d0568883b9be9ed322386b154e74837371f8bb0570068e3",
+      "row_id_hash": "aa683503ff148880151cae8fc08bfc24515ae8c36edb5767a336c52e0cdd96ed",
+      "origin_min": "2016-08-11 19:00:00",
+      "origin_max": "2016-10-23 01:00:00",
+      "target_min": "2016-08-12 01:00:00",
+      "target_max": "2016-10-23 07:00:00"
+    },
+    "test": {
+      "n": 34640,
+      "membership_hash": "d2c8963470de5f63c6abdd989a9a7e8e9784ee1b533d376fa55278f758ab13ef",
+      "row_id_hash": "37fd04542c9ea0f00adda74f2d1670855cd47ee8d91e3a242b6c76c5ce0d762f",
+      "origin_min": "2016-10-23 08:00:00",
+      "origin_max": "2017-03-17 02:00:00",
+      "target_min": "2016-10-23 14:00:00",
+      "target_max": "2017-03-17 08:00:00"
+    },
+    "inner0_train": {
+      "n": 17033,
+      "membership_hash": "f02c7d71705a3d16569d09c94aa6c7fb805b688993dc198b089dcc5412c536ac",
+      "row_id_hash": "8ca497a9ec0ddfa4978eff0e12b817bc3d8788f0c11d3e52e52fc002b3b19c38",
+      "origin_min": "2016-01-07 18:00:00",
+      "origin_max": "2016-03-19 17:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-03-19 23:00:00"
+    },
+    "inner0_validation": {
+      "n": 17145,
+      "membership_hash": "6ddab6cde7fed95f1e35d8f0d2de163d9dfa7e49b74cc1fe856e19a448cc3e0d",
+      "row_id_hash": "a8bce31b5505b65db6595bffdb69845940891da0b8f2b8d6250d99ce20b5dfdd",
+      "origin_min": "2016-03-20 00:00:00",
+      "origin_max": "2016-05-30 23:00:00",
+      "target_min": "2016-03-20 06:00:00",
+      "target_max": "2016-05-31 05:00:00"
+    },
+    "inner1_train": {
+      "n": 34178,
+      "membership_hash": "c721e4717a3a7db386cdb7de77770e79babb33f799d974a9fc843c6e093156f0",
+      "row_id_hash": "e68a0b396351fba557fbf54a0dece8e1c5545ebb7b8a096a7e1cd6d0fc3eb0dc",
+      "origin_min": "2016-01-07 18:00:00",
+      "origin_max": "2016-05-30 23:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-05-31 05:00:00"
+    },
+    "inner1_validation": {
+      "n": 17286,
+      "membership_hash": "d9afb522d74237fbcb0085a235ee27867d8cc18c0b883edd9a4606f91b4382ee",
+      "row_id_hash": "decf7a3acf92420ae63e05af24db95ff28729fcdf67cd117b4ecbe0ba825a85f",
+      "origin_min": "2016-05-31 06:00:00",
+      "origin_max": "2016-08-11 11:00:00",
+      "target_min": "2016-05-31 12:00:00",
+      "target_max": "2016-08-11 17:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:47:26.275917+00:00", "logger_pid": 26120, "child_pid": 11428, "ended_utc": "2026-09-13T17:47:49.681270+00:00", "seconds": 23.4041744999995, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "dcffb11d9ae7c3210ce7211cd66ccbe05e3e96c486c605648bf7838a00e07f2c",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 443015168,
+    "private_bytes": 399355904,
+    "lifetime_peak_rss_bytes": 1032998912,
+    "available_ram_bytes": 4242825216,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46781767680,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 17.587584900000365,
+    "baseline_rss_bytes": 325165056,
+    "peak_rss_bytes": 933027840,
+    "baseline_private_bytes": 282972160,
+    "peak_private_bytes": 999038976,
+    "incremental_peak_rss_bytes": 607862784,
+    "lifetime_peak_rss_bytes": 1032998912,
+    "min_available_ram_bytes": 3809456128,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 16.640625
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:47:49.820807+00:00", "logger_pid": 20844, "child_pid": 5656, "ended_utc": "2026-09-13T17:48:11.608011+00:00", "seconds": 21.787377500004368, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "fa848b25f5d2ffb553914a71627dd43e06a0209f876a4c92fe46cfd09cfb3a4b",
+  "role_bank_hash": "581a84c73e1f3ae9afce79645b2487ac3e6594dce2964ddda9ba0c0d0b062fc3",
+  "roles": {
+    "fit": {
+      "n": 77682,
+      "membership_hash": "c61d0ce87333c6036353f5043be4d611484d01df556131b179fa36886e30a124",
+      "row_id_hash": "f4417d3de06dff4be913c74297a30f7a355a70b1c3ce4787282cad5b65ac9d38",
+      "origin_min": "2016-01-07 23:00:00",
+      "origin_max": "2016-11-28 15:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-11-28 16:00:00"
+    },
+    "calibration": {
+      "n": 26002,
+      "membership_hash": "3774890259ec0793a54689f2982a53890a212f20f2e6e36f991e42ee0fd1109c",
+      "row_id_hash": "0279fb765fd96b32167f13dc6a90fa6cb929738a01ee551f7fe6b06926492957",
+      "origin_min": "2016-11-28 17:00:00",
+      "origin_max": "2017-03-17 06:00:00",
+      "target_min": "2016-11-28 18:00:00",
+      "target_max": "2017-03-17 07:00:00"
+    },
+    "test": {
+      "n": 34532,
+      "membership_hash": "f2c4357ca265b1e18601ff28abb7f7e467f6b38d1dfce7780de59e268059325e",
+      "row_id_hash": "4db6c2b7916d5090baddb51977c7b31a2a9e18a6052a49186a774153b13a6a49",
+      "origin_min": "2017-03-17 08:00:00",
+      "origin_max": "2017-08-09 02:00:00",
+      "target_min": "2017-03-17 09:00:00",
+      "target_max": "2017-08-09 03:00:00"
+    },
+    "inner0_train": {
+      "n": 25658,
+      "membership_hash": "8ff1e3de0fca7927fb288f419e3563bffd95cf16da9a3c161023f9b9948cb1e2",
+      "row_id_hash": "86a6edee6781dd3b168513dc38b7d136591ab2e921ea51336d7c5f26d88c3a22",
+      "origin_min": "2016-01-07 23:00:00",
+      "origin_max": "2016-04-25 10:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-04-25 11:00:00"
+    },
+    "inner0_validation": {
+      "n": 25996,
+      "membership_hash": "fb86f291f2e99fa59b705fc7639cb55a3c9bc712b56be4cee8d1307a3a9d7a79",
+      "row_id_hash": "3f6d019b2c2a64fdd4acf1d9d7bfa90fe20049b9c48c26db5467e5e4dc684237",
+      "origin_min": "2016-04-25 12:00:00",
+      "origin_max": "2016-08-12 00:00:00",
+      "target_min": "2016-04-25 13:00:00",
+      "target_max": "2016-08-12 01:00:00"
+    },
+    "inner1_train": {
+      "n": 51654,
+      "membership_hash": "e8f744967dede1b64800de45e210ffb04f41bcbce897a4af8fff67dfb860f602",
+      "row_id_hash": "2dd249431441716a6d68caf342bfa9ad07e00255c482209205f0c93f6d6238fd",
+      "origin_min": "2016-01-07 23:00:00",
+      "origin_max": "2016-08-12 00:00:00",
+      "target_min": "2016-01-08 00:00:00",
+      "target_max": "2016-08-12 01:00:00"
+    },
+    "inner1_validation": {
+      "n": 26008,
+      "membership_hash": "449998e9a797cf2ad7b981dd4272d4488091f44fb20a45b8b874956e2f9a7dcc",
+      "row_id_hash": "0798bdf7cc372103837f5cbcc1163262f75751e55fa5f728b80dcc04973812c2",
+      "origin_min": "2016-08-12 02:00:00",
+      "origin_max": "2016-11-28 15:00:00",
+      "target_min": "2016-08-12 03:00:00",
+      "target_max": "2016-11-28 16:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "1", "--outer-fold", "1", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:48:12.299966+00:00", "logger_pid": 17136, "child_pid": 27364, "ended_utc": "2026-09-13T17:48:38.898487+00:00", "seconds": 26.600117599999066, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "3a12b8bb0420a6d8259bdf93ab6cb7ae75b0cf7fa3bea5f7cdbd7e0113915139",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 443518976,
+    "private_bytes": 401625088,
+    "lifetime_peak_rss_bytes": 1032806400,
+    "available_ram_bytes": 4648804352,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46768693248,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 19.903188500000397,
+    "baseline_rss_bytes": 324280320,
+    "peak_rss_bytes": 840957952,
+    "baseline_private_bytes": 282128384,
+    "peak_private_bytes": 997654528,
+    "incremental_peak_rss_bytes": 516677632,
+    "lifetime_peak_rss_bytes": 1032806400,
+    "min_available_ram_bytes": 4202942464,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 19.28125
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "1", "--outer-fold", "1", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:48:39.019734+00:00", "logger_pid": 5584, "child_pid": 22368, "ended_utc": "2026-09-13T17:49:03.164413+00:00", "seconds": 24.156090700002096, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "ea4daa5dc3579aec204c02fd26d09ba7467a2ad3c45790efc705c7883bde6741",
+  "role_bank_hash": "badafb8398bc754b251fa2a13514fa6111f8bf96e4054696777b03dce5e878f2",
+  "roles": {
+    "fit": {
+      "n": 14858,
+      "membership_hash": "082d3c719093d84e13379d5a2c367aacae289407ac707cb64d266f759ebb787b",
+      "row_id_hash": "a5da64445ac5f1af2fd4c56cb88650223d7690fede620e9a6758367516928aca",
+      "origin_min": "2021-01-08 00:00:00",
+      "origin_max": "2021-04-21 04:10:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-04-21 04:20:00"
+    },
+    "calibration": {
+      "n": 4953,
+      "membership_hash": "9eb8650e22c2484bd09a282820451387cd0610e0cf55aa2ec428816a260b5143",
+      "row_id_hash": "7794c3f938f5b39a6b7c298611ca6e5d91de32415f98091ff059cd97e6946b01",
+      "origin_min": "2021-04-21 04:40:00",
+      "origin_max": "2021-05-25 14:00:00",
+      "target_min": "2021-04-21 04:50:00",
+      "target_max": "2021-05-25 14:10:00"
+    },
+    "test": {
+      "n": 9907,
+      "membership_hash": "9873f938ec58b7643a4b9bb6625e3522fa47921a83ef136da20c6e62a17a410f",
+      "row_id_hash": "ca2d8ac2f6c4a85d87a0b3e689792f73277921d41eae2f48c6b4eb1e307d2a61",
+      "origin_min": "2021-05-25 14:20:00",
+      "origin_max": "2021-08-02 09:20:00",
+      "target_min": "2021-05-25 14:30:00",
+      "target_max": "2021-08-02 09:30:00"
+    },
+    "inner0_train": {
+      "n": 4951,
+      "membership_hash": "772e37103d6ec8c04ebb7c7e034fb82e77efacdfb42740094dd62aba1cdcbb46",
+      "row_id_hash": "9ff5cf13265f7071fd9c0761e23cbdb0a3b06a17108fe4c9e29d7b526dbb16f6",
+      "origin_min": "2021-01-08 00:00:00",
+      "origin_max": "2021-02-11 09:00:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-02-11 09:10:00"
+    },
+    "inner0_validation": {
+      "n": 4952,
+      "membership_hash": "3ee052b31b48d8aee119b1a1a23488da243b59b1055ebe21d22b810798c26df1",
+      "row_id_hash": "94101a1db88057481d0b93b3f6f6f8a0ba0768c95d5d786cc94219111fc8b01a",
+      "origin_min": "2021-02-11 09:20:00",
+      "origin_max": "2021-03-17 18:30:00",
+      "target_min": "2021-02-11 09:30:00",
+      "target_max": "2021-03-17 18:40:00"
+    },
+    "inner1_train": {
+      "n": 9903,
+      "membership_hash": "bc9acab132bf77c6fdb966545b0c1c36c2d8d40c0debf6ad9879832e8eed3f18",
+      "row_id_hash": "5bb7052421dc4dc1014d0183a0a86dc9346860360b70733932af01792401ebea",
+      "origin_min": "2021-01-08 00:00:00",
+      "origin_max": "2021-03-17 18:30:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-03-17 18:40:00"
+    },
+    "inner1_validation": {
+      "n": 4953,
+      "membership_hash": "af2dbfce54bc80c97b7250e3d85c70b3feb7714d2fb1b6436b4b00eeaec9ed9e",
+      "row_id_hash": "28760e0529920ab50fc08711863e3203a9e12a65c4321ba66c5ea2a7711920b5",
+      "origin_min": "2021-03-17 18:50:00",
+      "origin_max": "2021-04-21 04:10:00",
+      "target_min": "2021-03-17 19:00:00",
+      "target_max": "2021-04-21 04:20:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "1", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h1_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:49:04.037289+00:00", "logger_pid": 4392, "child_pid": 15916, "ended_utc": "2026-09-13T17:49:16.921725+00:00", "seconds": 12.886982800002443, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "afeec26a5064a899df55a5081826d94b2ef6a3b5229ee6a692855ac3f89534e2",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 390971392,
+    "private_bytes": 345743360,
+    "lifetime_peak_rss_bytes": 1242636288,
+    "available_ram_bytes": 4161331200,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46764621824,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 8.779721200000495,
+    "baseline_rss_bytes": 324435968,
+    "peak_rss_bytes": 1194840064,
+    "baseline_private_bytes": 282165248,
+    "peak_private_bytes": 1202257920,
+    "incremental_peak_rss_bytes": 870404096,
+    "lifetime_peak_rss_bytes": 1242636288,
+    "min_available_ram_bytes": 3477889024,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 8.546875
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "1", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h1_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:49:17.043537+00:00", "logger_pid": 29492, "child_pid": 27292, "ended_utc": "2026-09-13T17:49:30.109576+00:00", "seconds": 13.06204080000316, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "d9952ed2b0af11ec34f4cb849c9c45e91f7c74a3cdaa2393e449e2715e7f934c",
+  "role_bank_hash": "6fa371901b6c3e9ddf59ab5f6a3dfd4df7833e00db6e5ee2c633f99798fb542a",
+  "roles": {
+    "fit": {
+      "n": 14855,
+      "membership_hash": "227c29f26e08b12144a3144f7b4e485ceef61eeffddfb8383055cdb14249180b",
+      "row_id_hash": "4074dfa6f8e6042743030c8386a0f02bf142e81c22c53c260629dc0e31aea099",
+      "origin_min": "2021-01-07 23:40:00",
+      "origin_max": "2021-04-21 03:20:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-04-21 03:50:00"
+    },
+    "calibration": {
+      "n": 4952,
+      "membership_hash": "7fa06de8c38dda4d17b6b0cf6e9ef56c1df4e74c93e4a91c0e4cc3ac109ef25d",
+      "row_id_hash": "e7a9e5a4d0f065e905f3b68d0ddcc8cfa81961e510bbeaa67844d8b295557883",
+      "origin_min": "2021-04-21 04:10:00",
+      "origin_max": "2021-05-25 13:20:00",
+      "target_min": "2021-04-21 04:40:00",
+      "target_max": "2021-05-25 13:50:00"
+    },
+    "test": {
+      "n": 9907,
+      "membership_hash": "bac99d6be4cb79fe22304f53e75236e112bbd0869eb6fec15e881e232b076cc3",
+      "row_id_hash": "980af583f5f37c78a95e0b099badf318c309a782627933d4b65363f009fed507",
+      "origin_min": "2021-05-25 14:00:00",
+      "origin_max": "2021-08-02 09:00:00",
+      "target_min": "2021-05-25 14:30:00",
+      "target_max": "2021-08-02 09:30:00"
+    },
+    "inner0_train": {
+      "n": 4948,
+      "membership_hash": "fdb3d26c48df5c39e6763480535e204d2594b8749ab6df0a1371c11c4991afd2",
+      "row_id_hash": "ddaf23d54fbb3a4e9b995b43253825c4ae6a3c46f5831e9bc1bc774c65ae348c",
+      "origin_min": "2021-01-07 23:40:00",
+      "origin_max": "2021-02-11 08:10:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-02-11 08:40:00"
+    },
+    "inner0_validation": {
+      "n": 4949,
+      "membership_hash": "249bb3d7f2b16be8c15ebb503c1a33019c0aed25686b3ca72cf4bf16dc16264d",
+      "row_id_hash": "1046774ecf67bd5d7b3cda329101e3229f1720d1f12b59feb24732dffedd21a3",
+      "origin_min": "2021-02-11 08:50:00",
+      "origin_max": "2021-03-17 17:30:00",
+      "target_min": "2021-02-11 09:20:00",
+      "target_max": "2021-03-17 18:00:00"
+    },
+    "inner1_train": {
+      "n": 9897,
+      "membership_hash": "e4a2af2e86062f34ecc2da38f038c54771899f808d45a3482679b08ab9163cba",
+      "row_id_hash": "50e5f199066eca1e0f35e3294dda145841773b547bab055401b3e8d8067ed3c0",
+      "origin_min": "2021-01-07 23:40:00",
+      "origin_max": "2021-03-17 17:30:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-03-17 18:00:00"
+    },
+    "inner1_validation": {
+      "n": 4952,
+      "membership_hash": "4439d1e24df439cf5dbec4b37090c9521460fad2488d498a7c821cf963a6daa2",
+      "row_id_hash": "e567401ae33f835a2879ba5be9304ca8129f612468e33f9ab19c6e25dd3b1e5c",
+      "origin_min": "2021-03-17 18:10:00",
+      "origin_max": "2021-04-21 03:20:00",
+      "target_min": "2021-03-17 18:40:00",
+      "target_max": "2021-04-21 03:50:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "3", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:49:30.463159+00:00", "logger_pid": 28552, "child_pid": 13224, "ended_utc": "2026-09-13T17:49:44.381759+00:00", "seconds": 13.917937899997924, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "8196306a329a6c9ca8326b0c397aea778201506a8cf246687569ae5edd3a0c84",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 391225344,
+    "private_bytes": 347185152,
+    "lifetime_peak_rss_bytes": 1242853376,
+    "available_ram_bytes": 4708913152,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46762033152,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 8.114313899997796,
+    "baseline_rss_bytes": 324771840,
+    "peak_rss_bytes": 1083850752,
+    "baseline_private_bytes": 282963968,
+    "peak_private_bytes": 1202393088,
+    "incremental_peak_rss_bytes": 759078912,
+    "lifetime_peak_rss_bytes": 1242853376,
+    "min_available_ram_bytes": 3883098112,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 7.90625
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "3", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:49:44.497810+00:00", "logger_pid": 24792, "child_pid": 23724, "ended_utc": "2026-09-13T17:49:56.727346+00:00", "seconds": 12.223480299995572, "exit_status": 0}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "5f82d9b1241b651ae41db34771b44ea8dc61cee2367a2af45ca7be1d9403d5cb",
+  "role_bank_hash": "71eb667e2ed175651d70ebdcf17848409bd01b14568e768b8f7d37b654481b9f",
+  "roles": {
+    "fit": {
+      "n": 14850,
+      "membership_hash": "ef9d6a6abac88bf6870ca419233277f25ca38ffcec8d2e50ef36e5a7ae619400",
+      "row_id_hash": "1a376d5a8a154a77f83f187423efb4d9fc845968a0043a1454205c7b56a18c46",
+      "origin_min": "2021-01-07 23:10:00",
+      "origin_max": "2021-04-21 02:00:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-04-21 03:00:00"
+    },
+    "calibration": {
+      "n": 4951,
+      "membership_hash": "9247b241a0fa2d22e3929a301f0ff3511dbadd5e2e8ec374799c5c7abceab76d",
+      "row_id_hash": "2d7a6ad1c542e4d2f60a787f5e43892e1e19f63a3d75ff6e0accd70b674462a7",
+      "origin_min": "2021-04-21 03:20:00",
+      "origin_max": "2021-05-25 12:20:00",
+      "target_min": "2021-04-21 04:20:00",
+      "target_max": "2021-05-25 13:20:00"
+    },
+    "test": {
+      "n": 9907,
+      "membership_hash": "c6974f8d3bde0930d9d56239e658a56ee8f6554aea2606844b45a070315571f1",
+      "row_id_hash": "ac5e21416b994368c2c6ea779989080df106bc5896da0483b1f5982a7af732fa",
+      "origin_min": "2021-05-25 13:30:00",
+      "origin_max": "2021-08-02 08:30:00",
+      "target_min": "2021-05-25 14:30:00",
+      "target_max": "2021-08-02 09:30:00"
+    },
+    "inner0_train": {
+      "n": 4944,
+      "membership_hash": "7e1d872fdae249702364dcedccb8344e6e44d13dde4694244d1d8af8576495fb",
+      "row_id_hash": "8f691537f61aeaf3b6b2bce9234e1f3f2fce1fa89f579c6620a77d4e9430bbe6",
+      "origin_min": "2021-01-07 23:10:00",
+      "origin_max": "2021-02-11 07:00:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-02-11 08:00:00"
+    },
+    "inner0_validation": {
+      "n": 4944,
+      "membership_hash": "2984744e642beefa7ce03314b45942af4ef6594d8939fdf4b62e61c263f6bdb8",
+      "row_id_hash": "2d75f8c14ab352752c56668098b1a13d6f545d051d41b03dbb9af51140add5f3",
+      "origin_min": "2021-02-11 08:10:00",
+      "origin_max": "2021-03-17 16:00:00",
+      "target_min": "2021-02-11 09:10:00",
+      "target_max": "2021-03-17 17:00:00"
+    },
+    "inner1_train": {
+      "n": 9888,
+      "membership_hash": "b302ee02c2b16f2a988275f6ff329f6f03774c4c85d10d37902b32b54795d4e0",
+      "row_id_hash": "2330831bef316a2f27daff3f18c8507290a36952db81e8e9e7594e746f48686e",
+      "origin_min": "2021-01-07 23:10:00",
+      "origin_max": "2021-03-17 16:00:00",
+      "target_min": "2021-01-08 00:10:00",
+      "target_max": "2021-03-17 17:00:00"
+    },
+    "inner1_validation": {
+      "n": 4950,
+      "membership_hash": "94c11b73e5e68059ca8334f73f6dc70805df5c01f5112cc20d147b640c4f52fd",
+      "row_id_hash": "30c0df9856e41df5c927bceaf854572d24fb209861c6708cc43afdf2762d6890",
+      "origin_min": "2021-03-17 17:10:00",
+      "origin_max": "2021-04-21 02:00:00",
+      "target_min": "2021-03-17 18:10:00",
+      "target_max": "2021-04-21 03:00:00"
+    }
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "freeze", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h6_f2_s42_v1", "--authorization", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_forecasting005_overnight_authorization_v1.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:49:57.088175+00:00", "logger_pid": 29072, "child_pid": 19408, "ended_utc": "2026-09-13T17:50:11.233176+00:00", "seconds": 14.147706900002959, "exit_status": 0}
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "ff4f03a56c5f3fee34466478e87f5f2f7fb26fcbfc1ef160d240ad250f347b1b",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 382443520,
+    "private_bytes": 338411520,
+    "lifetime_peak_rss_bytes": 1244286976,
+    "available_ram_bytes": 4731887616,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 46759104512,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 8.175710999996227,
+    "baseline_rss_bytes": 323866624,
+    "peak_rss_bytes": 1232424960,
+    "baseline_private_bytes": 281456640,
+    "peak_private_bytes": 1207140352,
+    "incremental_peak_rss_bytes": 908558336,
+    "lifetime_peak_rss_bytes": 1244286976,
+    "min_available_ram_bytes": 3905777664,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 8.0625
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "readiness", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h6_f2_s42_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:50:11.347153+00:00", "logger_pid": 13340, "child_pid": 16024, "ended_utc": "2026-09-13T17:50:23.677763+00:00", "seconds": 12.33333809999749, "exit_status": 0}
+ALL TWELVE FROZEN AND READY; ZERO FITS

@@ -1,0 +1,98 @@
+{
+  "version": "matched_overnight_authorization_v1",
+  "instruction_commit": "a53725c77e36547a978e5b8d46be422ad837139f",
+  "instruction_path": "review/NEXT_TASK_MATCHED_OVERNIGHT_BATCH.md",
+  "entry_commit": "d95405a005851dd7ffc3635a51034cb883b98671",
+  "real_fitting_authorized": true,
+  "allowed_units": [
+    [
+      "pleia_energy",
+      1,
+      2,
+      42
+    ],
+    [
+      "pleia_energy",
+      3,
+      2,
+      42
+    ],
+    [
+      "pleia_energy",
+      6,
+      2,
+      42
+    ],
+    [
+      "rico",
+      15,
+      2,
+      42
+    ],
+    [
+      "rico",
+      30,
+      2,
+      42
+    ],
+    [
+      "rico",
+      60,
+      2,
+      42
+    ],
+    [
+      "bdg2",
+      3,
+      2,
+      42
+    ],
+    [
+      "bdg2",
+      6,
+      2,
+      42
+    ],
+    [
+      "bdg2",
+      1,
+      1,
+      42
+    ],
+    [
+      "pleia",
+      1,
+      2,
+      42
+    ],
+    [
+      "pleia",
+      3,
+      2,
+      42
+    ],
+    [
+      "pleia",
+      6,
+      2,
+      42
+    ]
+  ],
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "nominal_levels": [
+    0.9,
+    0.95
+  ],
+  "real_tuning_fits": 96,
+  "real_final_learned_fits": 24,
+  "nonblocking_launch_ram": true,
+  "remaining_queue_authorized": false,
+  "conditional_challenge_authorized": false,
+  "resource_policy": "CPU only; one numerical/Torch thread; n_jobs=1; lazy batch256; nonblocking 3 GiB launch reference; 256 MiB epoch floor; 8 GiB disk check",
+  "execution_order": "exact listed order; advance only after independent validation and zero-fit resume; never select by test metrics",
+  "provenance_note": "Historical runner design constants retain their original meaning; this authorization binds the current instruction separately."
+}

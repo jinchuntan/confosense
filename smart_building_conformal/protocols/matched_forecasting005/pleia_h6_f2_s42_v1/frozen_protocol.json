@@ -1,0 +1,673 @@
+{
+  "version": "matched_forecasting005_pleia_h6_f2_s42_execution_v1",
+  "config": {
+    "dataset": "pleia",
+    "horizon": 6,
+    "outer_fold": 2,
+    "model_seed": 42,
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "candidates": {
+      "persistence": [
+        {}
+      ],
+      "xgboost": [
+        {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        },
+        {
+          "n_estimators": 400,
+          "max_depth": 5,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        }
+      ],
+      "attention_lstm": [
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.001,
+          "max_epochs": 30,
+          "patience": 5
+        },
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.0005,
+          "max_epochs": 30,
+          "patience": 5
+        }
+      ]
+    },
+    "sequence_length": 24,
+    "interval_construction": "ordinary_split_conformal_absolute_error",
+    "inner_validation_folds": 2,
+    "selection_metric": "equally weighted mean of two inner validation MAEs in original target units",
+    "tie_rule": "exact score ties select the lower zero-based frozen candidate ID",
+    "final_lstm_epochs": "ceil(mean(selected candidate best epoch on each inner fold)); refit all final fitting rows",
+    "minimum_launch_available_ram_bytes": 3221225472,
+    "minimum_free_disk_bytes": 8589934592,
+    "inference_batch_size": 256,
+    "threads": 1,
+    "n_jobs": 1,
+    "minimum_epoch_available_ram_bytes": 268435456,
+    "memory_sampling_seconds": 0.05,
+    "clipping": false,
+    "missing_policy": "unchanged existing causal preprocessing and common support",
+    "device": "cpu",
+    "fallback": null,
+    "prediction_reload_atol": 1e-07,
+    "prediction_reload_rtol": 1e-07,
+    "metric_atol": 1e-12,
+    "metric_rtol": 1e-12,
+    "numeric_input": "flat original dtype; lazy float32, normalization float64",
+    "lstm_early_improvement": 1e-06,
+    "lstm_loss": "MSELoss",
+    "optimizer": "Adam",
+    "optimizer_defaults": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false
+    },
+    "xgboost_fixed": {
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "random_state": 42,
+      "n_jobs": 1
+    },
+    "xgboost_default_policy": "None wrapper values delegate to the pinned library; full wrapper params frozen and actual booster config saved",
+    "inference_clipping": false,
+    "test_selection": false,
+    "xgboost_wrapper_parameters": [
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 3,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      }
+    ]
+  },
+  "support": {
+    "data_hash": "5f82d9b1241b651ae41db34771b44ea8dc61cee2367a2af45ca7be1d9403d5cb",
+    "role_bank_hash": "71eb667e2ed175651d70ebdcf17848409bd01b14568e768b8f7d37b654481b9f",
+    "roles": {
+      "fit": {
+        "n": 14850,
+        "membership_hash": "ef9d6a6abac88bf6870ca419233277f25ca38ffcec8d2e50ef36e5a7ae619400",
+        "row_id_hash": "1a376d5a8a154a77f83f187423efb4d9fc845968a0043a1454205c7b56a18c46",
+        "origin_min": "2021-01-07 23:10:00",
+        "origin_max": "2021-04-21 02:00:00",
+        "target_min": "2021-01-08 00:10:00",
+        "target_max": "2021-04-21 03:00:00"
+      },
+      "calibration": {
+        "n": 4951,
+        "membership_hash": "9247b241a0fa2d22e3929a301f0ff3511dbadd5e2e8ec374799c5c7abceab76d",
+        "row_id_hash": "2d7a6ad1c542e4d2f60a787f5e43892e1e19f63a3d75ff6e0accd70b674462a7",
+        "origin_min": "2021-04-21 03:20:00",
+        "origin_max": "2021-05-25 12:20:00",
+        "target_min": "2021-04-21 04:20:00",
+        "target_max": "2021-05-25 13:20:00"
+      },
+      "test": {
+        "n": 9907,
+        "membership_hash": "c6974f8d3bde0930d9d56239e658a56ee8f6554aea2606844b45a070315571f1",
+        "row_id_hash": "ac5e21416b994368c2c6ea779989080df106bc5896da0483b1f5982a7af732fa",
+        "origin_min": "2021-05-25 13:30:00",
+        "origin_max": "2021-08-02 08:30:00",
+        "target_min": "2021-05-25 14:30:00",
+        "target_max": "2021-08-02 09:30:00"
+      },
+      "inner0_train": {
+        "n": 4944,
+        "membership_hash": "7e1d872fdae249702364dcedccb8344e6e44d13dde4694244d1d8af8576495fb",
+        "row_id_hash": "8f691537f61aeaf3b6b2bce9234e1f3f2fce1fa89f579c6620a77d4e9430bbe6",
+        "origin_min": "2021-01-07 23:10:00",
+        "origin_max": "2021-02-11 07:00:00",
+        "target_min": "2021-01-08 00:10:00",
+        "target_max": "2021-02-11 08:00:00"
+      },
+      "inner0_validation": {
+        "n": 4944,
+        "membership_hash": "2984744e642beefa7ce03314b45942af4ef6594d8939fdf4b62e61c263f6bdb8",
+        "row_id_hash": "2d75f8c14ab352752c56668098b1a13d6f545d051d41b03dbb9af51140add5f3",
+        "origin_min": "2021-02-11 08:10:00",
+        "origin_max": "2021-03-17 16:00:00",
+        "target_min": "2021-02-11 09:10:00",
+        "target_max": "2021-03-17 17:00:00"
+      },
+      "inner1_train": {
+        "n": 9888,
+        "membership_hash": "b302ee02c2b16f2a988275f6ff329f6f03774c4c85d10d37902b32b54795d4e0",
+        "row_id_hash": "2330831bef316a2f27daff3f18c8507290a36952db81e8e9e7594e746f48686e",
+        "origin_min": "2021-01-07 23:10:00",
+        "origin_max": "2021-03-17 16:00:00",
+        "target_min": "2021-01-08 00:10:00",
+        "target_max": "2021-03-17 17:00:00"
+      },
+      "inner1_validation": {
+        "n": 4950,
+        "membership_hash": "94c11b73e5e68059ca8334f73f6dc70805df5c01f5112cc20d147b640c4f52fd",
+        "row_id_hash": "30c0df9856e41df5c927bceaf854572d24fb209861c6708cc43afdf2762d6890",
+        "origin_min": "2021-03-17 17:10:00",
+        "origin_max": "2021-04-21 02:00:00",
+        "target_min": "2021-03-17 18:10:00",
+        "target_max": "2021-04-21 03:00:00"
+      }
+    },
+    "feature_names": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_6",
+      "target_lag_12",
+      "target_daily_lag",
+      "target_weekly_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_144",
+      "target_rollstd_144",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "V4",
+      "V12",
+      "V5_0",
+      "V5_1",
+      "V5_2",
+      "target_was_missing",
+      "tmed_was_missing",
+      "hrmed_was_missing",
+      "radmed_was_missing",
+      "V12_was_missing"
+    ],
+    "sequence_channels": [
+      "target",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "V4",
+      "V12",
+      "V5_0",
+      "V5_1",
+      "V5_2",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ],
+    "eligible_rows": 49535,
+    "excluded_rows": 0,
+    "frequency": "0 days 00:10:00",
+    "target": null
+  },
+  "resolved_dataset_config": {
+    "seed": 42,
+    "paths": {
+      "raw_dir": "data/raw",
+      "interim_dir": "data/interim",
+      "processed_dir": "data/processed"
+    },
+    "split": {
+      "train_frac": 0.6,
+      "calib_frac": 0.2
+    },
+    "missing": {
+      "max_short_gap_steps": 3
+    },
+    "coverage_levels": [
+      0.9,
+      0.95,
+      0.975,
+      0.99,
+      0.995
+    ],
+    "features": {
+      "target_lags": [
+        1,
+        2,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        6,
+        144
+      ],
+      "include_weekly": true,
+      "target_lags_include_zero": true
+    },
+    "models": {
+      "xgboost": {
+        "search_iter": 20,
+        "cv_splits": 3,
+        "seeds": 5,
+        "refit_n_jobs": 1,
+        "search_n_jobs": -1
+      },
+      "lstm": {
+        "seq_len": 24,
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5,
+        "val_fraction": 0.2,
+        "seeds": 3
+      }
+    },
+    "conformal": {
+      "cqr": {
+        "seeds": 5
+      },
+      "enbpi": {
+        "n_resamplings": 20,
+        "block_length": 48,
+        "base_n_estimators": 200,
+        "base_max_depth": 5,
+        "base_learning_rate": 0.05,
+        "update_step": 48,
+        "seeds": 3,
+        "n_jobs": 4
+      },
+      "dscp": {
+        "max_clusters": 6,
+        "ks_threshold": 0.05,
+        "neighbours": null,
+        "gamma": 1.0
+      }
+    },
+    "alerts": {
+      "primary_method": "cqr",
+      "primary_level": 0.95,
+      "detection_tolerance_steps": 6,
+      "max_false_alerts_per_day": 1.0,
+      "candidate_rules": [
+        "1-of-1",
+        "2-of-3",
+        "3-of-5",
+        "4-of-7"
+      ],
+      "selection": {
+        "calibration_conformal_fraction": 0.6,
+        "min_samples_per_block": 200
+      },
+      "events": {
+        "instances_per_type": 3,
+        "spike_sds": [
+          4.0
+        ],
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "bias_steps": 18,
+        "level_shift_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_steps": 12,
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_steps": 36,
+        "stuck_steps": 18,
+        "dropout_steps": 12,
+        "warmup_steps": 6,
+        "guard_steps": 6
+      },
+      "primary_level_selected_on_inner": true,
+      "rules_are_physical_time": true,
+      "primary_horizon": 1
+    },
+    "recalibration": {
+      "recovery_block": 144,
+      "grid": {
+        "update_every": [
+          24,
+          48,
+          144
+        ],
+        "window": [
+          250,
+          500,
+          1000
+        ],
+        "min_samples": 50
+      }
+    },
+    "robustness": {
+      "modes": [
+        "legacy_fixed_intervals",
+        "closed_loop"
+      ],
+      "random_missing": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "block_missing": [
+        0.05,
+        0.1
+      ],
+      "block_steps": 12,
+      "bias_sds": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "level_shift_sds": [
+        1.0,
+        2.0
+      ],
+      "drift_sds": [
+        1.0,
+        2.0
+      ],
+      "stuck_fractions": [
+        0.05
+      ],
+      "dropout_fractions": [
+        0.05
+      ],
+      "calibration_contamination": [
+        0.01,
+        0.05,
+        0.1
+      ]
+    },
+    "bootstrap": {
+      "n_boot": 2000,
+      "ci": 0.95
+    },
+    "plotting": {
+      "window_steps": 144
+    },
+    "adapter": "pleia",
+    "target_kind": "temperature",
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "resample": {
+      "freq": "10min",
+      "season_steps": 144
+    },
+    "outliers": {
+      "target_min": 15.0,
+      "target_max": 40.0
+    },
+    "dataset": {
+      "zenodo_record_id": "7620136",
+      "room_all_file": "Data_Nature/processed_data/data-room10T-all.csv",
+      "csv_sep": ";",
+      "timestamp_col": "Date",
+      "block_col": "block",
+      "room_col": "room",
+      "target_var": "V2"
+    },
+    "target_selection": {
+      "min_std": 0.5,
+      "min_valid_obs": 5000
+    },
+    "covariates": {
+      "outdoor_temp": "tmed",
+      "humidity": "hrmed",
+      "radiation": "radmed",
+      "hvac_state": "V4",
+      "setpoint": "V12",
+      "hvac_mode_onehot": [
+        "V5_0",
+        "V5_1",
+        "V5_2"
+      ]
+    }
+  },
+  "authorization": {
+    "version": "matched_overnight_authorization_v1",
+    "instruction_commit": "a53725c77e36547a978e5b8d46be422ad837139f",
+    "instruction_path": "review/NEXT_TASK_MATCHED_OVERNIGHT_BATCH.md",
+    "entry_commit": "d95405a005851dd7ffc3635a51034cb883b98671",
+    "real_fitting_authorized": true,
+    "allowed_units": [
+      [
+        "pleia_energy",
+        1,
+        2,
+        42
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        42
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        42
+      ],
+      [
+        "rico",
+        15,
+        2,
+        42
+      ],
+      [
+        "rico",
+        30,
+        2,
+        42
+      ],
+      [
+        "rico",
+        60,
+        2,
+        42
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        42
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        42
+      ],
+      [
+        "bdg2",
+        1,
+        1,
+        42
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        42
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        42
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        42
+      ]
+    ],
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "real_tuning_fits": 96,
+    "real_final_learned_fits": 24,
+    "nonblocking_launch_ram": true,
+    "remaining_queue_authorized": false,
+    "conditional_challenge_authorized": false,
+    "resource_policy": "CPU only; one numerical/Torch thread; n_jobs=1; lazy batch256; nonblocking 3 GiB launch reference; 256 MiB epoch floor; 8 GiB disk check",
+    "execution_order": "exact listed order; advance only after independent validation and zero-fit resume; never select by test metrics",
+    "provenance_note": "Historical runner design constants retain their original meaning; this authorization binds the current instruction separately."
+  },
+  "parent_review_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "instruction_commit": "f44d4d1bd784254237bd643b9389fc9ce8c380a3",
+  "frozen_utc": "2026-09-13T17:50:10.561703+00:00",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "matrix_hash": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+  "input_hashes": {
+    "outputs/amendment005/study_plan_v1/next_forecast_unit.json": "35e133e2ba7f1eeda5557a2b65e2197ac76111015cf5bbea6ed44a087e97184b",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+    "outputs/amendment005/support_design_v1/pleia_h6_forecast_membership.csv.gz": "87558c0ba3c236bd6e51d67fc4849add00b22add8b4aabe0d42b1b3b1893c279",
+    "outputs/amendment005/support_design_v1/forecast_roles.csv": "dea8f62c7e096574e8a6c07f5a50e2006ec67c63edf49319c640749f99d8e63a",
+    "configs/study_final_dissertation_v2.yaml": "8869fd2d20cb63f31968c61fdcbd7db4bddfe935940d372f7faa0e83d8d09857",
+    "configs/model_comparison_pilot_v1.json": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723",
+    "configs/matched_forecasting005_overnight_authorization_v1.json": "b8d92009200d6a64e2b6ed1dac09ec3b5015919f08f32e3fac2bd42c63276b2c"
+  },
+  "membership_hash": "13e4463a85c67fc2fcd548b558269dbde90875ab302e95724abe44868f7382d4",
+  "boundaries_hash": "3fda329bdf81bc884fe8aba4ce8c6d600dfbf0e02f8e52155003d86e20af90cd",
+  "preparation_resources": {
+    "seconds": 7.402472499998112,
+    "baseline_rss_bytes": 351313920,
+    "peak_rss_bytes": 1241694208,
+    "baseline_private_bytes": 306483200,
+    "peak_private_bytes": 1209991168,
+    "incremental_peak_rss_bytes": 890380288,
+    "lifetime_peak_rss_bytes": 1248768000,
+    "min_available_ram_bytes": 3854598144,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 7.28125
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}
