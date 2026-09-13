@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "plots": [
+    {
+      "name": "forecast_error",
+      "visual_review": "passed: readable original data panels, physical horizon axes, target units and legends; nominal coverage references retained",
+      "source_hash": "ab87df24403e2a377b35dda7ddcad11856a56a8a3d9d609d33460a79c09367ae",
+      "files": [
+        {
+          "path": "forecast_error.png",
+          "sha256": "8c54add9d8ff3c55c4e6d459f8ef5dc2884e0d25c220dd69d337cd4328866122"
+        },
+        {
+          "path": "forecast_error.pdf",
+          "sha256": "ce5a6125494dd83be9f60ed956e27c17f76e8cd20b290661dcbbc7c6e400cd73"
+        }
+      ]
+    },
+    {
+      "name": "coverage",
+      "visual_review": "passed: readable original data panels, physical horizon axes, target units and legends; nominal coverage references retained",
+      "source_hash": "ab87df24403e2a377b35dda7ddcad11856a56a8a3d9d609d33460a79c09367ae",
+      "files": [
+        {
+          "path": "coverage.png",
+          "sha256": "bda8aa33834caa8552701bbde6fd9ca095585bc3ed75ed868b91defa2d3f9317"
+        },
+        {
+          "path": "coverage.pdf",
+          "sha256": "8634640a79254120f7202caf0290f4c58b77898daf8194095ee760095f454795"
+        }
+      ]
+    },
+    {
+      "name": "interval_width",
+      "visual_review": "passed: readable original data panels, physical horizon axes, target units and legends; nominal coverage references retained",
+      "source_hash": "ab87df24403e2a377b35dda7ddcad11856a56a8a3d9d609d33460a79c09367ae",
+      "files": [
+        {
+          "path": "interval_width.png",
+          "sha256": "7ed37a0d2bd3f2e73858cc96b1f00e37e2481d6b1cb124a7c5dc4ccdd0ecb1ef"
+        },
+        {
+          "path": "interval_width.pdf",
+          "sha256": "851137c8fb7e8e93c743835b4b81e55b0ef5ecf83f80e3a494b1435cc9f43294"
+        }
+      ]
+    },
+    {
+      "name": "winkler",
+      "visual_review": "passed: readable original data panels, physical horizon axes, target units and legends; nominal coverage references retained",
+      "source_hash": "ab87df24403e2a377b35dda7ddcad11856a56a8a3d9d609d33460a79c09367ae",
+      "files": [
+        {
+          "path": "winkler.png",
+          "sha256": "c830a8b6b9ae94c5e61b35a1650c46e7ec34fee4a182960b781f060e33fc9e08"
+        },
+        {
+          "path": "winkler.pdf",
+          "sha256": "2da0c4e0ef675be88e3a11f6cb7895d41a9de1fea4293bd6f900c6f90ab41f95"
+        }
+      ]
+    },
+    {
+      "name": "cost_and_error",
+      "visual_review": "passed: readable original data panels, physical horizon axes, target units and legends; nominal coverage references retained",
+      "source_hash": "ab87df24403e2a377b35dda7ddcad11856a56a8a3d9d609d33460a79c09367ae",
+      "files": [
+        {
+          "path": "cost_and_error.png",
+          "sha256": "2ec0083dcc5139212c57770383a009681f01bc96741d8e1cfea90189feba0e94"
+        },
+        {
+          "path": "cost_and_error.pdf",
+          "sha256": "e96a268b16886dcbd8e8ad45e9da50553497016c540554e3da892f95e0f5c7da"
+        }
+      ]
+    }
+  ],
+  "scientific_values_changed": false,
+  "rendered_files_preserved": true
+}

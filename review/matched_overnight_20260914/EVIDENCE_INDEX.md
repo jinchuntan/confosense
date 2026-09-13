@@ -39,6 +39,15 @@ Scientific source SHA-256: `cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3
 - winkler: [PNG](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/figures/winkler.png), [PDF](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/figures/winkler.pdf), [source CSV/hash sidecar](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/figures/winkler.sources.json).
 - cost_and_error: [PNG](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/figures/cost_and_error.png), [PDF](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/figures/cost_and_error.pdf), [source CSV/hash sidecar](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/analysis_v1/figures/cost_and_error.sources.json).
 
+## Final delivery verification and next proposal
+
+[Delivery validation](delivery_v1/delivery_validation.json) reconciles all twelve successful model runs, 120 learned fits, 36 point cells, 72 interval cells, 72 exact saved-model checks, twelve zero-fit resumes and 26 distinct regression checks. [Selected configurations](delivery_v1/selected_configurations.csv) retain each model's parameters and original evidence identity. [Figure review](delivery_v1/figure_review.json) verifies the five rendered figures against their source hashes.
+
+[Coordinator recovery](RECOVERY_PROGRESS_WRITE.md), [outer command attempts](delivery_v1/coordinator_attempts.csv), and [calendar timing](delivery_v1/coordinator_timing.json) record the initial bookkeeping exit 1 and resumed exit 0. The independent preservation check is in the analysis directory. No learned fit was repeated.
+
+[Proposed seed-43 replication](delivery_v1/proposed_seed43_replication.csv) lists thirteen exact fold-2 keys, 104 tuning and 26 final fits. It is not authorized or launched. The remaining core queue contains 177 units; broader methods remain separate obligations.
+
+
 ## Per-unit fitted evidence
 
 ### pleia_energy / 1 / 2 / 42
@@ -95,4 +104,10 @@ Each completed model directory retains its fitted object, normalization state, o
 
 [Evidence manifest](EVIDENCE_MANIFEST.csv) hashes all current task artifacts except the manifest itself. The Git commit binds the manifest. The mutable coordinator lock and external publication/backup receipts remain outside OneDrive. Historical runs are linked with original source identities; newer source checks are not forced onto older runs. [Dataset notices](DATA_NOTICE.md) retain attribution.
 
-Run `analyze.py final --out <fresh-directory>` with the recorded environment to recreate numeric tables and figures from saved artifacts; this performs no fitting. It also refreshes the current reports/status documents. For exact model reloads use each unit's recorded validate argv with a fresh receipt path and the preserved original source/data identity. Do not overwrite historical runs or receipts.
+From the repository root, use the following with an unused output directory to recreate numeric tables and figures from saved artifacts; fitting routes are forbidden. The command also regenerates the report and current status documents, so use a separate review checkout for reproduction if preserving the delivered editorial text.
+
+```powershell
+& C:/cfs_venv/Scripts/python.exe -B review/matched_overnight_20260914/analyze.py final --out C:/Users/nigel/ConfoSenseBackups/matched_overnight_20260914/recomputed_analysis_v1
+```
+
+For exact model reloads use each unit's recorded validate argv with a fresh receipt path and the preserved original source/data identity. Do not overwrite historical runs or receipts.

@@ -1,6 +1,6 @@
 # Matched overnight batch progress and restart
 
-Updated UTC: 2026-09-13T19:01:41.981034+00:00. Status: **science_and_reports_complete**. Validated **12/12 new paired units**; 36 point / 72 interval cells.
+Updated UTC: 2026-09-13T19:02:08.077284+00:00. Status: **complete**. Validated **12/12 new paired units**; 36 point / 72 interval cells.
 
 The atomic [progress ledger](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/progress.json) and [append-only attempts](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/attempts.jsonl) retain exact commands, process identities, actual exits and receipt paths. A running process is not a successful exit.
 

@@ -1,6 +1,6 @@
 # Panel 2: matched Attention-LSTM versus XGBoost evidence
 
-Fold 2 / seed42; positive differences mean LSTM is larger. CPU ratio is measured LSTM model-phase CPU divided by XGBoost CPU. Width alone is not interval quality; read achieved coverage and Winkler together.
+Fold 2 / seed 42; positive differences mean LSTM is larger. CPU ratio is measured LSTM model-phase CPU divided by XGBoost CPU. Width alone is not interval quality; read achieved coverage and Winkler together.
 
 | dataset | physical_minutes | mae_difference | rmse_difference | coverage_deviation95_difference | mpiw95_difference | winkler95_difference | process_cpu_seconds_ratio | model_phase_seconds_ratio |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -34,4 +34,4 @@ Numerical reading by horizon (own-model 95% split-conformal intervals):
 - RICO temperature, 30 min: LSTM-minus-XGBoost MAE +2.00205, RMSE +2.18886, MPIW -0.580478, Winkler +67.1742 (degrees C); coverage 13.58% versus 84.95%. LSTM used 20.88× measured model-phase CPU (20.98× model-phase wall time).
 - RICO temperature, 60 min: LSTM-minus-XGBoost MAE +1.44077, RMSE +1.3262, MPIW -1.61691, Winkler +54.25 (degrees C); coverage 20.34% versus 81.56%. LSTM used 13.00× measured model-phase CPU (12.96× model-phase wall time).
 
-These observed trade-offs do not establish statistical superiority or equivalence. More horizons are dependent comparisons, not independent replications. Phase imbalance, temporal drift, known-building scope, historical reuse and incomplete multi-seed/multi-fold evaluation remain limitations. Exact 90% and95% signed coverage deviations and learned-minus-persistence contrasts are in the paired CSV.
+These observed trade-offs do not establish statistical superiority or equivalence. More horizons are dependent comparisons, not independent replications. Phase imbalance, temporal drift, known-building scope, historical reuse and incomplete multi-seed/multi-fold evaluation remain limitations. Exact 90% and 95% signed coverage deviations and learned-minus-persistence contrasts are in the paired CSV.

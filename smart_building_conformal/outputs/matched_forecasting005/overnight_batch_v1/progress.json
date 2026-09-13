@@ -3458,6 +3458,46 @@
       "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T190111624311+0000_89bb8c58\\command.log.json",
       "seconds": 28.45856790000107,
       "child_pid": 17800
+    },
+    "final/publication": {
+      "task": "final/publication",
+      "attempt_id": "2026-09-13T190141989211+0000_b627ec68",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\publish.py",
+        "--label",
+        "final"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T19:01:41.989211+00:00",
+      "ended_utc": "2026-09-13T19:02:07.168232+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T190141989211+0000_b627ec68\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T190141989211+0000_b627ec68\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 27208,
+        "created": 134337997020036556,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 27208,
+      "process_family": [
+        {
+          "pid": 27208,
+          "created": 134337997020036556,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 28268,
+          "created": 134337997020172141,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T190141989211+0000_b627ec68\\command.log.json",
+      "seconds": 25.085484199997154,
+      "child_pid": 7876
     }
   },
   "units": {
@@ -4050,44 +4090,8 @@
       "zero_fit_resume": true
     }
   },
-  "status": "running",
-  "active": {
-    "task": "final/publication",
-    "attempt_id": "2026-09-13T190141989211+0000_b627ec68",
-    "argv": [
-      "C:/cfs_venv/Scripts/python.exe",
-      "-B",
-      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\publish.py",
-      "--label",
-      "final"
-    ],
-    "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
-    "started_utc": "2026-09-13T19:01:41.989211+00:00",
-    "ended_utc": null,
-    "exit_code": null,
-    "status": "running",
-    "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T190141989211+0000_b627ec68\\command.log",
-    "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T190141989211+0000_b627ec68\\attempt.json",
-    "previous_attempt": null,
-    "logger_identity": {
-      "pid": 27208,
-      "created": 134337997020036556,
-      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
-    },
-    "logger_pid": 27208,
-    "process_family": [
-      {
-        "pid": 27208,
-        "created": 134337997020036556,
-        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
-      },
-      {
-        "pid": 28268,
-        "created": 134337997020172141,
-        "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
-      }
-    ]
-  },
+  "status": "complete",
+  "active": null,
   "completed_units": 12,
   "planned_units": 12,
   "completed_keys": [
@@ -4175,7 +4179,7 @@
     "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\coordinator.py"
   ],
   "full_study_ready": false,
-  "updated_utc": "2026-09-13T19:01:42.022200+00:00",
+  "updated_utc": "2026-09-13T19:02:08.071150+00:00",
   "previous_failures": [
     {
       "utc": "2026-09-13T18:54:09.600444+00:00",

@@ -19,6 +19,10 @@ def index(manifest,state):
         for name in ['forecast_error','coverage','interval_width','winkler','cost_and_error']:
             prefix='../../'+final.relative_to(ROOT).as_posix()+'/figures/'+name
             text+=f'- {name}: [PNG]({prefix}.png), [PDF]({prefix}.pdf), [source CSV/hash sidecar]({prefix}.sources.json).\n'
+    if (REVIEW/'delivery_v1/delivery_validation.json').exists():
+        text+='\n## Final delivery verification and next proposal\n\n[Delivery validation](delivery_v1/delivery_validation.json) reconciles all twelve successful model runs, 120 learned fits, 36 point cells, 72 interval cells, 72 exact saved-model checks, twelve zero-fit resumes and 26 distinct regression checks. [Selected configurations](delivery_v1/selected_configurations.csv) retain each model\'s parameters and original evidence identity. [Figure review](delivery_v1/figure_review.json) verifies the five rendered figures against their source hashes.\n\n'
+        text+='[Coordinator recovery](RECOVERY_PROGRESS_WRITE.md), [outer command attempts](delivery_v1/coordinator_attempts.csv), and [calendar timing](delivery_v1/coordinator_timing.json) record the initial bookkeeping exit 1 and resumed exit 0. The independent preservation check is in the analysis directory. No learned fit was repeated.\n\n'
+        text+='[Proposed seed-43 replication](delivery_v1/proposed_seed43_replication.csv) lists thirteen exact fold-2 keys, 104 tuning and 26 final fits. It is not authorized or launched. The remaining core queue contains 177 units; broader methods remain separate obligations.\n\n'
     text+='\n## Per-unit fitted evidence\n\n'
     for u in manifest['units']:
         run=Path(u['run']).relative_to(ROOT).as_posix();design=Path(u['design']).relative_to(ROOT).as_posix();done=state.get('units',{}).get(u['stem'],{})
@@ -31,7 +35,7 @@ def index(manifest,state):
         else:text+='Pending; consult the live progress ledger.\n\n'
     text+='Each completed model directory retains its fitted object, normalization state, own calibration residuals, prediction rows, tuning predictions/history, payload and COMPLETE hashes. Persistence uses model.json; XGBoost uses model.ubj plus booster_config.json; LSTM uses model.pt. All scientific data remain unclipped.\n\n'
     text+='## Preservation and recomputation\n\n[Evidence manifest](EVIDENCE_MANIFEST.csv) hashes all current task artifacts except the manifest itself. The Git commit binds the manifest. The mutable coordinator lock and external publication/backup receipts remain outside OneDrive. Historical runs are linked with original source identities; newer source checks are not forced onto older runs. [Dataset notices](DATA_NOTICE.md) retain attribution.\n\n'
-    text+='Run `analyze.py final --out <fresh-directory>` with the recorded environment to recreate numeric tables and figures from saved artifacts; this performs no fitting. It also refreshes the current reports/status documents. For exact model reloads use each unit\'s recorded validate argv with a fresh receipt path and the preserved original source/data identity. Do not overwrite historical runs or receipts.\n'
+    text+='From the repository root, use the following with an unused output directory to recreate numeric tables and figures from saved artifacts; fitting routes are forbidden. The command also regenerates the report and current status documents, so use a separate review checkout for reproduction if preserving the delivered editorial text.\n\n```powershell\n& C:/cfs_venv/Scripts/python.exe -B review/matched_overnight_20260914/analyze.py final --out C:/Users/nigel/ConfoSenseBackups/matched_overnight_20260914/recomputed_analysis_v1\n```\n\nFor exact model reloads use each unit\'s recorded validate argv with a fresh receipt path and the preserved original source/data identity. Do not overwrite historical runs or receipts.\n'
     atomic(REVIEW/'EVIDENCE_INDEX.md',text)
 
 def package(manifest,state):

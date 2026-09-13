@@ -1,8 +1,8 @@
 # Matched overnight batch completed — 14 September 2026
 
-Twelve new paired units validated;18/195 total.96 tuning+24 final new fits;36 point/72 interval cells;72 artifact checks;12 zero-fit resumes.
+Twelve new paired units validated; 18/195 total. 96 tuning+24 final new fits; 36 point/72 interval cells; 72 artifact checks; 12 zero-fit resumes.
 
-[Report](../../MATCHED_OVERNIGHT_BATCH_REPORT.md); [evidence index](matched_overnight_20260914/EVIDENCE_INDEX.md). Full study remains incomplete;177 paired units and broader-method obligations remain.
+[Report](../MATCHED_OVERNIGHT_BATCH_REPORT.md); [evidence index](matched_overnight_20260914/EVIDENCE_INDEX.md). Full study remains incomplete; 177 paired units and broader-method obligations remain.
 
 <!-- overnight-20260914: preserved historical status follows -->
 
