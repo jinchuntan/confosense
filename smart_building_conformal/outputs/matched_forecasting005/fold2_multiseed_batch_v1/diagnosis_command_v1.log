@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_fold2_multiseed_20260914\diagnose.py", line 144, in <module>
+    with forbid_fitting():main()
+                          ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_fold2_multiseed_20260914\diagnose.py", line 106, in main
+    np.testing.assert_allclose(float((etest<=q).mean()),saved['coverage'],atol=1e-12,rtol=1e-12)
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 1691, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 889, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-12, atol=1e-12
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 0.0002301
+Max relative difference among violations: 0.00024789
+ ACTUAL: array(0.92798)
+ DESIRED: array(0.92821)

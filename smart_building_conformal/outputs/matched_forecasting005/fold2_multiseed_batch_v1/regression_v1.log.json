@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_fold2_multiseed_20260914\\test_coordinator.py",
+    "tests/test_matched005_partition_guard.py",
+    "tests/test_matched005_identifier_export.py",
+    "tests/test_matched_forecasting005.py",
+    "-k",
+    "not tiny_matched_checkpoint_integration",
+    "-q"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T23:02:46.105771+00:00",
+  "logger_pid": 23584,
+  "child_pid": 23792,
+  "ended_utc": "2026-09-13T23:02:57.361691+00:00",
+  "seconds": 11.26139410000178,
+  "exit_status": 0
+}

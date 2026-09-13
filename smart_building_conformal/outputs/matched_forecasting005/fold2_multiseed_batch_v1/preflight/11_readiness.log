@@ -1,0 +1,33 @@
+{
+  "first_unit_ready": true,
+  "full_study_ready": false,
+  "models_fitted": 0,
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "006c7b08726fdfe876769e33b3062b900b78e677877db0102c7be60883189b03",
+  "fresh_support_verified": true,
+  "resources": {
+    "rss_bytes": 382779392,
+    "private_bytes": 337833984,
+    "lifetime_peak_rss_bytes": 1245130752,
+    "available_ram_bytes": 4435955712,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 44926410752,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "later_user_nonblocking_ram_instruction": true
+  },
+  "preparation_resources": {
+    "seconds": 7.8551891000024625,
+    "baseline_rss_bytes": 324911104,
+    "peak_rss_bytes": 1234296832,
+    "baseline_private_bytes": 282750976,
+    "peak_private_bytes": 1207562240,
+    "incremental_peak_rss_bytes": 909385728,
+    "lifetime_peak_rss_bytes": 1245130752,
+    "min_available_ram_bytes": 3599953920,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 7.125
+  },
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6
+}

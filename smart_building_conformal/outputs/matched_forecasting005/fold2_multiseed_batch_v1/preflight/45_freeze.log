@@ -1,0 +1,71 @@
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "data_hash": "eeb750317701dae7f55594ab5587faa8c9ebea97e3975d6b334e974d3ade445f",
+  "role_bank_hash": "1e2ca90b7a53d0080a55f9a00d7855611ae30d8d8cbc8448efdaed67a04ba02c",
+  "roles": {
+    "fit": {
+      "n": 11407,
+      "membership_hash": "3d3d4fbb4d8f672ec67c556a83ae19646d5a6de50b7cef115aeeb5cfb30d6489",
+      "row_id_hash": "6694a63ad907e314cbbc07e2400b311ddd6b4f95f7a83bc06ccbfbeb0182f11d",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-07 22:30:00",
+      "target_min": "2023-07-26 15:54:00",
+      "target_max": "2023-08-07 23:00:00"
+    },
+    "calibration": {
+      "n": 3927,
+      "membership_hash": "1342cd8dc9aab44620a5efca7a56fe3be333047033313391a9fdd3a20a8b7ca6",
+      "row_id_hash": "f9b289627840a6d96ddd5e6badfd891669d409792d950a9f947a49ad9da2cce1",
+      "origin_min": "2023-08-07 23:24:00",
+      "origin_max": "2023-08-12 02:30:00",
+      "target_min": "2023-08-07 23:54:00",
+      "target_max": "2023-08-12 03:00:00"
+    },
+    "test": {
+      "n": 7667,
+      "membership_hash": "4290f7193c9add8034e3beb246e9dc5ec1c5c7bc64043a75f4aef0370f2da91a",
+      "row_id_hash": "c55446a7da7e2c214397a68556bddc7f23f1100285beae4d6b6b40dd40de0584",
+      "origin_min": "2023-08-12 07:24:00",
+      "origin_max": "2024-02-04 10:30:00",
+      "target_min": "2023-08-12 07:54:00",
+      "target_max": "2024-02-04 11:00:00"
+    },
+    "inner0_train": {
+      "n": 3740,
+      "membership_hash": "198603de0d21c28b727a91bb36f1d71531516714d0ef322aad814988637b63aa",
+      "row_id_hash": "9d917672abf8233ef65c066aade1c65e97bc2f98f30ac865e3880f9148611e97",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-07-30 22:30:00",
+      "target_min": "2023-07-26 15:54:00",
+      "target_max": "2023-07-30 23:00:00"
+    },
+    "inner0_validation": {
+      "n": 3740,
+      "membership_hash": "1587766cd9a1b662669f11a62c95e7d2fd19b24001ef93ceaa6cfb25ca8059b0",
+      "row_id_hash": "0097da66de91d3a060f37562847bdc9aac7b47a0108c449f7bb67c62b7b490ce",
+      "origin_min": "2023-07-30 23:24:00",
+      "origin_max": "2023-08-03 22:30:00",
+      "target_min": "2023-07-30 23:54:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_train": {
+      "n": 7480,
+      "membership_hash": "e8aa89ac449919910789c941c06679a8faba7d42a3be6a5e7d1c598619b933ac",
+      "row_id_hash": "39428fb6ae40555288f096d7afd6fd9eb71c9e5d48b714de4c1f38d81aebc06c",
+      "origin_min": "2023-07-26 15:24:00",
+      "origin_max": "2023-08-03 22:30:00",
+      "target_min": "2023-07-26 15:54:00",
+      "target_max": "2023-08-03 23:00:00"
+    },
+    "inner1_validation": {
+      "n": 3927,
+      "membership_hash": "0c1086ba100d4a63d10c3054ddcf3d1803ca6464fc6960b4acbf90b625f25618",
+      "row_id_hash": "776e68499bf8cfa868629e2b39477d8a3b6a9656f0f716467b99404358cfdea4",
+      "origin_min": "2023-08-03 23:24:00",
+      "origin_max": "2023-08-07 22:30:00",
+      "target_min": "2023-08-03 23:54:00",
+      "target_max": "2023-08-07 23:00:00"
+    }
+  }
+}

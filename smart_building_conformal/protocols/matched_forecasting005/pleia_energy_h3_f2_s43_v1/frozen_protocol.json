@@ -1,0 +1,898 @@
+{
+  "version": "matched_forecasting005_pleia_energy_h3_f2_s43_execution_v1",
+  "config": {
+    "dataset": "pleia_energy",
+    "horizon": 3,
+    "outer_fold": 2,
+    "model_seed": 43,
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "candidates": {
+      "persistence": [
+        {}
+      ],
+      "xgboost": [
+        {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        },
+        {
+          "n_estimators": 400,
+          "max_depth": 5,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        }
+      ],
+      "attention_lstm": [
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.001,
+          "max_epochs": 30,
+          "patience": 5
+        },
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.0005,
+          "max_epochs": 30,
+          "patience": 5
+        }
+      ]
+    },
+    "sequence_length": 24,
+    "interval_construction": "ordinary_split_conformal_absolute_error",
+    "inner_validation_folds": 2,
+    "selection_metric": "equally weighted mean of two inner validation MAEs in original target units",
+    "tie_rule": "exact score ties select the lower zero-based frozen candidate ID",
+    "final_lstm_epochs": "ceil(mean(selected candidate best epoch on each inner fold)); refit all final fitting rows",
+    "minimum_launch_available_ram_bytes": 3221225472,
+    "minimum_free_disk_bytes": 8589934592,
+    "inference_batch_size": 256,
+    "threads": 1,
+    "n_jobs": 1,
+    "minimum_epoch_available_ram_bytes": 268435456,
+    "memory_sampling_seconds": 0.05,
+    "clipping": false,
+    "missing_policy": "unchanged existing causal preprocessing and common support",
+    "device": "cpu",
+    "fallback": null,
+    "prediction_reload_atol": 1e-07,
+    "prediction_reload_rtol": 1e-07,
+    "metric_atol": 1e-12,
+    "metric_rtol": 1e-12,
+    "numeric_input": "flat original dtype; lazy float32, normalization float64",
+    "lstm_early_improvement": 1e-06,
+    "lstm_loss": "MSELoss",
+    "optimizer": "Adam",
+    "optimizer_defaults": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false
+    },
+    "xgboost_fixed": {
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "random_state": 43,
+      "n_jobs": 1
+    },
+    "xgboost_default_policy": "None wrapper values delegate to the pinned library; full wrapper params frozen and actual booster config saved",
+    "inference_clipping": false,
+    "test_selection": false,
+    "xgboost_wrapper_parameters": [
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 3,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 43,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 43,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      }
+    ]
+  },
+  "support": {
+    "data_hash": "1ffa2b29dc13b120254046c80e97d22647f7b50e5487694b306f692a84d92e14",
+    "role_bank_hash": "2d8a91b93c1a8b8aa8ef5a6496971ee12250108a24504ff6b046cf70b7262f75",
+    "roles": {
+      "fit": {
+        "n": 14855,
+        "membership_hash": "9fc9e18746429e574996b5d318c420366de84a249898bc72faa113826ebf5288",
+        "row_id_hash": "558cff0744ce974849383acc7967f940020b64bfac9013ed4a208009b2708bf5",
+        "origin_min": "2021-01-07 23:30:00",
+        "origin_max": "2021-04-21 03:10:00",
+        "target_min": "2021-01-08 00:00:00",
+        "target_max": "2021-04-21 03:40:00"
+      },
+      "calibration": {
+        "n": 4952,
+        "membership_hash": "314903ce4f8c8409c5417c2d6b829e4549971bebc3d6a0dc881d54aa3c565364",
+        "row_id_hash": "4229dfd898ed95c9f9693260d3cb9bb25c08cf354ea18d6e850f1422de1405f1",
+        "origin_min": "2021-04-21 04:00:00",
+        "origin_max": "2021-05-25 13:10:00",
+        "target_min": "2021-04-21 04:30:00",
+        "target_max": "2021-05-25 13:40:00"
+      },
+      "test": {
+        "n": 9907,
+        "membership_hash": "f7a8b2ab436b98d9e3c4127b8c0c687d2944e7cc7512d2ddf6c76666e097c7ea",
+        "row_id_hash": "c2d53e2fc20a6e6e5143df383f37e38aeb9e86b2de67c63088da1d4583d4b1dd",
+        "origin_min": "2021-05-25 13:50:00",
+        "origin_max": "2021-08-02 08:50:00",
+        "target_min": "2021-05-25 14:20:00",
+        "target_max": "2021-08-02 09:20:00"
+      },
+      "inner0_train": {
+        "n": 4948,
+        "membership_hash": "ebf7520964f58026cc222578bba1f1d2a33b67198299f1c5bba1566bd6784377",
+        "row_id_hash": "894b35f84e79ef291432eb4ec2ea7a1f5f02cfd69a67e241ecae730eafa5e89a",
+        "origin_min": "2021-01-07 23:30:00",
+        "origin_max": "2021-02-11 08:00:00",
+        "target_min": "2021-01-08 00:00:00",
+        "target_max": "2021-02-11 08:30:00"
+      },
+      "inner0_validation": {
+        "n": 4949,
+        "membership_hash": "2aa22d1ba1125056fdd68d6b2027eacd834f9664eaae2b53cff2a9faa7ddf126",
+        "row_id_hash": "41af3db740ef555be369e15e8e0eabcc34559abc88a624a17301e8eed7414656",
+        "origin_min": "2021-02-11 08:40:00",
+        "origin_max": "2021-03-17 17:20:00",
+        "target_min": "2021-02-11 09:10:00",
+        "target_max": "2021-03-17 17:50:00"
+      },
+      "inner1_train": {
+        "n": 9897,
+        "membership_hash": "78a72344eb383f72004edb224f83c552a272dfeaffbb94ff79fcbecf0505fce1",
+        "row_id_hash": "581506cccfe66c620c944cd60584ec2109d04279aca39b38d38f40d6b80f9d9a",
+        "origin_min": "2021-01-07 23:30:00",
+        "origin_max": "2021-03-17 17:20:00",
+        "target_min": "2021-01-08 00:00:00",
+        "target_max": "2021-03-17 17:50:00"
+      },
+      "inner1_validation": {
+        "n": 4952,
+        "membership_hash": "5e7ec7b15735ad3fbb7d39223dba2b0d10397023ec6e05681ca69c5b3cfa1106",
+        "row_id_hash": "72c8599283ed3e772db63a8669d21aa9c29578597a29d0cc7558d3f93476d419",
+        "origin_min": "2021-03-17 18:00:00",
+        "origin_max": "2021-04-21 03:10:00",
+        "target_min": "2021-03-17 18:30:00",
+        "target_max": "2021-04-21 03:40:00"
+      }
+    },
+    "feature_names": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_6",
+      "target_lag_12",
+      "target_daily_lag",
+      "target_weekly_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_144",
+      "target_rollstd_144",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "target_was_missing",
+      "tmed_was_missing",
+      "hrmed_was_missing",
+      "radmed_was_missing"
+    ],
+    "sequence_channels": [
+      "target",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ],
+    "eligible_rows": 49537,
+    "excluded_rows": 0,
+    "frequency": "0 days 00:10:00",
+    "target": null
+  },
+  "resolved_dataset_config": {
+    "seed": 42,
+    "paths": {
+      "raw_dir": "data/raw",
+      "interim_dir": "data/interim",
+      "processed_dir": "data/processed"
+    },
+    "split": {
+      "train_frac": 0.6,
+      "calib_frac": 0.2
+    },
+    "missing": {
+      "max_short_gap_steps": 3
+    },
+    "coverage_levels": [
+      0.9,
+      0.95,
+      0.975,
+      0.99,
+      0.995
+    ],
+    "features": {
+      "target_lags": [
+        1,
+        2,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        6,
+        144
+      ],
+      "include_weekly": true,
+      "target_lags_include_zero": true
+    },
+    "models": {
+      "xgboost": {
+        "search_iter": 20,
+        "cv_splits": 3,
+        "seeds": 5,
+        "refit_n_jobs": 1,
+        "search_n_jobs": -1
+      },
+      "lstm": {
+        "seq_len": 24,
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5,
+        "val_fraction": 0.2,
+        "seeds": 3
+      }
+    },
+    "conformal": {
+      "cqr": {
+        "seeds": 5
+      },
+      "enbpi": {
+        "n_resamplings": 20,
+        "block_length": 48,
+        "base_n_estimators": 200,
+        "base_max_depth": 5,
+        "base_learning_rate": 0.05,
+        "update_step": 48,
+        "seeds": 3,
+        "n_jobs": 4
+      },
+      "dscp": {
+        "max_clusters": 6,
+        "ks_threshold": 0.05,
+        "neighbours": null,
+        "gamma": 1.0
+      }
+    },
+    "alerts": {
+      "primary_method": "cqr",
+      "primary_level": 0.95,
+      "detection_tolerance_steps": 6,
+      "max_false_alerts_per_day": 1.0,
+      "candidate_rules": [
+        "1-of-1",
+        "2-of-3",
+        "3-of-5",
+        "4-of-7"
+      ],
+      "selection": {
+        "calibration_conformal_fraction": 0.6,
+        "min_samples_per_block": 200
+      },
+      "events": {
+        "instances_per_type": 3,
+        "spike_sds": [
+          4.0
+        ],
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "bias_steps": 18,
+        "level_shift_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_steps": 12,
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_steps": 36,
+        "stuck_steps": 18,
+        "dropout_steps": 12,
+        "warmup_steps": 6,
+        "guard_steps": 6
+      },
+      "primary_level_selected_on_inner": true,
+      "rules_are_physical_time": true,
+      "primary_horizon": 1
+    },
+    "recalibration": {
+      "recovery_block": 144,
+      "grid": {
+        "update_every": [
+          24,
+          48,
+          144
+        ],
+        "window": [
+          250,
+          500,
+          1000
+        ],
+        "min_samples": 50
+      }
+    },
+    "robustness": {
+      "modes": [
+        "legacy_fixed_intervals",
+        "closed_loop"
+      ],
+      "random_missing": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "block_missing": [
+        0.05,
+        0.1
+      ],
+      "block_steps": 12,
+      "bias_sds": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "level_shift_sds": [
+        1.0,
+        2.0
+      ],
+      "drift_sds": [
+        1.0,
+        2.0
+      ],
+      "stuck_fractions": [
+        0.05
+      ],
+      "dropout_fractions": [
+        0.05
+      ],
+      "calibration_contamination": [
+        0.01,
+        0.05,
+        0.1
+      ]
+    },
+    "bootstrap": {
+      "n_boot": 2000,
+      "ci": 0.95
+    },
+    "plotting": {
+      "window_steps": 144
+    },
+    "adapter": "pleia",
+    "target_kind": "energy",
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "resample": {
+      "freq": "10min",
+      "season_steps": 144
+    },
+    "dataset": {
+      "csv_sep": ";",
+      "timestamp_col": "Date",
+      "target_var": "dif_cons"
+    },
+    "energy": {
+      "block_rule": "match_temperature_block",
+      "block": "B",
+      "value_col": "dif_cons",
+      "file_pattern": "Data_Nature/processed_data/cons{block}-10T.csv",
+      "weather_file": "Data_Nature/processed_data/data-weather-10T.csv",
+      "weather_covariates": [
+        "tmed",
+        "hrmed",
+        "radmed"
+      ]
+    },
+    "covariates": {
+      "outdoor_temp": "tmed",
+      "humidity": "hrmed",
+      "radiation": "radmed",
+      "hvac_state": "V4",
+      "setpoint": "V12",
+      "hvac_mode_onehot": []
+    }
+  },
+  "authorization": {
+    "version": "matched_fold2_multiseed_authorization_v1",
+    "instruction_commit": "1312510b8549ef9467ee63597cf3e634412044a9",
+    "instruction_path": "review/NEXT_TASK_MATCHED_FOLD2_MULTISEED.md",
+    "entry_commit": "3df9cbd480ffbfeac640580829e88c274fba2083",
+    "real_fitting_authorized": true,
+    "allowed_units": [
+      [
+        "pleia_energy",
+        1,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        43
+      ],
+      [
+        "rico",
+        5,
+        2,
+        43
+      ],
+      [
+        "rico",
+        15,
+        2,
+        43
+      ],
+      [
+        "rico",
+        30,
+        2,
+        43
+      ],
+      [
+        "rico",
+        60,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        44
+      ],
+      [
+        "rico",
+        5,
+        2,
+        44
+      ],
+      [
+        "rico",
+        15,
+        2,
+        44
+      ],
+      [
+        "rico",
+        30,
+        2,
+        44
+      ],
+      [
+        "rico",
+        60,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        45
+      ],
+      [
+        "rico",
+        5,
+        2,
+        45
+      ],
+      [
+        "rico",
+        15,
+        2,
+        45
+      ],
+      [
+        "rico",
+        30,
+        2,
+        45
+      ],
+      [
+        "rico",
+        60,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        46
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        46
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        46
+      ],
+      [
+        "rico",
+        5,
+        2,
+        46
+      ],
+      [
+        "rico",
+        15,
+        2,
+        46
+      ],
+      [
+        "rico",
+        30,
+        2,
+        46
+      ],
+      [
+        "rico",
+        60,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        46
+      ]
+    ],
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "real_tuning_fits": 416,
+    "real_final_learned_fits": 104,
+    "nonblocking_launch_ram": true,
+    "remaining_queue_authorized": false,
+    "conditional_challenge_authorized": false,
+    "resource_policy": "CPU only; one numerical/Torch thread; n_jobs=1; lazy batch256; nonblocking 3 GiB launch reference; 256 MiB epoch floor; 8 GiB disk check",
+    "execution_order": "seeds 43 then 44 then 45 then 46; frozen queue order within seed; advance after validation and zero-fit resume regardless of model rankings",
+    "provenance_note": "Historical runner-provenance fields retained; current authorization separate."
+  },
+  "parent_review_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "instruction_commit": "f44d4d1bd784254237bd643b9389fc9ce8c380a3",
+  "frozen_utc": "2026-09-13T22:35:26.362849+00:00",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "matrix_hash": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+  "input_hashes": {
+    "outputs/amendment005/study_plan_v1/next_forecast_unit.json": "35e133e2ba7f1eeda5557a2b65e2197ac76111015cf5bbea6ed44a087e97184b",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+    "outputs/amendment005/support_design_v1/pleia_energy_h3_forecast_membership.csv.gz": "78ef1fd5c4e1f551c48ca3ff0adc7569d422bfd23d908bb849125959eb70c0b0",
+    "outputs/amendment005/support_design_v1/forecast_roles.csv": "dea8f62c7e096574e8a6c07f5a50e2006ec67c63edf49319c640749f99d8e63a",
+    "configs/study_final_dissertation_v2.yaml": "8869fd2d20cb63f31968c61fdcbd7db4bddfe935940d372f7faa0e83d8d09857",
+    "configs/model_comparison_pilot_v1.json": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723",
+    "configs/matched_forecasting005_fold2_multiseed_authorization_v1.json": "133965734433d7327a8ff7c74c60c071d7956e70429e3eca42271b5a400d18e0"
+  },
+  "membership_hash": "211f8235c9a8275c1e3671fbdb01d089aba4241c049fd61a71717e4106046a45",
+  "boundaries_hash": "698b5654c99217d069896141f4ea78eac471fdbaa2d828241c3cacf5b4261f16",
+  "preparation_resources": {
+    "seconds": 2.766883800002688,
+    "baseline_rss_bytes": 351596544,
+    "peak_rss_bytes": 408653824,
+    "baseline_private_bytes": 306827264,
+    "peak_private_bytes": 362610688,
+    "incremental_peak_rss_bytes": 57057280,
+    "lifetime_peak_rss_bytes": 410271744,
+    "min_available_ram_bytes": 4352540672,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 2.6875
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}

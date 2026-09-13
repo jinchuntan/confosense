@@ -1,0 +1,922 @@
+{
+  "version": "matched_forecasting005_rico_h5_f2_s45_execution_v1",
+  "config": {
+    "dataset": "rico",
+    "horizon": 5,
+    "outer_fold": 2,
+    "model_seed": 45,
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "candidates": {
+      "persistence": [
+        {}
+      ],
+      "xgboost": [
+        {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        },
+        {
+          "n_estimators": 400,
+          "max_depth": 5,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        }
+      ],
+      "attention_lstm": [
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.001,
+          "max_epochs": 30,
+          "patience": 5
+        },
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.0005,
+          "max_epochs": 30,
+          "patience": 5
+        }
+      ]
+    },
+    "sequence_length": 24,
+    "interval_construction": "ordinary_split_conformal_absolute_error",
+    "inner_validation_folds": 2,
+    "selection_metric": "equally weighted mean of two inner validation MAEs in original target units",
+    "tie_rule": "exact score ties select the lower zero-based frozen candidate ID",
+    "final_lstm_epochs": "ceil(mean(selected candidate best epoch on each inner fold)); refit all final fitting rows",
+    "minimum_launch_available_ram_bytes": 3221225472,
+    "minimum_free_disk_bytes": 8589934592,
+    "inference_batch_size": 256,
+    "threads": 1,
+    "n_jobs": 1,
+    "minimum_epoch_available_ram_bytes": 268435456,
+    "memory_sampling_seconds": 0.05,
+    "clipping": false,
+    "missing_policy": "unchanged existing causal preprocessing and common support",
+    "device": "cpu",
+    "fallback": null,
+    "prediction_reload_atol": 1e-07,
+    "prediction_reload_rtol": 1e-07,
+    "metric_atol": 1e-12,
+    "metric_rtol": 1e-12,
+    "numeric_input": "flat original dtype; lazy float32, normalization float64",
+    "lstm_early_improvement": 1e-06,
+    "lstm_loss": "MSELoss",
+    "optimizer": "Adam",
+    "optimizer_defaults": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false
+    },
+    "xgboost_fixed": {
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "random_state": 45,
+      "n_jobs": 1
+    },
+    "xgboost_default_policy": "None wrapper values delegate to the pinned library; full wrapper params frozen and actual booster config saved",
+    "inference_clipping": false,
+    "test_selection": false,
+    "xgboost_wrapper_parameters": [
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 3,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 45,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 45,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      }
+    ]
+  },
+  "support": {
+    "data_hash": "cc0f3758889c55292cd641d866995da797e5144f79a6beaca9bfb01d2d278ff5",
+    "role_bank_hash": "c92f78dc224b34d0b5f434d8a31bd57857057a8bd4a92f1675bf095005b45f1d",
+    "roles": {
+      "fit": {
+        "n": 12932,
+        "membership_hash": "3658387a50ac69383d169c4cd64e0f10af6cb1173d670d23cd36cc41340234e7",
+        "row_id_hash": "c755dd01ece762dbd51ba428c055e8553cdf95dcc026a35d8a864ea2dda9baaa",
+        "origin_min": "2023-07-26 15:24:00",
+        "origin_max": "2023-08-07 22:55:00",
+        "target_min": "2023-07-26 15:29:00",
+        "target_max": "2023-08-07 23:00:00"
+      },
+      "calibration": {
+        "n": 4452,
+        "membership_hash": "5d80e479d7f2d8194826bd75f476bb30f29d341ebeb04f975816feb43ded72c5",
+        "row_id_hash": "95fbd3e9e78192059585691a00d55cc264e607ec334a8f3a3988fe57e1814fdc",
+        "origin_min": "2023-08-07 23:24:00",
+        "origin_max": "2023-08-12 02:55:00",
+        "target_min": "2023-08-07 23:29:00",
+        "target_max": "2023-08-12 03:00:00"
+      },
+      "test": {
+        "n": 8692,
+        "membership_hash": "0083f660ce00ba82b7680ac8a176432167c878e986a4911db7dc1df20306108f",
+        "row_id_hash": "7d1aee54ebd66b5f6541f1af4efedc077913db45c4fb7ea01f732b52411d52d0",
+        "origin_min": "2023-08-12 07:24:00",
+        "origin_max": "2024-02-04 10:55:00",
+        "target_min": "2023-08-12 07:29:00",
+        "target_max": "2024-02-04 11:00:00"
+      },
+      "inner0_train": {
+        "n": 4240,
+        "membership_hash": "c1a4e771c1a038bd72f692838b5d8582f89cb22ed86367cf0f4b67f5ee82d04c",
+        "row_id_hash": "d0fae55550952c749ca4cb3c93ec3f59e8b3a9f62c2bdde723c9cc80c6bf88de",
+        "origin_min": "2023-07-26 15:24:00",
+        "origin_max": "2023-07-30 22:55:00",
+        "target_min": "2023-07-26 15:29:00",
+        "target_max": "2023-07-30 23:00:00"
+      },
+      "inner0_validation": {
+        "n": 4240,
+        "membership_hash": "e3a07ebc686275bff2d1dc7d8558595990613af830655e24b8a205e8d43a0609",
+        "row_id_hash": "28e29d294b80eeb6a5f8994b0744951494a3e4717e07f370f158f948a33d0e48",
+        "origin_min": "2023-07-30 23:24:00",
+        "origin_max": "2023-08-03 22:55:00",
+        "target_min": "2023-07-30 23:29:00",
+        "target_max": "2023-08-03 23:00:00"
+      },
+      "inner1_train": {
+        "n": 8480,
+        "membership_hash": "6e488b9c421d5b5bde8e49d51a5acc9fd405fbdec90e71ed8be66f739b614b6e",
+        "row_id_hash": "2208aa8747a405f6e07db0aca45f47b897d2142c3d45af5770fdc650c204e411",
+        "origin_min": "2023-07-26 15:24:00",
+        "origin_max": "2023-08-03 22:55:00",
+        "target_min": "2023-07-26 15:29:00",
+        "target_max": "2023-08-03 23:00:00"
+      },
+      "inner1_validation": {
+        "n": 4452,
+        "membership_hash": "4ed20a262cd2134ba3c9e63f62e81a4e9e1ba38dc0ab4bbcbffcb4b038b50f0f",
+        "row_id_hash": "f610fdc1f2fd8e841130d8948f2add6ece5b3ea6a1cb4ee8babd9615dfaf6e16",
+        "origin_min": "2023-08-03 23:24:00",
+        "origin_max": "2023-08-07 22:55:00",
+        "target_min": "2023-08-03 23:29:00",
+        "target_max": "2023-08-07 23:00:00"
+      }
+    },
+    "feature_names": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_5",
+      "target_lag_10",
+      "target_rollmean_10",
+      "target_rollstd_10",
+      "target_rollmean_30",
+      "target_rollstd_30",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "SB47",
+      "SB46",
+      "SB43",
+      "EC3",
+      "pid.SB47.setpoint",
+      "pid.SB46.setpoint",
+      "pid.SB43.setpoint",
+      "pid.EC3.setpoint",
+      "RTD420",
+      "RTD509",
+      "RTD417",
+      "RTD508",
+      "RTD410.T",
+      "RTD406A",
+      "WS1_Temperature",
+      "WS1_Relative_humidity",
+      "WS1_Solar_radiation",
+      "WS1_Wind_speed",
+      "target_was_missing",
+      "SB47_was_missing",
+      "SB46_was_missing",
+      "SB43_was_missing",
+      "EC3_was_missing",
+      "pid.SB47.setpoint_was_missing",
+      "pid.SB46.setpoint_was_missing",
+      "pid.SB43.setpoint_was_missing",
+      "pid.EC3.setpoint_was_missing",
+      "RTD420_was_missing",
+      "RTD509_was_missing",
+      "RTD417_was_missing",
+      "RTD508_was_missing",
+      "RTD410.T_was_missing",
+      "RTD406A_was_missing",
+      "WS1_Temperature_was_missing",
+      "WS1_Relative_humidity_was_missing",
+      "WS1_Solar_radiation_was_missing",
+      "WS1_Wind_speed_was_missing"
+    ],
+    "sequence_channels": [
+      "target",
+      "SB47",
+      "SB46",
+      "SB43",
+      "EC3",
+      "pid.SB47.setpoint",
+      "pid.SB46.setpoint",
+      "pid.SB43.setpoint",
+      "pid.EC3.setpoint",
+      "RTD420",
+      "RTD509",
+      "RTD417",
+      "RTD508",
+      "RTD410.T",
+      "RTD406A",
+      "WS1_Temperature",
+      "WS1_Relative_humidity",
+      "WS1_Solar_radiation",
+      "WS1_Wind_speed",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ],
+    "eligible_rows": 43884,
+    "excluded_rows": 1863,
+    "frequency": "0 days 00:01:00",
+    "target": null
+  },
+  "resolved_dataset_config": {
+    "seed": 42,
+    "paths": {
+      "raw_dir": "data/raw",
+      "interim_dir": "data/interim",
+      "processed_dir": "data/processed"
+    },
+    "split": {
+      "train_frac": 0.6,
+      "calib_frac": 0.2
+    },
+    "missing": {
+      "max_short_gap_steps": 3
+    },
+    "coverage_levels": [
+      0.9,
+      0.95,
+      0.975,
+      0.99,
+      0.995
+    ],
+    "features": {
+      "target_lags": [
+        1,
+        2,
+        3,
+        5,
+        10
+      ],
+      "rolling_windows": [
+        10,
+        30
+      ],
+      "include_weekly": false,
+      "target_lags_include_zero": true
+    },
+    "models": {
+      "xgboost": {
+        "search_iter": 20,
+        "cv_splits": 3,
+        "seeds": 5,
+        "refit_n_jobs": 1,
+        "search_n_jobs": -1
+      },
+      "lstm": {
+        "seq_len": 20,
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5,
+        "val_fraction": 0.2,
+        "seeds": 3
+      }
+    },
+    "conformal": {
+      "cqr": {
+        "seeds": 5
+      },
+      "enbpi": {
+        "n_resamplings": 20,
+        "block_length": 48,
+        "base_n_estimators": 200,
+        "base_max_depth": 5,
+        "base_learning_rate": 0.05,
+        "update_step": 48,
+        "seeds": 3,
+        "n_jobs": 4
+      },
+      "dscp": {
+        "max_clusters": 6,
+        "ks_threshold": 0.05,
+        "neighbours": null,
+        "gamma": 1.0
+      }
+    },
+    "alerts": {
+      "primary_method": "cqr",
+      "primary_level": 0.95,
+      "detection_tolerance_steps": 10,
+      "max_false_alerts_per_day": 1.0,
+      "candidate_rules": [
+        "1-of-1",
+        "2-of-3",
+        "3-of-5",
+        "4-of-7"
+      ],
+      "selection": {
+        "calibration_conformal_fraction": 0.6,
+        "min_samples_per_block": 200
+      },
+      "events": {
+        "instances_per_type": 3,
+        "spike_sds": [
+          4.0
+        ],
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "bias_steps": 20,
+        "level_shift_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_steps": 15,
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_steps": 30,
+        "stuck_steps": 20,
+        "dropout_steps": 15,
+        "warmup_steps": 15,
+        "guard_steps": 5
+      },
+      "primary_level_selected_on_inner": true,
+      "rules_are_physical_time": true,
+      "primary_horizon": 5
+    },
+    "recalibration": {
+      "recovery_block": 60,
+      "grid": {
+        "update_every": [
+          15,
+          30,
+          60
+        ],
+        "window": [
+          200,
+          500
+        ],
+        "min_samples": 50
+      }
+    },
+    "robustness": {
+      "modes": [
+        "legacy_fixed_intervals",
+        "closed_loop"
+      ],
+      "random_missing": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "block_missing": [
+        0.05,
+        0.1
+      ],
+      "block_steps": 10,
+      "bias_sds": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "level_shift_sds": [
+        1.0,
+        2.0
+      ],
+      "drift_sds": [
+        1.0,
+        2.0
+      ],
+      "stuck_fractions": [
+        0.05
+      ],
+      "dropout_fractions": [
+        0.05
+      ],
+      "calibration_contamination": [
+        0.01,
+        0.05,
+        0.1
+      ]
+    },
+    "bootstrap": {
+      "n_boot": 2000,
+      "ci": 0.95
+    },
+    "plotting": {
+      "window_steps": 144
+    },
+    "adapter": "rico",
+    "horizons": [
+      5,
+      15,
+      30,
+      60
+    ],
+    "resample": {
+      "freq": "1min",
+      "season_steps": null
+    },
+    "rico": {
+      "subdir": "rico",
+      "freq": "1min",
+      "target_column": "B.RTD3",
+      "min_run_length": 120,
+      "auto_download": true
+    }
+  },
+  "authorization": {
+    "version": "matched_fold2_multiseed_authorization_v1",
+    "instruction_commit": "1312510b8549ef9467ee63597cf3e634412044a9",
+    "instruction_path": "review/NEXT_TASK_MATCHED_FOLD2_MULTISEED.md",
+    "entry_commit": "3df9cbd480ffbfeac640580829e88c274fba2083",
+    "real_fitting_authorized": true,
+    "allowed_units": [
+      [
+        "pleia_energy",
+        1,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        43
+      ],
+      [
+        "rico",
+        5,
+        2,
+        43
+      ],
+      [
+        "rico",
+        15,
+        2,
+        43
+      ],
+      [
+        "rico",
+        30,
+        2,
+        43
+      ],
+      [
+        "rico",
+        60,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        44
+      ],
+      [
+        "rico",
+        5,
+        2,
+        44
+      ],
+      [
+        "rico",
+        15,
+        2,
+        44
+      ],
+      [
+        "rico",
+        30,
+        2,
+        44
+      ],
+      [
+        "rico",
+        60,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        45
+      ],
+      [
+        "rico",
+        5,
+        2,
+        45
+      ],
+      [
+        "rico",
+        15,
+        2,
+        45
+      ],
+      [
+        "rico",
+        30,
+        2,
+        45
+      ],
+      [
+        "rico",
+        60,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        46
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        46
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        46
+      ],
+      [
+        "rico",
+        5,
+        2,
+        46
+      ],
+      [
+        "rico",
+        15,
+        2,
+        46
+      ],
+      [
+        "rico",
+        30,
+        2,
+        46
+      ],
+      [
+        "rico",
+        60,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        46
+      ]
+    ],
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "real_tuning_fits": 416,
+    "real_final_learned_fits": 104,
+    "nonblocking_launch_ram": true,
+    "remaining_queue_authorized": false,
+    "conditional_challenge_authorized": false,
+    "resource_policy": "CPU only; one numerical/Torch thread; n_jobs=1; lazy batch256; nonblocking 3 GiB launch reference; 256 MiB epoch floor; 8 GiB disk check",
+    "execution_order": "seeds 43 then 44 then 45 then 46; frozen queue order within seed; advance after validation and zero-fit resume regardless of model rankings",
+    "provenance_note": "Historical runner-provenance fields retained; current authorization separate."
+  },
+  "parent_review_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "instruction_commit": "f44d4d1bd784254237bd643b9389fc9ce8c380a3",
+  "frozen_utc": "2026-09-13T22:50:03.035072+00:00",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "matrix_hash": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+  "input_hashes": {
+    "outputs/amendment005/study_plan_v1/next_forecast_unit.json": "35e133e2ba7f1eeda5557a2b65e2197ac76111015cf5bbea6ed44a087e97184b",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+    "outputs/amendment005/support_design_v1/rico_h5_forecast_membership.csv.gz": "f20259eb9f1bd0bf2daa9ce622b76afb9842d83d085691e945e6234021f14c91",
+    "outputs/amendment005/support_design_v1/forecast_roles.csv": "dea8f62c7e096574e8a6c07f5a50e2006ec67c63edf49319c640749f99d8e63a",
+    "configs/study_final_dissertation_v2.yaml": "8869fd2d20cb63f31968c61fdcbd7db4bddfe935940d372f7faa0e83d8d09857",
+    "configs/model_comparison_pilot_v1.json": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723",
+    "configs/matched_forecasting005_fold2_multiseed_authorization_v1.json": "133965734433d7327a8ff7c74c60c071d7956e70429e3eca42271b5a400d18e0"
+  },
+  "membership_hash": "ffa13c859f087b4aaf0ab89e2182247fd8ae3457738fffc887394c8baf59fb2b",
+  "boundaries_hash": "859cb5237d9d4ad9011997ccb27d4333726d7787cc0757e638426c8b6820c5cb",
+  "preparation_resources": {
+    "seconds": 8.71968549999292,
+    "baseline_rss_bytes": 351817728,
+    "peak_rss_bytes": 479510528,
+    "baseline_private_bytes": 306884608,
+    "peak_private_bytes": 434954240,
+    "incremental_peak_rss_bytes": 127692800,
+    "lifetime_peak_rss_bytes": 491278336,
+    "min_available_ram_bytes": 4377780224,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 8.421875
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}
