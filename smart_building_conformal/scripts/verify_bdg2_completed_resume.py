@@ -10,7 +10,8 @@ from src import operational004_stream as stream
 
 run=Path(sys.argv[1]);out=Path(sys.argv[2])
 if out.exists():raise FileExistsError(out)
-unit=run/'units/outer2_model42'
+spec=json.loads((run/'checkpoint_manifest.json').read_text())['spec']
+fold=spec['outer_fold'];unit=run/f'units/outer{fold}_model42'
 before={p.name:digest(p) for p in unit.iterdir() if p.is_file()}
 assert 'COMPLETE.json' in before
 attempts=[]
@@ -20,7 +21,8 @@ runner.evaluate_unit=forbidden
 engine.evaluate_unit=forbidden
 stream.OwnedInterval.__init__=forbidden
 stream.conformal_cqr.fit_cqr=forbidden
-result=runner.run('bdg2',2,42,str(run),'configs/operational_amendment004.json',resume=True)
+result=runner.run('bdg2',fold,42,str(run),'configs/operational_amendment004.json',resume=True,
+    execution_manifest=sys.argv[3] if len(sys.argv)>3 else None)
 after={p.name:digest(p) for p in unit.iterdir() if p.is_file()}
 assert before==after and not attempts and result['new_fit_invocations']==0 and result['reused_units']==1
 record=dict(passed=True,normal_completed_resume=result,forbidden_fit_or_compute_calls=len(attempts),

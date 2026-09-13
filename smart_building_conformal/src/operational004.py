@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import shutil
 from pathlib import Path
 import numpy as np
 from .run_study import load_config,resolve_dataset_config
@@ -24,12 +25,14 @@ def pilot_grid(cfg,freq):
             c['window']==cfg['recalibration']['grid']['window'][0]))]
 
 
-def run(dataset,outer_fold,model_seed,out,config,resume=False):
+def run(dataset,outer_fold,model_seed,out,config,resume=False,execution_manifest=None):
     frozen=json.loads(Path(config).read_text(encoding='utf-8'))
     if frozen['design']!=DESIGN:raise ValueError('frozen amendment/design mismatch')
     if dataset not in DESIGN['tasks'] or outer_fold not in range(3) or model_seed not in DESIGN['model_seeds']:
         raise ValueError('unit outside declared design')
     require_ram(3*2**30)
+    if shutil.disk_usage(Path.cwd()).free < 8*2**30:
+        raise OSError('bounded run requires 8 GiB free disk for retained evidence and publication parts')
     journal=RunJournal(out,resume)
     cfg=resolve_dataset_config(load_config('configs/study_final_dissertation_v2.yaml'),dataset)
     with journal.phase('preparation'): prepared=prepare(cfg)
@@ -46,7 +49,22 @@ def run(dataset,outer_fold,model_seed,out,config,resume=False):
         expected_inner_pairs=[[c['candidate_id'],i,seed] for c in grid for i in [0,1]
                               for seed in DESIGN['catalogue_seeds']])
     with journal.phase('prefit_identity'):
-        journal.freeze(spec,frozen,w['meta'],nested_roles(w['meta'],fold,scheme),s.freq)
+        roles=nested_roles(w['meta'],fold,scheme)
+        journal.freeze(spec,frozen,w['meta'],roles,s.freq,execution_manifest)
+        if execution_manifest:
+            from .operational004_authorization import verify_catalogues
+            catalogues,_=verify_catalogues(w,roles,s.freq,outer_fold,
+                Path('outputs/amendment004')/frozen['preflight_run'])
+            plan=json.loads(Path(execution_manifest).read_text(encoding='utf-8'))
+            if catalogues != plan['units'][str(outer_fold)]['catalogues']:
+                raise ValueError('current catalogue identity differs from frozen execution manifest')
+            if str(Path(out)) != str(Path(plan['units'][str(outer_fold)]['out'])):
+                raise ValueError('output directory differs from authorized unit')
+            if outer_fold==0 and not resume:
+                previous=Path(plan['units']['1']['out'])
+                if not (previous/'units/outer1_model42/COMPLETE.json').is_file():
+                    raise ValueError('fold 1 must complete before fold 0')
+            journal.emit('catalogues_verified', count=len(catalogues), no_fits=True)
     def compute():
         with ResourceMeter() as meter:
             payload,frames=evaluate_unit(dataset,outer_fold,model_seed,s,w,cfg,fold,
@@ -69,5 +87,6 @@ if __name__=='__main__':
     ap.add_argument('--outer-fold',type=int,choices=range(3),required=True)
     ap.add_argument('--model-seed',type=int,choices=DESIGN['model_seeds'],required=True)
     ap.add_argument('--out',required=True);ap.add_argument('--config',default='configs/operational_amendment004.json')
+    ap.add_argument('--execution-manifest')
     ap.add_argument('--resume',action='store_true');args=ap.parse_args()
-    run(args.dataset,args.outer_fold,args.model_seed,args.out,args.config,args.resume)
+    run(args.dataset,args.outer_fold,args.model_seed,args.out,args.config,args.resume,args.execution_manifest)

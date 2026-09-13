@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\scripts\freeze_bdg2_threefold.py", line 88, in <module>
+    if __name__=='__main__':main(sys.argv[1])
+                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\scripts\freeze_bdg2_threefold.py", line 27, in main
+    require_ram(3*2**30)
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\pilot_resources.py", line 90, in require_ram
+    raise MemoryError(f"available RAM {snapshot['available_ram_bytes']} < frozen minimum {minimum_bytes}")
+MemoryError: available RAM 2573033472 < frozen minimum 3221225472

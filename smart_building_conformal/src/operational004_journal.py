@@ -46,7 +46,7 @@ class RunJournal:
         finally:
             self.emit('phase_end', phase=name, status=status, **meter.result)
 
-    def freeze(self, spec, frozen, meta, roles, freq):
+    def freeze(self, spec, frozen, meta, roles, freq, execution_manifest=None):
         entry = next(x for x in frozen['resolved_datasets'] if x['dataset'] == spec['dataset'])
         if spec['resolved_config'] != entry['resolved_dataset_config']:
             raise ValueError('resolved configuration differs from frozen preflight')
@@ -57,7 +57,7 @@ class RunJournal:
         if spec['horizon'] != entry['horizon']:
             raise ValueError('horizon differs from frozen preflight')
         proposal = json.loads(Path('../review/amendment004_20260913/next_bounded_proposal.json').read_text(encoding='utf-8'))
-        if (spec['dataset'], spec['outer_fold'], spec['model_seed']) != ('bdg2', 2, 42):
+        if execution_manifest is None and (spec['dataset'], spec['outer_fold'], spec['model_seed']) != ('bdg2', 2, 42):
             raise ValueError('this execution journal authorizes only the published BDG2 unit')
         if spec['candidate_grid'] != proposal['candidate_grid']:
             raise ValueError('candidate grid differs from authorized proposal')
@@ -72,6 +72,9 @@ class RunJournal:
             records.append(dict(role=role, n=len(indices), groups=meta.iloc[indices].group_id.nunique(),
                 asset_days=len(indices)*float(freq/pd.Timedelta(days=1)), membership_hash=mh))
         spec['membership_hashes'] = {r['role']: r['membership_hash'] for r in records}
+        if execution_manifest is not None:
+            from .operational004_authorization import authorize
+            authorize(spec, execution_manifest, spec['membership_hashes'])
         identity = dict(spec=spec, spec_hash=signature(spec), memberships=records,
             preflight_memberships_sha256=digest(preflight/'memberships_summary.csv'),
             proposal_sha256=digest('../review/amendment004_20260913/next_bounded_proposal.json'),

@@ -66,7 +66,12 @@ class UnitCheckpoint:
             raise ValueError("invalid unit key")
         return self.root / "units" / key
 
-    def load(self, key):
+    def verify(self, key):
+        """Verify committed bytes/provenance without materializing CSV frames.
+
+        Scientific cell validation remains the consumer's responsibility after
+        its single load (or on the original in-memory frames after save).
+        """
         path = self._path(key)
         if not path.exists():
             return None
@@ -76,9 +81,23 @@ class UnitCheckpoint:
         record = json.loads(marker.read_text(encoding="utf-8"))
         if record["spec_hash"] != self.spec_hash or record["key"] != key:
             raise ValueError(f"unit provenance mismatch {key}")
+        required = {"payload.json", *record["frames"].values()}
+        if not required.issubset(record["hashes"]):
+            raise ValueError(f"unhashed checkpoint payload/frame {key}")
         for name, expected in record["hashes"].items():
+            if Path(name).name != name or name in (".", "..", "COMPLETE.json"):
+                raise ValueError(f"invalid checkpoint filename {key}/{name}")
             if not (path / name).is_file() or digest(path / name) != expected:
                 raise ValueError(f"corrupt checkpoint {key}/{name}")
+        # Small JSON payload validation retains the former completeness contract.
+        json.loads((path / "payload.json").read_text(encoding="utf-8"))
+        return record
+
+    def load(self, key):
+        record = self.verify(key)
+        if record is None:
+            return None
+        path = self._path(key)
         payload = json.loads((path / "payload.json").read_text(encoding="utf-8"))
         frames = {}
         for name, filename in record["frames"].items():
@@ -121,7 +140,7 @@ class UnitCheckpoint:
         if actual != set(expected):
             raise ValueError(f"unit matrix mismatch: missing={sorted(set(expected)-actual)}, extra={sorted(actual-set(expected))}")
         for key in expected:
-            self.load(key)
+            self.verify(key)
 
 
 def require_cells(frame, columns, expected):

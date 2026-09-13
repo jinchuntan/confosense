@@ -228,12 +228,12 @@ def recovery_rows(stream,clean,events):
 def audit(run,out):
     run=Path(run);out=Path(out)
     out.mkdir(parents=True,exist_ok=False)
-    unit=run/'units/outer2_model42'
     manifest=json.loads((run/'checkpoint_manifest.json').read_text());spec=manifest['spec']
+    fold=spec['outer_fold'];key=f'outer{fold}_model42';unit=run/'units'/key
     complete=json.loads((unit/'COMPLETE.json').read_text());payload=json.loads((unit/'payload.json').read_text())
-    assert spec['dataset']=='bdg2' and spec['outer_fold']==2 and spec['model_seed']==42
+    assert spec['dataset']=='bdg2' and fold in [0,1,2] and spec['model_seed']==42
     assert spec['catalogue_seeds']==[42,43,44,45,46] and spec['horizon']==1
-    assert sorted(p.name for p in (run/'units').iterdir())==['outer2_model42']
+    assert sorted(p.name for p in (run/'units').iterdir())==[key]
     for name,h in complete['hashes'].items():assert sha(unit/name)==h,(name,'hash mismatch')
     grid=spec['candidate_grid'];assert len(grid)==9
     surface=read(unit/'surface.csv.gz');outer=read(unit/'outer_metrics.csv.gz')
@@ -282,7 +282,7 @@ def audit(run,out):
         for role in roles:
             events=cat[cat.inner_fold==int(role[5])] if not prefix else cat
             for seed in [42,43,44,45,46]:
-                saved=read(preflight/f'bdg2_f2_{role}_e{seed}_catalogue.csv.gz')
+                saved=read(preflight/f'bdg2_f{fold}_{role}_e{seed}_catalogue.csv.gz')
                 actual=events[events.catalogue_seed==seed][saved.columns].reset_index(drop=True)
                 pd.testing.assert_frame_equal(actual,saved,check_dtype=False,rtol=0,atol=0)
                 checked['preflight_catalogues']+=1
@@ -369,7 +369,7 @@ def audit(run,out):
     pd.DataFrame(support_out).to_csv(out/'event_support.csv',index=False)
     pd.concat(recovery_out,ignore_index=True).to_csv(out/'recovery.csv',index=False)
     pd.concat(replicas_out,ignore_index=True).to_csv(out/'bootstrap_replicates.csv.gz',index=False)
-    result=dict(passed=True,scope='independent_saved_stream_event_contribution_draw_recomputation',
+    result=dict(passed=True,outer_fold=fold,scope='independent_saved_stream_event_contribution_draw_recomputation',
         learned_fits=0,decision=payload['decision'],selected_candidate=primary['candidate_id'] if primary else None,
         inverse_selected_candidate=inverse['candidate_id'] if inverse else None,
         **checked,outer_metric_cells=len(outer),fit_objects=3,quantile_sub_estimators=9,
