@@ -1,6 +1,6 @@
 # ConfoSense current recovery status
 
-Updated 13 September 2026 after the integration repairs and bounded PLEIA temperature model-comparison pilot. The original assessment remains below as an **archived entry-state record**.
+Updated 13 September 2026 after the completed pilot, diagnostic reproduction and allocation repair. The current implementation and evidence are prepared on `review/current-dissertation-20260913`; see the [review index](review/CURRENT_EVIDENCE.md). The original assessment remains below as an **archived entry-state record**.
 
 **Resume position:** the PLEIA pilot is complete and output-validated: **9/9 point-summary cells and 18/18 interval-quality cells**, completion exit status **0**, no missing or failed cells. An initial interruption left five completed units; these were reused unchanged. A subsequent complete-run resume reused all nine units with zero refits. The original launch has no recorded exit code. Global study/publication readiness remains **false**.
 
@@ -10,16 +10,18 @@ Read [MODEL_COMPARISON_PILOT_REPORT.md](MODEL_COMPARISON_PILOT_REPORT.md) for th
 |---|---|
 | Preservation | Existing 670-file / 2.79 GB external backup and Git bundles retained. Rechecked all **554 historical data/output files: zero mismatches**. Pilot uses a new output directory. |
 | Environment | Existing `C:/cfs_venv/Scripts/python.exe`, CPU-only PyTorch, one numerical/Torch thread and `n_jobs=1`; no dependency changes. Pilot report distinguishes model-phase memory from the roughly 2.3 GiB PLEIA preprocessing peak. |
-| Git | Same `fix/final-dissertation-study` branch. Frozen design/code committed before fitting as `d4bc1bc`; completed evidence is committed locally. No push, merge or reset. |
-| Software evidence | Pilot/integration focused tests: **20 passed**. Full preflight: **305 passed, 1 skipped, 3 existing MAPIE warnings**. Actual-data repair audit remains **0/273 unsafe boundaries and 0/78 invalid event-scale scopes**. |
+| Git | Separate `review/current-dissertation-20260913` branch retains latest local a5b32b8 and allocation repair 70b875a. Main and the older evidence-review branch remain unchanged. No history reset or merge. |
+| Software evidence | Follow-up full suite: **308 passed, 1 skipped, 3 existing warnings**; focused: **14 passed**. Original pilot/integration focused tests: **20 passed**. Full preflight: **305 passed, 1 skipped, 3 existing MAPIE warnings**. Actual-data repair audit remains **0/273 unsafe boundaries and 0/78 invalid event-scale scopes**. |
 | Bounded model comparison | PLEIA temperature, 10/30/60 minutes, outer fold 0, seed 42, persistence/XGBoost/Attention-LSTM; own-model fixed 90%/95% split-conformal intervals. All nine units and eighteen quality cells validated. |
 | Measured cost | Per-phase tuning/fitting/calibration/inference time, batch/throughput, baseline/peak memory and hardware saved. Separate ten-building BDG2 preparation completed with **zero fitted models**. Other tasks' fitting costs remain unmeasured. |
 | Interpretation | LSTM's extra computation did not improve observed point errors or Winkler scores under these pilot settings. One fold/seed gives no statistical-superiority claim. Output validation passed even though 16/18 empirical coverages were below nominal. |
 | Historical core | Preserved; all **60 units and 240 ablation rows** still require recomputation after operational-design reconciliation. |
 | Full extension/comparison | Not launched. Preserve the empty historical extension directory. The broader 13 task/horizon comparison and 900 robustness cells remain pending. |
-| Publication | Not ready; no replacement marker. Previously inspected observations do not become an unseen holdout. |
+| Review publication | Current code, protocol, derived predictions, nine pilot CSVs and diagnostics are indexed for the authorized separate review branch. **Scientific publication readiness remains false**; no replacement marker. Previously inspected observations do not become an unseen holdout. |
 
-**Exact next task:** freeze and reconcile the operational alert-selection design: two-inner-fold aggregation, confidence-bound feasibility, recall/workload and precision/F-beta/delay endpoints, matched-budget comparison, fault families/severities and clean-counterfactual workload. Implement/test those choices before a core research rerun. The pilot's model-tuning folds do not resolve operational rule-selection folds.
+**Exact next task:** implement [OPERATIONAL_EVALUATION_PLAN.md](OPERATIONAL_EVALUATION_PLAN.md) as amendment 004 and pass its single synthetic two-inner-fold integration smoke, beginning with a no-fitting actual-support audit. The plan resolves the operational decisions; their implementation and full research evaluation remain pending. The pilot's model-tuning folds are a separate procedure.
+
+[PILOT_DIAGNOSTICS.md](PILOT_DIAGNOSTICS.md) records **24 unchanged learned inner fits reproduced**, six matched persistence supports, and no demonstrated forecasting correctness defect. A confirmed preparation-copy problem was fixed: sampled peak working set fell **52.1%** in paired preparation-only checks, with identical data and frozen supports. All **125 pilot/config/protocol files** remain byte-identical, all **554 historical data/output files** match the external backup, and preserved pilot revalidation again passed **9/9 point and 18/18 interval cells**. The historical interruption cause remains unknown.
 
 Retain DSCP and seasonal evaluation, group-recovery inference, the full comparison's **195 paired units / 585 point cells / 1,170 interval-quality cells**, core reruns and robustness evaluation. The pilot provides bounded evidence and a cautious resource scenario; it does not complete or authorise the full study. Revise final slides/manuscript results after broader experimental and inferential validation.
 

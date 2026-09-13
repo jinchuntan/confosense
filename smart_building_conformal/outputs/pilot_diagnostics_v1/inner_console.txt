@@ -1,0 +1,132 @@
+DIAGNOSE h1 persistence candidate 0 inner 0
+DIAGNOSE h1 xgboost candidate 0 inner 0
+DIAGNOSE h1 xgboost candidate 1 inner 0
+DIAGNOSE h1 attention_lstm candidate 0 inner 0
+  epoch 1 MAE 1.1836833996221552
+  epoch 5 MAE 0.8300555814678533
+  epoch 10 MAE 0.6499748306813593
+  epoch 15 MAE 0.5621482378494133
+  epoch 20 MAE 0.5362268116472948
+  epoch 25 MAE 0.5323041915893555
+  epoch 30 MAE 0.5009749345235426
+DIAGNOSE h1 attention_lstm candidate 1 inner 0
+  epoch 1 MAE 1.4664250245111148
+  epoch 5 MAE 1.0390338261472885
+  epoch 10 MAE 0.8246725288056052
+  epoch 15 MAE 0.6723846907521788
+  epoch 20 MAE 0.6395757578503659
+  epoch 25 MAE 0.5845997813733643
+  epoch 30 MAE 0.5644140198855374
+DIAGNOSE h1 persistence candidate 0 inner 1
+DIAGNOSE h1 xgboost candidate 0 inner 1
+DIAGNOSE h1 xgboost candidate 1 inner 1
+DIAGNOSE h1 attention_lstm candidate 0 inner 1
+  epoch 1 MAE 2.6008499558282163
+  epoch 5 MAE 1.8848198434497223
+  epoch 10 MAE 1.741836962281629
+  epoch 15 MAE 1.7840659230390976
+DIAGNOSE h1 attention_lstm candidate 1 inner 1
+  epoch 1 MAE 3.1808378515130906
+  epoch 5 MAE 2.374625632687583
+  epoch 10 MAE 2.05756188624921
+  epoch 15 MAE 2.053827642747104
+  epoch 20 MAE 2.0634160648360194
+  epoch 25 MAE 1.84403786925407
+  epoch 30 MAE 1.849864939886686
+DIAGNOSE h3 persistence candidate 0 inner 0
+DIAGNOSE h3 xgboost candidate 0 inner 0
+DIAGNOSE h3 xgboost candidate 1 inner 0
+DIAGNOSE h3 attention_lstm candidate 0 inner 0
+  epoch 1 MAE 1.2361391698921649
+  epoch 5 MAE 1.0215240126979446
+  epoch 10 MAE 0.839370665610908
+  epoch 15 MAE 0.8090941395621859
+  epoch 20 MAE 0.7551916965160244
+DIAGNOSE h3 attention_lstm candidate 1 inner 0
+  epoch 1 MAE 1.5225602110860998
+  epoch 5 MAE 1.1412392678103818
+  epoch 10 MAE 0.9525229465020013
+  epoch 15 MAE 0.9086718968973333
+  epoch 20 MAE 0.8318090181499027
+  epoch 25 MAE 0.8388347295769969
+  epoch 30 MAE 0.8062931179639138
+DIAGNOSE h3 persistence candidate 0 inner 1
+DIAGNOSE h3 xgboost candidate 0 inner 1
+DIAGNOSE h3 xgboost candidate 1 inner 1
+DIAGNOSE h3 attention_lstm candidate 0 inner 1
+  epoch 1 MAE 2.6347331106849294
+  epoch 5 MAE 2.1590792413410185
+  epoch 10 MAE 2.0878071101658997
+  epoch 15 MAE 2.053149535724576
+DIAGNOSE h3 attention_lstm candidate 1 inner 1
+  epoch 1 MAE 3.224786459409126
+  epoch 5 MAE 2.4599531789719005
+  epoch 10 MAE 2.2779979038768077
+  epoch 15 MAE 2.115501612317135
+  epoch 20 MAE 2.0443812232905723
+  epoch 25 MAE 2.0927519661654492
+DIAGNOSE h6 persistence candidate 0 inner 0
+DIAGNOSE h6 xgboost candidate 0 inner 0
+DIAGNOSE h6 xgboost candidate 1 inner 0
+DIAGNOSE h6 attention_lstm candidate 0 inner 0
+  epoch 1 MAE 1.2751042581006855
+  epoch 5 MAE 1.170784350589175
+  epoch 10 MAE 1.1963259909626835
+DIAGNOSE h6 attention_lstm candidate 1 inner 0
+  epoch 1 MAE 1.5682168846673838
+  epoch 5 MAE 1.230943789621357
+  epoch 10 MAE 1.169799093820958
+  epoch 15 MAE 1.2592325694683622
+DIAGNOSE h6 persistence candidate 0 inner 1
+DIAGNOSE h6 xgboost candidate 0 inner 1
+DIAGNOSE h6 xgboost candidate 1 inner 1
+DIAGNOSE h6 attention_lstm candidate 0 inner 1
+  epoch 1 MAE 2.7505521790469016
+  epoch 5 MAE 2.4777645386478624
+  epoch 10 MAE 2.3522752658615977
+DIAGNOSE h6 attention_lstm candidate 1 inner 1
+  epoch 1 MAE 3.3064882867363234
+  epoch 5 MAE 2.6173620210903334
+  epoch 10 MAE 2.413447818078209
+  epoch 15 MAE 2.262070809889687
+{
+  "status": "complete",
+  "new_learned_inner_fits": 24,
+  "new_outer_or_final_fits": 0,
+  "persistence_supports": 6,
+  "matched_rows": 30,
+  "all_saved_inner_maes_and_epochs_reproduced": true,
+  "checks": [
+    {
+      "horizon": 1,
+      "all_rows": 49535,
+      "alignment_valid": true,
+      "origin_target_shift_valid": true,
+      "current_target_available": true,
+      "oldest_to_newest_order_valid": true,
+      "final_normalization_fit_only": true
+    },
+    {
+      "horizon": 3,
+      "all_rows": 49535,
+      "alignment_valid": true,
+      "origin_target_shift_valid": true,
+      "current_target_available": true,
+      "oldest_to_newest_order_valid": true,
+      "final_normalization_fit_only": true
+    },
+    {
+      "horizon": 6,
+      "all_rows": 49535,
+      "alignment_valid": true,
+      "origin_target_shift_valid": true,
+      "current_target_available": true,
+      "oldest_to_newest_order_valid": true,
+      "final_normalization_fit_only": true
+    }
+  ],
+  "source_hash": "1db29d9a1117031381c2fc6f891f2069453bd5a46387653fddf173f2decb48d1",
+  "original_protocol_hash": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3",
+  "scope": "Unchanged original candidates, supports, seed and epochs; development diagnostics only. No outer-test retuning."
+}
+{"command": ["C:\\cfs_venv\\Scripts\\python.exe", "-u", "-B", "scripts/diagnose_pilot_inner.py", "--cache", "C:\\Users\\nigel\\ConfoSenseBackups\\pilot_followup_20260913\\prepared_baseline.pkl", "--out", "outputs/pilot_diagnostics_v1/inner_reproduction"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T06:54:58.528692+00:00", "ended_utc": "2026-09-13T07:05:45.049311+00:00", "seconds": 646.5212671000008, "exit_status": 0}

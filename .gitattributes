@@ -2,3 +2,6 @@
 smart_building_conformal/outputs/model_comparison_pilot_v1/** -text -whitespace
 smart_building_conformal/protocols/model_comparison_pilot_v1/** -text whitespace=cr-at-eol
 smart_building_conformal/configs/model_comparison_pilot_v1.json -text whitespace=cr-at-eol
+smart_building_conformal/outputs/pilot_diagnostics_v1/** -text -whitespace
+review/*.json -text -whitespace
+review/*.csv -text -whitespace

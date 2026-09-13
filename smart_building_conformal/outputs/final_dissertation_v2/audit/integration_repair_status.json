@@ -36,5 +36,23 @@
     "report_repository_relative": "MODEL_COMPARISON_PILOT_REPORT.md",
     "outputs_project_relative": "outputs/model_comparison_pilot_v1",
     "global_scope_completed": false
+  },
+  "bounded_pilot_followup": {
+    "date": "2026-09-13",
+    "review_branch": "review/current-dissertation-20260913",
+    "diagnostics": "PILOT_DIAGNOSTICS.md",
+    "operational_specification": "OPERATIONAL_EVALUATION_PLAN.md",
+    "implementation_pending": "amendment 004 operational selection and stream contracts",
+    "allocation_fix_commit": "70b875a5f9abe73bfe6c9a2fe3f72c2ff4b41ecb",
+    "learned_inner_fits_reproduced": 24,
+    "new_outer_fits": 0,
+    "full_tests_passed": 308,
+    "full_tests_skipped": 1,
+    "existing_warnings": 3,
+    "pilot_point_cells_valid": 9,
+    "pilot_interval_cells_valid": 18,
+    "historical_files_unchanged": 554,
+    "pilot_files_unchanged": 125,
+    "original_pilot_invalidated": false
   }
 }

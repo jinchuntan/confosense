@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\cfs_venv\\Scripts\\python.exe",
+    "-B",
+    "scripts/profile_pilot_preparation.py",
+    "--out",
+    "outputs/pilot_diagnostics_v1/memory_before",
+    "--cache",
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pilot_followup_20260913\\prepared_baseline.pkl"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T06:52:14.882442+00:00",
+  "ended_utc": "2026-09-13T06:52:36.591186+00:00",
+  "seconds": 21.708438500001648,
+  "exit_status": 0
+}

@@ -1,0 +1,31 @@
+# Review-branch publication audit
+
+13 September 2026. The repository owner explicitly authorized this relevant code/evidence publication in the task and [handoff](https://github.com/jinchuntan/confosense/blob/b7f9a076c379149cc6c5eaef9a20d0db17508cb6/review/pilot_v1_20260913/NEXT_AGENT_TASK.md). No additional approval or sharing service is required.
+
+## Branch and preserved history
+
+The review branch is `review/current-dissertation-20260913`, created from actual latest local dissertation head **a5b32b81266efc107ad0bfdf74f95139ee99ba77**. That commit and its predecessors are retained, followed by allocation repair **70b875a5f9abe73bfe6c9a2fe3f72c2ff4b41ecb** and diagnostic/report commits. The original `fix/final-dissertation-study` pointer and external backups are retained. No reset, forced push or merge is used.
+
+The fetched `origin/main` is **06fe967be2be8d7898812c0c2d6e464d4e942351**; the independent evidence-review branch remains **b7f9a076c379149cc6c5eaef9a20d0db17508cb6**. That older branch was read using `git show`, never substituted for the latest local code. Only the new review branch is a push target. Remote branch heads are checked after pushing; the completion response supplies the exact published head.
+
+## Scope and inspection
+
+The [initial scan](publication_scan_initial.json) inspected **339 pending Git blobs / 38,469,405 bytes** reachable from implementation commit 70b875a and absent from all fetched origin refs. This includes prior unpublished commits, not just the working-tree diff. The [pending-object inventory](pending_publication_objects.json) preserves that entry audit. The script [audit_review_publication.py](../smart_building_conformal/scripts/audit_review_publication.py) records each blob's path, Git object ID, byte size and SHA-256; scans gzip data and ZIP/model-archive members; and reports matching paths without disclosing secret values.
+
+The inspection covers private-key/token/credential patterns, raw/interim/processed dataset paths, environment/key files and blobs over 50 MiB. Initial findings: **none**. The explicit file list was also reviewed: current source/tests/configuration, frozen protocol, reports, derived metric/interval/calibration/development predictions, membership ledgers, histories, small checkpoints and validation logs. No raw dataset, virtual environment or external backup/cache is added. Pattern scanning and path review reduce disclosure risk; they are not proof that every possible secret format can be recognized.
+
+The largest outgoing historical blob is the frozen membership gzip, **13,610,242 bytes**. Pilot point/interval prediction files are approximately 1.5 MB each; model files are approximately 0.14 MB (LSTM) and 0.47 MB (XGBoost). New diagnostic prediction files are bounded development evidence. These permit recomputation and checkpoint verification; no oversized weight needs another distribution mechanism. Original pilot files are included at canonical paths, with no duplicate replacement CSV package.
+
+The [data notice](DATA_NOTICE.md) records verified PLEIA source authors, CC BY 4.0 attribution and transformations. Existing non-PLEIA historical summaries remain historical; raw source directories remain local. The [current evidence index](CURRENT_EVIDENCE.md) distinguishes historical claims and missing full-study evidence. In particular, the preserved old `PUBLICATION_READY.json` is not a readiness marker for the repaired implementation.
+
+## Exact allowlists, byte identity and final records
+
+New files are staged through [STAGING_ALLOWLIST.txt](STAGING_ALLOWLIST.txt), passed to Git's literal `--pathspec-from-file` interface. This is an enumerated file list, not `git add .` or a recursive data-directory add. A later publication-record allowlist is [PUBLICATION_RECORD_ALLOWLIST.txt](PUBLICATION_RECORD_ALLOWLIST.txt).
+
+The [evidence manifest](EVIDENCE_MANIFEST.csv) contains canonical paths, byte counts and SHA-256 of **published Git blob bytes**, including current source, dependency specifications, tests/configuration, protocols, reports and relevant outputs. Source text may be normalized by Git; the manifest explicitly hashes the published bytes, not a platform-dependent working copy. The original evaluated-source ZIP independently preserves exact evaluated source bytes. Immutable pilot/protocol/diagnostic data have byte-preserving `.gitattributes` rules. The manifest excludes itself, the terminal scan and its verification record to avoid circular hashes; those records remain Git-versioned.
+
+The terminal payload scan is [publication_scan_final.json](publication_scan_final.json), and the manifest/link check is [manifest_validation.json](manifest_validation.json). Each record identifies its input commit or index basis rather than pretending to contain a self-referential final commit hash. Final publication-record changes are confined to the explicit allowlist and checked again before push.
+
+Preservation checks passed: [125 original pilot/config/protocol files byte-identical](../smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation_extended.json) and [554 historical data/output files match the existing external backup](../smart_building_conformal/outputs/pilot_diagnostics_v1/historical_preservation.json). All old bundles/snapshots remain in place. A new independent bundle of the published review head is kept outside Git under `C:/Users/nigel/ConfoSenseBackups/pilot_followup_20260913/`; it does not replace an earlier backup.
+
+Review publication is authorized and scoped; **scientific readiness remains false**. File/hash validation, successful push and software tests do not establish operational feasibility, nominal coverage or completed dissertation experiments.

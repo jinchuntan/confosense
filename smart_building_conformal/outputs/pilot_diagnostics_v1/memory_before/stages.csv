@@ -1,0 +1,7 @@
+stage,seconds,baseline_rss_bytes,peak_rss_bytes,baseline_private_bytes,peak_private_bytes,incremental_peak_rss_bytes,lifetime_peak_rss_bytes,min_available_ram_bytes,sample_interval_seconds,rows,columns,dataframe_bytes
+load_room_table,4.090465000001132,190050304,2183159808,150601728,2267824128,1993109504,2301026304,3450773504,0.05,2527150.0,"['Date', 'room', 'block', 'dif_cons', 'cons_total', 'V12', 'V4', 'V26', 'V5_0', 'V5_1', 'V5_2', 'V2', 'tmed', 'hrmed', 'radmed', 'vvmed', 'dvmed', 'prec', 'dewpt', 'dpv', 'Hour_1', 'Hour_2', 'Hour_3', 'Season_1', 'Season_2', 'Season_3', 'Season_4']",672222032.0
+select_target,1.0629755000009027,807583744,1454813184,772521984,1420795904,647229440,2301026304,4179075072,0.05,,,
+build_dataset,0.14742350000051374,769384448,781512704,733065216,745267200,12128256,2301026304,4852834304,0.05,50543.0,"['target_was_missing', 'target', 'tmed_was_missing', 'tmed', 'hrmed_was_missing', 'hrmed', 'radmed_was_missing', 'radmed', 'V12_was_missing', 'V12', 'V4', 'V5_0', 'V5_1', 'V5_2']",6065160.0
+common_support_h1,5.4322637999994186,206913536,410181632,166047744,365854720,203268096,2301026304,5241757696,0.05,,,
+common_support_h3,2.973212400000193,383836160,417808384,339599360,376651776,33972224,2301026304,5125738496,0.05,,,
+common_support_h6,2.983087799999339,396013568,434212864,351612928,390049792,38199296,2301026304,5062356992,0.05,,,

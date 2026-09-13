@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\cfs_venv\\Scripts\\python.exe",
+    "-u",
+    "-B",
+    "scripts/diagnose_pilot_inner.py",
+    "--cache",
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pilot_followup_20260913\\prepared_baseline.pkl",
+    "--out",
+    "outputs/pilot_diagnostics_v1/inner_reproduction"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T06:54:58.528692+00:00",
+  "ended_utc": "2026-09-13T07:05:45.049311+00:00",
+  "seconds": 646.5212671000008,
+  "exit_status": 0
+}

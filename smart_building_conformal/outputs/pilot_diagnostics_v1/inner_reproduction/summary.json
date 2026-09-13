@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "new_learned_inner_fits": 24,
+  "new_outer_or_final_fits": 0,
+  "persistence_supports": 6,
+  "matched_rows": 30,
+  "all_saved_inner_maes_and_epochs_reproduced": true,
+  "checks": [
+    {
+      "horizon": 1,
+      "all_rows": 49535,
+      "alignment_valid": true,
+      "origin_target_shift_valid": true,
+      "current_target_available": true,
+      "oldest_to_newest_order_valid": true,
+      "final_normalization_fit_only": true
+    },
+    {
+      "horizon": 3,
+      "all_rows": 49535,
+      "alignment_valid": true,
+      "origin_target_shift_valid": true,
+      "current_target_available": true,
+      "oldest_to_newest_order_valid": true,
+      "final_normalization_fit_only": true
+    },
+    {
+      "horizon": 6,
+      "all_rows": 49535,
+      "alignment_valid": true,
+      "origin_target_shift_valid": true,
+      "current_target_available": true,
+      "oldest_to_newest_order_valid": true,
+      "final_normalization_fit_only": true
+    }
+  ],
+  "source_hash": "1db29d9a1117031381c2fc6f891f2069453bd5a46387653fddf173f2decb48d1",
+  "original_protocol_hash": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3",
+  "scope": "Unchanged original candidates, supports, seed and epochs; development diagnostics only. No outer-test retuning."
+}
