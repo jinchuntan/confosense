@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.operational004",
+    "--dataset",
+    "bdg2",
+    "--outer-fold",
+    "1",
+    "--model-seed",
+    "42",
+    "--out",
+    "outputs/amendment004/bdg2_threefold_f1_s42_v1",
+    "--execution-manifest",
+    "outputs/amendment004/bdg2_threefold_frozen_v2/execution_analysis_manifest.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T13:31:47.602634+00:00",
+  "logger_pid": 23868,
+  "child_pid": 20168,
+  "ended_utc": "2026-09-13T13:50:45.862598+00:00",
+  "seconds": 1138.2597859000016,
+  "exit_status": 0
+}

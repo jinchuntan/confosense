@@ -61,7 +61,7 @@ def combine(manifest,out):
     decisions=[];metrics=[];comparisons=[];inputs=[];support=[];channels=[];recoveries=[];rejections=[];fits=[];outer_sets={};checks=[]
     for fold in [2,1,0]:
         run=Path(plan['units'][str(fold)]['out']);unit=run/f'units/outer{fold}_model42'
-        audit=run.parent/('bdg2_pilot_independent_validation_v1' if fold==2 else f'bdg2_threefold_f{fold}_audit_v1')
+        audit=run.parent/('bdg2_pilot_independent_validation_v1' if fold==2 else f'bdg2_threefold_f{fold}_audit_v{2 if fold==1 else 1}')
         validation=json.loads((audit/'validation.json').read_text());assert validation['passed'] and validation['learned_fits']==0
         payload=json.loads((unit/'payload.json').read_text());spec=json.loads((run/'checkpoint_manifest.json').read_text())['spec']
         assert spec['candidate_grid']==plan['candidate_grid'] and spec['data_hash']==plan['data_hash']
@@ -123,12 +123,15 @@ def combine(manifest,out):
     channel=pd.concat(channels,ignore_index=True);pooledchannel=channel[channel.role=='outer_test'].groupby(
         ['candidate_id','family','severity','channel'])[['n_events','n_detected']].sum().reset_index()
     pooledchannel['recall']=pooledchannel.n_detected/pooledchannel.n_events
+    groupwork=inputs[['outer_fold','candidate_id','group_id','exposure_days','clean_episodes']].copy()
+    groupwork['episodes_per_asset_day']=groupwork.clean_episodes/groupwork.exposure_days
+    groupwork['above_workload_ceiling']=groupwork.episodes_per_asset_day>1.
     for name,table in [('fold_decisions',pd.DataFrame(decisions)),('outer_comparisons',pd.DataFrame(comparisons)),
         ('per_fold_operational_interval_metrics',metrics),('pooled_metrics',pd.DataFrame(pooled)),
         ('original_building_contributions',inputs),('paired_contrasts',paired),('paired_per_fold',pd.DataFrame(pairfold)),
         ('paired_replicates',reps),('paired_draws',pd.DataFrame(draws)),('event_support',pd.concat(support)),
         ('stratum_channel_metrics',channel),('pooled_stratum_channels',pooledchannel),('recovery',pd.concat(recoveries)),
-        ('rejections',pd.concat(rejections)),('fit_measurements',pd.DataFrame(fits)),('outer_disjointness',pd.DataFrame(overlaps))]:
+        ('rejections',pd.concat(rejections)),('group_workload',groupwork),('fit_measurements',pd.DataFrame(fits)),('outer_disjointness',pd.DataFrame(overlaps))]:
         table.to_csv(out/(name+('.csv.gz' if name in ['paired_replicates','paired_draws','recovery'] else '.csv')),index=False)
     result=dict(passed=True,scope=plan['label'],manifest_sha256=hashlib.sha256(manifest.read_bytes()).hexdigest(),
         learned_fits=0,model_seeds=[42],original_buildings=10,catalogue_repetitions=5,outer_rows=sum(map(len,outer_sets.values())),

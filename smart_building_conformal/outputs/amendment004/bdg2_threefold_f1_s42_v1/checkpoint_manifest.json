@@ -1,0 +1,912 @@
+{
+  "spec": {
+    "scope": "bounded_operational_pilot",
+    "grid_scope": "reduced_engineering_pilot_not_full_study",
+    "dataset": "bdg2",
+    "outer_fold": 1,
+    "model_seed": 42,
+    "config_hash": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+    "resolved_config": {
+      "seed": 42,
+      "paths": {
+        "raw_dir": "data/raw",
+        "interim_dir": "data/interim",
+        "processed_dir": "data/processed"
+      },
+      "split": {
+        "train_frac": 0.6,
+        "calib_frac": 0.2
+      },
+      "missing": {
+        "max_short_gap_steps": 3
+      },
+      "coverage_levels": [
+        0.9,
+        0.95,
+        0.975,
+        0.99,
+        0.995
+      ],
+      "features": {
+        "target_lags": [
+          1,
+          2,
+          3,
+          6,
+          12,
+          24
+        ],
+        "rolling_windows": [
+          6,
+          24
+        ],
+        "include_weekly": true,
+        "target_lags_include_zero": true
+      },
+      "models": {
+        "xgboost": {
+          "search_iter": 20,
+          "cv_splits": 3,
+          "seeds": 5,
+          "refit_n_jobs": 1,
+          "search_n_jobs": -1
+        },
+        "lstm": {
+          "seq_len": 24,
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.001,
+          "max_epochs": 30,
+          "patience": 5,
+          "val_fraction": 0.2,
+          "seeds": 3
+        }
+      },
+      "conformal": {
+        "cqr": {
+          "seeds": 5
+        },
+        "enbpi": {
+          "n_resamplings": 20,
+          "block_length": 48,
+          "base_n_estimators": 200,
+          "base_max_depth": 5,
+          "base_learning_rate": 0.05,
+          "update_step": 48,
+          "seeds": 3,
+          "n_jobs": 4
+        },
+        "dscp": {
+          "max_clusters": 6,
+          "ks_threshold": 0.05,
+          "neighbours": null,
+          "gamma": 1.0
+        }
+      },
+      "alerts": {
+        "primary_method": "cqr",
+        "primary_level": 0.95,
+        "detection_tolerance_steps": 3,
+        "max_false_alerts_per_day": 1.0,
+        "candidate_rules": [
+          "1-of-1",
+          "2-of-3",
+          "3-of-5",
+          "4-of-7"
+        ],
+        "selection": {
+          "calibration_conformal_fraction": 0.6,
+          "min_samples_per_block": 200
+        },
+        "events": {
+          "instances_per_type": 3,
+          "spike_sds": [
+            4.0
+          ],
+          "bias_sds": [
+            0.5,
+            1.0,
+            2.0
+          ],
+          "bias_steps": 12,
+          "level_shift_sds": [
+            0.5,
+            1.0,
+            2.0
+          ],
+          "level_shift_steps": 8,
+          "drift_sds": [
+            1.0,
+            2.0
+          ],
+          "drift_steps": 24,
+          "stuck_steps": 12,
+          "dropout_steps": 8,
+          "warmup_steps": 24,
+          "guard_steps": 4
+        },
+        "primary_level_selected_on_inner": true,
+        "rules_are_physical_time": true,
+        "primary_horizon": 1
+      },
+      "recalibration": {
+        "recovery_block": 24,
+        "grid": {
+          "update_every": [
+            12,
+            24,
+            48
+          ],
+          "window": [
+            200,
+            500
+          ],
+          "min_samples": 50
+        }
+      },
+      "robustness": {
+        "modes": [
+          "legacy_fixed_intervals",
+          "closed_loop"
+        ],
+        "random_missing": [
+          0.05,
+          0.1,
+          0.2
+        ],
+        "block_missing": [
+          0.05,
+          0.1
+        ],
+        "block_steps": 12,
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "stuck_fractions": [
+          0.05
+        ],
+        "dropout_fractions": [
+          0.05
+        ],
+        "calibration_contamination": [
+          0.01,
+          0.05,
+          0.1
+        ]
+      },
+      "bootstrap": {
+        "n_boot": 2000,
+        "ci": 0.95
+      },
+      "plotting": {
+        "window_steps": 144
+      },
+      "adapter": "bdg2",
+      "horizons": [
+        1,
+        3,
+        6
+      ],
+      "resample": {
+        "freq": "1h",
+        "season_steps": 24
+      },
+      "bdg2": {
+        "subdir": "bdg2",
+        "freq": "1h",
+        "season_steps": 24,
+        "auto_download": true,
+        "use_weather": true,
+        "weather_covariates": [
+          "airTemperature",
+          "dewTemperature"
+        ],
+        "selection": {
+          "n_buildings": 10,
+          "min_span_days": 300,
+          "min_coverage": 0.95,
+          "max_constant_fraction": 0.5,
+          "max_per_site": 2,
+          "require_documented_use": true
+        }
+      }
+    },
+    "design_hash": "5c1d4aedbbdedfb5d6cceedfd56b1dbe331233d0c497ea7b0126cf6095938c75",
+    "source_hash": "203f3babf66c98ac072ad450abec5ea7ce3d60473f02708fa64ac2102ea3f7c9",
+    "data_hash": "151ff7d0472fe0e98861746af98697f0fbca1b874451a973b4006366278c0ec9",
+    "outcomes_hash": "d49161f5acd161aaba6218bc30d76f5daca0182ad0ab3c9d778f5235300c76ad",
+    "candidate_grid": [
+      {
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "single_sample",
+        "window_minutes": 60.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0000_f5146f1247fa"
+      },
+      {
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "180min_3of3",
+        "window_minutes": 180,
+        "k": 3,
+        "m": 3,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0001_ee0570e08213"
+      },
+      {
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "360min_4of6",
+        "window_minutes": 360,
+        "k": 4,
+        "m": 6,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0002_fa76e087b17d"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "single_sample",
+        "window_minutes": 60.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0012_23099bed3753"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "180min_3of3",
+        "window_minutes": 180,
+        "k": 3,
+        "m": 3,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0013_a21278d4e492"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "360min_4of6",
+        "window_minutes": 360,
+        "k": 4,
+        "m": 6,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0014_54a0e1ef5720"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 12,
+        "window": 200,
+        "rule_id": "single_sample",
+        "window_minutes": 60.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0024_ba16b82adffd"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 12,
+        "window": 200,
+        "rule_id": "180min_3of3",
+        "window_minutes": 180,
+        "k": 3,
+        "m": 3,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0025_63dd1cc1601e"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 12,
+        "window": 200,
+        "rule_id": "360min_4of6",
+        "window_minutes": 360,
+        "k": 4,
+        "m": 6,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0026_47d9fe7d15ba"
+      }
+    ],
+    "catalogue_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "horizon": 1,
+    "expected_unit_keys": [
+      "outer1_model42"
+    ],
+    "expected_inner_cells": [
+      [
+        "c0000_f5146f1247fa",
+        0
+      ],
+      [
+        "c0000_f5146f1247fa",
+        1
+      ],
+      [
+        "c0001_ee0570e08213",
+        0
+      ],
+      [
+        "c0001_ee0570e08213",
+        1
+      ],
+      [
+        "c0002_fa76e087b17d",
+        0
+      ],
+      [
+        "c0002_fa76e087b17d",
+        1
+      ],
+      [
+        "c0012_23099bed3753",
+        0
+      ],
+      [
+        "c0012_23099bed3753",
+        1
+      ],
+      [
+        "c0013_a21278d4e492",
+        0
+      ],
+      [
+        "c0013_a21278d4e492",
+        1
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        0
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        1
+      ],
+      [
+        "c0024_ba16b82adffd",
+        0
+      ],
+      [
+        "c0024_ba16b82adffd",
+        1
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        0
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        1
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        0
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        1
+      ]
+    ],
+    "expected_inner_pairs": [
+      [
+        "c0000_f5146f1247fa",
+        0,
+        42
+      ],
+      [
+        "c0000_f5146f1247fa",
+        0,
+        43
+      ],
+      [
+        "c0000_f5146f1247fa",
+        0,
+        44
+      ],
+      [
+        "c0000_f5146f1247fa",
+        0,
+        45
+      ],
+      [
+        "c0000_f5146f1247fa",
+        0,
+        46
+      ],
+      [
+        "c0000_f5146f1247fa",
+        1,
+        42
+      ],
+      [
+        "c0000_f5146f1247fa",
+        1,
+        43
+      ],
+      [
+        "c0000_f5146f1247fa",
+        1,
+        44
+      ],
+      [
+        "c0000_f5146f1247fa",
+        1,
+        45
+      ],
+      [
+        "c0000_f5146f1247fa",
+        1,
+        46
+      ],
+      [
+        "c0001_ee0570e08213",
+        0,
+        42
+      ],
+      [
+        "c0001_ee0570e08213",
+        0,
+        43
+      ],
+      [
+        "c0001_ee0570e08213",
+        0,
+        44
+      ],
+      [
+        "c0001_ee0570e08213",
+        0,
+        45
+      ],
+      [
+        "c0001_ee0570e08213",
+        0,
+        46
+      ],
+      [
+        "c0001_ee0570e08213",
+        1,
+        42
+      ],
+      [
+        "c0001_ee0570e08213",
+        1,
+        43
+      ],
+      [
+        "c0001_ee0570e08213",
+        1,
+        44
+      ],
+      [
+        "c0001_ee0570e08213",
+        1,
+        45
+      ],
+      [
+        "c0001_ee0570e08213",
+        1,
+        46
+      ],
+      [
+        "c0002_fa76e087b17d",
+        0,
+        42
+      ],
+      [
+        "c0002_fa76e087b17d",
+        0,
+        43
+      ],
+      [
+        "c0002_fa76e087b17d",
+        0,
+        44
+      ],
+      [
+        "c0002_fa76e087b17d",
+        0,
+        45
+      ],
+      [
+        "c0002_fa76e087b17d",
+        0,
+        46
+      ],
+      [
+        "c0002_fa76e087b17d",
+        1,
+        42
+      ],
+      [
+        "c0002_fa76e087b17d",
+        1,
+        43
+      ],
+      [
+        "c0002_fa76e087b17d",
+        1,
+        44
+      ],
+      [
+        "c0002_fa76e087b17d",
+        1,
+        45
+      ],
+      [
+        "c0002_fa76e087b17d",
+        1,
+        46
+      ],
+      [
+        "c0012_23099bed3753",
+        0,
+        42
+      ],
+      [
+        "c0012_23099bed3753",
+        0,
+        43
+      ],
+      [
+        "c0012_23099bed3753",
+        0,
+        44
+      ],
+      [
+        "c0012_23099bed3753",
+        0,
+        45
+      ],
+      [
+        "c0012_23099bed3753",
+        0,
+        46
+      ],
+      [
+        "c0012_23099bed3753",
+        1,
+        42
+      ],
+      [
+        "c0012_23099bed3753",
+        1,
+        43
+      ],
+      [
+        "c0012_23099bed3753",
+        1,
+        44
+      ],
+      [
+        "c0012_23099bed3753",
+        1,
+        45
+      ],
+      [
+        "c0012_23099bed3753",
+        1,
+        46
+      ],
+      [
+        "c0013_a21278d4e492",
+        0,
+        42
+      ],
+      [
+        "c0013_a21278d4e492",
+        0,
+        43
+      ],
+      [
+        "c0013_a21278d4e492",
+        0,
+        44
+      ],
+      [
+        "c0013_a21278d4e492",
+        0,
+        45
+      ],
+      [
+        "c0013_a21278d4e492",
+        0,
+        46
+      ],
+      [
+        "c0013_a21278d4e492",
+        1,
+        42
+      ],
+      [
+        "c0013_a21278d4e492",
+        1,
+        43
+      ],
+      [
+        "c0013_a21278d4e492",
+        1,
+        44
+      ],
+      [
+        "c0013_a21278d4e492",
+        1,
+        45
+      ],
+      [
+        "c0013_a21278d4e492",
+        1,
+        46
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        0,
+        42
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        0,
+        43
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        0,
+        44
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        0,
+        45
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        0,
+        46
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        1,
+        42
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        1,
+        43
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        1,
+        44
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        1,
+        45
+      ],
+      [
+        "c0014_54a0e1ef5720",
+        1,
+        46
+      ],
+      [
+        "c0024_ba16b82adffd",
+        0,
+        42
+      ],
+      [
+        "c0024_ba16b82adffd",
+        0,
+        43
+      ],
+      [
+        "c0024_ba16b82adffd",
+        0,
+        44
+      ],
+      [
+        "c0024_ba16b82adffd",
+        0,
+        45
+      ],
+      [
+        "c0024_ba16b82adffd",
+        0,
+        46
+      ],
+      [
+        "c0024_ba16b82adffd",
+        1,
+        42
+      ],
+      [
+        "c0024_ba16b82adffd",
+        1,
+        43
+      ],
+      [
+        "c0024_ba16b82adffd",
+        1,
+        44
+      ],
+      [
+        "c0024_ba16b82adffd",
+        1,
+        45
+      ],
+      [
+        "c0024_ba16b82adffd",
+        1,
+        46
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        0,
+        42
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        0,
+        43
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        0,
+        44
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        0,
+        45
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        0,
+        46
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        1,
+        42
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        1,
+        43
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        1,
+        44
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        1,
+        45
+      ],
+      [
+        "c0025_63dd1cc1601e",
+        1,
+        46
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        0,
+        42
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        0,
+        43
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        0,
+        44
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        0,
+        45
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        0,
+        46
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        1,
+        42
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        1,
+        43
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        1,
+        44
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        1,
+        45
+      ],
+      [
+        "c0026_47d9fe7d15ba",
+        1,
+        46
+      ]
+    ],
+    "membership_hashes": {
+      "B0": "6b39a734a6d30dacae7d4ba38ae1ae66af959b9901a9bad286996af3578b7535",
+      "B1": "5dcea04d04d62538fa411b78a46d8f2be78d345331f5abbffa485d6ec81b9a6a",
+      "B2": "c50e50efc2f353881804edb8bed92565f16b88c61a00f01740a4b31049d0cf2d",
+      "B3": "00f3fea8b698522edbba92983340452c7da0081a8f1c1b5c5aeea6863252a9e6",
+      "final_fit": "97951bc6a8e667911244bfdb862c3405e999cf6cf04aa0051ea7a5a04155711d",
+      "final_calibration": "f31a05cf1008911348d751cdf22f70490ad963ad7d181d172fbd8792a73f1807",
+      "outer_test": "8fd8f4dec671c62c09faf21a1cb16cb011669515a949902959c08927d839ce8b",
+      "inner0_train": "6b39a734a6d30dacae7d4ba38ae1ae66af959b9901a9bad286996af3578b7535",
+      "inner0_calibration": "5dcea04d04d62538fa411b78a46d8f2be78d345331f5abbffa485d6ec81b9a6a",
+      "inner0_selection": "c50e50efc2f353881804edb8bed92565f16b88c61a00f01740a4b31049d0cf2d",
+      "inner1_train": "d0d9278e975a8a10b072ca63e6244fb0ee4e726b24b38a80900fbd78c7f98435",
+      "inner1_calibration": "c50e50efc2f353881804edb8bed92565f16b88c61a00f01740a4b31049d0cf2d",
+      "inner1_selection": "00f3fea8b698522edbba92983340452c7da0081a8f1c1b5c5aeea6863252a9e6"
+    },
+    "execution_manifest_hash": "a6282a0684461933201f554ecc2325893961a50e9473c3b9902d73d1d547851e"
+  },
+  "spec_hash": "eff1c04a2dbc99f3610d4d4b18297e04f8ec792c797eab86b658cc70cc0ba0f5"
+}

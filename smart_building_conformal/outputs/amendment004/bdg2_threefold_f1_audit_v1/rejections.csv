@@ -1,0 +1,10 @@
+candidate_id,feasible,reasons,equal_fold_custom_synthetic_f1,equal_fold_workload,equal_fold_detected_delay
+c0000_f5146f1247fa,False,fold0:workload_above_ceiling;fold1:workload_above_ceiling,0.3111213781907637,1.5722754061417528,60.0
+c0001_ee0570e08213,False,fold0:recall_below_floor;fold1:recall_below_floor,0.26775498622559424,0.14375107284803193,120.0
+c0002_fa76e087b17d,False,fold0:recall_below_floor;fold1:recall_below_floor,0.2190951561203259,0.14620090757441717,180.0
+c0012_23099bed3753,False,fold0:recall_below_floor;fold0:workload_above_ceiling;fold1:workload_above_ceiling,0.38007518491199466,0.8991663695702887,60.0
+c0013_a21278d4e492,False,fold0:recall_below_floor;fold1:recall_below_floor,0.20369414557828308,0.05590253478228339,120.0
+c0014_54a0e1ef5720,False,fold0:recall_below_floor;fold1:recall_below_floor,0.15491648754268988,0.04914502264534616,180.0
+c0024_ba16b82adffd,False,fold1:workload_above_ceiling,0.4097498914582519,0.9722723251422765,60.0
+c0025_63dd1cc1601e,False,fold0:recall_below_floor;fold1:recall_below_floor,0.19313952359862036,0.06082069023191125,120.0
+c0026_47d9fe7d15ba,False,fold0:recall_below_floor;fold1:recall_below_floor,0.12913615636530035,0.05283606001786981,180.0

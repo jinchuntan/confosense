@@ -1,0 +1,31 @@
+outer_fold,comparison,name,candidate_id,shared_quantile_level,reference_operational_feasible,status,rule_reference,operational_feasible,decision,workload_ceiling
+2,controlled_component,baseline,c0000_f5146f1247fa,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+2,controlled_component,conformal_only,c0012_23099bed3753,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+2,controlled_component,temporal,c0013_a21278d4e492,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+2,controlled_component,fixed_diagnostic,c0012_23099bed3753,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+2,independently_inner_selected,baseline,,,,,,False,no_feasible_configuration,1.0
+2,independently_inner_selected,conformal_only,,,,,,False,no_feasible_configuration,1.0
+2,independently_inner_selected,temporal,,,,,,False,no_feasible_configuration,1.0
+2,independently_inner_selected,full,,,,,,False,no_feasible_configuration,1.0
+2,secondary_inverse_recall_floor,secondary_inverse,c0024_ba16b82adffd,,,,,True,selected,
+2,fixed_diagnostic,persistence_split,diagnostic_persistence_split_095_single_sample,,,,,False,predeclared_reference_not_selected,
+1,controlled_component,baseline,c0000_f5146f1247fa,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+1,controlled_component,conformal_only,c0012_23099bed3753,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+1,controlled_component,temporal,c0013_a21278d4e492,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+1,controlled_component,fixed_diagnostic,c0012_23099bed3753,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+1,independently_inner_selected,baseline,,,,,,False,no_feasible_configuration,1.0
+1,independently_inner_selected,conformal_only,,,,,,False,no_feasible_configuration,1.0
+1,independently_inner_selected,temporal,,,,,,False,no_feasible_configuration,1.0
+1,independently_inner_selected,full,,,,,,False,no_feasible_configuration,1.0
+1,secondary_inverse_recall_floor,secondary_inverse,c0024_ba16b82adffd,,,,,True,selected,
+1,fixed_diagnostic,persistence_split,diagnostic_persistence_split_095_single_sample,,,,,False,predeclared_reference_not_selected,
+0,controlled_component,baseline,c0000_f5146f1247fa,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+0,controlled_component,conformal_only,c0012_23099bed3753,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+0,controlled_component,temporal,c0013_a21278d4e492,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+0,controlled_component,fixed_diagnostic,c0012_23099bed3753,0.95,False,controlled_component_diagnostic_not_independent_feasibility,"selected temporal rule, or first declared temporal rule when reference is immediate",,,
+0,independently_inner_selected,baseline,,,,,,False,no_feasible_configuration,1.0
+0,independently_inner_selected,conformal_only,,,,,,False,no_feasible_configuration,1.0
+0,independently_inner_selected,temporal,,,,,,False,no_feasible_configuration,1.0
+0,independently_inner_selected,full,,,,,,False,no_feasible_configuration,1.0
+0,secondary_inverse_recall_floor,secondary_inverse,c0024_ba16b82adffd,,,,,True,selected,
+0,fixed_diagnostic,persistence_split,diagnostic_persistence_split_095_single_sample,,,,,False,predeclared_reference_not_selected,

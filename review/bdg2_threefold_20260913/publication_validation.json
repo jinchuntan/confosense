@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "entry_commit": "d63251b75f5c70c4d51c19456fbec6724e712516",
+  "manifest_files": 244,
+  "manifest_bytes": 1174889578,
+  "largest_file": {
+    "path": "smart_building_conformal/outputs/amendment004/bdg2_threefold_f1_s42_v1/units/outer1_model42/released_scores.csv.gz",
+    "bytes": 101813983,
+    "git_blob": "984a5cc3630463ca37c105b2a9f81e3cab588477",
+    "sha256": "60c37734de61ebe5f817b715bf5c72185b0b7fb0248dce4628b1334bcdda2800",
+    "purpose": "completed canonical checkpoint"
+  },
+  "local_links_checked": 229,
+  "source_archives_verified": 3,
+  "completed_unit_files_verified": 58,
+  "oversized_files_verified_via_lossless_parts": 3,
+  "exact_helper_source_files_verified": 22,
+  "scope_checked": true,
+  "credential_pattern_scan_passed": true,
+  "excluded_self_hashes": [
+    "review/bdg2_threefold_20260913/EVIDENCE_MANIFEST.csv",
+    "review/bdg2_threefold_20260913/publication_validation.json"
+  ],
+  "full_study_ready": false
+}

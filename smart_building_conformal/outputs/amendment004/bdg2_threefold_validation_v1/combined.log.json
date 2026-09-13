@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "scripts/combine_bdg2_threefold.py",
+    "--manifest",
+    "outputs/amendment004/bdg2_threefold_frozen_v2/execution_analysis_manifest.json",
+    "--out",
+    "outputs/amendment004/bdg2_threefold_combined_v1"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T14:34:14.630887+00:00",
+  "logger_pid": 25136,
+  "child_pid": 10708,
+  "ended_utc": "2026-09-13T14:34:23.579000+00:00",
+  "seconds": 8.948106499999994,
+  "exit_status": 0
+}

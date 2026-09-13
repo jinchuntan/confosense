@@ -1,0 +1,116 @@
+{
+  "format": "exact_working_helper_source_bytes",
+  "files": [
+    {
+      "repository_path": "review/bdg2_threefold_20260913/archive_helpers.py",
+      "sha256": "6e6c84440630d31ece7480c76586d876d843f4dcc311d4fae622b882495f6aea",
+      "bytes": 1584
+    },
+    {
+      "repository_path": "review/bdg2_threefold_20260913/make_report.py",
+      "sha256": "87986f67c6a92aae7bcf92683524e941d40b6c22ce46c0b4a3daae54d616eb0a",
+      "bytes": 21630
+    },
+    {
+      "repository_path": "review/bdg2_threefold_20260913/prepare_large_files.py",
+      "sha256": "f48e18b0adb8bd2cdb9b20b07e1ed78459a9c8c547c64386f03ce98860fac241",
+      "bytes": 2174
+    },
+    {
+      "repository_path": "review/bdg2_threefold_20260913/publish_manifest.py",
+      "sha256": "42736ce4cfc5972bf1b8739910ab6356ba31c923f208648ffedb1e177d4e951b",
+      "bytes": 6737
+    },
+    {
+      "repository_path": "review/bdg2_threefold_20260913/update_current.py",
+      "sha256": "e3bde883edc248ce6dd83eb8736262d8bc610564917832c635b659e62ef8a526",
+      "bytes": 10156
+    },
+    {
+      "repository_path": "review/bdg2_threefold_20260913/verify_preservation.py",
+      "sha256": "4199b6ce4217cccd6ab75d8df0391d8a17a998ace20024fa2d536bc53d18664c",
+      "bytes": 3395
+    },
+    {
+      "repository_path": "review/bdg2_threefold_20260913/verify_support.py",
+      "sha256": "a0bd014770b1a7e440ebbf08a587a035ed07ffb5f53acb8c95eb94c65e8030e3",
+      "bytes": 1969
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/combine_bdg2_threefold.py",
+      "sha256": "d4fc6b32951a49d4b81c751d288b7c53d5d5ab6b4449564d568ae70f7fa49d5b",
+      "bytes": 11035
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/diagnose_bdg2_recovery.py",
+      "sha256": "1f8ab09669ec2d2c09ee89b5d41be6008609ff0a38bff0d171973abd46beb4e1",
+      "bytes": 4237
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/freeze_bdg2_threefold.py",
+      "sha256": "30974b1c29f649b0fd4218c703c65e254a860642c1acead1f70f4548b4ba1fd0",
+      "bytes": 7240
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/independent_bdg2_operational_audit.py",
+      "sha256": "86cb5f014c1e6552cdf5c789666af89f88093071732336517f2019351192c1d4",
+      "bytes": 27340
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/log_pilot_command.py",
+      "sha256": "5af1dc468934cd01e1608cf8947376323529e9249c94bd46946e9298d93255a2",
+      "bytes": 1752
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/measure_bdg2_threefold.py",
+      "sha256": "f2bf314e4c38541d0971d931add6164b17570755bbc739214291cbee07e48c14",
+      "bytes": 3950
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/verify_bdg2_completed_resume.py",
+      "sha256": "8ddde9608d50150d814997450e52a5fdb9607146f2d41f46d45e115b38cebc9f",
+      "bytes": 1672
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/verify_bdg2_materialize.py",
+      "sha256": "89562c594ac4fd01015c8e9c9e5d2043ba6ae43f37bcdf5ba2e71f230f2a3797",
+      "bytes": 2094
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/verify_bdg2_process_cost.py",
+      "sha256": "4f49b6ef195befd4b13428cf717b89dca1167dfb686435b11d66b69200dd9d99",
+      "bytes": 2180
+    },
+    {
+      "repository_path": "smart_building_conformal/scripts/verify_checkpoint_compatibility.py",
+      "sha256": "66a47489bedcb8e0db00c6c12c9d28cc6933febbbef46b34a640d48e8d29a9c6",
+      "bytes": 7238
+    },
+    {
+      "repository_path": "smart_building_conformal/tests/test_checkpoint_memory.py",
+      "sha256": "924a48365df96f89de0b987188516a2d1146e2837a97b7eb837d1cc63b62e010",
+      "bytes": 2524
+    },
+    {
+      "repository_path": "smart_building_conformal/tests/test_independent_bdg2_audit.py",
+      "sha256": "c6d66f88bc52719934f4c783719730ef2e8c7fdcdce7aa5a1220c2d7c2f090a2",
+      "bytes": 3360
+    },
+    {
+      "repository_path": "smart_building_conformal/tests/test_threefold_authorization.py",
+      "sha256": "38ecbc687402186276b7cd6c0d8c6c0d3cb52e175337e0b51aa7c1ba36221c69",
+      "bytes": 1458
+    },
+    {
+      "repository_path": "smart_building_conformal/tests/test_threefold_combination.py",
+      "sha256": "ec18fbcf87e410b3279fb14886804b1f17b36ebd6436b5019bc930a01fa1cb75",
+      "bytes": 2260
+    },
+    {
+      "repository_path": "smart_building_conformal/tests/test_threefold_recovery.py",
+      "sha256": "9780cb41ab78719d303de1d786673f324019181540e4bd393f0fb34304f2d347",
+      "bytes": 1495
+    }
+  ],
+  "archive_sha256": "5513f86c69cf1813996b9d1a34faaf7f8984e8f0e428daa7eb4123a75048476e"
+}

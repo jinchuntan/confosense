@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_threefold_recovery.py",
+    "tests/test_independent_bdg2_audit.py",
+    "-q"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T13:56:15.835192+00:00",
+  "logger_pid": 10092,
+  "child_pid": 9096,
+  "status": "started",
+  "exit_status": null
+}

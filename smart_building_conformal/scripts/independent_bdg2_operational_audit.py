@@ -201,6 +201,17 @@ def compare_matches(computed,saved,label):
     pd.testing.assert_frame_equal(a,b,check_dtype=False,rtol=2e-10,atol=2e-10,obj=label)
 
 
+def binary_window_means(values,window):
+    """Independent integer-prefix counts, with one division per binary window.
+
+    A fractional convolution kernel adds rounding error at the frozen .05
+    recovery boundary. Exact binary sums reproduce the saved rolling-mean
+    arithmetic without changing that boundary or borrowing a production scorer.
+    """
+    counts=np.r_[0,np.cumsum(np.asarray(values,bool),dtype=np.int64)]
+    return (counts[window:]-counts[:-window])/window
+
+
 def recovery_rows(stream,clean,events):
     result=[]
     for group,part in stream.groupby('group_id',sort=True):
@@ -214,9 +225,7 @@ def recovery_rows(stream,clean,events):
                 recovery_censored=True,followup_minutes=0.));continue
         baseline=covered[before].mean();window=max(1,min(24,int(after.sum())//4))
         tail=covered[after].to_numpy(float)
-        means=np.convolve(tail,np.ones(window)/window,mode='valid')
-        # pandas rolling uses compensated summation; compare with a small
-        # rounding tolerance only for its exact frozen inclusive boundary.
+        means=binary_window_means(tail,window)
         success=np.flatnonzero(abs(means-baseline)<=.05)
         at=(times[after].iloc[success[0]+window-1]-end).total_seconds()/60 if len(success) else np.nan
         result.append(dict(group_id=group,status='observed' if len(success) else 'right_censored',

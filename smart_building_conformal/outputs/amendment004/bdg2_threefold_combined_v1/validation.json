@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "scope": "three-fold BDG2 reduced-grid benchmark, model seed 42",
+  "manifest_sha256": "a6282a0684461933201f554ecc2325893961a50e9473c3b9902d73d1d547851e",
+  "learned_fits": 0,
+  "model_seeds": [
+    42
+  ],
+  "original_buildings": 10,
+  "catalogue_repetitions": 5,
+  "outer_rows": 103897,
+  "all_outer_rows_disjoint": true,
+  "per_fold_count_checks": [
+    {
+      "outer_fold": 2,
+      "rows": 34732,
+      "candidate_cells": 5,
+      "count_pool_reproduces_independent_metrics": true
+    },
+    {
+      "outer_fold": 1,
+      "rows": 34645,
+      "candidate_cells": 5,
+      "count_pool_reproduces_independent_metrics": true
+    },
+    {
+      "outer_fold": 0,
+      "rows": 34520,
+      "candidate_cells": 5,
+      "count_pool_reproduces_independent_metrics": true
+    }
+  ],
+  "paired_contrast": {
+    "main_exploratory_paired_contrast": "static immediate CQR minus static immediate uncalibrated",
+    "candidate_a": "c0012_23099bed3753",
+    "candidate_b": "c0000_f5146f1247fa",
+    "metrics": [
+      "macro_event_recall",
+      "background_episodes_per_asset_day"
+    ],
+    "workload_pool": "sum original clean episodes / sum original asset-days; never multiply exposure by catalogue count",
+    "recall_pool": "sum N and TP within each of 21 strata across folds and all catalogues, then equal-stratum mean",
+    "per_fold_results_required": true,
+    "paired_ci": "approximate percentile 95%; resample ten original buildings with all fold/catalogue contributions together",
+    "bootstrap_seed": 20240601,
+    "bootstrap_replicates": 2000,
+    "minimum_valid_replicates": 1900,
+    "model_seeds": [
+      42
+    ],
+    "independent_buildings": 10,
+    "inference": "exploratory conditional; no significance/equivalence/same-recall superiority claim",
+    "attribution": [
+      "availability",
+      "numerical",
+      "combined"
+    ],
+    "preserve": [
+      "misses",
+      "recovery censoring",
+      "per-building workload"
+    ],
+    "outer_comparisons": "derive from actual frozen selection, fixed controls, independent subsets, inverse and persistence; no reselection",
+    "limitations": "post-inspection design; fold 2 already inspected; historical period repeatability, not prospective or unseen buildings"
+  },
+  "full_study_ready": false
+}

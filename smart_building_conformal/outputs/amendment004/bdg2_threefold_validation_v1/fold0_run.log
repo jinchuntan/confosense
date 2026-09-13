@@ -1,0 +1,147 @@
+{"event": "process_start", "utc": "2026-09-13T14:01:20.207264+00:00", "pid": 25428, "parent_pid": 18612, "hardware": {"cpu": "12th Gen Intel(R) Core(TM) i7-12700H", "logical_processors": 20, "os": "Windows-10-10.0.26200-SP0", "python": "3.11.3", "memory": {"rss_bytes": 356601856, "private_bytes": 312602624, "lifetime_peak_rss_bytes": 357294080, "available_ram_bytes": 5539508224, "physical_ram_bytes": 16890978304}, "environment_threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1"}}, "disk": {"total": 509722226688, "used": 458301923328, "free": 51420303360}}
+{"event": "phase_start", "utc": "2026-09-13T14:01:20.230671+00:00", "phase": "preparation"}
+{"event": "phase_end", "utc": "2026-09-13T14:01:25.051103+00:00", "phase": "preparation", "status": "complete", "seconds": 4.822619999999006, "baseline_rss_bytes": 356954112, "peak_rss_bytes": 993017856, "baseline_private_bytes": 313651200, "peak_private_bytes": 1003032576, "incremental_peak_rss_bytes": 636063744, "lifetime_peak_rss_bytes": 1037766656, "min_available_ram_bytes": 4948226048, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:01:25.055991+00:00", "phase": "windows"}
+{"event": "phase_end", "utc": "2026-09-13T14:01:27.013425+00:00", "phase": "windows", "status": "complete", "seconds": 1.9560555999996723, "baseline_rss_bytes": 391188480, "peak_rss_bytes": 506839040, "baseline_private_bytes": 346390528, "peak_private_bytes": 461750272, "incremental_peak_rss_bytes": 115650560, "lifetime_peak_rss_bytes": 1037766656, "min_available_ram_bytes": 5467537408, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:01:29.924142+00:00", "phase": "prefit_identity"}
+{"event": "prefit_identity_verified", "utc": "2026-09-13T14:01:40.471959+00:00", "spec_hash": "d0a22f365597d4b194b647c5cc3d9c97d03731160c741b0d0f4b7577b89af7e0", "source_hash": "203f3babf66c98ac072ad450abec5ea7ce3d60473f02708fa64ac2102ea3f7c9", "membership_roles": 13, "candidate_count": 9}
+{"event": "catalogues_verified", "utc": "2026-09-13T14:01:45.236753+00:00", "count": 15, "no_fits": true}
+{"event": "phase_end", "utc": "2026-09-13T14:01:45.238641+00:00", "phase": "prefit_identity", "status": "complete", "seconds": 15.311926200003654, "baseline_rss_bytes": 464101376, "peak_rss_bytes": 513273856, "baseline_private_bytes": 417316864, "peak_private_bytes": 466575360, "incremental_peak_rss_bytes": 49172480, "lifetime_peak_rss_bytes": 1037766656, "min_available_ram_bytes": 5831503872, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:01:45.239641+00:00", "phase": "checkpoint_compute_save_verify"}
+{"event": "phase_start", "utc": "2026-09-13T14:01:47.438858+00:00", "phase": "inner0_fit_replay_score"}
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+{"event": "phase_end", "utc": "2026-09-13T14:07:20.547506+00:00", "phase": "inner0_fit_replay_score", "status": "complete", "seconds": 333.1060056999995, "baseline_rss_bytes": 483033088, "peak_rss_bytes": 1667719168, "baseline_private_bytes": 437039104, "peak_private_bytes": 1659768832, "incremental_peak_rss_bytes": 1184686080, "lifetime_peak_rss_bytes": 1751175168, "min_available_ram_bytes": 5089218560, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:07:20.549004+00:00", "phase": "inner1_fit_replay_score"}
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+{"event": "phase_end", "utc": "2026-09-13T14:12:42.882284+00:00", "phase": "inner1_fit_replay_score", "status": "complete", "seconds": 322.3332612000013, "baseline_rss_bytes": 1089200128, "peak_rss_bytes": 2311282688, "baseline_private_bytes": 1059241984, "peak_private_bytes": 2283679744, "incremental_peak_rss_bytes": 1222082560, "lifetime_peak_rss_bytes": 2385907712, "min_available_ram_bytes": 3976036352, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:12:45.034973+00:00", "phase": "outer_fit_replay_score"}
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+{"event": "phase_end", "utc": "2026-09-13T14:20:07.479887+00:00", "phase": "outer_fit_replay_score", "status": "complete", "seconds": 442.4426824999973, "baseline_rss_bytes": 2768363520, "peak_rss_bytes": 3826946048, "baseline_private_bytes": 2735345664, "peak_private_bytes": 3794608128, "incremental_peak_rss_bytes": 1058582528, "lifetime_peak_rss_bytes": 3882496000, "min_available_ram_bytes": 2701361152, "sample_interval_seconds": 0.05}
+{"event": "phase_end", "utc": "2026-09-13T14:23:53.625809+00:00", "phase": "checkpoint_compute_save_verify", "status": "complete", "seconds": 1328.3850050999972, "baseline_rss_bytes": 483303424, "peak_rss_bytes": 3826946048, "baseline_private_bytes": 437145600, "peak_private_bytes": 3794608128, "incremental_peak_rss_bytes": 3343642624, "lifetime_peak_rss_bytes": 3882496000, "min_available_ram_bytes": 2701361152, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:23:53.627862+00:00", "phase": "output_validation"}
+{"event": "phase_end", "utc": "2026-09-13T14:24:00.874322+00:00", "phase": "output_validation", "status": "complete", "seconds": 7.244957199996861, "baseline_rss_bytes": 2198147072, "peak_rss_bytes": 2964545536, "baseline_private_bytes": 2263195648, "peak_private_bytes": 3008217088, "incremental_peak_rss_bytes": 766398464, "lifetime_peak_rss_bytes": 3882496000, "min_available_ram_bytes": 4210950144, "sample_interval_seconds": 0.05}
+{"event": "process_complete", "utc": "2026-09-13T14:24:00.877581+00:00", "reused_units": 0, "new_fit_invocations": 3}
+{
+  "output_valid": true,
+  "candidate_fold_cells": 18,
+  "stream_hash_pairs": 90,
+  "outer_stream_hash_pairs": 25,
+  "persisted_streams_recomputed": 138,
+  "scientific_readiness": false,
+  "scope": "bounded_operational_pilot",
+  "reused_units": 0,
+  "new_fit_invocations": 3,
+  "decision": "no_feasible_configuration",
+  "global_study_ready": false
+}

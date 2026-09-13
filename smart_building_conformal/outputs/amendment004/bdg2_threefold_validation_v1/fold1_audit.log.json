@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "scripts/independent_bdg2_operational_audit.py",
+    "--run",
+    "outputs/amendment004/bdg2_threefold_f1_s42_v1",
+    "--out",
+    "outputs/amendment004/bdg2_threefold_f1_audit_v1"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T13:50:55.570574+00:00",
+  "logger_pid": 28272,
+  "child_pid": 16116,
+  "ended_utc": "2026-09-13T13:52:41.023829+00:00",
+  "seconds": 105.45272799999657,
+  "exit_status": 1
+}

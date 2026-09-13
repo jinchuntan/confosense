@@ -1,0 +1,46 @@
+{"event": "process_start", "utc": "2026-09-13T14:29:40.232222+00:00", "pid": 7492, "parent_pid": 9300, "hardware": {"cpu": "12th Gen Intel(R) Core(TM) i7-12700H", "logical_processors": 20, "os": "Windows-10-10.0.26200-SP0", "python": "3.11.3", "memory": {"rss_bytes": 356982784, "private_bytes": 312938496, "lifetime_peak_rss_bytes": 357666816, "available_ram_bytes": 6028668928, "physical_ram_bytes": 16890978304}, "environment_threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1"}}, "disk": {"total": 509722226688, "used": 459604877312, "free": 50117349376}}
+{"event": "phase_start", "utc": "2026-09-13T14:29:40.253823+00:00", "phase": "preparation"}
+{"event": "phase_end", "utc": "2026-09-13T14:29:45.680550+00:00", "phase": "preparation", "status": "complete", "seconds": 5.422889100002067, "baseline_rss_bytes": 357322752, "peak_rss_bytes": 1023119360, "baseline_private_bytes": 313991168, "peak_private_bytes": 1001930752, "incremental_peak_rss_bytes": 665796608, "lifetime_peak_rss_bytes": 1038487552, "min_available_ram_bytes": 5359300608, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:29:45.682455+00:00", "phase": "windows"}
+{"event": "phase_end", "utc": "2026-09-13T14:29:47.487234+00:00", "phase": "windows", "status": "complete", "seconds": 1.8036367999957292, "baseline_rss_bytes": 391958528, "peak_rss_bytes": 507838464, "baseline_private_bytes": 347693056, "peak_private_bytes": 463425536, "incremental_peak_rss_bytes": 115879936, "lifetime_peak_rss_bytes": 1038487552, "min_available_ram_bytes": 5906636800, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:29:50.283671+00:00", "phase": "prefit_identity"}
+{"event": "prefit_identity_verified", "utc": "2026-09-13T14:29:54.035073+00:00", "spec_hash": "d0a22f365597d4b194b647c5cc3d9c97d03731160c741b0d0f4b7577b89af7e0", "source_hash": "203f3babf66c98ac072ad450abec5ea7ce3d60473f02708fa64ac2102ea3f7c9", "membership_roles": 13, "candidate_count": 9}
+{"event": "catalogues_verified", "utc": "2026-09-13T14:29:58.951445+00:00", "count": 15, "no_fits": true}
+{"event": "phase_end", "utc": "2026-09-13T14:29:58.951445+00:00", "phase": "prefit_identity", "status": "complete", "seconds": 8.669551600003615, "baseline_rss_bytes": 464846848, "peak_rss_bytes": 502591488, "baseline_private_bytes": 418205696, "peak_private_bytes": 457043968, "incremental_peak_rss_bytes": 37744640, "lifetime_peak_rss_bytes": 1038487552, "min_available_ram_bytes": 5911953408, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:29:58.955844+00:00", "phase": "checkpoint_load_verify"}
+{"event": "phase_end", "utc": "2026-09-13T14:30:50.171190+00:00", "phase": "checkpoint_load_verify", "status": "complete", "seconds": 51.21478819999902, "baseline_rss_bytes": 486961152, "peak_rss_bytes": 3851788288, "baseline_private_bytes": 440610816, "peak_private_bytes": 3817738240, "incremental_peak_rss_bytes": 3364827136, "lifetime_peak_rss_bytes": 3913285632, "min_available_ram_bytes": 2633371648, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T14:30:50.173260+00:00", "phase": "output_validation"}
+{"event": "phase_end", "utc": "2026-09-13T14:30:57.530646+00:00", "phase": "output_validation", "status": "complete", "seconds": 7.355906500000856, "baseline_rss_bytes": 3688935424, "peak_rss_bytes": 4495155200, "baseline_private_bytes": 3655864320, "peak_private_bytes": 4463218688, "incremental_peak_rss_bytes": 806219776, "lifetime_peak_rss_bytes": 4495155200, "min_available_ram_bytes": 1998536704, "sample_interval_seconds": 0.05}
+{"event": "process_complete", "utc": "2026-09-13T14:30:57.533634+00:00", "reused_units": 1, "new_fit_invocations": 0}
+{
+  "output_valid": true,
+  "candidate_fold_cells": 18,
+  "stream_hash_pairs": 90,
+  "outer_stream_hash_pairs": 25,
+  "persisted_streams_recomputed": 138,
+  "scientific_readiness": false,
+  "scope": "bounded_operational_pilot",
+  "reused_units": 1,
+  "new_fit_invocations": 0,
+  "decision": "no_feasible_configuration",
+  "global_study_ready": false
+}
+{
+  "passed": true,
+  "normal_completed_resume": {
+    "output_valid": true,
+    "candidate_fold_cells": 18,
+    "stream_hash_pairs": 90,
+    "outer_stream_hash_pairs": 25,
+    "persisted_streams_recomputed": 138,
+    "scientific_readiness": false,
+    "scope": "bounded_operational_pilot",
+    "reused_units": 1,
+    "new_fit_invocations": 0,
+    "decision": "no_feasible_configuration",
+    "global_study_ready": false
+  },
+  "forbidden_fit_or_compute_calls": 0,
+  "unit_files_byte_identical": 30,
+  "partial_stage_recovery_claimed": false
+}

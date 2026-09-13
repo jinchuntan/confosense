@@ -1,5 +1,28 @@
 # ConfoSense current panel response matrix
 
+13 September 2026, after the completed three-fold BDG2 reduced-grid operational benchmark. **0/3 units selected a primary configuration; 3/3 abstained under the unchanged confidence-bound gates.** All three original commands exited 0; both new units passed saved-stream metric reconstruction and zero-fit completed resume. The checkpoint repair preserved the prior fold-2 result. The original forecasting pilot, historical results, main and backups remain preserved. See the [completed benchmark](BDG2_THREEFOLD_BENCHMARK_REPORT.md), [memory repair](CHECKPOINT_MEMORY_REPAIR_REPORT.md) and [current evidence index](review/CURRENT_EVIDENCE.md). Full-study readiness remains **false**.
+
+| Panel topic | Completed evidence | Still required |
+|---|---|---|
+| Explain conformal prediction | Own-model split-conformal forecasting pilot plus CQR operational intervals compared with the shared uncalibrated quantile fit; empirical coverage, width and Winkler95 retained. | Concise final presentation of calibration, temporal-dependence limits and prediction intervals versus metric confidence intervals. |
+| Dataset sources, purpose and selection | Four-task structural preflight; all ten retained BDG2 buildings, actual temporal memberships and source/derived-data attribution published. | Complete broader source-purpose-selection bibliography and justify operational support treatment for each task. |
+| Separate datasets or merge | BDG2 benchmark pools only commensurate hourly kWh metrics across its own periods; three source datasets/four tasks remain separate. | Broader matched task/horizon evaluation without pooling raw errors across physical units. |
+| Justify methods | Nine frozen operational candidates, CQR-owned HistGradientBoosting quantiles, shared uncalibrated controls and zero-fit persistence; actual estimator ownership recorded. | Full method/candidate scope, including remaining DSCP/seasonal questions; this is not the point XGBoost/Attention-LSTM comparison. |
+| Explain train/calibration/test protocol | Three BDG2 historical outer periods, two expanding purged inner folds, reserved final calibration, 39 unchanged role hashes and 18 validated boundaries. | Complete broader declared folds/model seeds and explain prior inspection and repeated buildings in the dissertation. |
+| Explain k-of-m rules | Immediate, 180-minute 3-of-3 and 360-minute 4-of-6 frozen candidates; causal replay, confidence-bound gates, abstention, clean workload and censored detection accounting verified. | Justified handling of unsupported tasks; no threshold or incidence changes simply to produce feasibility. |
+| Simplify presentation | Source-linked per-fold and pooled reports, exact settings, conditional paired recall/workload contrasts and all channel/stratum CSVs. | Revised final slides/manuscript with clear limitations; no blanket same-recall superiority or prospective-generalization claim. |
+| Verify methodology and ablation | Both new 18-cell/90-pair inner matrices and derived outer matrices pass independent reconstruction; shared controls, inverse objective, persistence, original-building pairing and zero-fit resume are retained. | Full-grid/method and broader robustness scope, justified unsupported-task design, and inference at the actual study scope. |
+| Is LSTM's extra cost worthwhile? | Preserved PLEIA point/interval/computational pilot and its prior diagnostics; the current operational model is explicitly distinct. | Matched point/interval/compute evidence across all 13 declared task/horizon combinations and broader folds/seeds. No requirement that LSTM win. |
+
+The next bounded step is the no-fitting support-design audit for PLEIA temperature, PLEIA energy and RICO. They are retained in scope; their current inner banks are unsupported at the unchanged incidence. No full-study, extra-seed or additional dataset run is authorized by this delivery.
+
+## Earlier delivery stages and assessments (historical)
+
+
+<!-- bdg2-threefold-20260913: historical content -->
+
+# ConfoSense current panel response matrix
+
 **Amendment-004 status update:** two operational folds, reserved final calibration, confidence-bound selection/abstention, causal method-preserving replay, clean workload, shared-fit/independent comparisons and paired group/time inference interfaces are implemented and tested. The four-task no-fit audit and **SMOKE ONLY** integration are complete; final regression is **332 passed, 1 skipped, three existing warnings**. See [the implementation report](AMENDMENT004_IMPLEMENTATION_REPORT.md) for exact evidence and limits. PLEIA temperature/energy and RICO lack inner event support; BDG2 alone passes the structural screen. Real operational effectiveness, broader inference and dissertation readiness remain unestablished. The earlier table below records the preceding pilot/diagnostic stage, rather than the latest implementation status.
 
 Updated 13 September 2026 after the integration repairs, completed PLEIA pilot and bounded diagnostics. See the [current evidence index](review/CURRENT_EVIDENCE.md), [diagnostics](PILOT_DIAGNOSTICS.md) and [operational plan](OPERATIONAL_EVALUATION_PLAN.md). This table supersedes the implementation-status claims in the **archived assessment** below. See [MODEL_COMPARISON_PILOT_REPORT.md](MODEL_COMPARISON_PILOT_REPORT.md) for measured results and [INTEGRATION_REPAIR_REPORT.md](INTEGRATION_REPAIR_REPORT.md) for the repaired foundations.
