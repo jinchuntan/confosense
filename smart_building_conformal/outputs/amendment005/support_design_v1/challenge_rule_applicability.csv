@@ -1,0 +1,190 @@
+dataset,outer_fold,role,rule_id,window_minutes,k,m,applicable,complete_context_supported,reason
+pleia,0,inner0_selection,single_sample,10.0,1,1,True,True,supported
+pleia,0,inner0_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,0,inner0_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,0,inner0_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia,0,inner0_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia,0,inner0_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia,0,inner0_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia,0,inner1_selection,single_sample,10.0,1,1,True,True,supported
+pleia,0,inner1_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,0,inner1_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,0,inner1_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia,0,inner1_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia,0,inner1_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia,0,inner1_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia,0,outer_test,single_sample,10.0,1,1,True,True,supported
+pleia,0,outer_test,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,0,outer_test,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,0,outer_test,30min_3of3,30.0,3,3,True,True,supported
+pleia,0,outer_test,60min_4of6,60.0,4,6,True,True,supported
+pleia,0,outer_test,180min_3of18,180.0,3,18,True,True,supported
+pleia,0,outer_test,360min_4of36,360.0,4,36,True,True,supported
+pleia,1,inner0_selection,single_sample,10.0,1,1,True,True,supported
+pleia,1,inner0_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,1,inner0_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,1,inner0_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia,1,inner0_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia,1,inner0_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia,1,inner0_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia,1,inner1_selection,single_sample,10.0,1,1,True,True,supported
+pleia,1,inner1_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,1,inner1_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,1,inner1_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia,1,inner1_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia,1,inner1_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia,1,inner1_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia,1,outer_test,single_sample,10.0,1,1,True,True,supported
+pleia,1,outer_test,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,1,outer_test,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,1,outer_test,30min_3of3,30.0,3,3,True,True,supported
+pleia,1,outer_test,60min_4of6,60.0,4,6,True,True,supported
+pleia,1,outer_test,180min_3of18,180.0,3,18,True,True,supported
+pleia,1,outer_test,360min_4of36,360.0,4,36,True,True,supported
+pleia,2,inner0_selection,single_sample,10.0,1,1,True,True,supported
+pleia,2,inner0_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,2,inner0_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,2,inner0_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia,2,inner0_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia,2,inner0_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia,2,inner0_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia,2,inner1_selection,single_sample,10.0,1,1,True,True,supported
+pleia,2,inner1_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,2,inner1_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,2,inner1_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia,2,inner1_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia,2,inner1_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia,2,inner1_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia,2,outer_test,single_sample,10.0,1,1,True,True,supported
+pleia,2,outer_test,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,2,outer_test,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia,2,outer_test,30min_3of3,30.0,3,3,True,True,supported
+pleia,2,outer_test,60min_4of6,60.0,4,6,True,True,supported
+pleia,2,outer_test,180min_3of18,180.0,3,18,True,True,supported
+pleia,2,outer_test,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,0,inner0_selection,single_sample,10.0,1,1,True,True,supported
+pleia_energy,0,inner0_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,0,inner0_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,0,inner0_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,0,inner0_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,0,inner0_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,0,inner0_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,0,inner1_selection,single_sample,10.0,1,1,True,True,supported
+pleia_energy,0,inner1_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,0,inner1_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,0,inner1_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,0,inner1_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,0,inner1_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,0,inner1_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,0,outer_test,single_sample,10.0,1,1,True,True,supported
+pleia_energy,0,outer_test,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,0,outer_test,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,0,outer_test,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,0,outer_test,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,0,outer_test,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,0,outer_test,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,1,inner0_selection,single_sample,10.0,1,1,True,True,supported
+pleia_energy,1,inner0_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,1,inner0_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,1,inner0_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,1,inner0_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,1,inner0_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,1,inner0_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,1,inner1_selection,single_sample,10.0,1,1,True,True,supported
+pleia_energy,1,inner1_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,1,inner1_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,1,inner1_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,1,inner1_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,1,inner1_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,1,inner1_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,1,outer_test,single_sample,10.0,1,1,True,True,supported
+pleia_energy,1,outer_test,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,1,outer_test,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,1,outer_test,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,1,outer_test,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,1,outer_test,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,1,outer_test,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,2,inner0_selection,single_sample,10.0,1,1,True,True,supported
+pleia_energy,2,inner0_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,2,inner0_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,2,inner0_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,2,inner0_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,2,inner0_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,2,inner0_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,2,inner1_selection,single_sample,10.0,1,1,True,True,supported
+pleia_energy,2,inner1_selection,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,2,inner1_selection,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,2,inner1_selection,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,2,inner1_selection,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,2,inner1_selection,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,2,inner1_selection,360min_4of36,360.0,4,36,True,True,supported
+pleia_energy,2,outer_test,single_sample,10.0,1,1,True,True,supported
+pleia_energy,2,outer_test,5min_2of0,5.0,2,0,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,2,outer_test,15min_3of1,15.0,3,1,False,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+pleia_energy,2,outer_test,30min_3of3,30.0,3,3,True,True,supported
+pleia_energy,2,outer_test,60min_4of6,60.0,4,6,True,True,supported
+pleia_energy,2,outer_test,180min_3of18,180.0,3,18,True,True,supported
+pleia_energy,2,outer_test,360min_4of36,360.0,4,36,True,True,supported
+rico,0,inner0_selection,single_sample,1.0,1,1,True,True,supported
+rico,0,inner0_selection,5min_2of5,5.0,2,5,True,True,supported
+rico,0,inner0_selection,15min_3of15,15.0,3,15,True,True,supported
+rico,0,inner0_selection,30min_3of30,30.0,3,30,True,True,supported
+rico,0,inner0_selection,60min_4of60,60.0,4,60,True,True,supported
+rico,0,inner0_selection,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,0,inner0_selection,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,0,inner1_selection,single_sample,1.0,1,1,True,True,supported
+rico,0,inner1_selection,5min_2of5,5.0,2,5,True,True,supported
+rico,0,inner1_selection,15min_3of15,15.0,3,15,True,True,supported
+rico,0,inner1_selection,30min_3of30,30.0,3,30,True,True,supported
+rico,0,inner1_selection,60min_4of60,60.0,4,60,True,True,supported
+rico,0,inner1_selection,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,0,inner1_selection,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,0,outer_test,single_sample,1.0,1,1,True,True,supported
+rico,0,outer_test,5min_2of5,5.0,2,5,True,True,supported
+rico,0,outer_test,15min_3of15,15.0,3,15,True,True,supported
+rico,0,outer_test,30min_3of30,30.0,3,30,True,True,supported
+rico,0,outer_test,60min_4of60,60.0,4,60,True,True,supported
+rico,0,outer_test,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,0,outer_test,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,1,inner0_selection,single_sample,1.0,1,1,True,True,supported
+rico,1,inner0_selection,5min_2of5,5.0,2,5,True,True,supported
+rico,1,inner0_selection,15min_3of15,15.0,3,15,True,True,supported
+rico,1,inner0_selection,30min_3of30,30.0,3,30,True,True,supported
+rico,1,inner0_selection,60min_4of60,60.0,4,60,True,True,supported
+rico,1,inner0_selection,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,1,inner0_selection,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,1,inner1_selection,single_sample,1.0,1,1,True,True,supported
+rico,1,inner1_selection,5min_2of5,5.0,2,5,True,True,supported
+rico,1,inner1_selection,15min_3of15,15.0,3,15,True,True,supported
+rico,1,inner1_selection,30min_3of30,30.0,3,30,True,True,supported
+rico,1,inner1_selection,60min_4of60,60.0,4,60,True,True,supported
+rico,1,inner1_selection,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,1,inner1_selection,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,1,outer_test,single_sample,1.0,1,1,True,True,supported
+rico,1,outer_test,5min_2of5,5.0,2,5,True,True,supported
+rico,1,outer_test,15min_3of15,15.0,3,15,True,True,supported
+rico,1,outer_test,30min_3of30,30.0,3,30,True,True,supported
+rico,1,outer_test,60min_4of60,60.0,4,60,True,True,supported
+rico,1,outer_test,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,1,outer_test,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,2,inner0_selection,single_sample,1.0,1,1,True,True,supported
+rico,2,inner0_selection,5min_2of5,5.0,2,5,True,True,supported
+rico,2,inner0_selection,15min_3of15,15.0,3,15,True,True,supported
+rico,2,inner0_selection,30min_3of30,30.0,3,30,True,True,supported
+rico,2,inner0_selection,60min_4of60,60.0,4,60,True,True,supported
+rico,2,inner0_selection,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,2,inner0_selection,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,2,inner1_selection,single_sample,1.0,1,1,True,True,supported
+rico,2,inner1_selection,5min_2of5,5.0,2,5,True,True,supported
+rico,2,inner1_selection,15min_3of15,15.0,3,15,True,True,supported
+rico,2,inner1_selection,30min_3of30,30.0,3,30,True,True,supported
+rico,2,inner1_selection,60min_4of60,60.0,4,60,True,True,supported
+rico,2,inner1_selection,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,2,inner1_selection,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,2,outer_test,single_sample,1.0,1,1,True,True,supported
+rico,2,outer_test,5min_2of5,5.0,2,5,True,True,supported
+rico,2,outer_test,15min_3of15,15.0,3,15,True,True,supported
+rico,2,outer_test,30min_3of30,30.0,3,30,True,True,supported
+rico,2,outer_test,60min_4of60,60.0,4,60,True,True,supported
+rico,2,outer_test,180min_3of180,180.0,3,180,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context
+rico,2,outer_test,360min_4of360,360.0,4,360,True,False,frequency or complete warm-up/envelope/follow-up exceeds fixed context

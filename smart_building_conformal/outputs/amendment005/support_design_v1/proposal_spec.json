@@ -1,0 +1,39 @@
+{
+  "version": "amendment005_proposal_v1",
+  "status": "post_inspection_proposal",
+  "models_fitted": 0,
+  "incidence": 0.5,
+  "historical_min_recall": 0.6,
+  "historical_max_workload": 1.0,
+  "historical_catalogues": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "challenge_replicates": [
+    42,
+    43
+  ],
+  "challenge_signs": [
+    -1,
+    1
+  ],
+  "context_seed": 20260913,
+  "pleia_context_steps": 144,
+  "rico_context": "one whole run",
+  "warmup_minutes": {
+    "pleia": 360,
+    "pleia_energy": 360,
+    "rico": 60
+  },
+  "followup_minutes": 60,
+  "min_distinct_effective_contexts_per_stratum": 5,
+  "min_original_units": 5,
+  "challenge_selection": "none; fixed controlled evaluation only",
+  "catalogue_B_criterion": "complete 21-rotation cycles; >=5 successes with probability >=.95 under random-missing mask only",
+  "precision_diagnostic": "original-unit paired 2000-draw bootstrap, seed20240601, >=1900 supported draws; report unavailable otherwise",
+  "full_study_ready": false,
+  "publication_ready": false
+}

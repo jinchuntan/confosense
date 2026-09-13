@@ -1,3 +1,26 @@
+# ConfoSense current panel response status
+
+13 September 2026. **No-fitting support-design task complete.** The PLEIA forecasting pilot and BDG2 three-fold reduced-grid benchmark are completed and preserved; all three BDG2 primary selections abstained. No model fitting was performed in this task. Main and historical outputs/configurations/protocols remain unchanged.
+
+The support audit distinguishes count impossibility, five-rotation allocation, null realizations and original-unit limitations. At unchanged incidence, RICO's entire eligible dataset yields at most 80 requested events across five catalogues; its old one-run outer tests request zero. PLEIA earliest/middle inner banks request 65/95 against a necessary 105; later banks lose support through null realizations. The recommendation retains amendment004 and adds a separately named conditional-context challenge. All 567 proposed role/stratum cells pass the distinct-effective-context screen; precision remains separately limited.
+
+The no-fit task generated 1,128 role-specific contexts/47,376 paired variants, not that many independent observations. Independent reconstruction passed all variants and 210 operational/forecasting boundaries. The exact 13-horizon forecast matrix retains all models/folds/seeds/90–95% levels: 9 point/18 interval pilot cells reusable;576 point/1,152 interval core cells still required, representing 1,920 new learned fit invocations. Seasonal adds 135 point/270 level cells through 27 deterministic computations; RICO seasonal remains explicitly inapplicable.
+
+**Single next implementation/run package:** implement `src.matched_forecasting005`, preserving the old pilot entrypoint, then obtain authorization for one PLEIA-energy h1/fold 0/seed 42 matched unit with persistence, XGBoost and Attention-LSTM. Exact scope: 29,719 fit /9,907 calibration /9,909 test rows,8 tuning+2 final learned fits,3 point/6 interval cells, serialized artifacts and zero-fit completed resume. This entrypoint is presently missing; no full study or new fit was launched.
+
+Read [SUPPORT_DESIGN_AUDIT.md](SUPPORT_DESIGN_AUDIT.md), [AMENDMENT005_PROPOSAL.md](AMENDMENT005_PROPOSAL.md), [REMAINING_STUDY_EXECUTION_PLAN.md](REMAINING_STUDY_EXECUTION_PLAN.md), and the [support evidence index](review/support_design_20260913/EVIDENCE_INDEX.md). Full-study and scientific publication readiness remain **false**. Full method/DSCP, seasonal, matched multi-task model comparison and robustness/contamination/recovery obligations remain in the scope ledger; the challenge does not establish four-task deployment feasibility.
+
+| Panel requirement | Current evidence | Remaining concrete work |
+|---|---|---|
+| LSTM versus XGBoost | Pilot retained; exact common-target 13-horizon matrix and per-unit fit/level accounting generated | Generalized matched runner and prioritized 192-unit queue; begin with the single energy unit above |
+| Dataset/evaluation rationale | All three sparse tasks quantified; original groups, exposure, phases, nulls and applicability retained | Evaluate proposal C and matched forecasting; do not claim the original unsupported operational endpoint |
+| Calibration/selection/alerts | Unchanged 004 thresholds;005 context and reset contract; actual memberships/schedules verified | C method-preserving replay integration; no challenge-score retuning |
+| Robustness and methods | Full 1950-row interval-method matrix and separate 900-cell obligation ledger retained | Validated DSCP/joint horizons, full methods, contamination, cascades, censoring and inference |
+
+## Previous entries (historical; superseded for current status)
+
+<!-- support-design-20260913: historical content -->
+
 # ConfoSense current panel response matrix
 
 13 September 2026, after the completed three-fold BDG2 reduced-grid operational benchmark. **0/3 units selected a primary configuration; 3/3 abstained under the unchanged confidence-bound gates.** All three original commands exited 0; both new units passed saved-stream metric reconstruction and zero-fit completed resume. The checkpoint repair preserved the prior fold-2 result. The original forecasting pilot, historical results, main and backups remain preserved. See the [completed benchmark](BDG2_THREEFOLD_BENCHMARK_REPORT.md), [memory repair](CHECKPOINT_MEMORY_REPAIR_REPORT.md) and [current evidence index](review/CURRENT_EVIDENCE.md). Full-study readiness remains **false**.

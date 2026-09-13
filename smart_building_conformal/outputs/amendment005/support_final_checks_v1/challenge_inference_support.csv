@@ -1,0 +1,28 @@
+dataset,outer_fold,role,contexts,complete_original_blocks,phase_counts,minimum_two_runs_per_phase,structural_ci_screen,reason,bootstrap_draws,bootstrap_seed,required_valid_draws,measured_precision
+pleia,0,inner0_selection,51,7,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia,0,inner1_selection,51,7,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia,0,outer_test,68,9,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia,1,inner0_selection,38,5,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia,1,inner1_selection,38,5,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia,1,outer_test,68,9,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia,2,inner0_selection,25,3,{},True,False,fewer than five complete original blocks,2000,20240601,1900,False
+pleia,2,inner1_selection,25,3,{},True,False,fewer than five complete original blocks,2000,20240601,1900,False
+pleia,2,outer_test,68,9,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,0,inner0_selection,51,7,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,0,inner1_selection,51,7,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,0,outer_test,68,9,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,1,inner0_selection,38,5,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,1,inner1_selection,38,5,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,1,outer_test,68,9,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+pleia_energy,2,inner0_selection,25,3,{},True,False,fewer than five complete original blocks,2000,20240601,1900,False
+pleia_energy,2,inner1_selection,25,3,{},True,False,fewer than five complete original blocks,2000,20240601,1900,False
+pleia_energy,2,outer_test,68,9,{},True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,0,inner0_selection,31,31,"{""1"": 22, ""3"": 6, ""4"": 3}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,0,inner1_selection,31,31,"{""4"": 31}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,0,outer_test,43,43,"{""5"": 43}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,1,inner0_selection,23,23,"{""1"": 23}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,1,inner1_selection,23,23,"{""1"": 14, ""3"": 6, ""4"": 3}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,1,outer_test,41,41,"{""4"": 24, ""5"": 17}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,2,inner0_selection,15,15,"{""1"": 15}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,2,inner1_selection,16,16,"{""1"": 16}",True,True,structural screen passes; actual precision and valid bootstrap draws unmeasured,2000,20240601,1900,False
+rico,2,outer_test,41,41,"{""1"": 1, ""3"": 6, ""4"": 34}",False,False,represented acquisition phase has fewer than two original runs,2000,20240601,1900,False

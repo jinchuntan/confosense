@@ -1,0 +1,24 @@
+NO-FIT AUDITED pleia
+NO-FIT AUDITED pleia_energy
+NO-FIT AUDITED rico
+NO-FIT AUDITED bdg2
+C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\scripts\support_design005.py:258: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  ('forecast_roles',fc_roles),('experiment_matrix',fc_matrix),('current_events',pd.concat(current_events))]:
+{
+  "passed": true,
+  "entry_commit": "9b5acb49531ce12706285c3f040310c0ab6053dd",
+  "source_hash": "203f3babf66c98ac072ad450abec5ea7ce3d60473f02708fa64ac2102ea3f7c9",
+  "script_hash": "9a7ed7b2e517d3cec7f60bfd233d2b2d25d8895db361a0ee6806be8d25cb0cd7",
+  "models_fitted": 0,
+  "proposal_spec_hash": "9c3727839680ff020f9548cb6e4a2a9b6ca8750d40117a94d0262a8dd41b4234",
+  "published_preflight_hash": "fd25b183dc5ec469be213ea804413168cb4ec2f8f0de9264e184ec5e246493ca",
+  "historical_role_hashes_verified": 117,
+  "forecast_roles": 273,
+  "forecast_level_cells": 1560,
+  "challenge_variants": 47376,
+  "challenge_supported_strata": 567,
+  "challenge_stratum_cells": 567,
+  "preserved_files": 1267,
+  "full_study_ready": false,
+  "publication_ready": false
+}

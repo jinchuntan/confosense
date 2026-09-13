@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "scripts/check_remaining_study005.py",
+    "--base",
+    "outputs/amendment005/support_design_v1",
+    "--plan",
+    "outputs/amendment005/study_plan_v1",
+    "--out",
+    "outputs/amendment005/plan_check_v1",
+    "--dry-run"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T15:26:23.400399+00:00",
+  "logger_pid": 25552,
+  "child_pid": 25984,
+  "ended_utc": "2026-09-13T15:26:28.798351+00:00",
+  "seconds": 5.398308499999985,
+  "exit_status": 0
+}

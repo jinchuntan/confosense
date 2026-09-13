@@ -1,0 +1,85 @@
+{
+  "version": "matched_forecasting005_first_unit_proposal",
+  "dataset": "pleia_energy",
+  "horizon": 1,
+  "outer_fold": 0,
+  "model_seed": 42,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "nominal_levels": [
+    0.9,
+    0.95
+  ],
+  "candidates": {
+    "persistence": [
+      {}
+    ],
+    "xgboost": [
+      {
+        "n_estimators": 400,
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 400,
+        "max_depth": 5,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "reg_alpha": 0.0
+      }
+    ],
+    "attention_lstm": [
+      {
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5
+      },
+      {
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.0005,
+        "max_epochs": 30,
+        "patience": 5
+      }
+    ]
+  },
+  "sequence_length": 24,
+  "batch_size": 256,
+  "threads": 1,
+  "n_jobs": 1,
+  "interval_construction": "ordinary_split_conformal_absolute_error",
+  "inner_validation_folds": 2,
+  "selection_metric": "equally weighted mean of two inner validation MAEs in original target units",
+  "tie_rule": "exact score ties select the lower zero-based frozen candidate ID",
+  "final_lstm_epochs": "ceil(mean(selected candidate best epoch on each inner fold)); refit all final fitting rows",
+  "role_bank_hash": "2c01da7ec94037d9b88d36fa91b52f5ec841f85bc648406f8796c190ac7c4c92",
+  "data_hash": "8bfbf2d874682c3d69016a5b2b5cd9586d83211bbc7d08f2d1563f696869362b",
+  "fit_n": 29719,
+  "calibration_n": 9907,
+  "test_n": 9909,
+  "expected_point_cells": 3,
+  "expected_interval_cells": 6,
+  "tuning_fits": 8,
+  "final_learned_fits": 2,
+  "generic_entrypoint": "src.matched_forecasting005",
+  "entrypoint_exists": false,
+  "minimum_launch_available_ram_bytes": 3221225472,
+  "minimum_free_disk_bytes": 8589934592,
+  "epoch_guard_bytes": 268435456,
+  "future_fitting_authorized": false
+}

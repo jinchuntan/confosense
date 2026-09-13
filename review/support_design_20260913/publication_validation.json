@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "entry_commit": "9b5acb49531ce12706285c3f040310c0ab6053dd",
+  "branch": "review/support-design-20260913",
+  "main_commit": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "instruction_commit": "46d057cba3e56386b5d3e0f277ecf003851d9536",
+  "production_source_sha256": "203f3babf66c98ac072ad450abec5ea7ce3d60473f02708fa64ac2102ea3f7c9",
+  "preserved_files": 1267,
+  "preserved_input_caches": 4,
+  "historical_status_documents_preserved": [
+    "PROJECT_RECOVERY_STATUS.md",
+    "PANEL_RESPONSE_MATRIX.md",
+    "review/CURRENT_EVIDENCE.md"
+  ],
+  "no_fit_commands": 6,
+  "command_exits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "models_fitted": 0,
+  "local_document_links_checked": 113,
+  "source_files_archived": 86,
+  "published_files_in_manifest": 107,
+  "manifest_bytes": 60140907,
+  "max_file_bytes": 8017633,
+  "manifest_sha256": "9c359a65c1e16649308eb0bef758a13c81a33319ce5b25f6147ce02d729227d6",
+  "manifest_excludes": [
+    "EVIDENCE_MANIFEST.csv",
+    "publication_validation.json"
+  ],
+  "source_archive_sha256": "e721ee6d72b6cad437b764780dfdfaf78c4b258f0bcbc85c9975ab0dd0a56e96",
+  "no_new_performance_results": true,
+  "full_study_ready": false,
+  "publication_ready": false,
+  "review_artifacts_ready": true,
+  "remote_verification": "performed after commit; recorded externally and in delivery"
+}

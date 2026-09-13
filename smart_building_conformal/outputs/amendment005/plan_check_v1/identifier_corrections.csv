@@ -1,0 +1,19 @@
+dataset,outer_fold,role,column,before,after,reason
+pleia,0,outer_test,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,0,inner0_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,0,inner1_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,1,outer_test,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,1,inner0_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,1,inner1_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,2,outer_test,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,2,inner0_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia,2,inner1_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,0,outer_test,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,0,inner0_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,0,inner1_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,1,outer_test,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,1,inner0_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,1,inner1_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,2,outer_test,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,2,inner0_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
+pleia_energy,2,inner1_selection,faulted_original_groups,0,1,literal group ID None was parsed as NA by default pandas reader; preserve literal identifier
