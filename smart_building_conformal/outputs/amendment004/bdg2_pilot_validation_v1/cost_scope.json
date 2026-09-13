@@ -1,0 +1,52 @@
+{
+  "note": "Command wall times are disjoint invocations. Phase windows overlap; do not sum nested measurements.",
+  "run_compute_scope": "evaluate_unit including two inner blocks, selection, final block and frame assembly; excludes preparation/checkpoint writing/validation",
+  "process_peak_scope": "Windows process lifetime peak (includes preparation and I/O); phase RSS sampled every 50 ms",
+  "artifact_scope": "Existing evidence directories at table-generation time; excludes local raw data, caches and environments",
+  "actual_learned_fit_objects": 3,
+  "actual_quantile_sub_estimators": 9,
+  "first_attempt_learned_fits": 0,
+  "completed_resume_learned_fits": 0,
+  "process_cpu": {
+    "pid": 5556,
+    "observer_started_utc": "2026-09-13T11:31:39.357444+00:00",
+    "process_created_utc": "2026-09-13T11:20:10.688122+00:00",
+    "process_exited_utc": "2026-09-13T11:36:38.007354+00:00",
+    "process_lifetime_wall_seconds": 987.3192331,
+    "kernel_cpu_seconds": 17.890625,
+    "user_cpu_seconds": 945.046875,
+    "total_cpu_seconds": 962.9375,
+    "exit_status": 0,
+    "measurement": "Windows GetProcessTimes over the retained actual pilot process handle; complete lifetime CPU, including time before observer attached"
+  },
+  "compute_resources": {
+    "seconds": 785.9836359000001,
+    "baseline_rss_bytes": 465932288,
+    "peak_rss_bytes": 2699055104,
+    "baseline_private_bytes": 419897344,
+    "peak_private_bytes": 2665250816,
+    "incremental_peak_rss_bytes": 2233122816,
+    "lifetime_peak_rss_bytes": 2754732032,
+    "min_available_ram_bytes": 2018799616,
+    "sample_interval_seconds": 0.05
+  },
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 1665388544,
+      "private_bytes": 1624281088,
+      "lifetime_peak_rss_bytes": 2754732032,
+      "available_ram_bytes": 3032141824,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  }
+}

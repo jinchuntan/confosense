@@ -1,0 +1,45 @@
+{"event": "process_start", "utc": "2026-09-13T11:39:49.586121+00:00", "pid": 24248, "parent_pid": 13300, "hardware": {"cpu": "12th Gen Intel(R) Core(TM) i7-12700H", "logical_processors": 20, "os": "Windows-10-10.0.26200-SP0", "python": "3.11.3", "memory": {"rss_bytes": 356630528, "private_bytes": 312217600, "lifetime_peak_rss_bytes": 357445632, "available_ram_bytes": 4879331328, "physical_ram_bytes": 16890978304}, "environment_threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1"}}, "disk": {"total": 509722226688, "used": 456212692992, "free": 53509533696}}
+{"event": "phase_start", "utc": "2026-09-13T11:39:49.606097+00:00", "phase": "preparation"}
+{"event": "phase_end", "utc": "2026-09-13T11:39:54.355502+00:00", "phase": "preparation", "status": "complete", "seconds": 4.746372900001006, "baseline_rss_bytes": 356954112, "peak_rss_bytes": 923332608, "baseline_private_bytes": 313270272, "peak_private_bytes": 1001852928, "incremental_peak_rss_bytes": 566378496, "lifetime_peak_rss_bytes": 1038360576, "min_available_ram_bytes": 4305174528, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T11:39:54.357884+00:00", "phase": "windows"}
+{"event": "phase_end", "utc": "2026-09-13T11:39:56.145679+00:00", "phase": "windows", "status": "complete", "seconds": 1.787082200000441, "baseline_rss_bytes": 391548928, "peak_rss_bytes": 507518976, "baseline_private_bytes": 346259456, "peak_private_bytes": 461963264, "incremental_peak_rss_bytes": 115970048, "lifetime_peak_rss_bytes": 1038360576, "min_available_ram_bytes": 4662104064, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T11:39:58.987574+00:00", "phase": "prefit_identity"}
+{"event": "prefit_identity_verified", "utc": "2026-09-13T11:40:01.097482+00:00", "spec_hash": "2781ec6caf3d6eb43efa2fe9ab8acc989a39f6968a15c3a68b0284824a244250", "source_hash": "8218d9f461811fa9075c2966c394cae2344ae61f073887ff356af82025c8f4e4", "membership_roles": 13, "candidate_count": 9}
+{"event": "phase_end", "utc": "2026-09-13T11:40:01.097482+00:00", "phase": "prefit_identity", "status": "complete", "seconds": 2.1097188999992795, "baseline_rss_bytes": 463822848, "peak_rss_bytes": 485384192, "baseline_private_bytes": 416722944, "peak_private_bytes": 439595008, "incremental_peak_rss_bytes": 21561344, "lifetime_peak_rss_bytes": 1038360576, "min_available_ram_bytes": 4734574592, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T11:40:01.097482+00:00", "phase": "checkpoint_load_verify"}
+{"event": "phase_end", "utc": "2026-09-13T11:41:04.504864+00:00", "phase": "checkpoint_load_verify", "status": "complete", "seconds": 63.403578199999174, "baseline_rss_bytes": 479682560, "peak_rss_bytes": 4686430208, "baseline_private_bytes": 432971776, "peak_private_bytes": 4713062400, "incremental_peak_rss_bytes": 4206747648, "lifetime_peak_rss_bytes": 4748304384, "min_available_ram_bytes": 633327616, "sample_interval_seconds": 0.05}
+{"event": "phase_start", "utc": "2026-09-13T11:41:04.506962+00:00", "phase": "output_validation"}
+{"event": "phase_end", "utc": "2026-09-13T11:41:09.044937+00:00", "phase": "output_validation", "status": "complete", "seconds": 4.537305099998775, "baseline_rss_bytes": 2538078208, "peak_rss_bytes": 3065163776, "baseline_private_bytes": 2500378624, "peak_private_bytes": 3028242432, "incremental_peak_rss_bytes": 527085568, "lifetime_peak_rss_bytes": 4748304384, "min_available_ram_bytes": 2219560960, "sample_interval_seconds": 0.05}
+{"event": "process_complete", "utc": "2026-09-13T11:41:09.047469+00:00", "reused_units": 1, "new_fit_invocations": 0}
+{
+  "output_valid": true,
+  "candidate_fold_cells": 18,
+  "stream_hash_pairs": 90,
+  "outer_stream_hash_pairs": 25,
+  "persisted_streams_recomputed": 138,
+  "scientific_readiness": false,
+  "scope": "bounded_operational_pilot",
+  "reused_units": 1,
+  "new_fit_invocations": 0,
+  "decision": "no_feasible_configuration",
+  "global_study_ready": false
+}
+{
+  "passed": true,
+  "normal_completed_resume": {
+    "output_valid": true,
+    "candidate_fold_cells": 18,
+    "stream_hash_pairs": 90,
+    "outer_stream_hash_pairs": 25,
+    "persisted_streams_recomputed": 138,
+    "scientific_readiness": false,
+    "scope": "bounded_operational_pilot",
+    "reused_units": 1,
+    "new_fit_invocations": 0,
+    "decision": "no_feasible_configuration",
+    "global_study_ready": false
+  },
+  "forbidden_fit_or_compute_calls": 0,
+  "unit_files_byte_identical": 30,
+  "partial_stage_recovery_claimed": false
+}

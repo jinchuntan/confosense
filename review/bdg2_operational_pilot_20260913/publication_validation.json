@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "entry_commit": "2243c167804690ad1ec9b8aebc369e5596d392aa",
+  "manifest_files": 130,
+  "manifest_bytes": 422653001,
+  "largest_file": {
+    "path": "smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2/units/outer2_model42/outer_streams.csv.gz",
+    "bytes": 104400456,
+    "git_blob": "bdf113368c65d2ecab8f6f03081e2d903cca6956",
+    "sha256": "f1671ff4d33ccdeed7fbc16d2bd264d720e993f5ef62a6c2295c9a183cef9a53",
+    "purpose": "canonical completed BDG2 pilot unit"
+  },
+  "local_links_checked": 173,
+  "source_archives_verified": 2,
+  "completed_unit_files_verified": 29,
+  "oversized_files_verified_via_lossless_parts": 1,
+  "scope_checked": true,
+  "credential_pattern_scan_passed": true,
+  "excluded_self_hashes": [
+    "review/bdg2_operational_pilot_20260913/EVIDENCE_MANIFEST.csv",
+    "review/bdg2_operational_pilot_20260913/publication_validation.json"
+  ],
+  "global_study_ready": false
+}

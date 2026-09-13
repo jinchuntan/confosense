@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "format": "ordered_binary_parts_of_original_gzip_bytes",
+  "reason": "GitHub ordinary Git files must remain below 100 MiB; original checkpoint files remain unchanged locally",
+  "files": [
+    {
+      "repository_path": "smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2/units/outer2_model42/streams.csv.gz",
+      "bytes": 150246039,
+      "sha256": "1c00b1bdae9255b1f71c7b408b1cce3717dd3ed6df44a45bbba532cceb789657",
+      "parts": [
+        {
+          "repository_path": "smart_building_conformal/outputs/amendment004/bdg2_pilot_publication_v1/streams.csv.gz.part000",
+          "bytes": 41943040,
+          "sha256": "67ec4b65097b24f674f1d9d4f18590dcf33f8bc723aec07fa46e4de6e952776e"
+        },
+        {
+          "repository_path": "smart_building_conformal/outputs/amendment004/bdg2_pilot_publication_v1/streams.csv.gz.part001",
+          "bytes": 41943040,
+          "sha256": "a4af93f93124a575754e830e38643f0ce78dd3bc5c50e946c909e119b177668d"
+        },
+        {
+          "repository_path": "smart_building_conformal/outputs/amendment004/bdg2_pilot_publication_v1/streams.csv.gz.part002",
+          "bytes": 41943040,
+          "sha256": "6cf8ab9be93e800dd09a0b153889b9592602c26c7092c3903da2643e881b4d04"
+        },
+        {
+          "repository_path": "smart_building_conformal/outputs/amendment004/bdg2_pilot_publication_v1/streams.csv.gz.part003",
+          "bytes": 24416919,
+          "sha256": "c4c67a0aa9fe4c5e0650ebfd07c9c5726dac4a86ee37f0cba02d9551993f8a01"
+        }
+      ]
+    }
+  ]
+}

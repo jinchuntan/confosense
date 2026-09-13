@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_operational004.py",
+    "tests/test_operational004_journal.py",
+    "-q",
+    "--junitxml=outputs/amendment004/bdg2_pilot_validation_v1/pre_run_tests.xml"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T11:15:54.870950+00:00",
+  "logger_pid": 22332,
+  "child_pid": 23392,
+  "status": "started",
+  "exit_status": null
+}

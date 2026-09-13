@@ -1,6 +1,26 @@
 # Current ConfoSense implementation and review evidence
 
-## Amendment 004 — current delivery
+## BDG2 operational pilot — current delivery
+
+13 September 2026. Publication branch: [review/bdg2-operational-pilot-20260913](https://github.com/jinchuntan/confosense/tree/review/bdg2-operational-pilot-20260913), a descendant of **2243c167804690ad1ec9b8aebc369e5596d392aa**. Evaluated source commit: **ef9a8a9525bafea00a12b5c1327aadec071eab91**; source SHA-256 **8218d9f461811fa9075c2966c394cae2344ae61f073887ff356af82025c8f4e4**. The frozen amendment configuration is unchanged. The delivery response gives the final publication SHA; [branch history](https://github.com/jinchuntan/confosense/commits/review/bdg2-operational-pilot-20260913) resolves the current head.
+
+**Completed with exit 0; explicit primary abstention.** One BDG2 fold-2/seed-42 unit, ten buildings, catalogue seeds 42–46, nine frozen candidates. All 18 inner cells, 90 inner and 25 outer catalogue pairs and 138 persisted streams passed output validation. Independent recomputation matched all 23 metric/bound cells, 407,948 original-row contributions, 119,388 event/channel records and all 15 preflight catalogues. Resume made zero fitting/computation calls and preserved all 30 unit files byte-for-byte. Full-study readiness is false.
+
+The immediate rolling candidate's first-fold workload UCB is **1.000161467488**, so it fails the strict ≤1 primary gate despite passing the recall gates. It was selected only under the separately declared inverse objective. No threshold, membership, catalogue or candidate changed to obtain a preferred result.
+
+- [Completed BDG2 operational report](../BDG2_OPERATIONAL_PILOT_REPORT.md), [full evidence index and exact CSV purposes](bdg2_operational_pilot_20260913/EVIDENCE_INDEX.md)
+- [Independently recalculated operational metrics](../smart_building_conformal/outputs/amendment004/bdg2_pilot_independent_validation_v1/recomputed_metrics.csv), [clean interval and point quality](../smart_building_conformal/outputs/amendment004/bdg2_pilot_independent_validation_v1/clean_interval_quality.csv), [independent validation](../smart_building_conformal/outputs/amendment004/bdg2_pilot_independent_validation_v1/validation.json)
+- [Actual command costs and exits](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/command_measurements.csv), [phase memory/time](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/phase_measurements.csv), [process CPU](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/process_measurements.csv), [zero-fit resume proof](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/resume_validation.json)
+- [Canonical unit](../smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2/units/outer2_model42), [lossless parts for the oversized inner stream CSV](../smart_building_conformal/outputs/amendment004/bdg2_pilot_publication_v1/large_files.json), [reconstruction/audit instructions](bdg2_operational_pilot_20260913/EVIDENCE_INDEX.md)
+- [Pre-fit source/config/data/membership identity](../smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2_execution/prefit_identity.json), [numeric-flag defect reproduction/fix verification](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/flag_dtype_real_data.json), [preserved failed first attempt](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/pilot.log)
+- [Preservation proof](../smart_building_conformal/outputs/amendment004/bdg2_pilot_validation_v1/preservation.json), [publication manifest](bdg2_operational_pilot_20260913/EVIDENCE_MANIFEST.csv), [BDG2 attribution](bdg2_operational_pilot_20260913/DATA_NOTICE.md)
+
+Successful command: 987.382 seconds, 962.938 CPU seconds, three CQR objects/nine quantile estimators and 3.634 GiB process peak RSS. Zero-fit resume took 86.231 seconds and peaked at 4.422 GiB. The single next bounded step is to remove duplicate checkpoint-table loading and verify the same preserved unit with zero fits. No extra real-data unit is launched. PLEIA temperature/energy and RICO retain their preflight support limitations; one fold, one model seed and ten buildings do not establish population-level performance.
+
+The original forecasting pilot, historical results, backups, main and the prior review branch remain preserved. The earlier amendment implementation and pilot publications are indexed below.
+
+
+## Amendment 004 — prior implementation delivery
 
 13 September 2026. Current publication branch: [review/amendment004-20260913](https://github.com/jinchuntan/confosense/tree/review/amendment004-20260913), descended from **3354393290d2afaef4361a9a7a1a43336a14c21d**. [Current remote commit/history](https://github.com/jinchuntan/confosense/commits/review/amendment004-20260913) identifies the publication head; the exact delivered SHA is also returned in the completion response. Main and `review/current-dissertation-20260913` retain their original heads. The older code beneath the separate instruction/evidence branch was never checked out over the current implementation.
 

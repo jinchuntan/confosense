@@ -1,0 +1,46 @@
+{"recomputed": "inner0_selection", "candidate_id": "c0000_f5146f1247fa", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0001_ee0570e08213", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0002_fa76e087b17d", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0012_23099bed3753", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0013_a21278d4e492", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0014_54a0e1ef5720", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0024_ba16b82adffd", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0025_63dd1cc1601e", "streams": 6, "events": 1268}
+{"recomputed": "inner0_selection", "candidate_id": "c0026_47d9fe7d15ba", "streams": 6, "events": 1268}
+{"recomputed": "inner1_selection", "candidate_id": "c0000_f5146f1247fa", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0001_ee0570e08213", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0002_fa76e087b17d", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0012_23099bed3753", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0013_a21278d4e492", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0014_54a0e1ef5720", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0024_ba16b82adffd", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0025_63dd1cc1601e", "streams": 6, "events": 1271}
+{"recomputed": "inner1_selection", "candidate_id": "c0026_47d9fe7d15ba", "streams": 6, "events": 1271}
+{"recomputed": "outer_test", "candidate_id": "c0000_f5146f1247fa", "streams": 6, "events": 3389}
+{"recomputed": "outer_test", "candidate_id": "c0012_23099bed3753", "streams": 6, "events": 3389}
+{"recomputed": "outer_test", "candidate_id": "c0013_a21278d4e492", "streams": 6, "events": 3389}
+{"recomputed": "outer_test", "candidate_id": "c0024_ba16b82adffd", "streams": 6, "events": 3389}
+{"recomputed": "outer_test", "candidate_id": "diagnostic_persistence_split_095_single_sample", "streams": 6, "events": 3389}
+{
+  "passed": true,
+  "scope": "independent_saved_stream_event_contribution_draw_recomputation",
+  "learned_fits": 0,
+  "decision": "no_feasible_configuration",
+  "selected_candidate": null,
+  "inverse_selected_candidate": "c0024_ba16b82adffd",
+  "candidate_fold_cells": 18,
+  "inner_catalogue_pairs": 90,
+  "outer_catalogue_pairs": 25,
+  "persisted_streams": 138,
+  "contribution_rows": 407948,
+  "event_channel_records": 119388,
+  "bootstrap_cells": 23,
+  "preflight_catalogues": 15,
+  "outer_metric_cells": 5,
+  "fit_objects": 3,
+  "quantile_sub_estimators": 9,
+  "unchanged_preflight_catalogues": true,
+  "unit_file_hashes_checked": 29,
+  "source_sha256": "a9ec0619fcbc38920ead4eb95aacfaa831318a88a6869537ea1cfb53a5d5032e",
+  "global_study_ready": false
+}

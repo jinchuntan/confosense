@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_operational004_flag_dtype.py",
+    "-q",
+    "--junitxml=outputs/amendment004/bdg2_pilot_validation_v1/flag_dtype_tests.xml"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T11:18:21.750412+00:00",
+  "logger_pid": 24996,
+  "child_pid": 25084,
+  "ended_utc": "2026-09-13T11:18:24.580628+00:00",
+  "seconds": 2.8234723999994458,
+  "exit_status": 0
+}

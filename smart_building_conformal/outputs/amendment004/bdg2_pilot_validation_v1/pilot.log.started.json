@@ -1,0 +1,24 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.operational004",
+    "--dataset",
+    "bdg2",
+    "--outer-fold",
+    "2",
+    "--model-seed",
+    "42",
+    "--config",
+    "configs/operational_amendment004.json",
+    "--out",
+    "outputs/amendment004/bdg2_operational_pilot_f2_s42_v1"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T11:17:17.457124+00:00",
+  "logger_pid": 26204,
+  "child_pid": 14052,
+  "status": "started",
+  "exit_status": null
+}

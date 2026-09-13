@@ -1,5 +1,7 @@
 # Derived evidence and source attribution
 
+The current BDG2 operational-pilot publication adds real-data derived observed/predicted interval streams and simulated-fault accounting for one authorized fold/seed and ten buildings. Its [specific source attribution, CC BY-SA notice and transformation record](bdg2_operational_pilot_20260913/DATA_NOTICE.md) govern that new derived-data scope. Oversized stream bytes are supplied as lossless parts; no local raw archive or prepared cache is newly published. The paragraphs below describe the earlier amendment implementation and forecasting-pilot publications.
+
 This review branch publishes ConfoSense code and derived research evidence with the repository owner's explicit authorization of 13 September 2026. It does not publish the local raw, interim or processed source-data directories, virtual environments or external backups.
 
 The amendment-004 descendant adds four-task derived membership/exposure, event-schedule, scale and applicability records, with no real-data operational predictions or fitted models. The new prediction/interval/alert arrays are explicitly synthetic software fixtures, including one tiny actual CQR fit on generated data. Existing source provenance and dataset adapters remain the source records for PLEIA, RICO and BDG2. The local prepared-data caches remain in the external backup directory and are not published. Earlier pilot evidence and rights metadata below are preserved.
