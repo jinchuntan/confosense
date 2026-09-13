@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "action": "resume",
+  "models_fitted": 0,
+  "reused_model_units": 3,
+  "fresh_data_identity_verified": true,
+  "preparation_resources": {
+    "seconds": 18.662439599997015,
+    "baseline_rss_bytes": 324902912,
+    "peak_rss_bytes": 929292288,
+    "baseline_private_bytes": 282824704,
+    "peak_private_bytes": 999505920,
+    "incremental_peak_rss_bytes": 604389376,
+    "lifetime_peak_rss_bytes": 1033125888,
+    "min_available_ram_bytes": 4438441984,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 17.84375
+  },
+  "protocol_hash": "3a12b8bb0420a6d8259bdf93ab6cb7ae75b0cf7fa3bea5f7cdbd7e0113915139",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "all_run_files_unchanged": true
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "resume", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "1", "--outer-fold", "1", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h1_f1_s42_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h1_f1_s42_v1\\resume_v1.json", "--forbid-fits"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T18:47:31.161866+00:00", "logger_pid": 3660, "child_pid": 26724, "ended_utc": "2026-09-13T18:47:54.515254+00:00", "seconds": 23.347980200000165, "exit_status": 0}

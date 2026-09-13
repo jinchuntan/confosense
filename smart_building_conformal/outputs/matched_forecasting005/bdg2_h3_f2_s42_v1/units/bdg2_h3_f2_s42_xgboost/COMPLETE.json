@@ -1,0 +1,23 @@
+{
+  "key": "bdg2_h3_f2_s42_xgboost",
+  "spec_hash": "6c4c4bb1adee2d29f1ef2c433a958281e7b816ac29443a630c1d6a90a531d85b",
+  "frames": {
+    "predictions": "predictions.csv.gz",
+    "calibration": "calibration.csv.gz",
+    "tuning": "tuning.csv.gz",
+    "training_history": "training_history.csv.gz",
+    "tuning_predictions": "tuning_predictions.csv.gz",
+    "fitting_membership": "fitting_membership.csv.gz"
+  },
+  "hashes": {
+    "booster_config.json": "8624c5c9f66145482f0a2ece6543604f3fdddfd7e81c9b029439e8d8a76a3487",
+    "calibration.csv.gz": "9f92313a7b3a473b60666bb446eec5cf1dbce5a533b9588e56f0bc33bc1bd7f5",
+    "fitting_membership.csv.gz": "794ab4644e8f151eefcb8caf27b3e1893f4f541644a8c389c6ac3e1ed8580ed1",
+    "model.ubj": "7cf0b8970f3388db2ffc8e74b4776c60631ee602f915c61285de8d5960e67cb3",
+    "payload.json": "3db5a78e6c9b98283ba0767fc43f933e15745dae59c5b8035cc25a820f3cbd6c",
+    "predictions.csv.gz": "69ef4db61fbc478555db745ad91974b074322e05726da5d05fc37852563f3d02",
+    "training_history.csv.gz": "80a4972179045d0f37c856fc9bfa786149daea1aa3ae348b6960901a9a4f57e4",
+    "tuning.csv.gz": "a33cd9b85c57104efaa9696a5bafcb038320ec6d131f0cfbdbabe2861efe9a4c",
+    "tuning_predictions.csv.gz": "9e33031065ca22f440b5794de98a7020c0ba6773df2ee0afdd93b0fb8d3df247"
+  }
+}

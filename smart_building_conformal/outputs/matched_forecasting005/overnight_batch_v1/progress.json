@@ -1676,6 +1676,869 @@
       "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180744183842+0000_e070c3d7\\command.log.json",
       "seconds": 4.618999699996493,
       "child_pid": 24548
+    },
+    "publication/6": {
+      "task": "publication/6",
+      "attempt_id": "2026-09-13T180750424006+0000_e521af65",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\publish.py",
+        "--label",
+        "unit06"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:07:50.424006+00:00",
+      "ended_utc": "2026-09-13T18:08:05.490212+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180750424006+0000_e521af65\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180750424006+0000_e521af65\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 13520,
+        "created": 134337964704336394,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 13520,
+      "process_family": [
+        {
+          "pid": 13520,
+          "created": 134337964704336394,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 21900,
+          "created": 134337964704470257,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180750424006+0000_e521af65\\command.log.json",
+      "seconds": 14.989469899999676,
+      "child_pid": 22268
+    },
+    "bdg2_h3_f2_s42_v1/run": {
+      "task": "bdg2_h3_f2_s42_v1/run",
+      "attempt_id": "2026-09-13T180806696428+0000_c9531c6f",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "run",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "3",
+        "--outer-fold",
+        "2",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h3_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1\\readiness.json"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:08:06.696428+00:00",
+      "ended_utc": "2026-09-13T18:17:45.433527+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180806696428+0000_c9531c6f\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180806696428+0000_c9531c6f\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 15388,
+        "created": 134337964867062889,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 15388,
+      "process_family": [
+        {
+          "pid": 8404,
+          "created": 134337964867996409,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 29256,
+          "created": 134337964867899295,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 19164,
+          "created": 134337964867207344,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 15388,
+          "created": 134337964867062889,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 29256,
+        "created": 134337964867899295,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180806696428+0000_c9531c6f\\command.log.json",
+      "seconds": 578.6451535000015,
+      "child_pid": 29256
+    },
+    "bdg2_h3_f2_s42_v1/validate": {
+      "task": "bdg2_h3_f2_s42_v1/validate",
+      "attempt_id": "2026-09-13T181747308044+0000_0dfb30a7",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "validate",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "3",
+        "--outer-fold",
+        "2",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h3_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h3_f2_s42_v1\\audit_v1"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:17:47.308044+00:00",
+      "ended_utc": "2026-09-13T18:18:15.312603+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181747308044+0000_0dfb30a7\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181747308044+0000_0dfb30a7\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 1516,
+        "created": 134337970673263721,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 1516,
+      "process_family": [
+        {
+          "pid": 7488,
+          "created": 134337970674336554,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 17352,
+          "created": 134337970674210592,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 14824,
+          "created": 134337970673469627,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 1516,
+          "created": 134337970673263721,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 17352,
+        "created": 134337970674210592,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181747308044+0000_0dfb30a7\\command.log.json",
+      "seconds": 27.89338530000532,
+      "child_pid": 17352
+    },
+    "bdg2_h3_f2_s42_v1/resume": {
+      "task": "bdg2_h3_f2_s42_v1/resume",
+      "attempt_id": "2026-09-13T181815630821+0000_4c4c37d7",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "resume",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "3",
+        "--outer-fold",
+        "2",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h3_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h3_f2_s42_v1\\resume_v1.json",
+        "--forbid-fits"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:18:15.631825+00:00",
+      "ended_utc": "2026-09-13T18:18:37.628170+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181815630821+0000_4c4c37d7\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181815630821+0000_4c4c37d7\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 29524,
+        "created": 134337970956460065,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 29524,
+      "process_family": [
+        {
+          "pid": 24240,
+          "created": 134337970956605605,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 29524,
+          "created": 134337970956460065,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 7108,
+          "created": 134337970957464707,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 1980,
+          "created": 134337970957343610,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 1980,
+        "created": 134337970957343610,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181815630821+0000_4c4c37d7\\command.log.json",
+      "seconds": 21.89557480000076,
+      "child_pid": 1980
+    },
+    "bdg2_h3_f2_s42_v1/groups": {
+      "task": "bdg2_h3_f2_s42_v1/groups",
+      "attempt_id": "2026-09-13T181837892299+0000_060edc79",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\analyze.py",
+        "unit",
+        "--stem",
+        "bdg2_h3_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181837892299+0000_060edc79\\groups"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:18:37.893311+00:00",
+      "ended_utc": "2026-09-13T18:18:43.382562+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181837892299+0000_060edc79\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181837892299+0000_060edc79\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 27676,
+        "created": 134337971179021331,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 27676,
+      "process_family": [
+        {
+          "pid": 26408,
+          "created": 134337971179983980,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 24376,
+          "created": 134337971180126961,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 28712,
+          "created": 134337971179220380,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 27676,
+          "created": 134337971179021331,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 26408,
+        "created": 134337971179983980,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181837892299+0000_060edc79\\command.log.json",
+      "seconds": 5.386768800002756,
+      "child_pid": 26408
+    },
+    "bdg2_h6_f2_s42_v1/run": {
+      "task": "bdg2_h6_f2_s42_v1/run",
+      "attempt_id": "2026-09-13T181844351723+0000_461ecbc3",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "run",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "6",
+        "--outer-fold",
+        "2",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h6_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1\\readiness.json"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:18:44.351723+00:00",
+      "ended_utc": "2026-09-13T18:26:06.410948+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181844351723+0000_461ecbc3\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181844351723+0000_461ecbc3\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 7932,
+        "created": 134337971243613598,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 7932,
+      "process_family": [
+        {
+          "pid": 14800,
+          "created": 134337971243759265,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 29356,
+          "created": 134337971244582634,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 14424,
+          "created": 134337971244466351,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 7932,
+          "created": 134337971243613598,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 14424,
+        "created": 134337971244466351,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T181844351723+0000_461ecbc3\\command.log.json",
+      "seconds": 441.96570449999854,
+      "child_pid": 14424
+    },
+    "bdg2_h6_f2_s42_v1/validate": {
+      "task": "bdg2_h6_f2_s42_v1/validate",
+      "attempt_id": "2026-09-13T182607923667+0000_020d2c62",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "validate",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "6",
+        "--outer-fold",
+        "2",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h6_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h6_f2_s42_v1\\audit_v1"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:26:07.923667+00:00",
+      "ended_utc": "2026-09-13T18:26:35.641288+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182607923667+0000_020d2c62\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182607923667+0000_020d2c62\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 4044,
+        "created": 134337975679329920,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 4044,
+      "process_family": [
+        {
+          "pid": 24448,
+          "created": 134337975679488382,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 23764,
+          "created": 134337975680213060,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 9180,
+          "created": 134337975680324013,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 4044,
+          "created": 134337975679329920,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 23764,
+        "created": 134337975680213060,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182607923667+0000_020d2c62\\command.log.json",
+      "seconds": 27.62231850000535,
+      "child_pid": 23764
+    },
+    "bdg2_h6_f2_s42_v1/resume": {
+      "task": "bdg2_h6_f2_s42_v1/resume",
+      "attempt_id": "2026-09-13T182636219885+0000_742b61a3",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "resume",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "6",
+        "--outer-fold",
+        "2",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h6_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h6_f2_s42_v1\\resume_v1.json",
+        "--forbid-fits"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:26:36.220885+00:00",
+      "ended_utc": "2026-09-13T18:26:57.647238+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182636219885+0000_742b61a3\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182636219885+0000_742b61a3\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 23956,
+        "created": 134337975962288468,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 23956,
+      "process_family": [
+        {
+          "pid": 28320,
+          "created": 134337975963255992,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 23956,
+          "created": 134337975962288468,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 29428,
+          "created": 134337975963148054,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 28812,
+          "created": 134337975962445925,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 29428,
+        "created": 134337975963148054,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182636219885+0000_742b61a3\\command.log.json",
+      "seconds": 21.33436879999499,
+      "child_pid": 29428
+    },
+    "bdg2_h6_f2_s42_v1/groups": {
+      "task": "bdg2_h6_f2_s42_v1/groups",
+      "attempt_id": "2026-09-13T182658471598+0000_7e2b0821",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\analyze.py",
+        "unit",
+        "--stem",
+        "bdg2_h6_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182658471598+0000_7e2b0821\\groups"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:26:58.471598+00:00",
+      "ended_utc": "2026-09-13T18:27:04.064833+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182658471598+0000_7e2b0821\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182658471598+0000_7e2b0821\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 3332,
+        "created": 134337976184816105,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 3332,
+      "process_family": [
+        {
+          "pid": 11636,
+          "created": 134337976185731694,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 3332,
+          "created": 134337976184816105,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 12248,
+          "created": 134337976185847485,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 9916,
+          "created": 134337976184987928,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 11636,
+        "created": 134337976185731694,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182658471598+0000_7e2b0821\\command.log.json",
+      "seconds": 5.496506399998907,
+      "child_pid": 11636
+    },
+    "bdg2_h1_f1_s42_v1/run": {
+      "task": "bdg2_h1_f1_s42_v1/run",
+      "attempt_id": "2026-09-13T182704946008+0000_c0fd32a3",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "run",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "1",
+        "--outer-fold",
+        "1",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h1_f1_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\readiness.json"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:27:04.946008+00:00",
+      "ended_utc": "2026-09-13T18:46:56.691888+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182704946008+0000_c0fd32a3\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182704946008+0000_c0fd32a3\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 10384,
+        "created": 134337976249562953,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 10384,
+      "process_family": [
+        {
+          "pid": 10384,
+          "created": 134337976249562953,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 2832,
+          "created": 134337976250402586,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 24136,
+          "created": 134337976249707741,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 2832,
+        "created": 134337976250402586,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T182704946008+0000_c0fd32a3\\command.log.json",
+      "seconds": 1191.6557694000003,
+      "child_pid": 2832
+    },
+    "bdg2_h1_f1_s42_v1/validate": {
+      "task": "bdg2_h1_f1_s42_v1/validate",
+      "attempt_id": "2026-09-13T184658679908+0000_12e164eb",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "validate",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "1",
+        "--outer-fold",
+        "1",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h1_f1_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h1_f1_s42_v1\\audit_v1"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:46:58.679908+00:00",
+      "ended_utc": "2026-09-13T18:47:30.418296+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184658679908+0000_12e164eb\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184658679908+0000_12e164eb\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 27876,
+        "created": 134337988186982472,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 27876,
+      "process_family": [
+        {
+          "pid": 25008,
+          "created": 134337988187271559,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 27876,
+          "created": 134337988186982472,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 13752,
+          "created": 134337988188320270,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 16488,
+          "created": 134337988188172204,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 16488,
+        "created": 134337988188172204,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184658679908+0000_12e164eb\\command.log.json",
+      "seconds": 31.606493300001603,
+      "child_pid": 16488
+    },
+    "bdg2_h1_f1_s42_v1/resume": {
+      "task": "bdg2_h1_f1_s42_v1/resume",
+      "attempt_id": "2026-09-13T184731062155+0000_ea242a5b",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.matched_forecasting005",
+        "resume",
+        "--matrix",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+        "--dataset",
+        "bdg2",
+        "--horizon",
+        "1",
+        "--outer-fold",
+        "1",
+        "--model-seed",
+        "42",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h1_f1_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h1_f1_s42_v1\\resume_v1.json",
+        "--forbid-fits"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:47:31.062155+00:00",
+      "ended_utc": "2026-09-13T18:47:54.515254+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184731062155+0000_ea242a5b\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184731062155+0000_ea242a5b\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 22360,
+        "created": 134337988510773867,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 22360,
+      "process_family": [
+        {
+          "pid": 26724,
+          "created": 134337988511685212,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 22756,
+          "created": 134337988511817588,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 22360,
+          "created": 134337988510773867,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 3660,
+          "created": 134337988510945689,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 26724,
+        "created": 134337988511685212,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184731062155+0000_ea242a5b\\command.log.json",
+      "seconds": 23.347980200000165,
+      "child_pid": 26724
+    },
+    "bdg2_h1_f1_s42_v1/groups": {
+      "task": "bdg2_h1_f1_s42_v1/groups",
+      "attempt_id": "2026-09-13T184755364405+0000_e36d63b5",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\analyze.py",
+        "unit",
+        "--stem",
+        "bdg2_h1_f1_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184755364405+0000_e36d63b5\\groups"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-13T18:47:55.364405+00:00",
+      "ended_utc": "2026-09-13T18:48:01.139231+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184755364405+0000_e36d63b5\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184755364405+0000_e36d63b5\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 9852,
+        "created": 134337988753762546,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 9852,
+      "process_family": [
+        {
+          "pid": 12080,
+          "created": 134337988753933338,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 9852,
+          "created": 134337988753762546,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 9644,
+          "created": 134337988754771515,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 12508,
+          "created": 134337988754649666,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 12508,
+        "created": 134337988754649666,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184755364405+0000_e36d63b5\\command.log.json",
+      "seconds": 5.67597139999998,
+      "child_pid": 12508
     }
   },
   "units": {
@@ -1972,47 +2835,194 @@
       "interval_cells": 6,
       "saved_model_checks": 6,
       "zero_fit_resume": true
+    },
+    "bdg2_h3_f2_s42_v1": {
+      "validated": true,
+      "completed_utc": "2026-09-13T18:18:44.070339+00:00",
+      "audit": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h3_f2_s42_v1\\audit_v1",
+      "resume": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h3_f2_s42_v1\\resume_v1.json",
+      "run_files": {
+        "checkpoint_io_20260913T181744568155.json": "292e1b5140909b7de29857548653c3cc13aee35ccfbcb660720970688fe2d231",
+        "checkpoint_manifest.json": "4ed7cff026f496a43ff24df819a9cea63f35f1760590651512fbe419a7d10132",
+        "execution_environment.json": "ffc221c2610ea0fac54f81abae03af6dd530c9e81267acfcf8f08bf04b5d8f1e",
+        "fit_calls.jsonl": "efaeb093e50d89ec19ea060520d0e02c58d024a476fdf0c8bc85363820e75412",
+        "interval_quality.csv": "b92ceea7b0ebfe484828c7fde86a9b250534d04b2e10f8f8e568668f90020691",
+        "point_summary.csv": "aac70d4ad65a173bb4f5a8d7bcb523ab259187480e969746d2499b79c5044579",
+        "run_summary.json": "8a1927cd82bc7dda6a97488873a59f5efb141e9e5f7ba0051800ac2b22396b72",
+        "units/bdg2_h3_f2_s42_attention_lstm/calibration.csv.gz": "434bdbff2973a1132ffe4e9d68b579636e57961d07c7dbbbebba363f45d21413",
+        "units/bdg2_h3_f2_s42_attention_lstm/COMPLETE.json": "41bb0fb5e0e580791ed4d462ac51a637b17985196d4688987c9af8502d6cd50e",
+        "units/bdg2_h3_f2_s42_attention_lstm/fitting_membership.csv.gz": "cea6938b7e7c7b6ffec556e74b690ee7fbff45595f849b5c5f647b05427eb139",
+        "units/bdg2_h3_f2_s42_attention_lstm/model.pt": "5ba3068ec15979747cd8308b28d12ea1b3c153930f10b31ebbf804e795bf4ae8",
+        "units/bdg2_h3_f2_s42_attention_lstm/payload.json": "aa7ab5810e0a2a58540aa1520bdd4f25d8433eff0545d996a15ec538321c181a",
+        "units/bdg2_h3_f2_s42_attention_lstm/predictions.csv.gz": "8378ce73495e7629ba23763cc255707bb4d2ee4bbed34c6ab65fd1b031650932",
+        "units/bdg2_h3_f2_s42_attention_lstm/training_history.csv.gz": "7aea4cfb05605fee18f9fd8a346d3012401c5488953e846252d4846ea3ed8373",
+        "units/bdg2_h3_f2_s42_attention_lstm/tuning.csv.gz": "29a6f2c457411a9a9e2f967ec8cc97dd19c958cd560f623858541dcf0a247ec6",
+        "units/bdg2_h3_f2_s42_attention_lstm/tuning_predictions.csv.gz": "8f6b3743095696c7746f9e6b00608ac48aa99dffacc3e6f017af644fa954ad7f",
+        "units/bdg2_h3_f2_s42_persistence/calibration.csv.gz": "c7a8b50daa4b52d97cf28d5e5fe396947553963780d619517cd2fe4e9a07fe70",
+        "units/bdg2_h3_f2_s42_persistence/COMPLETE.json": "b5a21132b119c292b6fa9958c8db7025f6116287fce8f2393855c02abe11960f",
+        "units/bdg2_h3_f2_s42_persistence/fitting_membership.csv.gz": "23b18204445f4be50e0eafa656b9869669d764964ed015015cf27f637de71cd2",
+        "units/bdg2_h3_f2_s42_persistence/model.json": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b",
+        "units/bdg2_h3_f2_s42_persistence/payload.json": "fd3f2a04ef847eadaa2a04d61f992d693d7f15056e752c16f7e4b7f80ed9994b",
+        "units/bdg2_h3_f2_s42_persistence/predictions.csv.gz": "4c04390a33118455daba65b8278b3f800fd3a18016b9fdb77192fdd5752ea075",
+        "units/bdg2_h3_f2_s42_persistence/training_history.csv.gz": "053c2a57f99c51be4c2526a179afea0d31783905e279932a431e014bc6ea9b9c",
+        "units/bdg2_h3_f2_s42_persistence/tuning.csv.gz": "1b971574e12df02b48a644b0d841ae36f3daf6aee5e28bf8a34e424d7b0a8f21",
+        "units/bdg2_h3_f2_s42_persistence/tuning_predictions.csv.gz": "6454108b46aad7cfdf44a5ebdaf71a7f78115a6fe311142f7e22f0390c334767",
+        "units/bdg2_h3_f2_s42_xgboost/booster_config.json": "8624c5c9f66145482f0a2ece6543604f3fdddfd7e81c9b029439e8d8a76a3487",
+        "units/bdg2_h3_f2_s42_xgboost/calibration.csv.gz": "9f92313a7b3a473b60666bb446eec5cf1dbce5a533b9588e56f0bc33bc1bd7f5",
+        "units/bdg2_h3_f2_s42_xgboost/COMPLETE.json": "c3cd90e56eb91b4a80c913d1cbe1f4733011e199c1883fe92b81010e144e891a",
+        "units/bdg2_h3_f2_s42_xgboost/fitting_membership.csv.gz": "794ab4644e8f151eefcb8caf27b3e1893f4f541644a8c389c6ac3e1ed8580ed1",
+        "units/bdg2_h3_f2_s42_xgboost/model.ubj": "7cf0b8970f3388db2ffc8e74b4776c60631ee602f915c61285de8d5960e67cb3",
+        "units/bdg2_h3_f2_s42_xgboost/payload.json": "3db5a78e6c9b98283ba0767fc43f933e15745dae59c5b8035cc25a820f3cbd6c",
+        "units/bdg2_h3_f2_s42_xgboost/predictions.csv.gz": "69ef4db61fbc478555db745ad91974b074322e05726da5d05fc37852563f3d02",
+        "units/bdg2_h3_f2_s42_xgboost/training_history.csv.gz": "80a4972179045d0f37c856fc9bfa786149daea1aa3ae348b6960901a9a4f57e4",
+        "units/bdg2_h3_f2_s42_xgboost/tuning.csv.gz": "a33cd9b85c57104efaa9696a5bafcb038320ec6d131f0cfbdbabe2861efe9a4c",
+        "units/bdg2_h3_f2_s42_xgboost/tuning_predictions.csv.gz": "9e33031065ca22f440b5794de98a7020c0ba6773df2ee0afdd93b0fb8d3df247"
+      },
+      "tuning_fits": 8,
+      "final_fits": 2,
+      "point_cells": 3,
+      "interval_cells": 6,
+      "saved_model_checks": 6,
+      "zero_fit_resume": true
+    },
+    "bdg2_h6_f2_s42_v1": {
+      "validated": true,
+      "completed_utc": "2026-09-13T18:27:04.635138+00:00",
+      "audit": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h6_f2_s42_v1\\audit_v1",
+      "resume": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h6_f2_s42_v1\\resume_v1.json",
+      "run_files": {
+        "checkpoint_io_20260913T182605574790.json": "198cb2ca7acc43b82635a7b8b9066eb03c94225f47a5731cb64314383e76833c",
+        "checkpoint_manifest.json": "6d0b0d70bfca8d8bab1302a56823e80a37ad8879a5c75d0966398a1900ad4ea4",
+        "execution_environment.json": "f3b43998b1f4aff35d633d4d1d806ddd79bd567190633ea1c098aa3305bf7ec2",
+        "fit_calls.jsonl": "692f114b0ab4dba9f8f564ca5c3f1064e50eaa8f6f6b634da134ec9c71e47d47",
+        "interval_quality.csv": "fc38129adf49a67c907957793a02757cedc662efa320fbec36a0d3d27a44f8ef",
+        "point_summary.csv": "928f011c7a9b5a55a2d95a3d32a625468197c9bb65ebe2c41ccb84fa614e5ba6",
+        "run_summary.json": "a8f3b79290e78d56d5a06dbdd959d830e3bce3d8761ee504e27b814d181e5489",
+        "units/bdg2_h6_f2_s42_attention_lstm/calibration.csv.gz": "cc5cf5d7fbc9aa0503edf944eaaeb0c75480f2603fbd985d92d702c70a833fc2",
+        "units/bdg2_h6_f2_s42_attention_lstm/COMPLETE.json": "073a27bcdc3a61bc3c7cbce5cf20d9fb009a827c709cd2b9e00cb776dd643baf",
+        "units/bdg2_h6_f2_s42_attention_lstm/fitting_membership.csv.gz": "e613f3b2b2a3946c64981706a09ce63c2d7f37e2acd7c7ce13cc6a3bb61ec9fa",
+        "units/bdg2_h6_f2_s42_attention_lstm/model.pt": "6465571c09b02a17586eddaacd8e1c2e52466de4b4abe660e7054242b07ade12",
+        "units/bdg2_h6_f2_s42_attention_lstm/payload.json": "13ed74d7c76d7f92f2106403b4576f306e90e782d2126b404d2da700b88530f6",
+        "units/bdg2_h6_f2_s42_attention_lstm/predictions.csv.gz": "48c1731625314e1cbea3b0c1390ccc67ed237d409195c14641eaf68f98b5e05d",
+        "units/bdg2_h6_f2_s42_attention_lstm/training_history.csv.gz": "9e773e072fdd2a871f87421f3875329f789855ae3d0eefde2c870faa5ed762b4",
+        "units/bdg2_h6_f2_s42_attention_lstm/tuning.csv.gz": "d9973ce8e82a45286dba1e4242374a9af48e3176ea1decfa30187641ec1b1668",
+        "units/bdg2_h6_f2_s42_attention_lstm/tuning_predictions.csv.gz": "1b31155885fc42f3713c2a08155e3ace7af4ceff5fdff45d64ac4b8142361273",
+        "units/bdg2_h6_f2_s42_persistence/calibration.csv.gz": "e3031ae4e0f9d53cec7a65b411270a9394f0bc855fc827b8486f486fa0a40b2f",
+        "units/bdg2_h6_f2_s42_persistence/COMPLETE.json": "38fac81158e0a19b4cf94297954e711ea7d6835d30779f7f54380cd72513759f",
+        "units/bdg2_h6_f2_s42_persistence/fitting_membership.csv.gz": "fba7e8aec78eca44f0bd95a13ce5a79643d2f5ef236f95a98db5f6df7e6b9b90",
+        "units/bdg2_h6_f2_s42_persistence/model.json": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b",
+        "units/bdg2_h6_f2_s42_persistence/payload.json": "b094e88923cf42b510f405f39a1662838252c1a7b07c21905281c64ae77d767f",
+        "units/bdg2_h6_f2_s42_persistence/predictions.csv.gz": "bfaa135e99a3c9d934a3af2d417aba04f032d713c63779d0462604164c0a16e7",
+        "units/bdg2_h6_f2_s42_persistence/training_history.csv.gz": "4bf77e83e7a4414242cd06751c218a0cf91c0423dce0bd336052d1c45df1f84d",
+        "units/bdg2_h6_f2_s42_persistence/tuning.csv.gz": "206da5758499c46af9dcdfa779545009883489bc76efdc84bc5f9f8a2b113869",
+        "units/bdg2_h6_f2_s42_persistence/tuning_predictions.csv.gz": "6dbafd1f5b40b306b9a0f49db52122f8f73ebd3d72c4b91f5edecfed68d9c839",
+        "units/bdg2_h6_f2_s42_xgboost/booster_config.json": "353ad6253cf9d9220f13c0f00f7b8e00308536fa212dd5a7445480b053f118e5",
+        "units/bdg2_h6_f2_s42_xgboost/calibration.csv.gz": "beefb021964210423ac13714377d5915d4786be42f9539514882f305f39026b8",
+        "units/bdg2_h6_f2_s42_xgboost/COMPLETE.json": "278f874be5ff9340a3164bc90313fb1da8d584d0d2e68add5d837588270a5c1c",
+        "units/bdg2_h6_f2_s42_xgboost/fitting_membership.csv.gz": "d51ae40a487fccbb7504fdcdd6d8722fc0f3bfd4bef3a041cded955eaee27055",
+        "units/bdg2_h6_f2_s42_xgboost/model.ubj": "3973b651fe0e72c1538e5c8983abadc6ab62a1cd17378bec55df497a908c7504",
+        "units/bdg2_h6_f2_s42_xgboost/payload.json": "dccd093108db82864403501094da5c1b2d6a03e434b957243d969d7ed50a5385",
+        "units/bdg2_h6_f2_s42_xgboost/predictions.csv.gz": "2b3fcb64b101675b8c0a51031fce0ee568f44bf8f49d439ff60a21afaa86b4af",
+        "units/bdg2_h6_f2_s42_xgboost/training_history.csv.gz": "5bb93ed853acfdba6b16a07aded2a0fecf90d5ec1b9c9443d1127025e872a036",
+        "units/bdg2_h6_f2_s42_xgboost/tuning.csv.gz": "f33bb4f72839caf3ca391f51c00d5cb10a46607618cc9c45c29ac56d2e39c0d8",
+        "units/bdg2_h6_f2_s42_xgboost/tuning_predictions.csv.gz": "604a9f8b19012c6f27ab5575af3158b3422890287422073b00f48093235ba41d"
+      },
+      "tuning_fits": 8,
+      "final_fits": 2,
+      "point_cells": 3,
+      "interval_cells": 6,
+      "saved_model_checks": 6,
+      "zero_fit_resume": true
+    },
+    "bdg2_h1_f1_s42_v1": {
+      "validated": true,
+      "completed_utc": "2026-09-13T18:48:01.539595+00:00",
+      "audit": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h1_f1_s42_v1\\audit_v1",
+      "resume": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\receipts\\bdg2_h1_f1_s42_v1\\resume_v1.json",
+      "run_files": {
+        "checkpoint_io_20260913T184655839717.json": "49c5de69eb09569b5beecd1d3c6e036a61e88493acbae3b8d5bfe8b9b04da176",
+        "checkpoint_manifest.json": "65dca5ce5a29f4cf218c3725c26d366b98059e686f4313a0bdeba7a156a480e6",
+        "execution_environment.json": "14132477483e36a0ecf7c7b2e07182f933a451ec0a8ea84555ebec81d2951c41",
+        "fit_calls.jsonl": "dd62417fff7cd5388eed453c8cf5fa8c7259b53cd407172010b8e63aa148c7c8",
+        "interval_quality.csv": "dd5e6a47ceb4d2b3bf0c5b7d23cd56c33519189c5afc20f0924740966a2f047d",
+        "point_summary.csv": "a268b7bce64a54c3283d8f109c060335cc65a64d04df4abfbd98ba38180a9f5a",
+        "run_summary.json": "9d3a4ea4e8d666987bbadcdde933617dc539c1bca1496abe4bab6a612135a55b",
+        "units/bdg2_h1_f1_s42_attention_lstm/calibration.csv.gz": "c9990d4f7049f24f561e5397ef4ba3c79de6d68ecce5d4d8b709c5d903724242",
+        "units/bdg2_h1_f1_s42_attention_lstm/COMPLETE.json": "481d40e13822cc55d66c3cd0d54dd995037b144da51161f24c614b3c79ace72f",
+        "units/bdg2_h1_f1_s42_attention_lstm/fitting_membership.csv.gz": "f7a7e7a76508f4858dd699920baee790aa1f8b7582de3c03d993c592f763e19d",
+        "units/bdg2_h1_f1_s42_attention_lstm/model.pt": "a9c14d1e2fd095ff4e98f671da7c56b105e3f07f0e6421239af78f9f888fb59e",
+        "units/bdg2_h1_f1_s42_attention_lstm/payload.json": "ba9dad01bafdebfd56f8d10b7e545adec0239f11b8a3449e704751c04a7d0d6d",
+        "units/bdg2_h1_f1_s42_attention_lstm/predictions.csv.gz": "987ae053d2c4fafc75b4e09e352a4f34b55e3a8d783c2bf954b4c9f160c5edbf",
+        "units/bdg2_h1_f1_s42_attention_lstm/training_history.csv.gz": "83c54e855f8385bf8b8e264a74373477cddd3ffa02ea08d53ebb5b0b449518f2",
+        "units/bdg2_h1_f1_s42_attention_lstm/tuning.csv.gz": "dc225ef975e5490c1eed3c9569353e2dac28b86bc98be41757961927e9212880",
+        "units/bdg2_h1_f1_s42_attention_lstm/tuning_predictions.csv.gz": "5808a666bce34501db5a93fdacf5e5e516b03f2d749144305b7238b877ec0d0d",
+        "units/bdg2_h1_f1_s42_persistence/calibration.csv.gz": "a911aab4dbcfb874bcdf16e99fdd00fd27ffc7b0ee57bfa064d7d2ee5134af45",
+        "units/bdg2_h1_f1_s42_persistence/COMPLETE.json": "fd673c93b42e170040a983e98a6dfe03355835b06f79a0d598d57604e6a7d38f",
+        "units/bdg2_h1_f1_s42_persistence/fitting_membership.csv.gz": "fef832a0f46042a5b9fbdbb108a7fc6ce89855352fce28ba076739f11d5ebd07",
+        "units/bdg2_h1_f1_s42_persistence/model.json": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b",
+        "units/bdg2_h1_f1_s42_persistence/payload.json": "e97a62aac31ad880a90584de56218873218f4c85f9e2fadff408b910ed57fa56",
+        "units/bdg2_h1_f1_s42_persistence/predictions.csv.gz": "23f40101da2df6927b083160d3ce4da079fbf12404ad638a14c4469f7718596f",
+        "units/bdg2_h1_f1_s42_persistence/training_history.csv.gz": "e837352902829219f8814802dbc9f21a0175a9ce605ba5b8165b224a8959dc98",
+        "units/bdg2_h1_f1_s42_persistence/tuning.csv.gz": "0e0bcef668537c3f6cb174ade28066f259d620f3a8cec125f605591ee97cd9f1",
+        "units/bdg2_h1_f1_s42_persistence/tuning_predictions.csv.gz": "0c08dfc51e30ac24af81eb235c4d49dd38f8e90b90c50de0b031ec9304b83f2d",
+        "units/bdg2_h1_f1_s42_xgboost/booster_config.json": "4f89d3a46e6f44aa302fc06cb18fe39e32285e1760637edbb35a9f8a5868df60",
+        "units/bdg2_h1_f1_s42_xgboost/calibration.csv.gz": "20eef7625d5aaef5f00cb6b1c3746e63fa5aeea0a5b68df319c2882464c3b873",
+        "units/bdg2_h1_f1_s42_xgboost/COMPLETE.json": "37e4fb3beececd2f94b5a2f206dd631272964e46f14a2507364fa3438c5830fe",
+        "units/bdg2_h1_f1_s42_xgboost/fitting_membership.csv.gz": "26b8af179f2d23b28096ae5423face5d5eb6e6a918cc2a037c793ab6180c60ca",
+        "units/bdg2_h1_f1_s42_xgboost/model.ubj": "acc45e93d2045197b40a7866795261381a4cd9480f21809bb3888d0b0952dd5a",
+        "units/bdg2_h1_f1_s42_xgboost/payload.json": "0621f045517b18fee5e6786de6b93d6101972a2b370ebc6b4033551fe4762582",
+        "units/bdg2_h1_f1_s42_xgboost/predictions.csv.gz": "154bbee0c04211a764f23007e593387eb5030b1d0d400b9a7525995b18045ae2",
+        "units/bdg2_h1_f1_s42_xgboost/training_history.csv.gz": "11c889141d35ed55a4b4c5d85d1c40cddf2800053db765aa552a161ee7a8e17a",
+        "units/bdg2_h1_f1_s42_xgboost/tuning.csv.gz": "bd5378190c9069b55cb17cdab7b25d36628053f1ccbb67ffaae0d5359c7d33de",
+        "units/bdg2_h1_f1_s42_xgboost/tuning_predictions.csv.gz": "b979c2ce122a704955df3519a0c01081f225c49072f58073d04b3de959f6db1b"
+      },
+      "tuning_fits": 8,
+      "final_fits": 2,
+      "point_cells": 3,
+      "interval_cells": 6,
+      "saved_model_checks": 6,
+      "zero_fit_resume": true
     }
   },
   "status": "running",
   "active": {
-    "task": "publication/6",
-    "attempt_id": "2026-09-13T180750424006+0000_e521af65",
+    "task": "publication/9",
+    "attempt_id": "2026-09-13T184801636370+0000_ace43729",
     "argv": [
       "C:/cfs_venv/Scripts/python.exe",
       "-B",
       "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\publish.py",
       "--label",
-      "unit06"
+      "unit09"
     ],
     "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
-    "started_utc": "2026-09-13T18:07:50.424006+00:00",
+    "started_utc": "2026-09-13T18:48:01.636370+00:00",
     "ended_utc": null,
     "exit_code": null,
     "status": "running",
-    "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180750424006+0000_e521af65\\command.log",
-    "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T180750424006+0000_e521af65\\attempt.json",
+    "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184801636370+0000_ace43729\\command.log",
+    "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T184801636370+0000_ace43729\\attempt.json",
     "previous_attempt": null,
     "logger_identity": {
-      "pid": 13520,
-      "created": 134337964704336394,
+      "pid": 27384,
+      "created": 134337988816478663,
       "executable": "C:\\cfs_venv\\Scripts\\python.exe"
     },
-    "logger_pid": 13520,
+    "logger_pid": 27384,
     "process_family": [
       {
-        "pid": 13520,
-        "created": 134337964704336394,
+        "pid": 27384,
+        "created": 134337988816478663,
         "executable": "C:\\cfs_venv\\Scripts\\python.exe"
       },
       {
-        "pid": 21900,
-        "created": 134337964704470257,
+        "pid": 14824,
+        "created": 134337988816640127,
         "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
       }
     ]
   },
-  "completed_units": 6,
+  "completed_units": 9,
   "planned_units": 12,
   "completed_keys": [
     [
@@ -2050,28 +3060,28 @@
       60,
       2,
       42
+    ],
+    [
+      "bdg2",
+      3,
+      2,
+      42
+    ],
+    [
+      "bdg2",
+      6,
+      2,
+      42
+    ],
+    [
+      "bdg2",
+      1,
+      1,
+      42
     ]
   ],
   "pending_keys": [
     [
-      "bdg2",
-      3,
-      2,
-      42
-    ],
-    [
-      "bdg2",
-      6,
-      2,
-      42
-    ],
-    [
-      "bdg2",
-      1,
-      1,
-      42
-    ],
-    [
       "pleia",
       1,
       2,
@@ -2090,15 +3100,15 @@
       42
     ]
   ],
-  "new_point_cells": 18,
-  "new_interval_cells": 36,
-  "saved_model_checks": 36,
-  "zero_fit_resumes": 6,
+  "new_point_cells": 27,
+  "new_interval_cells": 54,
+  "saved_model_checks": 54,
+  "zero_fit_resumes": 9,
   "restart_argv": [
     "C:/cfs_venv/Scripts/python.exe",
     "-B",
     "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\coordinator.py"
   ],
   "full_study_ready": false,
-  "updated_utc": "2026-09-13T18:07:50.454133+00:00"
+  "updated_utc": "2026-09-13T18:48:01.669558+00:00"
 }

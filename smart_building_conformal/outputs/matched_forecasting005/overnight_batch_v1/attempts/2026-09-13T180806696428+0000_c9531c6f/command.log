@@ -1,0 +1,58 @@
+LAUNCH bdg2_h3_f2_s42_persistence; available RAM=4.62 GiB
+START bdg2_h3_f2_s42_persistence final candidate=0 epochs=None
+COMPLETE bdg2_h3_f2_s42_persistence
+LAUNCH bdg2_h3_f2_s42_xgboost; available RAM=4.68 GiB
+START bdg2_h3_f2_s42_xgboost tuning candidate=0 inner=0
+START bdg2_h3_f2_s42_xgboost tuning candidate=0 inner=1
+START bdg2_h3_f2_s42_xgboost tuning candidate=1 inner=0
+START bdg2_h3_f2_s42_xgboost tuning candidate=1 inner=1
+START bdg2_h3_f2_s42_xgboost final candidate=1 epochs=None
+COMPLETE bdg2_h3_f2_s42_xgboost
+LAUNCH bdg2_h3_f2_s42_attention_lstm; available RAM=4.62 GiB
+START bdg2_h3_f2_s42_attention_lstm tuning candidate=0 inner=0
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.2957398807294464, 'validation_mae': 48.24511609556882}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.11711698565679017, 'validation_mae': 42.010494277639076}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.06762097092955328, 'validation_mae': 39.97932502677808}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 15, 'train_mse': 0.048518446040575584, 'validation_mae': 35.76620224634364}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 20, 'train_mse': 0.04307014993388931, 'validation_mae': 37.44644579334415}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 25, 'train_mse': 0.03821168437836662, 'validation_mae': 34.75832341367375}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i0: {'epoch': 30, 'train_mse': 0.035002775491374954, 'validation_mae': 34.33235763348863}
+START bdg2_h3_f2_s42_attention_lstm tuning candidate=0 inner=1
+bdg2_h3_f2_s42_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.1988236426679217, 'validation_mae': 56.88781947563557}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.07799085174671226, 'validation_mae': 47.14148015869169}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.05340638642040729, 'validation_mae': 41.49661776256008}
+bdg2_h3_f2_s42_attention_lstm tuning c0 i1: {'epoch': 15, 'train_mse': 0.04379536082603501, 'validation_mae': 39.293387087437466}
+START bdg2_h3_f2_s42_attention_lstm tuning candidate=1 inner=0
+bdg2_h3_f2_s42_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.40368232776520574, 'validation_mae': 52.86232112495655}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.1330484251818422, 'validation_mae': 44.387032324230105}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.10782548040195236, 'validation_mae': 41.489708292530594}
+START bdg2_h3_f2_s42_attention_lstm tuning candidate=1 inner=1
+bdg2_h3_f2_s42_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.25859337930148046, 'validation_mae': 64.11824366433352}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.09798666169958019, 'validation_mae': 49.46695833800473}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.07124258297176696, 'validation_mae': 47.90850332304367}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.05366445028724144, 'validation_mae': 43.94953171726281}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.04637660200779255, 'validation_mae': 43.90147276127096}
+bdg2_h3_f2_s42_attention_lstm tuning c1 i1: {'epoch': 25, 'train_mse': 0.04218390688093148, 'validation_mae': 45.96430139558828}
+START bdg2_h3_f2_s42_attention_lstm final candidate=0 epochs=20
+bdg2_h3_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.16241614180357483}
+bdg2_h3_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.06570330732011978}
+bdg2_h3_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 10, 'train_mse': 0.04985008280146093}
+bdg2_h3_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 15, 'train_mse': 0.0426488114475382}
+bdg2_h3_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 20, 'train_mse': 0.038767287644950896}
+COMPLETE bdg2_h3_f2_s42_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "9f6ebede3e1cdfa1160ebb06d88768caf7c37e45b8bec777807b19531e87a260",
+  "full_study_ready": false,
+  "publication_ready": false
+}
