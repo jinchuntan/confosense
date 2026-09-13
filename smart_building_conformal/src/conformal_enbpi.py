@@ -54,13 +54,14 @@ def _build_base(seed: int, cfg: dict):
             n_jobs=1,
         )
         return est, "XGBRegressor"
-    except Exception:  # pragma: no cover - defensive
+    except Exception as exc:  # pragma: no cover - defensive
         est = RandomForestRegressor(
             n_estimators=cfg.get("base_n_estimators", 200),
             max_depth=cfg.get("base_max_depth", None),
             random_state=seed,
             n_jobs=1,
         )
+        est._confosense_fallback_reason = f"{type(exc).__name__}: {exc}"
         return est, "RandomForestRegressor"
 
 

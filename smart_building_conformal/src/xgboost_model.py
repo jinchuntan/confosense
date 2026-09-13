@@ -42,9 +42,16 @@ def tune(
     n_splits: int = 3,
     seed: int = 42,
     n_jobs: int = -1,
+    *, meta_train: pd.DataFrame | None = None,
 ) -> dict:
     """Randomized time-series search on the training data only."""
-    tscv = TimeSeriesSplit(n_splits=n_splits)
+    if meta_train is None:
+        tscv = TimeSeriesSplit(n_splits=n_splits)
+    else:
+        from .split_integrity import tuning_splits
+        if len(meta_train) != len(X_train):
+            raise ValueError("tuning metadata does not match training features")
+        tscv = tuning_splits(meta_train.reset_index(drop=True), n_splits)
     search = RandomizedSearchCV(
         estimator=_base_estimator(seed, n_jobs=1),
         param_distributions=PARAM_DISTRIBUTIONS,

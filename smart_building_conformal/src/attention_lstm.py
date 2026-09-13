@@ -93,6 +93,7 @@ def train_predict(
     X_test: np.ndarray,
     cfg: dict,
     seed: int,
+    *, meta_train: pd.DataFrame | None = None,
 ) -> dict:
     """Train the Attention-LSTM and predict on the test sequences.
 
@@ -105,8 +106,16 @@ def train_predict(
     n = len(X_train)
     val_frac = cfg.get("val_fraction", 0.2)
     n_val = max(1, int(round(n * val_frac)))
-    tr_x, tr_y = X_train[: n - n_val], y_train[: n - n_val]
-    va_x, va_y = X_train[n - n_val:], y_train[n - n_val:]
+    if meta_train is None:
+        ti, vi = np.arange(n - n_val), np.arange(n - n_val, n)
+    else:
+        from .split_integrity import ordered_blocks
+        if len(meta_train) != n:
+            raise ValueError("LSTM training metadata does not match sequences")
+        ti, vi = ordered_blocks(meta_train, np.arange(n), [1 - val_frac, val_frac],
+                               meta_train.attrs.get("split_scheme", "chronological"))
+    tr_x, tr_y = X_train[ti], y_train[ti]
+    va_x, va_y = X_train[vi], y_train[vi]
 
     x_mean, x_std = _standardise(tr_x)
     y_mean, y_std = float(tr_y.mean()), float(tr_y.std() or 1.0)
@@ -172,7 +181,9 @@ def train_predict(
 
     model.eval()
     with torch.no_grad():
-        test_pred_std = model(prep_x(X_test)).cpu().numpy()
+        test_pred_std = np.concatenate([
+            model(prep_x(X_test[start:start + batch])).cpu().numpy()
+            for start in range(0, len(X_test), batch)])
     test_pred = test_pred_std * y_std + y_mean
 
     return {
@@ -181,4 +192,8 @@ def train_predict(
         "best_val_mae": best_val,
         "best_epoch": int(np.argmin([h["val_mae"] for h in history])),
         "n_epochs_run": len(history),
+        "training_indices": ti,
+        "validation_indices": vi,
+        "estimator_class": "src.attention_lstm.AttentionLSTM",
+        "model_seed": seed,
     }
