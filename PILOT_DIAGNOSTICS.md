@@ -105,3 +105,8 @@ The completed pilot's recorded completion exit remains **0**; its initial interr
 Implement the [operational plan](OPERATIONAL_EVALUATION_PLAN.md) as amendment 004 and pass its one synthetic two-inner-fold integration smoke. The plan records separate core integration gaps, including method-specific recalibration not always reaching the actual alert stream; repairing that causal pipeline requires its versioned selection/stream contracts. That core work does not use or revise the pilot's fixed own-model conformal calculation. No full core/robustness run is part of this task.
 
 Keep any later LSTM development study separate, explicitly acknowledging previously inspected pilot data. Test the unresolved architectural hypotheses on a newly declared development experiment only if separately authorized; do not retune against these pilot test results or discard LSTM merely to improve the reported ranking.
+
+
+### Operational source-review correction, amendment-004 handoff
+
+The subsequent review at f14076cbeb894488ef83229e90242aaa32605174 correctly narrows the operational finding: the three current core static branches already preserve their method-owned bounds. Periodic/rolling CQR instead uses generic signed point residuals, and the old core injects alert observations after clean forecasts/recalibration. Those are the demonstrated gaps for amendment 004. The earlier plan's claim that static CQR was routed through generic recalibration was incorrect and is corrected in the plan. None of this changes the completed pilot or its LSTM diagnosis.

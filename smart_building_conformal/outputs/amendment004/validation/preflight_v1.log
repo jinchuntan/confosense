@@ -1,0 +1,43 @@
+PREPARE (NO FIT): pleia
+pleia outer 0 support audited (NO FIT)
+pleia outer 1 support audited (NO FIT)
+pleia outer 2 support audited (NO FIT)
+PREPARE (NO FIT): pleia_energy
+pleia_energy outer 0 support audited (NO FIT)
+pleia_energy outer 1 support audited (NO FIT)
+pleia_energy outer 2 support audited (NO FIT)
+PREPARE (NO FIT): rico
+rico outer 0 support audited (NO FIT)
+rico outer 1 support audited (NO FIT)
+rico outer 2 support audited (NO FIT)
+PREPARE (NO FIT): bdg2
+bdg2 outer 0 support audited (NO FIT)
+bdg2 outer 1 support audited (NO FIT)
+bdg2 outer 2 support audited (NO FIT)
+{
+  "status": "complete",
+  "models_fitted": 0,
+  "forecast_or_alert_performance_measured": false,
+  "design_hash": "5c1d4aedbbdedfb5d6cceedfd56b1dbe331233d0c497ea7b0126cf6095938c75",
+  "source_hash": "3dea8da16ae2f9520219d58d86b500dbdff7b9115e87f8ce0d4c1fc686282838",
+  "total_resources": {
+    "seconds": 84.40829239999948,
+    "baseline_rss_bytes": 351555584,
+    "peak_rss_bytes": 1215311872,
+    "baseline_private_bytes": 307699712,
+    "peak_private_bytes": 1214328832,
+    "incremental_peak_rss_bytes": 863756288,
+    "lifetime_peak_rss_bytes": 1249943552,
+    "min_available_ram_bytes": 2869637120,
+    "sample_interval_seconds": 0.05
+  },
+  "unit_banks": 36,
+  "structurally_supported_banks": 10,
+  "global_study_ready": false,
+  "clarifications": [
+    "Final calibration is reserved once by make_outer_folds, not re-cut after purging.",
+    "Feature histories restart across genuine source acquisition gaps; source-marked missing targets do not add observed exposure.",
+    "Largest-remainder requests for unhostable assets remain explicit rejections; no incidence redistribution to manufacture support.",
+    "Event support is structural; no bootstrap or performance claim follows from counts alone."
+  ]
+}

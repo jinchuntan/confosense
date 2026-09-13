@@ -40,10 +40,13 @@ def signature(spec):
 
 
 class UnitCheckpoint:
-    def __init__(self, root, spec, *, resume=False):
+    def __init__(self, root, spec, *, resume=False, string_columns=()):
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
         self.spec_hash = signature(spec)
+        # Opt-in schema for new runners: e.g. an asset literally named "None"
+        # must survive CSV loading. Historical readers retain their old default.
+        self.string_columns = tuple(string_columns)
         manifest = self.root / "checkpoint_manifest.json"
         if manifest.exists():
             if not resume:
@@ -80,7 +83,8 @@ class UnitCheckpoint:
         frames = {}
         for name, filename in record["frames"].items():
             try:
-                frames[name] = pd.read_csv(path / filename, float_precision="round_trip")
+                frames[name] = pd.read_csv(path / filename, float_precision="round_trip",
+                    converters={column: str for column in self.string_columns})
             except pd.errors.EmptyDataError:
                 frames[name] = pd.DataFrame()
         return payload, frames

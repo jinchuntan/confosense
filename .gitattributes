@@ -5,3 +5,8 @@ smart_building_conformal/configs/model_comparison_pilot_v1.json -text whitespace
 smart_building_conformal/outputs/pilot_diagnostics_v1/** -text -whitespace
 review/*.json -text -whitespace
 review/*.csv -text -whitespace
+smart_building_conformal/outputs/amendment004/** -text -whitespace
+smart_building_conformal/protocols/amendment004/** -text -whitespace
+smart_building_conformal/configs/operational_amendment004.json -text -whitespace
+review/amendment004_20260913/** -text -whitespace
+OPERATIONAL_EVALUATION_PLAN.md -text whitespace=cr-at-eol
