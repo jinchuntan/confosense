@@ -85,7 +85,7 @@ class UnitCheckpoint:
                 frames[name] = pd.DataFrame()
         return payload, frames
 
-    def save(self, key, payload, frames):
+    def save(self, key, payload, frames, *, artifacts=None):
         destination = self._path(key)
         if destination.exists():
             raise ValueError(f"duplicate experimental unit {key}")
@@ -98,6 +98,10 @@ class UnitCheckpoint:
                 raise ValueError("invalid frame name")
             names[name] = name + ".csv.gz"
             frame.to_csv(staging / names[name], index=False, compression="gzip")
+        for name, data in (artifacts or {}).items():
+            if not re.fullmatch(r"[A-Za-z0-9_-]+\.[A-Za-z0-9]+", name) or name in names.values() or name in ("payload.json", "COMPLETE.json"):
+                raise ValueError("invalid artifact name")
+            (staging / name).write_bytes(data)
         hashes = {p.name: digest(p) for p in staging.iterdir() if p.is_file()}
         with (staging / "COMPLETE.json").open("w", encoding="utf-8") as f:
             json.dump({"key": key, "spec_hash": self.spec_hash, "frames": names,

@@ -1,0 +1,43 @@
+{
+  "pilot_ready": true,
+  "global_study_ready": false,
+  "publication_ready": false,
+  "checks": {
+    "scope": true,
+    "fixed_absolute_split_conformal": true,
+    "two_tuning_folds": true,
+    "membership_unchanged": true,
+    "boundaries_unchanged": true,
+    "zero_overlap": true,
+    "h1_support_roles_verified": true,
+    "h1_rank_support": true,
+    "h3_support_roles_verified": true,
+    "h3_rank_support": true,
+    "h6_support_roles_verified": true,
+    "h6_rank_support": true
+  },
+  "source_hash": "965ff02d8cb67183210632bfbc3a2251c430a2b027b8b44d87df356fd19e3d71",
+  "protocol_hash": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3",
+  "expected_point_cells": 9,
+  "expected_interval_cells": 18,
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 402612224,
+      "private_bytes": 359038976,
+      "lifetime_peak_rss_bytes": 2296659968,
+      "available_ram_bytes": 2085261312,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "models_fitted": 0
+}

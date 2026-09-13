@@ -1,0 +1,697 @@
+{
+  "config": {
+    "version": "pleia_temperature_pilot_v1",
+    "study_config": "configs/study_final_dissertation_v2.yaml",
+    "dataset": "pleia",
+    "target": "temperature",
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "outer_folds_in_declared_order": 3,
+    "outer_fold_id": 0,
+    "model_seed": 42,
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "interval_construction": "ordinary_split_conformal_absolute_error",
+    "calibration_population": "fixed final calibration block of the single retained PLEIA temperature series",
+    "insufficient_rank": "q=infinity, status=insufficient_calibration; no finite interval-quality claim",
+    "synthetic_fault_injection": false,
+    "alert_rule_selection": false,
+    "adaptive_recalibration": false,
+    "inner_validation_folds": 2,
+    "inner_design": "expanding equal-thirds blocks within final fitting pool; strict target-before-validation-origin purge",
+    "selection_metric": "equally weighted mean of two inner validation MAEs in original target units",
+    "tie_rule": "exact score ties select the lower zero-based frozen candidate ID",
+    "final_lstm_epochs": "ceil(mean(selected candidate best epoch on each inner fold)); refit all final fitting rows",
+    "sequence_length": 24,
+    "inference_batch_size": 256,
+    "threads": 1,
+    "n_jobs": 1,
+    "minimum_launch_available_ram_bytes": 805306368,
+    "minimum_epoch_available_ram_bytes": 268435456,
+    "memory_sampling_seconds": 0.05,
+    "candidates": {
+      "persistence": [
+        {}
+      ],
+      "xgboost": [
+        {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        },
+        {
+          "n_estimators": 400,
+          "max_depth": 5,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        }
+      ],
+      "attention_lstm": [
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.001,
+          "max_epochs": 30,
+          "patience": 5
+        },
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.0005,
+          "max_epochs": 30,
+          "patience": 5
+        }
+      ]
+    },
+    "expected_point_cells": 9,
+    "expected_interval_cells": 18,
+    "scope_note": "Pilot only; previously inspected test data; one fold and one seed. Does not resolve operational alert-selection inner folds or global publication readiness.",
+    "pending_scope": [
+      "operational endpoints",
+      "core inner-fold aggregation",
+      "fault definitions",
+      "DSCP and seasonal evaluation",
+      "group-recovery inference"
+    ]
+  },
+  "resolved_dataset_config": {
+    "seed": 42,
+    "paths": {
+      "raw_dir": "data/raw",
+      "interim_dir": "data/interim",
+      "processed_dir": "data/processed"
+    },
+    "split": {
+      "train_frac": 0.6,
+      "calib_frac": 0.2
+    },
+    "missing": {
+      "max_short_gap_steps": 3
+    },
+    "coverage_levels": [
+      0.9,
+      0.95,
+      0.975,
+      0.99,
+      0.995
+    ],
+    "features": {
+      "target_lags": [
+        1,
+        2,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        6,
+        144
+      ],
+      "include_weekly": true,
+      "target_lags_include_zero": true
+    },
+    "models": {
+      "xgboost": {
+        "search_iter": 20,
+        "cv_splits": 3,
+        "seeds": 5,
+        "refit_n_jobs": 1,
+        "search_n_jobs": -1
+      },
+      "lstm": {
+        "seq_len": 24,
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5,
+        "val_fraction": 0.2,
+        "seeds": 3
+      }
+    },
+    "conformal": {
+      "cqr": {
+        "seeds": 5
+      },
+      "enbpi": {
+        "n_resamplings": 20,
+        "block_length": 48,
+        "base_n_estimators": 200,
+        "base_max_depth": 5,
+        "base_learning_rate": 0.05,
+        "update_step": 48,
+        "seeds": 3,
+        "n_jobs": 4
+      },
+      "dscp": {
+        "max_clusters": 6,
+        "ks_threshold": 0.05,
+        "neighbours": null,
+        "gamma": 1.0
+      }
+    },
+    "alerts": {
+      "primary_method": "cqr",
+      "primary_level": 0.95,
+      "detection_tolerance_steps": 6,
+      "max_false_alerts_per_day": 1.0,
+      "candidate_rules": [
+        "1-of-1",
+        "2-of-3",
+        "3-of-5",
+        "4-of-7"
+      ],
+      "selection": {
+        "calibration_conformal_fraction": 0.6,
+        "min_samples_per_block": 200
+      },
+      "events": {
+        "instances_per_type": 3,
+        "spike_sds": [
+          4.0
+        ],
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "bias_steps": 18,
+        "level_shift_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_steps": 12,
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_steps": 36,
+        "stuck_steps": 18,
+        "dropout_steps": 12,
+        "warmup_steps": 6,
+        "guard_steps": 6
+      },
+      "primary_level_selected_on_inner": true,
+      "rules_are_physical_time": true,
+      "primary_horizon": 1
+    },
+    "recalibration": {
+      "recovery_block": 144,
+      "grid": {
+        "update_every": [
+          24,
+          48,
+          144
+        ],
+        "window": [
+          250,
+          500,
+          1000
+        ],
+        "min_samples": 50
+      }
+    },
+    "robustness": {
+      "modes": [
+        "legacy_fixed_intervals",
+        "closed_loop"
+      ],
+      "random_missing": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "block_missing": [
+        0.05,
+        0.1
+      ],
+      "block_steps": 12,
+      "bias_sds": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "level_shift_sds": [
+        1.0,
+        2.0
+      ],
+      "drift_sds": [
+        1.0,
+        2.0
+      ],
+      "stuck_fractions": [
+        0.05
+      ],
+      "dropout_fractions": [
+        0.05
+      ],
+      "calibration_contamination": [
+        0.01,
+        0.05,
+        0.1
+      ]
+    },
+    "bootstrap": {
+      "n_boot": 2000,
+      "ci": 0.95
+    },
+    "plotting": {
+      "window_steps": 144
+    },
+    "adapter": "pleia",
+    "target_kind": "temperature",
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "resample": {
+      "freq": "10min",
+      "season_steps": 144
+    },
+    "outliers": {
+      "target_min": 15.0,
+      "target_max": 40.0
+    },
+    "dataset": {
+      "zenodo_record_id": "7620136",
+      "room_all_file": "Data_Nature/processed_data/data-room10T-all.csv",
+      "csv_sep": ";",
+      "timestamp_col": "Date",
+      "block_col": "block",
+      "room_col": "room",
+      "target_var": "V2"
+    },
+    "target_selection": {
+      "min_std": 0.5,
+      "min_valid_obs": 5000
+    },
+    "covariates": {
+      "outdoor_temp": "tmed",
+      "humidity": "hrmed",
+      "radiation": "radmed",
+      "hvac_state": "V4",
+      "setpoint": "V12",
+      "hvac_mode_onehot": [
+        "V5_0",
+        "V5_1",
+        "V5_2"
+      ]
+    }
+  },
+  "horizons": {
+    "1": {
+      "data_hash": "ea4daa5dc3579aec204c02fd26d09ba7467a2ad3c45790efc705c7883bde6741",
+      "roles": {
+        "fit": {
+          "n": 29719,
+          "membership_hash": "197ca2126db8a6d54c51df4c1e25522291e7fe61047c6620379e662e13aa1aa7",
+          "row_id_hash": "acad5b23e34c855e75aef90bba7e446ae6b4f2cc2f4476fc9aaf06867123172e",
+          "origin_min": "2021-01-08 00:00:00",
+          "origin_max": "2021-08-02 09:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-08-02 09:10:00"
+        },
+        "calibration": {
+          "n": 9907,
+          "membership_hash": "42d0c4713c5ecaaa74c82362a9855bbff73541096b246a9001cff04c23ca9dac",
+          "row_id_hash": "8dbd6369c7ccb0ea568b294c99ecb4a95c63380b65fe3eb8c53f8c9ce440f4b0",
+          "origin_min": "2021-08-02 09:20:00",
+          "origin_max": "2021-10-10 04:20:00",
+          "target_min": "2021-08-02 09:30:00",
+          "target_max": "2021-10-10 04:30:00"
+        },
+        "test": {
+          "n": 9907,
+          "membership_hash": "77c805ec1206f5f4b8d69c832dbcdd0c7a9105f7eb908635b0cdce64c5e7f6d4",
+          "row_id_hash": "61fb9d5f541775d64dae4219cf4bfe844622a1b80fd4feab67c5817942209f4b",
+          "origin_min": "2021-10-10 04:40:00",
+          "origin_max": "2021-12-17 23:40:00",
+          "target_min": "2021-10-10 04:50:00",
+          "target_max": "2021-12-17 23:50:00"
+        },
+        "inner0_train": {
+          "n": 9905,
+          "membership_hash": "858dadfb167b05cfdd85ef43e9966c224bc071a247182f46793bfa76b885b60a",
+          "row_id_hash": "a7948596357944265f7b6287377e80f72ba271588744ce0fc219f20b6ff63364",
+          "origin_min": "2021-01-08 00:00:00",
+          "origin_max": "2021-03-17 18:40:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-03-17 18:50:00"
+        },
+        "inner0_validation": {
+          "n": 9905,
+          "membership_hash": "c6e19624d0362c4bd29f3fb03ca85cd8bea428fe0ac5cf9fe1dc48fe8bd44866",
+          "row_id_hash": "f7add43a3b4de7107f8b8480d57d7c2efa2eb6fb92e2b58766cfd5fd84c64231",
+          "origin_min": "2021-03-17 19:00:00",
+          "origin_max": "2021-05-25 13:40:00",
+          "target_min": "2021-03-17 19:10:00",
+          "target_max": "2021-05-25 13:50:00"
+        },
+        "inner1_train": {
+          "n": 19810,
+          "membership_hash": "c637830d4d269106b1c0ccbc869a95104e455aa06fa5c920f07e2a7f83cb9792",
+          "row_id_hash": "1a695d02624f40ff7f72bd21f283e5c29f7c0b38d370912d707d973cc6835157",
+          "origin_min": "2021-01-08 00:00:00",
+          "origin_max": "2021-05-25 13:40:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-05-25 13:50:00"
+        },
+        "inner1_validation": {
+          "n": 9907,
+          "membership_hash": "bc43489126279e531661ba68b9743fda3502cec95a36ea7ec09692c03ea90a20",
+          "row_id_hash": "a9e07f5cdb34e3a78d50200a438f9ff4ad7c5cc49b5e3e9f90b6b9bb469de781",
+          "origin_min": "2021-05-25 14:00:00",
+          "origin_max": "2021-08-02 09:00:00",
+          "target_min": "2021-05-25 14:10:00",
+          "target_max": "2021-08-02 09:10:00"
+        }
+      },
+      "eligible_rows": 49535,
+      "flat_rows": 49535,
+      "excluded_rows": 0,
+      "feature_names": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "sequence_channels": [
+        "target",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos"
+      ],
+      "physical_minutes": 10.0
+    },
+    "3": {
+      "data_hash": "d9952ed2b0af11ec34f4cb849c9c45e91f7c74a3cdaa2393e449e2715e7f934c",
+      "roles": {
+        "fit": {
+          "n": 29715,
+          "membership_hash": "d245653f52ba66016741583cf542612b29fde554e261b4f0fa6270f760dc7ada",
+          "row_id_hash": "47aacd6ad88c805dc3cb9e2dbfec0440b139095b9e1d7eebe18d99e23e82e83b",
+          "origin_min": "2021-01-07 23:40:00",
+          "origin_max": "2021-08-02 08:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-08-02 08:30:00"
+        },
+        "calibration": {
+          "n": 9906,
+          "membership_hash": "7b1e40754283d2d9c9144efbcdb44852c434152aaa2b63b8b7442cb618548a5f",
+          "row_id_hash": "9ac7f4a49319efe4e8b60323c2b02865521335b53ce94ef9a75d62cc77f2ea96",
+          "origin_min": "2021-08-02 08:50:00",
+          "origin_max": "2021-10-10 03:40:00",
+          "target_min": "2021-08-02 09:20:00",
+          "target_max": "2021-10-10 04:10:00"
+        },
+        "test": {
+          "n": 9907,
+          "membership_hash": "2c56104e38d2b03ffb6873b914346890d589bc0240acd42fd31d3b6d068570b6",
+          "row_id_hash": "2224bcc28a343573d83568d964edaeb53cfd91dea82cb5667b6715ffc66eb13c",
+          "origin_min": "2021-10-10 04:20:00",
+          "origin_max": "2021-12-17 23:20:00",
+          "target_min": "2021-10-10 04:50:00",
+          "target_max": "2021-12-17 23:50:00"
+        },
+        "inner0_train": {
+          "n": 9902,
+          "membership_hash": "224c212938ebf4d74fdaf10c4d17a4e36f964f91f8692efea4610e7ad1dfe608",
+          "row_id_hash": "11a5b766ccfe191c250f8e9881ae4d83f6fd7d28e844b4013a4e8b281bf7e072",
+          "origin_min": "2021-01-07 23:40:00",
+          "origin_max": "2021-03-17 17:50:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-03-17 18:20:00"
+        },
+        "inner0_validation": {
+          "n": 9902,
+          "membership_hash": "db263981b40846508d608885a705bb8098d7e7d2818e46895735c7ca57b7af84",
+          "row_id_hash": "f57227f815477b175e308c4a6ee30b6a2d2919629718285c9bb29a0d7e5ce9aa",
+          "origin_min": "2021-03-17 18:30:00",
+          "origin_max": "2021-05-25 12:40:00",
+          "target_min": "2021-03-17 19:00:00",
+          "target_max": "2021-05-25 13:10:00"
+        },
+        "inner1_train": {
+          "n": 19804,
+          "membership_hash": "11f2a12231f4b8e50d3deb7d0cc3f02ac16673c23f8ab4f76efcc896f9935227",
+          "row_id_hash": "a250d9b51150896f9865a37187a1f73918474225f9fd514679d376c3b66db1e7",
+          "origin_min": "2021-01-07 23:40:00",
+          "origin_max": "2021-05-25 12:40:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-05-25 13:10:00"
+        },
+        "inner1_validation": {
+          "n": 9905,
+          "membership_hash": "0aeaba3bd737827b3212fd827591840a37eb9240cd8fc4e0f997dea2140ceedc",
+          "row_id_hash": "8e8e113845d29804111c66a3dc99d8860f6dce9b97424ca23a29c6752c4ccb3d",
+          "origin_min": "2021-05-25 13:20:00",
+          "origin_max": "2021-08-02 08:00:00",
+          "target_min": "2021-05-25 13:50:00",
+          "target_max": "2021-08-02 08:30:00"
+        }
+      },
+      "eligible_rows": 49535,
+      "flat_rows": 49535,
+      "excluded_rows": 0,
+      "feature_names": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "sequence_channels": [
+        "target",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos"
+      ],
+      "physical_minutes": 30.0
+    },
+    "6": {
+      "data_hash": "5f82d9b1241b651ae41db34771b44ea8dc61cee2367a2af45ca7be1d9403d5cb",
+      "roles": {
+        "fit": {
+          "n": 29710,
+          "membership_hash": "9bfb1bb756f6482d05f8b29f4641dbd1f296028fc350a4a553d24a36d22e27e9",
+          "row_id_hash": "46cd0f4dd759b44d4fe40bd4a6992c82f924f638fc8a66d9c547d83df1f655d2",
+          "origin_min": "2021-01-07 23:10:00",
+          "origin_max": "2021-08-02 06:40:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-08-02 07:40:00"
+        },
+        "calibration": {
+          "n": 9904,
+          "membership_hash": "95f6a9fd9b4c2fa94db7feb83a63fad2a71fd57999295f2197de2469d546764e",
+          "row_id_hash": "dc23852a3f20e2a36abb81e5c43aa65bf92792d85263aca31dba347b4149c279",
+          "origin_min": "2021-08-02 08:10:00",
+          "origin_max": "2021-10-10 02:40:00",
+          "target_min": "2021-08-02 09:10:00",
+          "target_max": "2021-10-10 03:40:00"
+        },
+        "test": {
+          "n": 9907,
+          "membership_hash": "d49d239e790e4d4ac222855ae25cdaac52374834298fd0a50aea54a1301ed1ee",
+          "row_id_hash": "83329ceeac2b89c37642f2b2dd4afdfbc7767e96c7dc5577fdfb4bd7ce61765c",
+          "origin_min": "2021-10-10 03:50:00",
+          "origin_max": "2021-12-17 22:50:00",
+          "target_min": "2021-10-10 04:50:00",
+          "target_max": "2021-12-17 23:50:00"
+        },
+        "inner0_train": {
+          "n": 9897,
+          "membership_hash": "a6403e960745cce991ed91ad4e09c0bacd724edcf9100567e9722ec33b2f0126",
+          "row_id_hash": "39324fc24fadefe2db1aaa2e6c0b298d8e7df230a70f6461159eb01cf0025f0f",
+          "origin_min": "2021-01-07 23:10:00",
+          "origin_max": "2021-03-17 16:30:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-03-17 17:30:00"
+        },
+        "inner0_validation": {
+          "n": 9897,
+          "membership_hash": "eed5d591d2433de344782fb37c677017b7eb2ab643af84f8077edf74ff3bbe2d",
+          "row_id_hash": "c0c7106dec78c2438691bd6c9102f2f44bc117d8e65d5569f78674b3198e8957",
+          "origin_min": "2021-03-17 17:40:00",
+          "origin_max": "2021-05-25 11:00:00",
+          "target_min": "2021-03-17 18:40:00",
+          "target_max": "2021-05-25 12:00:00"
+        },
+        "inner1_train": {
+          "n": 19794,
+          "membership_hash": "516702fb97ea5798b6b3bc5e6fdc36d944e45c01996a7abcecafdcfbaf941b2c",
+          "row_id_hash": "20b8e14d58ab6e3ca0b78d68f22fe4619e763a588ae374d2daa6a4732f6359ab",
+          "origin_min": "2021-01-07 23:10:00",
+          "origin_max": "2021-05-25 11:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-05-25 12:00:00"
+        },
+        "inner1_validation": {
+          "n": 9904,
+          "membership_hash": "f7a48687f85b4b8b0f7e7fc920bb44bc15de33c4f098f554582b76ebe32df731",
+          "row_id_hash": "884a2b4b3edd2059df1542972bb0a3bc9e0e4415fef83d4c8eb94ffb9fa449c7",
+          "origin_min": "2021-05-25 12:10:00",
+          "origin_max": "2021-08-02 06:40:00",
+          "target_min": "2021-05-25 13:10:00",
+          "target_max": "2021-08-02 07:40:00"
+        }
+      },
+      "eligible_rows": 49535,
+      "flat_rows": 49535,
+      "excluded_rows": 0,
+      "feature_names": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "sequence_channels": [
+        "target",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos"
+      ],
+      "physical_minutes": 60.0
+    }
+  },
+  "frozen_at_utc": "2026-09-13T04:17:02.526745+00:00",
+  "models_fitted": 0,
+  "config_file_sha256": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723",
+  "membership_sha256": "4a3d5d9902d5332d396f6feffe00ab7fdf931aadd39f33bbd1164bf26cc6cf9d",
+  "boundaries_sha256": "8e4c7fd316eab987a7974174b5d440491baec91f7119c62270d25e8affed72c1",
+  "preparation_resources": {
+    "seconds": 16.56823280000026,
+    "baseline_rss_bytes": 350519296,
+    "peak_rss_bytes": 2454228992,
+    "baseline_private_bytes": 306176000,
+    "peak_private_bytes": 2423209984,
+    "incremental_peak_rss_bytes": 2103709696,
+    "lifetime_peak_rss_bytes": 2458324992,
+    "min_available_ram_bytes": 794624,
+    "sample_interval_seconds": 0.05
+  }
+}
