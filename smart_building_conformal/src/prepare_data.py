@@ -43,10 +43,19 @@ def assign_split(times: pd.DatetimeIndex, t_train_end, t_calib_end) -> np.ndarra
 # --------------------------------------------------------------------------- #
 # Target selection
 # --------------------------------------------------------------------------- #
-def load_room_table(cfg: dict) -> pd.DataFrame:
+def load_room_table(cfg: dict, *, model_columns_only: bool = False) -> pd.DataFrame:
     ds = cfg["dataset"]
     path = Path(cfg["paths"]["interim_dir"]) / ds["room_all_file"]
-    df = pd.read_csv(path, sep=ds["csv_sep"])
+    read_options = {}
+    if model_columns_only:
+        # The long room file contains unused consumption, weather and calendar
+        # columns. Project at CSV parsing, before pandas allocates their arrays.
+        cov = cfg["covariates"]
+        needed = {ds["timestamp_col"], ds["block_col"], ds["room_col"], ds["target_var"],
+                  cov["outdoor_temp"], cov["humidity"], cov["radiation"],
+                  cov["setpoint"], cov["hvac_state"], *cov["hvac_mode_onehot"]}
+        read_options["usecols"] = lambda name: name in needed
+    df = pd.read_csv(path, sep=ds["csv_sep"], **read_options)
     df[ds["timestamp_col"]] = pd.to_datetime(df[ds["timestamp_col"]], utc=True, format="mixed")
     # Work in tz-naive UTC to keep resampling/reindexing simple.
     df[ds["timestamp_col"]] = df[ds["timestamp_col"]].dt.tz_convert("UTC").dt.tz_localize(None)
@@ -61,7 +70,10 @@ def select_target(df: pd.DataFrame, cfg: dict) -> tuple[dict, pd.DataFrame]:
     sel = cfg["target_selection"]
 
     rows = []
-    for (block, room), g in df.groupby([ds["block_col"], ds["room_col"]]):
+    # Ranking needs only identifiers, timestamps and the target. Grouping all
+    # covariates creates a second large copy without changing any ranking input.
+    ranking = df[list(dict.fromkeys([ds["block_col"], ds["room_col"], ts, tgt]))]
+    for (block, room), g in ranking.groupby([ds["block_col"], ds["room_col"]]):
         g = g.sort_values(ts)
         v = g[tgt].astype(float)
         t0, t1 = g[ts].min(), g[ts].max()

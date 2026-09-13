@@ -177,7 +177,7 @@ class PleiaAdapter(DatasetAdapter):
     # ------------------------------------------------------------------ #
     def _prepare_temperature(self, cfg: dict) -> PreparedDataset:
         """Delegate to the preliminary pipeline so both studies share one path."""
-        df = prepare_data.load_room_table(cfg)
+        df = prepare_data.load_room_table(cfg, model_columns_only=True)
         choice, audit = prepare_data.select_target(df, cfg)
         processed = prepare_data.build_dataset(df, choice, cfg)
 
