@@ -23,6 +23,8 @@ def index(manifest,state):
         text+='\n## Final delivery verification and next proposal\n\n[Delivery validation](delivery_v1/delivery_validation.json) reconciles all twelve successful model runs, 120 learned fits, 36 point cells, 72 interval cells, 72 exact saved-model checks, twelve zero-fit resumes and 26 distinct regression checks. [Selected configurations](delivery_v1/selected_configurations.csv) retain each model\'s parameters and original evidence identity. [Figure review](delivery_v1/figure_review.json) verifies the five rendered figures against their source hashes.\n\n'
         text+='[Coordinator recovery](RECOVERY_PROGRESS_WRITE.md), [outer command attempts](delivery_v1/coordinator_attempts.csv), and [calendar timing](delivery_v1/coordinator_timing.json) record the initial bookkeeping exit 1 and resumed exit 0. The independent preservation check is in the analysis directory. No learned fit was repeated.\n\n'
         text+='[Proposed seed-43 replication](delivery_v1/proposed_seed43_replication.csv) lists thirteen exact fold-2 keys, 104 tuning and 26 final fits. It is not authorized or launched. The remaining core queue contains 177 units; broader methods remain separate obligations.\n\n'
+        if (REVIEW/'delivery_v1/publication_line_endings.json').exists():
+            text+='[Publication byte-preservation correction](delivery_v1/publication_line_endings.json) records two preparation files whose initial Git blobs normalized line endings. Exact working bytes were re-staged under the existing binary-preservation attributes; scientific source, fitted artifacts and numerical values were unaffected. Publication now checks every staged blob against the working manifest before committing.\n\n'
     text+='\n## Per-unit fitted evidence\n\n'
     for u in manifest['units']:
         run=Path(u['run']).relative_to(ROOT).as_posix();design=Path(u['design']).relative_to(ROOT).as_posix();done=state.get('units',{}).get(u['stem'],{})
@@ -69,6 +71,18 @@ def main(label):
     paths=package(manifest,state)
     pathfile=BACKUP/f'{label}_stage_paths.txt';atomic(pathfile,'\n'.join(paths)+'\n')
     subprocess.run(['git','add','--pathspec-from-file='+str(pathfile)],cwd=ROOT,check=True)
+    # Previously staged text can retain an old normalized blob after -text is
+    # added. Reapply the current attributes to this bounded evidence path list.
+    subprocess.run(['git','add','--renormalize','--pathspec-from-file='+str(pathfile)],cwd=ROOT,check=True)
+    staged={}
+    for entry in subprocess.check_output(['git','ls-files','--stage','-z'],cwd=ROOT).split(b'\0'):
+        if entry:
+            metadata,name=entry.split(b'\t',1)
+            staged[name.decode('utf-8')]=metadata.split()[1].decode('ascii')
+    for name in paths:
+        data=(ROOT/name).read_bytes()
+        blob=hashlib.sha1(b'blob '+str(len(data)).encode('ascii')+b'\0'+data).hexdigest()
+        assert staged[name]==blob, 'staged evidence bytes differ from manifest: '+name
     subprocess.run(['git','diff','--cached','--check'],cwd=ROOT,check=True)
     if subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode:
         subprocess.run(['git','commit','-m',f'Publish matched overnight evidence: {label}'],cwd=ROOT,check=True)

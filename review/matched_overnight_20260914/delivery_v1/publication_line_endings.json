@@ -1,0 +1,25 @@
+{
+  "initial_publication": "ae4da924b01889f54f821e143a8a9439a19686df",
+  "affected_files": [
+    {
+      "path": "review/matched_overnight_20260914/fresh_role_support.csv",
+      "expected_sha256": "bc5461f4775afe72276d0bbd11fb1948b43a1cb12da3456f7ca7f6fb4a324d85",
+      "published_sha256": "7ff0e54d3de745d6b79d1023b3c6975450f099a6edab3885ece3b71f4ba9079e",
+      "only_crlf_lf_difference": true,
+      "working_bytes": 22076,
+      "published_bytes": 21991
+    },
+    {
+      "path": "review/matched_overnight_20260914/initial_prepare_failure.txt",
+      "expected_sha256": "fd5cd8a77e9c14bb64080dd2af10dcd33572e44ae17ea083c48300a947ab1e79",
+      "published_sha256": "bca8f46f69a9481b2135e1fcc5624e73c7b9fbc826eaf9899df0fb363d90d162",
+      "only_crlf_lf_difference": true,
+      "working_bytes": 718,
+      "published_bytes": 708
+    }
+  ],
+  "scientific_source_changed": false,
+  "fitted_artifacts_changed": false,
+  "numerical_values_changed": false,
+  "repair": "Re-stage exact working bytes using existing -text attributes, verify all staged manifest hashes before commit, then reverify remote tree and raw downloads."
+}

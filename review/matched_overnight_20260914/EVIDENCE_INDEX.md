@@ -47,6 +47,8 @@ Scientific source SHA-256: `cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3
 
 [Proposed seed-43 replication](delivery_v1/proposed_seed43_replication.csv) lists thirteen exact fold-2 keys, 104 tuning and 26 final fits. It is not authorized or launched. The remaining core queue contains 177 units; broader methods remain separate obligations.
 
+[Publication byte-preservation correction](delivery_v1/publication_line_endings.json) records two preparation files whose initial Git blobs normalized line endings. Exact working bytes were re-staged under the existing binary-preservation attributes; scientific source, fitted artifacts and numerical values were unaffected. Publication now checks every staged blob against the working manifest before committing.
+
 
 ## Per-unit fitted evidence
 
