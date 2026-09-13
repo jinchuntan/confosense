@@ -1,6 +1,7 @@
 """Amendment 004 acceptance: real replay/selection/checkpoint interfaces."""
 from copy import deepcopy
 from dataclasses import replace
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytest
@@ -200,6 +201,21 @@ def test_checkpoint_preserves_literal_none_asset_identifier(tmp_path):
     _,frames,status=checkpointed_unit(tmp_path,spec,lambda:pytest.fail('refit'),resume=True)
     assert frames['stream'].group_id.eq('None').all()
     assert stream_hash(frames['stream'])==stream_hash(frame)
+
+
+def test_smoke_runner_persists_validation_and_resume(tmp_path,monkeypatch,unit):
+    from src import operational004_smoke as smoke
+    # The real CQR interface has its own test; reuse the completed two-fold
+    # unit here to test the actual CLI runner's serialization and result schema.
+    monkeypatch.setattr(smoke,'evaluate_unit',lambda *a,**kw:deepcopy(unit))
+    monkeypatch.setattr(smoke,'actual_cqr_probe',lambda:(dict(test_stub=True),{}))
+    configuration=Path(__file__).resolve().parents[1]/'configs/operational_amendment004.json'
+    result=smoke.run(tmp_path,configuration)
+    assert result['scope']=='SMOKE ONLY' and result['output_valid']
+    assert (tmp_path/'output_validation.json').is_file()
+    result=smoke.run(tmp_path,configuration,resume=True)
+    assert result['reused_units']==1 and result['new_fit_invocations']==0
+    assert (tmp_path/'resume_validation.json').is_file()
 
 
 def test_unsupported_design_skips_fits(data):

@@ -65,7 +65,7 @@ def run(out,config,resume=False):
         columns=['candidate_id','inner_fold']).sort_values(['candidate_id','inner_fold']).reset_index(drop=True)
     actual=frames['surface'][['candidate_id','inner_fold']].sort_values(['candidate_id','inner_fold']).reset_index(drop=True)
     pd.testing.assert_frame_equal(expected,actual)
-    result=dict(scope='SMOKE ONLY',status='complete',**validation,**status,
+    result=dict(status='complete',**validation,**status,
         expected_inner_cells=12,expected_inner_catalogue_pairs=60,expected_outer_catalogue_pairs=20,
         checkpoint_corruption_rejected_on_temporary_copy=rejected,full_study_validator_rejects_smoke=rejects_full,
         decision=payload['decision'],operational_feasible=payload['operational_feasible'],
