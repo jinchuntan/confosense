@@ -106,12 +106,18 @@ def corrupted_features(segmented, meta, observed, available, horizon, fcfg, colu
     pieces=[]
     for series in segmented.series:
         frame=series.frame.copy()
+        # Adapters encode this binary covariate as int, float or bool. Assigning
+        # bool into BDG2's integer column coerces it to object in pandas, which
+        # makes the otherwise numeric feature matrix fail np.isfinite. Preserve
+        # its exact 0/1 meaning in an explicitly numeric column before injection.
+        if 'target_was_missing' in frame:
+            frame['target_was_missing']=frame['target_was_missing'].astype(float)
         for time in frame.index:
             item=lookup.get((str(series.group_id),pd.Timestamp(time)))
             if item is not None:
                 value,flag=item;frame.loc[time,'target']=value if flag else np.nan
                 if 'target_was_missing' in frame:
-                    frame.loc[time,'target_was_missing']=not flag
+                    frame.loc[time,'target_was_missing']=float(not flag)
         frame['target']=frame.target.ffill()
         if series.season_steps is not None and series.season_steps < horizon:
             raise ValueError('seasonal feature would use a future reading')
