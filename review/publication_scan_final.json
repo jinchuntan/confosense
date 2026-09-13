@@ -1,0 +1,2560 @@
+{
+  "head": "ae611e1626e8ab520255f77f2395103808bcaf33",
+  "comparison": "HEAD excluding all fetched origin refs; includes reachable unpublished historical blobs",
+  "blobs": 425,
+  "bytes": 79538867,
+  "findings": [],
+  "secret_scan": "Pattern scan including decompressed CSVs/source ZIPs/model archive members; manual scope/rights review also required, not a proof of absence.",
+  "records": [
+    {
+      "path": ".gitattributes",
+      "git_blob": "1dcbc4816050c38f94018897a181932b877fc89d",
+      "bytes": 485,
+      "sha256": "64c091e179b53dcb3074d4b41cb4eee747c2ea3aff9551453fc0b461d5e77bbc"
+    },
+    {
+      "path": "INTEGRATION_REPAIR_REPORT.md",
+      "git_blob": "55fe5f4489a0ee89b6b32159cfd47594d3829d68",
+      "bytes": 27791,
+      "sha256": "ed43d0da7874162684d2a8b794666a47c8abe6e9f231f66fc4d5a8eaf86a539b"
+    },
+    {
+      "path": "MODEL_COMPARISON_PILOT_REPORT.md",
+      "git_blob": "9c6c969c4d65c5b02f3be6a75c657c8916786954",
+      "bytes": 31231,
+      "sha256": "dc7009cda000f67ded5a5081c281a09358b17ef6cc40ffec9282391ab073e18e"
+    },
+    {
+      "path": "OPERATIONAL_EVALUATION_PLAN.md",
+      "git_blob": "dfae7072254ed6bec83fbd6a797100aa804c093c",
+      "bytes": 34598,
+      "sha256": "bc8eeaac36d3336ca7367ba9db98dd13304370a35445fa5d81a4f34fc256dc52"
+    },
+    {
+      "path": "PANEL_RESPONSE_MATRIX.md",
+      "git_blob": "7e3489f38e6b893b8cbb8e98023712bd2e04d5fa",
+      "bytes": 26435,
+      "sha256": "2f4843e5bbc4fa22a9f73fa2f666239edfc548d344a233226411f771e78d7f13"
+    },
+    {
+      "path": "PILOT_DIAGNOSTICS.md",
+      "git_blob": "89fc54869bc8deaffd0e2fe8e9e94c935d6d56f7",
+      "bytes": 17185,
+      "sha256": "d265115b79a88c95236985c36f60336cd03045f8dbcdf0c7be20f3304db4f823"
+    },
+    {
+      "path": "PROJECT_RECOVERY_STATUS.md",
+      "git_blob": "12bc780e80bd6b0cfb4b72b2c3fd710ca035793a",
+      "bytes": 30688,
+      "sha256": "90dbfe557265cb6cf1882115fdc89c9d59d66bcae5399cf5a3f5720382aaffef"
+    },
+    {
+      "path": "review/CURRENT_EVIDENCE.md",
+      "git_blob": "c600037217afe181a63c3b34a1cb51f096f9ce11",
+      "bytes": 10788,
+      "sha256": "9c4b31113677bf8678f89f3c69669c8250e6263df1c51a505602278f396f383e"
+    },
+    {
+      "path": "review/DATA_NOTICE.md",
+      "git_blob": "162476208d112f4f68a9b656ef335146f6816b51",
+      "bytes": 2780,
+      "sha256": "6b65416826635747c557c44a99fd1af0578df18aa98b9d7353a77fb223c15232"
+    },
+    {
+      "path": "review/PUBLICATION_AUDIT.md",
+      "git_blob": "0dac9406b10e7725f0872d3afc220ae2de33d8f9",
+      "bytes": 5734,
+      "sha256": "75451a3716e9c38f18e2785023b6edcba91dcde98e80b16427f4f8919f023209"
+    },
+    {
+      "path": "review/STAGING_ALLOWLIST.txt",
+      "git_blob": "319e666dc6f8cca6d8d44c98ff7d2af7869a439e",
+      "bytes": 8331,
+      "sha256": "36c6b419e3594b7ca9953fc6292736185ae3f274cc5fc06dc49f1f250de89fee"
+    },
+    {
+      "path": "review/pending_publication_objects.json",
+      "git_blob": "2e2fb32192b5bbdef125f66cb1058ca880e7f73a",
+      "bytes": 64851,
+      "sha256": "be50f58a856a1daeea16d6fe8c34d03af4290502f286e30f1c774e8f857f9a7d"
+    },
+    {
+      "path": "review/pleia_rights_metadata.json",
+      "git_blob": "fe6a8e504fa3dde3c35e98514b250debda928883",
+      "bytes": 747,
+      "sha256": "6cf9c5b517ace3694ca6f167cac7779268f55236b8be14d9186bb68431be265d"
+    },
+    {
+      "path": "review/publication_scan_initial.json",
+      "git_blob": "13153f35ec6d4bcfdb2b519c6a81e39626daf391",
+      "bytes": 98139,
+      "sha256": "fd5c70decd8a5cc1729550e4f9ae0cde34290cb2e65df2c6aa0f872740c4f0bb"
+    },
+    {
+      "path": "smart_building_conformal/.gitignore",
+      "git_blob": "83c61fb46d3abe429a1c1978468396db05b76791",
+      "bytes": 1872,
+      "sha256": "cd3cc164d189a882c6ff4c5f93848c1689dc485a6fef7c4986c6b9c320cfdd7a"
+    },
+    {
+      "path": "smart_building_conformal/configs/model_comparison_pilot_v1.json",
+      "git_blob": "3617c0bf39a3b646dfcad2bee6765bd4f27c5f30",
+      "bytes": 2496,
+      "sha256": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723"
+    },
+    {
+      "path": "smart_building_conformal/configs/study_final_dissertation_v2.yaml",
+      "git_blob": "845d8e9e16c10e69099bc70fc28149584bea589c",
+      "bytes": 2212,
+      "sha256": "8869fd2d20cb63f31968c61fdcbd7db4bddfe935940d372f7faa0e83d8d09857"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/PUBLICATION_READY.json",
+      "git_blob": "0ebf66cbfb4353526e5dff361fb362bd3fe9fe1d",
+      "bytes": 895,
+      "sha256": "267c5dcb351d6339bb5efa0529b5dbae5944b13f018691fa8c4a78d4928d26ab"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/STATUS_AND_RESUME.md",
+      "git_blob": "e3837c47e559276e446855889c81629b0135dfce",
+      "bytes": 3239,
+      "sha256": "c59229aabd09100d2f488d5ad2c75b2d86d2ecd4f8f802ebb111471293a57d75"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/engine_smoke_evidence.md",
+      "git_blob": "467c6f3f3f2aff09a28bc0185a3b019139210aeb",
+      "bytes": 1715,
+      "sha256": "16ef209a69568e0622e721032f7b294e2886336e8daf916850a6f88cdd026b5b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/full_study_baseline_checksums.txt",
+      "git_blob": "bbbab4fcd37f301e53532a9e3b3d72f678729b50",
+      "bytes": 22597,
+      "sha256": "0bf904c3c66eb8056bd9e14d84f88769eb8b5777fa7942929ba71ef9963eb159"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/integration_repair_status.json",
+      "git_blob": "6336462624d8d51872ca9a62234f204580cc467d",
+      "bytes": 2261,
+      "sha256": "ec08f97d96bd56ed529bd9282e910afe018353df7abd82f49062eaba43f1334e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/leakage_audit.json",
+      "git_blob": "926be4f4913666ea27375c16ddccd9caaedbbbe3",
+      "bytes": 8970,
+      "sha256": "08e9f237769bd3fcc19080ad0f8a08a880275e8fc59131525ee776645ec31801"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/post_run_statistical_audit.json",
+      "git_blob": "140554bcccb877d530e6abc6441d74accdbf3b51",
+      "bytes": 2644,
+      "sha256": "7d809b9c32b9672626f0ee67b20aa06a310aabef67ffd6d3841cb2f072cc2195"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/smoke_evidence.md",
+      "git_blob": "b23132242cb1ad85887a70b7511d85f2d7abc0d1",
+      "bytes": 1425,
+      "sha256": "acbfcf70b2260ed14ce9289f8f445c3854f9a81a87bb040a26da6a392aa08200"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_coverage_with_cis.png",
+      "git_blob": "1786a638a9042014c5d4ca090b8ac50520c29bb7",
+      "bytes": 25754,
+      "sha256": "31eaf4762de64726b095b498637e8585540d57198c4c3035139c6dbd9f3bb284"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_recall_by_stratum.png",
+      "git_blob": "a979342303d081ebbd4e01fa639e9025c3b392c5",
+      "bytes": 57359,
+      "sha256": "95527f0ee849490c40e7c9d2218660a5e202a5030b707abc8f8dfe4ae89e6956"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_recall_vs_workload.png",
+      "git_blob": "f80a92ae4756618ed549715eabe37bfa1be16cad",
+      "bytes": 83643,
+      "sha256": "0dc4f7b9a5f38867be7c775b9e6e46be3e247c41b5618ccb8d7eaa6c20380c6e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_selected_configs.png",
+      "git_blob": "3eb2d98387f121e694b8841658255908e1aa7324",
+      "bytes": 24148,
+      "sha256": "3ac159f92affe893c421caccddfdb12a0a86b29d4ca1bffe9a6fb017874a97b4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/figures/figure_index.csv",
+      "git_blob": "45cf0222a122bff78090e1c8bb960968a7206ef2",
+      "bytes": 510,
+      "sha256": "5fd7ca9d84810538012d516917662fad12a39be259e9742e8a36daab53b77319"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/ALERT_ACCOUNTING_AUDIT.csv",
+      "git_blob": "0a5c401be6597e39a4d7f0d3bb2cdf710eec1fe8",
+      "bytes": 708,
+      "sha256": "3f9cfbcf25da3919ef429cfb6c0cd0c96b633a486c64cb2700f710fd4ba31360"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/CI_AUDIT.csv",
+      "git_blob": "2cc8c876f3b86280009be0abc09eda46c52a1914",
+      "bytes": 1189,
+      "sha256": "f4ec0329c07a3386614e2f61a9e7eafe3a37d5c3dc74c3229628658856e70953"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/FOLD_MEMBERSHIP.csv",
+      "git_blob": "e5c576fd74e85b82aa403fbfda36e6c686938f18",
+      "bytes": 1942,
+      "sha256": "eed69f124bb123e6df8c3d33e52bdb35d579f71e732ca0880a8185465b985929"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/FULL_RUN_INVENTORY.csv",
+      "git_blob": "01f1fed276c70d4cb2ceb31bd144468a03167bcc",
+      "bytes": 775,
+      "sha256": "85666342af046d101152db69d33f7b6e715575ed3f02795811c542433dfc6661"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/NOMINAL_COVERAGE_AUDIT.csv",
+      "git_blob": "7593b57f9f1bdb4ef047a68a8cde26f16fd3d43f",
+      "bytes": 6820,
+      "sha256": "17b1fecf495d6dc70551ec1fc2aaa39d140408caf03d9609ffceec453ad3cf03"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/OUTER_UNIT_LEDGER.csv",
+      "git_blob": "e5f679811fd3b694c7568be90e0e358fa6f48bfe",
+      "bytes": 12791,
+      "sha256": "59dd860a0598d17f70ab452a05fb0ffc3b77ace015f9d32e6193ec7628cf4b27"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/PAIRED_ABLATION_EFFECTS.csv",
+      "git_blob": "8d4de80b0b730b25af089fdba1f7efb66d4bc150",
+      "bytes": 2867,
+      "sha256": "6dbd9f5d780830c5903e3e2b23ec804b8828c2862cb60de22a9c23df2d728637"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/POINT_EFFICIENCY_EVIDENCE_AUDIT.csv",
+      "git_blob": "b9af5c0747ee546c113080828fb3cdbdd408b21b",
+      "bytes": 510,
+      "sha256": "a3b6a3d914b66ad9a99ce91a33501db305fab412da6ae5c71c6b261bc5c5a693"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/final_cis.csv",
+      "git_blob": "be27f4f15e71ce38b6f38efdec7f1f7ebf29a003",
+      "bytes": 1107,
+      "sha256": "ad832a3b1cc37865e5300b12c3cea5a71401259e1c837e7679ea0726c745fbcd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/final_cis_corrected.csv",
+      "git_blob": "50fc3a68c286679075a147ebbf7dff186374dfef",
+      "bytes": 1927,
+      "sha256": "0dc6585e0cea01f0b5ffb5a5f23813b4f0097daeab2d3e2940acfce6391bb2dd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/ablation.csv",
+      "git_blob": "01f25f15050fcef7937bc2ceac3013854e9c43ca",
+      "bytes": 5644,
+      "sha256": "a4a630fdf91e03503ce37a6c46ee60ecac8813501dd5b311c80193c749837058"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/event_allocation.csv",
+      "git_blob": "75ea59de7e41f03484f48d7491a4308f227c5df8",
+      "bytes": 881,
+      "sha256": "e5dc024a9f77193922b4d5932f04e72135d5c697e868f63bf800a6f0f3cec3c1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_metrics.csv",
+      "git_blob": "a970199c8b276e8e77d9fc94641577ed8876a1c6",
+      "bytes": 3039,
+      "sha256": "4ba5717f2a8ad6d07654a68857e9dbbf85063843efa821d2ecd0b89a3e51132b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_per_event.csv",
+      "git_blob": "d542e6077558e770792cef0ee8f58f57327c21f0",
+      "bytes": 625528,
+      "sha256": "6d0615cbc3dc518b7cac51501a03ec68736fd9ad49c1f3a56269641e048bc934"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_per_group_coverage.csv",
+      "git_blob": "8d859aad3357459ec5ef9b0dcd1eec822be38e73",
+      "bytes": 8197,
+      "sha256": "a0f646a98910aea30c6c8ffd58bd0e1c7fb0ee866fec5a80b20dbfeffa252948"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/provenance.json",
+      "git_blob": "180a17a2a5f7253c7ffb730da5347d99662695fd",
+      "bytes": 13849,
+      "sha256": "f95e8d884252ae68be64a3754966a4810e0185816ecdc8bec8822346101140f1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/selection.csv",
+      "git_blob": "4b3c4b9c12b15dc25af86837035a20b846eaca68",
+      "bytes": 1750,
+      "sha256": "6c99ad7a95b1886fe02c323e390119c083786958639890816740b87b55acddc6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/engine_summary.json",
+      "git_blob": "2f5822570308d1145b3bfd0fdf076eaafad485d6",
+      "bytes": 983,
+      "sha256": "1ce88618bb41adfb12e005b9ad369d51ce6cb5834e9ae39f4334f4ec0c2f6ce2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/ablation.csv",
+      "git_blob": "1558edb8a5a3ab5c30ac2ad32ff457c2e1dfdbb5",
+      "bytes": 5584,
+      "sha256": "55107a0dd877779c6a50602245d2ea0f953c9572aa68cb02fcf550bfeb7b6269"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/event_allocation.csv",
+      "git_blob": "31cb2f8785a6bc033f7774b5bfbf0470e14264c5",
+      "bytes": 856,
+      "sha256": "57d2a3003ccefda45a0666c000e05d68a7b9af701b3875059d7c6e2bf585db4a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_metrics.csv",
+      "git_blob": "41c02f1bb1e5e7041f5633e3fe9fd320ce031b9f",
+      "bytes": 3155,
+      "sha256": "781a7e02a90121091060009717c57275ef9c1c0afa9f67ff6529672e244ad72f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_per_event.csv",
+      "git_blob": "9f28c4d6239d1d33a179491e5bf3598d3487cecc",
+      "bytes": 20469,
+      "sha256": "ccb653edc3911cab1509c9e25d1849a050a4f482b6b4cc0e2404e6cd43150b1c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_per_group_coverage.csv",
+      "git_blob": "f503f8a29b82225d6388c0d18d643ec99098a096",
+      "bytes": 596,
+      "sha256": "9a28ddaa047753eb3f0e91dbc68a1a988e15521a0b5084c1a1ecc72e4abae7ce"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/provenance.json",
+      "git_blob": "a2e0d9e0811207dc9461df25d622906a94cecc0b",
+      "bytes": 14752,
+      "sha256": "6189bb8846dfdd74129d90a7ecb0c90f34a6caade7a900f3786c32c9c4bfe9a7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/selection.csv",
+      "git_blob": "4beef84dbe1fdbbd7cd9cc8bdc6b150063031ecd",
+      "bytes": 2023,
+      "sha256": "cc212ead36121b4f3d528a92233965f2698e03b4a42bfeae46e4f78665f41221"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/ablation.csv",
+      "git_blob": "2b59502e98335560e9d56c66ce3de5dea5e164db",
+      "bytes": 6168,
+      "sha256": "fb05290a0b24b9749d9090d47d365718d505798a3a24512e99df0040afdeb335"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/event_allocation.csv",
+      "git_blob": "0bfb4ef210205b61bcdad21df4db69a2e3587bf8",
+      "bytes": 961,
+      "sha256": "f3f3085e2626beb68fe442435e614d11dab1b33594c78102495fdb497bb4e58e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_metrics.csv",
+      "git_blob": "5ba1e6a1cec9b4b46495057aabe474606b0dc489",
+      "bytes": 3227,
+      "sha256": "4d2217d571f47f2e1cd8ee52805ff67e7c71972cabcc4f663e49d0a048e3a221"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_per_event.csv",
+      "git_blob": "d5da74ff2e9026d445cafd2cb6eabafda592d791",
+      "bytes": 24237,
+      "sha256": "43915e0e9f218923364b2377dd4dea1dd793cfdc4e8cd0fcc88ff85c9170ac13"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_per_group_coverage.csv",
+      "git_blob": "4e9c81064b2609fad6cdd2a790a1ddabaeab1ff3",
+      "bytes": 701,
+      "sha256": "f28750996d1b87bef43525c7648139122dcdc61b7ed040822b7e306ded8618b3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/provenance.json",
+      "git_blob": "e64f1a14c2ae8a692c242a5304c7d4ac9ee51cf1",
+      "bytes": 14248,
+      "sha256": "2476715d45ee75fbde9086c6daed557437755e4ae689edc5328e63ae0e99894e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/selection.csv",
+      "git_blob": "f74b2e1ffbe45e3ebe8fc921689be6b512f342fc",
+      "bytes": 2051,
+      "sha256": "c3605f69722724d731d1049035305d50d46071d3f7d2febc138799d0fc426125"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/ablation.csv",
+      "git_blob": "3768428cf1087518516f8509a57d07ada809883b",
+      "bytes": 4334,
+      "sha256": "8f62955c3ab19a32a85a3da9ea2bf01fe7e57250bdfb61f5dc8ee0f2beba8ad8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/event_allocation.csv",
+      "git_blob": "da7aaf08c6372726f19448eca982abd25209e083",
+      "bytes": 796,
+      "sha256": "c28a3f51ee5ae2b4f766af80fc78e83f192306bb1c8a70406a1949536e707889"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_metrics.csv",
+      "git_blob": "c204aed1ad7a0c353f1ba7ae6d955510471acfba",
+      "bytes": 2478,
+      "sha256": "f3f6d32de1357b72bbfcea7839104ccf429d4d74344b9b3c312e31f30b857993"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_per_event.csv",
+      "git_blob": "8aa59916a3c4a3028eeb70afe104f3fc3404333c",
+      "bytes": 1520,
+      "sha256": "fdf123e66fbf945514a87e0724e4ee4d846bcbdf79c12b26a2f2eb593c052469"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_per_group_coverage.csv",
+      "git_blob": "339ee84cd12d2871ba4f5ed03f1c63cd9820dac9",
+      "bytes": 414,
+      "sha256": "fbb38fe310bb8b9e00b01d8826925ab0c9f5d8db3f4eafe89c4d45053ae75136"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/provenance.json",
+      "git_blob": "c5b125f60f7317c44aa78315e9e0d3f4125b82ad",
+      "bytes": 13997,
+      "sha256": "1c0ebe73f69dc47da1a1e2ec0b469e722762976a954954620fa3b4df8119f06a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/selection.csv",
+      "git_blob": "36c7e971546dd9ad4ab509c0d1394b3b1f98fe02",
+      "bytes": 1750,
+      "sha256": "1034425bbffcf1dcea63d5ce7ebd7b491e2e3bc6a0f9b08c18e8c2065a30ba4d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/run_id.txt",
+      "git_blob": "d24cf9324f463573b3ff0843407c51b5f9ee315e",
+      "bytes": 21,
+      "sha256": "f1d4881e1eed5e268a146c7d332c8235028798cdca57c1f47bf0fc84d9e4c544"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/config_hash.txt",
+      "git_blob": "47364fe2d244c05d1f338a97ea7bc1a4f05a79e8",
+      "bytes": 771,
+      "sha256": "2e752bfb5a208ef7bde2e38349fbed3b8a1088ad4d7a33181c15cf388a207c09"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/frozen_protocol.yaml",
+      "git_blob": "8fc6cc388b3f74f26a1a77261c019b66c7991b5f",
+      "bytes": 11295,
+      "sha256": "8262e441efc7bf662c3a14e75f4f61de2c8bfa11c427469d278287a740080df2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_001.md",
+      "git_blob": "414ab5de61bebade243716c916c6429857485aaa",
+      "bytes": 4241,
+      "sha256": "d72a708c7d2c0ae267969d5d46230101874511cd00f9d9f2324f52e534e78bd0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_002.md",
+      "git_blob": "dcd1bcae64740af4c3b77ef1d3107aae531b3f01",
+      "bytes": 2264,
+      "sha256": "a061bcb25b3d8b0d59901406d8723d149af93d655be923fca2c39b63411a0b66"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_003.md",
+      "git_blob": "e8af20c7b27e6019a68f34be885c8a64d67ab4c8",
+      "bytes": 2837,
+      "sha256": "8306811999cfc9e4e925a400bcec1c8b57a17315af4870f36f762f7f4507fb41"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/provenance/artifact_manifest.json",
+      "git_blob": "943017fd60d5540661178a7df4b48d65d4422abe",
+      "bytes": 3243,
+      "sha256": "b717f851f1797f2d5c5ad58dd033bf3d51a93559edc3aaa34637bcc2f0aa8716"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/CLAIMS_DISPOSITION.md",
+      "git_blob": "c93284ae1e77ce52001a51afebdd1b6ce9fcce6f",
+      "bytes": 2831,
+      "sha256": "b53436aa6f460dd951e69cab6a126b4508baf5448ab255677eeca2c577a30dd4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/COMPUTATIONAL_EFFICIENCY.md",
+      "git_blob": "2891914213e6da16614d0cb78e8ecef62270ccc2",
+      "bytes": 998,
+      "sha256": "1f97ba1ad9d7e2eefd18bb70377a2b1ccb3bd712399a9bed9b3d21ea9d4efe0d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/CONTRIBUTIONS_LIMITATIONS_FUTURE_WORK.md",
+      "git_blob": "2b6a754da8981c56ebdbeba6be8ef2c7e9cd468b",
+      "bytes": 1059,
+      "sha256": "3aaefa46ea0c4e9ab54b22292ba2599d8ab821e1c839a117e46880ee38edef70"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/DISSERTATION_CHAPTER_4_RESULTS.md",
+      "git_blob": "703479e0521902432b6737cb3eb2b32ddaa2993a",
+      "bytes": 925,
+      "sha256": "b512eb9012b54da71c060ad0ad4ce60065759197e65718fd135df4ec1f4efa73"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/DISSERTATION_CHAPTER_5_DISCUSSION.md",
+      "git_blob": "282f6bd2ba3c8bcc72ff54da92b25677fa550467",
+      "bytes": 1005,
+      "sha256": "ffdf1c2018c8b61bafe6d63bf63e27ee6d76bccee407e65df25c9fd3943bbb36"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FEASIBILITY_AUDIT.md",
+      "git_blob": "5665134f156f131a4bf629ada0def35fee0ef296",
+      "bytes": 2725,
+      "sha256": "7fe3e604c7ef43bf3f4fcf8761aedfeddd22e8ae4e9f6ee3de0b11e297b88090"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_CLAIMS_REGISTER.md",
+      "git_blob": "3ad5e375c648a082fc69faefb15b07b0f1ed4153",
+      "bytes": 1419,
+      "sha256": "eae2251f8e6a54fc188349776fb4e3e317902673d367397d16989d363d127537"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_DISSERTATION_RESULTS.md",
+      "git_blob": "4120f99f73341beb979e46f33e55e26242ceeed8",
+      "bytes": 1716,
+      "sha256": "235bfc0f71ef5604da5d4cc33dcd72fa185704b647ce11b8d80d61ffefe6836f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_FIGURES_INDEX.md",
+      "git_blob": "36ba936980407a41baded2fd08e17662ae365c45",
+      "bytes": 933,
+      "sha256": "c55b77f51974cce7b872621d8c01d653368edec779d64ed10946a4d174243354"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_TABLES_INDEX.md",
+      "git_blob": "4a8ea8e425ccf75c230afa96937cd43416e594f1",
+      "bytes": 1201,
+      "sha256": "ed975e476de220d42fc7e0581a802ba5467decd3589ab90b45b27b66ad9b8334"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/LIMITATIONS_AND_VALIDITY.md",
+      "git_blob": "eea485f196b5efbef036d7fe8a92fd5c9445503b",
+      "bytes": 1447,
+      "sha256": "6ee1e2dd5e48a600e16020b5101fa0c194c8cefbe31af12b4234b03ee7219599"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/POST_RUN_STATISTICAL_AUDIT.md",
+      "git_blob": "1ae61f1dff81e1665f76adcef61bf8e93f8ad5fd",
+      "bytes": 8737,
+      "sha256": "68d1317213dac14b84eba6e6c85ec50b78017b6b686d1bca34d186e26b53e1fb"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/REPRODUCIBILITY.md",
+      "git_blob": "d965791d16721d75d8f24fb26d069fee44b00760",
+      "bytes": 712,
+      "sha256": "8c2dd8e48b17af550a956924dd075b0dc053919fde4e54aaf3a5b3b8254f88db"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/RESULTS_CHANGELOG.md",
+      "git_blob": "ec1438bdf7ce85f681107ba51843b97dc1611e4c",
+      "bytes": 5804,
+      "sha256": "c0d07c04431ae55d863eed00b8a8e83fee732b2102c40b09bae5ed9fe1fb2554"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/ROBUSTNESS_RESULTS.md",
+      "git_blob": "fdc4b65183a26b73e9ac40846bafb55cd23450cf",
+      "bytes": 1062,
+      "sha256": "833f5cab65566932fc3173e9753c3943b4d4871cdc2501b41747bc061c904f67"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/RQ_RO_ACHIEVEMENT.md",
+      "git_blob": "3c5b6f154d70bfe8deefe8429b1a02134203b966",
+      "bytes": 1091,
+      "sha256": "5270c59288cd6fd93380aea52761d2ef36afa0b6f9bbabc1a8da4df5ab203170"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/SCIENTIFIC_VALIDITY_AUDIT.md",
+      "git_blob": "815f64b0d630c6f42bcd769f4a50af88996b5ebe",
+      "bytes": 2950,
+      "sha256": "8725e6c95a156503ab2c0d2f129909de9624aaf5034855e25c4b613a571b76db"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/SLIDE_READY_VALUES.md",
+      "git_blob": "dbe45effa04289b7a332c73dae9f8381372e4fae",
+      "bytes": 926,
+      "sha256": "a2ac2eb78a29af584bc93e2a04fb17913ab34751d509749067ea0267aa294fd0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/VALIDATION_REPORT.md",
+      "git_blob": "06dfff337334b9f48979e7cee662546441b95d97",
+      "bytes": 1326,
+      "sha256": "5019524cd58f42dbaf37aac568c78658f09818050b42f0961049b04e3a9c3056"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/after/boundaries.csv",
+      "git_blob": "26e84e2d346f104ffa1ec7335f3252653e379e68",
+      "bytes": 107343,
+      "sha256": "fcd1a533809a612b75f1973a72c8a76017f18fcfef16c83fbfc2dacf3dad8435"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/after/event_scale_membership.csv",
+      "git_blob": "0efc62d961ce436543f4dc43f95fdebb4fb31183",
+      "bytes": 12284,
+      "sha256": "fd4d188df3b06ad3284443c449f62d9e49de083834fa707d842cc9b76606d1f3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/after/membership.csv",
+      "git_blob": "e3e01c19feb4198f03e753c734b7618d1bc431b8",
+      "bytes": 1160019,
+      "sha256": "9f43e14d4d8e69eefc527579ca27191d7fa0547d4646c1124f172abfa4aca7e0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/after/summary.json",
+      "git_blob": "ff52ff142e035e983bec31bb2367ccd6e39a61f9",
+      "bytes": 150,
+      "sha256": "bf897cb3c6c6f3a6dc28093ba481f4705d0fc99b9417c3abfe17258709456472"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/before/boundaries.csv",
+      "git_blob": "fe228350b7f8cd52a40d2c7c403541386b657eb0",
+      "bytes": 78053,
+      "sha256": "eb9d6db5d26280e1564368e922ac10d5e51aaa92cf675c58ad158c4a7bcd2ce9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/before/event_scale_membership.csv",
+      "git_blob": "b0dabdfe2946291268b7252d7385bffa5c3c3352",
+      "bytes": 12647,
+      "sha256": "e4f60373c0cabf7d5cbea84730e37a45911af604e1be30147f0fc7ef0fb068b8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/before/membership.csv",
+      "git_blob": "6609e1a03c64b43efd85f337f7ddb3b56e54f1ac",
+      "bytes": 1167241,
+      "sha256": "e732664107e0b36d89eafe5c42da2bceb0ec913ebf95b008aface88de8ec6aac"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/before/summary.json",
+      "git_blob": "6bc5ac6133f316d331c1ca99f1a4416ebbe49851",
+      "bytes": 153,
+      "sha256": "dcdcf926e619607434564633cbe5acb11e722a702f7c73ddbbcbd6065b5bc966"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/focused_tests.txt",
+      "git_blob": "308b527658a294fc3c67e10db690060e0e9c7abc",
+      "bytes": 932,
+      "sha256": "826436e8e7f7cd5c42451acb017392c6fcb0c5093de693a41b7c162cddc7822b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/focused_tests_final.txt",
+      "git_blob": "8297d39897cdc9e6b5dbcf5f7409aaa553fc9fc2",
+      "bytes": 932,
+      "sha256": "64e9c439f3f29bcf049dce0f59ab4e840ac33b8109646a77ed7041e0678f6c12"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/full_tests.txt",
+      "git_blob": "01481c4d1564fe18a7f5a2ffa2d52cd458e83473",
+      "bytes": 2329,
+      "sha256": "eda9671de4ed4e52d50ca35d4bf11f557cbe9a9ed11a6778e02606cf06f6231f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/full_tests_final.txt",
+      "git_blob": "b99b8dbce50bbd779154fa781fe6578def6d5ded",
+      "bytes": 1433,
+      "sha256": "c0cba8c9b190350e897cb1d911f1941746c6a334159e7ca1c81d273a2a3a0f18"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/preservation_verification.json",
+      "git_blob": "99ec3ea64d564d55aa40bdfa14b879d57c38371c",
+      "bytes": 85032,
+      "sha256": "2246a4de772d55b05ea3b0aca0c0f24ac026ed45d5b8ea16720ba06cb2cace61"
+    },
+    {
+      "path": "smart_building_conformal/outputs/integration_repair_20260913/validation_gates.json",
+      "git_blob": "5d537f58aa5d09e570ebb309dfc42f27c9f47752",
+      "bytes": 5678,
+      "sha256": "d5a9c6a60d08832d688499a320d29660d9ed9c19599fae2cb6026035aa068032"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/figures/figure_sources.json",
+      "git_blob": "77357553c5fa5806d8b40321bba4d2773454eccc",
+      "bytes": 592,
+      "sha256": "b5fcb35cbf626f904f87fec6dbbcbcdc111d3576bd274949539b9631f736769c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/figures/pilot_comparison.png",
+      "git_blob": "0c56995153fe4afab0e70a899d8f0eb98fde0ec1",
+      "bytes": 210964,
+      "sha256": "fadf60ca56baf418f4498fb898a0fa0b1f27295703c732a871e8ebecb1fc8d89"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/figures/pilot_comparison.svg",
+      "git_blob": "3ced1895d43de7841a7320140ae14acc9daee250",
+      "bytes": 109295,
+      "sha256": "c73172b6ec1aa078a4e1c6326ba56b02592e834c9f37962558adff040ce800b3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/checkpoint_manifest.json",
+      "git_blob": "eb0bb8b19099259215da8db94f0d17895760522c",
+      "bytes": 4037,
+      "sha256": "c5d9bf74bc3dfc0bb871df95a7969167fc51b45c23269fcfe9e960fcf4c68d03"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/execution_environment.json",
+      "git_blob": "8cf632a727612ff36ba6f2611e7120343f852394",
+      "bytes": 1000,
+      "sha256": "583b96987eb15e524b2cef96d77685541a39d0eb712c6aeea9539e8cf5f50aa6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/interval_quality.csv",
+      "git_blob": "01fa844cfb5f788f608b81bf3b3891b2d3a8facd",
+      "bytes": 3744,
+      "sha256": "ac501a945fda5e28634cb7f8b924eb915127c062231463deb0ca220e45f75ca3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/pilot_summary.json",
+      "git_blob": "a8e3a22afa2b8e439ae2a475e85108321e115a0e",
+      "bytes": 391,
+      "sha256": "d6b728659a7e3fe26cf9812d324a4c93ac6f9b1837f759393ccd202ceab22d87"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/point_summary.csv",
+      "git_blob": "5edf82d8671cf2f601f81f8606ecc9342fb35268",
+      "bytes": 2631,
+      "sha256": "c853c512a0a3ba26b7956dacfbe7b26562add6015b27705c89a439bd0a1385ef"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/preparation_h1.json",
+      "git_blob": "5a0ea43934c82c5bb71889ef4820bfacb63844de",
+      "bytes": 345,
+      "sha256": "bc8198a338737c8ccac46dad9406e118414c1f475d9d64c801b2792de13e3e65"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/preparation_h3.json",
+      "git_blob": "bfda802ebc3603c6398306ae0ca2c3b063ad8488",
+      "bytes": 345,
+      "sha256": "c0416dbdcb23e9d243388d329ab2ccd5e8a9f93944f8461d5b14ca7b6dbdd3cc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/preparation_h6.json",
+      "git_blob": "602d1edc8721b6004a66a03bafa758473baf4f4d",
+      "bytes": 345,
+      "sha256": "b620b788597c66a5272ceeee9a1c1d84f1c9a9738ff614694596b33f79be6aed"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/COMPLETE.json",
+      "git_blob": "00bf2fb2e8287d20e064a8750de9135f5be076e1",
+      "bytes": 887,
+      "sha256": "413a714422412829220993262f94eb7d3f3adc3111222510b29ddcc4156f1157"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/calibration.csv.gz",
+      "git_blob": "1ee5bc6fa25eb2e7120b316ae80f35796b88257c",
+      "bytes": 636664,
+      "sha256": "8c1542bf4273e9e5266339646c57617be680c558d5341cb3d3f22ed5d886f30a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/model.pt",
+      "git_blob": "411a16f8882af43f3c47525f662be88cc23e7df4",
+      "bytes": 141381,
+      "sha256": "3d7696dfba4b55fe0e070ce21762f195c57f4e6c38585cea9b1e592b0ad9a346"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/payload.json",
+      "git_blob": "4e63da5e609b66b1ad97a4e5398a949dc5d74b5d",
+      "bytes": 5886,
+      "sha256": "e41f3b3960017c56d858d1058f27d0d7efc2865d3d7b2ca022942c7ebc4e1bb6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/predictions.csv.gz",
+      "git_blob": "6a50ec045ec25eff720d3ebb61d128f506779f50",
+      "bytes": 1484184,
+      "sha256": "43acca95c110b5a4eb7a200df18a391cff4619173ddd66b02acc2c8247742981"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/training_history.csv.gz",
+      "git_blob": "bb9dc62367a70c4f04859b27d77050b98c894d53",
+      "bytes": 2399,
+      "sha256": "10d29d9ec552d55c953f04a32bc27f4e46055e20cd929007de2556dd003b5204"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/tuning.csv.gz",
+      "git_blob": "879a6c3854086b76f1378bf0c2f94dad600a011a",
+      "bytes": 257,
+      "sha256": "19e99bd62be07b04a75055a415f1280db03f13203958980b03be90e3e80b2d86"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/COMPLETE.json",
+      "git_blob": "2e1635645a1750c8d6b31d2e865c43aedcafc36f",
+      "bytes": 886,
+      "sha256": "88cc135aa1b590c5507e6742be8d247910521f5fc829189567def3afe7c5981b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/calibration.csv.gz",
+      "git_blob": "fb8fe78823a1590054624ed3ff544176d6fbaf68",
+      "bytes": 489661,
+      "sha256": "2abff06c61ce921f4ea6b174c3e0a5392dd69835744f3f58d2aaca004fee163c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/model.json",
+      "git_blob": "03b44f07e432da3efb10faf84ab0c099aab17587",
+      "bytes": 82,
+      "sha256": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/payload.json",
+      "git_blob": "70b8c76471613bcd5ff862f258ef810fbd5766f8",
+      "bytes": 5740,
+      "sha256": "b63c260f57a8be12314e5a20c538b49096990d910a74f20fe4431d206d15df47"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/predictions.csv.gz",
+      "git_blob": "a4d073f0574c5ff54168e06de6550b722dd82aa5",
+      "bytes": 989586,
+      "sha256": "7670f4e1fc5cc8e803497c93db8b846eb9cd7e4cd0d69b5b3184aed91ff7957a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/training_history.csv.gz",
+      "git_blob": "d8988bb49145a4cbfc11a692b72257049d0d3b74",
+      "bytes": 49,
+      "sha256": "e68841686041e510294cbd4889bb761d722664ffc0163c90ea6890e68ad27408"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/tuning.csv.gz",
+      "git_blob": "d7001833ee8db15ac07725bfd8cc1c955305b74e",
+      "bytes": 39,
+      "sha256": "483fed1ff5182d687d29100784ef298a6fb702a33782246541ccc288f1c37997"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/COMPLETE.json",
+      "git_blob": "0de0af8ad93b2c35f311d72498e37cba28f9a575",
+      "bytes": 881,
+      "sha256": "81f49022a48ac5b09b7a0692c97fd520371ef282f6e2b2f70b60f88b41d384a2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/calibration.csv.gz",
+      "git_blob": "8d7606003b7a5a0f7554714ff3083a5ee8ef3206",
+      "bytes": 627424,
+      "sha256": "e3eda25acfb78e86af6e80c5495bcdfc884d46e10214c037058d40d0a4105ae7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/model.ubj",
+      "git_blob": "be36654846e7a09c08d4de94f825b2bc95767c25",
+      "bytes": 465600,
+      "sha256": "000ada22bd4711263dda843891bfb1fc98987639e64c457d168dc0b31a45f281"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/payload.json",
+      "git_blob": "1ee6166c59c81f669463f4bc1967efb094cc54a8",
+      "bytes": 5903,
+      "sha256": "2ae44a6951e455412b682ed785bc781b567ecbc8602ad497c5d64321583b2d13"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/predictions.csv.gz",
+      "git_blob": "154f8e8957ff2e9f4d22a110354654fc2a9092bf",
+      "bytes": 1470234,
+      "sha256": "c7a1f2c385865e50ce6a488a017d025b6d6d3db10752a42faa07e9dcfb3b88b9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/training_history.csv.gz",
+      "git_blob": "0db9b8d88320cf9846c31721ae3dad6a68930639",
+      "bytes": 49,
+      "sha256": "82240be1d475deffb4733ba425e38b14c4b9ca8822290f84ea3b6855150d17a5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/tuning.csv.gz",
+      "git_blob": "0c3fe86045cbe46610e1d1cfab8f4f7d43c0e0a4",
+      "bytes": 256,
+      "sha256": "ca12d2351bbee036912d2621c029009220eafac18fafcfeb666ce70496a2bc77"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/COMPLETE.json",
+      "git_blob": "8771c884fa18cd4cf38f45d3b748461a4f6ae65a",
+      "bytes": 887,
+      "sha256": "6df8560dd16fbe6d616cf32ebcbb3f08f210d2ba061c0a91fe9bdaeabce65d4a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/calibration.csv.gz",
+      "git_blob": "a7e707b4ec86d70fa3d96679fb9b84fa96a0f5e5",
+      "bytes": 633266,
+      "sha256": "50fa4aeed482a9f1b912b67670e06e70fb0a72de242ecd99743d240fc2e97ff7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/model.pt",
+      "git_blob": "51f2255f3e4aa4b331417244e498b6f25c894807",
+      "bytes": 141381,
+      "sha256": "7362ddc814dcfbdb4d61bd2c9dd2cb541295ccf64e3a948bcb7ad35eabade6b9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/payload.json",
+      "git_blob": "5723c55312593065e14cbb7e1823a7a0ce89cefa",
+      "bytes": 5881,
+      "sha256": "24dce75180c57dbc154f2191c1072fad35f6b8a6049b7be186f0667f4f4f8cc9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/predictions.csv.gz",
+      "git_blob": "f59442284b74c14c9ff83366293a71beec3f1dac",
+      "bytes": 1488151,
+      "sha256": "7b89ad8f2a24a7d0a0d622670cbffbede6069fe1687b3f20ea483e223bb469fc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/training_history.csv.gz",
+      "git_blob": "ec70a4be936bfd9f32f9f8f0ddc27464fa602078",
+      "bytes": 2101,
+      "sha256": "7b8a2da66358af2de7256c0af1e48207d43587f48c5e6ea15ab7877a6e319cb6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/tuning.csv.gz",
+      "git_blob": "d221918eeea14dc8726afeffe30e10e159c6f07e",
+      "bytes": 257,
+      "sha256": "ce604a8df3d806212ee22e0bf77a8a3f967eca50647a24b4a598fc0061a554c4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/COMPLETE.json",
+      "git_blob": "b080c7c1bf43fa664eb85a57c2fce1d7598c1c83",
+      "bytes": 886,
+      "sha256": "69a140e226e5bc03af8e306fa624fa6aeb1cb595df298ea49e9434aabf5b32e1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/calibration.csv.gz",
+      "git_blob": "9e9e33a5a2d8bfe6700a539cfc55ed1a5fa5b076",
+      "bytes": 495309,
+      "sha256": "1c35f16721d14e581753fa77d595e3b2afa96f21bb86e03d515b3484a24c63ef"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/payload.json",
+      "git_blob": "939b27a442e9f28cfa9dc0bd096833687bff1242",
+      "bytes": 5759,
+      "sha256": "baa104bef959a91ad90495c6dd2f1ab82357197acd07f6305297f5ca7da4883a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/predictions.csv.gz",
+      "git_blob": "a2f4085c7825259f10d2914bdf5548a514a36041",
+      "bytes": 997802,
+      "sha256": "3f65f6f087c6880b5fa3e05c3c918898c326bad8ebd6196c8ba6e8fde36ef33b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/training_history.csv.gz",
+      "git_blob": "285f271dc22e997148a4dbc44182eff76fed5a2e",
+      "bytes": 49,
+      "sha256": "efdd60f57b7bbbf62c4eeb675bd4d2eda7df17a3d2f7422432263fd3bc70a7b8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/tuning.csv.gz",
+      "git_blob": "5eb58ea2035220d951d9bb26568dda27842a4cd2",
+      "bytes": 39,
+      "sha256": "a32ff55d517d59911b45f61151be54652e565772078ef03f28c7524e3db5f807"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/COMPLETE.json",
+      "git_blob": "c7cc601e1345b8cf48ff434e5da25a2c21d746e9",
+      "bytes": 881,
+      "sha256": "894d6680f5a1022ff30454ec6f3a742cb3c3f87e7248cdeaf3c411c3e191913b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/calibration.csv.gz",
+      "git_blob": "10a4d03f8cfde31c915189913dc205a31bfb8425",
+      "bytes": 631174,
+      "sha256": "3518d4c2348044230aaae0474c5a60350c183e2aa563c2a986a5990307a3ca79"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/model.ubj",
+      "git_blob": "7be5d601bc5d33eb0566eddfbbd919cd66b8e810",
+      "bytes": 467096,
+      "sha256": "4d147846b98d397593dc72dc221a006094209a69054c4f12d97482ebca6326be"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/payload.json",
+      "git_blob": "4bb6bef951784cd19a449b871fdf135fa0c2435c",
+      "bytes": 5906,
+      "sha256": "e1c023a76d84adbd90f8f88df4d971489719bc55d70f8c9639d134f845e2c9f0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/predictions.csv.gz",
+      "git_blob": "bef610e3f917d2ad5286bd38ac13ffeeeae614d0",
+      "bytes": 1476768,
+      "sha256": "c231f42d647c0b5bcc0c66830c3a96088519fc425095ff1fd318544dfd946a54"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/training_history.csv.gz",
+      "git_blob": "f45c8b1058e7070e723a9d7e359b14c34506de85",
+      "bytes": 49,
+      "sha256": "4248af0a19f4188d69a03a5edc40a5bf8cb88f860ff1353e1a3c092803d784de"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/tuning.csv.gz",
+      "git_blob": "4bcaf5d77f490eaa537707023e07f6669a10e3cb",
+      "bytes": 258,
+      "sha256": "94af9457e8b2bf25b747f2d72d501276b5aa52c7b9c6247c11c20bc1159b2e5a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/COMPLETE.json",
+      "git_blob": "8adb91aa18d2d6ac074c6b10d3206a16022167ce",
+      "bytes": 887,
+      "sha256": "b867d8638797f34caa9faf8f3d14126b7f06ae1d72cc510fc95e9923d9c563fc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/calibration.csv.gz",
+      "git_blob": "5e5b5abdd63619f177e14b973a2dbef8c57df351",
+      "bytes": 636815,
+      "sha256": "3e7e845555ddf554ccdaa5e3f84dbb8a9e085bda53534dfa223f657348a8ef42"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/model.pt",
+      "git_blob": "7b56856432cb22e3bc34152e908daf3102aa700a",
+      "bytes": 141381,
+      "sha256": "58402fa2bef8a979ba520fb8ac6849b37e79cec285d30664386d66f4b811f9be"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/payload.json",
+      "git_blob": "4120ebf2ee02d6b21c648698d9cecb97559f66db",
+      "bytes": 5880,
+      "sha256": "8ab0b65b99b114c8cd0ca7eee6dfce33cb6dd4b5084ec6a535160f38370e75dd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/predictions.csv.gz",
+      "git_blob": "3ede12b2931a8f138dce36658065c5b7d9d79047",
+      "bytes": 1493815,
+      "sha256": "b517f1fabafc755fcf5214531d4d2c5d38514d73639db2a2038d176300a2476e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/training_history.csv.gz",
+      "git_blob": "1bdf8bc502b0282de7c18f210b4a6933a0a23493",
+      "bytes": 1286,
+      "sha256": "a99e467d9b806d8488e612e3fdb46f91fe563cc778c0e8ab1dfb2087d566a1c4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/tuning.csv.gz",
+      "git_blob": "cda57c01c100c784ec45049b28732de6052d3994",
+      "bytes": 252,
+      "sha256": "c29012475ee14db445a1d596b3fb9a81ddc680098e766bd41f4acf9a77df6b4d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/COMPLETE.json",
+      "git_blob": "eb69eab38e29ac0d608925c71cebc2bc090ab299",
+      "bytes": 886,
+      "sha256": "258f53f8299f99653a71d40d72c73309614ce54279c48c2225dfd1de602cecfa"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/calibration.csv.gz",
+      "git_blob": "c9bc97d732214c2ff988d27e5aee42c8a2244a4c",
+      "bytes": 496614,
+      "sha256": "9372234461abb6f09a1ec1d1d63458aff3ea43b9d714b8e3a95f56b7f1b33cd5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/payload.json",
+      "git_blob": "b4192ce5423629f6be0d81b720e97b14facbaf19",
+      "bytes": 5763,
+      "sha256": "0dd2078d86d8fecb23882a5eeef04a5e0c051e2def60c1f6d7fcda1729cc4baf"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/predictions.csv.gz",
+      "git_blob": "94af66d1ace9a0dbc597a3b5f9b3d2d8c774a77d",
+      "bytes": 998866,
+      "sha256": "508c9f0f32db36276e6e23ada5617582967cbc28b5bd10f63bd7f06b26d3e5bf"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/training_history.csv.gz",
+      "git_blob": "67683180f10bd421b7d1de89916b023fe528b7d0",
+      "bytes": 49,
+      "sha256": "9e52eb5cd56a17c644c1f9b5834fddb2cfdd4375cd5e6e752028807165ad0b88"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/tuning.csv.gz",
+      "git_blob": "883d03c95ada7f7c625d82421dd3be9eb2f92c1a",
+      "bytes": 39,
+      "sha256": "823484975aa1e3b7300d3d2a695855e26c387620219e34c252de86aee74f76f6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/COMPLETE.json",
+      "git_blob": "d25fbe4473315e50fdfad225e591c33118faf070",
+      "bytes": 881,
+      "sha256": "0b56d0076cef7cdaba60510bdead2df23aaedf94c24585d30d026ec3ca80610c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/calibration.csv.gz",
+      "git_blob": "8d3f2e7b2e529a581855323ee481714f6542c263",
+      "bytes": 632558,
+      "sha256": "f4db9e67ef54b9a601b5c679333f03931eb0efc01454e9b8d3aa04f712b79d95"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/model.ubj",
+      "git_blob": "695f83be515c7179fadf2be40ef15d7f64accd0d",
+      "bytes": 467367,
+      "sha256": "154a047909d9dd7e8d70034eb895aa8c624bf36b9ea18a480f03dcbb6025209f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/payload.json",
+      "git_blob": "97b56c700a38016c6aa443b4eedcb6aa7f77ff11",
+      "bytes": 5905,
+      "sha256": "be6104f42214067ec6f37921c43e10c819f88d6d5b7fc7fb30752f7059896eb9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/predictions.csv.gz",
+      "git_blob": "bb8ceab45a9751ee593227425bedeb620a551cc7",
+      "bytes": 1472768,
+      "sha256": "28a3b14ba907fa78133e13e83c19f9ef240aee557d0e17c9f642378fbc51ae45"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/training_history.csv.gz",
+      "git_blob": "0798a8eb090a37a7e47dae685cb56733676fe66e",
+      "bytes": 49,
+      "sha256": "f738632c665d3d68c888d30d439db45f1fc89f6940e60e1d213a032aa999a97f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/tuning.csv.gz",
+      "git_blob": "1572b21f0b6af1c670eed6c0906e94aec81751fe",
+      "bytes": 253,
+      "sha256": "fde8ee1f394bcfe146cbbd93a64edb0d5504d21aff293321bd6e931f66f4c0f3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/bdg2_preparation_memory.csv",
+      "git_blob": "baeb391824462b45d4fe671717fc23c56f36daa1",
+      "bytes": 1618,
+      "sha256": "ee6cc0fbac2355db7e46621dc4d42c7223bfba603960dc4522f13976b647b5eb"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/comparison.csv",
+      "git_blob": "72c3da74af2302714e7bc4c19bc04217756a3d6a",
+      "bytes": 4124,
+      "sha256": "cb829da2a84641303ebd8f556e69dd9bd7c18f2b12086cd71904e98952ef88d8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/execution_measurements.csv",
+      "git_blob": "54229193f867867e0b9a6282590218972fc6ec9e",
+      "bytes": 3175,
+      "sha256": "bb266c8333f0cd349083a1e226bb6f5fc4d8615b83e301e4abeb32422ea05ca9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/measured_cost_and_expansion_scenario.csv",
+      "git_blob": "4b332f5eb3a18bf29a3bf56af376b15622cdd740",
+      "bytes": 547,
+      "sha256": "431361ced0e15f6137195b89ad8e52a5e3accc571e6dc9bc3e790fee827c6c42"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/pleia_preparation_memory.csv",
+      "git_blob": "037b18e99041f16d7b44cd66be8dd986222e6c23",
+      "bytes": 2429,
+      "sha256": "801eebeb7c9689c35acabbcdeb04e2a48e4b7a4a46a89013c535df4bd613b8be"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/resource_measurements.csv",
+      "git_blob": "588fc153fba4f9f53782495474c400a14e601a54",
+      "bytes": 9324,
+      "sha256": "c5cdf51b9f40ade1afdc2223bfde0f126764acd9f5bbaf17766f8226be05f713"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/tuning_results.csv",
+      "git_blob": "9dee1b96cf0de7423556dac69030f2e5c3e9c829",
+      "bytes": 2753,
+      "sha256": "9116d0ac2013ce8ac9ceb3725f18483747088535e3b850c07de009c7ff7644d2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation.log",
+      "git_blob": "d55dc89b7cf787b7f049b55551fa3c95cbf04d86",
+      "bytes": 9862,
+      "sha256": "95c0a5ebf91122b596c4e86f794639a1f66352529adcf0ac6ef0d76749b2c74e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation.log.json",
+      "git_blob": "9c6038c15e6c84670c1400c948a027da527b5b6d",
+      "bytes": 470,
+      "sha256": "97e83da92504132dce21a573e1b854d26bda396367f3e5caefbc8603925217ad"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation_console.txt",
+      "git_blob": "3e54d2d635e55339dccc8bb39a8982d9c361de5f",
+      "bytes": 10271,
+      "sha256": "5169fbe0a9f72833f0c8ffe4cd928fc7f74abdeac16c5f68f1a18707ee868472"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation_stderr.txt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/bdg2_preparation.log",
+      "git_blob": "ec0897ed09165526ccdd030caeac4e5f7f434d16",
+      "bytes": 3718,
+      "sha256": "c00591ca795232ac7af7866ca485e4ad56113324e73e0b5bfddac20967a2ce26"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/bdg2_preparation.log.json",
+      "git_blob": "3330272f4e9ed45a522262d9f03c59bb79c1c9f5",
+      "bytes": 500,
+      "sha256": "41331f9e725b23b6e818ef7a1b541f58b9b27eaaeebda6c3d4e7a87f5ba7a12d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/comparison_figure.log.json",
+      "git_blob": "18ae8fa172b16c0d1e4ec54f99030f4ef0c0f18f",
+      "bytes": 519,
+      "sha256": "1a7cab32e16b8b0836fe91be2bfa366af56a07490e2a11da527a48c209562d19"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/completed_launch_snapshot/preparation_h1.json",
+      "git_blob": "b469cd912d04c112a8de14c00af886ec259590bd",
+      "bytes": 346,
+      "sha256": "fd371e63f42c0b692aaef89090d79245311904116d9a133b79e31540d477db56"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/completed_launch_snapshot/preparation_h3.json",
+      "git_blob": "e27dc615969155dcb125308e17a9940501c1a847",
+      "bytes": 346,
+      "sha256": "1f353039d2b920931f1f7e51ed763739a8baefe263a9e3b65aa76e98c88d29e2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/completed_launch_snapshot/preparation_h6.json",
+      "git_blob": "47debdfec3f27ea2743e2a5fc1cbc9c9dd7e182b",
+      "bytes": 345,
+      "sha256": "d5fc69a316717ce7d22d6b5d6ff92ad39a2053bda28a3374f67fb984c5eed9bd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/delivery_validation.json",
+      "git_blob": "12c8e967dd575d242f2d707ace342498188a185d",
+      "bytes": 2124,
+      "sha256": "9146387a173d4b8f61f66d6f6c618df9af2e96909781eae9e32aee4d7b11f28d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/evaluated_source.json",
+      "git_blob": "70bd2a7cd4a07f3ef53add9c253b45c5435ff367",
+      "bytes": 349,
+      "sha256": "f7af7a948ccd11a38ca2d62368744e67813b7c72d686ed0f83d42f337e9fce9e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/evaluated_source.zip",
+      "git_blob": "e38ec660aaf7b6dcce61261b62929c9a4c3d2bc5",
+      "bytes": 252646,
+      "sha256": "cf0565a4c3fbd6d7b39b5ce6042aa84f9ae57439f3282f0332d3c2a7f33f557d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/interruption_record.json",
+      "git_blob": "b82a42089feb7aba5a1830fee2e478fc2f714d9c",
+      "bytes": 4790,
+      "sha256": "cc41e6efca6eb6f46a22796b7dc4f78bdc9c9db910814f511c7677c4e270edce"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/interval_quality.csv",
+      "git_blob": "be4bf8f7483127cd0078376f9e082d335c14c487",
+      "bytes": 2133,
+      "sha256": "8e661580435bce9dce60fdc706e3d2f88fc213ed50fdae3d73a356558b45f8c7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/pilot_run_v1.log",
+      "git_blob": "3f496f32a4f022e26e91cddcb604a67d7aac21d3",
+      "bytes": 2591,
+      "sha256": "c6c3dd215324ba03f09d020be8cb50902914c94dcfc7db34aea41f6f4ab724a2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/point_summary.csv",
+      "git_blob": "64ae7eb57e83fdc1666d2f2bd8e57ce527952ca1",
+      "bytes": 1597,
+      "sha256": "8cdabdbd24ce0afd9c7f5526ce6e473f0efbda47263178dee3cca55b9929cd4b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/preparation_h1.json",
+      "git_blob": "f953f23a96f04a9e40f45453e294e739cc8e9923",
+      "bytes": 345,
+      "sha256": "dc60b41d8e0f0cfd3299103e10aec0fc1ea25b171a09f5900e3c0039b9783090"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/preparation_h3.json",
+      "git_blob": "c02c6002b8714a352e0b2037575b89d0bba334d5",
+      "bytes": 346,
+      "sha256": "a9bbea1a2d973370a9d6b528870a7457bc8ee8e1511e201b37f79e8b56fad802"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/output_validation.json",
+      "git_blob": "96d5983667876f27c0e97114aff1d51bd5ced20c",
+      "bytes": 523,
+      "sha256": "f5045cf0b2e46acb89362ce5acf7b0d5cf6080d675fee2402ea27d587d924936"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/output_validation.log.json",
+      "git_blob": "41ed27c500370d6360b65fba141609e549aba397",
+      "bytes": 650,
+      "sha256": "c100248bcb70b6d2e829f24b4b9a7e3beb4c72901c3cbbb2d6e8cbf9eb4726f3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_console.txt",
+      "git_blob": "f4d34e180b8da1faf87985b4aaf10e775d7432b0",
+      "bytes": 2969,
+      "sha256": "a3b55ecb5ecbf0487287c24257168ff5360fa10baa8ca3dd576272bc47548d9e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_resume.log",
+      "git_blob": "0e0b8e9047b6dd2be1756c6d59285edf0952d4ee",
+      "bytes": 2547,
+      "sha256": "9c864de88953a004ad019c19dc966c1a7eef2c50e90fa5dd9047feab10119aa0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_resume.log.json",
+      "git_blob": "436f8fd6002ab86dfd8b642a0b3e508c6bab57bc",
+      "bytes": 493,
+      "sha256": "5d79790e2d7cc610aa20f7b6d62ddd2d35ffd69b2ebedb2b3bc41edf7b41e5a1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_verification_resume.log",
+      "git_blob": "fcdbe9ec4d65e5a5bf4882d40efcb411b9f189c4",
+      "bytes": 561,
+      "sha256": "88e7ef5df3b482a1aeb77a2765b7118a78f07b9614e49c85bdcb69945fc05378"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_verification_resume.log.json",
+      "git_blob": "5691380a5e192be198a66470d629765f3b3981d1",
+      "bytes": 491,
+      "sha256": "8185ccfe1f95747407d07c697764289e9dcd0cefb459e40ab41150cf27a6d3a4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/preflight_full_tests.txt",
+      "git_blob": "0a7e6278a3688ff4fb7fdaa71d573a54ceb8e9e0",
+      "bytes": 2830,
+      "sha256": "1b78e24ba9c760098410ddbb7c3d71ee06cc3286085dad3027f92e0ead83c5d7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/preservation_verification.json",
+      "git_blob": "537cf77f0e986919896e0caefc36b35ae1584161",
+      "bytes": 87255,
+      "sha256": "328f3c0ac41d17d834f2ace7b82bc1610e62cd945431b137affee95fb237a0b3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/resume_integrity.json",
+      "git_blob": "7a7f8c722be19eaccc596898454931fc608a45b6",
+      "bytes": 7450,
+      "sha256": "6513f80299946b4c63aff4acf70d7ed5237c9e1b4e4169269370b3587e9363a4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/summary_tables.log",
+      "git_blob": "14b21aee9ab5022b21d4dab51cada8776ed44ee0",
+      "bytes": 2461,
+      "sha256": "22603f5b9e624cc80095159392b06acf9b9ff41adbe9e7beed9af680111e4492"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/summary_tables.log.json",
+      "git_blob": "854679c0640005013ae4ed10151897909ebe09af",
+      "bytes": 517,
+      "sha256": "7eb4a0a16b010d7112686ee4858ec988846a11f05d0e0fe798d30334f0393b62"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation.json",
+      "git_blob": "6d60531f5ea6eeae6a73cc45b818f1db657f2b40",
+      "bytes": 4693,
+      "sha256": "cdd651f7be3f24ccc7e9975903eec891b2776f504ecae489abf628914f603cd2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation.log",
+      "git_blob": "f6d9f3ab746636c62b99709dc800c7cfe6e45f02",
+      "bytes": 515,
+      "sha256": "16bb98ffb8cec58dacc43e3cc0130db692eab6675bc45d8a9fe3261162a3dd61"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation.log.json",
+      "git_blob": "59d9093c479893307bd023694f807dfd6ddf82df",
+      "bytes": 459,
+      "sha256": "1d441bb8336eaa707e2eebfad392e55b3cd46ec41954a6aecc4bd1a1c52fd468"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation_extended.json",
+      "git_blob": "b5f492b255a607de2913f7611f6ae11721f15124",
+      "bytes": 4747,
+      "sha256": "561de70b86c87e2423a0ba710ce3acb8af76c794a032a724274eb2c3eaf8aa81"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation_extended.log",
+      "git_blob": "8d0146a0f6d098417c9e3627c4e6ce96183a81e4",
+      "bytes": 569,
+      "sha256": "d10240dad30a7a95cff78d70669884488d2a84c147a51ffc5da31bf35cc8059d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/diagnostic_validation_extended.log.json",
+      "git_blob": "5d2c70e0b43b2f1aea960a7411cf0634d6a10a00",
+      "bytes": 467,
+      "sha256": "3865900b878459fd089ede1d36d5a3d333bd4007c28c6c1e1d9f64cc3afa0e28"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/focused_tests.log",
+      "git_blob": "0b206d820882901fa66c60d04d11cbdb06df0ba0",
+      "bytes": 102,
+      "sha256": "211a5937909759c387949b631c274d549eb16f81ef63dec2976ae299aa5cfba3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/focused_tests.log.json",
+      "git_blob": "8c8b56e95f8403928c0acf19b87148a68285afe1",
+      "bytes": 521,
+      "sha256": "ecb4e80f72160cfc548da8fa35b91f1b284a1cd2c8e0cbc108d94441d2bfb83c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/full_tests.log",
+      "git_blob": "08d15ee7b8b94841d94050855d070c5929700d84",
+      "bytes": 1414,
+      "sha256": "781706cb9391c65161548500d3752b373da406532ab610f805bb70677024c394"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/full_tests.log.json",
+      "git_blob": "b1cd96ac90e1a0fbc3f7de30aefac50c7ac56d98",
+      "bytes": 447,
+      "sha256": "bfb284c9e78737dcd5086ab39b6b465c07ef3000fec4f959a7895090662d1fe0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/historical_preservation.json",
+      "git_blob": "3a16e62ad72f88b3de4bf8f282fa30b57e522c2a",
+      "bytes": 159,
+      "sha256": "4cd6b690a757d457cbbf33eae661fe23a748197a124610ab5150db0eeffb64a5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_console.txt",
+      "git_blob": "9dabaa72598505295c02317408a0acae820d3a2a",
+      "bytes": 5261,
+      "sha256": "2b785fe59e7211dffc2c64a0a7ec3915817e1914c5206e68ffd98de7a4d1541a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction.log",
+      "git_blob": "a72752af2a4b8b20640cb5dfc2ecce342bb5445a",
+      "bytes": 4764,
+      "sha256": "eb621eb34b166b1c67e8b6fbc4aab1f4dcd22f824140b8648df230281d5ebf24"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction.log.json",
+      "git_blob": "f5ffd6b0bc23adafb75af8622a5e46d33b77b798",
+      "bytes": 563,
+      "sha256": "d76b97481ecd4947b8f44ce571d554842585eb6f99c79b28d7a4b7c91c901646"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/development_ranges.csv",
+      "git_blob": "c89a3336702003dce4fa5382023c3969584c50f0",
+      "bytes": 1609,
+      "sha256": "980ea324f919349c6ede2e8c01b8067ee960096a92f0a7d8d61ae89cf0c39326"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "4229c9b1d76acd319bfb1a51af2883a3db46c0d6",
+      "bytes": 1111575,
+      "sha256": "6f0dd8705bd5d2f8babedba77f6e5d4f495eabacaae6f4cd496f821859d53c68"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c0_inner0/history.csv",
+      "git_blob": "0b64fc8fe500528c5a5f614348301f1b89c005ae",
+      "bytes": 1311,
+      "sha256": "44cef936e8a5ba55c15c5c3ae5092c2a8da2d7d4ff45d8478e619e67a4c16d3f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "7fd63f9926b4f4970d047c934280a5561ebabcc2",
+      "bytes": 1667103,
+      "sha256": "5ac7e0ee52ac1af17ae7489bbaf3ce51b61fd8bc65f15abad1338f85073520c0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c0_inner1/history.csv",
+      "git_blob": "3793ea725fda7489ff39aa6204b17a6af073ac00",
+      "bytes": 664,
+      "sha256": "87a18538bdf5c7b649368c72df71a3ebbdfa010a722df5014fc2000bc91612d5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c1_inner0/development_predictions.csv.gz",
+      "git_blob": "21dec007b19833f2ca48f87279c7544a3dc2a9d8",
+      "bytes": 1111563,
+      "sha256": "909abc29600f10ae12478be5ab7002b3cf4bc440402a106e8bdf7ef0dd74e09b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c1_inner0/history.csv",
+      "git_blob": "c2865a3fba2ce4611b2af8e712e50f584573c38a",
+      "bytes": 1312,
+      "sha256": "b37efa6e24904ac8cf09fce29b04f11c16a4680ab12490eb641a26d67cd9f170"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c1_inner1/development_predictions.csv.gz",
+      "git_blob": "d70a84da2e4cf5b95c154e1810fe98e83d404dc6",
+      "bytes": 1667340,
+      "sha256": "1530717eccbef585e75c49c6b4291e4fbfa5fd7776d55b4b859ba6e59540e461"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_attention_lstm_c1_inner1/history.csv",
+      "git_blob": "f411833829acfa5b14e491a234cbb3ab88064d95",
+      "bytes": 1314,
+      "sha256": "0798e2e5cbe128c3ecf925149ebe9d2cc13c93c257b38b5424be7035d78dd2b1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_persistence_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "04c2e173b5668dda99009f4c6e5b6f8097d827d4",
+      "bytes": 958910,
+      "sha256": "ed674cc476b535f88f7468ae4884f113de0c85117ac5625d4a141512fa5fbbb2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_persistence_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "73203a1db69471b9c1b61bfb4d5fc8d47f95e0bf",
+      "bytes": 1436995,
+      "sha256": "e0d7ea2e73cf7460c89bf2c82579b1a9656aad9e30b39d6de8228bd14ed6e7c7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_xgboost_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "47f39feff0c240e030db08bd8e85967225494e57",
+      "bytes": 1109889,
+      "sha256": "477fa17613ca113bdb98eb0ccbe6d6739a3dbd0c3026697eb624065115fe9c72"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_xgboost_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "7676abe66024e49e4b6180f264dcaef457b4d763",
+      "bytes": 1661907,
+      "sha256": "c2de33865e3394a6cd74d0b160f812f8e6891b71a78f3bf9fb3adc814fdc8433"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_xgboost_c1_inner0/development_predictions.csv.gz",
+      "git_blob": "e12458f2e189ebef865d192432b77cd25e8a0f74",
+      "bytes": 1111401,
+      "sha256": "5688c31bca93ec99a017b68346b9cd4403887516049fc8eb627b4233036b8e1f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h1_xgboost_c1_inner1/development_predictions.csv.gz",
+      "git_blob": "662c4e524567ccfc5f26b437828fb2c254c5f3e9",
+      "bytes": 1664822,
+      "sha256": "ddc7335a3f6068997fe7a84ee04a7fef5be0227ab0db16b7b69b31b32922910d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "479db952a79d9adcbba58f792e23ce5ee982e512",
+      "bytes": 1116691,
+      "sha256": "891926112bd6e427d50ee8bebd9abb0b5759073cd8d0c960d8cc6bcbb0694012"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c0_inner0/history.csv",
+      "git_blob": "7113e6c419996b7cfd6b4d4f9009d36b229c87c2",
+      "bytes": 927,
+      "sha256": "6359fb00eb4d124b72dd0d372b602eafd49ab55ccde44ff470064761be247c81"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "7bf829f6f21c9d830b7f160e7fed6b627e85e927",
+      "bytes": 1673475,
+      "sha256": "377c5194221850455f81e5dd2fe936ce70aa8ef6d98f2e04b1d9e93b85b8cbea"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c0_inner1/history.csv",
+      "git_blob": "a645f581bb4042d54ec6ec3b4dc5a2baffebf567",
+      "bytes": 706,
+      "sha256": "1ea152e3348667c2bf5a17e2b53f82a8bdfbd7fe7e4ddca63800f1a5d67a45eb"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c1_inner0/development_predictions.csv.gz",
+      "git_blob": "8f5d3bd78fd8a34c5ba6331b1218df974990fb55",
+      "bytes": 1116957,
+      "sha256": "af43d2edcbc4e75723fbb9681ae4bebadb646588aed3e07ac0de00c43f0bce08"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c1_inner0/history.csv",
+      "git_blob": "0364933a55c943a5e1f59e88fb01a736421b014c",
+      "bytes": 1300,
+      "sha256": "fba0c96445d594400eaef83656cb658b7e3cb8cdfdf5c2328410a795aa244d0d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c1_inner1/development_predictions.csv.gz",
+      "git_blob": "c46b49e34c8d4249abe8ef944ce172f463c8f268",
+      "bytes": 1673556,
+      "sha256": "bf03ef75d92c42d4f98b8e1194b93a13857e961a71c8e1bc259a16a6faa7ace9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_attention_lstm_c1_inner1/history.csv",
+      "git_blob": "f1d4337845e38b4c2c2540ebddd51da53ac9ef3e",
+      "bytes": 1097,
+      "sha256": "30146aa090c01ebab813d98703588e9ea7a973e757cd12dcfe87b654b63048bd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_persistence_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "c386103085b41992678258ade1c9e14aca2b5d79",
+      "bytes": 965759,
+      "sha256": "5c32bc6f0a7084bdf438c422464654a381ebdf32c9ac15f5d3d9bc35f02b7ad0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_persistence_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "1f0d51ff10fa27f750cc0998dc093dccd43d6fb6",
+      "bytes": 1447278,
+      "sha256": "04a2d27aa0be85ede40613376d3e69d7b7f375f3f22e315d224ed8e0e1d68fa6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_xgboost_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "9d47acfaf14eefcb0277f4cc7f4fe9511a6701cd",
+      "bytes": 1115111,
+      "sha256": "3c7259ad3543a7cfe613745e81da51280cfb9b00653228e08e05f327152da63b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_xgboost_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "1865e8d5ca1edba90b069e45383fe657c9f2fe80",
+      "bytes": 1669451,
+      "sha256": "00e187d6498097b9b59baca30e97fbc8413949ce395b6dd38163223738b51b98"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_xgboost_c1_inner0/development_predictions.csv.gz",
+      "git_blob": "4d979a1d829deb451af345a26609e0111ecb93af",
+      "bytes": 1116294,
+      "sha256": "625d5ef578dd905cef1ce81a677a56affda204a576f64c3ed4cb8a184b22a55d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h3_xgboost_c1_inner1/development_predictions.csv.gz",
+      "git_blob": "6637a4de125f4af3522556e402e120598fdfeb6c",
+      "bytes": 1672583,
+      "sha256": "3897f8713d54f3f1667ec8c54b8b7a56440828ab90a044a06037cb319b468e3c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "9f6aa66f3522d2d57e5303000fd9cb905d4208e5",
+      "bytes": 1115476,
+      "sha256": "4c00450c1f8eda85f4d586555d09354e06b8948cfc86b7e1c3f521b90dec9401"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c0_inner0/history.csv",
+      "git_blob": "fcd238fb5ca4d8f2af6adf624f815245cca1da0c",
+      "bytes": 535,
+      "sha256": "21b470a823bca569f89d96807899d48edd7f1351eb168d549541b9747a339636"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "ff359c5395390b3d981435769afaa5cb3dcf49b7",
+      "bytes": 1671365,
+      "sha256": "70bcd5f6810707cc1d77bd4be9858b7c50e5cd08c24f0480edd700d8b183bc05"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c0_inner1/history.csv",
+      "git_blob": "87a44c2319b826728db428140c1ae0273e57a328",
+      "bytes": 484,
+      "sha256": "c11643c0a204883652801ab9b3ea9e109348f4780c683907458ba227da4cc03d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c1_inner0/development_predictions.csv.gz",
+      "git_blob": "a87e5621787b4d1ed41a7ebc7600adb9537275e6",
+      "bytes": 1114966,
+      "sha256": "d605e26097164edd4660d4a1c1965791b233d3a78c52d6f88c1af6267f396edb"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c1_inner0/history.csv",
+      "git_blob": "8a12067ad8a5c56c9ceafdb141cbfe2dd2a75664",
+      "bytes": 657,
+      "sha256": "82ece8845e8e0d735b724c67a6d52a8cefa773fdf261d9b8607dff7df29aebc5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c1_inner1/development_predictions.csv.gz",
+      "git_blob": "ca6bb47e12cdd31bffb46512aff35b3c5819d719",
+      "bytes": 1671090,
+      "sha256": "576bb089220e0ecc797bdb09ffc7510c30ae8438d8b0eb9eb9ff0df61bece679"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_attention_lstm_c1_inner1/history.csv",
+      "git_blob": "a68f83449b47f5e17984392c46eaf7cc56bf77b2",
+      "bytes": 742,
+      "sha256": "ee61963ea6c17b155c9e6dba77739fd11b2cd5f3e24d5377a654fee61e9bf931"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_persistence_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "dfb48eb01449ede727e874166117f95e8b887652",
+      "bytes": 964924,
+      "sha256": "eb73201e1cd6d3c6d30e4ff00ae0033cd1cb471b0bebceb7ead0fb7b4a212324"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_persistence_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "2a56e4202e016c3bb92c3ae193e6e51fcf867f81",
+      "bytes": 1445927,
+      "sha256": "e7c9ccfec77561e65148766f7fda1c0bd7d05bbf579663cf124da495f595f3d2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_xgboost_c0_inner0/development_predictions.csv.gz",
+      "git_blob": "10882ac5172c9030ebac047f5ec65d77067a98fa",
+      "bytes": 1113553,
+      "sha256": "f17a4e915fcc5d6995cea5173780574abf3517dc9c6de8ed02af62fe7ca577c3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_xgboost_c0_inner1/development_predictions.csv.gz",
+      "git_blob": "c170d5836d5a818c5bb4ee0d69301dbbb606f893",
+      "bytes": 1667666,
+      "sha256": "ae5081e294695bb3c0bad282cedcbbca74b8526a9edd045e44e7efc33463365a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_xgboost_c1_inner0/development_predictions.csv.gz",
+      "git_blob": "2856b45e8db5d4acf6adadf5861e9c2b2d4dc1f9",
+      "bytes": 1114550,
+      "sha256": "7a2b2818a594e76143d9c86738d3c50bcf96b32ec6a1141da1ac7f3ff5ff7069"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/h6_xgboost_c1_inner1/development_predictions.csv.gz",
+      "git_blob": "cb4ca7c032a5ade0e7b04b23b56e90efbec335bf",
+      "bytes": 1670547,
+      "sha256": "b892d7a9cb531e0773547fe537f7e1110f631e75cec2d8c7acf6ba9e79ebe8fc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/matched_inner_metrics.csv",
+      "git_blob": "9b27beb9fd95c37b0c14dab0f8dcae0e82574aea",
+      "bytes": 11133,
+      "sha256": "0bf15323217af23df8b9875fb8c953327480fdeade7754a2725238fd547e4c06"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/normalization.csv",
+      "git_blob": "71c5e3cfecb063aed7ed1741a09537d1458e1a39",
+      "bytes": 17647,
+      "sha256": "f3f9a2fe897898bf2642b72989eaec55f290877e8054e728cf97ee3646dcaae7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/inner_reproduction/summary.json",
+      "git_blob": "d8c8dfa722bc48330513d3af710a336f45acb665",
+      "bytes": 1332,
+      "sha256": "9b869488452baba0629279a3e020bb6d66c15777869c2019ff44ca652feaf678"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_after.log",
+      "git_blob": "461281f88e7c6e8f3f39af7387d68fcd3f276f88",
+      "bytes": 3142,
+      "sha256": "5e56d1864396158b99e69f339ad8ccf9a326b884eff0aebb2ee5e61579226e9b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_after.log.json",
+      "git_blob": "140d513e48b3e117ca9942380b06f72535298466",
+      "bytes": 443,
+      "sha256": "b01c9d21564a2a0c1b8dab9099f2cf43951888919fde40ca6c94a3622a75ef3d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_after/preparation.json",
+      "git_blob": "86bb7d5075c787a9429eefcad998889060be81cb",
+      "bytes": 15131,
+      "sha256": "2ecd9c7438c8be4a0e8c58ec349147da03624cfe96038f4d6941644eb41ccb3c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_after/stages.csv",
+      "git_blob": "6d2ebdf5ee6225d224bb7021a5210a5635ffc6c3",
+      "bytes": 1226,
+      "sha256": "afd48c802e4cb0051c091b0f05893454e71a173683ea2a689c2ea027b378a758"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_before.log",
+      "git_blob": "cdd3593cd64da5093c9be2adc3dabdc928c63336",
+      "bytes": 3147,
+      "sha256": "8dfd56f831312b8567835d92179b2d69fdfb2a2b46a24234e056bce3cbac2cd5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_before.log.json",
+      "git_blob": "23a3491b409af9460cac18105cb923605e241631",
+      "bytes": 553,
+      "sha256": "982069f2150fe612d6e3abe51b6a5f2d658bf5ab5c5bc172ea3d9d48406f6f66"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_before/preparation.json",
+      "git_blob": "6a986839623c5f2017feb6fa688920440e92b444",
+      "bytes": 15424,
+      "sha256": "fd040c9ba38e742ccad72c657a2958c867c7673b38ba240f7e56ffa12a906116"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_before/stages.csv",
+      "git_blob": "48f3ebbb2b70c44d4b17682b85189b1c065b3ca8",
+      "bytes": 1383,
+      "sha256": "be900849d44f9173ab75984264486254a07fae08b58cb35e26582b91c098da16"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/memory_comparison.csv",
+      "git_blob": "9cac94e11d5ece340551a1c98f1014622b3143a7",
+      "bytes": 1977,
+      "sha256": "07d1727ddeb8987242d52ef7065dbc439890b3c65d9fb9bd942b10ef0c3252a5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/pilot_diagnostics_v1/pilot_revalidation.log.json",
+      "git_blob": "1b4e5163f91727a8fb1c0aebff621168c4c81020",
+      "bytes": 628,
+      "sha256": "d5d8febf5edc34dcf08cd7c11502aa9c2ce21017e64f64a9e5439b2ef1beb45a"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/PILOT_PROTOCOL.md",
+      "git_blob": "44050f9d0ec161d12ba6af24537fccba21c31873",
+      "bytes": 4997,
+      "sha256": "6b9d0f2719cbe77abec3b25789c695e9bb4bc0f973ee89aedc95921fe8e423bb"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/boundaries.csv",
+      "git_blob": "5584931ec2a084683401201f09dc1877b302844f",
+      "bytes": 4050,
+      "sha256": "8e4c7fd316eab987a7974174b5d440491baec91f7119c62270d25e8affed72c1"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/frozen_protocol.json",
+      "git_blob": "d9912734f2fe8a25521e4f178867aded77ffbc49",
+      "bytes": 21634,
+      "sha256": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/membership.csv.gz",
+      "git_blob": "ae90478cf63359d36f9fb5fdace15284bff62824",
+      "bytes": 13610242,
+      "sha256": "4a3d5d9902d5332d396f6feffe00ab7fdf931aadd39f33bbd1164bf26cc6cf9d"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/readiness.json",
+      "git_blob": "e3e3efcf10f280af8f7b81c31386eb9229a3a656",
+      "bytes": 1336,
+      "sha256": "24b32fb001677257689a86b81d7be62377b0c24b39ef3b1b43d5c67d7f6f7cb3"
+    },
+    {
+      "path": "smart_building_conformal/scripts/audit_integration_membership.py",
+      "git_blob": "a1c423507b8e9ff29d150986b94e5b1fac56385e",
+      "bytes": 5538,
+      "sha256": "2c82047fdf354931e0e5793bd196446190ee7ca0fd4c4e153a277cfe06d37680"
+    },
+    {
+      "path": "smart_building_conformal/scripts/audit_review_publication.py",
+      "git_blob": "758593fa9a7da457b5125aaa234bcb93b8e1d9d8",
+      "bytes": 3033,
+      "sha256": "acc30fc69a4e2e454f7ea85c5d003829e6aa7d78de76752eee158830568a0dcc"
+    },
+    {
+      "path": "smart_building_conformal/scripts/collect_pilot_measurements.py",
+      "git_blob": "2926c3d8fca989d12e06e9c1ee47e32be902933b",
+      "bytes": 3020,
+      "sha256": "1c85abbd45033ea7c3463c48fe3e336a74bdd9b7919c64f41631e8942032f5c0"
+    },
+    {
+      "path": "smart_building_conformal/scripts/diagnose_pilot_inner.py",
+      "git_blob": "7ba68eb386e593df38a60f5922da340bee8d0e4f",
+      "bytes": 9016,
+      "sha256": "5ca116a4fe9aeab37c1ffd15bb04b56560b4973634fa83bd40003d7c621a7afe"
+    },
+    {
+      "path": "smart_building_conformal/scripts/finalise_pilot_artifacts.py",
+      "git_blob": "fd4d5c323818c62b9e51fc4ef6b20109424bf177",
+      "bytes": 4154,
+      "sha256": "a31fd8490e1e243997a89050cadb0315e8ff3a825bbd3436157408f3b1badf16"
+    },
+    {
+      "path": "smart_building_conformal/scripts/log_pilot_command.py",
+      "git_blob": "953407ce171edc6a2e74fcca2dc5223047bd66ca",
+      "bytes": 1355,
+      "sha256": "31b7df953dd9b14b1f0dcfe078650581063fe53dc8663ced53d64ad9531c0d65"
+    },
+    {
+      "path": "smart_building_conformal/scripts/profile_pilot_preparation.py",
+      "git_blob": "3e66448d2397ce5605c5323808c180d8170574fd",
+      "bytes": 3115,
+      "sha256": "31bfd5d397f9e71b2e9a183a20bc5664595896fb98c7e32212c63a477e6d3460"
+    },
+    {
+      "path": "smart_building_conformal/scripts/summarise_pilot.py",
+      "git_blob": "999de1e09d4db97fc113f2e2eca26282a361502d",
+      "bytes": 2610,
+      "sha256": "4074d51bc7cd79becb02efb6d22cf4b82ba4745589ff3311277b54dfb9128c7d"
+    },
+    {
+      "path": "smart_building_conformal/scripts/validate_pilot_diagnostics.py",
+      "git_blob": "878f4e3e3f47c99cbf97872cb641bb811f06b9c9",
+      "bytes": 6387,
+      "sha256": "695ac7c0a86f6599e8644de2d03cf9f2f7eb223702cc0bf7c42d3061cb490900"
+    },
+    {
+      "path": "smart_building_conformal/scripts/write_pilot_report_results.py",
+      "git_blob": "9e2429fff3667d54e74329fb651567706316a0e0",
+      "bytes": 8781,
+      "sha256": "24c9ca03f6a628434a6a21ff47593ad8ccc4b00663ec9abb783c6eb423662350"
+    },
+    {
+      "path": "smart_building_conformal/src/alert_study.py",
+      "git_blob": "64f4320b0a6e50738d40458b2d405859166596b5",
+      "bytes": 18997,
+      "sha256": "9978b8814f59c078471dfc1afeb0acc5e9bcc883abc8bb9f390ba9ff0e654d32"
+    },
+    {
+      "path": "smart_building_conformal/src/alerts_corrected.py",
+      "git_blob": "0a6baff8feac216f13afe70aa4fe64240677a93a",
+      "bytes": 16111,
+      "sha256": "58b19884d9a357329d83ea17db8431142cb31d77cf9974dc2a123ef4b6ee438c"
+    },
+    {
+      "path": "smart_building_conformal/src/attention_lstm.py",
+      "git_blob": "40252223eb6013bc8e350415d7da8b3af33daccd",
+      "bytes": 7155,
+      "sha256": "2cdf018ab880bd149a56f0d956aa968e62dd518242de6dcaf89e409eb54e276c"
+    },
+    {
+      "path": "smart_building_conformal/src/conformal_enbpi.py",
+      "git_blob": "7f1897f95be0a0b3340c1cac20dd402ad3ea6505",
+      "bytes": 10964,
+      "sha256": "af0cea6578a053ee2d17f2829572f16d3c98c4c0be8b0034ae961fb3d1d608ea"
+    },
+    {
+      "path": "smart_building_conformal/src/corrected_study.py",
+      "git_blob": "971776257f894b5433168b4e410b7fdce56e9089",
+      "bytes": 42299,
+      "sha256": "f557809df38c86c87f1122ac55bfa1fe054db7b333ce1d04dd6390ae9d78889d"
+    },
+    {
+      "path": "smart_building_conformal/src/datasets/bdg2.py",
+      "git_blob": "2d879582560dc84636a0dbe7417aff492b1592cc",
+      "bytes": 17792,
+      "sha256": "39f655ac383600bef21709b4329ef40e9a71d03df3466dc42fbd1fcf4d249796"
+    },
+    {
+      "path": "smart_building_conformal/src/datasets/pleia.py",
+      "git_blob": "f15ad4bd645bbf610a4872826f20e555ceddbc26",
+      "bytes": 13808,
+      "sha256": "8234d2048b72da0e66fbcba3f558ecad7d3a1a1e563593328b2c0f2858de8514"
+    },
+    {
+      "path": "smart_building_conformal/src/evidence_status.py",
+      "git_blob": "faa3cb5eb01728211389a83759354e63c0a88cb5",
+      "bytes": 1398,
+      "sha256": "f54cb2f4a0ac2ad7c13b87e97f6e6dede4cfe43ec0e3c3fd5fc9eee926cb53df"
+    },
+    {
+      "path": "smart_building_conformal/src/extension_statistics.py",
+      "git_blob": "2beb2cfc589689a3f0fdc01e263a077d9923dd31",
+      "bytes": 7364,
+      "sha256": "339d8cd673249b94078e86a9b76089393af64174ce40a535315f7328eded85de"
+    },
+    {
+      "path": "smart_building_conformal/src/final_figures.py",
+      "git_blob": "e7554a134fc94157bb8bbdc2c398e80ee8745ed0",
+      "bytes": 6918,
+      "sha256": "a36a81b1f1f75b75254506ea22babd0d6718a332797bfa424d943e8921117c40"
+    },
+    {
+      "path": "smart_building_conformal/src/final_figures_v2.py",
+      "git_blob": "29daba2fc7a347662b63c05f0cc3b8665622e875",
+      "bytes": 11507,
+      "sha256": "e5178ff0d598cf9c2eae9a3b33c3f5105237e51aaaff645534f2ec9ef98e1887"
+    },
+    {
+      "path": "smart_building_conformal/src/final_reports.py",
+      "git_blob": "d1dc6091ded62c0d18289329edca2b01cce5460f",
+      "bytes": 286,
+      "sha256": "d3dd30c0e16620fc60161a371e0719e65d1333b2a78c72529ef8e395bee29561"
+    },
+    {
+      "path": "smart_building_conformal/src/final_reports_v2.py",
+      "git_blob": "c31f5bd6086779160836260147e53ae287838247",
+      "bytes": 6929,
+      "sha256": "b579070dc6e5ed48fb4d06edf9c5c94cadfef1ddaf348217dd9116c4baef7be3"
+    },
+    {
+      "path": "smart_building_conformal/src/final_statistics.py",
+      "git_blob": "32a19a7ceb2080b391c5e65bf301fc9484ae7fe0",
+      "bytes": 5293,
+      "sha256": "d0c6f096e2a0656c52aacd44507d6071c300144cfa8dd52e116651c2d0e73279"
+    },
+    {
+      "path": "smart_building_conformal/src/interval_stream.py",
+      "git_blob": "5ffd43a042773824ccea29857d866dde46a0fc85",
+      "bytes": 6459,
+      "sha256": "73cc4625cf44effb2321f51f191176da0194f69a3bcd5b7a7238336d5c288e55"
+    },
+    {
+      "path": "smart_building_conformal/src/model_comparison_pilot.py",
+      "git_blob": "c74f8a34d06777eeb7c5072e8a0d87a12b7f10e4",
+      "bytes": 18901,
+      "sha256": "d49a5282f4837df512e7bcf8c0f47520c903a8f27e530996d6570234e04a05d3"
+    },
+    {
+      "path": "smart_building_conformal/src/pilot_conformal.py",
+      "git_blob": "dd8a95b1e5ef13c0297356e91f5ba4f8ff180510",
+      "bytes": 1087,
+      "sha256": "0c7b72e24eae7f8ed78c5389dfe304f32eb635e9e2478e7073a913a6cf8d2c35"
+    },
+    {
+      "path": "smart_building_conformal/src/pilot_data.py",
+      "git_blob": "7ec8edd860c4e09287965edd85ab387906178ecf",
+      "bytes": 5122,
+      "sha256": "b06c43f4801963d5167e928571c9bbe423f415e300e4064603a6824e43da5cac"
+    },
+    {
+      "path": "smart_building_conformal/src/pilot_figure.py",
+      "git_blob": "0e75480e3b1bcb9ec100fcd03c43ae3240632a1e",
+      "bytes": 2765,
+      "sha256": "4f6b95bbb843b0417a1e30bf8e399df77548ac68a207289756161b4dd4d98718"
+    },
+    {
+      "path": "smart_building_conformal/src/pilot_forecasters.py",
+      "git_blob": "b2d2b7a9d1848735333ea9fdeb9998d93eae49d1",
+      "bytes": 6400,
+      "sha256": "4815f3a21a76cae3b14e24647d3a70f93083782f418bae17026b3597a1394503"
+    },
+    {
+      "path": "smart_building_conformal/src/pilot_resources.py",
+      "git_blob": "ca682d55aa3c5860682688f4f2c78368aa0b8e65",
+      "bytes": 4181,
+      "sha256": "d08e270af76b8aa68c9e77ea9cf8161b793fd2c56fc090d24477d2b0648a67ed"
+    },
+    {
+      "path": "smart_building_conformal/src/prepare_data.py",
+      "git_blob": "10a4197fc2c1e7d831bce3b7f139b7df8b4e348b",
+      "bytes": 11003,
+      "sha256": "0a020d32d46c0cfd908bcfc369b60bf95a6e8e4b551ac9112dafa3e3ced0ebee"
+    },
+    {
+      "path": "smart_building_conformal/src/protocol.py",
+      "git_blob": "c40c43d53bf572e8597c936cf8e3ab86c138c1bd",
+      "bytes": 15336,
+      "sha256": "1f173cc7dd2a36d9078e03b826cc3193649d9ef95a7ce896c6be017f9eebb436"
+    },
+    {
+      "path": "smart_building_conformal/src/robustness_extension.py",
+      "git_blob": "4b0e0b833f646df9d84564cf4ec3a13cbcded99f",
+      "bytes": 29437,
+      "sha256": "18b4cdb18bbb27219a95205997de1d061ab10042eb19ec6e3c16ca4e3a71770a"
+    },
+    {
+      "path": "smart_building_conformal/src/split_integrity.py",
+      "git_blob": "8d88e9033f8b4b24f364f5c7bf94b8a2e17af399",
+      "bytes": 5235,
+      "sha256": "82f8561e7faf0deece89794369b5edab5f4b744f3b839d506f0e612fdd754c06"
+    },
+    {
+      "path": "smart_building_conformal/src/study_runner.py",
+      "git_blob": "5f183e9a3e8fe0fd02efd0ca00c3f25ada36cb1f",
+      "bytes": 58488,
+      "sha256": "7d27bcc34fc6b427a2a802bbe24ea7caa250db83434c9569a9c5766940f7daf6"
+    },
+    {
+      "path": "smart_building_conformal/src/unit_checkpoint.py",
+      "git_blob": "652223004acad9693a8042c1f89853a198b95535",
+      "bytes": 5542,
+      "sha256": "057833f136664876a37423d50fbd3dbea84e4db1ed5c9dd409837107433066e7"
+    },
+    {
+      "path": "smart_building_conformal/src/validate_final_study.py",
+      "git_blob": "23550afacc302e4f0eb440cbaaf658bff986bf67",
+      "bytes": 16987,
+      "sha256": "bb6ee953c1ca884df25abce63d30f72c4738b89fe3f777ba68b58261b9300a16"
+    },
+    {
+      "path": "smart_building_conformal/src/validate_model_comparison_pilot.py",
+      "git_blob": "8f8a452fd3f83753777aea520d9864d3b8a48801",
+      "bytes": 4730,
+      "sha256": "8708c82a3dfc0b282a19d99f1a3b2f60a9f2210593ab18fa7253459fe2b0795c"
+    },
+    {
+      "path": "smart_building_conformal/src/windowing.py",
+      "git_blob": "a7534b4b028839047456e2d559b53fe3b3f25677",
+      "bytes": 10770,
+      "sha256": "e283b55c358046c5f1c95532f87918bc3d1775ef317ef797d0e72ceaacb6fbdf"
+    },
+    {
+      "path": "smart_building_conformal/src/xgboost_model.py",
+      "git_blob": "e95790121d1e9b1b6a04b9b156921d492a065817",
+      "bytes": 2760,
+      "sha256": "488fae6f107b0e360e77faf3c4fa535ef16e94885e5a833696e60cb5dc9ba983"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_alerts_corrected.py",
+      "git_blob": "151d0ee389485590ab7bc2fc9f8d18b58e74f035",
+      "bytes": 6238,
+      "sha256": "0e29900ebde1c1d35fe48ca56b748ff6034af301a27ef26cc6130d49c1a6f5ee"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_bdg2_weather.py",
+      "git_blob": "8e43eaf1bbd2bcaa2af2ba246cd6aab9f62647c3",
+      "bytes": 3079,
+      "sha256": "b5179ea39be41b11b41e3e29acd07a9b0af53920d07bccddde860a8bbbfc1f92"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_corrected_engine.py",
+      "git_blob": "47426bfc68b838774c2432495ef86642b7d1ddef",
+      "bytes": 7351,
+      "sha256": "cb336a57d6ca29e3ffdeb658bd0a730f8edf2ced7737fc7270d72bce77816026"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_corrections_bde.py",
+      "git_blob": "7976a800edd38b754bfddc1e8e8bbc8212e1f9b6",
+      "bytes": 4320,
+      "sha256": "1c9432faa1b2869d74c3d6ba703b965fc92f7030d9df64dc02c1fd3fcaeb6d7e"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_enbpi_causal.py",
+      "git_blob": "f466faf209a2caa2a367537e2b7cd15339f61c27",
+      "bytes": 4918,
+      "sha256": "2074cb0877b765729ee02b26b61a15c126dfbe7e46e68eb5c14cc0be0af98402"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_extension_statistics.py",
+      "git_blob": "1b4eec844d4b86033b52d7b8d5958daf4b3c031c",
+      "bytes": 2008,
+      "sha256": "96c4c528529e87e89eb3a44beb8de7bf07644214984dba49864fed537f3f9222"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_final_figures.py",
+      "git_blob": "8da0a6bf7961f212d92f33fbb99facc42902bb47",
+      "bytes": 874,
+      "sha256": "d7a9c8ddd84db026964eb93df302eaf44b1b543fe962c7f193fb33b83ccd6e0b"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_final_reports.py",
+      "git_blob": "43c71d3f2a24cd2c1a5b89ad3dda945c6b22999f",
+      "bytes": 2038,
+      "sha256": "b336f93a7950f7bb0d4142d0e0bcbe3591bc729bbba4783c208cce0c7117ae0b"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_final_statistics.py",
+      "git_blob": "5b5cc4f08127eedb0513c194b183f00c084066a7",
+      "bytes": 2669,
+      "sha256": "d6984cb1c084c74698378dd1eee0185e6b0d1d499fe9ed09dea44aa74aac3674"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_integration_delivery.py",
+      "git_blob": "660c908e3e977f3967b054dd57f3772b3d3ddda0",
+      "bytes": 11632,
+      "sha256": "255af4508d1683291b06047fd433f0dd4d253bc68a3943f861e14aaa7c73e78e"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_integration_repairs.py",
+      "git_blob": "ee166929ee7efae50f5dde07b336ebd7375446cc",
+      "bytes": 11186,
+      "sha256": "109ee1273bac5341f991c9ce8c4c0cc32f4c2d5e5f053543d1973688ec320166"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_model_comparison_pilot.py",
+      "git_blob": "3b7dc33f94cf9e789d0b1143dbfede2307c6b1df",
+      "bytes": 7540,
+      "sha256": "f341c628d05509d23bb4dd999165f5b016fcfdc8ac5e3ff5e6ba281eb5407892"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_pilot_diagnostics.py",
+      "git_blob": "3806737e4429607aee7423c596fea97595b43955",
+      "bytes": 2550,
+      "sha256": "5f4e3510afba164873ce587f38783ebc809322f2bcbf7fca20036dbd4eccb46c"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_protocol.py",
+      "git_blob": "3ea00bf0b0a90aff527b8b2679f6139a0f930321",
+      "bytes": 3913,
+      "sha256": "c58f5faee86a3170ee590b3d6d4170058d16f93f9aab8c6614de28bacdc542e2"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_robustness_extension.py",
+      "git_blob": "e824cf22355c0c49e5617a27ee31f5f2962e8911",
+      "bytes": 7989,
+      "sha256": "87fcca2e70aec6afd3463a540da6b075467cfeab8ee2e3ab6b74c09fc200b728"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_validate_final_study.py",
+      "git_blob": "97fba595821c7ef81da8cacd82dd550c13a0707a",
+      "bytes": 2155,
+      "sha256": "77bac941479dddd188a9e866971171f00c5d8a398fbc3bca6b640d8ddf749068"
+    },
+    {
+      "path": ".gitattributes",
+      "git_blob": "8e8daa058b6d59c3808d3e10f45b94c1504646dd",
+      "bytes": 347,
+      "sha256": "a58ce65844370289730c6f075fee86075443a61d38334bc849191cc5b500404f"
+    },
+    {
+      "path": "INTEGRATION_REPAIR_REPORT.md",
+      "git_blob": "490b3395a616de52ee716c35bb760749065e90c2",
+      "bytes": 26274,
+      "sha256": "b6ca401e1fa41dd1a55151f6086943f2117c1e607bc4bb1d8e11ddbae6ca55a3"
+    },
+    {
+      "path": "PANEL_RESPONSE_MATRIX.md",
+      "git_blob": "b49ee878dc6925ae2f7b9c442b88b9c288e7089d",
+      "bytes": 25790,
+      "sha256": "6fd7eb945cdb35b3d51a2a6084c314ddc99cf0f94950db2429bbf43a2612da76"
+    },
+    {
+      "path": "PROJECT_RECOVERY_STATUS.md",
+      "git_blob": "ca4ac5e204c444df90d528bedc2542bc41ee860c",
+      "bytes": 29639,
+      "sha256": "6fa516f788e6d9c1c92ddb305c27865259abe4853a4f6256ef7340146be75801"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/integration_repair_status.json",
+      "git_blob": "e21b9d1b5490ac911afd91c08ebaf799079f7e1c",
+      "bytes": 1528,
+      "sha256": "6f0d8cae7a8b393acaab142b42f6c0c33f07a9b3c0989aba7e61db599e76d1ff"
+    },
+    {
+      "path": ".gitattributes",
+      "git_blob": "fb21c00564f846a2c2589c2e59e9ee4f117ca0cf",
+      "bytes": 293,
+      "sha256": "af4284b2d0f15855362232fecc4cabd3f8ea6406313d8eaf5bfabe768744b762"
+    },
+    {
+      "path": "PANEL_RESPONSE_MATRIX.md",
+      "git_blob": "c6ee2f8080fe717d34dab0df23814e44533d8113",
+      "bytes": 25185,
+      "sha256": "14ac435fc7d4a0be29f9b6986e706a256aefbed53c3f777c88f9abe41ba24924"
+    },
+    {
+      "path": "PROJECT_RECOVERY_STATUS.md",
+      "git_blob": "9a0e379115ff1d9355fc6b9c56d6a01908eb703b",
+      "bytes": 29058,
+      "sha256": "a5d10ab6c7f122178c726ab3649eeb56f2f8bc5389e5b888245b69bd13f72381"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/integration_repair_status.json",
+      "git_blob": "849fe9eb74b9e3b76828269c2fb0f1c3aaad5b46",
+      "bytes": 1012,
+      "sha256": "0431866f8c8455a985babb24b052167b45017f26cd233796e5616fee284a6f52"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/PILOT_PROTOCOL.md",
+      "git_blob": "dec84410b2d862aa3ae6b65ff141c861d8323f51",
+      "bytes": 4948,
+      "sha256": "b4d2c808f245a119b077bb9c8b3afe2cbee6f93ad25f38314701313bc4868c97"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/boundaries.csv",
+      "git_blob": "4e6e242fbb74f9cd783de71bdf53e9babc63435e",
+      "bytes": 4037,
+      "sha256": "81e4a60c2472baab57428352ba8025c2fef36913ecbe009ba6fe7653fed5db83"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/frozen_protocol.json",
+      "git_blob": "5fb580946eb6408f481b40f37d83b8b20da84bc9",
+      "bytes": 20937,
+      "sha256": "5698625e563db5a2a2b54dbb4db623f2edaa73ce9119803aa5face4baeaaac1c"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/readiness.json",
+      "git_blob": "3fb23a831db794c4fb9cbf841493f24bee79ea45",
+      "bytes": 1293,
+      "sha256": "8f913e2af90f1e3bda5001a3345ba967d3bc10a4ffcdd3ec26c76f41568daad4"
+    },
+    {
+      "path": "smart_building_conformal/src/unit_checkpoint.py",
+      "git_blob": "52a57915f75e982a65eaa04bb488418fb2d6b9d2",
+      "bytes": 5222,
+      "sha256": "cadcc01aeb33c6ea8a1d10ac1e3b908df08bd484990d9246d9a52c228d3a114f"
+    },
+    {
+      "path": "PANEL_RESPONSE_MATRIX.md",
+      "git_blob": "8941a60e621686e57e67877c588958ee408a28af",
+      "bytes": 21493,
+      "sha256": "7124f3b8caeba8b11dfbdb707993ab9c28cd8c21a9ae8e904fac41ea9c87ce15"
+    },
+    {
+      "path": "PROJECT_RECOVERY_STATUS.md",
+      "git_blob": "71640da7bbd969fd22713b3762777804e838fce5",
+      "bytes": 25618,
+      "sha256": "1974ab3869d7bf2efe5a46fe8478dee9d74e0fa7f1ee70c7dc3a662561a06861"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/integration_repair_status.json",
+      "git_blob": "e234d08a205e616555dc4cc5cb2f7f3772846a8b",
+      "bytes": 930,
+      "sha256": "3b3dac53eb2d19f30fd90d835cf438ec4eb2401594227791bd96b8b4faba8b4d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/CLAIMS_DISPOSITION.md",
+      "git_blob": "7a83c68617b4c8655b0e0e02498f66496a27cc8d",
+      "bytes": 2461,
+      "sha256": "4ed6a189bc68d917d0bc0f1e60ccfb4011c48a14b927818a9644e3d4ca79906c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/COMPUTATIONAL_EFFICIENCY.md",
+      "git_blob": "a16ebfebd68325788650de229f8651f6fc339221",
+      "bytes": 543,
+      "sha256": "55b91fa5973bf137908a5af150fe66b676f4fba63815074b60de0ffba70ec06f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/CONTRIBUTIONS_LIMITATIONS_FUTURE_WORK.md",
+      "git_blob": "0a8f3df42a25e0fc10e010526d13ce3ba26f7d6d",
+      "bytes": 1264,
+      "sha256": "4c727e9dfe722a9e8dc674faff78a04f1bbc8cef9dcf0ef0f124c4fa63c8dd1d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/DISSERTATION_CHAPTER_4_RESULTS.md",
+      "git_blob": "183b6ccad804f851c4e06e286ea176188dd05702",
+      "bytes": 1236,
+      "sha256": "c44d92d6a49fcaa375335b3e08317ebd31901422012b8076f02f53b31435b90f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/DISSERTATION_CHAPTER_5_DISCUSSION.md",
+      "git_blob": "2ef7a0f091cead6a8011538e4157ed321152bf39",
+      "bytes": 1310,
+      "sha256": "bbb9ca2b02cb67baff80a32ef133483b71ea958b7f77cb1ee71c90027091f464"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FEASIBILITY_AUDIT.md",
+      "git_blob": "7fb21d3cb6075d47b159361c2af4f6cbb9c8518a",
+      "bytes": 2355,
+      "sha256": "0eea1f5356d4c43b5797246f3c302e72197120f00fbb129d8ad9cd077e37e14b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_CLAIMS_REGISTER.md",
+      "git_blob": "b46b7dc70116d8b68609b7b658a75aa5a98dc321",
+      "bytes": 1049,
+      "sha256": "ecf1da026a5dba97bd5a8b8b96603818ca65dbe7af4d0483df9c2b5e34546931"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_DISSERTATION_RESULTS.md",
+      "git_blob": "2e55c066a781a0b82495451088facbe68a88184a",
+      "bytes": 4351,
+      "sha256": "e880c7df4de23392d8a4d620f965274a40c3ca2344605645d2bc667af1085cb8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_FIGURES_INDEX.md",
+      "git_blob": "3cb202da945545dcf7f691458414f377bb28a5c3",
+      "bytes": 57,
+      "sha256": "073537e8b1b5e4a20323a626a763b77ecbc231678a1477c71b957953d183a25c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_TABLES_INDEX.md",
+      "git_blob": "c9370ece089e97db4c44fbe0100b4a184a89ccc9",
+      "bytes": 376,
+      "sha256": "c85e42b8261f6cffa8fadc01ec6fb5ce997e1a7104688f53e17288f03be65b19"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/LIMITATIONS_AND_VALIDITY.md",
+      "git_blob": "17d4130664957a4c4caa666094bf530bff54209d",
+      "bytes": 1077,
+      "sha256": "7ba8350b8a9aa4ccca00facd8d5ca969c1cfd309b694d0da2fcc34b1ac0c720e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/POST_RUN_STATISTICAL_AUDIT.md",
+      "git_blob": "4ca2d055ce3699a869fd29d9238552479075332c",
+      "bytes": 8367,
+      "sha256": "834dfe30ec4d880ec912f5dcb4a9e6ec941281586efa5b08c2f2b9e2da867d6f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/REPRODUCIBILITY.md",
+      "git_blob": "7b19931b2ae2315217c561f8caa294d3f6a15c04",
+      "bytes": 342,
+      "sha256": "5818a2d897d562794f1ecce339654b67a98535e0c3d6355cc427922400c424c0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/RESULTS_CHANGELOG.md",
+      "git_blob": "6dc8534fe4173b6da3df756345d26f24107505b1",
+      "bytes": 5434,
+      "sha256": "bc126c3dc713a7a7881d4c655f29c59e2b65a5b2e6e9ecb65c47a6138cad6318"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/ROBUSTNESS_RESULTS.md",
+      "git_blob": "08c097a20298696497004c83746d3a2adab413f6",
+      "bytes": 1374,
+      "sha256": "cc36bd6aed04ec26d75216802c5a0042484aa7350c078d86dc9b6d0a74a0ab42"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/RQ_RO_ACHIEVEMENT.md",
+      "git_blob": "30d8fef63e51f6b5e351e27f2c64520f8fc5a3a0",
+      "bytes": 1057,
+      "sha256": "8b7bf4eb66d982fa62d88ba7f3fe12a2c8bb919d09127f7346b9b67bd44ad87c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/SCIENTIFIC_VALIDITY_AUDIT.md",
+      "git_blob": "306797e1bf3377bbbb6173434210a3182537a045",
+      "bytes": 2580,
+      "sha256": "406ca22c45bab627b68c417d8a78d2aacdaf1a21ea9c093fe52152a47b84651b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/SLIDE_READY_VALUES.md",
+      "git_blob": "bd0fe8279da803fce7dced55b7a2f6992d15fb76",
+      "bytes": 1077,
+      "sha256": "554f65dd341817ca043a6d25f7fd024adc4001f6455626ddce66b1c4b4f63068"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/VALIDATION_REPORT.md",
+      "git_blob": "311d2c22527ca292ee9e9e582651c0541d3bccce",
+      "bytes": 956,
+      "sha256": "198eec7d5c23d61e1cfb103fa2cccfb88a9e4072c6dd204b7faa022540c4be31"
+    },
+    {
+      "path": "smart_building_conformal/src/final_reports.py",
+      "git_blob": "a1373151de2b8e760589d6e9f61c6d44eef2da3c",
+      "bytes": 11915,
+      "sha256": "27bd76752e7f7b4b689942f67bdb5f2e1eaba9a2097c2da84bbd1aa93a651c1f"
+    },
+    {
+      "path": "smart_building_conformal/src/final_reports_v2.py",
+      "git_blob": "834175295ffbc961070dd12c3e7beb56e5beb274",
+      "bytes": 14997,
+      "sha256": "60a2dfcd734841157b74d04f1e3fbf75c9028564f45f7722ff5c9cfebef914b2"
+    },
+    {
+      "path": "smart_building_conformal/src/validate_final_study.py",
+      "git_blob": "168cbc4e2f666367e2db5e71a65f925c7ad68f80",
+      "bytes": 15234,
+      "sha256": "b615aa331aeb4639f02f6df6913b0fdfcf703685822e055591d1854cd6e8b84b"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_final_reports.py",
+      "git_blob": "a4c924c90165a4d5cf7001562dc338c29399b596",
+      "bytes": 2019,
+      "sha256": "863c40375378e9916516106a90cdb7c0dfdadea767608f5a421e329f26cbcbd6"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_validate_final_study.py",
+      "git_blob": "f654ebf1384c97c46fdc681b423bab0a1cc8db4e",
+      "bytes": 1898,
+      "sha256": "e09bcdbed4510cdf1a4c3a5d7cbe6b4a3f3da0b4b4196f8fb5856e0bd86fd538"
+    },
+    {
+      "path": "smart_building_conformal/src/conformal_enbpi.py",
+      "git_blob": "95c61047f00e7749d280b97a54d16775b9a1df9e",
+      "bytes": 10884,
+      "sha256": "91c486aa0d61bbc880c05de91b7255b63bd04eeb5055d716a93e47855bf20d1f"
+    },
+    {
+      "path": "smart_building_conformal/src/corrected_study.py",
+      "git_blob": "d9d5b0e500008b6262e73f6df363d7dc2f3c7739",
+      "bytes": 41814,
+      "sha256": "715975831e1a20dd864677f2ee11dfab0e34921e13c9e4686bf9ed09b4ff157a"
+    },
+    {
+      "path": "smart_building_conformal/src/protocol.py",
+      "git_blob": "21436c784eda8801602330a564671b5f32f6b87c",
+      "bytes": 15024,
+      "sha256": "d7bfbebcb0ac88388db4841e103645b00c643889ccaf12df7502f49df7a0ce9e"
+    },
+    {
+      "path": "smart_building_conformal/src/robustness_extension.py",
+      "git_blob": "744180c03e59fc2c29d2d7ea1c8236fde426ca42",
+      "bytes": 26549,
+      "sha256": "6892bca7b4ef283240552f7239aac9346ae9581a75676af01d4d113dead0810a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_DISSERTATION_RESULTS.md",
+      "git_blob": "a098848faf5d5162c501ceab3a918dc858ab2a4c",
+      "bytes": 3695,
+      "sha256": "aaab22c7abf1d5f1e82e8b36e80b75972fea3a4d4b9b468faec65413ea974a0b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_FIGURES_INDEX.md",
+      "git_blob": "b62068210ef7d8c4058870a9ba8e988fe12f0ae0",
+      "bytes": 406,
+      "sha256": "49e1bcd80bae3fb4d34b00cc654b873952c8a3b81c76e745dd0eda10e035f677"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/RQ_RO_ACHIEVEMENT.md",
+      "git_blob": "1cdedef39cd5b9a901d5775004807d79320ad69b",
+      "bytes": 1310,
+      "sha256": "dc023c9484a2ac0d92697cacfba2a331def374eededeee6a25e72765613ee772"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/SLIDE_READY_VALUES.md",
+      "git_blob": "ddc81bfbef477a97299e5f736036d0bc87b2cc07",
+      "bytes": 1383,
+      "sha256": "a7d7c1bae6be5493587e7f99d54ff8fb2fb47f0ce0d7c794cc10a9e0aef9380a"
+    },
+    {
+      "path": "smart_building_conformal/src/validate_final_study.py",
+      "git_blob": "46bb1e8cbc693742f5d067bca1593d9e6c7061d3",
+      "bytes": 12030,
+      "sha256": "4f467420a8aeaa8a5437ad2d252f61a45e38f4dea4e832189b5d68f952843ccd"
+    },
+    {
+      "path": "smart_building_conformal/configs/study_final_dissertation_v2.yaml",
+      "git_blob": "522967b16245c3a9ce114d2c21a5a96af51acac8",
+      "bytes": 2212,
+      "sha256": "54e0a7ad4c72312dcacb366644c41df91b830da379646fa4ddb0ed3977278890"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/config_hash.txt",
+      "git_blob": "e10b4678606b2dac065ea08707ef5e81ec7c3611",
+      "bytes": 631,
+      "sha256": "1f6a72e9cf6168c80faf8602765aa067595e4f6e36031dd48e9b9dcaaad45a3e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/frozen_protocol.yaml",
+      "git_blob": "a49ac7e0e2e24092ecb75196c0bed11cc6ace1d5",
+      "bytes": 9093,
+      "sha256": "c5102fda067a56afb139163b2737b82b779298bf058180624255fcc02ec406fd"
+    },
+    {
+      "path": "smart_building_conformal/src/protocol.py",
+      "git_blob": "cd4fc0b4713083bad7b25333bb0516004f2e1bec",
+      "bytes": 13780,
+      "sha256": "d98e2441919ac4761daafa0eec4f06660764f7b376469788cfeabcb291bf89f9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/PUBLICATION_READY.json",
+      "git_blob": "1420cb254f59d30e4d38027740cc25e87c4ebf45",
+      "bytes": 895,
+      "sha256": "3a924772a237f2d5fd81065ff26b2b2f9dcb9017e665864930f247cb3525006c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/report/RESULTS_CHANGELOG.md",
+      "git_blob": "802b3d16e59cd7cd92f67c40462c135e96d640c6",
+      "bytes": 4198,
+      "sha256": "2f9956bb6390657196696b19e06a28c080e0d5e9b920c3775d7454a17c852243"
+    },
+    {
+      "path": "smart_building_conformal/src/final_figures.py",
+      "git_blob": "68dbfd41de42e928047ff9531d23083d83393a36",
+      "bytes": 4338,
+      "sha256": "245042051f88046849db1f6e09fb805b6a1ff94b55d7a48f5a00adebe822797c"
+    },
+    {
+      "path": "smart_building_conformal/src/final_reports.py",
+      "git_blob": "e478c4abe3ef1ce430cafe3307f350fb5f324edc",
+      "bytes": 5892,
+      "sha256": "c128fe6c8da678d10ef704afb8193a91e5311779e4b72b47db757a9f674972c9"
+    },
+    {
+      "path": "smart_building_conformal/src/validate_final_study.py",
+      "git_blob": "ce5e8276f057f7bc14a1bc7e96f07a435bd818f4",
+      "bytes": 9148,
+      "sha256": "5df5db2e93ccdc3e2a89ad8198bc1cc66a0ba00bd53952fbb171a5b5e193d555"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_validate_final_study.py",
+      "git_blob": "8c8560b3429a7485661a35e5f81f32f02b0d6b02",
+      "bytes": 1499,
+      "sha256": "d22bb85fa2f9968ad984439ecd019cfc0ddd4ebb8fa8d2805a15146bc67e747c"
+    },
+    {
+      "path": "smart_building_conformal/src/corrected_study.py",
+      "git_blob": "8fe482586d4863a6167a27b6f12466c83eef62fc",
+      "bytes": 40639,
+      "sha256": "f1cebded0aa8c7e830f94339a67a89a41689eea3aa94dcf43681b739938a6de7"
+    },
+    {
+      "path": "smart_building_conformal/src/corrected_study.py",
+      "git_blob": "67bf4fb8e6762e36e757d68c121412c0cfd4d84b",
+      "bytes": 40352,
+      "sha256": "a5e3de589da5923689b42dba6ab4ecd2c7d1040d73b8866b1e95fe0b756fc914"
+    },
+    {
+      "path": "smart_building_conformal/src/corrected_study.py",
+      "git_blob": "1bfba95921cc12e928f1ff406570f85c63cae69a",
+      "bytes": 38693,
+      "sha256": "ea76cca7aff6e45e48ff51c57c8bb81c437a281b67949eefd87327b0449b0b66"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_corrected_engine.py",
+      "git_blob": "092dfa04ec00d10ef56db0c7813d5764b1dccf2e",
+      "bytes": 6518,
+      "sha256": "0e7e2fa2b025b9e5450ba512c58599af23c64390fe826f1127f237d11ea642ae"
+    },
+    {
+      "path": "smart_building_conformal/src/corrected_study.py",
+      "git_blob": "8f23dbd1f77e26fbb4535a70624ac93b7a37b23c",
+      "bytes": 38416,
+      "sha256": "2e47dd58eed109c69f3eb34ebcccfc15b3bb36b842ebfb56503aa172e5e03e8d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/audit/leakage_audit.json",
+      "git_blob": "64f42ad8d5791769f811a041843c28ac4d797b56",
+      "bytes": 8102,
+      "sha256": "57aa3f9e6324c4c22f0dd04c1f2cd91e4dfbf00b430ab3f6f912e566634c557f"
+    },
+    {
+      "path": "smart_building_conformal/src/validate_final_study.py",
+      "git_blob": "34422931a42d0a63687d62649c98947e2af922c3",
+      "bytes": 7399,
+      "sha256": "513160efd2cf01cca98505f9537bff2fb52f49e9382f11287b921306b3e34d25"
+    },
+    {
+      "path": "smart_building_conformal/tests/test_validate_final_study.py",
+      "git_blob": "66dd6fe46cab55e2d818553c347994614b40d8ef",
+      "bytes": 883,
+      "sha256": "82d057232ca4b19fbfe10b63422a8b555c614054497078ac0071145f64353a85"
+    },
+    {
+      "path": "smart_building_conformal/configs/study_final_dissertation_v2.yaml",
+      "git_blob": "e41184e4dd54d4cf7ba2393092c15ca1a41fa25d",
+      "bytes": 2212,
+      "sha256": "6e0f7d0bae2daced0d80366c977d33bf4118e167934ba9cda4e067d51daf9d97"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/config_hash.txt",
+      "git_blob": "d4572fac45093455bb76f98c4872592ba88efe96",
+      "bytes": 440,
+      "sha256": "b644c7f3427317464023e76c58e0581d21073163f99fd97059c9c744d9bda8d7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/final_dissertation_v2/protocol/frozen_protocol.yaml",
+      "git_blob": "1ed7b703adff0d0554b33e5326d904bbf5c943c1",
+      "bytes": 8240,
+      "sha256": "74e670a278ddac5fcfcd64644f42e929ca14aae5ddb1372f0a96dc8433a2bd4b"
+    },
+    {
+      "path": "smart_building_conformal/src/protocol.py",
+      "git_blob": "ca61e3333e138d91c1b2fd7bdf6324810dc76e21",
+      "bytes": 13169,
+      "sha256": "c467409906e8809b548c1d0aff5dc2bd7b05091f15b24bde2ac30e12012ecf05"
+    },
+    {
+      "path": "smart_building_conformal/src/alerts_corrected.py",
+      "git_blob": "2eadb36354b85621a2f4de5ba855c2ac4fa6eead",
+      "bytes": 14614,
+      "sha256": "f066fb09845907f22f4c2d798a5958bff42d422a13a9ed894b13f9c5872ebdf6"
+    },
+    {
+      "path": "smart_building_conformal/src/study_runner.py",
+      "git_blob": "4b214bbf6f05236e4244ccc800bdd893cce7ef3c",
+      "bytes": 58417,
+      "sha256": "bb025753fff0e8e51c4a0a726f8a6dbac3773f87238438fe4d1a622b657a77b0"
+    }
+  ]
+}
