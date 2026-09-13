@@ -191,7 +191,15 @@ def main():
             assert git('branch','--show-current')==BRANCH
             prefit=read(REVIEW/'evaluated_commit.json')
             subprocess.run(['git','merge-base','--is-ancestor',prefit['commit'],'HEAD'],cwd=ROOT,check=True)
-            verify_frozen(manifest);engine.reconcile()
+            verify_frozen(manifest)
+            if engine.state.get('failure'):
+                # Retain the prior failure. A known failed command is still
+                # rejected by phase(); an actual successful orphan receipt can
+                # be adopted without repeating the completed scientific run.
+                previous=dict(utc=now(),failure=engine.state.pop('failure'),traceback=engine.state.pop('traceback',None))
+                engine.state.setdefault('previous_failures',[]).append(previous)
+                append(BATCH/'attempts.jsonl',dict(event='coordinator_restart',**previous))
+            engine.reconcile()
             for unit in manifest['units']:
                 s=unit['stem'];prior=engine.state['units'].get(s)
                 if prior and prior.get('validated'):

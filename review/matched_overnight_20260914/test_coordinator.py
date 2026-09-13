@@ -76,3 +76,30 @@ def test_adopts_live_logger_then_uses_actual_exit(tmp_path):
     atomic(record['attempt_record'],record);engine.state['active']=record;engine.save()
     engine.reconcile();process.wait()
     assert engine.state['tasks']['live']['exit_code']==0 and engine.state['tasks']['live']['status']=='passed'
+
+def test_atomic_replace_retries_transient_denial_without_changing_old_data(tmp_path,monkeypatch):
+    import common
+    target=tmp_path/'progress.json';target.write_text('{"old":true}')
+    original=common.os.replace;calls=[]
+    monkeypatch.setattr(common,'BACKUP',tmp_path/'trace')
+    monkeypatch.setattr(common.time,'sleep',lambda _:None)
+    def denied_twice(src,dst):
+        calls.append(1)
+        if len(calls)<=2:
+            assert target.read_text()=='{"old":true}'
+            raise PermissionError('injected transient sharing denial')
+        original(src,dst)
+    monkeypatch.setattr(common.os,'replace',denied_twice)
+    common.atomic(target,{'new':True})
+    assert read(target)=={'new':True} and len(calls)==3
+    assert len((tmp_path/'trace/atomic_replace_retries.jsonl').read_text().splitlines())==2
+
+def test_atomic_replace_persistent_denial_stops_and_preserves_both_versions(tmp_path,monkeypatch):
+    import common
+    target=tmp_path/'progress.json';target.write_text('{"old":true}');calls=[]
+    monkeypatch.setattr(common,'BACKUP',tmp_path/'trace');monkeypatch.setattr(common.time,'sleep',lambda _:None)
+    def denied(src,dst):calls.append(1);raise PermissionError('injected persistent denial')
+    monkeypatch.setattr(common.os,'replace',denied)
+    with pytest.raises(PermissionError):common.atomic(target,{'new':True})
+    assert len(calls)==11 and read(target)=={'old':True}
+    retained=list(tmp_path.glob('progress.json.*.tmp'));assert len(retained)==1 and read(retained[0])=={'new':True}

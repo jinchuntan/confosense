@@ -1,0 +1,9 @@
+# Progress-write recovery: no scientific refit
+
+At 2026-09-13 18:51:09 UTC the initial coordinator encountered Windows error 5 while replacing its progress.json file in the OneDrive workspace. The traceback identifies the orchestration heartbeat write, not any model, checkpoint or scientific input. Which external process held or denied the file is not established. The coordinator's durable outer logger recorded actual exit 1.
+
+The separate PLEIA-temperature h1/fold2/seed42 worker remained alive and completed at 18:52:22 UTC with actual exit 0, 8 tuning and2 final learned fits,3 point and6 interval cells. Its logger receipt, fit journal and complete model checkpoints were preserved. The four recorded logger/worker process identities were no longer live before restart. The original blocked ledger and outer logs are retained under recovery_v1.
+
+The orchestration-only repair retries a denied atomic replacement for at most7.87 seconds, leaves the old committed file intact, uses a unique new temporary file, records retries outside OneDrive and retains that temporary file if replacement remains denied. Persistent failure still stops. The restart records the prior coordinator failure and adopts the existing actual-success receipt. It does not repeat the run or bypass a failed validation command.
+
+Focused dummy tests inject two temporary replacement denials and a persistent denial, checking bounded behavior and preservation of both versions. The existing restart/ordering/failure tests are retained. Scientific src bytes, all twelve protocols, authorizations, candidates, memberships, thresholds and results are unchanged. The evaluated pre-fit orchestration remains available at f627ff3; this later bookkeeping repair has a separate commit. No completed numerical result is invalidated.

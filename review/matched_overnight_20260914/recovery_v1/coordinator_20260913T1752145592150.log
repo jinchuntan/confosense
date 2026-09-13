@@ -1,0 +1,37 @@
+VALIDATED 1/12 pleia_energy_h1_f2_s42_v1
+VALIDATED 2/12 pleia_energy_h3_f2_s42_v1
+VALIDATED 3/12 pleia_energy_h6_f2_s42_v1
+VALIDATED 4/12 rico_h15_f2_s42_v1
+VALIDATED 5/12 rico_h30_f2_s42_v1
+VALIDATED 6/12 rico_h60_f2_s42_v1
+VALIDATED 7/12 bdg2_h3_f2_s42_v1
+VALIDATED 8/12 bdg2_h6_f2_s42_v1
+VALIDATED 9/12 bdg2_h1_f1_s42_v1
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 208, in main
+    engine.phase(s+'/run',run)
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 133, in phase
+    self.state['active']=record;self.save();time.sleep(self.poll_seconds)
+                                ^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 82, in save
+    self.state['updated_utc']=now();atomic(self.path,self.state)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\common.py", line 38, in atomic
+    os.replace(temp,path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\progress.json.17116.tmp' -> 'C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\progress.json'
+
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 232, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 208, in main
+    engine.phase(s+'/run',run)
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 133, in phase
+    self.state['active']=record;self.save();time.sleep(self.poll_seconds)
+                                ^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\coordinator.py", line 82, in save
+    self.state['updated_utc']=now();atomic(self.path,self.state)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_overnight_20260914\common.py", line 38, in atomic
+    os.replace(temp,path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\progress.json.17116.tmp' -> 'C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\progress.json'

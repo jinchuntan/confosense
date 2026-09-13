@@ -1,5 +1,5 @@
 """Orchestration utilities; no estimator or scientific-design implementation."""
-import csv, hashlib, json, os, subprocess, sys, time
+import csv, hashlib, json, os, subprocess, sys, time, uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -30,12 +30,22 @@ def sha(path):
 def tree(path): return {p.relative_to(path).as_posix():sha(p) for p in sorted(Path(path).rglob('*')) if p.is_file()}
 def atomic(path, value):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    temp=path.with_name(path.name+f'.{os.getpid()}.tmp')
+    temp=path.with_name(path.name+f'.{os.getpid()}.{uuid.uuid4().hex}.tmp')
     with temp.open('w',encoding='utf-8',newline='\n') as f:
         if isinstance(value,str): f.write(value)
         else: json.dump(value,f,indent=2,default=str);f.write('\n')
         f.flush();os.fsync(f.fileno())
-    os.replace(temp,path)
+    delays=[.02,.05,.1,.2,.5,1,1,1,2,2]
+    for attempt in range(len(delays)+1):
+        try:
+            os.replace(temp,path);break
+        except PermissionError as exc:
+            # Windows readers/sync/indexing can briefly deny replacement. Keep
+            # the old atomic file intact, preserve the new temporary file, and
+            # retry only this bookkeeping rename with a finite wait budget.
+            append(BACKUP/'atomic_replace_retries.jsonl',dict(utc=now(),path=str(path),temporary=str(temp),attempt=attempt,error=str(exc)))
+            if attempt==len(delays):raise
+            time.sleep(delays[attempt])
 def append(path,value):
     Path(path).parent.mkdir(parents=True,exist_ok=True)
     with Path(path).open('a',encoding='utf-8') as f:
