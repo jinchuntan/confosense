@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime,timezone
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -21,10 +22,15 @@ start=time.perf_counter(); stamp=datetime.now(timezone.utc).isoformat()
 with path.open("w",encoding="utf-8") as log:
     process=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
         text=True,encoding="utf-8",errors="replace",bufsize=1)
+    identity=dict(command=command,cwd=str(Path.cwd()),started_utc=stamp,
+                  logger_pid=os.getpid(),child_pid=process.pid,status='started',exit_status=None)
+    with path.with_suffix(path.suffix+'.started.json').open('x',encoding='utf-8') as f:
+        json.dump(identity,f,indent=2);f.flush();os.fsync(f.fileno())
     for line in process.stdout:
         log.write(line);log.flush();print(line,end="",flush=True)
     code=process.wait()
 result=dict(command=command,cwd=str(Path.cwd()),started_utc=stamp,
+            logger_pid=os.getpid(),child_pid=process.pid,
             ended_utc=datetime.now(timezone.utc).isoformat(),seconds=time.perf_counter()-start,exit_status=code)
 path.with_suffix(path.suffix+".json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
 print(json.dumps(result),flush=True)

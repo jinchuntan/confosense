@@ -1,6 +1,7 @@
 """Amendment-004 nested selection and paired evaluation, isolated from old runs."""
 from __future__ import annotations
 from copy import copy
+from contextlib import nullcontext
 import hashlib
 import json
 from pathlib import Path
@@ -142,14 +143,16 @@ def baseline_selections(surface,grid):
 
 def evaluate_unit(dataset,outer_fold,model_seed,segmented,w,cfg,fold,*,smoke=False,
                   model_factory=OwnedInterval,force_diagnostic=False,save_streams=False,evaluate_outer=False,
-                  candidate_grid=None):
+                  candidate_grid=None,observer=None):
     grid=candidate_grid if candidate_grid is not None else candidates(cfg,segmented.freq,smoke=smoke)
     roles=nested_roles(w['meta'],fold,w['meta'].attrs.get('split_scheme','chronological'))
     evaluated=[]
+    observe=observer or (lambda name:nullcontext())
     for i in [0,1]:
-        r=evaluate_block(dataset,outer_fold,f'inner{i}_selection',model_seed,segmented,w,cfg,
-            roles[f'inner{i}_train'],roles[f'inner{i}_calibration'],roles[f'inner{i}_selection'],grid,
-            model_factory=model_factory,force_diagnostic=force_diagnostic,save_streams=save_streams)
+        with observe(f'inner{i}_fit_replay_score'):
+            r=evaluate_block(dataset,outer_fold,f'inner{i}_selection',model_seed,segmented,w,cfg,
+                roles[f'inner{i}_train'],roles[f'inner{i}_calibration'],roles[f'inner{i}_selection'],grid,
+                model_factory=model_factory,force_diagnostic=force_diagnostic,save_streams=save_streams)
         r['surface']['inner_fold']=i;evaluated.append(r)
     surface=pd.concat([r['surface'] for r in evaluated],ignore_index=True)
     decision=select_pipeline(surface,grid);comparators=baseline_selections(surface,grid)
@@ -175,8 +178,11 @@ def evaluate_unit(dataset,outer_fold,model_seed,segmented,w,cfg,fold,*,smoke=Fal
     payload['resampling_draws']={str(i):{k:v.tolist() if isinstance(v,np.ndarray) else v for k,v in r['draws'].items()}
         for i,r in enumerate(evaluated) if r['draws'] is not None}
     if evaluate_outer:
-        outer,contrasts=selected_outer(dataset,outer_fold,model_seed,segmented,w,cfg,roles,grid,
-            decision,dict(comparators,secondary_inverse=inverse),model_factory=model_factory,save_streams=save_streams)
+        with observe('outer_fit_replay_score'):
+            outer,contrasts=selected_outer(dataset,outer_fold,model_seed,segmented,w,cfg,roles,grid,
+                decision,dict(comparators,secondary_inverse=inverse),model_factory=model_factory,save_streams=save_streams)
+        payload['outer_resampling_draws']={k:v.tolist() if isinstance(v,np.ndarray) else v
+            for k,v in (outer['draws'] or {}).items()}
         payload['fits']+=outer['fits'];payload['fit_records']+=outer['fit_records']
         payload['outer_refit_performed']=True
         payload['outer_comparisons']=contrasts

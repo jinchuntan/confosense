@@ -8,10 +8,11 @@ from .run_study import load_config,resolve_dataset_config
 from .model_comparison_pilot import prepare
 from .datasets.base import ChronologicalPartitioner
 from . import split_integrity as SI
-from .operational004_design import DESIGN,build_windows,make_outer_folds,candidates
+from .operational004_design import DESIGN,build_windows,make_outer_folds,candidates,nested_roles
 from .operational004_engine import evaluate_unit,checkpointed_unit,validate_unit
 from .pilot_resources import ResourceMeter,hardware,require_ram
 from .unit_checkpoint import signature,source_digest,digest
+from .operational004_journal import RunJournal
 
 
 def pilot_grid(cfg,freq):
@@ -29,24 +30,36 @@ def run(dataset,outer_fold,model_seed,out,config,resume=False):
     if dataset not in DESIGN['tasks'] or outer_fold not in range(3) or model_seed not in DESIGN['model_seeds']:
         raise ValueError('unit outside declared design')
     require_ram(3*2**30)
+    journal=RunJournal(out,resume)
     cfg=resolve_dataset_config(load_config('configs/study_final_dissertation_v2.yaml'),dataset)
-    prepared=prepare(cfg);s,w,_=build_windows(prepared,cfg,cfg['alerts']['primary_horizon'])
+    with journal.phase('preparation'): prepared=prepare(cfg)
+    with journal.phase('windows'): s,w,_=build_windows(prepared,cfg,cfg['alerts']['primary_horizon'])
     scheme='chronological' if isinstance(prepared.partitioner,ChronologicalPartitioner) else SI.GROUPED
     fold=make_outer_folds(w['meta'],scheme,3,w['horizon'],s.freq)[outer_fold];grid=pilot_grid(cfg,s.freq)
     spec=dict(scope='bounded_operational_pilot',grid_scope='reduced_engineering_pilot_not_full_study',
         dataset=dataset,outer_fold=outer_fold,model_seed=model_seed,config_hash=digest(config),
         resolved_config=cfg,design_hash=signature(DESIGN),source_hash=source_digest(),data_hash=w['data_hash'],
         outcomes_hash=hashlib.sha256(np.asarray(w['y'],float).tobytes()).hexdigest(),candidate_grid=grid,
-        catalogue_seeds=DESIGN['catalogue_seeds'])
+        catalogue_seeds=DESIGN['catalogue_seeds'],horizon=w['horizon'],
+        expected_unit_keys=[f'outer{outer_fold}_model{model_seed}'],
+        expected_inner_cells=[[c['candidate_id'],i] for c in grid for i in [0,1]],
+        expected_inner_pairs=[[c['candidate_id'],i,seed] for c in grid for i in [0,1]
+                              for seed in DESIGN['catalogue_seeds']])
+    with journal.phase('prefit_identity'):
+        journal.freeze(spec,frozen,w['meta'],nested_roles(w['meta'],fold,scheme),s.freq)
     def compute():
         with ResourceMeter() as meter:
             payload,frames=evaluate_unit(dataset,outer_fold,model_seed,s,w,cfg,fold,
-                candidate_grid=grid,save_streams=True,evaluate_outer=True)
+                candidate_grid=grid,save_streams=True,evaluate_outer=True,observer=journal.phase)
         payload.update(compute_resources=meter.result,hardware=hardware(),grid_scope=spec['grid_scope'])
         return payload,frames
-    payload,frames,status=checkpointed_unit(out,spec,compute,resume=resume)
-    result=dict(**validate_unit(payload,frames,expected_scope='bounded_operational_pilot'),**status,
-                decision=payload['decision'],global_study_ready=False)
+    with journal.phase('checkpoint_compute_save_verify' if not resume else 'checkpoint_load_verify'):
+        payload,frames,status=checkpointed_unit(out,spec,compute,resume=resume)
+    with journal.phase('output_validation'):
+        result=dict(**validate_unit(payload,frames,expected_scope='bounded_operational_pilot'),**status,
+                    decision=payload['decision'],global_study_ready=False)
+    (journal.root/(journal.prefix+'_output_validation.json')).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    journal.emit('process_complete',**status)
     print(json.dumps(result,indent=2),flush=True)
     return result
 
