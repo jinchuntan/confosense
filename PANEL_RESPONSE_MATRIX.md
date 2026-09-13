@@ -1,3 +1,27 @@
+# ConfoSense current panel response matrix
+
+Updated 13 September 2026. The original context and citation inventory are retained below as an **archived assessment**. This table supersedes its implementation-status claims. See [INTEGRATION_REPAIR_REPORT.md](INTEGRATION_REPAIR_REPORT.md) for evidence and the exact next execution scope.
+
+| Panel topic | Completed in this task | Still required |
+|---|---|---|
+| Explain conformal prediction | Preserved the simple explanation and separated software checks from coverage claims. | A concise mechanism example in slides, supported by validated interval-quality evidence. |
+| Dataset sources/purpose/selection | Audited actual four-task membership at every declared horizon; preserved source data and cohort history. | Verify bibliography/source details and consolidate source-purpose-selection table. |
+| Separate datasets or merge | Kept four task-specific evaluation paths and common temporal boundaries within BDG2. | Clearly state three source datasets / four tasks; no pooled raw-error comparison across units. |
+| Justify methods | Corrected which estimator actually produces each interval and calibration score; explicit seed/fallback provenance. | Freeze and justify model-specific calibration and the remaining DSCP/seasonal scope; complete method citations. |
+| Explain train/calibration/test protocol | Repaired both inner embargoes, whole-run RICO refits, common BDG2 times, training-only tuning/scaling and marked missing-value preprocessing. | Implement the declared two-inner-fold aggregation; explain actual folds and prior test inspection. |
+| Explain k-of-m rules | Declared physical grid now reaches selection, including 360 minutes; support minima enforced. | Reconcile confidence-bound feasibility, precision/F-beta, delay ties and matched-budget endpoints before research fitting. |
+| Simplify presentation | Replaced unsupported generated achievements with current evidence status; labelled remaining reports historical. | Regenerate only needed figures from new validated inference, then revise slides/report. Old CIs are not current slide values. |
+| Verify complete methodology/ablation | Shared interval/residual stream, model attribution, checkpoints and exact extension cell validation; all historical core units identified for rerun. | Full model/horizon/level evaluation, core fault/counterfactual endpoints, matched-budget ablation and 60-unit core/900-cell extension reruns. |
+| Is LSTM's extra cost worthwhile? | Tiny actual CPU LSTM/XGBoost tests verify purged tuning/normalisation. Those are software evidence only. | Matched Attention-LSTM/XGBoost/persistence at all 13 task/horizon combinations, including 60-minute and 6-hour horizons; own-model 90%/95% intervals; coverage/MPIW/Winkler/MAE/RMSE plus tuning, fit, inference and memory. No requirement that LSTM win. |
+
+The actual-data audit improved from **89 unsafe boundaries and 57 improperly scoped scale records** to **zero** in the repaired paths. This does not establish empirical model superiority or complete any missing full experiment. Final tests: **65 focused passed; 294 full-suite passed, 1 skipped**, with three small MAPIE fixture warnings. Commands and limitations are in the integration report.
+
+**Next execution scope:** design/code reconciliation, then the specified three-horizon PLEIA temperature resource pilot on CPU. No research fit has been launched in this repair task. Full comparison and rerun counts, checkpoint/resume rules and laptop memory constraints are specified in the integration report. The existing 207 RICO runs are retained data, not 207 pristine test runs.
+
+---
+
+## Archived initial panel assessment and context
+
 # ConfoSense panel response matrix
 
 13 September 2026. Based on the nine feedback topics in the supplied recovery document; the original panel sheet and current dissertation manuscript were not provided. This maps evidence and gaps, rather than certifying manuscript revisions. See [recovery status](PROJECT_RECOVERY_STATUS.md) for Git, artifact integrity, execution status and newly identified code discrepancies.

@@ -1,0 +1,212 @@
+{
+  "readiness": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "protocol_parses_and_validates",
+        "ok": true,
+        "detail": "schema_version=2"
+      },
+      {
+        "name": "protocol_hash_recorded",
+        "ok": true,
+        "detail": "canonical=10437ab054199d64..."
+      },
+      {
+        "name": "full_study_unchanged",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "name": "integration_scientific_decisions_resolved",
+        "ok": false,
+        "detail": "integration repair does not resolve undeclared model pairings, inner aggregation or endpoints"
+      },
+      {
+        "name": "integration_evidence_recomputed",
+        "ok": false,
+        "detail": "historical runs and publication markers predate the integration repairs"
+      },
+      {
+        "name": "no_audit_item_pending",
+        "ok": true,
+        "detail": "none pending"
+      },
+      {
+        "name": "engine_smoke_all_datasets",
+        "ok": true,
+        "detail": "covered ['bdg2', 'pleia', 'pleia_energy', 'rico']"
+      },
+      {
+        "name": "engine_smoke_four_ablations",
+        "ok": true,
+        "detail": "ablations ['baseline', 'conformal_only', 'full', 'temporal']"
+      }
+    ]
+  },
+  "publication": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "protocol_parses_and_validates",
+        "ok": true,
+        "detail": "schema_version=2"
+      },
+      {
+        "name": "protocol_hash_recorded",
+        "ok": true,
+        "detail": "canonical=10437ab054199d64..."
+      },
+      {
+        "name": "full_study_unchanged",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "name": "integration_scientific_decisions_resolved",
+        "ok": false,
+        "detail": "integration repair does not resolve undeclared model pairings, inner aggregation or endpoints"
+      },
+      {
+        "name": "integration_evidence_recomputed",
+        "ok": false,
+        "detail": "historical runs and publication markers predate the integration repairs"
+      },
+      {
+        "name": "no_audit_item_pending",
+        "ok": true,
+        "detail": "none pending"
+      },
+      {
+        "name": "repaired_execution_lineage",
+        "ok": false,
+        "detail": "requires a run produced after integration repair"
+      },
+      {
+        "name": "declared_methodology_executed",
+        "ok": false,
+        "detail": "primary-horizon interval-owned alert core is not the full declared study"
+      },
+      {
+        "name": "full_nonfast_run_present",
+        "ok": true,
+        "detail": "run=full_20260831_220811, fast=False"
+      },
+      {
+        "name": "run_matrix_complete",
+        "ok": true,
+        "detail": "datasets ['bdg2', 'pleia', 'pleia_energy', 'rico']; folds [3]"
+      },
+      {
+        "name": "estimates_with_cis_present",
+        "ok": true,
+        "detail": "final_cis_corrected.csv ok"
+      },
+      {
+        "name": "reports_no_placeholders",
+        "ok": true,
+        "detail": "results report clean"
+      },
+      {
+        "name": "figures_trace_to_csv",
+        "ok": true,
+        "detail": "4 figures traced"
+      }
+    ]
+  },
+  "extension": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "protocol_parses_and_validates",
+        "ok": true,
+        "detail": "schema_version=2"
+      },
+      {
+        "name": "protocol_hash_recorded",
+        "ok": true,
+        "detail": "canonical=10437ab054199d64..."
+      },
+      {
+        "name": "full_study_unchanged",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "name": "integration_scientific_decisions_resolved",
+        "ok": false,
+        "detail": "integration repair does not resolve undeclared model pairings, inner aggregation or endpoints"
+      },
+      {
+        "name": "integration_evidence_recomputed",
+        "ok": false,
+        "detail": "historical runs and publication markers predate the integration repairs"
+      },
+      {
+        "name": "no_audit_item_pending",
+        "ok": true,
+        "detail": "none pending"
+      },
+      {
+        "name": "repaired_execution_lineage",
+        "ok": false,
+        "detail": "requires a run produced after integration repair"
+      },
+      {
+        "name": "declared_methodology_executed",
+        "ok": false,
+        "detail": "primary-horizon interval-owned alert core is not the full declared study"
+      },
+      {
+        "name": "full_nonfast_run_present",
+        "ok": true,
+        "detail": "run=full_20260831_220811, fast=False"
+      },
+      {
+        "name": "run_matrix_complete",
+        "ok": true,
+        "detail": "datasets ['bdg2', 'pleia', 'pleia_energy', 'rico']; folds [3]"
+      },
+      {
+        "name": "estimates_with_cis_present",
+        "ok": true,
+        "detail": "final_cis_corrected.csv ok"
+      },
+      {
+        "name": "reports_no_placeholders",
+        "ok": true,
+        "detail": "results report clean"
+      },
+      {
+        "name": "figures_trace_to_csv",
+        "ok": true,
+        "detail": "4 figures traced"
+      },
+      {
+        "name": "extension_run_present",
+        "ok": false,
+        "detail": "no runs/robx_full_* with summary"
+      },
+      {
+        "name": "extension_matrix_complete",
+        "ok": false,
+        "detail": "no extension run"
+      },
+      {
+        "name": "zero_control_identity",
+        "ok": false,
+        "detail": "no extension run"
+      },
+      {
+        "name": "extension_denominators_sane",
+        "ok": false,
+        "detail": "no extension run"
+      },
+      {
+        "name": "audit_tables_present",
+        "ok": false,
+        "detail": "no extension run"
+      }
+    ]
+  }
+}

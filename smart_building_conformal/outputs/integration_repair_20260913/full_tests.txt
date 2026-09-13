@@ -1,0 +1,34 @@
+........................................................................ [ 24%]
+........................................................................ [ 48%]
+.................................s...................................... [ 73%]
+.................................................................F...... [ 97%]
+.......                                                                  [100%]
+================================== FAILURES ===================================
+__________ test_publication_mode_passes_now_that_the_full_run_exists __________
+
+    def test_publication_mode_passes_now_that_the_full_run_exists():
+        rep = V.run("outputs/final_dissertation_v2", run_tests=False,
+                    mode="publication")
+        by = {c.name: c for c in rep.checks}
+        # The corrected non-fast run, its CIs, figures and reports all exist.
+        assert by["full_nonfast_run_present"].ok
+        assert by["run_matrix_complete"].ok
+>       assert by["estimates_with_cis_present"].ok
+E       AssertionError: assert False
+E        +  where False = Check(name='estimates_with_cis_present', ok=False, detail='final_cis_corrected.csv missing/incomplete').ok
+
+tests\test_validate_final_study.py:26: AssertionError
+============================== warnings summary ===============================
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+  C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+    return cast(NDArray, np.nanmean(X, axis=1))
+
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+  C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+    return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_validate_final_study.py::test_publication_mode_passes_now_that_the_full_run_exists
+1 failed, 293 passed, 1 skipped, 3 warnings in 44.51s

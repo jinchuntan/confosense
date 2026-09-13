@@ -1,3 +1,30 @@
+# ConfoSense current recovery status
+
+Updated 13 September 2026 after the authorised integration repairs. The original assessment is retained below as an **archived entry-state record**, not current instructions.
+
+**Resume position:** confirmed split, scaling, attribution and recalibration defects are repaired. The actual-data audit now reports **0 unsafe boundaries / 273 checked** and **0 invalid event-scale scopes / 78 checked**, over all 13 task/horizon combinations. The report generators no longer promote historical or missing extension results into current achievements. Per-unit core/extension checkpoints preserve predictions/bounds and verify resume identity and complete cell coverage.
+
+Read [INTEGRATION_REPAIR_REPORT.md](INTEGRATION_REPAIR_REPORT.md) for changes, commands, final test outcomes, unresolved scientific decisions and the affected-artifact table. The [panel matrix](PANEL_RESPONSE_MATRIX.md) now distinguishes software fixes from missing research evidence.
+
+| Item | Current state |
+|---|---|
+| Preservation | Verified 670-file / 2.79 GB backup plus all-ref Git bundle at `C:/Users/nigel/ConfoSenseBackups/integration_20260913_102403`; outside OneDrive. Historical source data, metrics, provenance and markers preserved. |
+| Environment | Existing `C:/cfs_venv/Scripts/python.exe`; CPU-only PyTorch. No dependency changes. Roughly 1.67?2.38 GiB free RAM observed, despite 15.73 GiB installed. |
+| Git | Same `fix/final-dissertation-study` branch; local recovery and repair commits added; no push, merge or reset. Consult `git log` for final SHAs. |
+| Software evidence | **65 focused passed; 294 full-suite passed, 1 skipped**, with three small MAPIE fixture warnings. Exact commands/results are in the integration report. Small deterministic fits only. |
+| Historical core | Completed computational record remains preserved, but all 60 units and 240 ablation rows require recomputation after design reconciliation. Correcting inner candidates can change any selected pipeline. |
+| Full extension | Still absent; no research experiment launched. Do not resume the empty historical directory or apply old selections to repaired code. |
+| LSTM/XGBoost comparison | Still missing. Plan covers 13 task/horizon combinations, 90%/95% model-specific intervals, matched support, persistence and measured cost/memory. |
+| Publication | Not ready. Historical markers do not validate repaired code. No replacement marker issued. |
+
+**Exact next work:** freeze common model-specific calibration, two-inner-fold aggregation, operational endpoint/fault definitions, DSCP/seasonal scope and group-recovery inference; implement/test those paths and resource measurements. Then run the proposed PLEIA-temperature pilot at horizons 1/3/6, one specified outer fold, seed 42, Attention-LSTM/XGBoost/persistence and 90%/95% intervals. No pilot or full launch is part of the completed repair task. The subsequent required comparison is 195 paired units / 585 point cells / 1,170 interval-quality cells, followed by 60 core units and 900 robustness cells. Counts exclude tuning overhead and separate declared DSCP/seasonal work.
+
+Previously inspected data remain previously inspected. Additional seeds and corrected code do not create an unseen holdout. Revise defence slides/manuscript results only after the new experiment and inference are validated.
+
+---
+
+## Archived initial recovery assessment (superseded for current status)
+
 # ConfoSense recovery assessment
 
 Assessed 13 September 2026, Asia/Kuala_Lumpur. Scope: state recovery and panel-gap assessment; no implementation, fitting, experiment restart, dependency installation, Git-history change or push.

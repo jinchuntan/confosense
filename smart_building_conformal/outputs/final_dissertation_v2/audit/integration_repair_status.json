@@ -1,6 +1,6 @@
 {
   "assessed_date": "2026-09-13",
-  "software_repairs": "implemented; 65 focused tests passed; final full-suite verification recorded separately",
+  "software_repairs": "implemented and regression-tested",
   "design_resolved": false,
   "evidence_recomputed": false,
   "historical_core": "full_20260831_220811",
@@ -17,5 +17,12 @@
   "report_repository_relative": "INTEGRATION_REPAIR_REPORT.md",
   "backup_verified": "C:/Users/nigel/ConfoSenseBackups/integration_20260913_102403",
   "historical_files_rechecked": 554,
-  "historical_file_mismatches": 0
+  "historical_file_mismatches": 0,
+  "tests": {
+    "focused_passed": 65,
+    "full_passed": 294,
+    "full_skipped": 1,
+    "warnings": 3,
+    "full_seconds": 46.12
+  }
 }
