@@ -1,0 +1,9 @@
+candidate_id,inner_fold,mae,best_epoch,seconds,n_train,n_validation,estimator_class,model
+0,0,0.2081403471014224,,0.8128916999994544,9905,9905,xgboost.sklearn.XGBRegressor,xgboost
+0,1,0.10854292602893188,,1.0592734000019846,19810,9907,xgboost.sklearn.XGBRegressor,xgboost
+1,0,0.33675314383275695,,0.9233433999979752,9905,9905,xgboost.sklearn.XGBRegressor,xgboost
+1,1,0.11646682852763539,,1.4114124000043375,19810,9907,xgboost.sklearn.XGBRegressor,xgboost
+0,0,0.16839374053183376,13,38.66753260000405,9905,9905,src.attention_lstm.AttentionLSTM,attention_lstm
+0,1,0.11088725992477397,11,62.40118639999855,19810,9907,src.attention_lstm.AttentionLSTM,attention_lstm
+1,0,0.18607026629529777,23,171.74326250000013,9905,9905,src.attention_lstm.AttentionLSTM,attention_lstm
+1,1,0.11281005933804096,18,83.10978179999802,19810,9907,src.attention_lstm.AttentionLSTM,attention_lstm

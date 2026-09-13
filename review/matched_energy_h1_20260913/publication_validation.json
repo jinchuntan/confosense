@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "models_fitted_by_packaging": 0,
+  "branch": "review/matched-energy-h1-20260913",
+  "entry_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "evaluated_pre_fit_commit": "697d0e6e8a7de0a2fc55c98b8341117d789390ce",
+  "main_commit": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "instruction_commit": "f44d4d1bd784254237bd643b9389fc9ce8c380a3",
+  "evaluated_source_hash": "7335d436f6e4f8c2144de372e8817d036bae216426c157f5bbdc1eb921927955",
+  "current_source_hash": "14b3f329a5bbdc268d5b330cf8a94a045d7de34dd3cee2d4fd0db29659589866",
+  "future_export_only_repair_invalidates_completed_results": false,
+  "preserved_historical_files": 1568,
+  "historical_status_documents_preserved": [
+    "PROJECT_RECOVERY_STATUS.md",
+    "PANEL_RESPONSE_MATRIX.md",
+    "review/CURRENT_EVIDENCE.md"
+  ],
+  "actual_run_exit": 0,
+  "real_tuning_fits": 8,
+  "real_final_fits": 2,
+  "synthetic_learned_fits": 20,
+  "point_cells_passed": 3,
+  "interval_cells_passed": 6,
+  "saved_model_checks": 6,
+  "maximum_saved_prediction_difference": 0.0,
+  "zero_fit_completed_resumes": 2,
+  "all_complete_run_files_unchanged": true,
+  "canonical_identifier_frames_verified": 11,
+  "other_columns_exactly_unchanged": true,
+  "successful_command_count": 10,
+  "preserved_failed_commands": [
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/validation/energy_h1_audit_v1.log.json",
+      "exit_status": 1,
+      "seconds": 10.589156699999876
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/validation/published_roles_v1.log.json",
+      "exit_status": 1,
+      "seconds": 15.762792499997886
+    }
+  ],
+  "published_role_banks_verified": 39,
+  "historical_pilot_point_cells": 9,
+  "historical_pilot_interval_cells": 18,
+  "historical_pilot_refits": 0,
+  "local_document_links_checked": 80,
+  "current_source_files_archived": 79,
+  "helper_files_archived": 9,
+  "published_files_in_manifest": 239,
+  "manifest_bytes": 37176580,
+  "max_file_bytes": 4520632,
+  "manifest_sha256": "e6398fbd0be313ed0351c33ffaaaaf9c93f2cb1d7ac10b1b9883a7b515f72e5b",
+  "manifest_excludes": [
+    "EVIDENCE_MANIFEST.csv",
+    "publication_validation.json"
+  ],
+  "full_study_ready": false,
+  "remaining_queue_launched": false,
+  "review_artifacts_ready": true,
+  "remote_verification": "after final commit; recorded externally and in delivery"
+}

@@ -13,7 +13,7 @@ import pandas as pd
 
 from . import metrics as M
 from . import pilot_forecasters as F
-from .matched_data005 import validate_roles
+from .matched_data005 import validate_roles, export_identifiers
 from .pilot_conformal import calibrate_absolute, fixed_bounds
 from .pilot_data import role_records
 from .pilot_resources import ResourceMeter
@@ -176,6 +176,7 @@ def run_model(name, data, roles, config, journal=None):
                   tuning=pd.DataFrame(scores), training_history=pd.DataFrame(histories),
                   tuning_predictions=pd.concat(tuning_predictions, ignore_index=True) if tuning_predictions else pd.DataFrame(),
                   fitting_membership=data['meta'].iloc[roles['fit']][['row_id', 'group_id', 'origin_time', 'target_time']].copy())
+    frames = {name: export_identifiers(frame) for name, frame in frames.items()}
     del model
     gc.collect()
     return payload, frames, artifact

@@ -7,6 +7,18 @@ ROLE_PAIRS = [('fit', 'calibration'), ('calibration', 'test'),
               ('inner0_train', 'inner0_validation'), ('inner1_train', 'inner1_validation')]
 
 
+def export_identifiers(frame):
+    """Keep Python None and literal 'None' visible in the canonical CSV schema.
+
+    Row identities already stringify groups when constructed. Do the same only
+    at export; never change prepared metadata, feature values or role hashes.
+    """
+    result = frame.copy()
+    if 'group_id' in result:
+        result['group_id'] = result.group_id.map(str)
+    return result
+
+
 def grouped_batch_folds(meta):
     groups = sorted(meta.group_id.unique(),
                     key=lambda g: (meta.loc[meta.group_id.eq(g), 'origin_time'].min(), str(g)))

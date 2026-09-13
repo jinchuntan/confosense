@@ -1,0 +1,4 @@
+unit,seconds,baseline_rss_bytes,peak_rss_bytes,baseline_private_bytes,peak_private_bytes,incremental_peak_rss_bytes,lifetime_peak_rss_bytes,min_available_ram_bytes,sample_interval_seconds,process_cpu_seconds
+pleia_energy_h1_f0_s42_persistence,1.379329899995355,389177344,391372800,344969216,347078656,2195456,408043520,4043399168,0.05,1.21875
+pleia_energy_h1_f0_s42_xgboost,2.5464165000012144,507707392,508030976,530374656,530423808,323584,510136320,3920551936,0.05,2.34375
+pleia_energy_h1_f0_s42_attention_lstm,2.457868999998027,599404544,603873280,633020416,636772352,4468736,624234496,2812051456,0.05,2.3125

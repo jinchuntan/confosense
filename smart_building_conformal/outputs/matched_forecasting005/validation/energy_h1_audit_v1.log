@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_forecasting005.py", line 354, in <module>
+    result, args = main()
+                   ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_forecasting005.py", line 338, in main
+    result = validate(args.out, protocol, args.matrix, key, args.receipt)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_validation005.py", line 93, in validate
+    assert cal.group_id.tolist()==data['meta'].iloc[roles['calibration']].group_id.astype(str).tolist()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

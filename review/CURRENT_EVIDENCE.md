@@ -1,3 +1,19 @@
+# Current evidence: completed matched PLEIA-energy unit
+
+14 September 2026. **PLEIA-energy h1/fold0/seed42 matched unit completed and validated.** Actual run exit 0; eight tuning and two final learned fits; persistence has zero learned fits. All three point and six own-model 90%/95% interval cells passed independent recalculation. Saved artifacts reproduce calibration/test predictions, and completed resume performs zero fits without changing run files.
+
+The primary comparison now has **4/195 paired units, 12/585 point cells and 24/1,170 interval cells completed**. The remaining core queue has 191 paired units and 1,910 learned fits. The new completion overlay preserves the original amendment-005 proposal/matrix, old temperature pilot and three-fold BDG2 benchmark, including all primary abstentions. Seasonal, broader interval methods/DSCP, operational and robustness obligations remain separate; full-study readiness remains false.
+
+Read the [energy report](../PLEIA_ENERGY_MATCHED_H1_REPORT.md) and [complete evidence index](matched_energy_h1_20260913/EVIDENCE_INDEX.md) for actual errors, interval quality, costs, fitted artifacts and verification. Real command wall time was 446.597 seconds; measured model phases totalled 426.537 seconds. Validation/resume/tiny-test costs are listed separately.
+
+**Single next bounded proposal:** separately authorize and freeze RICO horizon5/fold2/seed42 with the same three models and the published whole-run memberships. RICO and BDG2 queue units and the conditional challenge remain unlaunched. The updated queue gives explicitly labelled scenarios; their learned-model costs have not yet been measured.
+
+Publication branch: [review/matched-energy-h1-20260913](https://github.com/jinchuntan/confosense/tree/review/matched-energy-h1-20260913). Evaluated pre-fit commit: `697d0e6e8a7de0a2fc55c98b8341117d789390ce`; source SHA-256 `7335d436f6e4f8c2144de372e8817d036bae216426c157f5bbdc1eb921927955`. The final delivery and branch history identify the final publication SHA.
+
+## Previous entries (historical)
+
+<!-- matched-energy-h1-20260913: historical content -->
+
 # Current evidence: support design and executable study plan
 
 13 September 2026. **No-fitting support-design task complete.** The PLEIA forecasting pilot and BDG2 three-fold reduced-grid benchmark are completed and preserved; all three BDG2 primary selections abstained. No model fitting was performed in this task. Main and historical outputs/configurations/protocols remain unchanged.

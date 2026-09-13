@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "scripts/read_matched_energy005.py",
+    "resume",
+    "--receipt",
+    "outputs/matched_forecasting005/validation/energy_h1_archive_resume_v1.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T16:26:34.998143+00:00",
+  "logger_pid": 8708,
+  "child_pid": 26224,
+  "status": "started",
+  "exit_status": null
+}

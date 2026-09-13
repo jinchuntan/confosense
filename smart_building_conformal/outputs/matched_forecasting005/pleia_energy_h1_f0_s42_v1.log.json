@@ -1,0 +1,28 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.matched_forecasting005",
+    "run",
+    "--matrix",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv",
+    "--dataset",
+    "pleia_energy",
+    "--horizon",
+    "1",
+    "--outer-fold",
+    "0",
+    "--model-seed",
+    "42",
+    "--out",
+    "outputs/matched_forecasting005/pleia_energy_h1_f0_s42_v1"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T16:12:36.303649+00:00",
+  "logger_pid": 24572,
+  "child_pid": 11580,
+  "ended_utc": "2026-09-13T16:20:02.903925+00:00",
+  "seconds": 446.59704919999785,
+  "exit_status": 0
+}

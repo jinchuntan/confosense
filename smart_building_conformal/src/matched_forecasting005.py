@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 
 from . import split_integrity as SI
-from .matched_data005 import forecast_roles, ROLE_PAIRS, validate_roles
+from .matched_data005 import forecast_roles, ROLE_PAIRS, validate_roles, export_identifiers
 from .matched_models005 import PhaseMeter, forbid_fitting, run_model, unit_key
 from .model_comparison_pilot import prepare
 from .pilot_data import build_support, role_records
@@ -178,7 +178,7 @@ def freeze(matrix, key, design_dir, authorization_path):
             raise ValueError('published membership mismatch: ' + name)
     frames = [data['meta'].iloc[rows][['row_id','group_id','origin_time','target_time']].assign(role=name)
               for name, rows in roles.items()]
-    pd.concat(frames, ignore_index=True).to_csv(out/'membership.csv.gz', index=False, compression={'method':'gzip','mtime':0})
+    export_identifiers(pd.concat(frames, ignore_index=True)).to_csv(out/'membership.csv.gz', index=False, compression={'method':'gzip','mtime':0})
     boundary = [dict(left=left, right=right, **SI.boundary_record(data['meta'], roles[left], roles[right],
                 SI.GROUPED if key[0]=='rico' else 'chronological')) for left, right in ROLE_PAIRS]
     pd.DataFrame(boundary).to_csv(out/'boundaries.csv', index=False)
