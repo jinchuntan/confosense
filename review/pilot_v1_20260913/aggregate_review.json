@@ -1,0 +1,1091 @@
+{
+  "checks": [
+    {
+      "label": "Expected row counts",
+      "pass": true
+    },
+    {
+      "label": "Unique model/horizon point rows",
+      "pass": true
+    },
+    {
+      "label": "Unique tuning cells",
+      "pass": true
+    },
+    {
+      "label": "Unique resource phase cells",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 interval 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 rank 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 interval 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 rank 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 throughput",
+      "pass": true
+    },
+    {
+      "detail": "Documented exception in pilot report: comparison.csv records zero learning work; resource_measurements.csv retains measured empty-branch overhead. Raw values are preserved.",
+      "label": "persistence_h1 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 inference timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h1 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 interval 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 rank 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 interval 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 rank 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 throughput",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 inference timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 selected minimum inner mean",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h1 tuning <= phase duration",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 interval 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 rank 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 interval 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 rank 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 throughput",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 inference timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 selected minimum inner mean",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 tuning <= phase duration",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h1 refit epochs from selected folds",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 interval 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 rank 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 interval 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 rank 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 throughput",
+      "pass": true
+    },
+    {
+      "detail": "Documented exception in pilot report: comparison.csv records zero learning work; resource_measurements.csv retains measured empty-branch overhead. Raw values are preserved.",
+      "label": "persistence_h3 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 inference timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h3 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 interval 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 rank 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 interval 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 rank 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 throughput",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 inference timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 selected minimum inner mean",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h3 tuning <= phase duration",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 interval 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 rank 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 interval 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 rank 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 throughput",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 inference timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 selected minimum inner mean",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 tuning <= phase duration",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h3 refit epochs from selected folds",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 interval 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 rank 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 interval 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 rank 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 throughput",
+      "pass": true
+    },
+    {
+      "detail": "Documented exception in pilot report: comparison.csv records zero learning work; resource_measurements.csv retains measured empty-branch overhead. Raw values are preserved.",
+      "label": "persistence_h6 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 inference timing",
+      "pass": true
+    },
+    {
+      "label": "persistence_h6 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 interval 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 rank 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 interval 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 rank 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 throughput",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 inference timing",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 selected minimum inner mean",
+      "pass": true
+    },
+    {
+      "label": "xgboost_h6 tuning <= phase duration",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 expected scope and completion",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 finite point metrics",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 evaluation count",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 interval 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 rank 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 width equals twice radius 90",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 interval 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 rank 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 width equals twice radius 95",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 nested intervals",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 throughput",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 tuning timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 final_fit timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 calibration timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 inference timing",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 peak RSS matches phases",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 selected minimum inner mean",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 tuning <= phase duration",
+      "pass": true
+    },
+    {
+      "label": "attention_lstm_h6 refit epochs from selected folds",
+      "pass": true
+    },
+    {
+      "label": "h1 matched fit/cal/eval counts",
+      "pass": true
+    },
+    {
+      "label": "h3 matched fit/cal/eval counts",
+      "pass": true
+    },
+    {
+      "label": "h6 matched fit/cal/eval counts",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 1 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 1 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 1 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 1 inference",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 1 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 1 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 1 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 1 inference",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 1 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 1 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 1 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 1 inference",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 3 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 3 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 3 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 3 inference",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 3 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 3 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 3 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 3 inference",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 3 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 3 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 3 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 3 inference",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 6 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 6 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 6 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory attention_lstm 6 inference",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 6 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 6 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 6 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory persistence 6 inference",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 6 tuning",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 6 final_fit",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 6 calibration",
+      "pass": true
+    },
+    {
+      "label": "memory xgboost 6 inference",
+      "pass": true
+    },
+    {
+      "label": "memory protocol_freeze  complete_preparation",
+      "pass": true
+    },
+    {
+      "label": "memory interrupted_initial_launch 1.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory interrupted_initial_launch 3.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory completion_launch 1.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory completion_launch 3.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory completion_launch 6.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory verification_resume 1.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory verification_resume 3.0 features_sequences_and_role_validation",
+      "pass": true
+    },
+    {
+      "label": "memory verification_resume 6.0 features_sequences_and_role_validation",
+      "pass": true
+    }
+  ],
+  "findings": {
+    "coverage_below_nominal": 16,
+    "coverage_gaps": [
+      {
+        "gap_percentage_points": 1.2849500353285492,
+        "horizon_minutes": 10,
+        "level": 90,
+        "model": "xgboost"
+      },
+      {
+        "gap_percentage_points": 1.3692338750378354,
+        "horizon_minutes": 10,
+        "level": 95,
+        "model": "xgboost"
+      },
+      {
+        "gap_percentage_points": 2.7586554961138603,
+        "horizon_minutes": 10,
+        "level": 90,
+        "model": "attention_lstm"
+      },
+      {
+        "gap_percentage_points": 2.7218128595942233,
+        "horizon_minutes": 10,
+        "level": 95,
+        "model": "attention_lstm"
+      },
+      {
+        "gap_percentage_points": 0.7297870192792999,
+        "horizon_minutes": 30,
+        "level": 90,
+        "model": "persistence"
+      },
+      {
+        "gap_percentage_points": 0.8241647320076737,
+        "horizon_minutes": 30,
+        "level": 95,
+        "model": "persistence"
+      },
+      {
+        "gap_percentage_points": 13.427879277278691,
+        "horizon_minutes": 30,
+        "level": 90,
+        "model": "xgboost"
+      },
+      {
+        "gap_percentage_points": 6.971333400625809,
+        "horizon_minutes": 30,
+        "level": 95,
+        "model": "xgboost"
+      },
+      {
+        "gap_percentage_points": 7.89643686282426,
+        "horizon_minutes": 30,
+        "level": 90,
+        "model": "attention_lstm"
+      },
+      {
+        "gap_percentage_points": 5.29575047945896,
+        "horizon_minutes": 30,
+        "level": 95,
+        "model": "attention_lstm"
+      },
+      {
+        "gap_percentage_points": 0.6086605430503624,
+        "horizon_minutes": 60,
+        "level": 90,
+        "model": "persistence"
+      },
+      {
+        "gap_percentage_points": 0.9755728272938455,
+        "horizon_minutes": 60,
+        "level": 95,
+        "model": "persistence"
+      },
+      {
+        "gap_percentage_points": 12.468961340466336,
+        "horizon_minutes": 60,
+        "level": 90,
+        "model": "xgboost"
+      },
+      {
+        "gap_percentage_points": 6.809831432320578,
+        "horizon_minutes": 60,
+        "level": 95,
+        "model": "xgboost"
+      },
+      {
+        "gap_percentage_points": 18.081154739073384,
+        "horizon_minutes": 60,
+        "level": 90,
+        "model": "attention_lstm"
+      },
+      {
+        "gap_percentage_points": 14.269203593418794,
+        "horizon_minutes": 60,
+        "level": 95,
+        "model": "attention_lstm"
+      }
+    ],
+    "lstm_to_xgb_ratio": 47.99438584639927,
+    "max_model_phase_rss_MiB": 681.3984375,
+    "max_preparation_rss_GiB": 2.2856788635253906,
+    "min_model_phase_available_GiB": 2.242218017578125,
+    "min_preparation_available_MiB": 0.7578125,
+    "selected_candidates": [
+      {
+        "chosen_fold_mae": [
+          0.4643407159619473,
+          0.813644498241914
+        ],
+        "final_epochs": null,
+        "horizon_minutes": 10,
+        "means": [
+          {
+            "candidate": 0,
+            "mean_mae": 0.6389926071019306
+          },
+          {
+            "candidate": 1,
+            "mean_mae": 0.649287731843589
+          }
+        ],
+        "model": "xgboost",
+        "selected": 0
+      },
+      {
+        "chosen_fold_mae": [
+          0.5009749345235426,
+          1.741836962281629
+        ],
+        "final_epochs": "20.0",
+        "horizon_minutes": 10,
+        "means": [
+          {
+            "candidate": 0,
+            "mean_mae": 1.1214059484025858
+          },
+          {
+            "candidate": 1,
+            "mean_mae": 1.2042259445698038
+          }
+        ],
+        "model": "attention_lstm",
+        "selected": 0
+      },
+      {
+        "chosen_fold_mae": [
+          0.7889608598723361,
+          0.9599876909097116
+        ],
+        "final_epochs": null,
+        "horizon_minutes": 30,
+        "means": [
+          {
+            "candidate": 0,
+            "mean_mae": 0.8744742753910238
+          },
+          {
+            "candidate": 1,
+            "mean_mae": 1.0224135844265796
+          }
+        ],
+        "model": "xgboost",
+        "selected": 0
+      },
+      {
+        "chosen_fold_mae": [
+          0.7451123347404726,
+          1.9240595781460128
+        ],
+        "final_epochs": "14.0",
+        "horizon_minutes": 30,
+        "means": [
+          {
+            "candidate": 0,
+            "mean_mae": 1.3345859564432427
+          },
+          {
+            "candidate": 1,
+            "mean_mae": 1.425337170627243
+          }
+        ],
+        "model": "attention_lstm",
+        "selected": 0
+      },
+      {
+        "chosen_fold_mae": [
+          1.1736816635008496,
+          1.1378049701018942
+        ],
+        "final_epochs": null,
+        "horizon_minutes": 60,
+        "means": [
+          {
+            "candidate": 0,
+            "mean_mae": 1.155743316801372
+          },
+          {
+            "candidate": 1,
+            "mean_mae": 1.2565188290751856
+          }
+        ],
+        "model": "xgboost",
+        "selected": 0
+      },
+      {
+        "chosen_fold_mae": [
+          1.169799093820958,
+          2.2556478021218047
+        ],
+        "final_epochs": "11.0",
+        "horizon_minutes": 60,
+        "means": [
+          {
+            "candidate": 1,
+            "mean_mae": 1.7127234479713813
+          },
+          {
+            "candidate": 0,
+            "mean_mae": 1.7170778262985764
+          }
+        ],
+        "model": "attention_lstm",
+        "selected": 1
+      }
+    ],
+    "totals_seconds": {
+      "attention_lstm": 864.3172835000014,
+      "persistence": 0.03161809999653542,
+      "xgboost": 18.00871640000048
+    }
+  },
+  "limitations": [
+    "Aggregate CSV reconciliation cannot independently establish leakage safety, common row identity, prediction accuracy, saved-model identity or code correctness. Raw predictions, calibration residuals, membership files and the evaluated implementation were not supplied.",
+    "One PLEIA temperature outer fold and one seed. No inference about significance or all four tasks.",
+    "All source rows are preserved. No model, protocol, threshold or metric was changed during this review.",
+    "Preparation minimum available RAM is a recorded transient that needs local verification; it does not establish the cause of the interrupted run."
+  ],
+  "scope": "Cross-file checks of four supplied aggregate CSVs; no raw predictions, code, checkpoint lineage or independent uncertainty verified here."
+}
