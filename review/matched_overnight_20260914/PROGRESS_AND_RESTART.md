@@ -1,6 +1,6 @@
 # Matched overnight batch progress and restart
 
-Updated UTC: 2026-09-13T17:58:48.630067+00:00. Status: **unit_validated**. Validated **3/12 new paired units**; 9 point / 18 interval cells.
+Updated UTC: 2026-09-13T18:07:50.417891+00:00. Status: **unit_validated**. Validated **6/12 new paired units**; 18 point / 36 interval cells.
 
 The atomic [progress ledger](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/progress.json) and [append-only attempts](../../smart_building_conformal/outputs/matched_forecasting005/overnight_batch_v1/attempts.jsonl) retain exact commands, process identities, actual exits and receipt paths. A running process is not a successful exit.
 
@@ -17,9 +17,9 @@ The coordinator refuses a concurrent launch, adopts an exact surviving logger, c
 | 1 | pleia_energy / 1 / 2 / 42 | validated |
 | 2 | pleia_energy / 3 / 2 / 42 | validated |
 | 3 | pleia_energy / 6 / 2 / 42 | validated |
-| 4 | rico / 15 / 2 / 42 | pending or active; see ledger |
-| 5 | rico / 30 / 2 / 42 | pending or active; see ledger |
-| 6 | rico / 60 / 2 / 42 | pending or active; see ledger |
+| 4 | rico / 15 / 2 / 42 | validated |
+| 5 | rico / 30 / 2 / 42 | validated |
+| 6 | rico / 60 / 2 / 42 | validated |
 | 7 | bdg2 / 3 / 2 / 42 | pending or active; see ledger |
 | 8 | bdg2 / 6 / 2 / 42 | pending or active; see ledger |
 | 9 | bdg2 / 1 / 1 / 42 | pending or active; see ledger |

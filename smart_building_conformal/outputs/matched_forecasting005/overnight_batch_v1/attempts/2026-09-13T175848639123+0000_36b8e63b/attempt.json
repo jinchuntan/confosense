@@ -1,0 +1,40 @@
+{
+  "task": "publication/3",
+  "attempt_id": "2026-09-13T175848639123+0000_36b8e63b",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_overnight_20260914\\publish.py",
+    "--label",
+    "unit03"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T17:58:48.639123+00:00",
+  "ended_utc": "2026-09-13T17:59:21.253702+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T175848639123+0000_36b8e63b\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T175848639123+0000_36b8e63b\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 7736,
+    "created": 134337959286477800,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 7736,
+  "process_family": [
+    {
+      "pid": 7736,
+      "created": 134337959286477800,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 18668,
+      "created": 134337959286650565,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    }
+  ],
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\overnight_batch_v1\\attempts\\2026-09-13T175848639123+0000_36b8e63b\\command.log.json",
+  "seconds": 32.498811899997236,
+  "child_pid": 5988
+}
