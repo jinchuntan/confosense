@@ -1,0 +1,114 @@
+{
+  "spec": {
+    "scope": "SMOKE ONLY",
+    "outer_fold": 0,
+    "model_seed": 42,
+    "config_hash": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+    "design_hash": "5c1d4aedbbdedfb5d6cceedfd56b1dbe331233d0c497ea7b0126cf6095938c75",
+    "source_hash": "fd7a6bbb5fda25a7058951f49e1c41ec47f4cffe0a21640036ad8f56a7031bd8",
+    "data_hash": "07551a14ee436adbe739f774a9ef41fbd69f035dcab7f0cc6aca42a231a99c1b",
+    "outcomes_hash": "fc68f5d66008b8412fd9be8dd956646bbd1140418042ec68976d062be2a48cb7",
+    "candidate_grid": [
+      {
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "single_sample",
+        "window_minutes": 10.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0000_e3f1cd57b6e8"
+      },
+      {
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "30min_3of3",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 3,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0001_64225e184d41"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "single_sample",
+        "window_minutes": 10.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0002_70f115358a59"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "rule_id": "30min_3of3",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 3,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0003_a7e6118a133f"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 24,
+        "window": 250,
+        "rule_id": "single_sample",
+        "window_minutes": 10.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0004_020f917b49d5"
+      },
+      {
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 24,
+        "window": 250,
+        "rule_id": "30min_3of3",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 3,
+        "applicable": true,
+        "min_samples": 50,
+        "candidate_id": "c0005_a50398fa3fde"
+      }
+    ],
+    "catalogue_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "fixture": "two 3600-sample groups at 10 minutes",
+    "actual_cqr_probe": {
+      "train": 400,
+      "calibration": 400,
+      "evaluate": 300,
+      "seed": 42,
+      "quantile_max_iter": 300
+    }
+  },
+  "spec_hash": "c318ddc61198c5973e9c1e31092dbd13a47c39a72a3f8e2e1ad8ac1596e964b3"
+}

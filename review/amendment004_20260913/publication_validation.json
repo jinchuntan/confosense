@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "entry_commit": "3354393290d2afaef4361a9a7a1a43336a14c21d",
+  "evaluated_commit": "917d6eb2d634a457f3fba0fc16133463fe05b9b4",
+  "branch": "review/amendment004-20260913",
+  "manifest_files": 359,
+  "manifest_bytes": 101734035,
+  "largest_file": {
+    "path": "smart_building_conformal/outputs/amendment004/preflight_20260913_v1/calibration_rank_support.csv",
+    "bytes": 21843347,
+    "git_blob": "7971b15ea7e1f20d82d8fe36dc4f8e88a872564c",
+    "sha256": "072379ef72fa025adaeb7196f51d32cbf65e1a7d7c687e71394324c1b4d3b555",
+    "purpose": "no-fitting support or independent validation"
+  },
+  "internal_links_checked": 162,
+  "source_archives_verified": 4,
+  "checkpoint_files_verified": 90,
+  "publication_scope_checked": true,
+  "key_pattern_scan_passed": true,
+  "excluded_self_hashes": [
+    "review/amendment004_20260913/EVIDENCE_MANIFEST.csv",
+    "review/amendment004_20260913/publication_validation.json"
+  ],
+  "raw_data_published": false,
+  "global_study_ready": false
+}

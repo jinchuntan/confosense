@@ -1,0 +1,1091 @@
+{
+  "status": "passed",
+  "baseline_commit": "3354393290d2afaef4361a9a7a1a43336a14c21d",
+  "original_pilot_protocol_config_files_unchanged": 125,
+  "historical_snapshot_files_byte_identical": 554,
+  "historical_snapshot": "C:\\Users\\nigel\\ConfoSenseBackups\\integration_20260913_102403\\snapshot",
+  "pre_existing_report_annotations_unchanged_since_entry": [
+    "smart_building_conformal/outputs/final_dissertation_v2/report/CLAIMS_DISPOSITION.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/COMPUTATIONAL_EFFICIENCY.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/CONTRIBUTIONS_LIMITATIONS_FUTURE_WORK.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/DISSERTATION_CHAPTER_4_RESULTS.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/DISSERTATION_CHAPTER_5_DISCUSSION.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/FEASIBILITY_AUDIT.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_CLAIMS_REGISTER.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_DISSERTATION_RESULTS.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_FIGURES_INDEX.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/FINAL_TABLES_INDEX.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/LIMITATIONS_AND_VALIDITY.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/POST_RUN_STATISTICAL_AUDIT.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/REPRODUCIBILITY.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/RESULTS_CHANGELOG.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/ROBUSTNESS_RESULTS.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/RQ_RO_ACHIEVEMENT.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/SCIENTIFIC_VALIDITY_AUDIT.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/SLIDE_READY_VALUES.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/report/VALIDATION_REPORT.md"
+  ],
+  "previous_review_bundle_sha256": "2b80a4be8b33fd2762078bd0b5204eb7efe1425bc1e546d50b6ce05aeebaef40",
+  "previous_review_bundle_unchanged": true,
+  "original_main": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "original_review_branch": "3354393290d2afaef4361a9a7a1a43336a14c21d",
+  "pilot_files": [
+    {
+      "path": "smart_building_conformal/configs/model_comparison_pilot_v1.json",
+      "sha256": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/figures/figure_sources.json",
+      "sha256": "b5fcb35cbf626f904f87fec6dbbcbcdc111d3576bd274949539b9631f736769c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/figures/pilot_comparison.png",
+      "sha256": "fadf60ca56baf418f4498fb898a0fa0b1f27295703c732a871e8ebecb1fc8d89"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/figures/pilot_comparison.svg",
+      "sha256": "c73172b6ec1aa078a4e1c6326ba56b02592e834c9f37962558adff040ce800b3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/checkpoint_manifest.json",
+      "sha256": "c5d9bf74bc3dfc0bb871df95a7969167fc51b45c23269fcfe9e960fcf4c68d03"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/execution_environment.json",
+      "sha256": "583b96987eb15e524b2cef96d77685541a39d0eb712c6aeea9539e8cf5f50aa6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/interval_quality.csv",
+      "sha256": "ac501a945fda5e28634cb7f8b924eb915127c062231463deb0ca220e45f75ca3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/pilot_summary.json",
+      "sha256": "d6b728659a7e3fe26cf9812d324a4c93ac6f9b1837f759393ccd202ceab22d87"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/point_summary.csv",
+      "sha256": "c853c512a0a3ba26b7956dacfbe7b26562add6015b27705c89a439bd0a1385ef"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/preparation_h1.json",
+      "sha256": "bc8198a338737c8ccac46dad9406e118414c1f475d9d64c801b2792de13e3e65"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/preparation_h3.json",
+      "sha256": "c0416dbdcb23e9d243388d329ab2ccd5e8a9f93944f8461d5b14ca7b6dbdd3cc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/preparation_h6.json",
+      "sha256": "b620b788597c66a5272ceeee9a1c1d84f1c9a9738ff614694596b33f79be6aed"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/COMPLETE.json",
+      "sha256": "413a714422412829220993262f94eb7d3f3adc3111222510b29ddcc4156f1157"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/calibration.csv.gz",
+      "sha256": "8c1542bf4273e9e5266339646c57617be680c558d5341cb3d3f22ed5d886f30a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/model.pt",
+      "sha256": "3d7696dfba4b55fe0e070ce21762f195c57f4e6c38585cea9b1e592b0ad9a346"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/payload.json",
+      "sha256": "e41f3b3960017c56d858d1058f27d0d7efc2865d3d7b2ca022942c7ebc4e1bb6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/predictions.csv.gz",
+      "sha256": "43acca95c110b5a4eb7a200df18a391cff4619173ddd66b02acc2c8247742981"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/training_history.csv.gz",
+      "sha256": "10d29d9ec552d55c953f04a32bc27f4e46055e20cd929007de2556dd003b5204"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_attention_lstm/tuning.csv.gz",
+      "sha256": "19e99bd62be07b04a75055a415f1280db03f13203958980b03be90e3e80b2d86"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/COMPLETE.json",
+      "sha256": "88cc135aa1b590c5507e6742be8d247910521f5fc829189567def3afe7c5981b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/calibration.csv.gz",
+      "sha256": "2abff06c61ce921f4ea6b174c3e0a5392dd69835744f3f58d2aaca004fee163c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/model.json",
+      "sha256": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/payload.json",
+      "sha256": "b63c260f57a8be12314e5a20c538b49096990d910a74f20fe4431d206d15df47"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/predictions.csv.gz",
+      "sha256": "7670f4e1fc5cc8e803497c93db8b846eb9cd7e4cd0d69b5b3184aed91ff7957a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/training_history.csv.gz",
+      "sha256": "e68841686041e510294cbd4889bb761d722664ffc0163c90ea6890e68ad27408"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_persistence/tuning.csv.gz",
+      "sha256": "483fed1ff5182d687d29100784ef298a6fb702a33782246541ccc288f1c37997"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/COMPLETE.json",
+      "sha256": "81f49022a48ac5b09b7a0692c97fd520371ef282f6e2b2f70b60f88b41d384a2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/calibration.csv.gz",
+      "sha256": "e3eda25acfb78e86af6e80c5495bcdfc884d46e10214c037058d40d0a4105ae7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/model.ubj",
+      "sha256": "000ada22bd4711263dda843891bfb1fc98987639e64c457d168dc0b31a45f281"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/payload.json",
+      "sha256": "2ae44a6951e455412b682ed785bc781b567ecbc8602ad497c5d64321583b2d13"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/predictions.csv.gz",
+      "sha256": "c7a1f2c385865e50ce6a488a017d025b6d6d3db10752a42faa07e9dcfb3b88b9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/training_history.csv.gz",
+      "sha256": "82240be1d475deffb4733ba425e38b14c4b9ca8822290f84ea3b6855150d17a5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h1_f0_s42_xgboost/tuning.csv.gz",
+      "sha256": "ca12d2351bbee036912d2621c029009220eafac18fafcfeb666ce70496a2bc77"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/COMPLETE.json",
+      "sha256": "6df8560dd16fbe6d616cf32ebcbb3f08f210d2ba061c0a91fe9bdaeabce65d4a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/calibration.csv.gz",
+      "sha256": "50fa4aeed482a9f1b912b67670e06e70fb0a72de242ecd99743d240fc2e97ff7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/model.pt",
+      "sha256": "7362ddc814dcfbdb4d61bd2c9dd2cb541295ccf64e3a948bcb7ad35eabade6b9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/payload.json",
+      "sha256": "24dce75180c57dbc154f2191c1072fad35f6b8a6049b7be186f0667f4f4f8cc9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/predictions.csv.gz",
+      "sha256": "7b89ad8f2a24a7d0a0d622670cbffbede6069fe1687b3f20ea483e223bb469fc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/training_history.csv.gz",
+      "sha256": "7b8a2da66358af2de7256c0af1e48207d43587f48c5e6ea15ab7877a6e319cb6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_attention_lstm/tuning.csv.gz",
+      "sha256": "ce604a8df3d806212ee22e0bf77a8a3f967eca50647a24b4a598fc0061a554c4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/COMPLETE.json",
+      "sha256": "69a140e226e5bc03af8e306fa624fa6aeb1cb595df298ea49e9434aabf5b32e1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/calibration.csv.gz",
+      "sha256": "1c35f16721d14e581753fa77d595e3b2afa96f21bb86e03d515b3484a24c63ef"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/model.json",
+      "sha256": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/payload.json",
+      "sha256": "baa104bef959a91ad90495c6dd2f1ab82357197acd07f6305297f5ca7da4883a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/predictions.csv.gz",
+      "sha256": "3f65f6f087c6880b5fa3e05c3c918898c326bad8ebd6196c8ba6e8fde36ef33b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/training_history.csv.gz",
+      "sha256": "efdd60f57b7bbbf62c4eeb675bd4d2eda7df17a3d2f7422432263fd3bc70a7b8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_persistence/tuning.csv.gz",
+      "sha256": "a32ff55d517d59911b45f61151be54652e565772078ef03f28c7524e3db5f807"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/COMPLETE.json",
+      "sha256": "894d6680f5a1022ff30454ec6f3a742cb3c3f87e7248cdeaf3c411c3e191913b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/calibration.csv.gz",
+      "sha256": "3518d4c2348044230aaae0474c5a60350c183e2aa563c2a986a5990307a3ca79"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/model.ubj",
+      "sha256": "4d147846b98d397593dc72dc221a006094209a69054c4f12d97482ebca6326be"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/payload.json",
+      "sha256": "e1c023a76d84adbd90f8f88df4d971489719bc55d70f8c9639d134f845e2c9f0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/predictions.csv.gz",
+      "sha256": "c231f42d647c0b5bcc0c66830c3a96088519fc425095ff1fd318544dfd946a54"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/training_history.csv.gz",
+      "sha256": "4248af0a19f4188d69a03a5edc40a5bf8cb88f860ff1353e1a3c092803d784de"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h3_f0_s42_xgboost/tuning.csv.gz",
+      "sha256": "94af9457e8b2bf25b747f2d72d501276b5aa52c7b9c6247c11c20bc1159b2e5a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/COMPLETE.json",
+      "sha256": "b867d8638797f34caa9faf8f3d14126b7f06ae1d72cc510fc95e9923d9c563fc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/calibration.csv.gz",
+      "sha256": "3e7e845555ddf554ccdaa5e3f84dbb8a9e085bda53534dfa223f657348a8ef42"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/model.pt",
+      "sha256": "58402fa2bef8a979ba520fb8ac6849b37e79cec285d30664386d66f4b811f9be"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/payload.json",
+      "sha256": "8ab0b65b99b114c8cd0ca7eee6dfce33cb6dd4b5084ec6a535160f38370e75dd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/predictions.csv.gz",
+      "sha256": "b517f1fabafc755fcf5214531d4d2c5d38514d73639db2a2038d176300a2476e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/training_history.csv.gz",
+      "sha256": "a99e467d9b806d8488e612e3fdb46f91fe563cc778c0e8ab1dfb2087d566a1c4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_attention_lstm/tuning.csv.gz",
+      "sha256": "c29012475ee14db445a1d596b3fb9a81ddc680098e766bd41f4acf9a77df6b4d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/COMPLETE.json",
+      "sha256": "258f53f8299f99653a71d40d72c73309614ce54279c48c2225dfd1de602cecfa"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/calibration.csv.gz",
+      "sha256": "9372234461abb6f09a1ec1d1d63458aff3ea43b9d714b8e3a95f56b7f1b33cd5"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/model.json",
+      "sha256": "d1412ee3d3e418b89938666fc00195b4a9ff628098d8f01dd43c19df87ed248b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/payload.json",
+      "sha256": "0dd2078d86d8fecb23882a5eeef04a5e0c051e2def60c1f6d7fcda1729cc4baf"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/predictions.csv.gz",
+      "sha256": "508c9f0f32db36276e6e23ada5617582967cbc28b5bd10f63bd7f06b26d3e5bf"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/training_history.csv.gz",
+      "sha256": "9e52eb5cd56a17c644c1f9b5834fddb2cfdd4375cd5e6e752028807165ad0b88"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_persistence/tuning.csv.gz",
+      "sha256": "823484975aa1e3b7300d3d2a695855e26c387620219e34c252de86aee74f76f6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/COMPLETE.json",
+      "sha256": "0b56d0076cef7cdaba60510bdead2df23aaedf94c24585d30d026ec3ca80610c"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/calibration.csv.gz",
+      "sha256": "f4db9e67ef54b9a601b5c679333f03931eb0efc01454e9b8d3aa04f712b79d95"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/model.ubj",
+      "sha256": "154a047909d9dd7e8d70034eb895aa8c624bf36b9ea18a480f03dcbb6025209f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/payload.json",
+      "sha256": "be6104f42214067ec6f37921c43e10c819f88d6d5b7fc7fb30752f7059896eb9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/predictions.csv.gz",
+      "sha256": "28a3b14ba907fa78133e13e83c19f9ef240aee557d0e17c9f642378fbc51ae45"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/training_history.csv.gz",
+      "sha256": "f738632c665d3d68c888d30d439db45f1fc89f6940e60e1d213a032aa999a97f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913/units/h6_f0_s42_xgboost/tuning.csv.gz",
+      "sha256": "fde8ee1f394bcfe146cbbd93a64edb0d5504d21aff293321bd6e931f66f4c0f3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/bdg2_preparation_memory.csv",
+      "sha256": "ee6cc0fbac2355db7e46621dc4d42c7223bfba603960dc4522f13976b647b5eb"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/comparison.csv",
+      "sha256": "cb829da2a84641303ebd8f556e69dd9bd7c18f2b12086cd71904e98952ef88d8"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/execution_measurements.csv",
+      "sha256": "bb266c8333f0cd349083a1e226bb6f5fc4d8615b83e301e4abeb32422ea05ca9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/measured_cost_and_expansion_scenario.csv",
+      "sha256": "431361ced0e15f6137195b89ad8e52a5e3accc571e6dc9bc3e790fee827c6c42"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/pleia_preparation_memory.csv",
+      "sha256": "801eebeb7c9689c35acabbcdeb04e2a48e4b7a4a46a89013c535df4bd613b8be"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/resource_measurements.csv",
+      "sha256": "c5cdf51b9f40ade1afdc2223bfde0f126764acd9f5bbaf17766f8226be05f713"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/tables/tuning_results.csv",
+      "sha256": "9116d0ac2013ce8ac9ceb3725f18483747088535e3b850c07de009c7ff7644d2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation.log",
+      "sha256": "95c0a5ebf91122b596c4e86f794639a1f66352529adcf0ac6ef0d76749b2c74e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation.log.json",
+      "sha256": "97e83da92504132dce21a573e1b854d26bda396367f3e5caefbc8603925217ad"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation_console.txt",
+      "sha256": "5169fbe0a9f72833f0c8ffe4cd928fc7f74abdeac16c5f68f1a18707ee868472"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/artifact_finalisation_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/bdg2_preparation.log",
+      "sha256": "c00591ca795232ac7af7866ca485e4ad56113324e73e0b5bfddac20967a2ce26"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/bdg2_preparation.log.json",
+      "sha256": "41331f9e725b23b6e818ef7a1b541f58b9b27eaaeebda6c3d4e7a87f5ba7a12d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/bdg2_preparation_memory.json",
+      "sha256": "c00591ca795232ac7af7866ca485e4ad56113324e73e0b5bfddac20967a2ce26"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/comparison_figure.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/comparison_figure.log.json",
+      "sha256": "1a7cab32e16b8b0836fe91be2bfa366af56a07490e2a11da527a48c209562d19"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/completed_launch_snapshot/preparation_h1.json",
+      "sha256": "fd371e63f42c0b692aaef89090d79245311904116d9a133b79e31540d477db56"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/completed_launch_snapshot/preparation_h3.json",
+      "sha256": "1f353039d2b920931f1f7e51ed763739a8baefe263a9e3b65aa76e98c88d29e2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/completed_launch_snapshot/preparation_h6.json",
+      "sha256": "d5fc69a316717ce7d22d6b5d6ff92ad39a2053bda28a3374f67fb984c5eed9bd"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/delivery_validation.json",
+      "sha256": "9146387a173d4b8f61f66d6f6c618df9af2e96909781eae9e32aee4d7b11f28d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/evaluated_source.json",
+      "sha256": "f7af7a948ccd11a38ca2d62368744e67813b7c72d686ed0f83d42f337e9fce9e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/evaluated_source.zip",
+      "sha256": "cf0565a4c3fbd6d7b39b5ce6042aa84f9ae57439f3282f0332d3c2a7f33f557d"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/checkpoint_manifest.json",
+      "sha256": "c5d9bf74bc3dfc0bb871df95a7969167fc51b45c23269fcfe9e960fcf4c68d03"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/execution_environment.json",
+      "sha256": "583b96987eb15e524b2cef96d77685541a39d0eb712c6aeea9539e8cf5f50aa6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/interruption_record.json",
+      "sha256": "cc41e6efca6eb6f46a22796b7dc4f78bdc9c9db910814f511c7677c4e270edce"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/interval_quality.csv",
+      "sha256": "8e661580435bce9dce60fdc706e3d2f88fc213ed50fdae3d73a356558b45f8c7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/pilot_run_v1.log",
+      "sha256": "c6c3dd215324ba03f09d020be8cb50902914c94dcfc7db34aea41f6f4ab724a2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/point_summary.csv",
+      "sha256": "8cdabdbd24ce0afd9c7f5526ce6e473f0efbda47263178dee3cca55b9929cd4b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/preparation_h1.json",
+      "sha256": "dc60b41d8e0f0cfd3299103e10aec0fc1ea25b171a09f5900e3c0039b9783090"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/interrupted_launch_snapshot/preparation_h3.json",
+      "sha256": "a9bbea1a2d973370a9d6b528870a7457bc8ee8e1511e201b37f79e8b56fad802"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/output_validation.json",
+      "sha256": "f5045cf0b2e46acb89362ce5acf7b0d5cf6080d675fee2402ea27d587d924936"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/output_validation.log",
+      "sha256": "f5045cf0b2e46acb89362ce5acf7b0d5cf6080d675fee2402ea27d587d924936"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/output_validation.log.json",
+      "sha256": "c100248bcb70b6d2e829f24b4b9a7e3beb4c72901c3cbbb2d6e8cbf9eb4726f3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_console.txt",
+      "sha256": "a3b55ecb5ecbf0487287c24257168ff5360fa10baa8ca3dd576272bc47548d9e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_resume.log",
+      "sha256": "9c864de88953a004ad019c19dc966c1a7eef2c50e90fa5dd9047feab10119aa0"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_resume.log.json",
+      "sha256": "5d79790e2d7cc610aa20f7b6d62ddd2d35ffd69b2ebedb2b3bc41edf7b41e5a1"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_completion_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_run_v1.log",
+      "sha256": "c6c3dd215324ba03f09d020be8cb50902914c94dcfc7db34aea41f6f4ab724a2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_verification_resume.log",
+      "sha256": "88e7ef5df3b482a1aeb77a2765b7118a78f07b9614e49c85bdcb69945fc05378"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/pilot_verification_resume.log.json",
+      "sha256": "8185ccfe1f95747407d07c697764289e9dcd0cefb459e40ab41150cf27a6d3a4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/preflight_full_tests.txt",
+      "sha256": "1b78e24ba9c760098410ddbb7c3d71ee06cc3286085dad3027f92e0ead83c5d7"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/preservation_verification.json",
+      "sha256": "328f3c0ac41d17d834f2ace7b82bc1610e62cd945431b137affee95fb237a0b3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/resume_integrity.json",
+      "sha256": "6513f80299946b4c63aff4acf70d7ed5237c9e1b4e4169269370b3587e9363a4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/summary_tables.log",
+      "sha256": "22603f5b9e624cc80095159392b06acf9b9ff41adbe9e7beed9af680111e4492"
+    },
+    {
+      "path": "smart_building_conformal/outputs/model_comparison_pilot_v1/validation/summary_tables.log.json",
+      "sha256": "7eb4a0a16b010d7112686ee4858ec988846a11f05d0e0fe798d30334f0393b62"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/PILOT_PROTOCOL.md",
+      "sha256": "6b9d0f2719cbe77abec3b25789c695e9bb4bc0f973ee89aedc95921fe8e423bb"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/boundaries.csv",
+      "sha256": "8e4c7fd316eab987a7974174b5d440491baec91f7119c62270d25e8affed72c1"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/frozen_protocol.json",
+      "sha256": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/membership.csv.gz",
+      "sha256": "4a3d5d9902d5332d396f6feffe00ab7fdf931aadd39f33bbd1164bf26cc6cf9d"
+    },
+    {
+      "path": "smart_building_conformal/protocols/model_comparison_pilot_v1/readiness.json",
+      "sha256": "24b32fb001677257689a86b81d7be62377b0c24b39ef3b1b43d5c67d7f6f7cb3"
+    }
+  ],
+  "historical_files": [
+    "smart_building_conformal/data/interim/Data_Nature/Notebook_Scientific_Data_Nature.ipynb",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/consA-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/consA-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/consB-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/consB-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/consC-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/consC-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-model-consumoA-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-model-consumoB-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-model-consumoC-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-room10T-all.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-roomA-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-roomB-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-roomC-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-weather-10T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/data-weather-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/hvac-aggA-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/hvac-aggB-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/hvac-aggC-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/temp-sensorA-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/temp-sensorB-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/processed_data/temp-sensorC-60T.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/data-CO2.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/data-cons.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/data-hvac.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/data-presence.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/data-sensor.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/MU62_dm.txt",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-CO2.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-hvac.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-presence.csv",
+    "smart_building_conformal/data/interim/Data_Nature/raw_data/relations-sensor.csv",
+    "smart_building_conformal/data/processed/target_dataset.parquet",
+    "smart_building_conformal/data/raw/Data_Nature.zip",
+    "smart_building_conformal/data/raw/bdg2/electricity.csv",
+    "smart_building_conformal/data/raw/bdg2/metadata.csv",
+    "smart_building_conformal/data/raw/bdg2/weather.csv",
+    "smart_building_conformal/data/raw/rico/README.md",
+    "smart_building_conformal/data/raw/rico/RICO_Acquisition_1_07-2023.hdf",
+    "smart_building_conformal/data/raw/rico/RICO_Acquisition_2_10-2023.hdf",
+    "smart_building_conformal/data/raw/rico/RICO_Acquisition_3_01-2024.hdf",
+    "smart_building_conformal/data/raw/rico/RICO_Acquisition_4_02-2024.hdf",
+    "smart_building_conformal/data/raw/rico/RICO_Acquisition_5_05-2024.hdf",
+    "smart_building_conformal/data/raw/uci_occupancy/datatest.txt",
+    "smart_building_conformal/data/raw/uci_occupancy/datatest2.txt",
+    "smart_building_conformal/data/raw/uci_occupancy/datatraining.txt",
+    "smart_building_conformal/data/raw/uci_occupancy/occupancy+detection.zip",
+    "smart_building_conformal/outputs/auxiliary_uci/data_profiles/dataset_profile.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/auxiliary_uci/data_profiles/partition_summary.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/figures/fig_uci_01_point_mae.png",
+    "smart_building_conformal/outputs/auxiliary_uci/figures/fig_uci_02_cqr_interval.png",
+    "smart_building_conformal/outputs/auxiliary_uci/manifests/dataset_source.json",
+    "smart_building_conformal/outputs/auxiliary_uci/manifests/dataset_sources.json",
+    "smart_building_conformal/outputs/auxiliary_uci/manifests/experiment_manifest.json",
+    "smart_building_conformal/outputs/auxiliary_uci/manifests/limitations.json",
+    "smart_building_conformal/outputs/auxiliary_uci/manifests/run_history.jsonl",
+    "smart_building_conformal/outputs/auxiliary_uci/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/metrics/interval_violation_diagnostic.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/auxiliary_uci/metrics/xgboost_best_params_h15.json",
+    "smart_building_conformal/outputs/auxiliary_uci/metrics/xgboost_best_params_h5.json",
+    "smart_building_conformal/outputs/auxiliary_uci/report/dissertation_positioning.md",
+    "smart_building_conformal/outputs/auxiliary_uci/report/uci_auxiliary_limitations.md",
+    "smart_building_conformal/outputs/auxiliary_uci/report/uci_auxiliary_results.md",
+    "smart_building_conformal/outputs/data_profiles/file_inventory.csv",
+    "smart_building_conformal/outputs/data_profiles/file_inventory.json",
+    "smart_building_conformal/outputs/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/data_profiles/preprocessing_summary.csv",
+    "smart_building_conformal/outputs/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/data_profiles/target_selection.csv",
+    "smart_building_conformal/outputs/figures/figure_2_split_and_sliding_window.png",
+    "smart_building_conformal/outputs/figures/figure_3_interval_alert_mechanism.png",
+    "smart_building_conformal/outputs/figures/figure_4_data_split.png",
+    "smart_building_conformal/outputs/figures/figure_5_point_forecasts.png",
+    "smart_building_conformal/outputs/figures/figure_6_conformal_intervals.png",
+    "smart_building_conformal/outputs/figures/figure_7_alert_timeline.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract.svg",
+    "smart_building_conformal/outputs/figures/point_metric_comparison.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract/ga_1_sensor_stream.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract/ga_2_conformal_forecast.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract/ga_3_interval_alert.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract/ga_4_monitoring_output.png",
+    "smart_building_conformal/outputs/figures/graphical_abstract/ga_core_combined.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/PUBLICATION_READY.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/STATUS_AND_RESUME.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/audit/engine_smoke_evidence.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/audit/full_study_baseline_checksums.txt",
+    "smart_building_conformal/outputs/final_dissertation_v2/audit/leakage_audit.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/audit/post_run_statistical_audit.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/audit/smoke_evidence.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/figures/figure_index.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_coverage_with_cis.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_recall_by_stratum.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_recall_vs_workload.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/figures/fig_selected_configs.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/ALERT_ACCOUNTING_AUDIT.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/CI_AUDIT.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/final_cis.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/final_cis_corrected.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/FOLD_MEMBERSHIP.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/FULL_RUN_INVENTORY.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/NOMINAL_COVERAGE_AUDIT.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/OUTER_UNIT_LEDGER.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/PAIRED_ABLATION_EFFECTS.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/POINT_EFFICIENCY_EVIDENCE_AUDIT.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/engine_summary.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/run_id.txt",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/bdg2/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/pleia_energy/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/metrics/run_artifacts/rico/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/protocol/config_hash.txt",
+    "smart_building_conformal/outputs/final_dissertation_v2/protocol/evaluation_design.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/protocol/frozen_protocol.yaml",
+    "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_001.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_002.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/protocol/protocol_amendment_003.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/provenance/artifact_manifest.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/engine_summary.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/bdg2/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/pleia_energy/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/engine_smoke/rico/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/engine_summary.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/bdg2/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/pleia_energy/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/ablation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/event_allocation.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/outer_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/outer_per_event.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/outer_per_group_coverage.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/provenance.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/full_20260831_220811/rico/selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/extension_summary.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/bdg2/point_accuracy.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/bdg2/robustness_cells.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/bdg2/unit_timing.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia/point_accuracy.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia/robustness_cells.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia/unit_timing.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia_energy/point_accuracy.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia_energy/robustness_cells.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/pleia_energy/unit_timing.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/rico/point_accuracy.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/rico/robustness_cells.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/robx_smoke/rico/unit_timing.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/alert_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/effect_sizes.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/interval_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/model_rankings.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/point_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/ranking_tests.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/robustness_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/combined/statistical_tests.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/dataset_sources.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/experiment_manifest.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/limitations.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/resume_ledger.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/manifests/run_history.jsonl",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/feature_schema_h1.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/feature_schema_h3.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/series_profile.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/target_selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_rule_selection_calibration.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_rule_sensitivity_test.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/alert_selection_split.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/diebold_mariano.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/effect_sizes.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/recalibration_recovery.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/recalibration_selection.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/metrics/robustness_metrics.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level90.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level95.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level97.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/dscp_level99.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/lstm_history_h1_seed42.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/lstm_history_h3_seed42.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/xgboost_best_params_h1.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/models/xgboost_best_params_h3.json",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/predictions/interval_predictions.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/pleia/predictions/point_predictions.csv",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/final_result_digest.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/full_study_limitations.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/full_study_results.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/table_ready_results.md",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_01_point_forecasting_comparison.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_02_coverage_vs_width.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_03_coverage_deviation_by_horizon.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_04_winkler_comparison.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_05_alert_rule_sensitivity.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_06_alert_tradeoff.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_08_recalibration_recovery.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_09_cross_dataset_rankings.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_12_pleia_interval_timeline.png",
+    "smart_building_conformal/outputs/final_dissertation_v2/runs/smoke_s1/report/figures/fig_13_closed_loop_absorption.png",
+    "smart_building_conformal/outputs/full_study/bdg2/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/full_study/bdg2/data_profiles/series_profile.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/data_profiles/subset_selection.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_rule_selection_calibration.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_rule_sensitivity_test.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/alert_selection_split.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/diebold_mariano.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/effect_sizes.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/recalibration_recovery.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/recalibration_selection.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/metrics/robustness_metrics.csv",
+    "smart_building_conformal/outputs/full_study/bdg2/models/dscp_level90.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/dscp_level95.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/lstm_history_h1_seed42.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/lstm_history_h3_seed42.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/lstm_history_h6_seed42.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/xgboost_best_params_h1.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/xgboost_best_params_h3.json",
+    "smart_building_conformal/outputs/full_study/bdg2/models/xgboost_best_params_h6.json",
+    "smart_building_conformal/outputs/full_study/combined/alert_metrics.csv",
+    "smart_building_conformal/outputs/full_study/combined/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/full_study/combined/confosense_configurations.csv",
+    "smart_building_conformal/outputs/full_study/combined/effect_sizes.csv",
+    "smart_building_conformal/outputs/full_study/combined/interval_metrics.csv",
+    "smart_building_conformal/outputs/full_study/combined/literature_benchmark_matrix.csv",
+    "smart_building_conformal/outputs/full_study/combined/model_rankings.csv",
+    "smart_building_conformal/outputs/full_study/combined/pleia_energy_artefact_sensitivity.csv",
+    "smart_building_conformal/outputs/full_study/combined/pleia_energy_meter_stalls.csv",
+    "smart_building_conformal/outputs/full_study/combined/pleia_energy_target_profile.json",
+    "smart_building_conformal/outputs/full_study/combined/point_metrics.csv",
+    "smart_building_conformal/outputs/full_study/combined/posthoc_comparisons.csv",
+    "smart_building_conformal/outputs/full_study/combined/ranking_tests.csv",
+    "smart_building_conformal/outputs/full_study/combined/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/full_study/combined/rico_quantile_crossings.csv",
+    "smart_building_conformal/outputs/full_study/combined/rico_quantile_crossings_by_run.csv",
+    "smart_building_conformal/outputs/full_study/combined/robustness_metrics.csv",
+    "smart_building_conformal/outputs/full_study/combined/robustness_metric_schema.csv",
+    "smart_building_conformal/outputs/full_study/combined/rq_ro_evidence_matrix.csv",
+    "smart_building_conformal/outputs/full_study/combined/statistical_tests.csv",
+    "smart_building_conformal/outputs/full_study/manifests/dataset_sources.json",
+    "smart_building_conformal/outputs/full_study/manifests/experiment_manifest.json",
+    "smart_building_conformal/outputs/full_study/manifests/limitations.json",
+    "smart_building_conformal/outputs/full_study/manifests/resume_ledger.json",
+    "smart_building_conformal/outputs/full_study/manifests/run_history.jsonl",
+    "smart_building_conformal/outputs/full_study/manifests/stage_provenance.json",
+    "smart_building_conformal/outputs/full_study/pleia/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/full_study/pleia/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/full_study/pleia/data_profiles/series_profile.csv",
+    "smart_building_conformal/outputs/full_study/pleia/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/full_study/pleia/data_profiles/target_selection.csv",
+    "smart_building_conformal/outputs/full_study/pleia/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/alert_rule_selection_calibration.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/alert_rule_sensitivity_test.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/alert_selection_split.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/diebold_mariano.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/effect_sizes.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/recalibration_recovery.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/recalibration_selection.csv",
+    "smart_building_conformal/outputs/full_study/pleia/metrics/robustness_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia/models/dscp_level90.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/dscp_level95.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/lstm_history_h1_seed42.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/lstm_history_h3_seed42.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/lstm_history_h6_seed42.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/xgboost_best_params_h1.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/xgboost_best_params_h3.json",
+    "smart_building_conformal/outputs/full_study/pleia/models/xgboost_best_params_h6.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/series_profile.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/target_selection.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_rule_selection_calibration.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_rule_sensitivity_test.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/alert_selection_split.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/diebold_mariano.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/effect_sizes.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/recalibration_recovery.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/recalibration_selection.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/metrics/robustness_metrics.csv",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/dscp_level90.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/dscp_level95.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/lstm_history_h1_seed42.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/lstm_history_h3_seed42.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/lstm_history_h6_seed42.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/xgboost_best_params_h1.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/xgboost_best_params_h3.json",
+    "smart_building_conformal/outputs/full_study/pleia_energy/models/xgboost_best_params_h6.json",
+    "smart_building_conformal/outputs/full_study/report/alert_selection_audit.md",
+    "smart_building_conformal/outputs/full_study/report/benchmarking_and_contribution_wording.md",
+    "smart_building_conformal/outputs/full_study/report/benchmark_comparison.md",
+    "smart_building_conformal/outputs/full_study/report/chapter4_final_results_and_discussion.md",
+    "smart_building_conformal/outputs/full_study/report/chapter5_results_blueprint.md",
+    "smart_building_conformal/outputs/full_study/report/chapter6_discussion_blueprint.md",
+    "smart_building_conformal/outputs/full_study/report/closed_loop_terminology.md",
+    "smart_building_conformal/outputs/full_study/report/dissertation_handoff.md",
+    "smart_building_conformal/outputs/full_study/report/final_claims_register.md",
+    "smart_building_conformal/outputs/full_study/report/final_confosense_configuration.md",
+    "smart_building_conformal/outputs/full_study/report/final_dissertation_migration_plan.md",
+    "smart_building_conformal/outputs/full_study/report/final_dissertation_structure.md",
+    "smart_building_conformal/outputs/full_study/report/final_figures_index.md",
+    "smart_building_conformal/outputs/full_study/report/final_result_digest.md",
+    "smart_building_conformal/outputs/full_study/report/final_tables_index.md",
+    "smart_building_conformal/outputs/full_study/report/final_writing_handoff.md",
+    "smart_building_conformal/outputs/full_study/report/full_study_limitations.md",
+    "smart_building_conformal/outputs/full_study/report/full_study_results.md",
+    "smart_building_conformal/outputs/full_study/report/pleia_energy_audit.md",
+    "smart_building_conformal/outputs/full_study/report/rico_quantile_crossing_audit.md",
+    "smart_building_conformal/outputs/full_study/report/rq_ro_evidence_matrix.md",
+    "smart_building_conformal/outputs/full_study/report/table_figure_placement_map.md",
+    "smart_building_conformal/outputs/full_study/report/table_ready_results.md",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_01_point_forecasting_comparison.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_02_coverage_vs_width.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_03_coverage_deviation_by_horizon.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_04_winkler_comparison.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_05_alert_rule_sensitivity.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_06_alert_tradeoff.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_07a_observed_signal_coverage.pdf",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_07a_observed_signal_coverage.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_07b_clean_reference_coverage.pdf",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_07b_clean_reference_coverage.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_07_robustness_degradation.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_08_recalibration_recovery.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_09_cross_dataset_rankings.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_10_rico_interval_timeline.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_11_bdg2_interval_timeline.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_12_pleia_interval_timeline.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_13_closed_loop_absorption.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_alert_comparison.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_alert_comparison_300dpi.png",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_alert_comparison_data.csv",
+    "smart_building_conformal/outputs/full_study/report/figures/fig_pleia_3of5_vs_4of7_window_selection_audit.csv",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/run_audit.csv",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/sensor_audit.csv",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/series_profile.csv",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/full_study/rico/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/alert_rule_selection_calibration.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/alert_rule_sensitivity_test.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/alert_selection_split.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/diebold_mariano.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/effect_sizes.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/recalibration_recovery.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/recalibration_selection.csv",
+    "smart_building_conformal/outputs/full_study/rico/metrics/robustness_metrics.csv",
+    "smart_building_conformal/outputs/full_study/rico/models/dscp_level90.json",
+    "smart_building_conformal/outputs/full_study/rico/models/dscp_level95.json",
+    "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h15_seed42.json",
+    "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h30_seed42.json",
+    "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h5_seed42.json",
+    "smart_building_conformal/outputs/full_study/rico/models/lstm_history_h60_seed42.json",
+    "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h15.json",
+    "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h30.json",
+    "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h5.json",
+    "smart_building_conformal/outputs/full_study/rico/models/xgboost_best_params_h60.json",
+    "smart_building_conformal/outputs/laptop_verification/combined/alert_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/effect_sizes.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/interval_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/model_rankings.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/point_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/ranking_tests.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/robustness_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/combined/statistical_tests.csv",
+    "smart_building_conformal/outputs/laptop_verification/manifests/dataset_sources.json",
+    "smart_building_conformal/outputs/laptop_verification/manifests/experiment_manifest.json",
+    "smart_building_conformal/outputs/laptop_verification/manifests/limitations.json",
+    "smart_building_conformal/outputs/laptop_verification/manifests/resume_ledger.json",
+    "smart_building_conformal/outputs/laptop_verification/manifests/run_history.jsonl",
+    "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/injected_event_catalog.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/series_profile.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/split_summary.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/target_selection.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_rule_selection_calibration.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_rule_sensitivity_test.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/alert_selection_split.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/diebold_mariano.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/effect_sizes.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/recalibration_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/recalibration_recovery.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/recalibration_selection.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/metrics/robustness_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/models/dscp_level90.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/models/dscp_level95.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/models/lstm_history_h1_seed42.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/models/lstm_history_h3_seed42.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/models/xgboost_best_params_h1.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/models/xgboost_best_params_h3.json",
+    "smart_building_conformal/outputs/laptop_verification/pleia/predictions/interval_predictions.csv",
+    "smart_building_conformal/outputs/laptop_verification/pleia/predictions/point_predictions.csv",
+    "smart_building_conformal/outputs/laptop_verification/report/final_result_digest.md",
+    "smart_building_conformal/outputs/laptop_verification/report/full_study_limitations.md",
+    "smart_building_conformal/outputs/laptop_verification/report/full_study_results.md",
+    "smart_building_conformal/outputs/laptop_verification/report/table_ready_results.md",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_01_point_forecasting_comparison.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_02_coverage_vs_width.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_03_coverage_deviation_by_horizon.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_04_winkler_comparison.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_05_alert_rule_sensitivity.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_06_alert_tradeoff.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_07_robustness_degradation.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_08_recalibration_recovery.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_09_cross_dataset_rankings.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_12_pleia_interval_timeline.png",
+    "smart_building_conformal/outputs/laptop_verification/report/figures/fig_13_closed_loop_absorption.png",
+    "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/dataset_profile.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/partitioning.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/partition_summary.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/data_profiles/window_summary.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/figures/fig_uci_01_point_mae.png",
+    "smart_building_conformal/outputs/laptop_verification/uci/figures/fig_uci_02_cqr_interval.png",
+    "smart_building_conformal/outputs/laptop_verification/uci/manifests/dataset_source.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/manifests/dataset_sources.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/manifests/experiment_manifest.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/manifests/limitations.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/manifests/run_history.jsonl",
+    "smart_building_conformal/outputs/laptop_verification/uci/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/metrics/interval_violation_diagnostic.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/metrics/point_metrics.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/metrics/xgboost_best_params_h15.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/metrics/xgboost_best_params_h5.json",
+    "smart_building_conformal/outputs/laptop_verification/uci/predictions/interval_predictions.csv",
+    "smart_building_conformal/outputs/laptop_verification/uci/predictions/point_predictions.csv",
+    "smart_building_conformal/outputs/metrics/alert_metrics.csv",
+    "smart_building_conformal/outputs/metrics/alert_rule_selection.csv",
+    "smart_building_conformal/outputs/metrics/bootstrap_metrics.csv",
+    "smart_building_conformal/outputs/metrics/cqr_interval_metrics.csv",
+    "smart_building_conformal/outputs/metrics/enbpi_interval_metrics.csv",
+    "smart_building_conformal/outputs/metrics/interval_metrics.csv",
+    "smart_building_conformal/outputs/metrics/point_forecast_metrics.csv",
+    "smart_building_conformal/outputs/metrics/preliminary_robustness_metrics.csv",
+    "smart_building_conformal/outputs/models/lstm_config.json",
+    "smart_building_conformal/outputs/models/lstm_history_h1_seed42.json",
+    "smart_building_conformal/outputs/models/lstm_history_h3_seed42.json",
+    "smart_building_conformal/outputs/models/lstm_history_h6_seed42.json",
+    "smart_building_conformal/outputs/models/xgboost_best_params_h1.json",
+    "smart_building_conformal/outputs/models/xgboost_best_params_h3.json",
+    "smart_building_conformal/outputs/models/xgboost_best_params_h6.json",
+    "smart_building_conformal/outputs/models/xgboost_h1_seed42.joblib",
+    "smart_building_conformal/outputs/models/xgboost_h3_seed42.joblib",
+    "smart_building_conformal/outputs/models/xgboost_h6_seed42.joblib",
+    "smart_building_conformal/outputs/predictions/cqr_predictions.csv",
+    "smart_building_conformal/outputs/predictions/enbpi_predictions.csv",
+    "smart_building_conformal/outputs/predictions/point_predictions_h1.csv",
+    "smart_building_conformal/outputs/predictions/point_predictions_h3.csv",
+    "smart_building_conformal/outputs/predictions/point_predictions_h6.csv",
+    "smart_building_conformal/outputs/report/environment_versions.json",
+    "smart_building_conformal/outputs/report/random_seed_log.json",
+    "smart_building_conformal/outputs/report/report_ready_results.md",
+    "smart_building_conformal/outputs/report/result_placeholders_filled.md",
+    "smart_building_conformal/outputs/report/test_results.txt"
+  ],
+  "completed_pilot_validity": "preserved; amendment affects only future operational runs"
+}

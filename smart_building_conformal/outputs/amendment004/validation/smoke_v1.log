@@ -1,0 +1,21 @@
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\operational004_smoke.py", line 90, in <module>
+    args=parser.parse_args();run(args.out,args.config,args.resume)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\operational004_smoke.py", line 68, in run
+    result=dict(scope='SMOKE ONLY',status='complete',**validation,**status,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'scope'

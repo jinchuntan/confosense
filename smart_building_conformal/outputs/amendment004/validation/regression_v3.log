@@ -1,0 +1,17 @@
+........................................................................ [ 21%]
+........................................................................ [ 43%]
+....................................................................s... [ 64%]
+........................................................................ [ 86%]
+.............................................                            [100%]
+============================== warnings summary ===============================
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+  C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+    return cast(NDArray, np.nanmean(X, axis=1))
+
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+  C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+    return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+332 passed, 1 skipped, 3 warnings in 101.12s (0:01:41)

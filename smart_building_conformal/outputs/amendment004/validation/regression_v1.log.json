@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\cfs_venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-o",
+    "addopts=",
+    "-q",
+    "--junitxml=outputs/amendment004/validation/regression_v1.xml"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T09:21:53.273607+00:00",
+  "ended_utc": "2026-09-13T09:23:13.859837+00:00",
+  "seconds": 80.58417550000013,
+  "exit_status": 0
+}

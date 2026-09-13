@@ -1,0 +1,38 @@
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+{
+  "status": "complete",
+  "output_valid": true,
+  "candidate_fold_cells": 12,
+  "stream_hash_pairs": 60,
+  "outer_stream_hash_pairs": 20,
+  "persisted_streams_recomputed": 96,
+  "scientific_readiness": false,
+  "scope": "SMOKE ONLY",
+  "reused_units": 0,
+  "new_fit_invocations": 5,
+  "expected_inner_cells": 12,
+  "expected_inner_catalogue_pairs": 60,
+  "expected_outer_catalogue_pairs": 20,
+  "checkpoint_corruption_rejected_on_temporary_copy": true,
+  "full_study_validator_rejects_smoke": true,
+  "decision": "no_feasible_configuration",
+  "operational_feasible": false,
+  "fixture_feasible_selection": {
+    "candidate_id": "fixture_a"
+  },
+  "source_hash": "fd7a6bbb5fda25a7058951f49e1c41ec47f4cffe0a21640036ad8f56a7031bd8",
+  "config_hash": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+  "design_hash": "5c1d4aedbbdedfb5d6cceedfd56b1dbe331233d0c497ea7b0126cf6095938c75",
+  "evaluated_commit": "917d6eb2d634a457f3fba0fc16133463fe05b9b4",
+  "run_id": "smoke_20260913_v2"
+}

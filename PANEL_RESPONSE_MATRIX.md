@@ -1,5 +1,7 @@
 # ConfoSense current panel response matrix
 
+**Amendment-004 status update:** two operational folds, reserved final calibration, confidence-bound selection/abstention, causal method-preserving replay, clean workload, shared-fit/independent comparisons and paired group/time inference interfaces are implemented and tested. The four-task no-fit audit and **SMOKE ONLY** integration are complete; final regression is **332 passed, 1 skipped, three existing warnings**. See [the implementation report](AMENDMENT004_IMPLEMENTATION_REPORT.md) for exact evidence and limits. PLEIA temperature/energy and RICO lack inner event support; BDG2 alone passes the structural screen. Real operational effectiveness, broader inference and dissertation readiness remain unestablished. The earlier table below records the preceding pilot/diagnostic stage, rather than the latest implementation status.
+
 Updated 13 September 2026 after the integration repairs, completed PLEIA pilot and bounded diagnostics. See the [current evidence index](review/CURRENT_EVIDENCE.md), [diagnostics](PILOT_DIAGNOSTICS.md) and [operational plan](OPERATIONAL_EVALUATION_PLAN.md). This table supersedes the implementation-status claims in the **archived assessment** below. See [MODEL_COMPARISON_PILOT_REPORT.md](MODEL_COMPARISON_PILOT_REPORT.md) for measured results and [INTEGRATION_REPAIR_REPORT.md](INTEGRATION_REPAIR_REPORT.md) for the repaired foundations.
 
 | Panel topic | Completed evidence | Still required |
@@ -18,7 +20,7 @@ Updated 13 September 2026 after the integration repairs, completed PLEIA pilot a
 
 **Bounded follow-up:** all 24 unchanged learned inner fits reproduced; six persistence supports are matched. No forecasting alignment/scaling/epoch defect was demonstrated. Preparation-only peak RAM fell 52.1% with identical support. Follow-up suite: **308 passed, 1 skipped, 3 existing warnings**; pilot revalidation: **9/9 point and 18/18 interval cells**.
 
-**Next concrete task:** implement the resolved operational plan as amendment 004 and pass its one synthetic two-inner-fold integration smoke before any core rerun. DSCP/seasonal evaluation, group-recovery inference and the full comparison remain in scope. The 207 retained RICO runs are retained data, not 207 pristine test runs.
+**Next concrete proposal:** one BDG2 fold-2/seed-42 reduced operational pilot with five frozen catalogue seeds, as specified in the amendment report; not yet launched. DSCP/seasonal evaluation, real-data group-recovery inference and the full comparison remain in scope. The 207 retained RICO runs are retained data, not 207 pristine test runs.
 
 ---
 
