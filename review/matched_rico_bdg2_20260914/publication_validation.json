@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "packaging_fits": 0,
+  "entry_commit": "b26ee5b6a2cfb322b392e017e627bf3c96339c78",
+  "evaluated_commit": "350ef4fd1c92c12a982df2b8366023937515b65b",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "branch": "review/matched-rico-bdg2-20260914",
+  "main_commit": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "historical_files_unchanged": 1804,
+  "intentional_source_repair": "smart_building_conformal/src/matched_models005.py",
+  "historical_results_invalidated": false,
+  "historical_status_documents_preserved": [
+    "PROJECT_RECOVERY_STATUS.md",
+    "PANEL_RESPONSE_MATRIX.md",
+    "review/CURRENT_EVIDENCE.md"
+  ],
+  "units": [
+    {
+      "dataset": "rico",
+      "horizon": 5,
+      "fold": 2,
+      "seed": 42,
+      "actual_exit": 0,
+      "seconds": 183.9655797000014,
+      "point_cells": 3,
+      "interval_cells": 6,
+      "tuning_fits": 8,
+      "final_fits": 2,
+      "reload_checks": 6,
+      "max_absolute_prediction_difference": 0.0,
+      "zero_fit_resume": true
+    },
+    {
+      "dataset": "bdg2",
+      "horizon": 1,
+      "fold": 2,
+      "seed": 42,
+      "actual_exit": 0,
+      "seconds": 1587.3503964999982,
+      "point_cells": 3,
+      "interval_cells": 6,
+      "tuning_fits": 8,
+      "final_fits": 2,
+      "reload_checks": 6,
+      "max_absolute_prediction_difference": 0.0,
+      "zero_fit_resume": true
+    }
+  ],
+  "total_real_tuning_fits": 16,
+  "total_real_final_fits": 4,
+  "tiny_fits": 0,
+  "no_fit_regression_checks": 15,
+  "failed_attempts_preserved": [
+    {
+      "log": "smart_building_conformal/outputs/matched_forecasting005/rico_bdg2_validation_v1/joint_preflight.log.json",
+      "exit_status": 4294967295,
+      "seconds": 161.89020519999758
+    },
+    {
+      "log": "smart_building_conformal/outputs/matched_forecasting005/rico_bdg2_validation_v1/readiness_rico.log.json",
+      "exit_status": 1,
+      "seconds": 12.459583099996962
+    }
+  ],
+  "reporting_attempt_exits": [
+    1,
+    0
+  ],
+  "reporting_failures_do_not_invalidate_models": true,
+  "local_links_checked": 118,
+  "manifest_files": 216,
+  "manifest_bytes": 67800025,
+  "max_file_bytes": 8728562,
+  "manifest_sha256": "3e86fcfe6025c6c19d7b1d257c72ec821eaa698257a8100e69962ee5e19d390a",
+  "manifest_excludes": [
+    "EVIDENCE_MANIFEST.csv",
+    "publication_validation.json"
+  ],
+  "full_study_ready": false,
+  "proposed_batch_launched": false,
+  "review_artifacts_ready": true,
+  "remote_verification": "performed after final commit; external receipt and delivery"
+}

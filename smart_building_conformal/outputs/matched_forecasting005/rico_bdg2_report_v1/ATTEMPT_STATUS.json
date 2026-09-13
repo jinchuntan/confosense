@@ -1,0 +1,14 @@
+{
+  "action": "combined analysis v1",
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "review\\matched_rico_bdg2_20260914\\analyze.py"
+  ],
+  "actual_exit": 1,
+  "models_fitted": 0,
+  "source_sha256": "c31a4e17f75981cd5fd2db84bedb9845b3c9c21c17772ab783971a0d7eded00e",
+  "error": "KeyError source_hash: historical temperature protocol stores executed source in checkpoint spec",
+  "scientific_results_invalidated": false,
+  "partial_output": "smart_building_conformal/outputs/matched_forecasting005/rico_bdg2_report_v1"
+}

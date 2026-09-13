@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 ROOT=Path(__file__).resolve().parents[2];SMART=ROOT/'smart_building_conformal'
 REVIEW=Path(__file__).resolve().parent;BASE=SMART/'outputs/matched_forecasting005'
-OUT=BASE/'rico_bdg2_report_v1';CHECKS=BASE/'rico_bdg2_validation_v1'
+OUT=BASE/'rico_bdg2_report_v2';CHECKS=BASE/'rico_bdg2_validation_v1'
 sys.path.insert(0,str(SMART))
 from src.unit_checkpoint import digest,source_digest
 from src.matched_models005 import forbid_fitting
@@ -40,7 +40,7 @@ def metric(frame):
 
 def main():
  OUT.mkdir(parents=True,exist_ok=False)
- pooled=[];cost=[];group_metrics=[];phase_metrics=[];selection=[];target=[];command=[];io=[];run_cost=[];provenance=[]
+ pooled=[];cost=[];group_metrics=[];phase_metrics=[];selection=[];target=[];command=[];io=[];run_cost=[];provenance=[];verification=[]
  history=csv(SMART/'outputs/amendment005/study_plan_v1/rico_run_history.csv').set_index('group_id')
  for key in KEYS:
   s=stem(key);run=BASE/s;audit=BASE/(s+'_audit');validation=load(audit/'validation.json');resume=load(CHECKS/(s+'_resume.json'))
@@ -49,6 +49,8 @@ def main():
   assert validation['saved_model_prediction_checks']==6 and validation['all_run_files_unchanged'] and validation['models_fitted']==0
   assert resume['models_fitted']==0 and resume['reused_model_units']==3 and resume['all_run_files_unchanged']
   log=load(str(run)+'.log.json');assert log['exit_status']==0
+  reloads=csv(audit/'saved_model_verification.csv')
+  verification.append(dict(dataset=key[0],actual_exit=log['exit_status'],point_cells=3,interval_cells=6,saved_model_checks=len(reloads),maximum_prediction_difference=reloads.max_absolute_difference.max(),completed_resume_fits=resume['models_fitted'],all_run_files_unchanged=resume['all_run_files_unchanged']))
   env=load(run/'execution_environment.json');process=load(str(run)+'.process.json');protocol=load(SMART/'protocols/matched_forecasting005'/s/'frozen_protocol.json')
   assert env['source_hash']==protocol['source_hash']==source_digest()
   points=csv(run/'point_summary.csv');intervals=csv(run/'interval_quality.csv')
@@ -89,7 +91,7 @@ def main():
    io.extend(dict(dataset=key[0],**r) for r in load(path))
   run_cost.append(dict(dataset=key[0],command_seconds=log['seconds'],process_cpu_seconds=process['process_lifetime_cpu_seconds'],preparation_seconds=env['preparation_resources']['seconds'],preparation_peak_rss_MiB=env['preparation_resources']['peak_rss_bytes']/2**20,action_peak_rss_MiB=process['action_resources']['peak_rss_bytes']/2**20,lifetime_peak_rss_MiB=process['ending_memory']['lifetime_peak_rss_bytes']/2**20,validation_seconds=load(CHECKS/(s+'_validate.log.json'))['seconds'],resume_seconds=load(CHECKS/(s+'_resume.log.json'))['seconds'],output_bytes=sum(p.stat().st_size for p in run.rglob('*') if p.is_file()),audit_bytes=sum(p.stat().st_size for p in audit.rglob('*') if p.is_file())))
   provenance.append(dict(dataset=key[0],horizon=key[1],outer_fold=key[2],model_seed=key[3],run_path=run.relative_to(ROOT).as_posix(),source_hash=protocol['source_hash'],protocol_hash=digest(SMART/'protocols/matched_forecasting005'/s/'frozen_protocol.json'),run_file_tree_hash=run_hash(run),evaluated_commit=env['code_commit'],historical_refits=0))
- write('pooled_comparison.csv',pooled);write('model_costs.csv',cost);write('group_metrics.csv',group_metrics);write('rico_phase_metrics.csv',phase_metrics);write('tuning_comparison.csv',selection);write('target_diagnostics.csv',target);write('checkpoint_io.csv',io);write('run_costs.csv',run_cost)
+ write('pooled_comparison.csv',pooled);write('model_costs.csv',cost);write('group_metrics.csv',group_metrics);write('rico_phase_metrics.csv',phase_metrics);write('tuning_comparison.csv',selection);write('target_diagnostics.csv',target);write('checkpoint_io.csv',io);write('run_costs.csv',run_cost);write('verification_summary.csv',verification)
  # Explicit equal-group diagnostics are separate from the pooled sample results.
  gm=pd.DataFrame(group_metrics);eq=[]
  for (ds,m,l),f in gm.groupby(['dataset','model','nominal_level']):
@@ -101,7 +103,8 @@ def main():
  # Reuse old numeric evidence with its original provenance, never refit/relabel.
  allrows=list(pooled)
  for ds,path,protocolpath in [('pleia',SMART/'outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913',SMART/'protocols/model_comparison_pilot_v1/frozen_protocol.json'),('pleia_energy',BASE/'pleia_energy_h1_f0_s42_v1',SMART/'protocols/matched_forecasting005/pleia_energy_h1_f0_s42_v1/frozen_protocol.json')]:
-  p=csv(path/'point_summary.csv').rename(columns={'seed':'model_seed'});i=csv(path/'interval_quality.csv').rename(columns={'seed':'model_seed'});allrows.extend(model_comparison(p,i));pr=load(protocolpath)
+  p=csv(path/'point_summary.csv').rename(columns={'seed':'model_seed'});i=csv(path/'interval_quality.csv').rename(columns={'seed':'model_seed'});allrows.extend(model_comparison(p,i));pr=load(path/'checkpoint_manifest.json')['spec']
+  assert pr['protocol_hash']==digest(protocolpath)
   for h in p.horizon.unique():
    provenance.append(dict(dataset=ds,horizon=int(h),outer_fold=0,model_seed=42,run_path=path.relative_to(ROOT).as_posix(),source_hash=pr['source_hash'],protocol_hash=digest(protocolpath),run_file_tree_hash=run_hash(path),evaluated_commit=load(path/'execution_environment.json').get('code_commit','see preserved original environment'),historical_refits=0))
  write('all_four_settings.csv',allrows);write('evidence_reuse_ledger.csv',provenance)

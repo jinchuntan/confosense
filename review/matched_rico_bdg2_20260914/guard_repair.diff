@@ -1,0 +1,22 @@
+diff --git a/smart_building_conformal/src/matched_models005.py b/smart_building_conformal/src/matched_models005.py
+index 826cfa8..1414da0 100644
+--- a/smart_building_conformal/src/matched_models005.py
++++ b/smart_building_conformal/src/matched_models005.py
+@@ -33,12 +33,16 @@ class PhaseMeter(ResourceMeter):
+ @contextlib.contextmanager
+ def forbid_fitting():
+     """Block learned fitting before its body; permit torch eval/train(False)."""
++    from .datasets.base import GroupPartitioner
++    # This exact method only assigns chronological labels from group IDs/start
++    # times. RICO preparation needs it; it learns no predictor or normalization.
++    partition_code = GroupPartitioner.fit.__code__
+     calls = []
+     old = sys.getprofile()
+     def guard(frame, event, arg):
+         module = frame.f_globals.get('__name__', '')
+         name = frame.f_code.co_name
+-        if event == 'call' and ((name in {'fit', 'partial_fit', 'fit_once', 'run_model'} and
++        if event == 'call' and frame.f_code is not partition_code and ((name in {'fit', 'partial_fit', 'fit_once', 'run_model'} and
+                                 module.startswith(('src.', 'xgboost.', 'sklearn.', 'mapie.'))) or
+                                (name == 'train' and module.startswith('xgboost.'))):
+             calls.append(module + '.' + name)

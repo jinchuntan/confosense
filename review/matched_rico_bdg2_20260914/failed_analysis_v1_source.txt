@@ -1,0 +1,147 @@
+"""Recompute group summaries, cost references and a fixed unlaunched batch."""
+import hashlib,json,sys
+from pathlib import Path
+import numpy as np
+import pandas as pd
+ROOT=Path(__file__).resolve().parents[2];SMART=ROOT/'smart_building_conformal'
+REVIEW=Path(__file__).resolve().parent;BASE=SMART/'outputs/matched_forecasting005'
+OUT=BASE/'rico_bdg2_report_v1';CHECKS=BASE/'rico_bdg2_validation_v1'
+sys.path.insert(0,str(SMART))
+from src.unit_checkpoint import digest,source_digest
+from src.matched_models005 import forbid_fitting
+KEYS=[('rico',5,2,42),('bdg2',1,2,42)]
+MODELS=['persistence','xgboost','attention_lstm']
+PHASES=['tuning','final_fit','calibration','inference']
+UNITS={'pleia':'degrees C','pleia_energy':'kWh per 10 minutes','rico':'degrees C','bdg2':'kWh per hour'}
+
+def load(path):return json.loads(Path(path).read_text(encoding='utf-8'))
+def csv(path):return pd.read_csv(path,keep_default_na=False,float_precision='round_trip')
+def write(name,rows):pd.DataFrame(rows).to_csv(OUT/name,index=False)
+def js(name,data):(OUT/name).write_text(json.dumps(data,indent=2,default=lambda x:x.item() if hasattr(x,'item') else str(x))+'\n',encoding='utf-8')
+def stem(key):return f'{key[0]}_h{key[1]}_f{key[2]}_s{key[3]}_v2'
+def run_hash(path):return hashlib.sha256('\n'.join(f'{p.relative_to(path).as_posix()}:{digest(p)}' for p in sorted(path.rglob('*')) if p.is_file()).encode()).hexdigest()
+
+def model_comparison(points,intervals):
+ rows=[]
+ for p in points.itertuples(index=False):
+  key=(p.dataset,p.horizon,p.outer_fold,p.model_seed)
+  row=dict(dataset=p.dataset,horizon=p.horizon,physical_minutes=p.horizon*{'pleia':10,'pleia_energy':10,'rico':1,'bdg2':60}[p.dataset],outer_fold=p.outer_fold,model_seed=p.model_seed,model=p.model,target_units=UNITS[p.dataset],mae=p.mae,rmse=p.rmse,n_fit=p.n_fit,n_calibration=p.n_calibration,n_test=p.n_evaluation,selected_candidate=p.selected_candidate,final_epochs=p.final_epochs,
+   model_phase_seconds=sum(getattr(p,x+'_seconds') for x in PHASES))
+  for level in [.9,.95]:
+   q=intervals[(intervals.dataset==p.dataset)&(intervals.horizon==p.horizon)&(intervals.outer_fold==p.outer_fold)&(intervals.model_seed==p.model_seed)&(intervals.model==p.model)&(intervals.nominal_level==level)]
+   assert len(q)==1
+   for field in ['coverage','mpiw','winkler','rank','q']:row[field+str(int(level*100))]=q.iloc[0][field]
+  rows.append(row)
+ return rows
+
+def metric(frame):
+ err=frame.y_true.to_numpy()-frame.point.to_numpy();lo=frame.lower.to_numpy();hi=frame.upper.to_numpy();y=frame.y_true.to_numpy();level=float(frame.nominal_level.iloc[0])
+ return dict(n=len(frame),mae=float(np.abs(err).mean()),rmse=float(np.sqrt(np.square(err).mean())),coverage=float(((y>=lo)&(y<=hi)).mean()),mpiw=float((hi-lo).mean()),winkler=float((hi-lo+2/(1-level)*(np.maximum(lo-y,0)+np.maximum(y-hi,0))).mean()),negative_points=int((frame.point<0).sum()),negative_lower_bounds=int((lo<0).sum()))
+
+def main():
+ OUT.mkdir(parents=True,exist_ok=False)
+ pooled=[];cost=[];group_metrics=[];phase_metrics=[];selection=[];target=[];command=[];io=[];run_cost=[];provenance=[];verification=[]
+ history=csv(SMART/'outputs/amendment005/study_plan_v1/rico_run_history.csv').set_index('group_id')
+ for key in KEYS:
+  s=stem(key);run=BASE/s;audit=BASE/(s+'_audit');validation=load(audit/'validation.json');resume=load(CHECKS/(s+'_resume.json'))
+  assert validation['passed'] and validation['point_cells']==3 and validation['interval_cells']==6
+  assert validation['real_tuning_fits_verified']==8 and validation['real_final_fits_verified']==2
+  assert validation['saved_model_prediction_checks']==6 and validation['all_run_files_unchanged'] and validation['models_fitted']==0
+  assert resume['models_fitted']==0 and resume['reused_model_units']==3 and resume['all_run_files_unchanged']
+  log=load(str(run)+'.log.json');assert log['exit_status']==0
+  reloads=csv(audit/'saved_model_verification.csv')
+  verification.append(dict(dataset=key[0],actual_exit=log['exit_status'],point_cells=3,interval_cells=6,saved_model_checks=len(reloads),maximum_prediction_difference=reloads.max_absolute_difference.max(),completed_resume_fits=resume['models_fitted'],all_run_files_unchanged=resume['all_run_files_unchanged']))
+  env=load(run/'execution_environment.json');process=load(str(run)+'.process.json');protocol=load(SMART/'protocols/matched_forecasting005'/s/'frozen_protocol.json')
+  assert env['source_hash']==protocol['source_hash']==source_digest()
+  points=csv(run/'point_summary.csv');intervals=csv(run/'interval_quality.csv')
+  comparison=model_comparison(points,intervals);pooled.extend(comparison);write(key[0]+'_comparison.csv',comparison)
+  for model in MODELS:
+   unit=run/'units'/f'{key[0]}_h{key[1]}_f{key[2]}_s{key[3]}_{model}'
+   payload=load(unit/'payload.json');p=points[points.model.eq(model)].iloc[0]
+   row=dict(dataset=key[0],model=model,**{phase+'_seconds':p[phase+'_seconds'] for phase in PHASES},model_phase_seconds=sum(p[x+'_seconds'] for x in PHASES),process_cpu_seconds=p.process_cpu_seconds,inference_rows_per_second=p.inference_rows_per_second,baseline_rss_MiB=p.baseline_rss_bytes/2**20,peak_rss_MiB=p.peak_rss_bytes/2**20,incremental_peak_rss_MiB=(p.peak_rss_bytes-p.baseline_rss_bytes)/2**20,artifact_serialization_seconds=payload['resources']['artifact_serialization']['seconds'],launch_ram_GiB=payload['launch_resources']['available_ram_bytes']/2**30,launch_3GiB_reference_met=payload['launch_resources']['launch_ram_reference_met'])
+   cost.append(row)
+   if model!='persistence':
+    t=csv(unit/'tuning.csv.gz');t['dataset']=key[0];t['model']=model;selection.extend(t.to_dict('records'))
+   pred=csv(unit/'predictions.csv.gz')
+   assert pred.group_id.nunique()==(41 if key[0]=='rico' else 10)
+   for level,level_frame in pred.groupby('nominal_level'):
+    parts=[]
+    for group,frame in level_frame.groupby('group_id'):
+     row=dict(dataset=key[0],model=model,group_id=group,nominal_level=level,aggregation='within-original-group sample mean',**metric(frame))
+     if key[0]=='rico':row['phase']=history.loc[group,'phase']
+     group_metrics.append(row);parts.append(row)
+    actual=metric(level_frame);saved=intervals[(intervals.model==model)&(intervals.nominal_level==level)].iloc[0]
+    for field in ['coverage','mpiw','winkler']:
+     np.testing.assert_allclose(actual[field],saved[field],atol=1e-12,rtol=1e-12)
+     np.testing.assert_allclose(np.average([r[field] for r in parts],weights=[r['n'] for r in parts]),actual[field],atol=1e-12,rtol=1e-12)
+    np.testing.assert_allclose(np.average([r['mae'] for r in parts],weights=[r['n'] for r in parts]),p.mae,atol=1e-12,rtol=1e-12)
+    np.testing.assert_allclose(np.sqrt(np.average([r['rmse']**2 for r in parts],weights=[r['n'] for r in parts])),p.rmse,atol=1e-12,rtol=1e-12)
+    if key[0]=='rico':
+     phase_frame=level_frame.copy();phase_frame['phase']=phase_frame.group_id.map(history.phase)
+     assert phase_frame.phase.notna().all()
+     for phase,frame in phase_frame.groupby('phase'):
+      phase_metrics.append(dict(dataset='rico',model=model,phase=phase,nominal_level=level,original_runs=frame.group_id.nunique(),aggregation='within-phase sample-weighted',**metric(frame)))
+   if model=='persistence':
+    for role,file in [('calibration','calibration.csv.gz'),('test','predictions.csv.gz')]:
+     frame=csv(unit/file)
+     if role=='test':frame=frame[frame.nominal_level==.9]
+     repeated=sum(int(f.y_true.diff().eq(0).sum()) for _,f in frame.groupby('group_id'))
+     target.append(dict(dataset=key[0],role=role,n=len(frame),groups=frame.group_id.nunique(),zeros=int(frame.y_true.eq(0).sum()),negative_targets=int(frame.y_true.lt(0).sum()),within_group_adjacent_equal=repeated,minimum=frame.y_true.min(),maximum=frame.y_true.max(),cleaning='unchanged frozen eligibility; no clipping'))
+  for path in run.glob('checkpoint_io_*.json'):
+   io.extend(dict(dataset=key[0],**r) for r in load(path))
+  run_cost.append(dict(dataset=key[0],command_seconds=log['seconds'],process_cpu_seconds=process['process_lifetime_cpu_seconds'],preparation_seconds=env['preparation_resources']['seconds'],preparation_peak_rss_MiB=env['preparation_resources']['peak_rss_bytes']/2**20,action_peak_rss_MiB=process['action_resources']['peak_rss_bytes']/2**20,lifetime_peak_rss_MiB=process['ending_memory']['lifetime_peak_rss_bytes']/2**20,validation_seconds=load(CHECKS/(s+'_validate.log.json'))['seconds'],resume_seconds=load(CHECKS/(s+'_resume.log.json'))['seconds'],output_bytes=sum(p.stat().st_size for p in run.rglob('*') if p.is_file()),audit_bytes=sum(p.stat().st_size for p in audit.rglob('*') if p.is_file())))
+  provenance.append(dict(dataset=key[0],horizon=key[1],outer_fold=key[2],model_seed=key[3],run_path=run.relative_to(ROOT).as_posix(),source_hash=protocol['source_hash'],protocol_hash=digest(SMART/'protocols/matched_forecasting005'/s/'frozen_protocol.json'),run_file_tree_hash=run_hash(run),evaluated_commit=env['code_commit'],historical_refits=0))
+ write('pooled_comparison.csv',pooled);write('model_costs.csv',cost);write('group_metrics.csv',group_metrics);write('rico_phase_metrics.csv',phase_metrics);write('tuning_comparison.csv',selection);write('target_diagnostics.csv',target);write('checkpoint_io.csv',io);write('run_costs.csv',run_cost);write('verification_summary.csv',verification)
+ # Explicit equal-group diagnostics are separate from the pooled sample results.
+ gm=pd.DataFrame(group_metrics);eq=[]
+ for (ds,m,l),f in gm.groupby(['dataset','model','nominal_level']):
+  eq.append(dict(dataset=ds,model=m,nominal_level=l,groups=len(f),aggregation='equal-original-group diagnostic',**{c:float(f[c].mean()) for c in ['mae','coverage','mpiw','winkler']},root_mean_group_mse=float(np.sqrt(np.mean(f.rmse**2)))))
+ write('equal_group_diagnostics.csv',eq)
+ for path in sorted(list(CHECKS.glob('*.log.json'))+[BASE/(stem(k)+'.log.json') for k in KEYS]):
+  r=load(path);command.append(dict(log=path.relative_to(ROOT).as_posix(),command=json.dumps(r['command']),started_utc=r['started_utc'],ended_utc=r['ended_utc'],seconds=r['seconds'],exit_status=r['exit_status'],logger_pid=r['logger_pid'],child_pid=r['child_pid'],learned_fits=10 if path.parent==BASE else 0))
+ write('command_measurements.csv',command)
+ # Reuse old numeric evidence with its original provenance, never refit/relabel.
+ allrows=list(pooled)
+ for ds,path,protocolpath in [('pleia',SMART/'outputs/model_comparison_pilot_v1/runs/pilot_v1_20260913',SMART/'protocols/model_comparison_pilot_v1/frozen_protocol.json'),('pleia_energy',BASE/'pleia_energy_h1_f0_s42_v1',SMART/'protocols/matched_forecasting005/pleia_energy_h1_f0_s42_v1/frozen_protocol.json')]:
+  p=csv(path/'point_summary.csv').rename(columns={'seed':'model_seed'});i=csv(path/'interval_quality.csv').rename(columns={'seed':'model_seed'});allrows.extend(model_comparison(p,i));pr=load(protocolpath)
+  for h in p.horizon.unique():
+   provenance.append(dict(dataset=ds,horizon=int(h),outer_fold=0,model_seed=42,run_path=path.relative_to(ROOT).as_posix(),source_hash=pr['source_hash'],protocol_hash=digest(protocolpath),run_file_tree_hash=run_hash(path),evaluated_commit=load(path/'execution_environment.json').get('code_commit','see preserved original environment'),historical_refits=0))
+ write('all_four_settings.csv',allrows);write('evidence_reuse_ledger.csv',provenance)
+ allframe=pd.DataFrame(allrows);contrasts=[]
+ for key,frame in allframe.groupby(['dataset','horizon','outer_fold','model_seed']):
+  x=frame[frame.model=='xgboost'].iloc[0];l=frame[frame.model=='attention_lstm'].iloc[0]
+  contrasts.append(dict(zip(['dataset','horizon','outer_fold','model_seed'],key),target_units=x.target_units,**{c+'_lstm_minus_xgboost':l[c]-x[c] for c in ['mae','rmse','coverage90','coverage95','mpiw90','mpiw95','winkler90','winkler95']},lstm_to_xgboost_model_seconds=l.model_phase_seconds/x.model_phase_seconds))
+ write('paired_descriptive_contrasts.csv',contrasts)
+ overlay=csv(BASE/'energy_h1_report_v1/completion_overlay.csv')
+ for key in KEYS:
+  take=(overlay.dataset==key[0])&(overlay.horizon==key[1])&(overlay.outer_fold==key[2])&(overlay.model_seed==key[3])&overlay.model.isin(MODELS)
+  assert take.sum()==6 and not overlay.loc[take,'status'].str.startswith('completed').any()
+  overlay.loc[take,'status']='completed_verified_rico_bdg2_v1';overlay.loc[take,'preserved_path']='outputs/matched_forecasting005/'+stem(key)
+  overlay.loc[take,'reason']='independent metric/artifact validation and zero-fit completed resume'
+ overlay.to_csv(OUT/'completion_overlay.csv',index=False)
+ done=overlay[overlay.model.isin(MODELS)&overlay.status.str.startswith('completed')];assert len(done)==36
+ remaining=csv(BASE/'energy_h1_report_v1/remaining_queue_updated.csv')
+ for key in KEYS:remaining=remaining[~((remaining.dataset==key[0])&(remaining.horizon==key[1])&(remaining.outer_fold==key[2])&(remaining.model_seed==key[3]))]
+ assert len(remaining)==189
+ refs=allframe.groupby(['dataset','horizon','outer_fold','model_seed']).agg(model_phase_seconds=('model_phase_seconds','sum'),fit_n=('n_fit','first')).reset_index()
+ write('measured_task_timing_references.csv',refs.to_dict('records'))
+ for idx,row in remaining.iterrows():
+  r=refs[refs.dataset==row.dataset];rates=r.model_phase_seconds/r.fit_n
+  remaining.loc[idx,'updated_low_model_seconds']=.5*float(rates.min())*row.fit_n
+  remaining.loc[idx,'updated_high_model_seconds']=3*float(rates.max())*row.fit_n
+ remaining['estimate_basis']='same-dataset measured model phases / fit rows; min/max across measured horizons x [0.5,3]; no operational timings'
+ remaining['prerequisite']='separate scoped authorization; fresh protocol/readiness and current-source identity; no implementation blocker in matched runner'
+ remaining.to_csv(OUT/'remaining_queue_updated.csv',index=False)
+ # Earliest three pending units per dataset, original queue order retained.
+ # This rule is fixed for coverage and never uses model outcomes.
+ batch=remaining.groupby('dataset',sort=False).head(3).sort_values('priority').copy();assert len(batch)==12 and batch.groupby('dataset').size().eq(3).all()
+ batch['batch_order']=np.arange(1,13);batch['new_tuning_fits']=8;batch['new_final_fits']=2;batch['point_cells']=3;batch['interval_cells']=6;batch['authorized']=False
+ batch.to_csv(OUT/'next_batch_units.csv',index=False)
+ summary=dict(completed_paired_units=6,total_paired_units=195,point_cells_completed=18,total_point_cells=585,interval_cells_completed=36,total_interval_cells=1170,remaining_paired_units=189,remaining_learned_fits=1890,
+  remaining_low_model_hours=float(remaining.updated_low_model_seconds.sum()/3600),remaining_high_model_hours=float(remaining.updated_high_model_seconds.sum()/3600),next_batch_units=12,next_batch_tuning_fits=96,next_batch_final_fits=24,next_batch_point_cells=36,next_batch_interval_cells=72,next_batch_low_model_minutes=float(batch.updated_low_model_seconds.sum()/60),next_batch_high_model_minutes=float(batch.updated_high_model_seconds.sum()/60),next_batch_authorized=False,next_batch_launched=False,full_study_ready=False)
+ js('completion_and_batch_summary.json',summary)
+ js('analysis_validation.json',dict(passed=True,models_fitted=0,new_point_cells=6,new_interval_cells=12,saved_model_checks=12,completed_zero_fit_resumes=2,group_level_cells=len(group_metrics),rico_phase_cells=len(phase_metrics),pooled_weighted_reconstruction_passed=True,source_hash=source_digest(),reused_paired_units=4,historical_refits=0,summary=summary))
+ print(json.dumps(summary,indent=2))
+
+if __name__=='__main__':
+ with forbid_fitting():main()

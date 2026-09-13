@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.matched_forecasting005",
+    "run",
+    "--matrix",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv",
+    "--dataset",
+    "bdg2",
+    "--horizon",
+    "1",
+    "--outer-fold",
+    "2",
+    "--model-seed",
+    "42",
+    "--design-dir",
+    "protocols/matched_forecasting005/bdg2_h1_f2_s42_v2",
+    "--out",
+    "outputs/matched_forecasting005/bdg2_h1_f2_s42_v2"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T16:55:19.094149+00:00",
+  "logger_pid": 22552,
+  "child_pid": 22132,
+  "ended_utc": "2026-09-13T17:21:46.444697+00:00",
+  "seconds": 1587.3503964999982,
+  "exit_status": 0
+}

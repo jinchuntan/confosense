@@ -1,3 +1,15 @@
+# Current status: RICO and BDG2 matched units completed
+
+14 September 2026. Both authorized units (RICO h5/fold2/seed42 and BDG2 h1/fold2/seed42) completed, each with actual exit0, eight tuning/two final learned fits, independent 3-point/6-interval validation, six saved-model checks and zero-fit completed resume. No historical fits or new tiny fits were repeated. The documented nonblocking RAM reference remains in effect.
+
+The core matched comparison is now **6/195 paired units, 18/585 point cells and 36/1,170 interval cells complete**; 189 units /1,890 learned fits remain. Historical protocols/results, BDG2 operational abstentions and earlier completion overlays are preserved. Broader interval methods, seasonal, operational/conditional challenge and robustness remain separate; full-study readiness is false.
+
+Read the [completed report](RICO_BDG2_MATCHED_FIRST_UNITS_REPORT.md), [evidence index](review/matched_rico_bdg2_20260914/EVIDENCE_INDEX.md) and [twelve-unit next-batch proposal](MATCHED_NEXT_BATCH_PROPOSAL.md). The larger batch is specified but not authorized or launched. It uses measured same-dataset costs from all four settings, preserves queue order and does not select units by model rankings.
+
+Branch: [review/matched-rico-bdg2-20260914](https://github.com/jinchuntan/confosense/tree/review/matched-rico-bdg2-20260914); evaluated pre-fit commit `350ef4fd1c92c12a982df2b8366023937515b65b`. The final delivery/branch history identifies the publication SHA.
+
+<!-- matched-rico-bdg2-20260914: historical content -->
+
 # Current panel response status: matched energy evidence
 
 14 September 2026. **PLEIA-energy h1/fold0/seed42 matched unit completed and validated.** Actual run exit 0; eight tuning and two final learned fits; persistence has zero learned fits. All three point and six own-model 90%/95% interval cells passed independent recalculation. Saved artifacts reproduce calibration/test predictions, and completed resume performs zero fits without changing run files.
