@@ -2,7 +2,7 @@
 
 Validated 0/52 new units. Scientific source SHA-256: `cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e`. Entry commit `3df9cbd480ffbfeac640580829e88c274fba2083`. [Authorizing handoff](AUTHORIZING_HANDOFF.md); [frozen scope](frozen_scope.csv); [joint pre-fit manifest](joint_pre_fit_manifest.json); [source archive](evaluated_source.zip); [seed path probes](seed_path_preflight.json); [cross-seed support](cross_seed_support.csv).
 
-[Progress and exact restart](PROGRESS_AND_RESTART.md). [Failure diagnosis](../../MATCHED_FAILURE_DIAGNOSIS.md), [diagnostic source tables](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/diagnosis_v2), [diagnostic validation](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/diagnosis_v2/validation.json). The first diagnostic attempt is retained separately; floating-point boundary ties were resolved by using the saved inclusive endpoints.
+[Evaluated pre-fit commit](evaluated_commit.json). [Progress and exact restart](PROGRESS_AND_RESTART.md). [Failure diagnosis](../../MATCHED_FAILURE_DIAGNOSIS.md), [diagnostic source tables](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/diagnosis_v2), [diagnostic validation](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/diagnosis_v2/validation.json). The first diagnostic attempt is retained separately; floating-point boundary ties were resolved by using the saved inclusive endpoints.
 
 [Broader-method and alert implementation readiness](../../MATCHED_METHOD_READINESS_MAP.md).
 
