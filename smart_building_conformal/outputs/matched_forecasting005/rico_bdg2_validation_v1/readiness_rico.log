@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_forecasting005.py", line 354, in <module>
+    result, args = main()
+                   ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_forecasting005.py", line 333, in main
+    result = readiness(protocol, args.matrix, key, args.receipt or ready)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_forecasting005.py", line 206, in readiness
+    data, roles = fresh_data(protocol)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_forecasting005.py", line 81, in fresh_data
+    prepared = prepare(cfg)
+               ^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\model_comparison_pilot.py", line 28, in prepare
+    return SI.causal_prepared(get_adapter(cfg.get("adapter","pleia")).prepare(cfg),
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\datasets\rico.py", line 346, in prepare
+    ).fit(series_list)
+      ^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\datasets\base.py", line 215, in fit
+    def fit(self, series_list: list[PreparedSeries]) -> "GroupPartitioner":
+
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\datasets\base.py", line 215, in fit
+    def fit(self, series_list: list[PreparedSeries]) -> "GroupPartitioner":
+
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_models005.py", line 45, in guard
+    raise AssertionError('fitting forbidden: ' + calls[-1])
+AssertionError: fitting forbidden: src.datasets.base.fit

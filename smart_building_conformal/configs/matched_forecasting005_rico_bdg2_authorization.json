@@ -1,0 +1,18 @@
+{
+  "version": "matched_rico_bdg2_authorization_v1",
+  "instruction_commit": "d334f2b36144b58434725d81c7de20c9324954b8",
+  "instruction_path": "review/NEXT_TASK_MATCHED_RICO_BDG2.md",
+  "entry_commit": "b26ee5b6a2cfb322b392e017e627bf3c96339c78",
+  "real_fitting_authorized": true,
+  "allowed_units": [["rico",5,2,42],["bdg2",1,2,42]],
+  "models": ["persistence", "xgboost", "attention_lstm"],
+  "nominal_levels": [0.9, 0.95],
+  "real_tuning_fits": 16,
+  "real_final_learned_fits": 4,
+  "remaining_queue_authorized": false,
+  "conditional_challenge_authorized": false,
+  "nonblocking_launch_ram": true,
+  "resource_policy": "Preserve the later user instruction: record 3 GiB launch RAM reference without blocking. Retain 256 MiB epoch floor, 8 GiB disk check, CPU-only, one numerical/Torch thread, n_jobs=1 and batch256.",
+  "execution_order": "RICO then BDG2 after RICO integrity passes and current resources permit; rankings and coverage never govern continuation.",
+  "provenance_note": "Top-level runner parent_review_commit and instruction_commit identify the original runner/design handoff. This nested authorization and the joint manifest identify the current authorizing instruction. No historical authorization or source identity is replaced."
+}

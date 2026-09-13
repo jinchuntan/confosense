@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.matched_forecasting005",
+    "readiness",
+    "--matrix",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv",
+    "--dataset",
+    "bdg2",
+    "--horizon",
+    "1",
+    "--outer-fold",
+    "2",
+    "--model-seed",
+    "42",
+    "--authorization",
+    "configs/matched_forecasting005_rico_bdg2_authorization.json",
+    "--design-dir",
+    "protocols/matched_forecasting005/bdg2_h1_f2_s42_v2"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-13T16:46:14.062042+00:00",
+  "logger_pid": 22180,
+  "child_pid": 19264,
+  "ended_utc": "2026-09-13T16:46:36.291982+00:00",
+  "seconds": 22.22967570000037,
+  "exit_status": 0
+}
