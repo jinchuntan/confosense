@@ -1,0 +1,46 @@
+LAUNCH pleia_energy_h6_f2_s42_persistence; available RAM=4.54 GiB
+START pleia_energy_h6_f2_s42_persistence final candidate=0 epochs=None
+COMPLETE pleia_energy_h6_f2_s42_persistence
+LAUNCH pleia_energy_h6_f2_s42_xgboost; available RAM=4.53 GiB
+START pleia_energy_h6_f2_s42_xgboost tuning candidate=0 inner=0
+START pleia_energy_h6_f2_s42_xgboost tuning candidate=0 inner=1
+START pleia_energy_h6_f2_s42_xgboost tuning candidate=1 inner=0
+START pleia_energy_h6_f2_s42_xgboost tuning candidate=1 inner=1
+START pleia_energy_h6_f2_s42_xgboost final candidate=0 epochs=None
+COMPLETE pleia_energy_h6_f2_s42_xgboost
+LAUNCH pleia_energy_h6_f2_s42_attention_lstm; available RAM=4.42 GiB
+START pleia_energy_h6_f2_s42_attention_lstm tuning candidate=0 inner=0
+pleia_energy_h6_f2_s42_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.7464299582933531, 'validation_mae': 0.09802627298848336}
+pleia_energy_h6_f2_s42_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.41573369040072544, 'validation_mae': 0.0813939675604352}
+pleia_energy_h6_f2_s42_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.31683328911710323, 'validation_mae': 0.08629971345386266}
+START pleia_energy_h6_f2_s42_attention_lstm tuning candidate=0 inner=1
+pleia_energy_h6_f2_s42_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.6485606963387585, 'validation_mae': 0.16479185704631036}
+pleia_energy_h6_f2_s42_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.43814023470801444, 'validation_mae': 0.1487704518467489}
+START pleia_energy_h6_f2_s42_attention_lstm tuning candidate=1 inner=0
+pleia_energy_h6_f2_s42_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.8652112015242716, 'validation_mae': 0.14845574818382756}
+pleia_energy_h6_f2_s42_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.45079350432917525, 'validation_mae': 0.08096678568876098}
+pleia_energy_h6_f2_s42_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.3792511656832155, 'validation_mae': 0.08335691706720487}
+START pleia_energy_h6_f2_s42_attention_lstm tuning candidate=1 inner=1
+pleia_energy_h6_f2_s42_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.7440242683424533, 'validation_mae': 0.17313279585404828}
+pleia_energy_h6_f2_s42_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.46442956204939045, 'validation_mae': 0.14694636136594444}
+START pleia_energy_h6_f2_s42_attention_lstm final candidate=0 epochs=5
+pleia_energy_h6_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.5181687950869075}
+pleia_energy_h6_f2_s42_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.3262251383098789}
+COMPLETE pleia_energy_h6_f2_s42_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "2209e00bc338132a6a2a2933be0893ff9f893cbddb45082541941604ab05632b",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "6", "--outer-fold", "2", "--model-seed", "42", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s42_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_energy_h6_f2_s42_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s42_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-13T17:57:01.523478+00:00", "logger_pid": 24332, "child_pid": 24792, "ended_utc": "2026-09-13T17:58:19.010031+00:00", "seconds": 77.48377459999756, "exit_status": 0}
