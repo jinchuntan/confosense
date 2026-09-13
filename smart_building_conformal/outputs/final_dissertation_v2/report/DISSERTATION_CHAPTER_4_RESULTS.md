@@ -1,8 +1,10 @@
-# Chapter 4 — Results (dissertation draft)
+# Chapter 4 preparation
 
-> The original test outputs were inspected and used to diagnose the pipeline, so they are no longer a pristine holdout. Corrected performance is estimated through fully nested post-audit evaluation and is **not** presented as validation on an untouched holdout.
+> Previously inspected test data remain previously inspected. A corrected rerun or additional seeds do not create an untouched holdout. Historical results require recomputation after the integration repairs; passing software tests does not establish scientific validity.
 
-**Tiers:** *confirmed* = paired/CI-supported on adequate independent units · *descriptive* = correct arithmetic, too few independent units for a CI · *exploratory* = post-hoc or endpoint differs from the frozen one · *unsupported/prohibited* = must not be claimed.
+Core source: `outputs\final_dissertation_v2\runs\full_20260831_220811` — **historical_requires_rerun**.
+Extension source: `outputs\final_dissertation_v2\runs\robx_full_20260902_080752` — **missing**.
 
-Structure: 4.1 data inventory (`FULL_RUN_INVENTORY.csv`); 4.2 point forecasting (fig01); 4.3 interval validity vs own nominal (fig02, `NOMINAL_COVERAGE_AUDIT.csv`) — undercoverage in 44/60 units is a central result; 4.4 method selection & feasibility (fig03, fig10) — 12/60 feasible, abstention as a scientific outcome; 4.5 alert reliability three-tier (fig06); 4.6 paired ablation (fig04, fig05); 4.7 robustness/contamination/recovery (fig07–fig09).
-Every number in the chapter must be copied from the CSVs cited above; this draft intentionally contains structure plus the tiered numbers in FINAL_DISSERTATION_RESULTS.md rather than duplicating them.
+Current numerical dissertation findings are not established by this report. See repository-root `INTEGRATION_REPAIR_REPORT.md` for repairs, unresolved design decisions and the required rerun.
+
+Pending repaired evidence: data/support inventory; Attention-LSTM, XGBoost and persistence across declared horizons; model-specific 90%/95% intervals; feasibility and abstentions; paired ablations; robustness; measured resources.

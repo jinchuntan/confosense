@@ -106,6 +106,12 @@ def _protocol_ok(rep: Report, out_root: Path) -> None:
 
 
 def _no_pending_audit(rep: Report, out_root: Path) -> None:
+    integration = out_root / "audit" / "integration_repair_status.json"
+    status = json.loads(integration.read_text(encoding="utf-8")) if integration.exists() else {}
+    rep.add("integration_scientific_decisions_resolved", status.get("design_resolved") is True,
+            "integration repair does not resolve undeclared model pairings, inner aggregation or endpoints")
+    rep.add("integration_evidence_recomputed", status.get("evidence_recomputed") is True,
+            "historical runs and publication markers predate the integration repairs")
     audit = out_root / "audit" / "leakage_audit.json"
     if not audit.exists():
         rep.add("no_audit_item_pending", False, f"missing {audit}")
@@ -153,6 +159,10 @@ def _completed_run(rep: Report, out_root: Path) -> None:
     run = full[-1]
     summ = json.loads((run / "engine_summary.json").read_text(encoding="utf-8"))
     fast = bool(summ.get("fast", True))
+    rep.add("repaired_execution_lineage", summ.get("integration_version") == 1,
+            "requires a run produced after integration repair")
+    rep.add("declared_methodology_executed", summ.get("full_declared_methodology_complete") is True,
+            "primary-horizon interval-owned alert core is not the full declared study")
     rep.add("full_nonfast_run_present", not fast, f"run={run.name}, fast={fast}")
 
     want_ds = {"pleia", "pleia_energy", "rico", "bdg2"}
@@ -165,15 +175,13 @@ def _completed_run(rep: Report, out_root: Path) -> None:
             f"datasets {sorted(ds)}; folds "
             f"{sorted({v.get('n_folds') for v in ds.values()})}")
 
-    cis = out_root / "metrics" / "final_cis.csv"
+    cis = out_root / "metrics" / "final_cis_corrected.csv"
     ok_cis = False
     if cis.exists():
         import csv
         with open(cis, encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
-        ok_cis = bool(rows) and all(
-            r.get("estimate") not in (None, "") and r.get("ci_low") not in (None, "")
-            and r.get("ci_high") not in (None, "") for r in rows)
+        ok_cis = bool(rows) and all(_valid_ci_record(r) for r in rows)
     rep.add("estimates_with_cis_present", ok_cis,
             f"{cis.name} {'ok' if ok_cis else 'missing/incomplete'}")
 
@@ -200,6 +208,24 @@ def _completed_run(rep: Report, out_root: Path) -> None:
             else "no figure_index or missing source hashes")
 
 
+def _valid_ci_record(row):
+    """A justified absent CI is valid accounting, not a claim of precision."""
+    import math
+    try:
+        n = int(row["n_independent_units"])
+        if row.get("method") == "no_feasible_units":
+            return n == 0 and row.get("metric") == "ALL"
+        if not math.isfinite(float(row["estimate"])):
+            return False
+        if str(row.get("method", "")).startswith("NA_insufficient_independent_groups"):
+            return 0 < n < 4 and all(str(row.get(k)).upper() in ("NA", "NAN", "")
+                                    for k in ("ci_low", "ci_high"))
+        lo, hi = float(row["ci_low"]), float(row["ci_high"])
+        return n > 0 and math.isfinite(lo) and math.isfinite(hi) and lo <= hi
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
 def _extension_checks(rep: Report, out_root: Path) -> None:
     """Amendment-003 extension: completeness, zero-control identity, denominators."""
     runs = out_root / "runs"
@@ -217,10 +243,14 @@ def _extension_checks(rep: Report, out_root: Path) -> None:
             f"run={run.name}, fast={summ.get('fast')}")
     want = {"pleia", "pleia_energy", "rico", "bdg2"}
     ds = summ.get("datasets", {})
-    fams_ok = all({"clean", "fault", "contamination", "recovery"}
-                  <= set(v.get("families", [])) for v in ds.values())
-    rep.add("extension_matrix_complete", want <= set(ds) and fams_ok,
-            f"datasets {sorted(ds)}")
+    from .evidence_status import extension_matrix
+    try:
+        cells = extension_matrix(run)
+        matrix_ok = want == set(ds) and summ.get("integration_version") == 1
+        detail = f"{len(cells)} cells; exact dataset/fold/seed/cell keys checked"
+    except (ValueError, KeyError, OSError) as exc:
+        matrix_ok, detail = False, str(exc)
+    rep.add("extension_matrix_complete", matrix_ok, detail)
     # zero-control identity + denominators from the cells themselves
     import csv
     zc_ok, den_ok, checked = True, True, 0

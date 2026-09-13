@@ -1,13 +1,10 @@
-# Contributions, limitations and future work
+# Contributions under evaluation
 
-> The original test outputs were inspected and used to diagnose the pipeline, so they are no longer a pristine holdout. Corrected performance is estimated through fully nested post-audit evaluation and is **not** presented as validation on an untouched holdout.
+> Previously inspected test data remain previously inspected. A corrected rerun or additional seeds do not create an untouched holdout. Historical results require recomputation after the integration repairs; passing software tests does not establish scientific validity.
 
-## Contributions
-1. A leakage-audited, group-safe, physical-time conformal alerting pipeline with fail-closed integrity gates and machine-checkable validation.
-2. Feasibility-first evaluation: `no_feasible_configuration` as a reported outcome under a frozen operating policy.
-3. Paired evidence that conformal calibration reduces background workload at comparable recall (exploratory tier).
-4. Closed-loop fault-absorption characterisation with causal residual delay (amendment-003 extension).
-## Limitations
-- 3 independent periods (PLEIA), 3 evaluated runs (RICO), 10 buildings (BDG2); undercoverage vs nominal; matched-budget endpoint not computed; contamination family uses residual-offset construction; no peak-memory instrumentation; recovery floor-limited.
-## Future work
-- Confirmatory RICO expansion over the 204 untouched runs; matched-budget operating curves; adaptive conformal methods targeting the observed undercoverage; real fault labels.
+Core source: `outputs\final_dissertation_v2\runs\full_20260831_220811` — **historical_requires_rerun**.
+Extension source: `outputs\final_dissertation_v2\runs\robx_full_20260902_080752` — **missing**.
+
+Current numerical dissertation findings are not established by this report. See repository-root `INTEGRATION_REPAIR_REPORT.md` for repairs, unresolved design decisions and the required rerun.
+
+Candidate contributions are the auditable interval-alert pipeline and explicit feasibility accounting. Their empirical benefit remains to be evaluated after repair. LSTM comparisons, matched-budget alerting, full robustness, memory measurement and wider independent evaluation are outstanding. No claim is made that the remaining RICO runs are untouched.

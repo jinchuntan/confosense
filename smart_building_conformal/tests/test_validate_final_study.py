@@ -16,15 +16,19 @@ def test_validator_passes_design_checks_now():
     assert by["full_study_unchanged"].ok
 
 
-def test_publication_mode_passes_now_that_the_full_run_exists():
+def test_publication_mode_rejects_historical_evidence_after_integration_defects():
     rep = V.run("outputs/final_dissertation_v2", run_tests=False,
                 mode="publication")
     by = {c.name: c for c in rep.checks}
-    # The corrected non-fast run, its CIs, figures and reports all exist.
+    # Historical files remain present; existence does not validate repaired code.
     assert by["full_nonfast_run_present"].ok
     assert by["run_matrix_complete"].ok
     assert by["estimates_with_cis_present"].ok
-    assert rep.passed
+    assert not by["repaired_execution_lineage"].ok
+    assert not by["declared_methodology_executed"].ok
+    assert not by["integration_scientific_decisions_resolved"].ok
+    assert not by["integration_evidence_recomputed"].ok
+    assert not rep.passed
 
 
 def test_validator_fails_closed_on_empty_output_root(tmp_path):

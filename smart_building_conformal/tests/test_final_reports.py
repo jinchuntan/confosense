@@ -32,10 +32,11 @@ def test_reports_use_csv_values_and_honesty_clause(tmp_path):
     written = R.build(run, out, ["rico"])
     assert "FINAL_DISSERTATION_RESULTS.md" in written
     txt = (out / "report" / "FINAL_DISSERTATION_RESULTS.md").read_text()
-    assert "0.720" in txt                       # read from final_cis.csv
+    assert "0.720" not in txt                   # superseded CIs are not current findings
+    assert "superseded statistically" in txt
     assert "holdout" in txt                      # mandatory honesty clause
     assert "within-building" in txt              # safe BDG2 wording
-    assert "no_feasible_configuration" in txt    # abstention kept in the report
+    assert "historical" in txt.lower()
 
 
 def test_reports_report_nothing_when_cis_absent(tmp_path):

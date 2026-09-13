@@ -1,3 +1,5 @@
+> **Historical document ? status changed 13 September 2026.** This retained account predates the integration repairs. Its performance/achievement statements do not establish current findings. See `INTEGRATION_REPAIR_REPORT.md` at the repository root and `audit/integration_repair_status.json`. Historical metrics and publication markers are preserved, not revalidated.
+
 CHECK                                              RESULT
 protocol_parses_and_validates                      PASS  schema_version=2
 protocol_hash_recorded                             PASS  canonical=07bf304aceeafc74...

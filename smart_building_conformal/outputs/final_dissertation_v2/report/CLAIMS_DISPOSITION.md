@@ -1,3 +1,5 @@
+> **Historical document ? status changed 13 September 2026.** This retained account predates the integration repairs. Its performance/achievement statements do not establish current findings. See `INTEGRATION_REPAIR_REPORT.md` at the repository root and `audit/integration_repair_status.json`. Historical metrics and publication markers are preserved, not revalidated.
+
 # Claims disposition after the post-run statistical audit
 
 Tiers: **confirmed** (paired/CI-supported on adequate independent units) ·

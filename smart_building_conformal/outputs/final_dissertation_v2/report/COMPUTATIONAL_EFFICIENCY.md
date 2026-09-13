@@ -1,11 +1,10 @@
-# Computational efficiency
+# Computational evidence status
 
-> The original test outputs were inspected and used to diagnose the pipeline, so they are no longer a pristine holdout. Corrected performance is estimated through fully nested post-audit evaluation and is **not** presented as validation on an untouched holdout.
+> Previously inspected test data remain previously inspected. A corrected rerun or additional seeds do not create an untouched holdout. Historical results require recomputation after the integration repairs; passing software tests does not establish scientific validity.
 
-Interval-model fit wall-time per unit (seconds), extension run:
-- bdg2: mean 8.8s, max 8.8s
-- pleia: mean 4.5s, max 4.5s
-- pleia_energy: mean 6.7s, max 6.7s
-- rico: mean 4.8s, max 4.8s
+Core source: `outputs\final_dissertation_v2\runs\full_20260831_220811` — **historical_requires_rerun**.
+Extension source: `outputs\final_dissertation_v2\runs\robx_full_20260902_080752` — **missing**.
 
-Peak memory was not instrumented; wall-clock only — limitation.
+Current numerical dissertation findings are not established by this report. See repository-root `INTEGRATION_REPAIR_REPORT.md` for repairs, unresolved design decisions and the required rerun.
+
+No validated Attention-LSTM/XGBoost resource comparison is available. Do not extrapolate full-run cost from smoke timings. The next comparison must measure tuning, refitting and inference separately, plus process peak memory, on matched support. PyTorch in the existing environment is CPU-only.
