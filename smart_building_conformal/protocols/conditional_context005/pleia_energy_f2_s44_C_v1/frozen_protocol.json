@@ -1,0 +1,206 @@
+{
+  "version": "conditional_context005_v1",
+  "manifest": {
+    "version": "conditional_context005_v1",
+    "dataset": "pleia_energy",
+    "outer_fold": 2,
+    "model_seed": 44,
+    "horizon": 1,
+    "synthetic": false,
+    "tiny_estimator": false,
+    "controls": [
+      {
+        "control_id": "quantile_static",
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_static",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_rolling",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 24,
+        "window": 250,
+        "min_samples": 50
+      },
+      {
+        "control_id": "persistence_static",
+        "method": "persistence_split",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      }
+    ],
+    "rules": [
+      {
+        "rule_id": "single_sample",
+        "window_minutes": 10.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true
+      },
+      {
+        "rule_id": "30min_3of3",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 3,
+        "applicable": true
+      },
+      {
+        "rule_id": "60min_4of6",
+        "window_minutes": 60,
+        "k": 4,
+        "m": 6,
+        "applicable": true
+      },
+      {
+        "rule_id": "180min_3of18",
+        "window_minutes": 180,
+        "k": 3,
+        "m": 18,
+        "applicable": true
+      },
+      {
+        "rule_id": "360min_4of36",
+        "window_minutes": 360,
+        "k": 4,
+        "m": 36,
+        "applicable": true
+      }
+    ],
+    "expected_contexts": 68,
+    "expected_schedules": 2856,
+    "selection": "none",
+    "endpoint": "C_effective_fault_conditional_context",
+    "execution_authorized": true,
+    "authorization_kind": "explicit_real_C_run"
+  },
+  "manifest_path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_energy_context005_multiseed_20260915\\pleia_energy_f2_s44_C_v1_execution_manifest.json",
+  "manifest_sha256": "ba04de5be758ba8d6d1a8a4016d8135036e8cde7564e936f19d30bf2b62e0293",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "data_identity": {
+    "features": "633e79eb79b8778c70bc95ea7872268a055c1ab806a8f7488b60ec806ab76a05",
+    "outcomes": "ffb95733782c036ec9d881fde74589cdf3296b375e408bf2565fd65d02988249",
+    "role_rows": {
+      "final_fit": "2acfca0abbb22fb417ee00902af6ff2acd211f5dd2458147c718b645b41333f0",
+      "final_calibration": "4cb1893676fdfda3a26b12ca5253a05a2c1133fd6c12c991d5881b6af61f326b",
+      "outer_test": "6c2d46717d71eb6b29b59a07408560e06a126e79712e681314be33b12ccea59d"
+    },
+    "context_hash": "68cfa81783a7dc7aae5f1178b4b8de88cad09109e63a829bb13b1cb7ca3abe48",
+    "schedule_hash": "5ccbe371ad00d06e5b5643404260f9244348aa27ed8470ee9db3d0a81c9ec5e2",
+    "cache_sha256": "4ba69f2abac5eaa088504b5406a847652baffbe5a35d7dfd288d9a85f7c4e49f",
+    "columns": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_6",
+      "target_lag_12",
+      "target_daily_lag",
+      "target_weekly_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_144",
+      "target_rollstd_144",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "target_was_missing",
+      "tmed_was_missing",
+      "hrmed_was_missing",
+      "radmed_was_missing"
+    ],
+    "frequency": "0 days 00:10:00",
+    "fcfg": {
+      "target_lags": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        6,
+        144
+      ],
+      "include_weekly": true,
+      "covariates": [
+        "tmed",
+        "hrmed",
+        "radmed"
+      ]
+    }
+  },
+  "source_inputs": {
+    "smart_building_conformal/outputs/amendment005/support_design_v1/proposal_spec.json": "9c3727839680ff020f9548cb6e4a2a9b6ca8750d40117a94d0262a8dd41b4234",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/proposal_roles.csv": "a7551c0bbc4fe349a89ecfd8fbd7ff45091a16d168f0dfc3d29697012cabcf55",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/challenge_contexts.csv": "cbe05d2143a6af9996c75573c941e17639f7253179542969e6864317be7354cc",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/challenge_schedules.csv.gz": "99328339f633694616b253217cefb1e0b15c6642b28b89b6e5fc91a6e61ccb88",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/challenge_rule_applicability.csv": "5bd575ed8a7d442b459555c93b6cacd791ff1b1e58da6429ff932f45a52c760b",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/original_groups.csv": "510dd308cfc1275d1cd67c379776a06640bdc8b4cb72ffead44607260135b646",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/pleia_energy_operational_membership_observations.csv.gz": "57026d6fa11ad2c90eaff097a250e265c4e2830ba1b81de68b363d0ea90c986d",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/validation.json": "7580ca96784f2f074b07ef899d0b59b173afba0f1d173980c9a129deb02958e6",
+    "smart_building_conformal/outputs/amendment005/support_final_checks_v1/challenge_zero_controls.csv": "8240823f19bc0371f92eb282ee2d1fd2194623fefd3253809a6b1beb79b9ac37",
+    "smart_building_conformal/outputs/amendment005/support_final_checks_v1/challenge_inference_support.csv": "f056ea5afca5de7ec240e1a7db2d1cabd83140c102a6250ece694ce263b75f5d",
+    "smart_building_conformal/outputs/amendment005/study_plan_v1/challenge_aliases.csv": "66d8904b3f697d973ff7005bd985296dcf4c40598d010f9e00a326ffd6fa4cf8"
+  },
+  "design_hashes": {
+    "contexts.csv": "8f783dfe06f9b91fa72f82153d7b1289705b815482a7d10b70d21efb8facb15d",
+    "roles.csv.gz": "27397351ad5cf1ab9bad61be68a1e00ab732b933ab6e8e06373142bbbafd4a1f",
+    "schedules.csv.gz": "c088bbae8341b1488f38c97060a10e7a119e5e18b3e5d8e8cdc3d5f6e1917966"
+  },
+  "rows": {
+    "final_fit": 14855,
+    "final_calibration": 4954,
+    "outer_test": 9907
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "calibrator_conformalize": 2,
+    "persistence_radius": 1
+  },
+  "owner_reuse": "new C owner required unless exact features/roles/calibration/parameters/source contract proven",
+  "static_convention": "MAPIE1.4.1 native asymmetric tail correction; emitted pair ordered",
+  "rolling_convention": "max-score ceil((n+1)*.95); observe/compare/release before scheduled origin update",
+  "resource_policy": {
+    "threads": 1,
+    "device": "cpu",
+    "launch_ram_reference_nonblocking": true,
+    "launch_ram_reference_bytes": 3221225472,
+    "disk_floor_bytes": 8589934592,
+    "batch": 256
+  },
+  "frozen_utc": "2026-09-14T23:38:09.182055+00:00",
+  "full_study_ready": false,
+  "models_fitted": 0
+}

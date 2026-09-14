@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "implementation_ready": true,
+  "execution_authorized": true,
+  "protocol_sha256": "3fe9fc8d9219f65773551040dda0b325c4b0e5fba1817240b700462a58880556",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "models_fitted": 0,
+  "required_new_quantile_estimators": 3,
+  "required_new_cqr_wrappers": 1,
+  "required_conformalize_calls": 2,
+  "resource_snapshot": {
+    "rss_bytes": 363573248,
+    "private_bytes": 321298432,
+    "lifetime_peak_rss_bytes": 417824768,
+    "available_ram_bytes": 2989989888,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 22222815232,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": false,
+    "launch_ram_reference_nonblocking": true
+  },
+  "scope": {
+    "version": "conditional_context005_v1",
+    "dataset": "pleia_energy",
+    "outer_fold": 2,
+    "model_seed": 45,
+    "horizon": 1,
+    "synthetic": false,
+    "tiny_estimator": false,
+    "controls": [
+      {
+        "control_id": "quantile_static",
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_static",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_rolling",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 24,
+        "window": 250,
+        "min_samples": 50
+      },
+      {
+        "control_id": "persistence_static",
+        "method": "persistence_split",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      }
+    ],
+    "rules": [
+      {
+        "rule_id": "single_sample",
+        "window_minutes": 10.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true
+      },
+      {
+        "rule_id": "30min_3of3",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 3,
+        "applicable": true
+      },
+      {
+        "rule_id": "60min_4of6",
+        "window_minutes": 60,
+        "k": 4,
+        "m": 6,
+        "applicable": true
+      },
+      {
+        "rule_id": "180min_3of18",
+        "window_minutes": 180,
+        "k": 3,
+        "m": 18,
+        "applicable": true
+      },
+      {
+        "rule_id": "360min_4of36",
+        "window_minutes": 360,
+        "k": 4,
+        "m": 36,
+        "applicable": true
+      }
+    ],
+    "expected_contexts": 68,
+    "expected_schedules": 2856,
+    "selection": "none",
+    "endpoint": "C_effective_fault_conditional_context",
+    "execution_authorized": true,
+    "authorization_kind": "explicit_real_C_run"
+  },
+  "utc": "2026-09-14T23:38:28.428288+00:00"
+}
