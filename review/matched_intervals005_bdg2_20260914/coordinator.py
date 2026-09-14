@@ -162,7 +162,7 @@ def main():
             frozen=read(REVIEW/'joint_pre_fit_manifest.json');evaluated=read(REVIEW/'evaluated_commit.json')
             subprocess.run(['git','merge-base','--is-ancestor',evaluated['commit'],'HEAD'],cwd=ROOT,check=True)
             from src.unit_checkpoint import source_digest
-            recovery_path=next((REVIEW/name for name in ('VALIDATION_RECOVERY_COMMANDS_V4.json','VALIDATION_RECOVERY_COMMANDS_V3.json','VALIDATION_RECOVERY_COMMANDS.json') if (REVIEW/name).exists()),REVIEW/'VALIDATION_RECOVERY_COMMANDS.json')
+            recovery_path=next((REVIEW/name for name in ('VALIDATION_RECOVERY_COMMANDS_V5.json','VALIDATION_RECOVERY_COMMANDS_V4.json','VALIDATION_RECOVERY_COMMANDS_V3.json','VALIDATION_RECOVERY_COMMANDS.json') if (REVIEW/name).exists()),REVIEW/'VALIDATION_RECOVERY_COMMANDS.json')
             recovery=read(recovery_path) if recovery_path.exists() else None
             audit_path=Path(recovery.get('audit_manifest',str(REVIEW/'VALIDATION_ERRATUM.json'))) if recovery else None
             if recovery:

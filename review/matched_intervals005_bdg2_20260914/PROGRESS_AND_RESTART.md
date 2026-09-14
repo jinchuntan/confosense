@@ -1,6 +1,6 @@
 # Matched intervals005 durable progress and restart
 
-Updated UTC: 2026-09-14T05:06:03.165072+00:00. Status: **blocked**. 138 scientific stages checkpointed; acceptance requires the completed independent validation and forbidden-fit resume receipts.
+Updated UTC: 2026-09-14T05:13:37.463975+00:00. Status: **blocked**. 138 scientific stages checkpointed; acceptance requires the completed independent validation and forbidden-fit resume receipts.
 
 The [atomic progress ledger](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/progress.json), [immutable command attempts](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts.jsonl), and [scientific stage journal](../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stage_journal.jsonl) retain owner/calibrator/stream and live process identities.
 
@@ -16,5 +16,6 @@ The exclusive OS lock prevents duplicate coordinators. A surviving exact logger/
 - pilot/validate: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T044714663329+0000_ba3bf09f\command.log.json`.
 - pilot/validate_v2: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T045719855640+0000_507f4410\command.log.json`.
 - pilot/validate_v3: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T050412300812+0000_093c29f1\command.log.json`.
+- pilot/validate_v4: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051015922691+0000_8ed7e880\command.log.json`.
 
-Failure: phase pilot/validate_v3 failed; actual exit 1; C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T050412300812+0000_093c29f1\command.log
+Failure: phase pilot/validate_v4 failed; actual exit 1; C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051015922691+0000_8ed7e880\command.log

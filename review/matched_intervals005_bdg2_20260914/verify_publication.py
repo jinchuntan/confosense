@@ -16,7 +16,7 @@ def get(url):
 def main():
     commit=git('rev-parse','HEAD');assert git('branch','--show-current')==BRANCH and not git('status','--porcelain')
     status=read(BATCH/'progress.json');assert status['status']=='complete'
-    assert read(BATCH/'validation_v4/validation.json')['passed'] and read(BATCH/'completed_resume_v1.json')['all_run_files_unchanged']
+    assert read(BATCH/'validation_v5/validation.json')['passed'] and read(BATCH/'completed_resume_v1.json')['all_run_files_unchanged']
     refs=git('-c','credential.helper=','ls-remote','origin','refs/heads/'+BRANCH,'refs/heads/main','refs/heads/review/matched-fold2-multiseed-20260914')
     assert commit+'\trefs/heads/'+BRANCH in refs
     assert ENTRY+'\trefs/heads/review/matched-fold2-multiseed-20260914' in refs
@@ -35,9 +35,9 @@ def main():
         assert blobs[r['path']]['sha']==blob and blobs[r['path']]['size']==len(data)
         checked.append(dict(path=r['path'],sha256=digest,git_blob=blob,bytes=len(data)))
     samples=['MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md','BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md','review/CURRENT_EVIDENCE.md','MATCHED_METHOD_READINESS_MAP.md']
-    samples += [REVIEW.relative_to(ROOT).as_posix()+'/'+name for name in ['EVIDENCE_INDEX.md','EVIDENCE_MANIFEST.csv','PANEL_RESPONSE.md','METHOD_REFERENCES.md','joint_pre_fit_manifest.json','evaluated_commit.json','evaluated_source.zip','SYNTHETIC_ACCEPTANCE.json']]
+    samples += [REVIEW.relative_to(ROOT).as_posix()+'/'+name for name in ['EVIDENCE_INDEX.md','EVIDENCE_MANIFEST.csv','PANEL_RESPONSE.md','METHOD_REFERENCES.md','joint_pre_fit_manifest.json','evaluated_commit.json','evaluated_source.zip','SYNTHETIC_ACCEPTANCE.json','VALIDATION_ERRATUM_V4.md','VALIDATION_ERRATUM_V4.json','VALIDATION_RECOVERY_COMMANDS_V4.json','corrected_validation_source_v4.zip','method_specification_resolved_v2.json','enbpi_bounds_diagnosis.csv','delivery_v1/validation.json']]
     samples += [DESIGN.relative_to(ROOT).as_posix()+'/'+name for name in ['frozen_protocol.json','method_specification.json','native_membership.csv.gz','joint_calibration.csv.gz','joint_test.csv.gz','readiness.json']]
-    samples += [BATCH.relative_to(ROOT).as_posix()+'/'+name for name in ['validation_v4/validation.json','validation_v4/reconstruction_checks.csv','completed_resume_v1.json','run_worker_resources_v1.json','validate_worker_resources_v4.json','resume_worker_resources_v1.json','analysis_v1/native_support_metrics.csv','analysis_v1/common_support_metrics.csv','analysis_v1/per_building_metrics.csv','analysis_v1/background_workload.csv','analysis_v1/worker_costs.csv','analysis_v1/operations.csv','analysis_v1/seasonal_interval_metrics.csv','analysis_v1/shared_owner_contrasts.csv','analysis_v1/next_proposed_method_keys.csv']]
+    samples += [BATCH.relative_to(ROOT).as_posix()+'/'+name for name in ['validation_v5/validation.json','validation_v5/reconstruction_checks.csv','completed_resume_v1.json','run_worker_resources_v1.json','validate_worker_resources_v5.json','resume_worker_resources_v1.json','analysis_v1/native_support_metrics.csv','analysis_v1/common_support_metrics.csv','analysis_v1/per_building_metrics.csv','analysis_v1/background_workload.csv','analysis_v1/worker_costs.csv','analysis_v1/operations.csv','analysis_v1/seasonal_interval_metrics.csv','analysis_v1/shared_owner_contrasts.csv','analysis_v1/next_proposed_method_keys.csv','analysis_v1/background_and_crossing_checks.csv','analysis_v1/additional_integrity_validation.json','analysis_v1/enbpi_calibration_support.csv']]
     for h in (1,3,6):
         for l in (90,95):
             for method in ('quantile_uncalibrated','cqr','recentred_enbpi_static','recentred_enbpi_updated','dscp'):

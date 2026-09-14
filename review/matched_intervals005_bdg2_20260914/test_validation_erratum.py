@@ -8,7 +8,7 @@ from src.matched_intervals005 import check_protocol,execute
 from src.operational004_fixtures import fixture_data
 
 
-AUDIT=next(REVIEW/name for name in ('VALIDATION_ERRATUM_V4.json','VALIDATION_ERRATUM_V3.json','VALIDATION_ERRATUM.json') if (REVIEW/name).exists())
+AUDIT=next(REVIEW/name for name in ('VALIDATION_ERRATUM_V5.json','VALIDATION_ERRATUM_V4.json','VALIDATION_ERRATUM_V3.json','VALIDATION_ERRATUM.json') if (REVIEW/name).exists())
 
 
 def test_exact_audited_source_and_unchanged_factory_accepted():
@@ -93,3 +93,19 @@ def test_float32_csv_points_recover_exact_owner_values(tmp_path):
             assert np.any(restored.to_numpy()!=original.astype(np.float64))
             np.testing.assert_array_equal(restored.to_numpy(np.float32),original)
     assert tree(saved)==before
+
+
+def test_new_scientific_modules_have_resolved_referenced_globals():
+    import builtins,importlib,symtable
+    missing=[]
+    files=list((SMART/'src').glob('intervals005_*.py'))+[SMART/'src/matched_intervals005.py']
+    with Operations(forbid=True):
+        for path in files:
+            module=importlib.import_module('src.'+path.stem)
+            symbols=symtable.symtable(path.read_text(encoding='utf-8'),str(path),'exec')
+            def visit(scope):
+                for symbol in scope.get_symbols():
+                    if scope.get_type()!='module' and symbol.is_referenced() and symbol.is_global() and symbol.get_name() not in module.__dict__ and not hasattr(builtins,symbol.get_name()):missing.append((path.name,scope.get_name(),symbol.get_name()))
+                for child in scope.get_children():visit(child)
+            visit(symbols)
+    assert not missing

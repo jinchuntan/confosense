@@ -1,0 +1,17 @@
+VALIDATE horizon 1
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\measured_action.py", line 18, in main
+    runpy.run_module('src.matched_intervals005',run_name='__main__')
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 263, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 258, in main
+    result=validate(protocol,args.out,args.receipt,audit_manifest=args.audit_manifest)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 211, in validate
+    del data;gc.collect()
+             ^^
+NameError: name 'gc' is not defined
+

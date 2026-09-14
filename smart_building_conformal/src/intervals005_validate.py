@@ -1,6 +1,7 @@
 """Independent scalar, metric, native-quantile and serialized-owner checks."""
 from __future__ import annotations
 import bisect
+import gc
 import math
 import warnings
 import numpy as np
