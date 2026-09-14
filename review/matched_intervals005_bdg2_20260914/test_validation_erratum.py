@@ -8,7 +8,7 @@ from src.matched_intervals005 import check_protocol,execute
 from src.operational004_fixtures import fixture_data
 
 
-AUDIT=REVIEW/'VALIDATION_ERRATUM.json'
+AUDIT=REVIEW/('VALIDATION_ERRATUM_V3.json' if (REVIEW/'VALIDATION_ERRATUM_V3.json').exists() else 'VALIDATION_ERRATUM.json')
 
 
 def test_exact_audited_source_and_unchanged_factory_accepted():
@@ -54,4 +54,25 @@ def test_native_asymmetric_cqr_formula_on_reloaded_synthetic_owners():
                 _,actual=owner.predict_interval(X)
                 np.testing.assert_array_equal(actual[:,0,0],rawlo-correction[0])
                 np.testing.assert_array_equal(actual[:,1,0],rawhi+correction[1])
+    assert tree(saved)==before
+
+
+def test_native_enbpi_float64_oob_accumulator_on_saved_tiny_owners():
+    import warnings
+    saved=SMART/'outputs/matched_intervals005/synthetic_v1/run';before=tree(saved)
+    store=Stages(saved,read(saved/'checkpoint_manifest.json')['spec'],resume=True)
+    with Operations(forbid=True):
+        for h in (1,3):
+            _,_,w,_,_=fixture_data(n=1100,groups=2,horizon=h)
+            per=[np.flatnonzero(w['meta'].group_id.eq(g)) for g in ('asset0','asset1')]
+            ca=np.concatenate([r[356:606] for r in per])
+            owner=load_owner(store.get(f'owner_cal_h{h}_enbpi')/'owner.pkl')
+            preds=np.column_stack([e.predict(w['X'].iloc[ca].to_numpy()) for e in owner.estimator_.estimators_])
+            assert preds.dtype==np.float32
+            with warnings.catch_warnings():
+                warnings.simplefilter('ignore',RuntimeWarning)
+                oob=np.nanmean(np.where(owner.estimator_.k_==1,preds.astype(np.float64),np.nan),axis=1)
+            expected=w['y'][ca]-oob
+            if owner.conformity_score_function_.sym:expected=np.abs(expected)
+            np.testing.assert_allclose(owner.conformity_scores_,expected,atol=1e-12,rtol=0,equal_nan=True)
     assert tree(saved)==before

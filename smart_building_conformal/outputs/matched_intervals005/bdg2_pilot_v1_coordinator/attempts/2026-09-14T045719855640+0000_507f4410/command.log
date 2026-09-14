@@ -1,0 +1,34 @@
+VALIDATE horizon 1
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\measured_action.py", line 18, in main
+    runpy.run_module('src.matched_intervals005',run_name='__main__')
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 263, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 258, in main
+    result=validate(protocol,args.out,args.receipt,audit_manifest=args.audit_manifest)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 137, in validate
+    close(owner.conformity_scores_,scores,f'enbpi_oob_scores_h{h}')
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 98, in close
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,equal_nan=True,err_msg=tag)
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 1691, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 889, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-07
+enbpi_oob_scores_h1
+Mismatched elements: 5639 / 17370 (32.5%)
+Max absolute difference among violations: 0.00012207
+Max relative difference among violations: 0.00406504
+ ACTUAL: array([-39.572889, -38.796562, -37.310563, ...,   7.148573,  19.180595,
+         6.218407])
+ DESIRED: array([-39.572887, -38.796562, -37.310562, ...,   7.148549,  19.180583,
+         6.218407])
+

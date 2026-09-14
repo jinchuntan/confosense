@@ -129,7 +129,10 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
                         close(owner._mapie_quantile_regressor.conformity_scores_[:2],tail_scores,f'cqr_tail_scores_h{h}_{level}')
                         correction=np.quantile(tail_scores,(1-(1-level)/2)*(1+1/len(scores)),axis=1,method='higher')
                     else:
-                        X=data['X'].iloc[roles['calibration']].to_numpy();preds=np.column_stack([e.predict(X) for e in owner.estimator_.estimators_]);mask=owner.estimator_.k_
+                        # MAPIE's out-of-fold matrix is float64 even when the
+                        # XGBoost predictions are float32. Match its arithmetic
+                        # before averaging, without relaxing frozen tolerances.
+                        X=data['X'].iloc[roles['calibration']].to_numpy();preds=np.column_stack([e.predict(X) for e in owner.estimator_.estimators_]).astype(np.float64);mask=owner.estimator_.k_
                         with warnings.catch_warnings():
                             warnings.simplefilter('ignore',RuntimeWarning);oob=np.nanmean(np.where(mask==1,preds,np.nan),axis=1)
                         scores=calmeta.y_true.to_numpy()-oob

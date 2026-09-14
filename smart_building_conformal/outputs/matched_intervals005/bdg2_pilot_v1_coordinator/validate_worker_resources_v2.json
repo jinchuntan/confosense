@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-09-14T04:57:23.304057+00:00",
+  "ended_utc": "2026-09-14T04:59:18.003610+00:00",
+  "pid": 26824,
+  "action_argv": [
+    "validate",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v2",
+    "--audit-manifest",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM.json"
+  ],
+  "actual_exit": 1,
+  "resources": {
+    "seconds": 114.6695211000042,
+    "baseline_rss_bytes": 319995904,
+    "peak_rss_bytes": 958939136,
+    "baseline_private_bytes": 278941696,
+    "peak_private_bytes": 1000620032,
+    "incremental_peak_rss_bytes": 638943232,
+    "lifetime_peak_rss_bytes": 1036054528,
+    "min_available_ram_bytes": 2551963648,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 111.4375
+  },
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py\", line 18, in main\n    runpy.run_module('src.matched_intervals005',run_name='__main__')\n  File \"<frozen runpy>\", line 229, in run_module\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_intervals005.py\", line 263, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_intervals005.py\", line 258, in main\n    result=validate(protocol,args.out,args.receipt,audit_manifest=args.audit_manifest)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\intervals005_validate.py\", line 137, in validate\n    close(owner.conformity_scores_,scores,f'enbpi_oob_scores_h{h}')\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\intervals005_validate.py\", line 98, in close\n    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,equal_nan=True,err_msg=tag)\n  File \"C:\\cfs_venv\\Lib\\site-packages\\numpy\\testing\\_private\\utils.py\", line 1691, in assert_allclose\n    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),\n  File \"C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextlib.py\", line 81, in inner\n    return func(*args, **kwds)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\cfs_venv\\Lib\\site-packages\\numpy\\testing\\_private\\utils.py\", line 889, in assert_array_compare\n    raise AssertionError(msg)\nAssertionError: \nNot equal to tolerance rtol=1e-07, atol=1e-07\nenbpi_oob_scores_h1\nMismatched elements: 5639 / 17370 (32.5%)\nMax absolute difference among violations: 0.00012207\nMax relative difference among violations: 0.00406504\n ACTUAL: array([-39.572889, -38.796562, -37.310563, ...,   7.148573,  19.180595,\n         6.218407])\n DESIRED: array([-39.572887, -38.796562, -37.310562, ...,   7.148549,  19.180583,\n         6.218407])\n",
+  "interpretation": "whole Python CLI worker, excluding parent logger and interpreter startup"
+}

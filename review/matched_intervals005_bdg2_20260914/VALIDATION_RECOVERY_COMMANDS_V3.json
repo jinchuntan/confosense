@@ -1,0 +1,57 @@
+{
+  "source_hash": "d663b3c7ab0debfa06ae3bdccd536244bb221eb302d141ffa6c93eef18d99e8a",
+  "audit_manifest_sha256": "9ba1feec779ee3fe9ae12e50a9902b34aeb67dec2f5044383f3ee79da212b92a",
+  "commands": {
+    "validate": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py",
+      "--measurement",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validate_worker_resources_v3.json",
+      "--",
+      "validate",
+      "--design-dir",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1",
+      "--out",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1",
+      "--readiness",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json",
+      "--receipt",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v3",
+      "--audit-manifest",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V3.json"
+    ],
+    "resume": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py",
+      "--measurement",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\resume_worker_resources_v1.json",
+      "--",
+      "resume",
+      "--design-dir",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1",
+      "--out",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1",
+      "--readiness",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json",
+      "--receipt",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\completed_resume_v1.json",
+      "--forbid-fits",
+      "--audit-manifest",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V3.json"
+    ]
+  },
+  "regression_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\validation_erratum_tests_v2_command.log.json",
+  "resolved_acceptance_checks": 47,
+  "no_new_fitting": true,
+  "failed_validation_preserved": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v1",
+  "utc": "2026-09-14T05:02:37.890805+00:00",
+  "audit_manifest": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V3.json",
+  "validation_task": "pilot/validate_v3",
+  "validation_directory": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v3",
+  "previous_validation_attempts_preserved": [
+    "validation_v1",
+    "validation_v2"
+  ]
+}

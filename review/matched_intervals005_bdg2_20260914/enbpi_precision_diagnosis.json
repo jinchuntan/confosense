@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "horizon": 1,
+      "n_calibration": 17370,
+      "base_prediction_dtype": "float32",
+      "native_accumulator_dtype": "float64",
+      "old_float32_difference": 0.0001220703125,
+      "corrected_max_difference": 0.0,
+      "nonfinite_scores": 1790,
+      "passed": true
+    },
+    {
+      "horizon": 3,
+      "n_calibration": 17360,
+      "base_prediction_dtype": "float32",
+      "native_accumulator_dtype": "float64",
+      "old_float32_difference": 0.0001220703125,
+      "corrected_max_difference": 0.0,
+      "nonfinite_scores": 1793,
+      "passed": true
+    },
+    {
+      "horizon": 6,
+      "n_calibration": 17350,
+      "base_prediction_dtype": "float32",
+      "native_accumulator_dtype": "float64",
+      "old_float32_difference": 0.0001220703125,
+      "corrected_max_difference": 0.0,
+      "nonfinite_scores": 1793,
+      "passed": true
+    }
+  ],
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "scientific_run_unchanged": true,
+  "tolerances_unchanged": true
+}
