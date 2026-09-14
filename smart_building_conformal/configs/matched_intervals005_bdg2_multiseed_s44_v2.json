@@ -1,0 +1,12 @@
+{
+  "version": "matched_intervals005_bdg2_fold2_multiseed_authorization_v2",
+  "real_fitting_authorized": true,
+  "publication_authorized": true,
+  "instruction_commit": "027116c6b019fa1d0a40051a0d1c69ed32a9c539",
+  "authorized_model_seeds": [43, 44, 45, 46],
+  "scope": {"dataset": "bdg2", "outer_fold": 2, "model_seed": 44, "horizons": [1, 3, 6], "levels": [0.9, 0.95], "methods": ["quantile_uncalibrated", "cqr", "recentred_enbpi_static", "recentred_enbpi_updated", "dscp"]},
+  "expected_new_method_cells": 30,
+  "expected_new_learned_estimator_fits": 51,
+  "seasonal_alias_source_model_seed": 42,
+  "full_study_authorized": false
+}

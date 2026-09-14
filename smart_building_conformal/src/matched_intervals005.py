@@ -4,6 +4,7 @@ import os
 for _name in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','NUMEXPR_NUM_THREADS'):os.environ[_name]='1'
 import argparse
 import gc
+import shutil
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -17,7 +18,14 @@ from .pilot_conformal import calibrate_absolute
 
 def config_scope(auth,matrix):
     c=auth['scope']
-    if not auth.get('real_fitting_authorized') or c!={'dataset':'bdg2','outer_fold':2,'model_seed':42,'horizons':[1,3,6],'levels':LEVELS,'methods':METHODS}:raise ValueError('outside bounded authorization')
+    fixed={'dataset':'bdg2','outer_fold':2,'horizons':[1,3,6],'levels':LEVELS,'methods':METHODS}
+    if not auth.get('real_fitting_authorized'):raise ValueError('outside bounded authorization')
+    if auth.get('version') in (None,'matched_intervals005_bdg2_seed42_authorization_v1'):
+        if c!={**fixed,'model_seed':42}:raise ValueError('outside bounded authorization')
+    elif auth.get('version')=='matched_intervals005_bdg2_fold2_multiseed_authorization_v2':
+        if auth.get('authorized_model_seeds')!=[43,44,45,46] or c!={**fixed,'model_seed':c.get('model_seed')} or c['model_seed'] not in auth['authorized_model_seeds']:
+            raise ValueError('outside bounded multiseed authorization')
+    else:raise ValueError('unknown bounded authorization version')
     f=frame(matrix);f=f[(f.dataset==c['dataset'])&(f.outer_fold==c['outer_fold'])&(f.model_seed==c['model_seed'])&f.horizon.isin(c['horizons'])]
     from .unit_checkpoint import require_cells
     require_cells(f,['horizon','level','method'],[(h,l,m) for h in c['horizons'] for l in LEVELS for m in METHODS])
@@ -49,7 +57,9 @@ def freeze(matrix,authorization,design,synthetic_receipt):
     csv(out/'scope.csv',cells)
     inputs=[Path(matrix).resolve(),Path(authorization).resolve(),Path(synthetic_receipt).resolve(),JOINT,JOINT_SUPPORT,LEDGER]
     spec=method_spec(c['model_seed']);atomic(out/'method_specification.json',spec)
-    protocol=dict(version='matched_intervals005_bdg2_f2_s42_v1',scope=c,authorization=auth,entry_commit=ENTRY,historical_source_hash=OLD_SOURCE,source_hash=source_digest(),packages=packages(),references=refs,support=support,joint_support=joint,method_specification=spec,inputs={str(p.relative_to(REPO)):digest(p) for p in inputs},design_hashes=tree(out),expected_operations=dict(cqr_wrapper_fit=6,quantile_estimator_fit=18,enbpi_wrapper_fit=3,xgboost_estimator_fit=33,random_forest_estimator_fit=0,dscp_calibrator_fit=1,kmeans_candidate_fit=5,calibrator_conformalize=18),expected_cells=dict(interval_method=30,seasonal_point=3,seasonal_interval=6,alert_streams=30),resource_policy=dict(device='cpu',threads=1,n_jobs=1,batch_size=256,launch_ram_reference_bytes=3*2**30,nonblocking_launch_ram=True,epoch_floor_bytes=256*2**20,disk_floor_bytes=8*2**30),tolerances=dict(prediction_atol=1e-7,prediction_rtol=1e-7,metric_atol=1e-10,metric_rtol=1e-12),frozen_utc=now(),freeze_resources=meter.result,models_fitted=0,full_study_ready=False)
+    alias_root=ROOT/'outputs/matched_intervals005/bdg2_f2_s42_v1/stages'
+    alias={str(h):{name:digest(alias_root/f'seasonal_h{h}'/name) for name in ('calibration.csv.gz','interval_90.csv.gz','interval_95.csv.gz','point.json','calibration.json')} for h in c['horizons']} if c['model_seed']!=42 else None
+    protocol=dict(version=f'matched_intervals005_bdg2_f2_s{c["model_seed"]}_v2',scope=c,authorization=auth,entry_commit=ENTRY,historical_source_hash=OLD_SOURCE,source_hash=source_digest(),packages=packages(),references=refs,support=support,joint_support=joint,method_specification=spec,seasonal_alias_source=dict(model_seed=42,root=str(alias_root.relative_to(REPO)),files=alias) if alias else None,inputs={str(p.relative_to(REPO)):digest(p) for p in inputs},design_hashes=tree(out),expected_operations=dict(cqr_wrapper_fit=6,quantile_estimator_fit=18,enbpi_wrapper_fit=3,xgboost_estimator_fit=33,random_forest_estimator_fit=0,dscp_calibrator_fit=1,kmeans_candidate_fit=5,calibrator_conformalize=18),expected_cells=dict(interval_method=30,seasonal_point=0 if alias else 3,seasonal_alias=3 if alias else 0,seasonal_interval=0 if alias else 6,seasonal_interval_alias=6 if alias else 0,alert_streams=30),resource_policy=dict(device='cpu',threads=1,n_jobs=1,batch_size=256,launch_ram_reference_bytes=3*2**30,nonblocking_launch_ram=True,epoch_floor_bytes=256*2**20,disk_floor_bytes=8*2**30),tolerances=dict(prediction_atol=1e-7,prediction_rtol=1e-7,metric_atol=1e-10,metric_rtol=1e-12),frozen_utc=now(),freeze_resources=meter.result,models_fitted=0,full_study_ready=False)
     atomic(out/'frozen_protocol.json',protocol)
     return dict(frozen=True,models_fitted=0,joint_support=joint,source_hash=protocol['source_hash'])
 
@@ -80,6 +90,11 @@ def check_protocol(path,audit_manifest=None):
         if digest(REPO/name)!=value:raise ValueError('frozen input changed: '+name)
     for name,value in p['design_hashes'].items():
         if digest(path.parent/name)!=value:raise ValueError('frozen membership/spec changed')
+    alias=p.get('seasonal_alias_source')
+    if alias:
+        for h,files in alias['files'].items():
+            for name,value in files.items():
+                if digest(REPO/alias['root']/f'seasonal_h{h}'/name)!=value:raise ValueError('seasonal alias source changed')
     actual=method_spec(p['scope']['model_seed'])
     if audit_manifest is None:
         if signature(actual)!=signature(p['method_specification']):raise ValueError('factory specification drift')
@@ -134,7 +149,9 @@ def finish_tables(stages,scope):
                     workloads.append(frame(path/'background_workload.csv'))
                 seasonal=frame(stages.get(f'seasonal_h{h}')/f'interval_{int(l*100)}.csv.gz')
                 seasons.append(dict(dataset=scope['dataset'],outer_fold=scope['outer_fold'],model_seed=scope['model_seed'],horizon=h,level=l,method='seasonal_naive',**interval_metrics(seasonal,l)))
-            season_points.append(read(stages.get(f'seasonal_h{h}')/'point.json'))
+            point=read(stages.get(f'seasonal_h{h}')/'point.json')
+            if scope['model_seed']!=42:point.update(model_seed=scope['model_seed'],source_model_seed=42,deterministic_seed_alias=True)
+            season_points.append(point)
         f=pd.DataFrame(metrics);csv(out/'native_support_metrics.csv',f[f.support=='native']);csv(out/'common_support_metrics.csv',f[f.support=='common'])
         csv(out/'per_building_metrics.csv',pd.DataFrame(groups));csv(out/'background_workload.csv',pd.concat(workloads,ignore_index=True))
         csv(out/'seasonal_interval_metrics.csv',pd.DataFrame(seasons));csv(out/'seasonal_point_metrics.csv',pd.DataFrame(season_points))
@@ -176,6 +193,19 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manife
             return dict(reference=p['references'][str(h)],new_predictor_fits=0)
         history=stages.run(f'historical_h{h}',history_work);historical[h]=history
         def seasonal_work(dest):
+            alias=p.get('seasonal_alias_source')
+            if alias:
+                source=REPO/alias['root']/f'seasonal_h{h}';expected=alias['files'][str(h)]
+                for name,value in expected.items():
+                    if digest(source/name)!=value:raise ValueError('seasonal alias source changed')
+                source_cal=frame(source/'calibration.csv.gz');source_test=frame(source/'interval_90.csv.gz')
+                current_cal=role_frame(data,roles['calibration']);current_test=role_frame(data,roles['test'])
+                if list(source_cal.row_id)!=list(current_cal.row_id) or list(source_test.row_id)!=list(current_test.row_id):raise ValueError('seasonal alias support mismatch')
+                np.testing.assert_allclose(source_cal.y_true,current_cal.y_true,rtol=0,atol=0)
+                np.testing.assert_allclose(source_test.observed,current_test.y_true,rtol=0,atol=0)
+                for name in expected:shutil.copyfile(source/name,dest/name)
+                metadata=dict(alias=True,requested_model_seed=scope['model_seed'],source_model_seed=alias['model_seed'],source_stage=str(source.relative_to(REPO)),source_hashes=expected,target_support_hash=hashlib.sha256('\n'.join(current_test.row_id.astype(str)).encode()).hexdigest(),learned_fits=0)
+                atomic(dest/'alias.json',metadata);return metadata
             ca=roles['calibration'];te=roles['test'];cal=role_frame(data,ca);cal['point']=data['seasonal'][ca];csv(dest/'calibration.csv.gz',cal)
             f=role_frame(data,te).rename(columns={'y_true':'observed'});f['point']=data['seasonal'][te]
             if not np.isfinite(f.point).all():raise ValueError('seasonal unavailable on frozen support')
