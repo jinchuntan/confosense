@@ -54,14 +54,42 @@ def freeze(matrix,authorization,design,synthetic_receipt):
     return dict(frozen=True,models_fitted=0,joint_support=joint,source_hash=protocol['source_hash'])
 
 
-def check_protocol(path):
+def check_protocol(path,audit_manifest=None):
     path=Path(path);p=read(path)
-    if source_digest()!=p['source_hash'] or packages()!=p['packages']:raise ValueError('source/package identity mismatch')
+    if packages()!=p['packages']:raise ValueError('package identity mismatch')
+    if audit_manifest is None:
+        if source_digest()!=p['source_hash']:raise ValueError('source identity mismatch')
+    else:
+        # Explicit read-only compatibility for a completed historical pilot.
+        # Pin both source trees; never relabel the evaluated source as current.
+        import zipfile
+        audit=read(audit_manifest)
+        if audit['version']!='cqr_native_validation_erratum_v2' or not audit['completed_readonly_only']:raise ValueError('unsupported audit manifest')
+        if audit['protocol_sha256']!=digest(path) or audit['evaluated_source_hash']!=p['source_hash'] or audit['validator_source_hash']!=source_digest():raise ValueError('audit source/protocol identity mismatch')
+        archive=REPO/audit['evaluated_archive']
+        if digest(archive)!=audit['evaluated_archive_sha256']:raise ValueError('evaluated archive changed')
+        with zipfile.ZipFile(archive) as z:
+            original={name.removeprefix('src/'):hashlib.sha256(z.read(name)).hexdigest() for name in z.namelist() if name.startswith('src/') and name.endswith('.py')}
+        original_digest=hashlib.sha256('\n'.join(f'{name}:{original[name]}' for name in sorted(original)).encode()).hexdigest()
+        if original_digest!=p['source_hash']:raise ValueError('archived evaluated source mismatch')
+        current={file.relative_to(ROOT/'src').as_posix():digest(file) for file in sorted((ROOT/'src').rglob('*.py'))}
+        if current!=audit['validator_files'] or set(current)!=set(original):raise ValueError('audit file identity mismatch')
+        changed={name for name in current if current[name]!=original[name]}
+        if changed!={'matched_intervals005.py','intervals005_validate.py','intervals005_owners.py'}:raise ValueError('unexpected source change for native validation erratum')
     for name,value in p['inputs'].items():
         if digest(REPO/name)!=value:raise ValueError('frozen input changed: '+name)
     for name,value in p['design_hashes'].items():
         if digest(path.parent/name)!=value:raise ValueError('frozen membership/spec changed')
-    if signature(method_spec(p['scope']['model_seed']))!=signature(p['method_specification']):raise ValueError('factory specification drift')
+    actual=method_spec(p['scope']['model_seed'])
+    if audit_manifest is None:
+        if signature(actual)!=signature(p['method_specification']):raise ValueError('factory specification drift')
+    else:
+        if signature(actual)!=signature(audit['resolved_method_specification']):raise ValueError('resolved audit specification drift')
+        import copy
+        old=copy.deepcopy(p['method_specification']);new=copy.deepcopy(actual)
+        for field in ('score','native_quantile','native_predict_parameters'):
+            old['cqr'].pop(field,None);new['cqr'].pop(field,None)
+        if signature(old)!=signature(new):raise ValueError('audit changed a frozen factory or policy')
     return p
 
 
@@ -118,9 +146,10 @@ def finish_tables(stages,scope):
     return stages.run('tables',work)
 
 
-def execute(path,ready,out,*,resume=False,forbid=False,receipt=None):
-    p=check_protocol(path);r=read(ready)
-    if not r['ready'] or r['protocol_hash']!=digest(path) or r['source_hash']!=source_digest():raise ValueError('fresh readiness mismatch')
+def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manifest=None):
+    if audit_manifest is not None and not (resume and forbid and (Path(out)/'COMPLETE.json').exists()):raise ValueError('audit manifest permits completed forbidden-fit resume only')
+    p=check_protocol(path,audit_manifest);r=read(ready)
+    if not r['ready'] or r['protocol_hash']!=digest(path) or r['source_hash']!=p['source_hash']:raise ValueError('fresh readiness mismatch')
     stages=Stages(out,dict(protocol_hash=digest(path),source_hash=p['source_hash']),resume=resume)
     if (stages.root/'COMPLETE.json').exists():
         before=tree(stages.root);marker=read(stages.root/'COMPLETE.json')
@@ -130,6 +159,7 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None):
             for key in marker['stage_keys']:stages.get(key)
         if tree(stages.root)!=before:raise ValueError('completed resume changed scientific files')
         result=dict(status='complete',models_fitted=0,calibrators_fitted=0,all_run_files_unchanged=True,stages_verified=len(marker['stage_keys']),utc=now())
+        if audit_manifest:result.update(evaluated_source_hash=p['source_hash'],validator_source_hash=source_digest(),audit_manifest_sha256=digest(audit_manifest))
         if receipt:atomic(receipt,result)
         return result
     if forbid:raise ValueError('forbidden-fit resume requires complete scientific output')
@@ -217,15 +247,16 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None):
 
 
 def main():
-    a=argparse.ArgumentParser();a.add_argument('action',choices=['freeze','readiness','run','validate','resume']);a.add_argument('--matrix',default=str(MATRIX));a.add_argument('--authorization');a.add_argument('--synthetic-receipt');a.add_argument('--design-dir',required=True);a.add_argument('--out');a.add_argument('--readiness');a.add_argument('--receipt');a.add_argument('--forbid-fits',action='store_true');args=a.parse_args()
+    a=argparse.ArgumentParser();a.add_argument('action',choices=['freeze','readiness','run','validate','resume']);a.add_argument('--matrix',default=str(MATRIX));a.add_argument('--authorization');a.add_argument('--synthetic-receipt');a.add_argument('--design-dir',required=True);a.add_argument('--out');a.add_argument('--readiness');a.add_argument('--receipt');a.add_argument('--forbid-fits',action='store_true');a.add_argument('--audit-manifest');args=a.parse_args()
+    if args.audit_manifest and not (args.action=='validate' or (args.action=='resume' and args.forbid_fits)):raise ValueError('audit manifest is read-only; no fitting/readiness/freeze allowed')
     from .matched_forecasting005 import setup_threads
     setup_threads();protocol=Path(args.design_dir)/'frozen_protocol.json'
     if args.action=='freeze':result=freeze(args.matrix,args.authorization,args.design_dir,args.synthetic_receipt)
     elif args.action=='readiness':result=readiness(protocol,args.receipt)
     elif args.action=='validate':
         from .intervals005_validate import validate
-        result=validate(protocol,args.out,args.receipt)
-    else:result=execute(protocol,args.readiness,args.out,resume=args.action=='resume',forbid=args.forbid_fits,receipt=args.receipt)
+        result=validate(protocol,args.out,args.receipt,audit_manifest=args.audit_manifest)
+    else:result=execute(protocol,args.readiness,args.out,resume=args.action=='resume',forbid=args.forbid_fits,receipt=args.receipt,audit_manifest=args.audit_manifest)
     print(json.dumps(result,indent=2,default=str),flush=True)
 
 

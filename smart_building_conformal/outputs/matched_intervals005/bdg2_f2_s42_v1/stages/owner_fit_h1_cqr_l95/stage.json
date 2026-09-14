@@ -1,0 +1,23 @@
+{
+  "key": "owner_fit_h1_cqr_l95",
+  "payload": {
+    "kind": "cqr",
+    "level": 0.95,
+    "seed": 42,
+    "n_fit": 51664,
+    "synthetic": false,
+    "owner_class": "mapie.regression.quantile_regression.ConformalizedQuantileRegressor"
+  },
+  "resources": {
+    "seconds": 13.977798200008692,
+    "baseline_rss_bytes": 600358912,
+    "peak_rss_bytes": 626507776,
+    "baseline_private_bytes": 621830144,
+    "peak_private_bytes": 645099520,
+    "incremental_peak_rss_bytes": 26148864,
+    "lifetime_peak_rss_bytes": 1035694080,
+    "min_available_ram_bytes": 2771468288,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 13.609375
+  }
+}

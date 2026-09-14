@@ -1,0 +1,27 @@
+{
+  "key": "seasonal_h6",
+  "payload": {
+    "dataset": "bdg2",
+    "outer_fold": 2,
+    "model_seed": 42,
+    "horizon": 6,
+    "model": "seasonal_naive",
+    "n": 34640,
+    "mae": 42.54180525404157,
+    "rmse": 93.13294106096956,
+    "learned_fits": 0,
+    "deterministic_seed_alias": true
+  },
+  "resources": {
+    "seconds": 1.7298912999976892,
+    "baseline_rss_bytes": 608849920,
+    "peak_rss_bytes": 619134976,
+    "baseline_private_bytes": 662069248,
+    "peak_private_bytes": 671195136,
+    "incremental_peak_rss_bytes": 10285056,
+    "lifetime_peak_rss_bytes": 1035694080,
+    "min_available_ram_bytes": 3025358848,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.6875
+  }
+}

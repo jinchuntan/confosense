@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "additional_unique_checks": 1,
+  "total_resolved_checks": 38,
+  "learned_fits": 0,
+  "calibrator_fits": 0,
+  "scientific_source_changed": false,
+  "synthetic_saved_artifacts_unchanged": true,
+  "receipts": [
+    {
+      "command": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "review/matched_intervals005_bdg2_20260914/test_truth_independence.py",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense",
+      "started_utc": "2026-09-14T04:35:41.878735+00:00",
+      "logger_pid": 24928,
+      "child_pid": 2236,
+      "ended_utc": "2026-09-14T04:35:46.986067+00:00",
+      "seconds": 5.102446999997483,
+      "exit_status": 1
+    },
+    {
+      "command": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "review/matched_intervals005_bdg2_20260914/test_truth_independence.py",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense",
+      "started_utc": "2026-09-14T04:35:59.108843+00:00",
+      "logger_pid": 29576,
+      "child_pid": 7736,
+      "ended_utc": "2026-09-14T04:36:04.393407+00:00",
+      "seconds": 5.283939900007681,
+      "exit_status": 0
+    }
+  ]
+}

@@ -162,7 +162,19 @@ def main():
             frozen=read(REVIEW/'joint_pre_fit_manifest.json');evaluated=read(REVIEW/'evaluated_commit.json')
             subprocess.run(['git','merge-base','--is-ancestor',evaluated['commit'],'HEAD'],cwd=ROOT,check=True)
             from src.unit_checkpoint import source_digest
-            assert source_digest()==frozen['source_hash']
+            audit_path=REVIEW/'VALIDATION_ERRATUM.json'
+            recovery=read(REVIEW/'VALIDATION_RECOVERY_COMMANDS.json') if audit_path.exists() else None
+            if recovery:
+                from src.matched_intervals005 import check_protocol
+                check_protocol(DESIGN/'frozen_protocol.json',audit_path)
+                assert recovery['audit_manifest_sha256']==sha(audit_path)
+                assert recovery['source_hash']==source_digest()
+                assert engine.state['tasks']['pilot/run']['status']=='passed'
+                assert read(RUN/'COMPLETE.json')['status']=='complete'
+                assert read(SMART/'outputs/matched_intervals005/validation_erratum_tests_v1_command.log.json')['exit_status']==0
+                if engine.state.get('failure'):
+                    engine.state.setdefault('prior_failures',[]).append(dict(failure=engine.state.pop('failure'),traceback=engine.state.pop('traceback',None),recovery_manifest=str(REVIEW/'VALIDATION_RECOVERY_COMMANDS.json')))
+            else:assert source_digest()==frozen['source_hash']
             assert sha(DESIGN/'frozen_protocol.json')==frozen['protocol_hash']
             engine.reconcile();progress(engine)
             def real_run(folder):
@@ -170,9 +182,9 @@ def main():
                 if (RUN/'checkpoint_manifest.json').exists():argv[argv.index('run')]='resume'
                 return argv
             engine.phase('pilot/run',real_run);progress(engine)
-            engine.phase('pilot/validate',lambda folder:frozen['commands']['validate']);progress(engine)
-            engine.phase('pilot/resume',lambda folder:frozen['commands']['resume']);progress(engine)
-            validation=read(BATCH/'validation_v1/validation.json');resume=read(BATCH/'completed_resume_v1.json')
+            engine.phase('pilot/validate_v2' if recovery else 'pilot/validate',lambda folder:recovery['commands']['validate'] if recovery else frozen['commands']['validate']);progress(engine)
+            engine.phase('pilot/resume',lambda folder:recovery['commands']['resume'] if recovery else frozen['commands']['resume']);progress(engine)
+            validation=read(BATCH/('validation_v2/validation.json' if recovery else 'validation_v1/validation.json'));resume=read(BATCH/'completed_resume_v1.json')
             assert validation['passed'] and validation['method_cells']==30 and validation['alert_stream_checks']==30
             assert validation['models_fitted']==validation['calibrators_fitted']==0
             assert resume['models_fitted']==resume['calibrators_fitted']==0 and resume['all_run_files_unchanged']

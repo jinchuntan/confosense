@@ -1,0 +1,149 @@
+diff --git a/smart_building_conformal/src/intervals005_owners.py b/smart_building_conformal/src/intervals005_owners.py
+index 671ca5b..a78fed2 100644
+--- a/smart_building_conformal/src/intervals005_owners.py
++++ b/smart_building_conformal/src/intervals005_owners.py
+@@ -16,7 +16,7 @@ def method_spec(seed=42):
+     base,name=_build_base(seed,{'base_n_estimators':60})
+     if name!='XGBRegressor':raise RuntimeError('requested installed XGBoost unavailable; no silent fallback')
+     return dict(version='matched_intervals005_native_and_causal_v1',seed=seed,
+-        cqr=dict(factory='src.conformal_cqr._quantile_estimator + MAPIE ConformalizedQuantileRegressor',estimator_parameters=_quantile_estimator(seed).get_params(),wrapper_parameters=dict(confidence_levels=LEVELS,prefit=False),objects_per_horizon=2,estimators_per_object=3,sharing='uncalibrated/CQR share exact raw lower/upper/median owner; levels have distinct objects',score='max(raw_lower-y,y-raw_upper)',native_quantile='numpy.quantile(scores, level*(1+1/n), method=higher); MAPIE 1.4.1',crossing='retain raw pair; order only emitted pair'),
++        cqr=dict(factory='src.conformal_cqr._quantile_estimator + MAPIE ConformalizedQuantileRegressor',estimator_parameters=_quantile_estimator(seed).get_params(),wrapper_parameters=dict(confidence_levels=LEVELS,prefit=False),objects_per_horizon=2,estimators_per_object=3,sharing='uncalibrated/CQR share exact raw lower/upper/median owner; levels have distinct objects',score='native static: separate raw_lower-y and y-raw_upper tail scores; method-preserving online replay: max(raw_lower-y,y-raw_upper)',native_quantile='asymmetric native tails: numpy.quantile(each tail score, (1-(1-level)/2)*(1+1/n), method=higher); MAPIE 1.4.1',native_predict_parameters=dict(symmetric_correction=False),crossing='retain raw pair; order only emitted pair'),
+         enbpi=dict(factory='src.interval_stream.IntervalEstimator resolved MAPIE TimeSeriesRegressor',base_class=type(base).__module__+'.'+type(base).__name__,base_parameters=base.get_params(),bootstrap=dict(n_resamplings=5,length=24,overlapping=True,random_state=seed),wrapper=dict(method='enbpi',agg_function='mean',random_state=seed,n_jobs=1),sharing='static/updated and both nominal levels share exact final calibrated owner; updates never mutate it',operations='fit: full-data estimator plus five training bootstraps; explicit conformalize: five calibration bootstraps; verify synthetic actual ledger before real freeze',native_score='installed MAPIE conformity score with OOB predictions; retain nonfinite OOB score counts explicitly',native_interval='original _recentered_intervals; native offsets shifted from ensemble to full-fit point; no test-truth fitting',updated_policy=dict(version='amendment004_method_preserving_native_updated_v1',score='signed observed-minus-own-full-fit-point',every=1,window=None,min_samples=50,initialization='fixed pre-test same-group calibration history, otherwise fixed whole historical pool; global supported quantiles as initial hold',quantile='lower floor((n+1)*(1-level)/2+1e-12), upper ceil((n+1)*(1-(1-level)/2)-1e-12), one-indexed; no interpolation',group_policy='isolated original group and contiguous segment; reset to fixed historical calibration',legacy_difference='legacy updated EnbPI used interpolated numpy quantiles/min_samples1; this named adapter preserves amendment004 ranks/min_samples50; no bit-identity claim')),
+         dscp=dict(factory='src.conformal_dscp.fit_dscp',max_clusters=6,ks_threshold=.05,neighbours=None,gamma=1.,seed=seed,silhouette_sample=2000,n_init=10,score='signed y-yhat',quantile='numpy.quantile default linear on fixed cluster/merged-step error pool',assignment='soft-DTW to all calibration predicted sequences; smallest-cluster-size neighbours; argpartition then majority/lowest-index tie',assignment_batch_size=64,minimum_calibration=400,owner='verified historical matched XGBoost direct horizon artifacts',labels=['direct_horizon_adaptation','from_paper_implementation'],test_truth_used_for_fit=False),
+         replay=dict(calibration_minimum=400,update_minimum=50,release='compare matured observation to its immutable issued bounds before release; target_time <= current origin; available readings only',static='uncalibrated/CQR/static EnbPI/DSCP keep native static construction',availability='original target_was_missing and finite source observation; imputed does not imply observed'),
+diff --git a/smart_building_conformal/src/intervals005_validate.py b/smart_building_conformal/src/intervals005_validate.py
+index f545c01..af30207 100644
+--- a/smart_building_conformal/src/intervals005_validate.py
++++ b/smart_building_conformal/src/intervals005_validate.py
+@@ -83,9 +83,9 @@ def independent_alert(f,freq,k=1,m=1):
+     return expected,pd.DataFrame(episodes,columns=['channel','group_id','segment_id','start_index','onset'])
+ 
+ 
+-def validate(protocol_path,out,receipt):
++def validate(protocol_path,out,receipt,*,audit_manifest=None):
+     from .matched_intervals005 import check_protocol
+-    p=check_protocol(protocol_path);root=Path(out);before=tree(root);complete=read(root/'COMPLETE.json')
++    p=check_protocol(protocol_path,audit_manifest);root=Path(out);before=tree(root);complete=read(root/'COMPLETE.json')
+     frozen=dict(before);frozen.pop('COMPLETE.json')
+     if frozen!=complete['files']:raise ValueError('completed scientific artifact hash mismatch')
+     dest=Path(receipt)
+@@ -123,7 +123,11 @@ def validate(protocol_path,out,receipt):
+                     if kind=='cqr':
+                         rawcal=frame(rawpath/f'calibration_{int(level*100)}.csv.gz');scores=np.maximum(rawcal.raw_lower-calmeta.y_true,calmeta.y_true-rawcal.raw_upper).to_numpy()
+                         close(owner._mapie_quantile_regressor.conformity_scores_[2],scores,f'cqr_scores_h{h}_{level}')
+-                        correction=np.quantile(scores,level*(1+1/len(scores)),method='higher')
++                        # MAPIE 1.4.1 predict_interval defaults to asymmetric
++                        # correction. Online CQR replay still uses max scores.
++                        tail_scores=np.vstack([rawcal.raw_lower-calmeta.y_true,calmeta.y_true-rawcal.raw_upper])
++                        close(owner._mapie_quantile_regressor.conformity_scores_[:2],tail_scores,f'cqr_tail_scores_h{h}_{level}')
++                        correction=np.quantile(tail_scores,(1-(1-level)/2)*(1+1/len(scores)),axis=1,method='higher')
+                     else:
+                         X=data['X'].iloc[roles['calibration']].to_numpy();preds=np.column_stack([e.predict(X) for e in owner.estimator_.estimators_]);mask=owner.estimator_.k_
+                         with warnings.catch_warnings():
+@@ -134,7 +138,7 @@ def validate(protocol_path,out,receipt):
+                     for l in ([level] if kind=='cqr' else LEVELS):
+                         raw=frame(rawpath/f'test_{int(l*100)}.csv.gz');rawcal=frame(rawpath/f'calibration_{int(l*100)}.csv.gz')
+                         if kind=='cqr':
+-                            a=raw.raw_lower.to_numpy()-correction;b=raw.raw_upper.to_numpy()+correction
++                            a=raw.raw_lower.to_numpy()-correction[0];b=raw.raw_upper.to_numpy()+correction[1]
+                             close(raw.static_lower,np.minimum(a,b),f'cqr_native_lo_h{h}_{l}');close(raw.static_upper,np.maximum(a,b),f'cqr_native_hi_h{h}_{l}')
+                         else:
+                             finite=scores[np.isfinite(scores)];n=len(finite)
+@@ -225,4 +229,5 @@ def validate(protocol_path,out,receipt):
+     if tree(root)!=before:raise ValueError('independent validation mutated source artifacts')
+     csv(dest/'reconstruction_checks.csv',pd.DataFrame(checks));csv(dest/'independent_metrics.csv',pd.DataFrame(metric_checks));csv(dest/'alert_checks.csv',pd.DataFrame(alert_checks))
+     result=dict(passed=True,method_cells=30,native_common_metric_rows=len(metric_checks),seasonal_interval_cells=6,alert_stream_checks=len(alert_checks),maximum_observed_difference=maxdiff,models_fitted=0,calibrators_fitted=0,source_artifacts_unchanged=True,resources=meter.result,source_hash=p['source_hash'],protocol_hash=digest(protocol_path),utc=now())
++    if audit_manifest:result.update(validator_source_hash=source_digest(),audit_manifest_sha256=digest(audit_manifest))
+     atomic(dest/'validation.json',result);atomic(dest/'COMPLETE.json',dict(files=tree(dest)));return result
+diff --git a/smart_building_conformal/src/matched_intervals005.py b/smart_building_conformal/src/matched_intervals005.py
+index 9ae1866..bf2830d 100644
+--- a/smart_building_conformal/src/matched_intervals005.py
++++ b/smart_building_conformal/src/matched_intervals005.py
+@@ -54,14 +54,42 @@ def freeze(matrix,authorization,design,synthetic_receipt):
+     return dict(frozen=True,models_fitted=0,joint_support=joint,source_hash=protocol['source_hash'])
+ 
+ 
+-def check_protocol(path):
++def check_protocol(path,audit_manifest=None):
+     path=Path(path);p=read(path)
+-    if source_digest()!=p['source_hash'] or packages()!=p['packages']:raise ValueError('source/package identity mismatch')
++    if packages()!=p['packages']:raise ValueError('package identity mismatch')
++    if audit_manifest is None:
++        if source_digest()!=p['source_hash']:raise ValueError('source identity mismatch')
++    else:
++        # Explicit read-only compatibility for a completed historical pilot.
++        # Pin both source trees; never relabel the evaluated source as current.
++        import zipfile
++        audit=read(audit_manifest)
++        if audit['version']!='cqr_native_validation_erratum_v2' or not audit['completed_readonly_only']:raise ValueError('unsupported audit manifest')
++        if audit['protocol_sha256']!=digest(path) or audit['evaluated_source_hash']!=p['source_hash'] or audit['validator_source_hash']!=source_digest():raise ValueError('audit source/protocol identity mismatch')
++        archive=REPO/audit['evaluated_archive']
++        if digest(archive)!=audit['evaluated_archive_sha256']:raise ValueError('evaluated archive changed')
++        with zipfile.ZipFile(archive) as z:
++            original={name.removeprefix('src/'):hashlib.sha256(z.read(name)).hexdigest() for name in z.namelist() if name.startswith('src/') and name.endswith('.py')}
++        original_digest=hashlib.sha256('\n'.join(f'{name}:{original[name]}' for name in sorted(original)).encode()).hexdigest()
++        if original_digest!=p['source_hash']:raise ValueError('archived evaluated source mismatch')
++        current={file.relative_to(ROOT/'src').as_posix():digest(file) for file in sorted((ROOT/'src').rglob('*.py'))}
++        if current!=audit['validator_files'] or set(current)!=set(original):raise ValueError('audit file identity mismatch')
++        changed={name for name in current if current[name]!=original[name]}
++        if changed!={'matched_intervals005.py','intervals005_validate.py','intervals005_owners.py'}:raise ValueError('unexpected source change for native validation erratum')
+     for name,value in p['inputs'].items():
+         if digest(REPO/name)!=value:raise ValueError('frozen input changed: '+name)
+     for name,value in p['design_hashes'].items():
+         if digest(path.parent/name)!=value:raise ValueError('frozen membership/spec changed')
+-    if signature(method_spec(p['scope']['model_seed']))!=signature(p['method_specification']):raise ValueError('factory specification drift')
++    actual=method_spec(p['scope']['model_seed'])
++    if audit_manifest is None:
++        if signature(actual)!=signature(p['method_specification']):raise ValueError('factory specification drift')
++    else:
++        if signature(actual)!=signature(audit['resolved_method_specification']):raise ValueError('resolved audit specification drift')
++        import copy
++        old=copy.deepcopy(p['method_specification']);new=copy.deepcopy(actual)
++        for field in ('score','native_quantile','native_predict_parameters'):
++            old['cqr'].pop(field,None);new['cqr'].pop(field,None)
++        if signature(old)!=signature(new):raise ValueError('audit changed a frozen factory or policy')
+     return p
+ 
+ 
+@@ -118,9 +146,10 @@ def finish_tables(stages,scope):
+     return stages.run('tables',work)
+ 
+ 
+-def execute(path,ready,out,*,resume=False,forbid=False,receipt=None):
+-    p=check_protocol(path);r=read(ready)
+-    if not r['ready'] or r['protocol_hash']!=digest(path) or r['source_hash']!=source_digest():raise ValueError('fresh readiness mismatch')
++def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manifest=None):
++    if audit_manifest is not None and not (resume and forbid and (Path(out)/'COMPLETE.json').exists()):raise ValueError('audit manifest permits completed forbidden-fit resume only')
++    p=check_protocol(path,audit_manifest);r=read(ready)
++    if not r['ready'] or r['protocol_hash']!=digest(path) or r['source_hash']!=p['source_hash']:raise ValueError('fresh readiness mismatch')
+     stages=Stages(out,dict(protocol_hash=digest(path),source_hash=p['source_hash']),resume=resume)
+     if (stages.root/'COMPLETE.json').exists():
+         before=tree(stages.root);marker=read(stages.root/'COMPLETE.json')
+@@ -130,6 +159,7 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None):
+             for key in marker['stage_keys']:stages.get(key)
+         if tree(stages.root)!=before:raise ValueError('completed resume changed scientific files')
+         result=dict(status='complete',models_fitted=0,calibrators_fitted=0,all_run_files_unchanged=True,stages_verified=len(marker['stage_keys']),utc=now())
++        if audit_manifest:result.update(evaluated_source_hash=p['source_hash'],validator_source_hash=source_digest(),audit_manifest_sha256=digest(audit_manifest))
+         if receipt:atomic(receipt,result)
+         return result
+     if forbid:raise ValueError('forbidden-fit resume requires complete scientific output')
+@@ -217,15 +247,16 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None):
+ 
+ 
+ def main():
+-    a=argparse.ArgumentParser();a.add_argument('action',choices=['freeze','readiness','run','validate','resume']);a.add_argument('--matrix',default=str(MATRIX));a.add_argument('--authorization');a.add_argument('--synthetic-receipt');a.add_argument('--design-dir',required=True);a.add_argument('--out');a.add_argument('--readiness');a.add_argument('--receipt');a.add_argument('--forbid-fits',action='store_true');args=a.parse_args()
++    a=argparse.ArgumentParser();a.add_argument('action',choices=['freeze','readiness','run','validate','resume']);a.add_argument('--matrix',default=str(MATRIX));a.add_argument('--authorization');a.add_argument('--synthetic-receipt');a.add_argument('--design-dir',required=True);a.add_argument('--out');a.add_argument('--readiness');a.add_argument('--receipt');a.add_argument('--forbid-fits',action='store_true');a.add_argument('--audit-manifest');args=a.parse_args()
++    if args.audit_manifest and not (args.action=='validate' or (args.action=='resume' and args.forbid_fits)):raise ValueError('audit manifest is read-only; no fitting/readiness/freeze allowed')
+     from .matched_forecasting005 import setup_threads
+     setup_threads();protocol=Path(args.design_dir)/'frozen_protocol.json'
+     if args.action=='freeze':result=freeze(args.matrix,args.authorization,args.design_dir,args.synthetic_receipt)
+     elif args.action=='readiness':result=readiness(protocol,args.receipt)
+     elif args.action=='validate':
+         from .intervals005_validate import validate
+-        result=validate(protocol,args.out,args.receipt)
+-    else:result=execute(protocol,args.readiness,args.out,resume=args.action=='resume',forbid=args.forbid_fits,receipt=args.receipt)
++        result=validate(protocol,args.out,args.receipt,audit_manifest=args.audit_manifest)
++    else:result=execute(protocol,args.readiness,args.out,resume=args.action=='resume',forbid=args.forbid_fits,receipt=args.receipt,audit_manifest=args.audit_manifest)
+     print(json.dumps(result,indent=2,default=str),flush=True)
+ 
+ 

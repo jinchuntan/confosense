@@ -2,7 +2,11 @@
 
 [User authorization](USER_AUTHORIZATION.txt), [complete pinned handoff](AUTHORIZING_HANDOFF.md), [entry preservation](entry_preservation.json), [method/reference attribution](METHOD_REFERENCES.md), [synthetic acceptance](SYNTHETIC_ACCEPTANCE.json), [retained fixture recovery](SYNTHETIC_RECOVERY.md), and [durable progress/restart](PROGRESS_AND_RESTART.md).
 
-[Exact pre-fit commands and identities](joint_pre_fit_manifest.json). [Evaluated source archive](evaluated_source.zip).
+[Exact pre-fit commands and identities](joint_pre_fit_manifest.json). [Evaluated commit](evaluated_commit.json). [Evaluated source archive](evaluated_source.zip).
+
+[Supplemental no-fit DSCP truth-independence acceptance](SUPPLEMENTAL_ACCEPTANCE.md).
+
+[Native CQR validation/specification erratum](VALIDATION_ERRATUM.md), [resolved method specification](method_specification_resolved_v2.json), [exact read-only source manifest](VALIDATION_ERRATUM.json), and [corrected validation source](corrected_validation_source.zip).
 
 ## Protocol and scientific results
 
@@ -14,5 +18,8 @@
 - [joint_calibration.csv.gz](../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/joint_calibration.csv.gz)
 - [joint_test.csv.gz](../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/joint_test.csv.gz)
 - [readiness.json](../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/readiness.json)
+
+[Scientific checkpoints, serialized owners/calibrators, exact raw and issued/consumed streams](../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stages), [actual operation journal](../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/operations.jsonl), [stage journal](../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stage_journal.jsonl).
+
 
 [Exact byte manifest](EVIDENCE_MANIFEST.csv) covers the bounded task files except itself; the Git commit binds the manifest. All previous review heads/main and the entry backup chain remain preserved.

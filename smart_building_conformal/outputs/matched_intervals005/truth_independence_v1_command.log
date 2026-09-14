@@ -1,0 +1,71 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_saved_dscp_joint_assignment_and_bounds_ignore_heldout_truth _______
+
+    def test_saved_dscp_joint_assignment_and_bounds_ignore_heldout_truth():
+        saved=SMART/'outputs/matched_intervals005/synthetic_v1/run'
+        before=tree(saved)
+        frames={}
+        for h in (1,3):
+            f=pd.read_csv(saved/f'stages/stream_h{h}_l90_recentred_enbpi_static/issued.csv.gz')
+            for column in ('origin_time','target_time'):
+                f[column]=pd.to_datetime(f[column])
+>           frames[h]=f[['row_id','group_id','origin_time','target_time','y_true','point']].copy()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review\matched_intervals005_bdg2_20260914\test_truth_independence.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\cfs_venv\Lib\site-packages\pandas\core\frame.py:4108: in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\cfs_venv\Lib\site-packages\pandas\core\indexes\base.py:6200: in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Index(['row_id', 'group_id', 'origin_time', 'target_time', 'observed',
+       'available', 'point', 'raw_lower', 'raw_...servation_available_at', 'score_released_at_origin',
+       'released_score', 'issued_state_id'],
+      dtype='object')
+key = Index(['row_id', 'group_id', 'origin_time', 'target_time', 'y_true', 'point'], dtype='object')
+indexer = array([ 0,  1,  2,  3, -1,  6]), axis_name = 'columns'
+
+    def _raise_if_missing(self, key, indexer, axis_name: str_t) -> None:
+        """
+        Check that indexer can be used to return a result.
+    
+        e.g. at least one element was found,
+        unless the list of keys was actually empty.
+    
+        Parameters
+        ----------
+        key : list-like
+            Targeted labels (only used to show correct error message).
+        indexer: array-like of booleans
+            Indices corresponding to the key,
+            (with -1 indicating not found).
+        axis_name : str
+    
+        Raises
+        ------
+        KeyError
+            If at least one key was requested but none was found.
+        """
+        if len(key) == 0:
+            return
+    
+        # Count missing values
+        missing_mask = indexer < 0
+        nmissing = missing_mask.sum()
+    
+        if nmissing:
+            if nmissing == len(indexer):
+                raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+    
+            not_found = list(ensure_index(key)[missing_mask.nonzero()[0]].unique())
+>           raise KeyError(f"{not_found} not in index")
+E           KeyError: "['y_true'] not in index"
+
+C:\cfs_venv\Lib\site-packages\pandas\core\indexes\base.py:6252: KeyError
+=========================== short test summary info ===========================
+FAILED review/matched_intervals005_bdg2_20260914/test_truth_independence.py::test_saved_dscp_joint_assignment_and_bounds_ignore_heldout_truth
+1 failed in 3.99s

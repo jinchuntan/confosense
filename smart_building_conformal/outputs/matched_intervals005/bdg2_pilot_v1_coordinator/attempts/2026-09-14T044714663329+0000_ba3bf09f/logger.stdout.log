@@ -1,0 +1,36 @@
+VALIDATE horizon 1
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\measured_action.py", line 18, in main
+    runpy.run_module('src.matched_intervals005',run_name='__main__')
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 232, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 227, in main
+    result=validate(protocol,args.out,args.receipt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 138, in validate
+    close(raw.static_lower,np.minimum(a,b),f'cqr_native_lo_h{h}_{l}');close(raw.static_upper,np.maximum(a,b),f'cqr_native_hi_h{h}_{l}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 98, in close
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,equal_nan=True,err_msg=tag)
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 1691, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 889, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-07
+cqr_native_lo_h1_0.9
+Mismatched elements: 34640 / 34640 (100%)
+Max absolute difference among violations: 0.56145574
+Max relative difference among violations: 40.27176806
+ ACTUAL: array([ 17.951438,  17.758358,  17.641834, ..., 587.469618, 601.875895,
+       674.156046])
+ DESIRED: array([ 17.389983,  17.196902,  17.080379, ..., 586.908163, 601.31444 ,
+       673.59459 ])
+
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py", "--measurement", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validate_worker_resources_v1.json", "--", "validate", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T04:47:14.808646+00:00", "logger_pid": 28688, "child_pid": 3584, "ended_utc": "2026-09-14T04:48:13.227020+00:00", "seconds": 58.41621939999459, "exit_status": 1}

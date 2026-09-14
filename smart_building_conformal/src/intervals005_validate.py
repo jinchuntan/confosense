@@ -83,9 +83,9 @@ def independent_alert(f,freq,k=1,m=1):
     return expected,pd.DataFrame(episodes,columns=['channel','group_id','segment_id','start_index','onset'])
 
 
-def validate(protocol_path,out,receipt):
+def validate(protocol_path,out,receipt,*,audit_manifest=None):
     from .matched_intervals005 import check_protocol
-    p=check_protocol(protocol_path);root=Path(out);before=tree(root);complete=read(root/'COMPLETE.json')
+    p=check_protocol(protocol_path,audit_manifest);root=Path(out);before=tree(root);complete=read(root/'COMPLETE.json')
     frozen=dict(before);frozen.pop('COMPLETE.json')
     if frozen!=complete['files']:raise ValueError('completed scientific artifact hash mismatch')
     dest=Path(receipt)
@@ -123,7 +123,11 @@ def validate(protocol_path,out,receipt):
                     if kind=='cqr':
                         rawcal=frame(rawpath/f'calibration_{int(level*100)}.csv.gz');scores=np.maximum(rawcal.raw_lower-calmeta.y_true,calmeta.y_true-rawcal.raw_upper).to_numpy()
                         close(owner._mapie_quantile_regressor.conformity_scores_[2],scores,f'cqr_scores_h{h}_{level}')
-                        correction=np.quantile(scores,level*(1+1/len(scores)),method='higher')
+                        # MAPIE 1.4.1 predict_interval defaults to asymmetric
+                        # correction. Online CQR replay still uses max scores.
+                        tail_scores=np.vstack([rawcal.raw_lower-calmeta.y_true,calmeta.y_true-rawcal.raw_upper])
+                        close(owner._mapie_quantile_regressor.conformity_scores_[:2],tail_scores,f'cqr_tail_scores_h{h}_{level}')
+                        correction=np.quantile(tail_scores,(1-(1-level)/2)*(1+1/len(scores)),axis=1,method='higher')
                     else:
                         X=data['X'].iloc[roles['calibration']].to_numpy();preds=np.column_stack([e.predict(X) for e in owner.estimator_.estimators_]);mask=owner.estimator_.k_
                         with warnings.catch_warnings():
@@ -134,7 +138,7 @@ def validate(protocol_path,out,receipt):
                     for l in ([level] if kind=='cqr' else LEVELS):
                         raw=frame(rawpath/f'test_{int(l*100)}.csv.gz');rawcal=frame(rawpath/f'calibration_{int(l*100)}.csv.gz')
                         if kind=='cqr':
-                            a=raw.raw_lower.to_numpy()-correction;b=raw.raw_upper.to_numpy()+correction
+                            a=raw.raw_lower.to_numpy()-correction[0];b=raw.raw_upper.to_numpy()+correction[1]
                             close(raw.static_lower,np.minimum(a,b),f'cqr_native_lo_h{h}_{l}');close(raw.static_upper,np.maximum(a,b),f'cqr_native_hi_h{h}_{l}')
                         else:
                             finite=scores[np.isfinite(scores)];n=len(finite)
@@ -225,4 +229,5 @@ def validate(protocol_path,out,receipt):
     if tree(root)!=before:raise ValueError('independent validation mutated source artifacts')
     csv(dest/'reconstruction_checks.csv',pd.DataFrame(checks));csv(dest/'independent_metrics.csv',pd.DataFrame(metric_checks));csv(dest/'alert_checks.csv',pd.DataFrame(alert_checks))
     result=dict(passed=True,method_cells=30,native_common_metric_rows=len(metric_checks),seasonal_interval_cells=6,alert_stream_checks=len(alert_checks),maximum_observed_difference=maxdiff,models_fitted=0,calibrators_fitted=0,source_artifacts_unchanged=True,resources=meter.result,source_hash=p['source_hash'],protocol_hash=digest(protocol_path),utc=now())
+    if audit_manifest:result.update(validator_source_hash=source_digest(),audit_manifest_sha256=digest(audit_manifest))
     atomic(dest/'validation.json',result);atomic(dest/'COMPLETE.json',dict(files=tree(dest)));return result
