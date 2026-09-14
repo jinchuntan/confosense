@@ -1,0 +1,27 @@
+{
+  "key": "seasonal_h3",
+  "payload": {
+    "dataset": "pleia_energy",
+    "outer_fold": 2,
+    "model_seed": 42,
+    "horizon": 3,
+    "model": "seasonal_naive",
+    "n": 9907,
+    "mae": 0.16944773897244372,
+    "rmse": 0.3433314193501882,
+    "learned_fits": 0,
+    "deterministic_seed_alias": true
+  },
+  "resources": {
+    "seconds": 0.5131076999969082,
+    "baseline_rss_bytes": 517718016,
+    "peak_rss_bytes": 517738496,
+    "baseline_private_bytes": 570707968,
+    "peak_private_bytes": 570757120,
+    "incremental_peak_rss_bytes": 20480,
+    "lifetime_peak_rss_bytes": 538148864,
+    "min_available_ram_bytes": 4025896960,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.484375
+  }
+}

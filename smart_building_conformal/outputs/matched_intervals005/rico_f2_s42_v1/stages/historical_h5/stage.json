@@ -1,0 +1,39 @@
+{
+  "key": "historical_h5",
+  "payload": {
+    "reference": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h5_f2_s42_v2\\frozen_protocol.json",
+      "protocol_hash": "fcd243df8728f29a5ddeaa179aaa67eaffcd023ef5f5e0019e33c99af69c918c",
+      "run": "smart_building_conformal\\outputs\\matched_forecasting005\\rico_h5_f2_s42_v2",
+      "run_file_tree_hash": "edf608c9dbb83e325c103f53c49f1650dc78e07ce7ac2dc3819dcf310f5be6ff",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\rico_h5_f2_s42_v2\\units\\rico_h5_f2_s42_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "db302d5e2d5db8c9d68b914800ee4a73e5d61cc485a118e68108e1cb774e01cb",
+        "calibration.csv.gz": "a12f217499f9c95c64d6edb06c8366decf5db4c198052b8f76e9c3d0319eca5b",
+        "COMPLETE.json": "5e1defd0955eb6d227f6df96ba58cc47df6090c674d0ca92106e5f6d04d89e3c",
+        "fitting_membership.csv.gz": "8ae4619924cab3f111e21e1cdad1ea9a6f3cb73556be6637795b88f629a7ce95",
+        "model.ubj": "133f716a83a772b358e21fba76068acda13e31c8bbdfa43465d61484102f918e",
+        "payload.json": "61b9c005ca914e648bd01058bf9e6290ad52caa3c2269fc5fbc9e8f0ae40a865",
+        "predictions.csv.gz": "79faaf9791172556577e90a55a581eeb977b90fa87c3a16d0c3234c901d9e0d9",
+        "training_history.csv.gz": "9b58a2853b151e8221677148a29b8bc88dcbde2d2b900600ea21ec002c235f02",
+        "tuning.csv.gz": "c790d4732874056dfa35965934a2f14579af718b4beae5562b25f967a23fa49b",
+        "tuning_predictions.csv.gz": "14e22e32da9973540f142f631a382ab98772a5a3d2b943b42be1ef7a4cfdf2db"
+      },
+      "evaluated_commit": "350ef4fd1c92c12a982df2b8366023937515b65b"
+    },
+    "new_predictor_fits": 0
+  },
+  "resources": {
+    "seconds": 2.574737400005688,
+    "baseline_rss_bytes": 458612736,
+    "peak_rss_bytes": 576950272,
+    "baseline_private_bytes": 409702400,
+    "peak_private_bytes": 609800192,
+    "incremental_peak_rss_bytes": 118337536,
+    "lifetime_peak_rss_bytes": 578199552,
+    "min_available_ram_bytes": 2273652736,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 2.484375
+  }
+}

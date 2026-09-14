@@ -1,0 +1,61 @@
+{
+  "task": "rico/completed_resume",
+  "attempt_id": "2026-09-14T142143930074+0000_175fbe8e",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+    "--measurement",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\rico_resume_worker_resources.json",
+    "--",
+    "resume",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\rico_f2_s42_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1\\readiness.json",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\rico_completed_resume.json",
+    "--forbid-fits"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T14:21:43.930074+00:00",
+  "ended_utc": "2026-09-14T14:21:50.035547+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\attempts\\2026-09-14T142143930074+0000_175fbe8e\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\attempts\\2026-09-14T142143930074+0000_175fbe8e\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 33252,
+    "created": 134338693039351596,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 33252,
+  "process_family": [
+    {
+      "pid": 28272,
+      "created": 134338693039523283,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 33252,
+      "created": 134338693039351596,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 32140,
+      "created": 134338693040299372,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    }
+  ],
+  "worker_identity": {
+    "pid": 32140,
+    "created": 134338693040299372,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\attempts\\2026-09-14T142143930074+0000_175fbe8e\\command.log.json",
+  "seconds": 6.008679299993673,
+  "child_pid": 32140
+}

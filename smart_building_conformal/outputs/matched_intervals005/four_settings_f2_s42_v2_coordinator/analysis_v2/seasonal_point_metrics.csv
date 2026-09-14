@@ -1,0 +1,7 @@
+dataset,outer_fold,model_seed,horizon,model,n,mae,rmse,learned_fits,deterministic_seed_alias
+pleia_energy,2,42,1,seasonal_naive,9907,0.169447738972444,0.343331419350188,0,True
+pleia_energy,2,42,3,seasonal_naive,9907,0.169447738972444,0.343331419350188,0,True
+pleia_energy,2,42,6,seasonal_naive,9907,0.169447738972444,0.343331419350188,0,True
+pleia,2,42,1,seasonal_naive,9907,0.817220147370546,1.10275264203835,0,True
+pleia,2,42,3,seasonal_naive,9907,0.817220147370546,1.10275264203835,0,True
+pleia,2,42,6,seasonal_naive,9907,0.817220147370546,1.10275264203835,0,True

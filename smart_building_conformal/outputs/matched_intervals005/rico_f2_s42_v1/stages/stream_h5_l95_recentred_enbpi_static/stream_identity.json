@@ -1,0 +1,28 @@
+{
+  "emitted_hash": "e90ddc88e996a492f4dbd4a8fed2f46d02a9a1f98cb87446fb742b8044f27457",
+  "consumed_hash": "e90ddc88e996a492f4dbd4a8fed2f46d02a9a1f98cb87446fb742b8044f27457",
+  "identity": {
+    "owner_sha256": "6f16b8bad6dd990f1473e4e64804553909871bd7c45b4c977a5b194619f1a153",
+    "method": "recentred_enbpi_static",
+    "level": 0.95,
+    "mutable_state_identity": "a66da1893b9d4d84c47b519eb2bdb3c56593a0356dc36be933d4ea4827f83450",
+    "score": "signed y-own-point; unused by static methods"
+  },
+  "candidate": {
+    "method": "recentred_enbpi",
+    "level": 0.95,
+    "strategy": "static",
+    "every": 0,
+    "window": null,
+    "min_samples": 50
+  },
+  "alert_rule": {
+    "k": 1,
+    "m": 1,
+    "frequency": "0 days 00:01:00"
+  },
+  "event_count": 0,
+  "horizon": 5,
+  "level": 0.95,
+  "method": "recentred_enbpi_static"
+}

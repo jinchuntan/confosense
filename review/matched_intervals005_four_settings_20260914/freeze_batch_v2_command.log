@@ -1,0 +1,283 @@
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "joint_support": {
+    "fit": 14845,
+    "calibration": 4943,
+    "test": 9902
+  },
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2"
+}
+{
+  "passed": true,
+  "ready": true,
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2",
+  "protocol_hash": "549940da24cc225129b4c53e766c687f57e4a951d0b815a75e3ee330f18231d9",
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "resources": {
+    "rss_bytes": 370008064,
+    "private_bytes": 323776512,
+    "lifetime_peak_rss_bytes": 414883840,
+    "available_ram_bytes": 4037455872,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 25505165312,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "launch_ram_reference_nonblocking": true
+  },
+  "preparation_resources": {
+    "seconds": 10.68141389999073,
+    "baseline_rss_bytes": 324112384,
+    "peak_rss_bytes": 405807104,
+    "baseline_private_bytes": 281010176,
+    "peak_private_bytes": 359563264,
+    "incremental_peak_rss_bytes": 81694720,
+    "lifetime_peak_rss_bytes": 414883840,
+    "min_available_ram_bytes": 3947421696,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 10.390625
+  },
+  "utc": "2026-09-14T13:48:25.040057+00:00"
+}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "joint_support": {
+    "fit": 14845,
+    "calibration": 4943,
+    "test": 9902
+  },
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2"
+}
+{
+  "passed": true,
+  "ready": true,
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2",
+  "protocol_hash": "f98682c7a43382471e7c83de354882ff656c7538a293187bef8081bf5769fbb0",
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "resources": {
+    "rss_bytes": 376815616,
+    "private_bytes": 331194368,
+    "lifetime_peak_rss_bytes": 1247227904,
+    "available_ram_bytes": 3964932096,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 25495625728,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "launch_ram_reference_nonblocking": true
+  },
+  "preparation_resources": {
+    "seconds": 14.068399600000703,
+    "baseline_rss_bytes": 324206592,
+    "peak_rss_bytes": 1175687168,
+    "baseline_private_bytes": 281612288,
+    "peak_private_bytes": 1208999936,
+    "incremental_peak_rss_bytes": 851480576,
+    "lifetime_peak_rss_bytes": 1247227904,
+    "min_available_ram_bytes": 3238035456,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 13.859375
+  },
+  "utc": "2026-09-14T13:49:10.415886+00:00"
+}
+{
+  "frozen": true,
+  "models_fitted": 0,
+  "joint_support": {
+    "fit": 9577,
+    "calibration": 3297,
+    "test": 6437
+  },
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2"
+}
+{
+  "passed": true,
+  "ready": true,
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2",
+  "protocol_hash": "cff35434986cda7a5baf77c481b425671b078d13378eb130b18b683d2cb24997",
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "resources": {
+    "rss_bytes": 423038976,
+    "private_bytes": 375099392,
+    "lifetime_peak_rss_bytes": 494092288,
+    "available_ram_bytes": 3952754688,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 25488310272,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "launch_ram_reference_nonblocking": true
+  },
+  "preparation_resources": {
+    "seconds": 53.90601049999532,
+    "baseline_rss_bytes": 323948544,
+    "peak_rss_bytes": 484999168,
+    "baseline_private_bytes": 281133056,
+    "peak_private_bytes": 437833728,
+    "incremental_peak_rss_bytes": 161050624,
+    "lifetime_peak_rss_bytes": 494092288,
+    "min_available_ram_bytes": 3777576960,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 52.953125
+  },
+  "utc": "2026-09-14T13:51:14.596243+00:00"
+}
+{
+  "passed": true,
+  "source_commit": "7944df7ceee60eefdf7ce1ecfb6c2c07858fe565",
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2",
+  "authorized_units": [
+    "pleia_energy",
+    "pleia",
+    "rico"
+  ],
+  "new_method_cells": 100,
+  "new_learned_estimator_fits": 170,
+  "commands": [
+    {
+      "unit": "pleia_energy",
+      "action": "freeze",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\pleia_energy_freeze_worker_resources.json",
+        "--",
+        "freeze",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_energy_f2_s42_v2",
+        "--authorization",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_intervals005_remaining_pleia_energy_f2_s42_v1.json",
+        "--synthetic-receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\PRE_FIT_TEST_RECEIPT_V2.json"
+      ]
+    },
+    {
+      "unit": "pleia_energy",
+      "action": "readiness",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\pleia_energy_readiness_worker_resources.json",
+        "--",
+        "readiness",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_energy_f2_s42_v2",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_energy_f2_s42_v2\\readiness.json"
+      ]
+    },
+    {
+      "unit": "pleia",
+      "action": "freeze",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\pleia_freeze_worker_resources.json",
+        "--",
+        "freeze",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1",
+        "--authorization",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_intervals005_remaining_pleia_f2_s42_v1.json",
+        "--synthetic-receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\PRE_FIT_TEST_RECEIPT_V2.json"
+      ]
+    },
+    {
+      "unit": "pleia",
+      "action": "readiness",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\pleia_readiness_worker_resources.json",
+        "--",
+        "readiness",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1\\readiness.json"
+      ]
+    },
+    {
+      "unit": "rico",
+      "action": "freeze",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\rico_freeze_worker_resources.json",
+        "--",
+        "freeze",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1",
+        "--authorization",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_intervals005_remaining_rico_f2_s42_v1.json",
+        "--synthetic-receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\PRE_FIT_TEST_RECEIPT_V2.json"
+      ]
+    },
+    {
+      "unit": "rico",
+      "action": "readiness",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\rico_readiness_worker_resources.json",
+        "--",
+        "readiness",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1\\readiness.json"
+      ]
+    }
+  ],
+  "protocols": {
+    "pleia_energy": {
+      "path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_energy_f2_s42_v2\\frozen_protocol.json",
+      "sha256": "549940da24cc225129b4c53e766c687f57e4a951d0b815a75e3ee330f18231d9",
+      "readiness_sha256": "ca1757ec1d77eb90078341afb2a8194c675c7966115c26ae811610684efb05d1",
+      "joint_support": {
+        "fit": 14845,
+        "calibration": 4943,
+        "test": 9902
+      }
+    },
+    "pleia": {
+      "path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1\\frozen_protocol.json",
+      "sha256": "f98682c7a43382471e7c83de354882ff656c7538a293187bef8081bf5769fbb0",
+      "readiness_sha256": "b0d344f70cbc0cab557eff86ee9e940cb69b75efbf2d8a6f4f809fda1d2a936d",
+      "joint_support": {
+        "fit": 14845,
+        "calibration": 4943,
+        "test": 9902
+      }
+    },
+    "rico": {
+      "path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1\\frozen_protocol.json",
+      "sha256": "cff35434986cda7a5baf77c481b425671b078d13378eb130b18b683d2cb24997",
+      "readiness_sha256": "78f54b5321cb01bb8bcbf61517bdb26b8fbb643e97855afc741ca94205c5dec7",
+      "joint_support": {
+        "fit": 9577,
+        "calibration": 3297,
+        "test": 6437
+      }
+    }
+  },
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "utc": "2026-09-14T13:51:15.252922+00:00"
+}

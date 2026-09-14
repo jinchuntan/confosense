@@ -1,0 +1,26 @@
+{
+  "key": "stream_h60_l90_recentred_enbpi_static",
+  "payload": {
+    "n": 6437,
+    "emitted_hash": "4966c27ae05896253d424750c7fec896b71dafe0a059bbd70aab5801037f1c72",
+    "consumed_hash": "4966c27ae05896253d424750c7fec896b71dafe0a059bbd70aab5801037f1c72",
+    "updated_rows": 0,
+    "raw_crossed": 0,
+    "held_insufficient": 0,
+    "horizon": 60,
+    "level": 0.9,
+    "method": "recentred_enbpi_static"
+  },
+  "resources": {
+    "seconds": 1.296930299999076,
+    "baseline_rss_bytes": 572633088,
+    "peak_rss_bytes": 574304256,
+    "baseline_private_bytes": 622219264,
+    "peak_private_bytes": 623923200,
+    "incremental_peak_rss_bytes": 1671168,
+    "lifetime_peak_rss_bytes": 609464320,
+    "min_available_ram_bytes": 2634915840,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.28125
+  }
+}

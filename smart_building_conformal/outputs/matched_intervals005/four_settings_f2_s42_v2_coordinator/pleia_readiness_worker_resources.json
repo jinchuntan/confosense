@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-09-14T13:48:56.146224+00:00",
+  "ended_utc": "2026-09-14T13:49:10.419889+00:00",
+  "pid": 5560,
+  "action_argv": [
+    "readiness",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1\\readiness.json"
+  ],
+  "actual_exit": 0,
+  "resources": {
+    "seconds": 14.27305879999767,
+    "baseline_rss_bytes": 319553536,
+    "peak_rss_bytes": 1232703488,
+    "baseline_private_bytes": 278679552,
+    "peak_private_bytes": 1208999936,
+    "incremental_peak_rss_bytes": 913149952,
+    "lifetime_peak_rss_bytes": 1247227904,
+    "min_available_ram_bytes": 3184599040,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 14.046875
+  },
+  "error": null,
+  "interpretation": "whole Python CLI worker"
+}

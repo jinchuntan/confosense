@@ -1,0 +1,26 @@
+{
+  "key": "stream_h5_l90_dscp",
+  "payload": {
+    "n": 6437,
+    "emitted_hash": "359b972d8863d4cf358adfaf3b6f8a323ae64e273c2a368d0985ad27fe68fbb4",
+    "consumed_hash": "359b972d8863d4cf358adfaf3b6f8a323ae64e273c2a368d0985ad27fe68fbb4",
+    "updated_rows": 0,
+    "raw_crossed": 0,
+    "held_insufficient": 0,
+    "horizon": 5,
+    "level": 0.9,
+    "method": "dscp"
+  },
+  "resources": {
+    "seconds": 1.736009100000956,
+    "baseline_rss_bytes": 574251008,
+    "peak_rss_bytes": 574279680,
+    "baseline_private_bytes": 656785408,
+    "peak_private_bytes": 656834560,
+    "incremental_peak_rss_bytes": 28672,
+    "lifetime_peak_rss_bytes": 714153984,
+    "min_available_ram_bytes": 2720501760,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.59375
+  }
+}

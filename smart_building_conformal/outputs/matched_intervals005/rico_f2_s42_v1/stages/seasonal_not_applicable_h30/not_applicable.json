@@ -1,0 +1,10 @@
+{
+  "dataset": "rico",
+  "outer_fold": 2,
+  "model_seed": 42,
+  "horizon": 30,
+  "applicable": false,
+  "season_steps": null,
+  "reason": "RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined",
+  "learned_fits": 0
+}

@@ -1,0 +1,12 @@
+{
+  "dataset": "pleia",
+  "outer_fold": 2,
+  "model_seed": 42,
+  "horizon": 6,
+  "model": "seasonal_naive",
+  "n": 9907,
+  "mae": 0.8172201473705462,
+  "rmse": 1.1027526420383493,
+  "learned_fits": 0,
+  "deterministic_seed_alias": true
+}

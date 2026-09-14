@@ -1,0 +1,25 @@
+{
+  "key": "seasonal_not_applicable_h5",
+  "payload": {
+    "dataset": "rico",
+    "outer_fold": 2,
+    "model_seed": 42,
+    "horizon": 5,
+    "applicable": false,
+    "season_steps": null,
+    "reason": "RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined",
+    "learned_fits": 0
+  },
+  "resources": {
+    "seconds": 0.0032128000020748004,
+    "baseline_rss_bytes": 567836672,
+    "peak_rss_bytes": 567857152,
+    "baseline_private_bytes": 585744384,
+    "peak_private_bytes": 585777152,
+    "incremental_peak_rss_bytes": 20480,
+    "lifetime_peak_rss_bytes": 578199552,
+    "min_available_ram_bytes": 2266505216,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.0
+  }
+}

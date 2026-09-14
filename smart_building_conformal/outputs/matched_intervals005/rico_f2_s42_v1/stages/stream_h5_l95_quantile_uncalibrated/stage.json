@@ -1,0 +1,26 @@
+{
+  "key": "stream_h5_l95_quantile_uncalibrated",
+  "payload": {
+    "n": 8692,
+    "emitted_hash": "47e48b5ca77bd2a76358adbb37c3091aefb02b1dfad4cf3726b28afee3383d5e",
+    "consumed_hash": "47e48b5ca77bd2a76358adbb37c3091aefb02b1dfad4cf3726b28afee3383d5e",
+    "updated_rows": 0,
+    "raw_crossed": 75,
+    "held_insufficient": 0,
+    "horizon": 5,
+    "level": 0.95,
+    "method": "quantile_uncalibrated"
+  },
+  "resources": {
+    "seconds": 2.823357200002647,
+    "baseline_rss_bytes": 575238144,
+    "peak_rss_bytes": 578830336,
+    "baseline_private_bytes": 591785984,
+    "peak_private_bytes": 595398656,
+    "incremental_peak_rss_bytes": 3592192,
+    "lifetime_peak_rss_bytes": 591396864,
+    "min_available_ram_bytes": 2277752832,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 2.75
+  }
+}

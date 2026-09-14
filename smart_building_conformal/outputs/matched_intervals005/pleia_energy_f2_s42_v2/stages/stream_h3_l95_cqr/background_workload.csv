@@ -1,0 +1,7 @@
+group_id,channel,n_rows,n_available,n_unavailable,exposure_asset_days,observed_asset_days,episodes,background_episodes_per_asset_day,time_in_alert_fraction,event_count,event_recall_status,interpretation,horizon,level,method
+__pooled__,numerical_only,9907,9907,0,68.79861111111111,68.79861111111111,735,10.68335520339154,0.10507721812859594,0,not_estimable_empty_event_catalogue,"background episodes, not confirmed false alarms; no primary selection",3,0.95,cqr
+__pooled__,availability_only,9907,9907,0,68.79861111111111,68.79861111111111,0,0.0,0.0,0,not_estimable_empty_event_catalogue,"background episodes, not confirmed false alarms; no primary selection",3,0.95,cqr
+__pooled__,combined,9907,9907,0,68.79861111111111,68.79861111111111,735,10.68335520339154,0.10507721812859594,0,not_estimable_empty_event_catalogue,"background episodes, not confirmed false alarms; no primary selection",3,0.95,cqr
+,numerical_only,9907,9907,0,68.79861111111111,68.79861111111111,735,10.68335520339154,0.10507721812859594,0,not_estimable_empty_event_catalogue,"background episodes, not confirmed false alarms; no primary selection",3,0.95,cqr
+,availability_only,9907,9907,0,68.79861111111111,68.79861111111111,0,0.0,0.0,0,not_estimable_empty_event_catalogue,"background episodes, not confirmed false alarms; no primary selection",3,0.95,cqr
+,combined,9907,9907,0,68.79861111111111,68.79861111111111,735,10.68335520339154,0.10507721812859594,0,not_estimable_empty_event_catalogue,"background episodes, not confirmed false alarms; no primary selection",3,0.95,cqr

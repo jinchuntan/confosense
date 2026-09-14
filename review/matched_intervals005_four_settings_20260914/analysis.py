@@ -31,7 +31,9 @@ def figure(common_metrics,out,metric,ylabel):
 def main():
     state=read(BATCH/'progress.json')
     if state['status']!='science_complete':raise ValueError('analysis requires all scientific units complete')
-    out=BATCH/'analysis_v1'
+    # Preserve v1: it exposed that the per-run workload table has no dataset
+    # column.  v2 adds that immutable protocol identity while aggregating.
+    out=BATCH/'analysis_v2'
     if out.exists():raise ValueError('preserve existing analysis')
     out.mkdir();figures=out/'figures';figures.mkdir()
     native=[];common=[];groups=[];workloads=[];operations=[];seasons=[];points=[];season_status=[];costs=[];validations=[];supports=[]
@@ -44,7 +46,9 @@ def main():
         assert resume['models_fitted']==resume['calibrators_fitted']==0 and resume['all_run_files_unchanged']
         validations.append(dict(dataset=unit['dataset'],**validation,zero_fit_resume=True))
         for collection,name in ((native,'native_support_metrics.csv'),(common,'common_support_metrics.csv'),(groups,'per_building_metrics.csv'),(workloads,'background_workload.csv'),(operations,'operations.csv')):
-            collection.append(frame(stage/'tables'/name))
+            value=frame(stage/'tables'/name)
+            if name in ('background_workload.csv','operations.csv'):value['dataset']=unit['dataset']
+            collection.append(value)
         seasons.append(frame(stage/'tables'/'seasonal_interval_metrics.csv'));points.append(frame(stage/'tables'/'seasonal_point_metrics.csv'));season_status.append(frame(stage/'tables'/'seasonal_applicability.csv'))
         proto=read(design(unit)/'frozen_protocol.json')
         for h,value in proto['support'].items():supports.append(dict(dataset=unit['dataset'],horizon=int(h),joint_fit=proto['joint_support']['fit'],joint_calibration=proto['joint_support']['calibration'],joint_test=proto['joint_support']['test'],frequency=value['frequency'],available_fit=value['available_by_role']['fit'],available_calibration=value['available_by_role']['calibration'],available_test=value['available_by_role']['test'],seasonal_available_test=value['seasonal_available_by_role']['test']))
@@ -82,9 +86,11 @@ def main():
     atomic(ROOT/'MATCHED_INTERVAL_METHODS_REMAINING_SETTINGS_REPORT.md','\n'.join(report)+'\n')
     prefix='# Remaining fold-2 interval settings completed\n\nPLEIA energy, PLEIA temperature and RICO now contribute 100 independently validated interval-method cells at seed 42. The combined seed-42 cross-setting table has 130 cells; the full interval matrix is 250/1950.\n\n[Report](../MATCHED_INTERVAL_METHODS_REMAINING_SETTINGS_REPORT.md) and [evidence index](matched_intervals005_four_settings_20260914/EVIDENCE_INDEX.md).\n\n<!-- matched-intervals005-four-settings-20260914: historical content follows -->\n\n'
     for filename in ('CURRENT_EVIDENCE.md',):
-        existing=(ROOT/'review'/filename).read_text(encoding='utf-8');atomic(ROOT/'review'/filename,prefix+existing)
+        existing=(ROOT/'review'/filename).read_text(encoding='utf-8')
+        if not existing.startswith('# Remaining fold-2 interval settings completed'):atomic(ROOT/'review'/filename,prefix+existing)
     for filename in ('PROJECT_RECOVERY_STATUS.md','MATCHED_METHOD_READINESS_MAP.md'):
-        existing=(ROOT/filename).read_text(encoding='utf-8');atomic(ROOT/filename,prefix.replace('../','')+existing)
+        existing=(ROOT/filename).read_text(encoding='utf-8')
+        if not existing.startswith('# Remaining fold-2 interval settings completed'):atomic(ROOT/filename,prefix.replace('../','')+existing)
     atomic(REVIEW/'PANEL_RESPONSE.md','# Numerical panel response: remaining interval settings\n\nThe response links all 100 new frozen cells, the combined 130-cell seed-42 table, independent validations, zero-fit resumes, background workload, seasonal applicability, and measured worker costs. No ranking is made across targets with different units, and empty-event streams remain limited to background workload.\n')
     result=dict(passed=True,new_method_cells=100,combined_seed42_method_cells=130,interval_methods_complete=250,interval_methods_remaining=1700,matched_forecasting_complete=70,new_learned_estimator_fits=170,new_dscp_calibrators=3,new_kmeans_candidate_fits=15,seasonal_point_cells=6,seasonal_interval_cells=12,rico_seasonal_not_applicable=4,independent_validations=3,zero_fit_completed_resumes=3,worker_exit_zero=9,models_fitted=0,calibrators_fitted=0,source_artifacts_unchanged=True,full_study_ready=False,utc=now())
     atomic(out/'analysis_validation.json',result);atomic(out/'COMPLETE.json',dict(files=tree(out),models_fitted=0,calibrators_fitted=0));print(json.dumps(result,indent=2))

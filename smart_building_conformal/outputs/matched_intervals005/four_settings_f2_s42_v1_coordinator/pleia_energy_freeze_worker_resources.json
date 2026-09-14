@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-09-14T13:45:14.243298+00:00",
+  "ended_utc": "2026-09-14T13:45:28.229337+00:00",
+  "pid": 8984,
+  "action_argv": [
+    "freeze",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_energy_f2_s42_v1",
+    "--authorization",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\configs\\matched_intervals005_remaining_pleia_energy_f2_s42_v1.json",
+    "--synthetic-receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\PRE_FIT_TEST_RECEIPT.json"
+  ],
+  "actual_exit": 1,
+  "resources": {
+    "seconds": 13.973106699995697,
+    "baseline_rss_bytes": 319496192,
+    "peak_rss_bytes": 522547200,
+    "baseline_private_bytes": 278573056,
+    "peak_private_bytes": 479010816,
+    "incremental_peak_rss_bytes": 203051008,
+    "lifetime_peak_rss_bytes": 545873920,
+    "min_available_ram_bytes": 2948816896,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 11.78125
+  },
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py\", line 17, in main\n    runpy.run_module('src.matched_intervals005',run_name='__main__')\n  File \"<frozen runpy>\", line 229, in run_module\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_intervals005.py\", line 367, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_intervals005.py\", line 358, in main\n    if args.action=='freeze':result=freeze(args.matrix,args.authorization,args.design_dir,args.synthetic_receipt)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_intervals005.py\", line 101, in freeze\n    pieces=joint_join({h:roles_all[h][role] for h in c['horizons']},c['horizons'],expected=expected_joint(c['dataset'],c['outer_fold'],role),frequency=frequency)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\intervals005_data.py\", line 134, in joint_join\n    if e!=common or len(e)!=len(expected):raise ValueError('missing/unexpected joint origin versus frozen membership')\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: missing/unexpected joint origin versus frozen membership\n",
+  "interpretation": "whole Python CLI worker"
+}

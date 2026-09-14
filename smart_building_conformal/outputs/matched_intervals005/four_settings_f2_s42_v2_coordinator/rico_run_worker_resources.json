@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-09-14T14:11:00.777703+00:00",
+  "ended_utc": "2026-09-14T14:16:46.968121+00:00",
+  "pid": 19084,
+  "action_argv": [
+    "run",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\rico_f2_s42_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\rico_f2_s42_v1\\readiness.json"
+  ],
+  "actual_exit": 0,
+  "resources": {
+    "seconds": 346.1901310999965,
+    "baseline_rss_bytes": 319950848,
+    "peak_rss_bytes": 653271040,
+    "baseline_private_bytes": 278728704,
+    "peak_private_bytes": 721305600,
+    "incremental_peak_rss_bytes": 333320192,
+    "lifetime_peak_rss_bytes": 714153984,
+    "min_available_ram_bytes": 1870573568,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 326.421875
+  },
+  "error": null,
+  "interpretation": "whole Python CLI worker"
+}

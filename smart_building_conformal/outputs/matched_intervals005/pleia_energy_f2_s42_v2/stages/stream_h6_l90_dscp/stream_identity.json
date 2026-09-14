@@ -1,0 +1,28 @@
+{
+  "emitted_hash": "902009c8a66dfe66fa9f2c446083ff37c0a07e365f7d9159da7935c0a6f5d77f",
+  "consumed_hash": "902009c8a66dfe66fa9f2c446083ff37c0a07e365f7d9159da7935c0a6f5d77f",
+  "identity": {
+    "owner_sha256": "5ae98c09ae152ab86351588d89a3e064637964897380533a3ad879e1e7060342",
+    "method": "dscp",
+    "level": 0.9,
+    "mutable_state_identity": "42c42e18e701be411b1524204aad804df0b08984f21be9857259e8f8a770703e",
+    "score": "signed y-own-point; unused by static methods"
+  },
+  "candidate": {
+    "method": "dscp",
+    "level": 0.9,
+    "strategy": "static",
+    "every": 0,
+    "window": null,
+    "min_samples": 50
+  },
+  "alert_rule": {
+    "k": 1,
+    "m": 1,
+    "frequency": "0 days 00:10:00"
+  },
+  "event_count": 0,
+  "horizon": 6,
+  "level": 0.9,
+  "method": "dscp"
+}

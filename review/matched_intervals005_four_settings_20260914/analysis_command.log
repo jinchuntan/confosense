@@ -1,0 +1,24 @@
+C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_four_settings_20260914\analysis.py:56: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  seasons=pd.concat(seasons,ignore_index=True);points=pd.concat(points,ignore_index=True);season_status=pd.concat(season_status,ignore_index=True);costs=pd.DataFrame(costs);validations=pd.DataFrame(validations);supports=pd.DataFrame(supports)
+{
+  "passed": true,
+  "new_method_cells": 100,
+  "combined_seed42_method_cells": 130,
+  "interval_methods_complete": 250,
+  "interval_methods_remaining": 1700,
+  "matched_forecasting_complete": 70,
+  "new_learned_estimator_fits": 170,
+  "new_dscp_calibrators": 3,
+  "new_kmeans_candidate_fits": 15,
+  "seasonal_point_cells": 6,
+  "seasonal_interval_cells": 12,
+  "rico_seasonal_not_applicable": 4,
+  "independent_validations": 3,
+  "zero_fit_completed_resumes": 3,
+  "worker_exit_zero": 9,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "source_artifacts_unchanged": true,
+  "full_study_ready": false,
+  "utc": "2026-09-14T14:22:34.427365+00:00"
+}

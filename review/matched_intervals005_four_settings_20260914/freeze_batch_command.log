@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_four_settings_20260914\measured_action.py", line 17, in main
+    runpy.run_module('src.matched_intervals005',run_name='__main__')
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 367, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 358, in main
+    if args.action=='freeze':result=freeze(args.matrix,args.authorization,args.design_dir,args.synthetic_receipt)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 101, in freeze
+    pieces=joint_join({h:roles_all[h][role] for h in c['horizons']},c['horizons'],expected=expected_joint(c['dataset'],c['outer_fold'],role),frequency=frequency)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_data.py", line 134, in joint_join
+    if e!=common or len(e)!=len(expected):raise ValueError('missing/unexpected joint origin versus frozen membership')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: missing/unexpected joint origin versus frozen membership

@@ -1,0 +1,23 @@
+{
+  "key": "raw_h15_enbpi",
+  "payload": {
+    "owner_sha256": "775bd0e69f0e8b3510cc006aa49119d9b792613f7bad336b120d6d981b19bafb",
+    "kind": "enbpi",
+    "levels": [
+      0.9,
+      0.95
+    ]
+  },
+  "resources": {
+    "seconds": 1.6374522999976762,
+    "baseline_rss_bytes": 576172032,
+    "peak_rss_bytes": 598712320,
+    "baseline_private_bytes": 625434624,
+    "peak_private_bytes": 648462336,
+    "incremental_peak_rss_bytes": 22540288,
+    "lifetime_peak_rss_bytes": 609464320,
+    "min_available_ram_bytes": 2329247744,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.609375
+  }
+}

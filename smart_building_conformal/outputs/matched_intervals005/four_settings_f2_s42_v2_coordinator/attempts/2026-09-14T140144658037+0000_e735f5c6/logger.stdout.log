@@ -1,0 +1,267 @@
+PREPARE horizon 1
+OWNER h1_cqr_l90
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+STREAM stream_h1_l90_quantile_uncalibrated
+STREAM stream_h1_l90_cqr
+OWNER h1_cqr_l95
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+STREAM stream_h1_l95_quantile_uncalibrated
+STREAM stream_h1_l95_cqr
+OWNER h1_enbpi
+C:\cfs_venv\Lib\site-packages\mapie\utils.py:668: UserWarning: WARNING: at least one point of training set belongs to every resamplings.
+Increase the number of resamplings
+  warnings.warn(
+C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+  return cast(NDArray, np.nanmean(X, axis=1))
+C:\cfs_venv\Lib\site-packages\mapie\utils.py:668: UserWarning: WARNING: at least one point of training set belongs to every resamplings.
+Increase the number of resamplings
+  warnings.warn(
+C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+  return cast(NDArray, np.nanmean(X, axis=1))
+C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+  return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+  return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+STREAM stream_h1_l90_recentred_enbpi_static
+STREAM stream_h1_l90_recentred_enbpi_updated
+STREAM stream_h1_l95_recentred_enbpi_static
+STREAM stream_h1_l95_recentred_enbpi_updated
+PREPARE horizon 3
+OWNER h3_cqr_l90
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+STREAM stream_h3_l90_quantile_uncalibrated
+STREAM stream_h3_l90_cqr
+OWNER h3_cqr_l95
+INFO:root:The predictions are ill-sorted.
+STREAM stream_h3_l95_quantile_uncalibrated
+STREAM stream_h3_l95_cqr
+OWNER h3_enbpi
+C:\cfs_venv\Lib\site-packages\mapie\utils.py:668: UserWarning: WARNING: at least one point of training set belongs to every resamplings.
+Increase the number of resamplings
+  warnings.warn(
+C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+  return cast(NDArray, np.nanmean(X, axis=1))
+C:\cfs_venv\Lib\site-packages\mapie\utils.py:668: UserWarning: WARNING: at least one point of training set belongs to every resamplings.
+Increase the number of resamplings
+  warnings.warn(
+C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+  return cast(NDArray, np.nanmean(X, axis=1))
+C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+  return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+  return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+STREAM stream_h3_l90_recentred_enbpi_static
+STREAM stream_h3_l90_recentred_enbpi_updated
+STREAM stream_h3_l95_recentred_enbpi_static
+STREAM stream_h3_l95_recentred_enbpi_updated
+PREPARE horizon 6
+OWNER h6_cqr_l90
+INFO:root:The predictions are ill-sorted.
+INFO:root:The predictions are ill-sorted.
+STREAM stream_h6_l90_quantile_uncalibrated
+STREAM stream_h6_l90_cqr
+OWNER h6_cqr_l95
+STREAM stream_h6_l95_quantile_uncalibrated
+STREAM stream_h6_l95_cqr
+OWNER h6_enbpi
+C:\cfs_venv\Lib\site-packages\mapie\utils.py:668: UserWarning: WARNING: at least one point of training set belongs to every resamplings.
+Increase the number of resamplings
+  warnings.warn(
+C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+  return cast(NDArray, np.nanmean(X, axis=1))
+C:\cfs_venv\Lib\site-packages\mapie\utils.py:668: UserWarning: WARNING: at least one point of training set belongs to every resamplings.
+Increase the number of resamplings
+  warnings.warn(
+C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+  return cast(NDArray, np.nanmean(X, axis=1))
+C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+  return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+  return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+STREAM stream_h6_l90_recentred_enbpi_static
+STREAM stream_h6_l90_recentred_enbpi_updated
+STREAM stream_h6_l95_recentred_enbpi_static
+STREAM stream_h6_l95_recentred_enbpi_updated
+DSCP assigned through 64/9902
+DSCP assigned through 576/9902
+DSCP assigned through 4672/9902
+DSCP assigned through 8768/9902
+{
+  "status": "complete",
+  "method_cells": 30,
+  "seasonal_interval_cells": 6,
+  "seasonal_not_applicable": 0,
+  "operation_counts": {
+    "calibrator_conformalize": 18,
+    "dscp_calibrator_fit": 1,
+    "cqr_wrapper_fit": 6,
+    "xgboost_estimator_fit": 33,
+    "enbpi_wrapper_fit": 3,
+    "quantile_estimator_fit": 18,
+    "kmeans_candidate_fit": 5
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_four_settings_20260914\\measured_action.py", "--measurement", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\four_settings_f2_s42_v2_coordinator\\pleia_run_worker_resources.json", "--", "run", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\pleia_f2_s42_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\pleia_f2_s42_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T14:01:44.751487+00:00", "logger_pid": 31272, "child_pid": 31552, "ended_utc": "2026-09-14T14:07:14.986703+00:00", "seconds": 330.2354403000063, "exit_status": 0}

@@ -1,3 +1,11 @@
+# Remaining fold-2 interval settings completed
+
+PLEIA energy, PLEIA temperature and RICO now contribute 100 independently validated interval-method cells at seed 42. The combined seed-42 cross-setting table has 130 cells; the full interval matrix is 250/1950.
+
+[Report](MATCHED_INTERVAL_METHODS_REMAINING_SETTINGS_REPORT.md) and [evidence index](matched_intervals005_four_settings_20260914/EVIDENCE_INDEX.md).
+
+<!-- matched-intervals005-four-settings-20260914: historical content follows -->
+
 # BDG2 five-seed interval extension completed
 
 The bounded fold-2 comparison now contains 150/1950 interval-method cells across model seeds 42–46. All four new seeds passed independent validation and zero-fit resume. Matched forecasting remains 70/195; full-study readiness remains false.

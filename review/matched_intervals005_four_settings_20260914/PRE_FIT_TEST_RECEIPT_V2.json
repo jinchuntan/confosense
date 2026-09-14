@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "actual_exit": 0,
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_matched_intervals005.py",
+    "tests/test_matched_intervals005_remaining.py",
+    "tests/test_matched_intervals005_multiseed.py"
+  ],
+  "source_commit": "7944df7ceee60eefdf7ce1ecfb6c2c07858fe565",
+  "source_hash": "3a4c89ff6e653d0e036105eec4c43e6ccd4293ff3aa3fb8abfd934942c7c32a2",
+  "tests": "27 matched-interval synthetic, remaining-scope, and prior-multiseed checks",
+  "enbpi_base_fits_per_owner": 11,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "utc": "2026-09-14T13:47:40.296558+00:00"
+}

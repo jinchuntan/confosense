@@ -1,0 +1,11 @@
+dataset,outer_fold,model_seed,horizon,applicable,season_steps,reason,learned_fits
+pleia_energy,2,42,1,True,144,daily seasonal-naive baseline evaluated and split-conformalized,
+pleia_energy,2,42,3,True,144,daily seasonal-naive baseline evaluated and split-conformalized,
+pleia_energy,2,42,6,True,144,daily seasonal-naive baseline evaluated and split-conformalized,
+pleia,2,42,1,True,144,daily seasonal-naive baseline evaluated and split-conformalized,
+pleia,2,42,3,True,144,daily seasonal-naive baseline evaluated and split-conformalized,
+pleia,2,42,6,True,144,daily seasonal-naive baseline evaluated and split-conformalized,
+rico,2,42,5,False,,RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined,0
+rico,2,42,15,False,,RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined,0
+rico,2,42,30,False,,RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined,0
+rico,2,42,60,False,,RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined,0

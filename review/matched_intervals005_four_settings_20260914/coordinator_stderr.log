@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_four_settings_20260914\coordinator.py", line 53, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_four_settings_20260914\coordinator.py", line 40, in main
+    engine.phase(f'{name}/run',lambda folder,u=unit,a=action:command(u,a));progress(engine)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\coordinator.py", line 122, in phase
+    append(self.root/'attempts.jsonl',dict(event='started',**record))
+    ^^^^^^
+NameError: name 'append' is not defined
