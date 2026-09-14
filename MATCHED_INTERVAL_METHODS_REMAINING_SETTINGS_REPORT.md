@@ -14,7 +14,7 @@ Each method uses its own frozen native owner and its own 90%/95% stream. CQR ret
 
 Exact MAE, RMSE, coverage, MPIW and Winkler rows are in the linked CSVs. The three target panels keep their own scales; they do not support a numerical ranking across temperature and energy targets. Coverage and interval quality describe these fixed test partitions rather than population uncertainty estimates.
 
-![Coverage](smart_building_conformal/outputs/matched_intervals005/four_settings_f2_s42_v2_coordinator/analysis_v1/figures/remaining_settings_coverage.png)
+![Coverage](smart_building_conformal/outputs/matched_intervals005/four_settings_f2_s42_v2_coordinator/analysis_v2/figures/remaining_settings_coverage.png)
 
 ## Seasonal baselines and clean-stream alerts
 
