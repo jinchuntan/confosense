@@ -1,6 +1,6 @@
 # BDG2 interval-method multiseed evidence index
 
-[Authorization](USER_AUTHORIZATION.txt), [pinned handoff identity](AUTHORIZING_HANDOFF.md), [evaluated source identity](evaluated_source.json), [source archive](evaluated_source.zip), [pre-fit tests](PRE_FIT_TESTS.md), [freeze receipt](PRE_FIT_FREEZE.json), [durable command receipts](command_receipts/README.md), and [durable progress](PROGRESS_AND_RESTART.md).
+[Authorization](USER_AUTHORIZATION.txt), [pinned handoff identity](AUTHORIZING_HANDOFF.md), [evaluated source identity](evaluated_source.json), [source archive](evaluated_source.zip), [pre-fit tests](PRE_FIT_TESTS.md), [freeze receipt](PRE_FIT_FREEZE.json), [durable command receipts](command_receipts/README.md), [remote readback proof](REMOTE_VERIFICATION_B8284FD.json), and [durable progress](PROGRESS_AND_RESTART.md).
 
 [Five-seed report](../../BDG2_MATCHED_INTERVAL_METHODS_MULTISEED_REPORT.md), [seed-42 pilot report](../../BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md), [panel response](PANEL_RESPONSE.md), and [current evidence](../CURRENT_EVIDENCE.md).
 
