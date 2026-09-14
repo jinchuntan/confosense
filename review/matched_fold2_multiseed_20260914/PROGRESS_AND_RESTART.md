@@ -1,6 +1,6 @@
 # Matched fold-2 multiseed batch progress and restart
 
-Updated UTC: 2026-09-14T03:05:39.122630+00:00. Status: **science_and_reports_complete**. Validated **52/52 new paired units**; 156 point / 312 interval cells.
+Updated UTC: 2026-09-14T03:06:31.303301+00:00. Status: **complete**. Validated **52/52 new paired units**; 156 point / 312 interval cells.
 
 The atomic [progress ledger](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/progress.json) and [append-only attempts](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/attempts.jsonl) retain exact commands, process identities, actual exits and receipt paths. A running process is not a successful exit.
 

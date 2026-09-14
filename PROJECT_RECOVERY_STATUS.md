@@ -4,6 +4,10 @@
 
 [Report](MATCHED_FOLD2_MULTISEED_REPORT.md); [evidence index](review/matched_fold2_multiseed_20260914/EVIDENCE_INDEX.md). 125 matched units and broader-method obligations remain; full-study readiness is false.
 
+Actual coordinator and all 52 run exits were 0. Thirty regression checks passed; saved-model predictions reproduced exactly. [No-fitting failure diagnosis](MATCHED_FAILURE_DIAGNOSIS.md), [both-level numerical panel response](review/matched_fold2_multiseed_20260914/PANEL2_NUMERICAL_RESPONSE.md), and [actual completion/cost receipts](review/matched_fold2_multiseed_20260914/delivery_v1/COMPLETION_VERIFICATION.md).
+
+Next bounded implementation: `src.matched_intervals005` shared-owner checkpoints, joint-origin DSCP and causal method-preserving replay with synthetic verification, as specified in the [readiness map](MATCHED_METHOD_READINESS_MAP.md). No further real-data fit is launched.
+
 <!-- multiseed-20260914: preserved historical status follows -->
 
 # Matched overnight batch completed — 14 September 2026

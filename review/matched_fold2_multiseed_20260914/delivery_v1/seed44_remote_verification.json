@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "utc": "2026-09-14T01:08:02.980460+00:00",
+  "seed": 44,
+  "branch": "review/matched-fold2-multiseed-20260914",
+  "commit": "02e13e0591ba5ce1559f2449743a1c7cf52b8db4",
+  "remote_ref": "02e13e0591ba5ce1559f2449743a1c7cf52b8db4\trefs/heads/review/matched-fold2-multiseed-20260914",
+  "publication_method": "GitHub Desktop signed-in session",
+  "raw_readbacks": 10,
+  "checks": [
+    {
+      "path": "MATCHED_FOLD2_MULTISEED_REPORT.md",
+      "bytes": 12047,
+      "sha256": "c7677528ecc13b4960ebe40bb7a2c93b42de5614d75b17a4dc319e8d3b5c67ce"
+    },
+    {
+      "path": "MATCHED_FAILURE_DIAGNOSIS.md",
+      "bytes": 16090,
+      "sha256": "f89b6c37e43e7375e4262e356cd9c115d05f6d49e1a273b7167d9bef550f743b"
+    },
+    {
+      "path": "MATCHED_METHOD_READINESS_MAP.md",
+      "bytes": 10847,
+      "sha256": "2d548fed5da49db96c5e020bb77a33fccd773905ff571341cc86666e9ac16db4"
+    },
+    {
+      "path": "review/matched_fold2_multiseed_20260914/EVIDENCE_INDEX.md",
+      "bytes": 54621,
+      "sha256": "65f581760a023b8d6a77f6101b6e7d7ea9b40c7857c038de36f4380af3e576ea"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/seed44_summary_v1/analysis_validation.json",
+      "bytes": 1313,
+      "sha256": "255a6713e0c67c2519e129137f1d2eb05957dc3bb333e6ab94bf96285d9737b2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/seed44_summary_v1/fold2_five_seed_comparison.csv",
+      "bytes": 88798,
+      "sha256": "6b084ca2821f8c0c35c65a2be5a8ff1f3c2df786e9ca3bd3950fa4c081b9a51b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/seed44_summary_v1/interval_quality.csv",
+      "bytes": 102386,
+      "sha256": "1c18c89301c7a3153887a258ddd28aeaa0467018894537bd79e646df0451fa95"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/seed44_summary_v1/run_costs.csv",
+      "bytes": 10021,
+      "sha256": "49475f4f4f49d6aab53cc6d9105f1c86f750249f6e9dcf33959b7a2d8cd23a66"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/seed44_summary_v1/verification_summary.csv",
+      "bytes": 16164,
+      "sha256": "f28307f16f070d20af2c00adb19d5feba78d8a90c91eaf0cb83d72e086182565"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/seed44_summary_v1/actual_seed_metadata.csv",
+      "bytes": 27935,
+      "sha256": "edc59b82ce7b8832f4ea49f4281fe1ab9fd3efbe9216f89794a325631b908921"
+    }
+  ]
+}

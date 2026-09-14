@@ -1,5 +1,13 @@
 # Panel 2: training-seed sensitivity of Attention-LSTM versus XGBoost
 
+No horizon showed lower LSTM Winkler scores in all five seeds at either 90% or 95%. [Both-level counts and paired mean/SD/ranges](delivery_v1/final_checks_v1/panel2_both_levels.csv) retain every seed. The [full report](../../MATCHED_FOLD2_MULTISEED_REPORT.md#five-seed-evidence-and-interpretation) explains the point/coverage/width/score/CPU trade-offs by dataset.
+
+The strongest observed 95% temperature score advantage is at 60 minutes: LSTM minus XGBoost **−5.6364**, SD **6.2753**, lower in **4/5** seeds. LSTM coverage is only **27.18%**, its interval is **0.5987 degrees C wider** on average, and it costs **27.25×** the measured model-phase CPU. At 30 minutes the score advantage occurs in 3/5 seeds. Neither pattern supports general superiority or satisfactory calibration. At 90%, the corresponding temperature score-win counts are 3/5 and 1/5.
+
+At 10-minute PLEIA energy, the paired MAE mean difference is **−0.000102 kWh** (SD **0.014238**, range **−0.022439 to +0.014459**); LSTM wins only 2/5 seeds. Its 95% coverage is **60.48% versus 79.15%**, Winkler **3.0725 versus 2.0533**, and mean CPU ratio **25.88×**. At 60 minutes, LSTM has lower energy Winkler in 3/5 seeds at 90% and 2/5 at 95%, but both mean differences favor XGBoost. Width alone is not a quality criterion.
+
+RICO offers no LSTM score advantage in any seed/horizon at either level. BDG2's XGBoost has lower MAE, RMSE and both Winkler scores in all 15 seed/horizon pairs; its mean 95% coverage is about 94.88–94.94%. These observations concern one fold's fixed support. Training-seed variability is not population uncertainty, and cost variability also includes execution conditions. [Verification](delivery_v1/final_checks_v1/validation.json) checks these counts without fitting.
+
 | dataset | horizon | physical_minutes | target_units | seeds | mae_difference_mean | mae_difference_min | mae_difference_max | lstm_lower_mae_seeds | winkler95_difference_mean | lstm_lower_winkler95_seeds | lstm_coverage95_mean | xgboost_coverage95_mean | mpiw95_difference_mean | cpu_ratio_mean | cpu_ratio_min | cpu_ratio_max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | bdg2 | 1 | 60 | kWh per hour | 5 | 1.70466 | 1.43653 | 2.24482 | 0 | 7.89683 | 0 | 0.949209 | 0.948839 | 4.99201 | 86.6814 | 66.8132 | 143.863 |

@@ -1,0 +1,19 @@
+{
+  "source_csv": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/analysis_v1/fold2_five_seed_comparison.csv",
+  "source_sha256": "9c61c89d330da0733d53c7fdfa39dcc128814964b11d645f1c3d0ed856b90d3e",
+  "script": "review/matched_fold2_multiseed_20260914/cost_figure.py",
+  "script_sha256": "d6692122e398c7916707852dc20ac3d6ecb33fbfbb5cff5fe1cfbcf5542d3136",
+  "files": [
+    {
+      "path": "cost_and_error.png",
+      "sha256": "95ba10e0ff499ed21c5ad876dff7b79da857a4384941221f5bf27d9cfcc893a8"
+    },
+    {
+      "path": "cost_and_error.pdf",
+      "sha256": "5baa612565d07fc6d0eb972e94f646bcc656b30336dc330bc0c10d2d91c2d25e"
+    }
+  ],
+  "models_fitted": 0,
+  "values_unchanged": true,
+  "revision": "Original text labels overlapped; the second layout obscured extreme points with corner legends. Central legends and extra vertical margin preserve visible points. Earlier exports remain intact."
+}

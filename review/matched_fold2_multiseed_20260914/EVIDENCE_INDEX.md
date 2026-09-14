@@ -8,6 +8,10 @@ Validated 52/52 new units. Scientific source SHA-256: `cd907183301a189ddfcc19577
 
 [Pre-fit regression record](PRE_FIT_RECORD.md), [bootstrap receipt-parser recovery](BOOTSTRAP_OUTPUT_RECOVERY.md), and [reporting-only corrections](REPORTING_NOTES.md) distinguish orchestration issues from scientific outcomes.
 
+[Final actual exit receipts, preservation and delivery verification](delivery_v1/COMPLETION_VERIFICATION.md).
+
+[Both-level Panel-2 comparison](delivery_v1/final_checks_v1/panel2_both_levels.csv), [final arithmetic/source checks](delivery_v1/final_checks_v1/validation.json), and [clearer cost figure](delivery_v1/cost_figure_v3/cost_and_error.png) ([PDF](delivery_v1/cost_figure_v3/cost_and_error.pdf), [source hashes](delivery_v1/cost_figure_v3/sources.json)). Earlier plot versions remain preserved.
+
 [Current report](../../MATCHED_FOLD2_MULTISEED_REPORT.md); [Panel 2 response](PANEL2_NUMERICAL_RESPONSE.md).
 
 ## seed43_summary_v1

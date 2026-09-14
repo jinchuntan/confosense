@@ -1,0 +1,17 @@
+{
+  "source_csv": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/analysis_v1/fold2_five_seed_comparison.csv",
+  "source_sha256": "9c61c89d330da0733d53c7fdfa39dcc128814964b11d645f1c3d0ed856b90d3e",
+  "script": "review/matched_fold2_multiseed_20260914/final_checks.py",
+  "script_sha256": "3047c6aeded0cbd26da11761c4c17e2fd447ab76ca0f592fcf36ee5325f20639",
+  "files": [
+    {
+      "path": "cost_and_error_v2.png",
+      "sha256": "996dac6615ff019a062d1b6da55e2bb4591e61e55bf7692920a476d65fd5f707"
+    },
+    {
+      "path": "cost_and_error_v2.pdf",
+      "sha256": "71b1f53d8b80922e57c31d625e4e44372d60d192ed76c4799a18fca2f3d5b502"
+    }
+  ],
+  "change": "Separate horizon-marker legend removes overlapping horizon text; original figure remains preserved; values unchanged."
+}

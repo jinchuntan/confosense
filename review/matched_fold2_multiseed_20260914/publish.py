@@ -11,6 +11,7 @@ def index(manifest,state):
     if (ROOT/'MATCHED_METHOD_READINESS_MAP.md').exists():text+='[Broader-method and alert implementation readiness](../../MATCHED_METHOD_READINESS_MAP.md).\n\n'
     text+='[Pre-fit regression record](PRE_FIT_RECORD.md), [bootstrap receipt-parser recovery](BOOTSTRAP_OUTPUT_RECOVERY.md), and [reporting-only corrections](REPORTING_NOTES.md) distinguish orchestration issues from scientific outcomes.\n\n'
     if (REVIEW/'delivery_v1/COMPLETION_VERIFICATION.md').exists():text+='[Final actual exit receipts, preservation and delivery verification](delivery_v1/COMPLETION_VERIFICATION.md).\n\n'
+    if (REVIEW/'delivery_v1/final_checks_v1/validation.json').exists():text+='[Both-level Panel-2 comparison](delivery_v1/final_checks_v1/panel2_both_levels.csv), [final arithmetic/source checks](delivery_v1/final_checks_v1/validation.json), and [clearer cost figure](delivery_v1/cost_figure_v3/cost_and_error.png) ([PDF](delivery_v1/cost_figure_v3/cost_and_error.pdf), [source hashes](delivery_v1/cost_figure_v3/sources.json)). Earlier plot versions remain preserved.\n\n'
     if (ROOT/'MATCHED_FOLD2_MULTISEED_REPORT.md').exists():text+='[Current report](../../MATCHED_FOLD2_MULTISEED_REPORT.md); [Panel 2 response](PANEL2_NUMERICAL_RESPONSE.md).\n\n'
     dirs=sorted(BATCH.glob('seed*_summary_v1'))
     if (BATCH/'analysis_v1/COMPLETE.json').exists():dirs.append(BATCH/'analysis_v1')
