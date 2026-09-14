@@ -20,7 +20,7 @@ def main():
     patterns=['bootstrap_v*.launch.json','bootstrap_v*.log','bootstrap_v*.log.json',
               'bootstrap_v*.log.started.json','coordinator_*.log','coordinator_*.log.json',
               'coordinator_*.log.started.json','*_publication.json','*_remote_verification.json',
-              'verify_seed_checkpoint.py']
+              'verify_seed_checkpoint.py','atomic_replace_retries.jsonl','bootstrap_preparation_watch*.json']
     for p in sorted(set(p for pattern in patterns for p in BACKUP.glob(pattern))):
         target=out/p.name;shutil.copyfile(p,target);assert sha(target)==sha(p)
         copied.append(dict(source=str(p),published_path=target.relative_to(ROOT).as_posix(),bytes=p.stat().st_size,sha256=sha(p)))
@@ -44,6 +44,8 @@ def main():
     first=min(v['started_utc'] for v in processes)
     completed=read(coordinator[0])['ended_utc']
     wall=(datetime.fromisoformat(completed)-datetime.fromisoformat(first)).total_seconds()
+    retries=BACKUP/'atomic_replace_retries.jsonl'
+    retry_events=[json.loads(line) for line in retries.read_text().splitlines()] if retries.exists() else []
     verification=dict(passed=True,utc=now(),evaluated_commit=read(REVIEW/'evaluated_commit.json')['commit'],
                       source_hash=read(REVIEW/'joint_pre_fit_manifest.json')['source_hash'],
                       bootstrap_actual_exit=0,coordinator_actual_exit=0,new_run_actual_exits=summary['new_run_exit_codes'],
@@ -51,7 +53,7 @@ def main():
                       first_run_to_coordinator_completion_wall_seconds=wall,
                       new_learned_fits=520,regression_checks=30,tiny_learned_fits=0,
                       failed_model_fits=0,repeated_model_fits=0,models_fitted_by_delivery=0,
-                      completion=summary,external_files_copied=len(copied))
+                      completion=summary,external_files_copied=len(copied),atomic_rename_denials=len(retry_events))
     atomic(out/'validation.json',verification)
     body='# Actual completion and delivery verification\n\n'
     body+='All **52/52** new fold-2 units at seeds 43–46 passed with actual run exit **0**. The durable coordinator and final bootstrap also exited **0**. These are completed-process receipts, not inferred status from a running worker.\n\n'
@@ -59,6 +61,7 @@ def main():
     body+='[Actual outer command timings/exits](actual_outer_command_receipts.csv), [machine-readable completion](validation.json), and [external receipt byte manifest](external_receipt_manifest.csv) retain the evidence. Each copied log has its actual argv, working directory, PIDs and timestamps in the accompanying receipt. The main analysis directory contains the complete per-unit command and fit journals.\n\n'
     body+=f'From the first new model command to coordinator completion: **{wall/3600:.4f} elapsed hours**. Summed model-command wall time: **{summary["actual_run_wall_seconds"]/3600:.4f} hours**; summed model-command process CPU: **{summary["actual_run_cpu_seconds"]/3600:.4f} hours**. Independent validation wall time: **{summary["validation_wall_seconds"]/60:.3f} minutes**; completed resume wall time: **{summary["resume_wall_seconds"]/60:.3f} minutes**. Maximum model-command lifetime peak RSS: **{summary["maximum_lifetime_peak_rss_MiB"]:.3f} MiB**. Parent bootstrap/coordinator elapsed times contain child commands and must not be added again. Model-phase CPU/wall, preparation, action peaks and validation CPU remain separately measured in the analysis CSVs.\n\n'
     body+='Two pre-fitting bookkeeping/diagnostic failures remain visible: the first diagnosis rejected floating-point endpoint ties, and bootstrap v1 rejected a successful quiet pytest log because it expected a prose count. Each initial command exited 1; the documented correction preserved the logs and completed without changing science or repeating fits. Subsequent independent unit checks all passed. CLI publication receipts may record authentication exit 128; separate GitHub Desktop remote-verification receipts distinguish a pending CLI attempt from a successfully published checkpoint.\n\n'
+    body+=f'The existing bounded atomic-write recovery recorded **{len(retry_events)} Windows rename denial(s)**. The copied retry journal retains exact timestamps, target paths and attempts; no completed fit was repeated for this bookkeeping recovery. Runtime/cost variation includes execution conditions as well as seed-dependent selected training budgets. Persistence prediction rows are deterministic aliases; differences in their measured costs are execution variability, not independent model-training evidence.\n\n'
     body+='This finishes the **65-unit five-seed fold-2 slice**, with **70/195** cumulative paired units, **210/585** point cells and **420/1170** interval cells. Five completed additional-fold units remain separate. **125 paired units /1250 learned fits** remain in the core matched queue, alongside the broader interval-method, seasonal, operational and robustness obligations. The next bounded implementation package is the versioned `src.matched_intervals005` owner/checkpoint/joint-origin/causal-replay adapter described in [the readiness map](../../../MATCHED_METHOD_READINESS_MAP.md); its proposed real-data execution still needs separate authorization. Full-study readiness remains false.\n'
     atomic(out/'COMPLETION_VERIFICATION.md',body)
     atomic(out/'COMPLETE.json',dict(passed=True,models_fitted=0,files=tree(out)))

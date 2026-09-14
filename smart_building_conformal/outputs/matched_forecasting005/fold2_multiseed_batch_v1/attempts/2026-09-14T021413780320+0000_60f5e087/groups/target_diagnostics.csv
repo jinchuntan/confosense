@@ -1,0 +1,3 @@
+dataset,horizon,outer_fold,model_seed,target_units,physical_minutes,source_run,source_hash,protocol_hash,new_batch_unit,role,n,groups,zero_targets,negative_targets,adjacent_equal_targets,minimum,maximum,posthoc_cleaning_or_clipping
+rico,5,2,46,degrees C,5,smart_building_conformal/outputs/matched_forecasting005/rico_h5_f2_s46_v1,cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e,bc0f06119e0a0e1ed46353afd0b76b2c92cad9e7003e51737073831e86c9ecd3,True,calibration,4452,21,0,0,3712,18.9,35.6,False
+rico,5,2,46,degrees C,5,smart_building_conformal/outputs/matched_forecasting005/rico_h5_f2_s46_v1,cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e,bc0f06119e0a0e1ed46353afd0b76b2c92cad9e7003e51737073831e86c9ecd3,True,test,8692,41,0,0,7402,13.7,31.0,False

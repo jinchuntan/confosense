@@ -1,0 +1,19 @@
+{
+  "source_csv": "smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/analysis_v1/fold2_five_seed_comparison.csv",
+  "source_sha256": "9c61c89d330da0733d53c7fdfa39dcc128814964b11d645f1c3d0ed856b90d3e",
+  "script": "review/matched_fold2_multiseed_20260914/analyze.py",
+  "script_sha256": "b162260559f16ca4b9c7f9482c93ea649ebeabf8a00356f39c07e92f54622f85",
+  "preserved_arithmetic_script_sha256": "21cdf5b5a817f2232ae5d7978f5e4d3a32eb1026b94461742961709e65621f05",
+  "matplotlib_version": "3.11.1",
+  "meaning": "thin lines are all individual training seeds; bold lines are means; same evaluation support, no population CI",
+  "files": [
+    {
+      "path": "forecast_error.png",
+      "sha256": "397365a02b049e38ed6a84c13a841c9c3ee917938af4f1df55aee86121014231"
+    },
+    {
+      "path": "forecast_error.pdf",
+      "sha256": "221d3e93965addbdd8a6086f09f1fb8b014fef5aa5d7af0d671b6acd12b604b3"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "point_cells": 3,
+  "interval_cells": 6,
+  "real_tuning_fits_verified": 8,
+  "real_final_fits_verified": 2,
+  "saved_model_prediction_checks": 6,
+  "own_calibration_verified": true,
+  "common_target_ids_verified": true,
+  "training_only_normalization_verified": true,
+  "candidate_and_epoch_selection_verified": true,
+  "all_run_files_unchanged": true,
+  "preparation_resources": {
+    "seconds": 3.951688799992553,
+    "baseline_rss_bytes": 324485120,
+    "peak_rss_bytes": 400760832,
+    "baseline_private_bytes": 282427392,
+    "peak_private_bytes": 356106240,
+    "incremental_peak_rss_bytes": 76275712,
+    "lifetime_peak_rss_bytes": 408584192,
+    "min_available_ram_bytes": 5274693632,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 3.859375
+  },
+  "total_validation_resources": {
+    "seconds": 6.444553900000756,
+    "baseline_rss_bytes": 321916928,
+    "peak_rss_bytes": 537337856,
+    "baseline_private_bytes": 281047040,
+    "peak_private_bytes": 586141696,
+    "incremental_peak_rss_bytes": 215420928,
+    "lifetime_peak_rss_bytes": 538337280,
+    "min_available_ram_bytes": 4981174272,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 6.296875
+  },
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "d3f48a48b1e9bd268b7a135c9afd44e18a498537f9d3262d88eb1ded5694a0c3",
+  "full_study_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "validate", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "1", "--outer-fold", "2", "--model-seed", "46", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h1_f2_s46_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_energy_h1_f2_s46_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h1_f2_s46_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\receipts\\pleia_energy_h1_f2_s46_v1\\audit_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T02:06:59.842842+00:00", "logger_pid": 21092, "child_pid": 24840, "ended_utc": "2026-09-14T02:07:10.323764+00:00", "seconds": 10.481549999996787, "exit_status": 0}

@@ -1,0 +1,68 @@
+LAUNCH pleia_h1_f2_s46_persistence; available RAM=4.43 GiB
+START pleia_h1_f2_s46_persistence final candidate=0 epochs=None
+COMPLETE pleia_h1_f2_s46_persistence
+LAUNCH pleia_h1_f2_s46_xgboost; available RAM=4.44 GiB
+START pleia_h1_f2_s46_xgboost tuning candidate=0 inner=0
+START pleia_h1_f2_s46_xgboost tuning candidate=0 inner=1
+START pleia_h1_f2_s46_xgboost tuning candidate=1 inner=0
+START pleia_h1_f2_s46_xgboost tuning candidate=1 inner=1
+START pleia_h1_f2_s46_xgboost final candidate=0 epochs=None
+COMPLETE pleia_h1_f2_s46_xgboost
+LAUNCH pleia_h1_f2_s46_attention_lstm; available RAM=4.48 GiB
+START pleia_h1_f2_s46_attention_lstm tuning candidate=0 inner=0
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.586699151957885, 'validation_mae': 1.0108531110698842}
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.06692999665922793, 'validation_mae': 0.8543252377979975}
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.05942620696370902, 'validation_mae': 0.7869379514253583}
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 15, 'train_mse': 0.048571912278339395, 'validation_mae': 0.768332236494887}
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 20, 'train_mse': 0.0424531037584203, 'validation_mae': 0.7151217482201695}
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 25, 'train_mse': 0.035020755896229286, 'validation_mae': 0.6850329964919699}
+pleia_h1_f2_s46_attention_lstm tuning c0 i0: {'epoch': 30, 'train_mse': 0.03006266748186158, 'validation_mae': 0.5791120658591028}
+START pleia_h1_f2_s46_attention_lstm tuning candidate=0 inner=1
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.4168731881478429, 'validation_mae': 0.8641929972275277}
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.08072667936711231, 'validation_mae': 0.5975365639695635}
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.0365553848173815, 'validation_mae': 0.41280630143656766}
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 15, 'train_mse': 0.026971824379532695, 'validation_mae': 0.3646866162040367}
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 20, 'train_mse': 0.024211913821040397, 'validation_mae': 0.3496610596038923}
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 25, 'train_mse': 0.02287107397867347, 'validation_mae': 0.3274837059515452}
+pleia_h1_f2_s46_attention_lstm tuning c0 i1: {'epoch': 30, 'train_mse': 0.022816811438556225, 'validation_mae': 0.32707374880055384}
+START pleia_h1_f2_s46_attention_lstm tuning candidate=1 inner=0
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.8026846533494871, 'validation_mae': 1.5044841727070355}
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.07499508631184856, 'validation_mae': 0.8864765358279325}
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.06608782327161898, 'validation_mae': 0.8434896750288364}
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 15, 'train_mse': 0.058436647231345035, 'validation_mae': 0.8165152790088067}
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 20, 'train_mse': 0.05263755984049064, 'validation_mae': 0.7565783255704963}
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 25, 'train_mse': 0.04501725116963219, 'validation_mae': 0.7304724044676552}
+pleia_h1_f2_s46_attention_lstm tuning c1 i0: {'epoch': 30, 'train_mse': 0.042441484786403035, 'validation_mae': 0.6926590451901486}
+START pleia_h1_f2_s46_attention_lstm tuning candidate=1 inner=1
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.6166431288276552, 'validation_mae': 1.036402888830421}
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.11283008583844774, 'validation_mae': 0.7414144730486101}
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.056883965183388376, 'validation_mae': 0.5360248271465398}
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.03896785618653264, 'validation_mae': 0.44113622169024813}
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.0324096174822827, 'validation_mae': 0.4060327071265551}
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 25, 'train_mse': 0.028205817997362305, 'validation_mae': 0.36917324308768534}
+pleia_h1_f2_s46_attention_lstm tuning c1 i1: {'epoch': 30, 'train_mse': 0.026713487263052293, 'validation_mae': 0.3517935091092229}
+START pleia_h1_f2_s46_attention_lstm final candidate=0 epochs=29
+pleia_h1_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.33236915033888825}
+pleia_h1_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.06043525452318535}
+pleia_h1_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 10, 'train_mse': 0.03439734679812144}
+pleia_h1_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 15, 'train_mse': 0.03095802053536376}
+pleia_h1_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 20, 'train_mse': 0.02713704546370682}
+pleia_h1_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 25, 'train_mse': 0.02642544401090741}
+COMPLETE pleia_h1_f2_s46_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "4989341ff9d463b283be2be3ec47d0d71a904ea498b2ec581d160b37a8fe96a9",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "1", "--outer-fold", "2", "--model-seed", "46", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h1_f2_s46_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_h1_f2_s46_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h1_f2_s46_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T02:54:02.302149+00:00", "logger_pid": 28208, "child_pid": 12476, "ended_utc": "2026-09-14T02:57:56.872377+00:00", "seconds": 234.57196169999952, "exit_status": 0}

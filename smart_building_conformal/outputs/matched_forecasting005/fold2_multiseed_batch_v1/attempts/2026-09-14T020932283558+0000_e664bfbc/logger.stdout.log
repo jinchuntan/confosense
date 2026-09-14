@@ -1,0 +1,45 @@
+LAUNCH pleia_energy_h6_f2_s46_persistence; available RAM=4.60 GiB
+START pleia_energy_h6_f2_s46_persistence final candidate=0 epochs=None
+COMPLETE pleia_energy_h6_f2_s46_persistence
+LAUNCH pleia_energy_h6_f2_s46_xgboost; available RAM=4.60 GiB
+START pleia_energy_h6_f2_s46_xgboost tuning candidate=0 inner=0
+START pleia_energy_h6_f2_s46_xgboost tuning candidate=0 inner=1
+START pleia_energy_h6_f2_s46_xgboost tuning candidate=1 inner=0
+START pleia_energy_h6_f2_s46_xgboost tuning candidate=1 inner=1
+START pleia_energy_h6_f2_s46_xgboost final candidate=0 epochs=None
+COMPLETE pleia_energy_h6_f2_s46_xgboost
+LAUNCH pleia_energy_h6_f2_s46_attention_lstm; available RAM=4.47 GiB
+START pleia_energy_h6_f2_s46_attention_lstm tuning candidate=0 inner=0
+pleia_energy_h6_f2_s46_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.7971894264606982, 'validation_mae': 0.11858616967031485}
+pleia_energy_h6_f2_s46_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.3966152735512619, 'validation_mae': 0.08834485283489173}
+START pleia_energy_h6_f2_s46_attention_lstm tuning candidate=0 inner=1
+pleia_energy_h6_f2_s46_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.6939692341972709, 'validation_mae': 0.16064369055959912}
+pleia_energy_h6_f2_s46_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.4282586286175984, 'validation_mae': 0.1535673077178724}
+START pleia_energy_h6_f2_s46_attention_lstm tuning candidate=1 inner=0
+pleia_energy_h6_f2_s46_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.8907484938797442, 'validation_mae': 0.16115329629202105}
+pleia_energy_h6_f2_s46_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.44753185174997573, 'validation_mae': 0.08726032686489107}
+pleia_energy_h6_f2_s46_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.3576489080310254, 'validation_mae': 0.08787337439225136}
+START pleia_energy_h6_f2_s46_attention_lstm tuning candidate=1 inner=1
+pleia_energy_h6_f2_s46_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.8096709556178368, 'validation_mae': 0.19317549910810258}
+pleia_energy_h6_f2_s46_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.45441106294544, 'validation_mae': 0.1502885337309404}
+pleia_energy_h6_f2_s46_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.3835773423651661, 'validation_mae': 0.15493004417178607}
+START pleia_energy_h6_f2_s46_attention_lstm final candidate=0 epochs=4
+pleia_energy_h6_f2_s46_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.5450208914701384}
+COMPLETE pleia_energy_h6_f2_s46_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "a7fb23eab8e276cf1692aec7b1d3928e3ec2e9cf037d4dbfff4e0ac7d3af6d87",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "6", "--outer-fold", "2", "--model-seed", "46", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s46_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_energy_h6_f2_s46_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s46_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T02:09:32.387569+00:00", "logger_pid": 17244, "child_pid": 29452, "ended_utc": "2026-09-14T02:10:46.480517+00:00", "seconds": 74.09573549999914, "exit_status": 0}

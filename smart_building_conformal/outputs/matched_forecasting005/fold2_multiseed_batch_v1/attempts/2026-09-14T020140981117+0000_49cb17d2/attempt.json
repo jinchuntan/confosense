@@ -1,0 +1,40 @@
+{
+  "task": "publication/seed45",
+  "attempt_id": "2026-09-14T020140981117+0000_49cb17d2",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_fold2_multiseed_20260914\\publish.py",
+    "--label",
+    "seed45"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T02:01:40.981117+00:00",
+  "ended_utc": "2026-09-14T02:05:03.393595+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T020140981117+0000_49cb17d2\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T020140981117+0000_49cb17d2\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 29308,
+    "created": 134338249010104135,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 29308,
+  "process_family": [
+    {
+      "pid": 5008,
+      "created": 134338249010268961,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 29308,
+      "created": 134338249010104135,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    }
+  ],
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T020140981117+0000_49cb17d2\\command.log.json",
+  "seconds": 202.29977199999848,
+  "child_pid": 21424
+}
