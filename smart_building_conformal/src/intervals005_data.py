@@ -95,7 +95,11 @@ def load_data(reference,prepared=None):
 
 def role_frame(data,rows):
     out=data['meta'].iloc[rows][['row_id','group_id','origin_time','target_time']].reset_index(drop=True).copy()
-    out.group_id=out.group_id.astype(str)
+    # Single-series PLEIA stores the native group as ``None`` whereas the
+    # published joint table serializes the same identifier as an empty CSV
+    # field.  Canonicalize that representation before identity comparison;
+    # named building/RICO groups are unchanged.
+    out.group_id=out.group_id.fillna('').astype(str).replace({'None':'','nan':''})
     out['y_true']=data['y'][rows];out['available']=data['available'][rows]
     return out
 
@@ -127,16 +131,18 @@ def joint_join(frames,horizons,*,expected=None,frequency=None):
         if f.row_id.duplicated().any() or f[['group_id','origin_time']].duplicated().any():raise ValueError('duplicate horizon row/origin')
         o=pd.to_datetime(f.origin_time);t=pd.to_datetime(f.target_time)
         if not ((t-o)==h*frequency).all():raise ValueError('joint horizon target mismatch')
-        sets.append(set(zip(f.group_id.astype(str),o.astype(str))))
+        groups=f.group_id.fillna('').astype(str).replace({'None':'','nan':''})
+        sets.append(set(zip(groups,o.astype(str))))
     common=set.intersection(*sets)
     if expected is not None:
-        e=set(zip(expected.group_id.astype(str),pd.to_datetime(expected.origin_time).astype(str)))
+        groups=expected.group_id.fillna('').astype(str).replace({'None':'','nan':''})
+        e=set(zip(groups,pd.to_datetime(expected.origin_time).astype(str)))
         if e!=common or len(e)!=len(expected):raise ValueError('missing/unexpected joint origin versus frozen membership')
     order=sorted(common)
     if not order:raise ValueError('empty joint origin support')
     parts={}
     for h,f in frames.items():
-        temp=f.copy();temp.group_id=temp.group_id.astype(str);temp.origin_time=pd.to_datetime(temp.origin_time).astype(str)
+        temp=f.copy();temp.group_id=temp.group_id.fillna('').astype(str).replace({'None':'','nan':''});temp.origin_time=pd.to_datetime(temp.origin_time).astype(str)
         parts[h]=temp.set_index(['group_id','origin_time']).loc[order].reset_index()
     return parts
 
