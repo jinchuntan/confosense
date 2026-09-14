@@ -1,3 +1,11 @@
+# Matched interval adapter and bounded BDG2 pilot completed
+
+30 interval-method cells, 3 seasonal point/6 seasonal interval cells and 30 clean-stream alert checks validated; completed resume performed zero learned/calibrator fits. Matched forecasting remains 70/195; interval methods 30/1950.
+
+[Implementation report](MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md), [numerical pilot report](BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md), and [evidence index](review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md). Actual adapter endpoints now exist; broader scope still requires a versioned authorization guard and fresh readiness. The next proposed package is the four remaining BDG2 fold2 training seeds using the same methods and existing matched XGBoost owners. It is not launched. Full-study readiness remains false.
+
+<!-- matched-intervals005-20260914: historical content follows -->
+
 # Broader conformal-method and alert implementation readiness
 
 This is a no-fitting inventory of the current code and existing amendment-005 execution plan. It does not redesign the protocol, authorize another experiment, or treat matched absolute-error intervals as completed CQR/EnbPI/DSCP evidence. [Machine-readable entrypoint/owner inventory](smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/readiness_map_v1/entrypoints_and_owners.csv) records source hashes and callable locations.

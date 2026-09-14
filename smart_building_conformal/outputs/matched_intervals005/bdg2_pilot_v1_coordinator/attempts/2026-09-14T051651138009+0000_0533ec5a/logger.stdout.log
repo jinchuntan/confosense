@@ -1,0 +1,32 @@
+VALIDATE horizon 1
+VALIDATE horizon 3
+VALIDATE horizon 6
+{
+  "passed": true,
+  "method_cells": 30,
+  "native_common_metric_rows": 60,
+  "seasonal_interval_cells": 6,
+  "alert_stream_checks": 30,
+  "maximum_observed_difference": 6.0546874919964466e-05,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "source_artifacts_unchanged": true,
+  "resources": {
+    "seconds": 954.7071805000014,
+    "baseline_rss_bytes": 326995968,
+    "peak_rss_bytes": 1014439936,
+    "baseline_private_bytes": 284295168,
+    "peak_private_bytes": 1002012672,
+    "incremental_peak_rss_bytes": 687443968,
+    "lifetime_peak_rss_bytes": 1036623872,
+    "min_available_ram_bytes": 2864926720,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 931.046875
+  },
+  "source_hash": "026da0df7a10396c455a6a8d28a2736532e9a439a61e38ddea04d830bd142f19",
+  "protocol_hash": "b0257090a075efd1d4700baccb9ddb1aef2d6df7050bb9958e6a58fd03a9e518",
+  "utc": "2026-09-14T05:32:51.855818+00:00",
+  "validator_source_hash": "3d07d3cc76dd359da04c1ca741c0ca658cf9e68b6b6478de97c3f8a727f01c87",
+  "audit_manifest_sha256": "eacc64fda5a1c86de3192c658250d67be1388b456f3e8d486c8d5fc9d00d93ed"
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py", "--measurement", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validate_worker_resources_v5.json", "--", "validate", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v5", "--audit-manifest", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V5.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T05:16:51.228898+00:00", "logger_pid": 25148, "child_pid": 23616, "ended_utc": "2026-09-14T05:32:52.607050+00:00", "seconds": 961.377387399989, "exit_status": 0}

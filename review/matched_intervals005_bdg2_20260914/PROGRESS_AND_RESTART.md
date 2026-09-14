@@ -1,6 +1,6 @@
 # Matched intervals005 durable progress and restart
 
-Updated UTC: 2026-09-14T05:13:37.463975+00:00. Status: **blocked**. 138 scientific stages checkpointed; acceptance requires the completed independent validation and forbidden-fit resume receipts.
+Updated UTC: 2026-09-14T05:33:40.752156+00:00. Status: **reports_complete**. 138 scientific stages checkpointed; acceptance requires the completed independent validation and forbidden-fit resume receipts.
 
 The [atomic progress ledger](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/progress.json), [immutable command attempts](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts.jsonl), and [scientific stage journal](../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stage_journal.jsonl) retain owner/calibrator/stream and live process identities.
 
@@ -17,5 +17,6 @@ The exclusive OS lock prevents duplicate coordinators. A surviving exact logger/
 - pilot/validate_v2: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T045719855640+0000_507f4410\command.log.json`.
 - pilot/validate_v3: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T050412300812+0000_093c29f1\command.log.json`.
 - pilot/validate_v4: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051015922691+0000_8ed7e880\command.log.json`.
-
-Failure: phase pilot/validate_v4 failed; actual exit 1; C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051015922691+0000_8ed7e880\command.log
+- pilot/validate_v5: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051651138009+0000_0533ec5a\command.log.json`.
+- pilot/resume: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T053254176620+0000_09cff5c8\command.log.json`.
+- final/report: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T053302381129+0000_180d03f2\command.log.json`.

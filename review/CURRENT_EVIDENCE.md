@@ -1,3 +1,11 @@
+# Matched interval adapter and bounded BDG2 pilot completed
+
+30 interval-method cells, 3 seasonal point/6 seasonal interval cells and 30 clean-stream alert checks validated; completed resume performed zero learned/calibrator fits. Matched forecasting remains 70/195; interval methods 30/1950.
+
+[Implementation report](../MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md), [numerical pilot report](../BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md), and [evidence index](../review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md). Actual adapter endpoints now exist; broader scope still requires a versioned authorization guard and fresh readiness. The next proposed package is the four remaining BDG2 fold2 training seeds using the same methods and existing matched XGBoost owners. It is not launched. Full-study readiness remains false.
+
+<!-- matched-intervals005-20260914: historical content follows -->
+
 # Fold-2 multiseed progress — 14 September 2026
 
 52/52 new units validated; 70/195 total. 416 tuning and 104 final fits; 156 point and 312 interval cells; 312 artifact checks; 52 zero-fit resumes. Seeds 43–46 complete. Main and historical results preserved.

@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "all_run_files_unchanged": true,
+  "stages_verified": 138,
+  "utc": "2026-09-14T05:33:01.473541+00:00",
+  "evaluated_source_hash": "026da0df7a10396c455a6a8d28a2736532e9a439a61e38ddea04d830bd142f19",
+  "validator_source_hash": "3d07d3cc76dd359da04c1ca741c0ca658cf9e68b6b6478de97c3f8a727f01c87",
+  "audit_manifest_sha256": "eacc64fda5a1c86de3192c658250d67be1388b456f3e8d486c8d5fc9d00d93ed"
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py", "--measurement", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\resume_worker_resources_v1.json", "--", "resume", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\completed_resume_v1.json", "--forbid-fits", "--audit-manifest", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V5.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T05:32:54.275008+00:00", "logger_pid": 24188, "child_pid": 29376, "ended_utc": "2026-09-14T05:33:01.988668+00:00", "seconds": 7.71719719999237, "exit_status": 0}

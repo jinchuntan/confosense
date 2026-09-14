@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "workload_checks": 990,
+  "native_common_crossing_checks": 60,
+  "seasonal_point_checks": 3,
+  "matched_started_returned_operations": 84,
+  "journal_counts": {
+    "quantile_estimator_fit": 18,
+    "cqr_wrapper_fit": 6,
+    "calibrator_conformalize": 18,
+    "xgboost_estimator_fit": 33,
+    "enbpi_wrapper_fit": 3,
+    "kmeans_candidate_fit": 5,
+    "dscp_calibrator_fit": 1
+  },
+  "base_estimator_seed_checked": 42,
+  "maximum_arithmetic_difference": 2.842170943040401e-14,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "scientific_artifacts_unchanged": true
+}

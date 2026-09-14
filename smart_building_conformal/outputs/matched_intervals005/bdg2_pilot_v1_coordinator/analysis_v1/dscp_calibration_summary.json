@@ -1,0 +1,51 @@
+{
+  "calibrator": {
+    "n_clusters": 3,
+    "neighbours": 1964,
+    "silhouette": 0.6691760553679243,
+    "metadata": {
+      "n_calibration": 17270,
+      "reference": "Yu et al. 2025, Applied Soft Computing 184:113825",
+      "implementation_source": "arXiv:2503.21251v1 (no official code found)",
+      "nonconformity": "signed error y - yhat",
+      "direct_horizon_adaptation": true,
+      "neighbours_rule": "smallest cluster size (paper)",
+      "neighbours_used": 1964,
+      "cluster_sizes": [
+        1964,
+        6895,
+        8411
+      ]
+    },
+    "merge_map": {
+      "0": [
+        0,
+        1,
+        2
+      ],
+      "1": [
+        0,
+        1,
+        2
+      ],
+      "2": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "first_64_assignment_resources": {
+    "seconds": 0.7386026999884052,
+    "baseline_rss_bytes": 578347008,
+    "peak_rss_bytes": 578998272,
+    "baseline_private_bytes": 665247744,
+    "peak_private_bytes": 666066944,
+    "incremental_peak_rss_bytes": 651264,
+    "lifetime_peak_rss_bytes": 1035694080,
+    "min_available_ram_bytes": 3103006720,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.71875
+  },
+  "first_64_reused_in_full_cohort": true
+}

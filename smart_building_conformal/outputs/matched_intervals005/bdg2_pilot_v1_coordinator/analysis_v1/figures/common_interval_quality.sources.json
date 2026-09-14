@@ -1,0 +1,16 @@
+{
+  "source_csv": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/common_support_metrics.csv",
+  "source_sha256": "08e3458c59895adf4ad8cef9b98ab87d01d5899542239c23a380217db078df4e",
+  "script": "review/matched_intervals005_bdg2_20260914/report.py",
+  "script_sha256": "c1a59ae53656b11272fe524098a2e8ed5c0243c4ab9488be2c729b8bc0dd8bdd",
+  "files": [
+    {
+      "path": "common_interval_quality.png",
+      "sha256": "486b30023d0b850596c405903d698c8a150dc7ba5ab79e0871fb7f74d7152673"
+    },
+    {
+      "path": "common_interval_quality.pdf",
+      "sha256": "14cf9096018b7825d2c8a3b35e7b168ed8cce65b6ad8f3184d841e0e6a7c48cc"
+    }
+  ]
+}

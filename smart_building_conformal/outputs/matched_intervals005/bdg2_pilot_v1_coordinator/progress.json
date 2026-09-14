@@ -325,11 +325,237 @@
       "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051015922691+0000_8ed7e880\\command.log.json",
       "seconds": 199.9587343000021,
       "child_pid": 13332
+    },
+    "pilot/validate_v5": {
+      "task": "pilot/validate_v5",
+      "attempt_id": "2026-09-14T051651138009+0000_0533ec5a",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validate_worker_resources_v5.json",
+        "--",
+        "validate",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\validation_v5",
+        "--audit-manifest",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V5.json"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-14T05:16:51.138009+00:00",
+      "ended_utc": "2026-09-14T05:32:52.607050+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051651138009+0000_0533ec5a\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051651138009+0000_0533ec5a\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 28848,
+        "created": 134338366111493515,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 28848,
+      "process_family": [
+        {
+          "pid": 28848,
+          "created": 134338366111493515,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 23616,
+          "created": 134338366112345367,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 25876,
+          "created": 134338366112472395,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 25148,
+          "created": 134338366111657884,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 23616,
+        "created": 134338366112345367,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051651138009+0000_0533ec5a\\command.log.json",
+      "seconds": 961.377387399989,
+      "child_pid": 23616
+    },
+    "pilot/resume": {
+      "task": "pilot/resume",
+      "attempt_id": "2026-09-14T053254176620+0000_09cff5c8",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\measured_action.py",
+        "--measurement",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\resume_worker_resources_v1.json",
+        "--",
+        "resume",
+        "--design-dir",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\completed_resume_v1.json",
+        "--forbid-fits",
+        "--audit-manifest",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V5.json"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-14T05:32:54.176620+00:00",
+      "ended_utc": "2026-09-14T05:33:01.988668+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053254176620+0000_09cff5c8\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053254176620+0000_09cff5c8\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 27144,
+        "created": 134338375741876035,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 27144,
+      "process_family": [
+        {
+          "pid": 29376,
+          "created": 134338375742779720,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 27468,
+          "created": 134338375742923867,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 27144,
+          "created": 134338375741876035,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 24188,
+          "created": 134338375742039294,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 29376,
+        "created": 134338375742779720,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053254176620+0000_09cff5c8\\command.log.json",
+      "seconds": 7.71719719999237,
+      "child_pid": 29376
+    },
+    "final/report": {
+      "task": "final/report",
+      "attempt_id": "2026-09-14T053302381129+0000_180d03f2",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\report.py",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\analysis_v1"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "started_utc": "2026-09-14T05:33:02.381129+00:00",
+      "ended_utc": "2026-09-14T05:33:39.478833+00:00",
+      "exit_code": 0,
+      "status": "passed",
+      "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053302381129+0000_180d03f2\\command.log",
+      "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053302381129+0000_180d03f2\\attempt.json",
+      "previous_attempt": null,
+      "logger_identity": {
+        "pid": 31276,
+        "created": 134338375823874638,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_pid": 31276,
+      "process_family": [
+        {
+          "pid": 31312,
+          "created": 134338375824825424,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 31328,
+          "created": 134338375824960972,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        },
+        {
+          "pid": 31276,
+          "created": 134338375823874638,
+          "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+        },
+        {
+          "pid": 31292,
+          "created": 134338375824060171,
+          "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+        }
+      ],
+      "worker_identity": {
+        "pid": 31312,
+        "created": 134338375824825424,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053302381129+0000_180d03f2\\command.log.json",
+      "seconds": 37.00318500000867,
+      "child_pid": 31312
     }
   },
   "units": {},
-  "status": "blocked",
-  "active": null,
+  "status": "running",
+  "active": {
+    "task": "final/publication",
+    "attempt_id": "2026-09-14T053340752156+0000_14b6b7f2",
+    "argv": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\publish.py",
+      "--label",
+      "completed"
+    ],
+    "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+    "started_utc": "2026-09-14T05:33:40.752156+00:00",
+    "ended_utc": null,
+    "exit_code": null,
+    "status": "running",
+    "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053340752156+0000_14b6b7f2\\command.log",
+    "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T053340752156+0000_14b6b7f2\\attempt.json",
+    "previous_attempt": null,
+    "logger_identity": {
+      "pid": 31464,
+      "created": 134338376207672991,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    "logger_pid": 31464,
+    "process_family": [
+      {
+        "pid": 31464,
+        "created": 134338376207672991,
+        "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+      },
+      {
+        "pid": 31572,
+        "created": 134338376207820288,
+        "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+      }
+    ]
+  },
   "completed_scientific_stages": [
     "dscp_assignment_000000_000064",
     "dscp_assignment_000064_000576",
@@ -477,7 +703,7 @@
     "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py"
   ],
   "full_study_ready": false,
-  "updated_utc": "2026-09-14T05:13:37.456471+00:00",
+  "updated_utc": "2026-09-14T05:33:40.788229+00:00",
   "prior_failures": [
     {
       "failure": "phase pilot/validate failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T044714663329+0000_ba3bf09f\\command.log",
@@ -493,8 +719,11 @@
       "failure": "phase pilot/validate_v3 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T050412300812+0000_093c29f1\\command.log",
       "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py\", line 187, in main\n    engine.phase(recovery.get('validation_task','pilot/validate_v2') if recovery else 'pilot/validate',lambda folder:recovery['commands']['validate'] if recovery else frozen['commands']['validate']);progress(engine)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py\", line 135, in phase\n    if result['status']!='passed':raise RuntimeError(f'phase {task} {result[\"status\"]}; actual exit {result[\"exit_code\"]}; {result[\"log\"]}')\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: phase pilot/validate_v3 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T050412300812+0000_093c29f1\\command.log\n",
       "recovery_manifest": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_RECOVERY_COMMANDS_V4.json"
+    },
+    {
+      "failure": "phase pilot/validate_v4 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051015922691+0000_8ed7e880\\command.log",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py\", line 187, in main\n    engine.phase(recovery.get('validation_task','pilot/validate_v2') if recovery else 'pilot/validate',lambda folder:recovery['commands']['validate'] if recovery else frozen['commands']['validate']);progress(engine)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py\", line 135, in phase\n    if result['status']!='passed':raise RuntimeError(f'phase {task} {result[\"status\"]}; actual exit {result[\"exit_code\"]}; {result[\"log\"]}')\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: phase pilot/validate_v4 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051015922691+0000_8ed7e880\\command.log\n",
+      "recovery_manifest": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_RECOVERY_COMMANDS_V5.json"
     }
-  ],
-  "failure": "phase pilot/validate_v4 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051015922691+0000_8ed7e880\\command.log",
-  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py\", line 187, in main\n    engine.phase(recovery.get('validation_task','pilot/validate_v2') if recovery else 'pilot/validate',lambda folder:recovery['commands']['validate'] if recovery else frozen['commands']['validate']);progress(engine)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\coordinator.py\", line 135, in phase\n    if result['status']!='passed':raise RuntimeError(f'phase {task} {result[\"status\"]}; actual exit {result[\"exit_code\"]}; {result[\"log\"]}')\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: phase pilot/validate_v4 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\attempts\\2026-09-14T051015922691+0000_8ed7e880\\command.log\n"
+  ]
 }

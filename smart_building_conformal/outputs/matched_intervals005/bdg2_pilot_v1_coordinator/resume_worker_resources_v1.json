@@ -1,0 +1,34 @@
+{
+  "started_utc": "2026-09-14T05:32:57.704010+00:00",
+  "ended_utc": "2026-09-14T05:33:01.536752+00:00",
+  "pid": 27468,
+  "action_argv": [
+    "resume",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s42_v1\\readiness.json",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_pilot_v1_coordinator\\completed_resume_v1.json",
+    "--forbid-fits",
+    "--audit-manifest",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\VALIDATION_ERRATUM_V5.json"
+  ],
+  "actual_exit": 0,
+  "resources": {
+    "seconds": 3.8329570000059903,
+    "baseline_rss_bytes": 319873024,
+    "peak_rss_bytes": 329445376,
+    "baseline_private_bytes": 278999040,
+    "peak_private_bytes": 286334976,
+    "incremental_peak_rss_bytes": 9572352,
+    "lifetime_peak_rss_bytes": 329445376,
+    "min_available_ram_bytes": 3377528832,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 3.796875
+  },
+  "error": null,
+  "interpretation": "whole Python CLI worker, excluding parent logger and interpreter startup"
+}

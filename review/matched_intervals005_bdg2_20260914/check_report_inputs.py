@@ -20,6 +20,14 @@ def check(out):
                 assert row['parameters']['random_state']==42
         native=frame(RUN/'stages/tables/native_support_metrics.csv')
         common=frame(RUN/'stages/tables/common_support_metrics.csv')
+        seasonal_points=frame(RUN/'stages/tables/seasonal_point_metrics.csv')
+        seasonal_intervals=frame(RUN/'stages/tables/seasonal_interval_metrics.csv')
+        assert len(seasonal_points)==3 and len(seasonal_intervals)==6
+        for _,point in seasonal_points.iterrows():
+            references=seasonal_intervals[seasonal_intervals.horizon==point.horizon]
+            assert len(references)==2 and point.learned_fits==0
+            for _,reference in references.iterrows():
+                for column in ('n','mae','rmse'):np.testing.assert_allclose(point[column],reference[column],atol=1e-10,rtol=1e-12)
         all_work=frame(RUN/'stages/tables/background_workload.csv')
         for _,key in native.iterrows():
             h=int(key.horizon);level=float(key.level);method=key.method
@@ -55,6 +63,6 @@ def check(out):
                 rows.append(dict(horizon=h,level=level,method=method,group_id=expected['group_id'],channel=expected['channel'],maximum_arithmetic_difference=delta,passed=True))
         assert len(rows)==990 and tree(RUN)==before
         pd.DataFrame(rows).to_csv(out/'background_and_crossing_checks.csv',index=False)
-        result=dict(passed=True,workload_checks=990,native_common_crossing_checks=60,matched_started_returned_operations=len(returned),journal_counts=dict(recount),base_estimator_seed_checked=42,maximum_arithmetic_difference=max(r['maximum_arithmetic_difference'] for r in rows),models_fitted=0,calibrators_fitted=0,scientific_artifacts_unchanged=True)
+        result=dict(passed=True,workload_checks=990,native_common_crossing_checks=60,seasonal_point_checks=3,matched_started_returned_operations=len(returned),journal_counts=dict(recount),base_estimator_seed_checked=42,maximum_arithmetic_difference=max(r['maximum_arithmetic_difference'] for r in rows),models_fitted=0,calibrators_fitted=0,scientific_artifacts_unchanged=True)
         atomic(out/'additional_integrity_validation.json',result)
         return result

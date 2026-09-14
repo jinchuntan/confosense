@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "method_cells": 30,
+  "seasonal_point_cells": 3,
+  "seasonal_interval_cells": 6,
+  "alert_streams": 30,
+  "forecast_units_completed": 70,
+  "interval_method_cells_completed": 30,
+  "remaining_forecast_units": 125,
+  "remaining_interval_cells": 1920,
+  "unique_acceptance_checks": 49,
+  "operation_counts": {
+    "dscp_calibrator_fit": 1,
+    "xgboost_estimator_fit": 33,
+    "calibrator_conformalize": 18,
+    "kmeans_candidate_fit": 5,
+    "quantile_estimator_fit": 18,
+    "enbpi_wrapper_fit": 3,
+    "cqr_wrapper_fit": 6
+  },
+  "models_fitted_by_analysis": 0,
+  "full_study_ready": false
+}
