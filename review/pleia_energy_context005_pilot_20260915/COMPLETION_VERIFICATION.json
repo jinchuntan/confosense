@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "main": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "prior_review_heads_unchanged": true,
+  "historical_output_protocol_changes": [],
+  "historical_untracked_files_preserved": [
+    "smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2/units/outer2_model42/streams.csv.gz",
+    "smart_building_conformal/outputs/amendment004/bdg2_threefold_f0_s42_v1/units/outer0_model42/released_scores.csv.gz",
+    "smart_building_conformal/outputs/amendment004/bdg2_threefold_f0_s42_v1/units/outer0_model42/streams.csv.gz",
+    "smart_building_conformal/outputs/amendment004/bdg2_threefold_f1_s42_v1/units/outer1_model42/streams.csv.gz"
+  ],
+  "contexts": 68,
+  "scheduled_fault_slots": 2856,
+  "zero_controls": 68,
+  "event_records": 171360,
+  "all_five_cli_actions_exit_zero": true,
+  "independent_validation_passed": true,
+  "zero_fit_resume": true,
+  "raw_archive_parts": 10,
+  "raw_archive_members": 127712,
+  "energy_sensitivity_applied": false,
+  "full_study_ready": false
+}

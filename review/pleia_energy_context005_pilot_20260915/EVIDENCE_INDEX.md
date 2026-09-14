@@ -1,0 +1,46 @@
+# PLEIA-energy context005 pilot evidence index
+
+Exact scope: outer fold 2, model seed 42, h1, 68 contexts, 2,856 scheduled fault slots, 68 clean identities, four fixed 95% controls, five rules, three channels and 9,907-row original clean workload. Energy sensitivity was inactive. No result-driven selection occurred.
+
+[Pilot report](PLEIA_ENERGY_CONTEXT005_PILOT_REPORT.md), [panel response](PANEL_RESPONSE.md), [remaining work](REMAINING_WORK.md), [next bounded proposal](NEXT_BOUNDED_PROPOSAL.md), [authorization](USER_AUTHORIZATION.txt), [pinned handoff reference](AUTHORIZING_HANDOFF_REFERENCE.md), [progress/restart](PROGRESS_AND_RESTART.md).
+
+## Frozen execution and fitted ownership
+
+[Authorized execution manifest](../context_replay005_implementation_20260914/first_real_execution_manifest_v1.json), [frozen protocol](../../smart_building_conformal/protocols/conditional_context005/pleia_energy_f2_s42_C_v1/frozen_protocol.json), [roles](../../smart_building_conformal/protocols/conditional_context005/pleia_energy_f2_s42_C_v1/roles.csv.gz), [schedules](../../smart_building_conformal/protocols/conditional_context005/pleia_energy_f2_s42_C_v1/schedules.csv.gz), [readiness](../../smart_building_conformal/protocols/conditional_context005/pleia_energy_f2_s42_C_v1/readiness.json).
+
+[Owner fit stage](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/stages/owner_fit_cqr), [CQR calibration stage](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/stages/owner_cal_cqr), [shared control owner](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/stages/controls), [operation ledger](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/operations.jsonl), [scientific completion tree](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/COMPLETE.json).
+
+## Results and validation
+
+- [control_rule_channel_summary.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/control_rule_channel_summary.csv): all 60 fixed control/rule/channel comparisons, including detection, delays and clean workload.
+- [stratum_metrics.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/stratum_metrics.csv): all 1,260 control/rule/channel/fault-stratum summaries and effective-context denominators.
+- [event_records.csv.gz](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/event_records.csv.gz): all 171,360 scheduled event/control/rule/channel records including nulls.
+- [fault_schedule_support.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/fault_schedule_support.csv): 21-stratum scheduled/effective/null/alias and context support.
+- [original_context_contributions.csv.gz](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/original_context_contributions.csv.gz): paired original-context contributions for future seed aggregation.
+- [paired_control_differences.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/paired_control_differences.csv): all descriptive within-context control contrasts; no significance or selection claim.
+- [background_workload.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/background_workload.csv): original full-stream workload contributions.
+- [background_workload_summary.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/background_workload_summary.csv): 60 original-exposure workload summaries.
+- [context_interval_diagnostics.csv.gz](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/context_interval_diagnostics.csv.gz): identity and scheduled-slot clean-truth/corrupted-observation interval diagnostics.
+- [interval_summary.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/interval_summary.csv): weighted identity/all-slot/effective-slot interval summaries.
+- [interval_by_fault_stratum.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/interval_by_fault_stratum.csv): interval metrics by fault family/severity/control/truth definition.
+- [fullstream_clean_interval_diagnostics.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/fullstream_clean_interval_diagnostics.csv): untouched original full-stream interval quality.
+- [zero_control_identities.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/zero_control_identities.csv): all 68 clean context identities and owner/input hashes.
+- [issued_consumed_hashes.csv.gz](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/issued_consumed_hashes.csv.gz): every unique stream/control/rule issued-to-consumed row identity and file hash.
+- [stream_bound_integrity_summary.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/stream_bound_integrity_summary.csv): ordered emitted bounds and observed raw quantile crossings.
+- [operation_counts.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/operation_counts.csv): actual real fit/conformalization call counts.
+- [operations.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/operations.csv): full returned-operation records and parameters.
+- [owner_operation_reconciliation.json](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/owner_operation_reconciliation.json): shared owner, logical/nested call and persistence-radius accounting.
+- [worker_costs_and_exits.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/worker_costs_and_exits.csv): all five CLI action exits and elapsed costs.
+- [stage_cost_summary.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/stage_cost_summary.csv): stage wall/CPU/peak-memory aggregation.
+- [stage_costs.csv](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/stage_costs.csv): per-stage wall/CPU/RSS/private-memory measurements.
+- [validation.json](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/validation.json): aggregate analysis acceptance and unchanged matrix counts.
+
+[Compact comparison PNG](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/control_rule_comparison.png), [PDF](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/control_rule_comparison.pdf), [figure source manifest](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/control_rule_comparison.sources.json).
+
+[Independent validation](../../smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/validation/validation.json), [independent reconstructed events](../../smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/validation/independently_reconstructed_events.csv.gz), [all independent scalar/identity checks](../../smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/validation/independent_checks.csv), [zero-fit completed resume](../../smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/resume.json), [durable progress](../../smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/progress.json), [attempt journal](../../smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/attempts.jsonl).
+
+## Lossless raw stream publication
+
+[Archive validation](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_publication_v1/validation.json), [archive parts and hashes](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_publication_v1/parts_manifest.csv), and [every raw member path/byte/hash](../../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_publication_v1/raw_file_manifest.csv.gz). Extract every ZIP part into one empty directory to reconstruct the complete local scientific run; paths are disjoint and every member was read back and hash-verified. Core fitted owners and aggregate tables are also linked directly above.
+
+[Preservation baseline](PRESERVATION_BASELINE.json), [completion verification](COMPLETION_VERIFICATION.json), [publication file manifest](EVIDENCE_MANIFEST.csv). External verified bundle details are emitted under `C:/Users/nigel/ConfoSenseBackups/pleia_energy_context005_pilot_20260915/`.

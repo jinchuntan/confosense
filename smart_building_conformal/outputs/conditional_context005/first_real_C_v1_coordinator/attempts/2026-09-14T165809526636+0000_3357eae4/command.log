@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "contexts": 68,
+  "scheduled_fault_slots": 2856,
+  "unique_context_streams": 2161,
+  "independently_reconstructed_event_rows": 171360,
+  "fullstream_workload_checks": 60,
+  "maximum_absolute_difference": 1.0547118733938987e-15,
+  "checks": 61200,
+  "source_artifacts_unchanged": true,
+  "resources": {
+    "seconds": 5121.37624870002,
+    "baseline_rss_bytes": 463609856,
+    "peak_rss_bytes": 896331776,
+    "baseline_private_bytes": 422117376,
+    "peak_private_bytes": 863387648,
+    "incremental_peak_rss_bytes": 432721920,
+    "lifetime_peak_rss_bytes": 897675264,
+    "min_available_ram_bytes": 2462785536,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 4271.75
+  },
+  "actual_exit_status": 0
+}

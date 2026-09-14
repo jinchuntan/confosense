@@ -1,3 +1,13 @@
+# First real amendment-005 conditional-context pilot completed
+
+PLEIA energy outer fold 2 / model seed 42 / h1 completed all 68 published contexts, 2,856 scheduled fault slots, 68 clean identities, four fixed 95% controls, five rules and the full 9,907-row clean workload. All five CLI actions, independent validation and zero-fit resume passed. The published analysis reports all 60 control/rule/channel cells; no outer-result selection occurred.
+
+This adds **one completed C pilot**. Matched forecasting remains **70/195**, interval quality **250/1950**, and unique seasonal computations **9/27**. C remains separate from natural-frequency deployment feasibility. Population inference is unavailable at one model seed; the energy-sensitivity mask stayed inactive. Full-study readiness remains false.
+
+Evidence: [pilot report](review/pleia_energy_context005_pilot_20260915/PLEIA_ENERGY_CONTEXT005_PILOT_REPORT.md), [evidence index](review/pleia_energy_context005_pilot_20260915/EVIDENCE_INDEX.md), [every comparison](smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1_analysis/control_rule_channel_summary.csv), [independent validation](smart_building_conformal/outputs/conditional_context005/first_real_C_v1_coordinator/validation/validation.json), and [next bounded proposal](review/pleia_energy_context005_pilot_20260915/NEXT_BOUNDED_PROPOSAL.md).
+
+<!-- pleia-energy-context005-pilot-20260915: historical status follows -->
+
 # Conditional-context replay implemented and synthetically validated
 
 The amendment-005 C engine now executes observation-time faults through actual causal features and serialized predictors, with four fixed .95 controls, five rules, independent context state and original-stream workload. Both synthetic cadence workflows and zero-fit completed resumes passed. Real C fitting/replay was not launched.

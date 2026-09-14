@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "operation_counts": {
+    "calibrator_conformalize": 2,
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3
+  },
+  "logical_conformalizations": 1,
+  "nested_instrumented_conformalize_calls": 2,
+  "persistence_radius_computations": 1,
+  "persistence_learned_fits": 0,
+  "persistence_radius": 0.0625,
+  "quantile_shared": true,
+  "owner_sha256": "992246063fa9edae37c74961129fe703dff7e4db52e2aa7b87ff002063f94dfc",
+  "unexpected_fit_calls": 0,
+  "note": "The wrapper contains the three quantile-estimator fits. Nested conformalize instrumentation is one public logical conformalization. Persistence radius construction is recorded in owner identity and has no fit call."
+}
