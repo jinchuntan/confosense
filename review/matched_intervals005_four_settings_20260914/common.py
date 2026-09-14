@@ -18,7 +18,7 @@ UNITS=(
     dict(name='rico',dataset='rico',horizons=[5,15,30,60],cells=40,learned_fits=68,seasonal=False),
 )
 sys.path.insert(0,str(SMART))
-from src.intervals005_common import atomic as _atomic,read as _read,now,tree
+from src.intervals005_common import atomic as _atomic,append,read as _read,now,tree
 from src.unit_checkpoint import digest as sha,source_digest
 
 def design(unit):return SMART/f'protocols/matched_intervals005/{unit["name"]}_f2_s42_v{2 if unit["name"]=="pleia_energy" else 1}'
