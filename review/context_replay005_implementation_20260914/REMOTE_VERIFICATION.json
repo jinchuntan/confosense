@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "published_commit": "bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c",
+  "branch": "review/context-replay005-implementation-20260914",
+  "all_manifest_artifacts_verified": 11821,
+  "local_document_links_verified": 86,
+  "exact_downloads": [
+    {
+      "path": "review/context_replay005_implementation_20260914/EVIDENCE_INDEX.md",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/review/context_replay005_implementation_20260914/EVIDENCE_INDEX.md",
+      "bytes": 10227,
+      "sha256": "a2682a1f1ac34ab5c8982d15b7e216dff6dfc8421f3696330a7c04fec41ba288"
+    },
+    {
+      "path": "review/context_replay005_implementation_20260914/IMPLEMENTATION_REPORT.md",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/review/context_replay005_implementation_20260914/IMPLEMENTATION_REPORT.md",
+      "bytes": 4956,
+      "sha256": "d9e382cb389c6acc3084bf96f28842af387d6d90889a4863964dbfbff0c6ab09"
+    },
+    {
+      "path": "review/context_replay005_implementation_20260914/FIRST_CONDITIONAL_CONTEXT_RUN_PROPOSAL.md",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/review/context_replay005_implementation_20260914/FIRST_CONDITIONAL_CONTEXT_RUN_PROPOSAL.md",
+      "bytes": 4396,
+      "sha256": "08de6dedce203838a893693f54d9632c22d41d4da108c689f315763191f896fc"
+    },
+    {
+      "path": "review/context_replay005_implementation_20260914/first_run_published_schedules.csv.gz",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/review/context_replay005_implementation_20260914/first_run_published_schedules.csv.gz",
+      "bytes": 153480,
+      "sha256": "302197bd66d485fd1e62401e2d260fb089d38bf40eae4f1e8c8ae3b08f362417"
+    },
+    {
+      "path": "smart_building_conformal/src/context005_validate.py",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/src/context005_validate.py",
+      "bytes": 17367,
+      "sha256": "07bd1656dcd1d8825fd765271dc380139b6b4454e767f757e4e7b0491aa39f60"
+    },
+    {
+      "path": "smart_building_conformal/src/conditional_context005.py",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/src/conditional_context005.py",
+      "bytes": 21536,
+      "sha256": "dfa9c05847e45aa115265477651039f0c21d3a04b1e99c9952397ae3bc87f2fe"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/implementation_support_v1/scope_crosswalk.csv",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/outputs/conditional_context005/implementation_support_v1/scope_crosswalk.csv",
+      "bytes": 191967,
+      "sha256": "51f29ede463d2092d304ebfcdf428b1c6aeb65ccea25573d1971e33083465de2"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/interval_diagnostic_extension_v1/all_method_diagnostic.csv",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/outputs/conditional_context005/interval_diagnostic_extension_v1/all_method_diagnostic.csv",
+      "bytes": 46447,
+      "sha256": "7e3a5d1078045c209228afaffb7685b7a837fdb0155909a2c5b9ef621f20f431"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/implementation_analysis_v1/interval_undercoverage.png",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/outputs/conditional_context005/implementation_analysis_v1/interval_undercoverage.png",
+      "bytes": 111875,
+      "sha256": "4686a5e29e488b621c6a84f5cd361b367b285d9e30a4207574fdddc5b68bc8dc"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/synthetic_pleia_energy_v1/stages/controls/controls.pkl",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/outputs/conditional_context005/synthetic_pleia_energy_v1/stages/controls/controls.pkl",
+      "bytes": 119623,
+      "sha256": "d6cef504fe4e5c79d4435157c616fec7ecc0134e72c0c33e461c3d9d5c21d4e9"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/synthetic_rico_v1/stages/tables/events.csv.gz",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/outputs/conditional_context005/synthetic_rico_v1/stages/tables/events.csv.gz",
+      "bytes": 25190,
+      "sha256": "160fcef611c79f0af847cdf694e20752a880f07e1c7b09aa71d2d58542b3b865"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/synthetic_v1_coordinator/rico_resume.json",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/bbd2a85c6c2f605c0c34ebd11cf9aea76bd2389c/smart_building_conformal/outputs/conditional_context005/synthetic_v1_coordinator/rico_resume.json",
+      "bytes": 245,
+      "sha256": "bbdc03041db30c9f9180623f4e261ef9db50f17a870bb0241e80db52be993a27"
+    }
+  ],
+  "main_unchanged": true,
+  "prior_heads_unchanged": true,
+  "utc": "2026-09-14T15:54:02.417477+00:00"
+}
