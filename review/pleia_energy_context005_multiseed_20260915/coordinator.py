@@ -6,8 +6,14 @@ from common import *
 # Reuse the already reviewed adoption/identity engine without copying it.
 LEGACY_DIR=REPO/'review/context_replay005_implementation_20260914'
 sys.path.insert(0,str(LEGACY_DIR))
+current_common=sys.modules.get('common')
+common_spec=importlib.util.spec_from_file_location('context005_reviewed_common',LEGACY_DIR/'common.py')
+legacy_common=importlib.util.module_from_spec(common_spec);common_spec.loader.exec_module(legacy_common)
+sys.modules['common']=legacy_common
 spec=importlib.util.spec_from_file_location('context005_reviewed_coordinator',LEGACY_DIR/'coordinator.py')
 reviewed=importlib.util.module_from_spec(spec);spec.loader.exec_module(reviewed)
+if current_common is not None:sys.modules['common']=current_common
+else:sys.modules.pop('common',None)
 Engine=reviewed.Engine;exclusive_lock=reviewed._legacy.exclusive_lock
 
 def save_external(engine):
