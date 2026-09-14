@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "unique_acceptance_checks": 26,
+  "initial_tests": 25,
+  "initial_passed": 24,
+  "initial_failures": 1,
+  "corrected_fixture_tests": 1,
+  "additional_native_and_unseen_group_tests": 1,
+  "initial_actual_exit": 1,
+  "recovery_actual_exit": 0,
+  "additional_actual_exit": 0,
+  "synthetic_learned_fits": 34,
+  "synthetic_dscp_calibrator_fits": 2,
+  "synthetic_kmeans_candidate_fits": 1,
+  "enbpi_base_fits_per_owner": 11,
+  "source_hash": "026da0df7a10396c455a6a8d28a2736532e9a439a61e38ddea04d830bd142f19",
+  "models_refitted_for_recovery": 0,
+  "calibrators_refitted_for_recovery": 0,
+  "source_artifacts_preserved": true,
+  "counts": {
+    "dscp_calibrator_fit": 2,
+    "enbpi_wrapper_fit": 2,
+    "kmeans_candidate_fit": 1,
+    "xgboost_estimator_fit": 22,
+    "cqr_wrapper_fit": 4,
+    "calibrator_conformalize": 12,
+    "quantile_estimator_fit": 12
+  },
+  "inputs": {
+    "smart_building_conformal\\outputs\\matched_intervals005\\synthetic_v1_junit.xml": "ffb2bd6e7e90db86002e09e5d61f04022a8890bdb0748afe7307873fe8bc3efd",
+    "smart_building_conformal\\outputs\\matched_intervals005\\synthetic_recovery_v1_junit.xml": "3c8e9c0f83b7d7d312a617305a2ccfab9b4b3fb2dda04c0b86777324407e05b0",
+    "smart_building_conformal\\outputs\\matched_intervals005\\native_recovery_v1_junit.xml": "c903b50d83f509bace9607e3a7f869c8fa2cf1f08a2fe8a5b4c84dd8067d0ba2",
+    "smart_building_conformal\\outputs\\matched_intervals005\\synthetic_v1\\actual_synthetic_fit_counts.json": "c4668cd84164d0faca73804e4d76752942fa8a4de6467d18d353f00d1db310b0"
+  }
+}

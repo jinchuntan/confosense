@@ -50,3 +50,13 @@ smart_building_conformal/configs/matched_forecasting005_fold2_multiseed_authoriz
 MATCHED_FAILURE_DIAGNOSIS.md -text whitespace=cr-at-eol
 MATCHED_FOLD2_MULTISEED_REPORT.md -text whitespace=cr-at-eol
 MATCHED_METHOD_READINESS_MAP.md -text whitespace=cr-at-eol
+
+review/matched_intervals005_bdg2_20260914/** -text -whitespace
+smart_building_conformal/outputs/matched_intervals005/** -text -whitespace
+smart_building_conformal/protocols/matched_intervals005/** -text -whitespace
+smart_building_conformal/configs/matched_intervals005_bdg2_authorization_v1.json -text -whitespace
+smart_building_conformal/src/intervals005_*.py -text -whitespace
+smart_building_conformal/src/matched_intervals005.py -text -whitespace
+smart_building_conformal/tests/test_matched_intervals005.py -text -whitespace
+MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md -text -whitespace
+BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md -text -whitespace

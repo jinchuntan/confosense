@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "../review/matched_intervals005_bdg2_20260914/test_native_recovery.py",
+    "-q",
+    "--junitxml=outputs/matched_intervals005/native_recovery_v1_junit.xml"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T04:21:16.498603+00:00",
+  "logger_pid": 25248,
+  "child_pid": 29488,
+  "ended_utc": "2026-09-14T04:21:22.728592+00:00",
+  "seconds": 6.230089600008796,
+  "exit_status": 0
+}

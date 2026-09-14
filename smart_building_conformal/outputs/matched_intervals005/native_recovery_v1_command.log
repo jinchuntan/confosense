@@ -1,0 +1,9 @@
+.                                                                        [100%]
+============================== warnings summary ===============================
+review/matched_intervals005_bdg2_20260914/test_native_recovery.py::test_native_enbpi_formula_and_unseen_group_initialization
+review/matched_intervals005_bdg2_20260914/test_native_recovery.py::test_native_enbpi_formula_and_unseen_group_initialization
+  C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+    return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 2 warnings in 5.15s

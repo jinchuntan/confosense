@@ -1,0 +1,75 @@
+Work through the complete task below. I will be unavailable for approximately 6–7 hours, so continue autonomously through all authorized stages without waiting for another message.
+
+Continue from `review/matched-fold2-multiseed-20260914`, commit:
+
+`c143fa16eaf9bfc6354b4cb1f8861915cb00f388`
+
+Read and execute the full updated handoff, including its unattended-execution section:
+
+https://github.com/jinchuntan/confosense/blob/6c7a0c9627ef393f91b52575c743561d5d58caa3/review/NEXT_TASK_MATCHED_INTERVALS005.md
+
+Retrieve only that instruction document from the handoff branch. Retain the current experiment code; do not check out or merge the old application code on the instruction branch.
+
+First check the actual local branch, working changes, existing checkpoints and active processes. Preserve legitimate newer work. Create or resume a suitable new non-main review branch.
+
+I explicitly authorize the following complete sequence:
+
+1. Implement `src.matched_intervals005` and necessary supporting code, including freeze, readiness, run, validate and resume functionality.
+
+2. Run the bounded synthetic integration and regression checks specified in the handoff. Small synthetic estimator fits are authorized and must be recorded separately from real experiments.
+
+3. Once those checks and fresh real-data readiness pass, automatically execute the BDG2 pilot:
+
+   * Outer fold 2, model seed 42.
+   * Horizons 1, 3 and 6 hours.
+   * Nominal interval levels 90% and 95%.
+   * Methods: uncalibrated quantiles, CQR, recentred EnbPI static, recentred EnbPI updated and DSCP.
+   * Expected scope: 30 interval-method result cells.
+
+4. Complete the three specified deterministic seasonal-baseline computations and their six interval cells, plus clean-stream alert-consumption verification. These are separate from the 30 method cells.
+
+5. Independently validate the results, generate the reports and figures, verify backups, and publish the evidence on the new review branch.
+
+Do not stop after a plan, “implementation ready,” or successful synthetic tests if the authorized real-data pilot can proceed.
+
+Preserve the scientific design:
+
+* Keep correct estimator ownership and shared-fit identities. Uncalibrated quantiles and CQR must share their declared quantile owner; static and updated EnbPI must share their declared trained owner.
+* DSCP must use the existing matched XGBoost forecasts, with the declared joint-origin support and calibration-only fitting.
+* Preserve causal observation delays, method-specific scoring, group/segment isolation and immutable issued intervals.
+* Verify that alerting consumes exactly the emitted bounds and availability flags.
+* Preserve original data, memberships, model settings, completed results and historical source identities.
+* Do not retune using outer results, select favorable seeds, discard poor outcomes or change support to improve presentation.
+* Record actual wrapper, base-estimator and calibrator operations separately. Reuse valid fitted artifacts without repeating successful fits.
+* Keep native-support and common-support comparisons clearly distinguished.
+
+Use the existing resource policy: CPU-only, one numerical/Torch thread, `n_jobs=1`, bounded data processing, the nonblocking 3 GiB launch-RAM reference, the 256 MiB epoch floor where applicable, and the 8 GiB free-disk check. Record actual resource usage. Do not introduce paid cloud compute or package upgrades.
+
+Use durable execution:
+
+* Reuse the proven coordinator/checkpoint mechanisms where appropriate.
+* Keep persistent command logs, actual process identities, exit receipts and an up-to-date progress/restart record.
+* Verify that long-running processes can survive independently of a chat callback.
+* Prevent duplicate workers and reconcile surviving processes before resuming.
+* Checkpoint completed owners, calibrators and stages promptly.
+* Do not repeat model fitting because a progress-file write or reporting step failed.
+* Independently reconstruct metrics and saved-model outputs, then verify completed resume with fitting forbidden and scientific artifacts unchanged.
+
+Fix routine implementation and reporting problems within this scope, preserving failed attempts and rerunning the relevant checks. Do not restart the historical audit or add unrelated experiments.
+
+If a genuine correctness or resource blocker remains unresolved, preserve its evidence, complete independent authorized work where possible, and leave a precise blocked status with exact restart instructions. Never bypass a failed integrity check or report partial results as complete.
+
+A publication-only authentication issue must not stop authorized local computation, reporting and backup. Use existing authenticated tools where available; otherwise preserve the exact pending branch and commit.
+
+When finished, publish the implementation report, BDG2 method-comparison report, numerical CSVs, figures, evidence index, validation receipts and measured costs. Update `review/CURRENT_EVIDENCE.md`, recovery notes and the panel-response records. Verify remote hashes and representative downloads. Main and previous review heads must remain unchanged.
+
+The final response should include:
+
+* Published branch, publication SHA and evaluated source identity.
+* Actual completed cells, fitting/calibrator operations, tests and process exits.
+* Main numerical findings and their limitations.
+* Wall time, CPU time and peak memory.
+* Direct report, CSV and evidence-index links.
+* Remaining work and the next concrete execution package.
+
+My 6–7-hour absence is not a hard runtime limit. If healthy authorized work takes longer, continue with durable progress records. If everything finishes earlier, deliver the completed work rather than launch additional experiments.

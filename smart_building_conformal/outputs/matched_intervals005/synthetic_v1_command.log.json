@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_matched_intervals005.py",
+    "tests/test_operational004_flag_dtype.py",
+    "tests/test_operational004_journal.py",
+    "tests/test_matched005_identifier_export.py",
+    "-q",
+    "--junitxml=outputs/matched_intervals005/synthetic_v1_junit.xml"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T04:19:34.814037+00:00",
+  "logger_pid": 21288,
+  "child_pid": 23608,
+  "ended_utc": "2026-09-14T04:19:53.501032+00:00",
+  "seconds": 18.68650450000132,
+  "exit_status": 1
+}

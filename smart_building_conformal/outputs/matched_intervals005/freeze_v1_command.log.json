@@ -1,0 +1,22 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.matched_intervals005",
+    "freeze",
+    "--design-dir",
+    "protocols/matched_intervals005/bdg2_f2_s42_v1",
+    "--authorization",
+    "configs/matched_intervals005_bdg2_authorization_v1.json",
+    "--synthetic-receipt",
+    "../review/matched_intervals005_bdg2_20260914/SYNTHETIC_ACCEPTANCE.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T04:22:19.394360+00:00",
+  "logger_pid": 4104,
+  "child_pid": 26512,
+  "ended_utc": "2026-09-14T04:23:19.241216+00:00",
+  "seconds": 59.845852599988575,
+  "exit_status": 0
+}

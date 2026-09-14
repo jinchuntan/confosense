@@ -1,0 +1,28 @@
+{
+  "emitted_hash": "c1807ccb2711316ee17806233f0ae70af4859b6d28aa725b1850d075bed00912",
+  "consumed_hash": "c1807ccb2711316ee17806233f0ae70af4859b6d28aa725b1850d075bed00912",
+  "identity": {
+    "owner_sha256": "05d56f065d2b0057458a5742f9788300b2ac4776e377c278f72c5f4f0cb2c280",
+    "method": "quantile_uncalibrated",
+    "level": 0.9,
+    "mutable_state_identity": "a5b12c0a91340a3f05387e8fc1266bb9a6fb849e613f6238da5bd3f7392b7ee4",
+    "score": "signed y-own-point; unused by static methods"
+  },
+  "candidate": {
+    "method": "quantile_uncalibrated",
+    "level": 0.9,
+    "strategy": "static",
+    "every": 0,
+    "window": null,
+    "min_samples": 50
+  },
+  "alert_rule": {
+    "k": 1,
+    "m": 1,
+    "frequency": "0 days 00:10:00"
+  },
+  "event_count": 0,
+  "horizon": 3,
+  "level": 0.9,
+  "method": "quantile_uncalibrated"
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.matched_intervals005",
+    "readiness",
+    "--design-dir",
+    "protocols/matched_intervals005/bdg2_f2_s42_v1",
+    "--receipt",
+    "protocols/matched_intervals005/bdg2_f2_s42_v1/readiness.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T04:23:32.187541+00:00",
+  "logger_pid": 20684,
+  "child_pid": 24668,
+  "ended_utc": "2026-09-14T04:24:16.154931+00:00",
+  "seconds": 43.967370999991545,
+  "exit_status": 0
+}

@@ -1,0 +1,23 @@
+{
+  "key": "owner_fit_h1_enbpi",
+  "payload": {
+    "kind": "enbpi",
+    "level": null,
+    "seed": 42,
+    "n_fit": 700,
+    "synthetic": true,
+    "owner_class": "mapie.regression.time_series_regression.TimeSeriesRegressor"
+  },
+  "resources": {
+    "seconds": 0.3634289000037825,
+    "baseline_rss_bytes": 351420416,
+    "peak_rss_bytes": 460382208,
+    "baseline_private_bytes": 1585246208,
+    "peak_private_bytes": 1761153024,
+    "incremental_peak_rss_bytes": 108961792,
+    "lifetime_peak_rss_bytes": 460386304,
+    "min_available_ram_bytes": 3423440896,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.046875
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "real_fitting_authorized": true,
+  "synthetic_fitting_authorized": true,
+  "publication_authorized": true,
+  "instruction_commit": "6c7a0c9627ef393f91b52575c743561d5d58caa3",
+  "scope": {
+    "dataset": "bdg2",
+    "outer_fold": 2,
+    "model_seed": 42,
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "levels": [
+      0.9,
+      0.95
+    ],
+    "methods": [
+      "quantile_uncalibrated",
+      "cqr",
+      "recentred_enbpi_static",
+      "recentred_enbpi_updated",
+      "dscp"
+    ]
+  },
+  "seasonal": {
+    "computations": 3,
+    "point_cells": 3,
+    "interval_cells": 6
+  },
+  "clean_alert_streams": 30,
+  "nonblocking_launch_ram": true,
+  "other_real_data_fits_authorized": false
+}

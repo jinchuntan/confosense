@@ -1,0 +1,34 @@
+{
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "files": [
+    {
+      "symbol": "mapie.regression.time_series_regression.TimeSeriesRegressor",
+      "source_path": "C:\\cfs_venv\\Lib\\site-packages\\mapie\\regression\\time_series_regression.py",
+      "sha256": "9694f3601a2bebe1ad6ede631519c10f5102d23b07ef567921a1ed3ba841f271"
+    },
+    {
+      "symbol": "mapie.regression.quantile_regression.ConformalizedQuantileRegressor",
+      "source_path": "C:\\cfs_venv\\Lib\\site-packages\\mapie\\regression\\quantile_regression.py",
+      "sha256": "aef34df6e38765fa29a352fa6380806342dbd2ca9daf74e32af074d48e55aac1"
+    },
+    {
+      "symbol": "mapie.estimator.regressor.EnsembleRegressor",
+      "source_path": "C:\\cfs_venv\\Lib\\site-packages\\mapie\\estimator\\regressor.py",
+      "sha256": "140796e7a0d9c505051e04a75d1ebc3dfcfd1fdb2deace02870cf034e74bd43b"
+    },
+    {
+      "symbol": "mapie.conformity_scores.regression.BaseRegressionScore",
+      "source_path": "C:\\cfs_venv\\Lib\\site-packages\\mapie\\conformity_scores\\regression.py",
+      "sha256": "9e828f3fea5ecf1e6fa63e4d0871d81db506cd0f926c58958b9606c09c4acb9b"
+    }
+  ],
+  "verified_native_factories": true
+}

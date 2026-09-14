@@ -1,0 +1,305 @@
+.............F...........                                                [100%]
+================================== FAILURES ===================================
+____ test_corrupted_features_zero_control_scalar_replay_and_future_inputs _____
+
+>   ???
+
+index.pyx:609: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+pandas\\_libs\\hashtable_class_helper.pxi:2606: in pandas._libs.hashtable.Int64HashTable.get_item
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   KeyError: 1641375600000000000
+
+pandas\\_libs\\hashtable_class_helper.pxi:2630: KeyError
+
+During handling of the above exception, another exception occurred:
+
+self = DatetimeIndex(['2022-01-01 00:30:00', '2022-01-01 00:40:00',
+               '2022-01-01 00:50:00', '2022-01-01 01:00:0...         '2022-01-05 09:00:00', '2022-01-05 09:10:00'],
+              dtype='datetime64[ns]', length=629, freq='10min')
+key = Timestamp('2022-01-05 09:40:00')
+
+    def get_loc(self, key):
+        """
+        Get integer location, slice or boolean mask for requested label.
+    
+        Parameters
+        ----------
+        key : label
+    
+        Returns
+        -------
+        int if unique index, slice if monotonic index, else mask
+    
+        Examples
+        --------
+        >>> unique_index = pd.Index(list('abc'))
+        >>> unique_index.get_loc('b')
+        1
+    
+        >>> monotonic_index = pd.Index(list('abbc'))
+        >>> monotonic_index.get_loc('b')
+        slice(1, 3, None)
+    
+        >>> non_monotonic_index = pd.Index(list('abcb'))
+        >>> non_monotonic_index.get_loc('b')
+        array([False,  True, False,  True])
+        """
+        casted_key = self._maybe_cast_indexer(key)
+        try:
+>           return self._engine.get_loc(casted_key)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+C:\cfs_venv\Lib\site-packages\pandas\core\indexes\base.py:3805: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+index.pyx:577: in pandas._libs.index.DatetimeEngine.get_loc
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   KeyError: Timestamp('2022-01-05 09:40:00')
+
+index.pyx:611: KeyError
+
+The above exception was the direct cause of the following exception:
+
+self = DatetimeIndex(['2022-01-01 00:30:00', '2022-01-01 00:40:00',
+               '2022-01-01 00:50:00', '2022-01-01 01:00:0...         '2022-01-05 09:00:00', '2022-01-05 09:10:00'],
+              dtype='datetime64[ns]', length=629, freq='10min')
+key = Timestamp('2022-01-05 09:40:00')
+
+    def get_loc(self, key):
+        """
+        Get integer location for requested label
+    
+        Returns
+        -------
+        loc : int
+        """
+        self._check_indexing_error(key)
+    
+        orig_key = key
+        if is_valid_na_for_dtype(key, self.dtype):
+            key = NaT
+    
+        if isinstance(key, self._data._recognized_scalars):
+            # needed to localize naive datetimes
+            self._disallow_mismatched_indexing(key)
+            key = Timestamp(key)
+    
+        elif isinstance(key, str):
+            try:
+                parsed, reso = self._parse_with_reso(key)
+            except (ValueError, pytz.NonExistentTimeError) as err:
+                raise KeyError(key) from err
+            self._disallow_mismatched_indexing(parsed)
+    
+            if self._can_partial_date_slice(reso):
+                try:
+                    return self._partial_date_slice(reso, parsed)
+                except KeyError as err:
+                    raise KeyError(key) from err
+    
+            key = parsed
+    
+        elif isinstance(key, dt.timedelta):
+            # GH#20464
+            raise TypeError(
+                f"Cannot index {type(self).__name__} with {type(key).__name__}"
+            )
+    
+        elif isinstance(key, dt.time):
+            return self.indexer_at_time(key)
+    
+        else:
+            # unrecognized type
+            raise KeyError(key)
+    
+        try:
+>           return Index.get_loc(self, key)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+
+C:\cfs_venv\Lib\site-packages\pandas\core\indexes\datetimes.py:630: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = DatetimeIndex(['2022-01-01 00:30:00', '2022-01-01 00:40:00',
+               '2022-01-01 00:50:00', '2022-01-01 01:00:0...         '2022-01-05 09:00:00', '2022-01-05 09:10:00'],
+              dtype='datetime64[ns]', length=629, freq='10min')
+key = Timestamp('2022-01-05 09:40:00')
+
+    def get_loc(self, key):
+        """
+        Get integer location, slice or boolean mask for requested label.
+    
+        Parameters
+        ----------
+        key : label
+    
+        Returns
+        -------
+        int if unique index, slice if monotonic index, else mask
+    
+        Examples
+        --------
+        >>> unique_index = pd.Index(list('abc'))
+        >>> unique_index.get_loc('b')
+        1
+    
+        >>> monotonic_index = pd.Index(list('abbc'))
+        >>> monotonic_index.get_loc('b')
+        slice(1, 3, None)
+    
+        >>> non_monotonic_index = pd.Index(list('abcb'))
+        >>> non_monotonic_index.get_loc('b')
+        array([False,  True, False,  True])
+        """
+        casted_key = self._maybe_cast_indexer(key)
+        try:
+            return self._engine.get_loc(casted_key)
+        except KeyError as err:
+            if isinstance(casted_key, slice) or (
+                isinstance(casted_key, abc.Iterable)
+                and any(isinstance(x, slice) for x in casted_key)
+            ):
+                raise InvalidIndexError(key)
+>           raise KeyError(key) from err
+E           KeyError: Timestamp('2022-01-05 09:40:00')
+
+C:\cfs_venv\Lib\site-packages\pandas\core\indexes\base.py:3812: KeyError
+
+The above exception was the direct cause of the following exception:
+
+integration = {'out': WindowsPath('C:/Users/nigel/OneDrive/Desktop/GitHub/confosense/smart_building_conformal/outputs/matched_interv...nfosense/smart_building_conformal/outputs/matched_intervals005/synthetic_v1/run/stages/stream_h1_l95_cqr')), ...}, ...}
+
+    def test_corrupted_features_zero_control_scalar_replay_and_future_inputs(integration):
+        d=integration['data'][3];w=d['w'];meta=d['test'];s=d['segmented'];columns=list(w['X'])
+        clean=corrupted_features(s,meta,meta.y_true,np.ones(len(meta),bool),3,d['fc'],columns)
+        np.testing.assert_array_equal(clean,d['X'])
+        obs=meta.y_true.to_numpy().copy();flags=np.ones(len(meta),bool);obs[20:25]+=5;flags[30]=False;obs[30]=np.nan
+        altered=corrupted_features(s,meta,obs,flags,3,d['fc'],columns)
+        before=meta.origin_time<meta.target_time.iloc[20];np.testing.assert_array_equal(clean[before],altered[before])
+        owner,path,_,rawcal=integration['owners'][3,'cqr',.95]
+        raw=raw_predictions(owner,'cqr',altered.to_numpy(),[.95])[.95]
+        modified=meta.copy();modified['y_true']=np.where(flags,obs,meta.y_true);modified['available']=flags
+        result=emit('cqr',.95,digest(path/'owner.pkl'),altered,modified,raw,d['cal'],rawcal[.95],s.freq,strategy='periodic')
+        scalar=scalar_replay(modified,raw,d['cal'],rawcal[.95],.95,'cqr','periodic',freq=s.freq)
+        np.testing.assert_array_equal(result['stream'].lower,scalar['lower'])
+        # Build the feature at each selected origin using a source truncated at that
+        # origin: a separate scalar causality check of batch corrupted features.
+        from dataclasses import replace
+        from src import features
+        for i in (19,23,32,90,150):
+            group=meta.group_id.iloc[i];origin=meta.origin_time.iloc[i];series=next(z for z in s.series if z.group_id==group);source=series.frame.loc[:origin].copy()
+            for j in range(len(meta)):
+                t=meta.target_time.iloc[j]
+                if meta.group_id.iloc[j]==group and t in source.index:source.loc[t,'target']=obs[j] if flags[j] else np.nan
+            source.target=source.target.ffill()
+            # Extend only the row index for deterministic target-calendar features;
+            # feature extraction uses no later target values.
+            extended=source.reindex(source.index.append(pd.date_range(origin+s.freq,periods=3,freq=s.freq)))
+            built=features.build_supervised(extended,3,s.freq,None,d['fc'])['X']
+>           np.testing.assert_allclose(built.loc[origin,columns],altered.iloc[i],atol=1e-12)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_matched_intervals005.py:211: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\cfs_venv\Lib\site-packages\pandas\core\indexing.py:1184: in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+C:\cfs_venv\Lib\site-packages\pandas\core\indexing.py:1368: in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\cfs_venv\Lib\site-packages\pandas\core\indexing.py:1065: in _getitem_lowerdim
+    section = self._getitem_axis(key, axis=i)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\cfs_venv\Lib\site-packages\pandas\core\indexing.py:1431: in _getitem_axis
+    return self._get_label(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\cfs_venv\Lib\site-packages\pandas\core\indexing.py:1381: in _get_label
+    return self.obj.xs(label, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\cfs_venv\Lib\site-packages\pandas\core\generic.py:4301: in xs
+    loc = index.get_loc(key)
+          ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = DatetimeIndex(['2022-01-01 00:30:00', '2022-01-01 00:40:00',
+               '2022-01-01 00:50:00', '2022-01-01 01:00:0...         '2022-01-05 09:00:00', '2022-01-05 09:10:00'],
+              dtype='datetime64[ns]', length=629, freq='10min')
+key = Timestamp('2022-01-05 09:40:00')
+
+    def get_loc(self, key):
+        """
+        Get integer location for requested label
+    
+        Returns
+        -------
+        loc : int
+        """
+        self._check_indexing_error(key)
+    
+        orig_key = key
+        if is_valid_na_for_dtype(key, self.dtype):
+            key = NaT
+    
+        if isinstance(key, self._data._recognized_scalars):
+            # needed to localize naive datetimes
+            self._disallow_mismatched_indexing(key)
+            key = Timestamp(key)
+    
+        elif isinstance(key, str):
+            try:
+                parsed, reso = self._parse_with_reso(key)
+            except (ValueError, pytz.NonExistentTimeError) as err:
+                raise KeyError(key) from err
+            self._disallow_mismatched_indexing(parsed)
+    
+            if self._can_partial_date_slice(reso):
+                try:
+                    return self._partial_date_slice(reso, parsed)
+                except KeyError as err:
+                    raise KeyError(key) from err
+    
+            key = parsed
+    
+        elif isinstance(key, dt.timedelta):
+            # GH#20464
+            raise TypeError(
+                f"Cannot index {type(self).__name__} with {type(key).__name__}"
+            )
+    
+        elif isinstance(key, dt.time):
+            return self.indexer_at_time(key)
+    
+        else:
+            # unrecognized type
+            raise KeyError(key)
+    
+        try:
+            return Index.get_loc(self, key)
+        except KeyError as err:
+>           raise KeyError(orig_key) from err
+E           KeyError: Timestamp('2022-01-05 09:40:00')
+
+C:\cfs_venv\Lib\site-packages\pandas\core\indexes\datetimes.py:632: KeyError
+============================== warnings summary ===============================
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+  C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+    return cast(NDArray, np.nanmean(X, axis=1))
+
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_serialized_owner_predictions_and_forbidden_completed_stage_resume
+tests/test_matched_intervals005.py::test_serialized_owner_predictions_and_forbidden_completed_stage_resume
+  C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+    return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_matched_intervals005.py::test_corrupted_features_zero_control_scalar_replay_and_future_inputs
