@@ -155,3 +155,19 @@ Create/update only the new review branch. Publication and backup are authorized;
 Back up outside OneDrive, verify main/previous review heads unchanged, and verify remote hashes with representative exact downloads. An authentication-only block should not strand authorized local computation: complete reports/backup and retain the exact pending branch/commit.
 
 Finish with actual exits, new method/seasonal/stream counts, wrapper/base-learner/calibrator operations, measured CPU/wall/memory, numerical findings, preservation/validation status and direct report/CSV/evidence links. Do not finish merely with "implementation ready" if the authorized real-data pilot can proceed.
+
+## Unattended execution while the user is away
+
+The user expects to be unavailable for approximately **6–7 hours**. This is an availability window, not a promise of completion or a hard runtime limit. The entire implementation, verification, defined BDG2 pilot, reporting and publication scope above is authorized.
+
+- Begin the actual work after a brief state check. Do not return only a plan, another authorization request for an already listed stage, or a synthetic-test checkpoint when the real pilot is ready.
+- Keep one durable task/status record with the current phase, completed owner/calibrator/stream identities, active process identity, latest actual exit, remaining work and exact restart commands. Reuse existing suitable mechanisms instead of creating a second competing coordinator.
+- Checkpoint completed owners and phases promptly. Keep source/protocol/parameter identities fixed for an active scientific run, and distinguish later reporting-only commits.
+- For long commands, establish and verify an environment-supported persistent process with logs and a real PID. Do not assume a chat callback or an ephemeral tool session will automatically advance the remaining stages.
+- Continue automatically from implementation to bounded synthetic checks, no-fit real-data readiness, the authorized pilot, independent validation, reports, backup and publication. Poll/observe long jobs without launching duplicate processes.
+- Fix routine implementation, path, serialization and reporting issues within this scope; retain the failed attempt and run the relevant checks again. Do not alter the scientific design to obtain better results or to conceal a failure.
+- If a genuine scientific/identity/resource problem blocks a stage, preserve its evidence and address the concrete cause. If it remains unresolved, complete independent authorized documentation, backup and reporting work, then leave a precise blocked status. Do not bypass permissions, identity checks or resource guards.
+- A GitHub sign-in or other publication-only block must not stop authorized local computation and backup. Use existing authenticated tools where available; otherwise retain the exact pending commit and state what action is actually needed.
+- If all authorized work finishes early, publish and deliver it. Do not fill the remaining hours with additional cohorts, hyperparameter searches, remaining forecasting batches or unrelated changes.
+- If valid computation is still running when the absence window ends, allow it to continue under the existing resource policy and leave a current progress record. Never truncate the cohort or label partial output complete to meet a guessed runtime.
+- Completion requires actual exit/verification evidence and accessible saved results, not an unattended-process launch alone. If the session must end early, accurately state whether a verified persistent process remains live and how to resume; do not promise automatic continuation the environment cannot provide.
