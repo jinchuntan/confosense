@@ -1,0 +1,35 @@
+VALIDATE horizon 1
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\measured_action.py", line 18, in main
+    runpy.run_module('src.matched_intervals005',run_name='__main__')
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 263, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\matched_intervals005.py", line 258, in main
+    result=validate(protocol,args.out,args.receipt,audit_manifest=args.audit_manifest)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 154, in validate
+    close(raw.static_lower,raw.point+lower,f'enbpi_native_lo_h{h}_{l}');close(raw.static_upper,raw.point+upper,f'enbpi_native_hi_h{h}_{l}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 98, in close
+    np.testing.assert_allclose(a,b,atol=atol,rtol=rtol,equal_nan=True,err_msg=tag)
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 1691, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 889, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-07
+enbpi_native_lo_h1_0.9
+Mismatched elements: 969 / 34640 (2.8%)
+Max absolute difference among violations: 3.80371094e-06
+Max relative difference among violations: 7.31095759e-05
+ ACTUAL: array([ -5.105309,  -5.112847,  -3.231931, ..., 546.481338, 565.347854,
+       674.962966])
+ DESIRED: array([ -5.105309,  -5.112849,  -3.231929, ..., 546.481331, 565.347831,
+       674.962961])
+

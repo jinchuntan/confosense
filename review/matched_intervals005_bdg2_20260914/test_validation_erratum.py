@@ -8,7 +8,7 @@ from src.matched_intervals005 import check_protocol,execute
 from src.operational004_fixtures import fixture_data
 
 
-AUDIT=REVIEW/('VALIDATION_ERRATUM_V3.json' if (REVIEW/'VALIDATION_ERRATUM_V3.json').exists() else 'VALIDATION_ERRATUM.json')
+AUDIT=next(REVIEW/name for name in ('VALIDATION_ERRATUM_V4.json','VALIDATION_ERRATUM_V3.json','VALIDATION_ERRATUM.json') if (REVIEW/name).exists())
 
 
 def test_exact_audited_source_and_unchanged_factory_accepted():
@@ -75,4 +75,21 @@ def test_native_enbpi_float64_oob_accumulator_on_saved_tiny_owners():
             expected=w['y'][ca]-oob
             if owner.conformity_score_function_.sym:expected=np.abs(expected)
             np.testing.assert_allclose(owner.conformity_scores_,expected,atol=1e-12,rtol=0,equal_nan=True)
+    assert tree(saved)==before
+
+
+def test_float32_csv_points_recover_exact_owner_values(tmp_path):
+    import pandas as pd
+    saved=SMART/'outputs/matched_intervals005/synthetic_v1/run';before=tree(saved)
+    store=Stages(saved,read(saved/'checkpoint_manifest.json')['spec'],resume=True)
+    with Operations(forbid=True):
+        for h in (1,3):
+            _,_,w,_,_=fixture_data(n=1100,groups=2,horizon=h)
+            owner=load_owner(store.get(f'owner_cal_h{h}_enbpi')/'owner.pkl')
+            original=owner.estimator_.single_estimator_.predict(w['X'].iloc[:64].to_numpy())
+            assert original.dtype==np.float32
+            path=tmp_path/f'point_h{h}.csv';pd.DataFrame(dict(point=original)).to_csv(path,index=False)
+            restored=pd.read_csv(path,float_precision='round_trip').point
+            assert np.any(restored.to_numpy()!=original.astype(np.float64))
+            np.testing.assert_array_equal(restored.to_numpy(np.float32),original)
     assert tree(saved)==before

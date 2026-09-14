@@ -151,7 +151,12 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
                                 return signed*np.quantile(signed*finite,corrected,method='lower')
                             if owner.conformity_score_function_.sym:upper=q(l);lower=-upper
                             else:lower=q((1-l)/2,True);upper=q(1-(1-l)/2)
-                            close(raw.static_lower,raw.point+lower,f'enbpi_native_lo_h{h}_{l}');close(raw.static_upper,raw.point+upper,f'enbpi_native_hi_h{h}_{l}')
+                            native_point=owner.estimator_.single_estimator_.predict(data['X'].iloc[roles['test']].to_numpy()).astype(np.float64)
+                            # CSV's shortest float32 decimals recover the exact
+                            # owner points at their original dtype. Reading
+                            # them as float64 first can spoil near-zero bounds.
+                            close(raw.point.to_numpy(np.float32).astype(np.float64),native_point,f'enbpi_point_float32_roundtrip_h{h}_{l}',atol=0,rtol=0)
+                            close(raw.static_lower,native_point+lower,f'enbpi_native_lo_h{h}_{l}');close(raw.static_upper,native_point+upper,f'enbpi_native_hi_h{h}_{l}')
                         for method in (['quantile_uncalibrated','cqr'] if kind=='cqr' else ['recentred_enbpi_static','recentred_enbpi_updated']):
                             path=stage/f'stream_h{h}_l{int(l*100)}_{method}';f=frame(path/'issued.csv.gz')
                             scalar=scalar_replay(testmeta,raw,calmeta,rawcal,l,method if kind=='cqr' else 'recentred_enbpi',strategy='native_updated' if method.endswith('_updated') else 'static')

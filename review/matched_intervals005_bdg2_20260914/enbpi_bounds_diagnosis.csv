@@ -1,0 +1,7 @@
+horizon,level,n_test,native_point_dtype,csv_point_read_as,float32_roundtrip_exact,maximum_point_decimal_difference,maximum_native_bound_difference,passed
+1,0.9,34640,float32,float64 decimal,True,4.921875006402843e-05,2.2737367544323206e-13,True
+1,0.95,34640,float32,float64 decimal,True,4.921875006402843e-05,1.1368683772161603e-13,True
+3,0.9,34640,float32,float64 decimal,True,4.746093759422365e-05,1.1368683772161603e-13,True
+3,0.95,34640,float32,float64 decimal,True,4.746093759422365e-05,1.1368683772161603e-13,True
+6,0.9,34640,float32,float64 decimal,True,3.046874996925908e-05,1.1368683772161603e-13,True
+6,0.95,34640,float32,float64 decimal,True,3.046874996925908e-05,2.2737367544323206e-13,True

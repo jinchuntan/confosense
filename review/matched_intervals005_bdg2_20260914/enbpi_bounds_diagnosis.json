@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "horizon": 1,
+      "level": 0.9,
+      "n_test": 34640,
+      "native_point_dtype": "float32",
+      "csv_point_read_as": "float64 decimal",
+      "float32_roundtrip_exact": true,
+      "maximum_point_decimal_difference": 4.921875006402843e-05,
+      "maximum_native_bound_difference": 2.2737367544323206e-13,
+      "passed": true
+    },
+    {
+      "horizon": 1,
+      "level": 0.95,
+      "n_test": 34640,
+      "native_point_dtype": "float32",
+      "csv_point_read_as": "float64 decimal",
+      "float32_roundtrip_exact": true,
+      "maximum_point_decimal_difference": 4.921875006402843e-05,
+      "maximum_native_bound_difference": 1.1368683772161603e-13,
+      "passed": true
+    },
+    {
+      "horizon": 3,
+      "level": 0.9,
+      "n_test": 34640,
+      "native_point_dtype": "float32",
+      "csv_point_read_as": "float64 decimal",
+      "float32_roundtrip_exact": true,
+      "maximum_point_decimal_difference": 4.746093759422365e-05,
+      "maximum_native_bound_difference": 1.1368683772161603e-13,
+      "passed": true
+    },
+    {
+      "horizon": 3,
+      "level": 0.95,
+      "n_test": 34640,
+      "native_point_dtype": "float32",
+      "csv_point_read_as": "float64 decimal",
+      "float32_roundtrip_exact": true,
+      "maximum_point_decimal_difference": 4.746093759422365e-05,
+      "maximum_native_bound_difference": 1.1368683772161603e-13,
+      "passed": true
+    },
+    {
+      "horizon": 6,
+      "level": 0.9,
+      "n_test": 34640,
+      "native_point_dtype": "float32",
+      "csv_point_read_as": "float64 decimal",
+      "float32_roundtrip_exact": true,
+      "maximum_point_decimal_difference": 3.046874996925908e-05,
+      "maximum_native_bound_difference": 1.1368683772161603e-13,
+      "passed": true
+    },
+    {
+      "horizon": 6,
+      "level": 0.95,
+      "n_test": 34640,
+      "native_point_dtype": "float32",
+      "csv_point_read_as": "float64 decimal",
+      "float32_roundtrip_exact": true,
+      "maximum_point_decimal_difference": 3.046874996925908e-05,
+      "maximum_native_bound_difference": 2.2737367544323206e-13,
+      "passed": true
+    }
+  ],
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "tolerances_unchanged": true,
+  "scientific_run_unchanged": true
+}
