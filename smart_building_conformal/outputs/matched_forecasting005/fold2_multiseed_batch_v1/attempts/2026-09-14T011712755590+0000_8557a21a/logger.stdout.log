@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "point_cells": 3,
+  "interval_cells": 6,
+  "real_tuning_fits_verified": 8,
+  "real_final_fits_verified": 2,
+  "saved_model_prediction_checks": 6,
+  "own_calibration_verified": true,
+  "common_target_ids_verified": true,
+  "training_only_normalization_verified": true,
+  "candidate_and_epoch_selection_verified": true,
+  "all_run_files_unchanged": true,
+  "preparation_resources": {
+    "seconds": 18.11647969999467,
+    "baseline_rss_bytes": 324915200,
+    "peak_rss_bytes": 477614080,
+    "baseline_private_bytes": 282726400,
+    "peak_private_bytes": 429969408,
+    "incremental_peak_rss_bytes": 152698880,
+    "lifetime_peak_rss_bytes": 488845312,
+    "min_available_ram_bytes": 5344538624,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 17.125
+  },
+  "total_validation_resources": {
+    "seconds": 20.901253100004396,
+    "baseline_rss_bytes": 322895872,
+    "peak_rss_bytes": 565719040,
+    "baseline_private_bytes": 281743360,
+    "peak_private_bytes": 606314496,
+    "incremental_peak_rss_bytes": 242823168,
+    "lifetime_peak_rss_bytes": 566292480,
+    "min_available_ram_bytes": 5124161536,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 19.859375
+  },
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "992e3d20e746f1fcb3e78f8d1a69d9ebf12ed9e0140eadbf817f49e2ed57c3f8",
+  "full_study_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "validate", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "15", "--outer-fold", "2", "--model-seed", "45", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h15_f2_s45_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\rico_h15_f2_s45_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h15_f2_s45_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\receipts\\rico_h15_f2_s45_v1\\audit_v1"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T01:17:12.858823+00:00", "logger_pid": 15916, "child_pid": 24904, "ended_utc": "2026-09-14T01:17:38.033492+00:00", "seconds": 25.178327999994508, "exit_status": 0}

@@ -1,0 +1,64 @@
+LAUNCH pleia_h3_f2_s45_persistence; available RAM=4.67 GiB
+START pleia_h3_f2_s45_persistence final candidate=0 epochs=None
+COMPLETE pleia_h3_f2_s45_persistence
+LAUNCH pleia_h3_f2_s45_xgboost; available RAM=4.68 GiB
+START pleia_h3_f2_s45_xgboost tuning candidate=0 inner=0
+START pleia_h3_f2_s45_xgboost tuning candidate=0 inner=1
+START pleia_h3_f2_s45_xgboost tuning candidate=1 inner=0
+START pleia_h3_f2_s45_xgboost tuning candidate=1 inner=1
+START pleia_h3_f2_s45_xgboost final candidate=0 epochs=None
+COMPLETE pleia_h3_f2_s45_xgboost
+LAUNCH pleia_h3_f2_s45_attention_lstm; available RAM=4.60 GiB
+START pleia_h3_f2_s45_attention_lstm tuning candidate=0 inner=0
+pleia_h3_f2_s45_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.5362987569868324, 'validation_mae': 1.1111906345696565}
+pleia_h3_f2_s45_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.0764764661034125, 'validation_mae': 0.925217206657812}
+pleia_h3_f2_s45_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.06764728109756592, 'validation_mae': 0.8849147079014542}
+pleia_h3_f2_s45_attention_lstm tuning c0 i0: {'epoch': 15, 'train_mse': 0.05829606205526146, 'validation_mae': 0.8692521441173111}
+pleia_h3_f2_s45_attention_lstm tuning c0 i0: {'epoch': 20, 'train_mse': 0.047731089014966546, 'validation_mae': 0.8692534328205558}
+START pleia_h3_f2_s45_attention_lstm tuning candidate=0 inner=1
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.4154496368231937, 'validation_mae': 0.9234330749665787}
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.10729435341152456, 'validation_mae': 0.7402567263373651}
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.06497162852631659, 'validation_mae': 0.5762724019406493}
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 15, 'train_mse': 0.055854961024615166, 'validation_mae': 0.5651436830760974}
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 20, 'train_mse': 0.05153031134088677, 'validation_mae': 0.5415356523578502}
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 25, 'train_mse': 0.0478419700863868, 'validation_mae': 0.5361149819101386}
+pleia_h3_f2_s45_attention_lstm tuning c0 i1: {'epoch': 30, 'train_mse': 0.046031548763671715, 'validation_mae': 0.5223165032551631}
+START pleia_h3_f2_s45_attention_lstm tuning candidate=1 inner=0
+pleia_h3_f2_s45_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.7313439704375394, 'validation_mae': 1.4590553188882804}
+pleia_h3_f2_s45_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.08609822041918987, 'validation_mae': 0.9650785416491129}
+pleia_h3_f2_s45_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.07430807010194614, 'validation_mae': 0.9197116575859658}
+pleia_h3_f2_s45_attention_lstm tuning c1 i0: {'epoch': 15, 'train_mse': 0.06804190877231746, 'validation_mae': 0.9079286292818585}
+pleia_h3_f2_s45_attention_lstm tuning c1 i0: {'epoch': 20, 'train_mse': 0.061881346186877455, 'validation_mae': 0.895810431455164}
+pleia_h3_f2_s45_attention_lstm tuning c1 i0: {'epoch': 25, 'train_mse': 0.054307379957857685, 'validation_mae': 0.8878176797252878}
+START pleia_h3_f2_s45_attention_lstm tuning candidate=1 inner=1
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.5829776144439046, 'validation_mae': 1.0397590315207141}
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.13377454499590333, 'validation_mae': 0.8257272251203103}
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.08283380556780484, 'validation_mae': 0.6588015220084368}
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.06515334177688117, 'validation_mae': 0.5981270647588184}
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.05837858994208623, 'validation_mae': 0.5600978127588941}
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 25, 'train_mse': 0.05468485482745464, 'validation_mae': 0.5582002866248899}
+pleia_h3_f2_s45_attention_lstm tuning c1 i1: {'epoch': 30, 'train_mse': 0.05119223269925005, 'validation_mae': 0.5436861657557079}
+START pleia_h3_f2_s45_attention_lstm final candidate=0 epochs=23
+pleia_h3_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.35438119895688536}
+pleia_h3_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.0915500353724617}
+pleia_h3_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 10, 'train_mse': 0.07167787033825039}
+pleia_h3_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 15, 'train_mse': 0.06258664811120937}
+pleia_h3_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 20, 'train_mse': 0.058855994818628694}
+COMPLETE pleia_h3_f2_s45_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "43fdef7973feabb27f49a6f3a57657663ea1c46bff243e5d984ce84c66f35ce8",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "3", "--outer-fold", "2", "--model-seed", "45", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s45_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_h3_f2_s45_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s45_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T01:54:25.071963+00:00", "logger_pid": 11136, "child_pid": 10460, "ended_utc": "2026-09-14T01:57:56.718104+00:00", "seconds": 211.64764539999305, "exit_status": 0}

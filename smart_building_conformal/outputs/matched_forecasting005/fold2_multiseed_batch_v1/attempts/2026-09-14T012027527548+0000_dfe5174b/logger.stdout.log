@@ -1,0 +1,49 @@
+LAUNCH rico_h60_f2_s45_persistence; available RAM=5.14 GiB
+START rico_h60_f2_s45_persistence final candidate=0 epochs=None
+COMPLETE rico_h60_f2_s45_persistence
+LAUNCH rico_h60_f2_s45_xgboost; available RAM=5.12 GiB
+START rico_h60_f2_s45_xgboost tuning candidate=0 inner=0
+START rico_h60_f2_s45_xgboost tuning candidate=0 inner=1
+START rico_h60_f2_s45_xgboost tuning candidate=1 inner=0
+START rico_h60_f2_s45_xgboost tuning candidate=1 inner=1
+START rico_h60_f2_s45_xgboost final candidate=0 epochs=None
+COMPLETE rico_h60_f2_s45_xgboost
+LAUNCH rico_h60_f2_s45_attention_lstm; available RAM=5.02 GiB
+START rico_h60_f2_s45_attention_lstm tuning candidate=0 inner=0
+rico_h60_f2_s45_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.5919734004196847, 'validation_mae': 2.5484331333865025}
+rico_h60_f2_s45_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.01458390582186781, 'validation_mae': 1.37183410352962}
+START rico_h60_f2_s45_attention_lstm tuning candidate=0 inner=1
+rico_h60_f2_s45_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.3754267386570098, 'validation_mae': 2.5641206419102742}
+rico_h60_f2_s45_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.011219458094542953, 'validation_mae': 1.9343796410414533}
+rico_h60_f2_s45_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.008188716261677302, 'validation_mae': 1.9258338674835123}
+START rico_h60_f2_s45_attention_lstm tuning candidate=1 inner=0
+rico_h60_f2_s45_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.7626830973822599, 'validation_mae': 3.219225344080834}
+rico_h60_f2_s45_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.02211180459826615, 'validation_mae': 1.3464578895811818}
+rico_h60_f2_s45_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.011381737749050757, 'validation_mae': 1.4904514756172322}
+START rico_h60_f2_s45_attention_lstm tuning candidate=1 inner=1
+rico_h60_f2_s45_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.5897531053822511, 'validation_mae': 3.249733916361621}
+rico_h60_f2_s45_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.013731443261502276, 'validation_mae': 1.9428194104450052}
+rico_h60_f2_s45_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.00967801529795501, 'validation_mae': 1.9199701736723251}
+rico_h60_f2_s45_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.008062748071162184, 'validation_mae': 1.9007880452983048}
+rico_h60_f2_s45_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.007573385868862176, 'validation_mae': 1.9776185220539624}
+START rico_h60_f2_s45_attention_lstm final candidate=0 epochs=6
+rico_h60_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.2799784074323224}
+rico_h60_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.01010843634714712}
+COMPLETE rico_h60_f2_s45_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "13626bbe92c4fc2e657cc07a12d739e6c76c86fd5e6e16d106077d5e6ffeef37",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "rico", "--horizon", "60", "--outer-fold", "2", "--model-seed", "45", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h60_f2_s45_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\rico_h60_f2_s45_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\rico_h60_f2_s45_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T01:20:27.642320+00:00", "logger_pid": 10368, "child_pid": 14524, "ended_utc": "2026-09-14T01:21:46.585428+00:00", "seconds": 78.94048860001203, "exit_status": 0}

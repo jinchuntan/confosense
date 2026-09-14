@@ -1,0 +1,64 @@
+LAUNCH bdg2_h1_f2_s45_persistence; available RAM=4.86 GiB
+START bdg2_h1_f2_s45_persistence final candidate=0 epochs=None
+COMPLETE bdg2_h1_f2_s45_persistence
+LAUNCH bdg2_h1_f2_s45_xgboost; available RAM=4.85 GiB
+START bdg2_h1_f2_s45_xgboost tuning candidate=0 inner=0
+START bdg2_h1_f2_s45_xgboost tuning candidate=0 inner=1
+START bdg2_h1_f2_s45_xgboost tuning candidate=1 inner=0
+START bdg2_h1_f2_s45_xgboost tuning candidate=1 inner=1
+START bdg2_h1_f2_s45_xgboost final candidate=1 epochs=None
+COMPLETE bdg2_h1_f2_s45_xgboost
+LAUNCH bdg2_h1_f2_s45_attention_lstm; available RAM=4.73 GiB
+START bdg2_h1_f2_s45_attention_lstm tuning candidate=0 inner=0
+bdg2_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.3261189582891989, 'validation_mae': 53.417097824602855}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.07978149263045248, 'validation_mae': 40.646756638942584}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.047744898323849864, 'validation_mae': 33.25801610138675}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 15, 'train_mse': 0.041609926410082564, 'validation_mae': 32.50728302035757}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 20, 'train_mse': 0.03614144313899473, 'validation_mae': 30.55253422137779}
+START bdg2_h1_f2_s45_attention_lstm tuning candidate=0 inner=1
+bdg2_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.22005151471622728, 'validation_mae': 54.0761512923796}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.05176160116103723, 'validation_mae': 39.366329967428456}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.03740129578381992, 'validation_mae': 32.24860680063609}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 15, 'train_mse': 0.028469941434473237, 'validation_mae': 27.718211959276314}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 20, 'train_mse': 0.024398077259361536, 'validation_mae': 24.444420971940524}
+bdg2_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 25, 'train_mse': 0.02227620520800234, 'validation_mae': 23.520884469466317}
+START bdg2_h1_f2_s45_attention_lstm tuning candidate=1 inner=0
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.45134957367306544, 'validation_mae': 61.53362956408037}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.11425125085691719, 'validation_mae': 47.75089699180198}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.06506284139538546, 'validation_mae': 41.312908161692675}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 15, 'train_mse': 0.048423358575376524, 'validation_mae': 35.965146614609324}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 20, 'train_mse': 0.04283025492700834, 'validation_mae': 32.80413070632257}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 25, 'train_mse': 0.036729486823728445, 'validation_mae': 31.613534483823646}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 30, 'train_mse': 0.035601556032986655, 'validation_mae': 31.078839244475123}
+START bdg2_h1_f2_s45_attention_lstm tuning candidate=1 inner=1
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.29339293854111864, 'validation_mae': 60.84470922801651}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.07135606499658378, 'validation_mae': 44.0272023998709}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.0466344061174563, 'validation_mae': 35.587688349804225}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.03838763285651404, 'validation_mae': 34.01695089372303}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.0334247757796397, 'validation_mae': 31.216213667212422}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 25, 'train_mse': 0.029053971657984824, 'validation_mae': 29.203324374298713}
+bdg2_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 30, 'train_mse': 0.02563978813152801, 'validation_mae': 26.246331020647958}
+START bdg2_h1_f2_s45_attention_lstm final candidate=0 epochs=20
+bdg2_h1_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.17335327837896553}
+bdg2_h1_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.04300738379853028}
+bdg2_h1_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 10, 'train_mse': 0.025068895578656672}
+bdg2_h1_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 15, 'train_mse': 0.02238844915043093}
+bdg2_h1_f2_s45_attention_lstm final_fit c0 iNone: {'epoch': 20, 'train_mse': 0.02139974753875672}
+COMPLETE bdg2_h1_f2_s45_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "d17374d7dfe7206b1bc2d78ed29eb81be4f2ec7661fd25177f694623751f05b4",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "1", "--outer-fold", "2", "--model-seed", "45", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f2_s45_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h1_f2_s45_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f2_s45_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T01:22:42.656902+00:00", "logger_pid": 12244, "child_pid": 27632, "ended_utc": "2026-09-14T01:33:55.554856+00:00", "seconds": 672.8949177000031, "exit_status": 0}

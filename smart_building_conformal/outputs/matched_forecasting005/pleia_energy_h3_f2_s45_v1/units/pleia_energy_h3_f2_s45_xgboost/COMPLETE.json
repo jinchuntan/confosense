@@ -1,0 +1,23 @@
+{
+  "key": "pleia_energy_h3_f2_s45_xgboost",
+  "spec_hash": "d3f858004ec6820e08a79a7e8ca3b4fe44265454eeff13b09f26070cfe6546e9",
+  "frames": {
+    "predictions": "predictions.csv.gz",
+    "calibration": "calibration.csv.gz",
+    "tuning": "tuning.csv.gz",
+    "training_history": "training_history.csv.gz",
+    "tuning_predictions": "tuning_predictions.csv.gz",
+    "fitting_membership": "fitting_membership.csv.gz"
+  },
+  "hashes": {
+    "booster_config.json": "4515057d022096d8f94a62dfe009d73644949674b2d8afb5a8b9dcbe017324fa",
+    "calibration.csv.gz": "328d9851ba68089e9467b1baa8c83bd303c58a9d86d21962b000d4452f110c7c",
+    "fitting_membership.csv.gz": "267724e19c788395659da13f6a2089ce12450bef77805969a662ec9406c0749b",
+    "model.ubj": "8297400419dbabb85065cfa0f208b8316911d9daffbf60c5738a22e75a9e9baf",
+    "payload.json": "ad245ba9854c7f303c0c290aa0129da6e6eb152052f1b97c5bf21cc2182962cc",
+    "predictions.csv.gz": "f8cc2dde7cc2e0a238cc58c15c1ca2d8dcca7b19054cf3fe957ade295a40b1da",
+    "training_history.csv.gz": "91324dc85531cdf9ab87798173c15aa58803f00a725b3d57ebae47a5c13d1c91",
+    "tuning.csv.gz": "369868fd6077e67eb337209d8714de25921bdbe907ee7c0c6944111245b1d095",
+    "tuning_predictions.csv.gz": "df049855a93ef87f2f0dfbdbac22020064af6d6320867f2421d9ce8599aab4f8"
+  }
+}

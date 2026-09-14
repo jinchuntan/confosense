@@ -1,6 +1,6 @@
 # Matched fold-2 multiseed batch progress and restart
 
-Updated UTC: 2026-09-14T01:03:56.239996+00:00. Status: **unit_validated**. Validated **26/52 new paired units**; 78 point / 156 interval cells.
+Updated UTC: 2026-09-14T02:01:22.555479+00:00. Status: **unit_validated**. Validated **39/52 new paired units**; 117 point / 234 interval cells.
 
 The atomic [progress ledger](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/progress.json) and [append-only attempts](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/attempts.jsonl) retain exact commands, process identities, actual exits and receipt paths. A running process is not a successful exit.
 
@@ -40,19 +40,19 @@ The coordinator refuses a concurrent launch, adopts an exact surviving logger, c
 | 24 | pleia / 1 / 2 / 44 | validated |
 | 25 | pleia / 3 / 2 / 44 | validated |
 | 26 | pleia / 6 / 2 / 44 | validated |
-| 27 | pleia_energy / 1 / 2 / 45 | pending or active; see ledger |
-| 28 | pleia_energy / 3 / 2 / 45 | pending or active; see ledger |
-| 29 | pleia_energy / 6 / 2 / 45 | pending or active; see ledger |
-| 30 | rico / 5 / 2 / 45 | pending or active; see ledger |
-| 31 | rico / 15 / 2 / 45 | pending or active; see ledger |
-| 32 | rico / 30 / 2 / 45 | pending or active; see ledger |
-| 33 | rico / 60 / 2 / 45 | pending or active; see ledger |
-| 34 | bdg2 / 1 / 2 / 45 | pending or active; see ledger |
-| 35 | bdg2 / 3 / 2 / 45 | pending or active; see ledger |
-| 36 | bdg2 / 6 / 2 / 45 | pending or active; see ledger |
-| 37 | pleia / 1 / 2 / 45 | pending or active; see ledger |
-| 38 | pleia / 3 / 2 / 45 | pending or active; see ledger |
-| 39 | pleia / 6 / 2 / 45 | pending or active; see ledger |
+| 27 | pleia_energy / 1 / 2 / 45 | validated |
+| 28 | pleia_energy / 3 / 2 / 45 | validated |
+| 29 | pleia_energy / 6 / 2 / 45 | validated |
+| 30 | rico / 5 / 2 / 45 | validated |
+| 31 | rico / 15 / 2 / 45 | validated |
+| 32 | rico / 30 / 2 / 45 | validated |
+| 33 | rico / 60 / 2 / 45 | validated |
+| 34 | bdg2 / 1 / 2 / 45 | validated |
+| 35 | bdg2 / 3 / 2 / 45 | validated |
+| 36 | bdg2 / 6 / 2 / 45 | validated |
+| 37 | pleia / 1 / 2 / 45 | validated |
+| 38 | pleia / 3 / 2 / 45 | validated |
+| 39 | pleia / 6 / 2 / 45 | validated |
 | 40 | pleia_energy / 1 / 2 / 46 | pending or active; see ledger |
 | 41 | pleia_energy / 3 / 2 / 46 | pending or active; see ledger |
 | 42 | pleia_energy / 6 / 2 / 46 | pending or active; see ledger |

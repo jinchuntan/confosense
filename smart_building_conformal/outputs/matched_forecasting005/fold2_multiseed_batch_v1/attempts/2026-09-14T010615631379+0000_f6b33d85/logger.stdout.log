@@ -1,0 +1,48 @@
+LAUNCH pleia_energy_h1_f2_s45_persistence; available RAM=4.96 GiB
+START pleia_energy_h1_f2_s45_persistence final candidate=0 epochs=None
+COMPLETE pleia_energy_h1_f2_s45_persistence
+LAUNCH pleia_energy_h1_f2_s45_xgboost; available RAM=4.95 GiB
+START pleia_energy_h1_f2_s45_xgboost tuning candidate=0 inner=0
+START pleia_energy_h1_f2_s45_xgboost tuning candidate=0 inner=1
+START pleia_energy_h1_f2_s45_xgboost tuning candidate=1 inner=0
+START pleia_energy_h1_f2_s45_xgboost tuning candidate=1 inner=1
+START pleia_energy_h1_f2_s45_xgboost final candidate=0 epochs=None
+COMPLETE pleia_energy_h1_f2_s45_xgboost
+LAUNCH pleia_energy_h1_f2_s45_attention_lstm; available RAM=4.88 GiB
+START pleia_energy_h1_f2_s45_attention_lstm tuning candidate=0 inner=0
+pleia_energy_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.7290586078800209, 'validation_mae': 0.0932451478462901}
+pleia_energy_h1_f2_s45_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.3839924831633326, 'validation_mae': 0.07333708846992745}
+START pleia_energy_h1_f2_s45_attention_lstm tuning candidate=0 inner=1
+pleia_energy_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.6106902569770138, 'validation_mae': 0.143674842070118}
+pleia_energy_h1_f2_s45_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.3829880989625287, 'validation_mae': 0.13176924039589236}
+START pleia_energy_h1_f2_s45_attention_lstm tuning candidate=1 inner=0
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.8601044672856402, 'validation_mae': 0.14914178788084206}
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.4136054747587646, 'validation_mae': 0.07170195099995479}
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.37090099679535266, 'validation_mae': 0.07205317645470623}
+START pleia_energy_h1_f2_s45_attention_lstm tuning candidate=1 inner=1
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.7295992174775001, 'validation_mae': 0.15986568079244096}
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.41739917933597814, 'validation_mae': 0.12849341347052454}
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.3577195445925229, 'validation_mae': 0.12848316443801625}
+pleia_energy_h1_f2_s45_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.3221248182686582, 'validation_mae': 0.12877926197938672}
+START pleia_energy_h1_f2_s45_attention_lstm final candidate=1 epochs=10
+pleia_energy_h1_f2_s45_attention_lstm final_fit c1 iNone: {'epoch': 1, 'train_mse': 0.5779890121874794}
+pleia_energy_h1_f2_s45_attention_lstm final_fit c1 iNone: {'epoch': 5, 'train_mse': 0.3050416290603587}
+pleia_energy_h1_f2_s45_attention_lstm final_fit c1 iNone: {'epoch': 10, 'train_mse': 0.25254024230751093}
+COMPLETE pleia_energy_h1_f2_s45_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "62525d471de44634625aece820db117b886a496789ecd0dc85fc593cfee8dbee",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "1", "--outer-fold", "2", "--model-seed", "45", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h1_f2_s45_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_energy_h1_f2_s45_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h1_f2_s45_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T01:06:15.742810+00:00", "logger_pid": 11572, "child_pid": 23132, "ended_utc": "2026-09-14T01:08:07.756670+00:00", "seconds": 112.02612310000404, "exit_status": 0}
