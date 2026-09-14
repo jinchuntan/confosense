@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "commit": "0c395a7c7bfb8518427a8c1e08dae2d24c3d9d3f",
+  "stage": "manifest_blob_validation",
+  "failed_path": "review/pleia_energy_context005_pilot_20260915/analysis_command.log",
+  "cause": "The first publication manifest hashed Windows working-tree bytes before Git line-ending normalization; the remote Git blob was intact but its canonical bytes did not match that pre-commit hash.",
+  "scientific_evidence_affected": false,
+  "corrective_action": "Hash canonical staged Git blobs, publish a follow-up manifest, and rerun complete remote verification."
+}

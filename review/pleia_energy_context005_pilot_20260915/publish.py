@@ -74,15 +74,22 @@ def main(label):
         *[ROOT/n for n in ['MATCHED_METHOD_READINESS_MAP.md','PROJECT_RECOVERY_STATUS.md','REMAINING_STUDY_EXECUTION_PLAN.md','PANEL_RESPONSE_MATRIX.md','review/CURRENT_EVIDENCE.md']]]
     files=set(p for root in roots for p in (root.rglob('*') if root.is_dir() else [root]) if p.is_file())|set(p for p in run_core if p.is_file())
     files=sorted(p for p in files if '__pycache__' not in p.parts and p.suffix not in ['.pyc','.tmp'] and p.name!='EVIDENCE_MANIFEST.csv')
+    # Stage first, then hash the canonical index blobs. On Windows, hashing
+    # working-tree text before staging can disagree with Git after autocrlf
+    # normalization even though the committed content is correct.
+    BACKUP.mkdir(parents=True,exist_ok=True);stage=BACKUP/(label+'_paths.txt')
+    relative_files=[p.relative_to(ROOT).as_posix() for p in files]
+    atomic(stage,'\n'.join(relative_files)+'\n')
+    subprocess.run(['git','add','--pathspec-from-file='+str(stage)],cwd=ROOT,check=True)
     rows=[]
-    for path in files:
-        assert path.stat().st_size<100*2**20,path
-        rows.append(dict(path=path.relative_to(ROOT).as_posix(),bytes=path.stat().st_size,sha256=digest(path)))
+    for relative in relative_files:
+        blob=subprocess.check_output(['git','show',':'+relative],cwd=ROOT)
+        assert len(blob)<100*2**20,relative
+        rows.append(dict(path=relative,bytes=len(blob),sha256=__import__('hashlib').sha256(blob).hexdigest()))
     manifest=REVIEW/'EVIDENCE_MANIFEST.csv'
     with manifest.open('w',encoding='utf-8',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=['path','bytes','sha256']);writer.writeheader();writer.writerows(rows)
-    BACKUP.mkdir(parents=True,exist_ok=True);stage=BACKUP/(label+'_paths.txt');atomic(stage,'\n'.join([r['path'] for r in rows]+[manifest.relative_to(ROOT).as_posix()])+'\n')
-    subprocess.run(['git','add','--pathspec-from-file='+str(stage)],cwd=ROOT,check=True)
+    subprocess.run(['git','add',str(manifest.relative_to(ROOT))],cwd=ROOT,check=True)
     subprocess.run(['git','diff','--cached','--check'],cwd=ROOT,check=True)
     assert all(path not in git('diff','--cached','--name-only').splitlines() for path in baseline['historical_untracked_paths'])
     if subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode:

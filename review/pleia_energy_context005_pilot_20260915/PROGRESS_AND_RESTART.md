@@ -13,3 +13,5 @@ C:/cfs_venv/Scripts/python.exe -B review/context_replay005_implementation_202609
 ```
 
 Because the unit is complete, that command adopts the existing result and invokes no new fitting or replay work. The next proposed real execution is documented in `NEXT_BOUNDED_PROPOSAL.md`; it is not authorized or launched.
+
+The first remote-verification pass on commit `0c395a7c7bfb8518427a8c1e08dae2d24c3d9d3f` found that the publication manifest had recorded pre-commit Windows working-tree bytes for a text log while Git stored normalized bytes. The remote blob was intact. `REMOTE_VERIFICATION_FAILURE_V1.json` records the failure, and `refresh_manifest.py` regenerates hashes from canonical staged Git blobs before the follow-up verification.
