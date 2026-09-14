@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "6225a33e725729d2d0c357a6cdf095480c5fe7a60e3289df38edacdb5f0da356",
+  "full_study_ready": false,
+  "publication_ready": false
+}

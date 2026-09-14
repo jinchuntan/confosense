@@ -1,0 +1,22 @@
+{
+  "key": "bdg2_h1_f2_s43_attention_lstm",
+  "spec_hash": "43214c3106f88b64d7612454577b50bb2a17fe007dad4f37b6c81de177e891c5",
+  "frames": {
+    "predictions": "predictions.csv.gz",
+    "calibration": "calibration.csv.gz",
+    "tuning": "tuning.csv.gz",
+    "training_history": "training_history.csv.gz",
+    "tuning_predictions": "tuning_predictions.csv.gz",
+    "fitting_membership": "fitting_membership.csv.gz"
+  },
+  "hashes": {
+    "calibration.csv.gz": "bf5ce6e9f728a8fcd7d4d3e472b9f69590be205c2fed84908e0c11cd102b0ac9",
+    "fitting_membership.csv.gz": "63c71216cf1e3588c36b94c9d43e3632fc17824fb5929202caf8d82b0fa162ac",
+    "model.pt": "d4f3f895fe6961e29ce4cc01905c0b3c3c531f5489bbd55a9d4b4eb67ca815a3",
+    "payload.json": "997eab794caec1a798a405ac76b9a50aa7b3db34423fbd72e1d26432baa60554",
+    "predictions.csv.gz": "8721d159918e86af92b863c0ae4fa0c8933bb66ae842bb002888d5eb0f9fd40b",
+    "training_history.csv.gz": "bbf673cb125e4a46a02551e9db9708e746b3ba74501f72d210448bde3e205764",
+    "tuning.csv.gz": "c9a000f447fbbded574d4b938b1ae228027f72605f4454ea5d388d1ef855d493",
+    "tuning_predictions.csv.gz": "269c4fb6cff3d1ac3982b634e2a3fc291290e6902193c27b287b14a61a87f7c2"
+  }
+}

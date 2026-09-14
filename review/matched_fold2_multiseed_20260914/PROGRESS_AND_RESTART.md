@@ -1,6 +1,6 @@
 # Matched fold-2 multiseed batch progress and restart
 
-Updated UTC: 2026-09-13T23:03:43.809189+00:00. Status: **prepared**. Validated **0/52 new paired units**; 0 point / 0 interval cells.
+Updated UTC: 2026-09-14T00:00:56.634363+00:00. Status: **unit_validated**. Validated **13/52 new paired units**; 39 point / 78 interval cells.
 
 The atomic [progress ledger](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/progress.json) and [append-only attempts](../../smart_building_conformal/outputs/matched_forecasting005/fold2_multiseed_batch_v1/attempts.jsonl) retain exact commands, process identities, actual exits and receipt paths. A running process is not a successful exit.
 
@@ -14,19 +14,19 @@ The coordinator refuses a concurrent launch, adopts an exact surviving logger, c
 
 | Order | Key: dataset / horizon / fold / seed | Status |
 |---|---|---|
-| 1 | pleia_energy / 1 / 2 / 43 | pending or active; see ledger |
-| 2 | pleia_energy / 3 / 2 / 43 | pending or active; see ledger |
-| 3 | pleia_energy / 6 / 2 / 43 | pending or active; see ledger |
-| 4 | rico / 5 / 2 / 43 | pending or active; see ledger |
-| 5 | rico / 15 / 2 / 43 | pending or active; see ledger |
-| 6 | rico / 30 / 2 / 43 | pending or active; see ledger |
-| 7 | rico / 60 / 2 / 43 | pending or active; see ledger |
-| 8 | bdg2 / 1 / 2 / 43 | pending or active; see ledger |
-| 9 | bdg2 / 3 / 2 / 43 | pending or active; see ledger |
-| 10 | bdg2 / 6 / 2 / 43 | pending or active; see ledger |
-| 11 | pleia / 1 / 2 / 43 | pending or active; see ledger |
-| 12 | pleia / 3 / 2 / 43 | pending or active; see ledger |
-| 13 | pleia / 6 / 2 / 43 | pending or active; see ledger |
+| 1 | pleia_energy / 1 / 2 / 43 | validated |
+| 2 | pleia_energy / 3 / 2 / 43 | validated |
+| 3 | pleia_energy / 6 / 2 / 43 | validated |
+| 4 | rico / 5 / 2 / 43 | validated |
+| 5 | rico / 15 / 2 / 43 | validated |
+| 6 | rico / 30 / 2 / 43 | validated |
+| 7 | rico / 60 / 2 / 43 | validated |
+| 8 | bdg2 / 1 / 2 / 43 | validated |
+| 9 | bdg2 / 3 / 2 / 43 | validated |
+| 10 | bdg2 / 6 / 2 / 43 | validated |
+| 11 | pleia / 1 / 2 / 43 | validated |
+| 12 | pleia / 3 / 2 / 43 | validated |
+| 13 | pleia / 6 / 2 / 43 | validated |
 | 14 | pleia_energy / 1 / 2 / 44 | pending or active; see ledger |
 | 15 | pleia_energy / 3 / 2 / 44 | pending or active; see ledger |
 | 16 | pleia_energy / 6 / 2 / 44 | pending or active; see ledger |

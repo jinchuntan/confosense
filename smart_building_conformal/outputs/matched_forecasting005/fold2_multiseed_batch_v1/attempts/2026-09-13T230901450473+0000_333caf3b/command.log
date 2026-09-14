@@ -1,0 +1,44 @@
+LAUNCH pleia_energy_h6_f2_s43_persistence; available RAM=3.79 GiB
+START pleia_energy_h6_f2_s43_persistence final candidate=0 epochs=None
+COMPLETE pleia_energy_h6_f2_s43_persistence
+LAUNCH pleia_energy_h6_f2_s43_xgboost; available RAM=3.77 GiB
+START pleia_energy_h6_f2_s43_xgboost tuning candidate=0 inner=0
+START pleia_energy_h6_f2_s43_xgboost tuning candidate=0 inner=1
+START pleia_energy_h6_f2_s43_xgboost tuning candidate=1 inner=0
+START pleia_energy_h6_f2_s43_xgboost tuning candidate=1 inner=1
+START pleia_energy_h6_f2_s43_xgboost final candidate=0 epochs=None
+COMPLETE pleia_energy_h6_f2_s43_xgboost
+LAUNCH pleia_energy_h6_f2_s43_attention_lstm; available RAM=3.67 GiB
+START pleia_energy_h6_f2_s43_attention_lstm tuning candidate=0 inner=0
+pleia_energy_h6_f2_s43_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.7340220063442551, 'validation_mae': 0.09096355337203514}
+pleia_energy_h6_f2_s43_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.4063756431190713, 'validation_mae': 0.08300998474209054}
+pleia_energy_h6_f2_s43_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.3092836372096176, 'validation_mae': 0.09486721827977104}
+START pleia_energy_h6_f2_s43_attention_lstm tuning candidate=0 inner=1
+pleia_energy_h6_f2_s43_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.6325509523110868, 'validation_mae': 0.1636467703785559}
+pleia_energy_h6_f2_s43_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.4276192618419437, 'validation_mae': 0.14437680348001344}
+START pleia_energy_h6_f2_s43_attention_lstm tuning candidate=1 inner=0
+pleia_energy_h6_f2_s43_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.8340715413919159, 'validation_mae': 0.1324206988137324}
+pleia_energy_h6_f2_s43_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.4476982062881433, 'validation_mae': 0.08461408821028027}
+START pleia_energy_h6_f2_s43_attention_lstm tuning candidate=1 inner=1
+pleia_energy_h6_f2_s43_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.7194919337346716, 'validation_mae': 0.16750732984807756}
+pleia_energy_h6_f2_s43_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.4574551844674021, 'validation_mae': 0.1436950966565296}
+pleia_energy_h6_f2_s43_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.3942250081829269, 'validation_mae': 0.14998142358630595}
+START pleia_energy_h6_f2_s43_attention_lstm final candidate=0 epochs=4
+pleia_energy_h6_f2_s43_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.48559383851510507}
+COMPLETE pleia_energy_h6_f2_s43_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "b93741f34b2850dc828bbe017dd62253e0e099a5101de4a74885b6a91db639c5",
+  "full_study_ready": false,
+  "publication_ready": false
+}

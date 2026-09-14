@@ -1,0 +1,7 @@
+model,role,n,max_absolute_difference,atol,rtol,fits,verified
+persistence,calibration,4242,0.0,1e-07,1e-07,0,True
+persistence,test,8282,0.0,1e-07,1e-07,0,True
+xgboost,calibration,4242,0.0,1e-07,1e-07,0,True
+xgboost,test,8282,0.0,1e-07,1e-07,0,True
+attention_lstm,calibration,4242,0.0,1e-07,1e-07,0,True
+attention_lstm,test,8282,0.0,1e-07,1e-07,0,True

@@ -1,0 +1,23 @@
+{
+  "key": "rico_h60_f2_s43_xgboost",
+  "spec_hash": "5a42d6646550267bd1023ec73ac59417715bb14ed05380daf944f9c988aa47fe",
+  "frames": {
+    "predictions": "predictions.csv.gz",
+    "calibration": "calibration.csv.gz",
+    "tuning": "tuning.csv.gz",
+    "training_history": "training_history.csv.gz",
+    "tuning_predictions": "tuning_predictions.csv.gz",
+    "fitting_membership": "fitting_membership.csv.gz"
+  },
+  "hashes": {
+    "booster_config.json": "757cec2df9db06ad72c17b91b353f69894a7da0d0b817662ca1bb07c3a94b2f5",
+    "calibration.csv.gz": "1399e60944ea0e1133293964aff412b86a7acdb28c4c7831078c3299b10e2507",
+    "fitting_membership.csv.gz": "43d44e31d1b8f733d87e7098a39c6c05e14b2552f5f469c348e33c5c7e87a022",
+    "model.ubj": "fd5444b4079ae9744a7fc68c389871c281a125f3eeb68186bd608fa8583167bf",
+    "payload.json": "1701aef1eac527eb4c6f9e4b5f8a7e4a4d7dc8be96c248e232b48063d7711eb9",
+    "predictions.csv.gz": "cf4c39239a15f6141a5646e39ca5b6ce606e14e24054c90a3c2912ab8312ca49",
+    "training_history.csv.gz": "3a7458e918f5f05f75a1cafeab76543c82d0916a96f9a9397c347901064c45ca",
+    "tuning.csv.gz": "302730af1b5db343ec239810d5148a12b935432b1c9fa2d1ce4de5aad6231f45",
+    "tuning_predictions.csv.gz": "b8fde22c3f92d576b64c7b047d19788007ff4a569a593d53b529975ea1dac5c8"
+  }
+}

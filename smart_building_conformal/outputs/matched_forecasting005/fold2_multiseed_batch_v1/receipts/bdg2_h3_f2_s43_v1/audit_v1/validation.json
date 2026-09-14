@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "point_cells": 3,
+  "interval_cells": 6,
+  "real_tuning_fits_verified": 8,
+  "real_final_fits_verified": 2,
+  "saved_model_prediction_checks": 6,
+  "own_calibration_verified": true,
+  "common_target_ids_verified": true,
+  "training_only_normalization_verified": true,
+  "candidate_and_epoch_selection_verified": true,
+  "all_run_files_unchanged": true,
+  "preparation_resources": {
+    "seconds": 16.934463700003107,
+    "baseline_rss_bytes": 325373952,
+    "peak_rss_bytes": 1008709632,
+    "baseline_private_bytes": 283230208,
+    "peak_private_bytes": 999608320,
+    "incremental_peak_rss_bytes": 683335680,
+    "lifetime_peak_rss_bytes": 1033191424,
+    "min_available_ram_bytes": 3930304512,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 16.671875
+  },
+  "total_validation_resources": {
+    "seconds": 23.221426300005987,
+    "baseline_rss_bytes": 322797568,
+    "peak_rss_bytes": 1009102848,
+    "baseline_private_bytes": 281735168,
+    "peak_private_bytes": 999608320,
+    "incremental_peak_rss_bytes": 686305280,
+    "lifetime_peak_rss_bytes": 1033191424,
+    "min_available_ram_bytes": 3930304512,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 22.75
+  },
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "6225a33e725729d2d0c357a6cdf095480c5fe7a60e3289df38edacdb5f0da356",
+  "full_study_ready": false
+}

@@ -1,0 +1,403 @@
+{
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_processors": 20,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.3",
+    "memory": {
+      "rss_bytes": 440250368,
+      "private_bytes": 398774272,
+      "lifetime_peak_rss_bytes": 1031712768,
+      "available_ram_bytes": 4495032320,
+      "physical_ram_bytes": 16890978304
+    },
+    "environment_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "code_commit": "c1a56e47254d306cf472fcdc21187aa1664664b9",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "6225a33e725729d2d0c357a6cdf095480c5fe7a60e3289df38edacdb5f0da356",
+  "command": [
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\matched_forecasting005.py",
+    "run",
+    "--matrix",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv",
+    "--dataset",
+    "bdg2",
+    "--horizon",
+    "3",
+    "--outer-fold",
+    "2",
+    "--model-seed",
+    "43",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s43_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h3_f2_s43_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f2_s43_v1\\readiness.json"
+  ],
+  "start_utc": "2026-09-13T23:35:31.529560+00:00",
+  "preparation_resources": {
+    "seconds": 13.338395900005708,
+    "baseline_rss_bytes": 324747264,
+    "peak_rss_bytes": 879128576,
+    "baseline_private_bytes": 282738688,
+    "peak_private_bytes": 998002688,
+    "incremental_peak_rss_bytes": 554381312,
+    "lifetime_peak_rss_bytes": 1031712768,
+    "min_available_ram_bytes": 4059766784,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 13.171875
+  },
+  "authorization": {
+    "version": "matched_fold2_multiseed_authorization_v1",
+    "instruction_commit": "1312510b8549ef9467ee63597cf3e634412044a9",
+    "instruction_path": "review/NEXT_TASK_MATCHED_FOLD2_MULTISEED.md",
+    "entry_commit": "3df9cbd480ffbfeac640580829e88c274fba2083",
+    "real_fitting_authorized": true,
+    "allowed_units": [
+      [
+        "pleia_energy",
+        1,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        43
+      ],
+      [
+        "rico",
+        5,
+        2,
+        43
+      ],
+      [
+        "rico",
+        15,
+        2,
+        43
+      ],
+      [
+        "rico",
+        30,
+        2,
+        43
+      ],
+      [
+        "rico",
+        60,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        43
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        43
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        43
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        44
+      ],
+      [
+        "rico",
+        5,
+        2,
+        44
+      ],
+      [
+        "rico",
+        15,
+        2,
+        44
+      ],
+      [
+        "rico",
+        30,
+        2,
+        44
+      ],
+      [
+        "rico",
+        60,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        44
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        44
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        44
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        45
+      ],
+      [
+        "rico",
+        5,
+        2,
+        45
+      ],
+      [
+        "rico",
+        15,
+        2,
+        45
+      ],
+      [
+        "rico",
+        30,
+        2,
+        45
+      ],
+      [
+        "rico",
+        60,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        45
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        45
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        45
+      ],
+      [
+        "pleia_energy",
+        1,
+        2,
+        46
+      ],
+      [
+        "pleia_energy",
+        3,
+        2,
+        46
+      ],
+      [
+        "pleia_energy",
+        6,
+        2,
+        46
+      ],
+      [
+        "rico",
+        5,
+        2,
+        46
+      ],
+      [
+        "rico",
+        15,
+        2,
+        46
+      ],
+      [
+        "rico",
+        30,
+        2,
+        46
+      ],
+      [
+        "rico",
+        60,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        1,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        3,
+        2,
+        46
+      ],
+      [
+        "bdg2",
+        6,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        1,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        3,
+        2,
+        46
+      ],
+      [
+        "pleia",
+        6,
+        2,
+        46
+      ]
+    ],
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "real_tuning_fits": 416,
+    "real_final_learned_fits": 104,
+    "nonblocking_launch_ram": true,
+    "remaining_queue_authorized": false,
+    "conditional_challenge_authorized": false,
+    "resource_policy": "CPU only; one numerical/Torch thread; n_jobs=1; lazy batch256; nonblocking 3 GiB launch reference; 256 MiB epoch floor; 8 GiB disk check",
+    "execution_order": "seeds 43 then 44 then 45 then 46; frozen queue order within seed; advance after validation and zero-fit resume regardless of model rankings",
+    "provenance_note": "Historical runner-provenance fields retained; current authorization separate."
+  },
+  "cpu_only": true
+}
