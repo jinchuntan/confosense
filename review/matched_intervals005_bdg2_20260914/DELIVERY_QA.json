@@ -1,0 +1,573 @@
+{
+  "passed": true,
+  "utc": "2026-09-14T05:38:02.584351+00:00",
+  "local_report_links_checked": 126,
+  "links": [
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/method_specification.json"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/method_specification_resolved_v2.json"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/SUPPLEMENTAL_ACCEPTANCE.md"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/SYNTHETIC_RECOVERY.md"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/METHOD_REFERENCES.md"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md"
+    },
+    {
+      "report": "MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/PROGRESS_AND_RESTART.md"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/dscp_calibration_summary.json"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/VALIDATION_ERRATUM.md"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/VALIDATION_ERRATUM_V3.md"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/VALIDATION_ERRATUM_V4.md"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "review/matched_intervals005_bdg2_20260914/VALIDATION_ERRATUM_V5.md"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.png"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.png"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/native_support_metrics.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/common_support_metrics.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/per_building_metrics.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/shared_owner_contrasts.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/enbpi_calibration_support.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/background_workload.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/worker_costs.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/stage_costs.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/preparation_costs.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/operations.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.png"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/reconstruction_checks.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/largest_reconstruction_differences.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/additional_integrity_validation.json"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/next_proposed_method_keys.csv"
+    },
+    {
+      "report": "BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md",
+      "target": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/next_proposed_costs.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "VALIDATION_ERRATUM_V5.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/enbpi_calibration_support.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/background_workload.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/worker_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/stage_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/preparation_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/operations.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.png"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/reconstruction_checks.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/largest_reconstruction_differences.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/additional_integrity_validation.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "USER_AUTHORIZATION.txt"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "AUTHORIZING_HANDOFF.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "entry_preservation.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "METHOD_REFERENCES.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "SYNTHETIC_ACCEPTANCE.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "SYNTHETIC_RECOVERY.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "PROGRESS_AND_RESTART.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "joint_pre_fit_manifest.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "evaluated_commit.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "evaluated_source.zip"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "SUPPLEMENTAL_ACCEPTANCE.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "method_specification_resolved_v2.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "corrected_validation_source.zip"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM_V3.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM_V3.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_RECOVERY_COMMANDS_V3.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "corrected_validation_source_v3.zip"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM_V4.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM_V4.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_RECOVERY_COMMANDS_V4.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "corrected_validation_source_v4.zip"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM_V5.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_ERRATUM_V5.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "VALIDATION_RECOVERY_COMMANDS_V5.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "corrected_validation_source_v5.zip"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "PANEL_RESPONSE.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../CURRENT_EVIDENCE.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/frozen_protocol.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/method_specification.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/scope.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/native_membership.csv.gz"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/joint_fit.csv.gz"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/joint_calibration.csv.gz"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/joint_test.csv.gz"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/protocols/matched_intervals005/bdg2_f2_s42_v1/readiness.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stages"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/operations.jsonl"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stage_journal.jsonl"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/native_support_metrics.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/common_support_metrics.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/per_building_metrics.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/shared_owner_contrasts.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/background_workload.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/seasonal_point_metrics.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/seasonal_interval_metrics.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/worker_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/stage_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/preparation_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/enbpi_calibration_support.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/dscp_calibration_summary.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/operations.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/interval_completion_overlay.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/next_proposed_method_keys.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/next_proposed_costs.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/analysis_validation.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/background_and_crossing_checks.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/additional_integrity_validation.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.png"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.pdf"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.sources.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.png"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.pdf"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.sources.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.png"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.pdf"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.sources.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/validation.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/reconstruction_checks.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/alert_checks.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/completed_resume_v1.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "delivery_v1"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/EVIDENCE_INDEX.md",
+      "target": "EVIDENCE_MANIFEST.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "../VALIDATION_ERRATUM.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "command_receipts.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "../../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/worker_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "../../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/stage_costs.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "validation.json"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "copied_receipts.csv"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "../../../BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md"
+    },
+    {
+      "report": "review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md",
+      "target": "../EVIDENCE_INDEX.md"
+    }
+  ],
+  "figure_source_checks": [
+    {
+      "source_csv": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/common_support_metrics.csv",
+      "source_sha256": "08e3458c59895adf4ad8cef9b98ab87d01d5899542239c23a380217db078df4e",
+      "script": "review/matched_intervals005_bdg2_20260914/report.py",
+      "script_sha256": "c1a59ae53656b11272fe524098a2e8ed5c0243c4ab9488be2c729b8bc0dd8bdd",
+      "files": [
+        {
+          "path": "common_interval_quality.png",
+          "sha256": "486b30023d0b850596c405903d698c8a150dc7ba5ab79e0871fb7f74d7152673"
+        },
+        {
+          "path": "common_interval_quality.pdf",
+          "sha256": "14cf9096018b7825d2c8a3b35e7b168ed8cce65b6ad8f3184d841e0e6a7c48cc"
+        }
+      ]
+    },
+    {
+      "source_csv": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/native_support_metrics.csv",
+      "source_sha256": "a40e0cc7b8793f869f11ecd801faf373caa60c7136400bc7f1586c57cdb60492",
+      "script": "review/matched_intervals005_bdg2_20260914/report.py",
+      "script_sha256": "c1a59ae53656b11272fe524098a2e8ed5c0243c4ab9488be2c729b8bc0dd8bdd",
+      "files": [
+        {
+          "path": "native_interval_quality.png",
+          "sha256": "5c879c7912d12a3fba42712dd823a37c520f9b4b8b30b62b934398b228d2df9c"
+        },
+        {
+          "path": "native_interval_quality.pdf",
+          "sha256": "cdad748c2171185370f5108c3c2a21ffc8091a7997e5bfc4c56b1275833fe8cc"
+        }
+      ]
+    },
+    {
+      "source_csv": "smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/stage_costs.csv",
+      "source_sha256": "1f6cdafa96b1c584aacca692778d3fa7e5064a25e0a0a36ba954a376acaa9c4a",
+      "script": "review/matched_intervals005_bdg2_20260914/report.py",
+      "script_sha256": "c1a59ae53656b11272fe524098a2e8ed5c0243c4ab9488be2c729b8bc0dd8bdd",
+      "files": [
+        {
+          "path": "stage_costs.png",
+          "sha256": "2123275a722259c44f35129068307bc217139f0b4757535399b8abf0275742e4"
+        },
+        {
+          "path": "stage_costs.pdf",
+          "sha256": "a8aa8b8a7d378d1ec8c1a44045ba24170f470863ee1483dd52efec68839b108c"
+        }
+      ]
+    }
+  ],
+  "scientific_fits": 0,
+  "immutable_analysis_and_delivery_verified": true,
+  "visual_review": {
+    "status": "passed",
+    "reviewer": "assistant",
+    "inspected": [
+      "native_interval_quality.png",
+      "common_interval_quality.png",
+      "stage_costs.png"
+    ],
+    "notes": "All three rendered PNGs were visually inspected before publication: readable axes and legends, no clipped labels. PDF exports share the same plotting canvas."
+  }
+}

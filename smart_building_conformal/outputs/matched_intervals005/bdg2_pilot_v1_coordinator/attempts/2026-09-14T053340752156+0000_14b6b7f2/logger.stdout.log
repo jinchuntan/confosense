@@ -1,0 +1,77 @@
+[review/matched-intervals005-bdg2-20260914 726ceee] Publish matched intervals005 BDG2: completed
+ 69 files changed, 22247 insertions(+), 35 deletions(-)
+ create mode 100644 BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md
+ create mode 100644 MATCHED_INTERVALS005_IMPLEMENTATION_REPORT.md
+ create mode 100644 review/matched_intervals005_bdg2_20260914/PANEL_RESPONSE.md
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/COMPLETE.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/additional_integrity_validation.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/analysis_validation.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/background_and_crossing_checks.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/background_workload.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/common_support_metrics.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/dscp_calibration_summary.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/enbpi_calibration_support.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.pdf
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.png
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/common_interval_quality.sources.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.pdf
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.png
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/native_interval_quality.sources.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.pdf
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.png
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/figures/stage_costs.sources.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/interval_completion_overlay.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/largest_reconstruction_differences.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/native_support_metrics.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/next_proposed_costs.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/next_proposed_method_keys.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/operations.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/per_building_metrics.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/preparation_costs.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/seasonal_interval_metrics.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/seasonal_point_metrics.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/shared_owner_contrasts.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/stage_costs.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/analysis_v1/worker_costs.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T051651138009+0000_0533ec5a/attempt.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T051651138009+0000_0533ec5a/command.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T051651138009+0000_0533ec5a/command.log.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T051651138009+0000_0533ec5a/command.log.started.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T051651138009+0000_0533ec5a/logger.stdout.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053254176620+0000_09cff5c8/attempt.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053254176620+0000_09cff5c8/command.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053254176620+0000_09cff5c8/command.log.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053254176620+0000_09cff5c8/command.log.started.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053254176620+0000_09cff5c8/logger.stdout.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053302381129+0000_180d03f2/attempt.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053302381129+0000_180d03f2/command.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053302381129+0000_180d03f2/command.log.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053302381129+0000_180d03f2/command.log.started.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053302381129+0000_180d03f2/logger.stdout.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/completed_resume_v1.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/resume_worker_resources_v1.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validate_worker_resources_v5.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/COMPLETE.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/alert_checks.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/independent_metrics.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/reconstruction_checks.csv
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/validation.json
+The bundle contains this ref:
+726ceeeaad8e60655895e963dc79aea6779a7f8c refs/heads/review/matched-intervals005-bdg2-20260914
+The bundle requires this ref:
+c143fa16eaf9bfc6354b4cb1f8861915cb00f388 
+The bundle uses this hash algorithm: sha1
+C:/Users/nigel/ConfoSenseBackups/matched_intervals005_bdg2_20260914/completed_726ceee.bundle is okay
+{
+  "commit": "726ceeeaad8e60655895e963dc79aea6779a7f8c",
+  "branch": "review/matched-intervals005-bdg2-20260914",
+  "utc": "2026-09-14T05:34:38.313938+00:00",
+  "backup": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals005_bdg2_20260914\\completed_726ceee.bundle",
+  "backup_sha256": "f321f4b3d5209c8285d8d85b90635781e261f30a81a6f0fddcdff8c4d02fa188",
+  "historical_files_preserved": true,
+  "main_and_prior_review_heads_unchanged": true,
+  "publication_status": "pending",
+  "push_exit": 128,
+  "push_output": "fatal: Cannot prompt because user interactivity has been disabled.\nfatal: could not read Username for 'https://github.com': terminal prompts disabled\n"
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_20260914\\publish.py", "--label", "completed"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T05:33:40.855087+00:00", "logger_pid": 31572, "child_pid": 31628, "ended_utc": "2026-09-14T05:34:40.439691+00:00", "seconds": 59.59681289999571, "exit_status": 0}

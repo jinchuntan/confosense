@@ -6,7 +6,7 @@ from verify_publication import get
 def main():
     commit=git('rev-parse','HEAD')
     assert git('branch','--show-current')==BRANCH and not git('status','--porcelain')
-    prior=read(REVIEW/'delivery_v1/REMOTE_VERIFICATION.json')
+    prior=read(REVIEW/'REMOTE_VERIFICATION.json')
     assert prior['passed']
     subprocess.run(['git','merge-base','--is-ancestor',prior['commit'],commit],cwd=ROOT,check=True)
     refs=git('-c','credential.helper=','ls-remote','origin','refs/heads/'+BRANCH,'refs/heads/main','refs/heads/review/matched-fold2-multiseed-20260914')

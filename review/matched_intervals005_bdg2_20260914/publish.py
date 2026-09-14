@@ -31,6 +31,8 @@ def index():
     b='../../'+BATCH.relative_to(ROOT).as_posix()+'/'
     if (BATCH/'validation_v5/validation.json').exists():text+=f'\n[Independent validation]({b}validation_v5/validation.json), [all arithmetic/model/quantile checks]({b}validation_v5/reconstruction_checks.csv), [alert checks]({b}validation_v5/alert_checks.csv), [zero-fit/calibrator-fit completed resume]({b}completed_resume_v1.json).\n'
     if (REVIEW/'delivery_v1').exists():text+='\n[Final delivery and publication receipts](delivery_v1).\n'
+    if (REVIEW/'DELIVERY_QA.json').exists():text+='\n[Report links, figure provenance and visual review](DELIVERY_QA.json).\n'
+    if (REVIEW/'REMOTE_VERIFICATION.json').exists():text+='\n[Published artifact readbacks and full remote Git-tree verification](REMOTE_VERIFICATION.json). This receipt identifies the verified parent commit; the delivery commit adds the receipt and its index entry.\n'
     text+='\n[Exact byte manifest](EVIDENCE_MANIFEST.csv) covers the bounded task files except itself; the Git commit binds the manifest. All previous review heads/main and the entry backup chain remain preserved.\n'
     atomic(REVIEW/'EVIDENCE_INDEX.md',text)
 

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\coordinator.py", line 203, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\coordinator.py", line 187, in main
+    engine.phase(recovery.get('validation_task','pilot/validate_v2') if recovery else 'pilot/validate',lambda folder:recovery['commands']['validate'] if recovery else frozen['commands']['validate']);progress(engine)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\coordinator.py", line 135, in phase
+    if result['status']!='passed':raise RuntimeError(f'phase {task} {result["status"]}; actual exit {result["exit_code"]}; {result["log"]}')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: phase pilot/validate_v4 failed; actual exit 1; C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051015922691+0000_8ed7e880\command.log

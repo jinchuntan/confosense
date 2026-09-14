@@ -1,6 +1,6 @@
 # Matched intervals005 durable progress and restart
 
-Updated UTC: 2026-09-14T05:33:40.752156+00:00. Status: **reports_complete**. 138 scientific stages checkpointed; acceptance requires the completed independent validation and forbidden-fit resume receipts.
+Updated UTC: 2026-09-14T05:34:40.852595+00:00. Status: **complete**. 138 scientific stages checkpointed; acceptance requires the completed independent validation and forbidden-fit resume receipts.
 
 The [atomic progress ledger](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/progress.json), [immutable command attempts](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts.jsonl), and [scientific stage journal](../../smart_building_conformal/outputs/matched_intervals005/bdg2_f2_s42_v1/stage_journal.jsonl) retain owner/calibrator/stream and live process identities.
 
@@ -20,3 +20,4 @@ The exclusive OS lock prevents duplicate coordinators. A surviving exact logger/
 - pilot/validate_v5: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T051651138009+0000_0533ec5a\command.log.json`.
 - pilot/resume: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T053254176620+0000_09cff5c8\command.log.json`.
 - final/report: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T053302381129+0000_180d03f2\command.log.json`.
+- final/publication: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\matched_intervals005\bdg2_pilot_v1_coordinator\attempts\2026-09-14T053340752156+0000_14b6b7f2\command.log.json`.

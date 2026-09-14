@@ -1,0 +1,23 @@
+{
+  "started_utc": "2026-09-14T04:27:45.756789+00:00",
+  "ended_utc": "2026-09-14T04:27:45.854037+00:00",
+  "pid": 23888,
+  "action_argv": [
+    "--help"
+  ],
+  "actual_exit": 0,
+  "resources": {
+    "seconds": 0.09958480000204872,
+    "baseline_rss_bytes": 320458752,
+    "peak_rss_bytes": 325009408,
+    "baseline_private_bytes": 279351296,
+    "peak_private_bytes": 282525696,
+    "incremental_peak_rss_bytes": 4550656,
+    "lifetime_peak_rss_bytes": 325013504,
+    "min_available_ram_bytes": 2846777344,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.078125
+  },
+  "error": null,
+  "interpretation": "whole Python CLI worker, excluding parent logger and interpreter startup"
+}

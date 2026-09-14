@@ -62,4 +62,8 @@ This creates a new analysis directory and refreshes current report prefixes. It 
 
 [Independent validation](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/validation.json), [all arithmetic/model/quantile checks](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/reconstruction_checks.csv), [alert checks](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/validation_v5/alert_checks.csv), [zero-fit/calibrator-fit completed resume](../../smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/completed_resume_v1.json).
 
+[Final delivery and publication receipts](delivery_v1).
+
+[Report links, figure provenance and visual review](DELIVERY_QA.json).
+
 [Exact byte manifest](EVIDENCE_MANIFEST.csv) covers the bounded task files except itself; the Git commit binds the manifest. All previous review heads/main and the entry backup chain remain preserved.

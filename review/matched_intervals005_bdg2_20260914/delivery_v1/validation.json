@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "coordinator_exit": 0,
+  "phase_exit_codes": {
+    "pilot/run": 0,
+    "pilot/validate": 1,
+    "pilot/validate_v2": 1,
+    "pilot/validate_v3": 1,
+    "pilot/validate_v4": 1,
+    "pilot/validate_v5": 0,
+    "pilot/resume": 0,
+    "final/report": 0,
+    "final/publication": 0
+  },
+  "method_cells": 30,
+  "seasonal_point_cells": 3,
+  "seasonal_interval_cells": 6,
+  "alert_streams": 30,
+  "actual_learned_estimator_fits": 51,
+  "operation_counts": {
+    "dscp_calibrator_fit": 1,
+    "xgboost_estimator_fit": 33,
+    "calibrator_conformalize": 18,
+    "kmeans_candidate_fit": 5,
+    "quantile_estimator_fit": 18,
+    "enbpi_wrapper_fit": 3,
+    "cqr_wrapper_fit": 6
+  },
+  "synthetic_learned_fits": 34,
+  "synthetic_dscp_calibrators": 2,
+  "synthetic_operation_counts": {
+    "dscp_calibrator_fit": 2,
+    "enbpi_wrapper_fit": 2,
+    "kmeans_candidate_fit": 1,
+    "xgboost_estimator_fit": 22,
+    "cqr_wrapper_fit": 4,
+    "calibrator_conformalize": 12,
+    "quantile_estimator_fit": 12
+  },
+  "validator_source_hash": "3d07d3cc76dd359da04c1ca741c0ca658cf9e68b6b6478de97c3f8a727f01c87",
+  "unique_acceptance_checks": 49,
+  "completed_resume_learned_fits": 0,
+  "completed_resume_calibrator_fits": 0,
+  "scientific_files_unchanged": true,
+  "source_hash": "026da0df7a10396c455a6a8d28a2736532e9a439a61e38ddea04d830bd142f19",
+  "coordinator_wall_seconds": 1074.044916999992,
+  "full_study_ready": false
+}
