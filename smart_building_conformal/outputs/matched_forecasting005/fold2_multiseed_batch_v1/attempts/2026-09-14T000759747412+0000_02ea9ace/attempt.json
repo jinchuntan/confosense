@@ -1,0 +1,58 @@
+{
+  "task": "pleia_energy_h6_f2_s44_v1/groups",
+  "attempt_id": "2026-09-14T000759747412+0000_02ea9ace",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_fold2_multiseed_20260914\\analyze.py",
+    "unit",
+    "--stem",
+    "pleia_energy_h6_f2_s44_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T000759747412+0000_02ea9ace\\groups"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T00:07:59.747412+00:00",
+  "ended_utc": "2026-09-14T00:08:04.606569+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T000759747412+0000_02ea9ace\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T000759747412+0000_02ea9ace\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 13604,
+    "created": 134338180797663591,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 13604,
+  "process_family": [
+    {
+      "pid": 13604,
+      "created": 134338180797663591,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 22332,
+      "created": 134338180798571484,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 9272,
+      "created": 134338180798711937,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 21932,
+      "created": 134338180797810332,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    }
+  ],
+  "worker_identity": {
+    "pid": 22332,
+    "created": 134338180798571484,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\attempts\\2026-09-14T000759747412+0000_02ea9ace\\command.log.json",
+  "seconds": 4.752205299999332,
+  "child_pid": 22332
+}

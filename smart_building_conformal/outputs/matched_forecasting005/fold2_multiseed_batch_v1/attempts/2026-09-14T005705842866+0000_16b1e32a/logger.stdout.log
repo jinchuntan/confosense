@@ -1,0 +1,63 @@
+LAUNCH pleia_h3_f2_s44_persistence; available RAM=5.20 GiB
+START pleia_h3_f2_s44_persistence final candidate=0 epochs=None
+COMPLETE pleia_h3_f2_s44_persistence
+LAUNCH pleia_h3_f2_s44_xgboost; available RAM=5.19 GiB
+START pleia_h3_f2_s44_xgboost tuning candidate=0 inner=0
+START pleia_h3_f2_s44_xgboost tuning candidate=0 inner=1
+START pleia_h3_f2_s44_xgboost tuning candidate=1 inner=0
+START pleia_h3_f2_s44_xgboost tuning candidate=1 inner=1
+START pleia_h3_f2_s44_xgboost final candidate=0 epochs=None
+COMPLETE pleia_h3_f2_s44_xgboost
+LAUNCH pleia_h3_f2_s44_attention_lstm; available RAM=5.09 GiB
+START pleia_h3_f2_s44_attention_lstm tuning candidate=0 inner=0
+pleia_h3_f2_s44_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.5366527717515357, 'validation_mae': 1.1826675434309104}
+pleia_h3_f2_s44_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.07591895454938892, 'validation_mae': 0.9341249652861778}
+pleia_h3_f2_s44_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.06928791259336395, 'validation_mae': 0.9071448839657426}
+pleia_h3_f2_s44_attention_lstm tuning c0 i0: {'epoch': 15, 'train_mse': 0.05820430068354888, 'validation_mae': 0.9038350472765322}
+pleia_h3_f2_s44_attention_lstm tuning c0 i0: {'epoch': 20, 'train_mse': 0.04976148986789904, 'validation_mae': 0.9007330547031381}
+pleia_h3_f2_s44_attention_lstm tuning c0 i0: {'epoch': 25, 'train_mse': 0.04241649178590809, 'validation_mae': 0.9105050143050916}
+START pleia_h3_f2_s44_attention_lstm tuning candidate=0 inner=1
+pleia_h3_f2_s44_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.3891020287368422, 'validation_mae': 0.8880539139176031}
+pleia_h3_f2_s44_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.11488507112144304, 'validation_mae': 0.775048905967318}
+pleia_h3_f2_s44_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.06668111212446953, 'validation_mae': 0.6284310917862013}
+pleia_h3_f2_s44_attention_lstm tuning c0 i1: {'epoch': 15, 'train_mse': 0.05702253174711637, 'validation_mae': 0.590390189745507}
+pleia_h3_f2_s44_attention_lstm tuning c0 i1: {'epoch': 20, 'train_mse': 0.0509158757983783, 'validation_mae': 0.5691825485768727}
+pleia_h3_f2_s44_attention_lstm tuning c0 i1: {'epoch': 25, 'train_mse': 0.047980697410563405, 'validation_mae': 0.5701524573497124}
+START pleia_h3_f2_s44_attention_lstm tuning candidate=1 inner=0
+pleia_h3_f2_s44_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.7438201532309925, 'validation_mae': 1.3543660018775987}
+pleia_h3_f2_s44_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.0823107376971742, 'validation_mae': 0.9611311066389132}
+pleia_h3_f2_s44_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.07478511397912797, 'validation_mae': 0.9293528284152653}
+pleia_h3_f2_s44_attention_lstm tuning c1 i0: {'epoch': 15, 'train_mse': 0.07024173783070635, 'validation_mae': 0.9237158421724342}
+pleia_h3_f2_s44_attention_lstm tuning c1 i0: {'epoch': 20, 'train_mse': 0.06749833159287225, 'validation_mae': 0.9309013640333799}
+START pleia_h3_f2_s44_attention_lstm tuning candidate=1 inner=1
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.5564362990671883, 'validation_mae': 1.1022258789358308}
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.13593766592594306, 'validation_mae': 0.8270562587916755}
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.09134478276472953, 'validation_mae': 0.7235607057472808}
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.06971573953337894, 'validation_mae': 0.6325005462751251}
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.061136226506742476, 'validation_mae': 0.6103514717930931}
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 25, 'train_mse': 0.05616273619238326, 'validation_mae': 0.5914588774540891}
+pleia_h3_f2_s44_attention_lstm tuning c1 i1: {'epoch': 30, 'train_mse': 0.0519584756778553, 'validation_mae': 0.5807022522262303}
+START pleia_h3_f2_s44_attention_lstm final candidate=0 epochs=22
+pleia_h3_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.3364236357516209}
+pleia_h3_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.10569447627731823}
+pleia_h3_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 10, 'train_mse': 0.07281143320244757}
+pleia_h3_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 15, 'train_mse': 0.06347328863946457}
+pleia_h3_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 20, 'train_mse': 0.059943115382192914}
+COMPLETE pleia_h3_f2_s44_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "b7e3fa5ed8095f5fd84d9934e8cfc8e570437f6da1fa9ab9bb67e1ef8b940f33",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia", "--horizon", "3", "--outer-fold", "2", "--model-seed", "44", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s44_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_h3_f2_s44_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s44_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T00:57:05.945926+00:00", "logger_pid": 12232, "child_pid": 22228, "ended_utc": "2026-09-14T01:00:32.834567+00:00", "seconds": 206.8879031000106, "exit_status": 0}

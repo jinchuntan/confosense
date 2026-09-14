@@ -1,0 +1,59 @@
+LAUNCH rico_h30_f2_s44_persistence; available RAM=4.15 GiB
+START rico_h30_f2_s44_persistence final candidate=0 epochs=None
+COMPLETE rico_h30_f2_s44_persistence
+LAUNCH rico_h30_f2_s44_xgboost; available RAM=4.10 GiB
+START rico_h30_f2_s44_xgboost tuning candidate=0 inner=0
+START rico_h30_f2_s44_xgboost tuning candidate=0 inner=1
+START rico_h30_f2_s44_xgboost tuning candidate=1 inner=0
+START rico_h30_f2_s44_xgboost tuning candidate=1 inner=1
+START rico_h30_f2_s44_xgboost final candidate=1 epochs=None
+COMPLETE rico_h30_f2_s44_xgboost
+LAUNCH rico_h30_f2_s44_attention_lstm; available RAM=4.00 GiB
+START rico_h30_f2_s44_attention_lstm tuning candidate=0 inner=0
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.6285479078637087, 'validation_mae': 2.5193975650562956}
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.01685103948482058, 'validation_mae': 1.99794844010297}
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.009261032301474383, 'validation_mae': 1.9997896259736248}
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 15, 'train_mse': 0.00805667654217724, 'validation_mae': 1.7674801481726334}
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 20, 'train_mse': 0.006767014510690528, 'validation_mae': 1.708081497253581}
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 25, 'train_mse': 0.006389742691249134, 'validation_mae': 1.6765159342760707}
+rico_h30_f2_s44_attention_lstm tuning c0 i0: {'epoch': 30, 'train_mse': 0.006360560438949316, 'validation_mae': 1.6327176794776306}
+START rico_h30_f2_s44_attention_lstm tuning candidate=0 inner=1
+rico_h30_f2_s44_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.37614247277777463, 'validation_mae': 2.268518593294917}
+rico_h30_f2_s44_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.010615908779841374, 'validation_mae': 1.4955442778779435}
+rico_h30_f2_s44_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.0072687225615516065, 'validation_mae': 1.4731391069389403}
+rico_h30_f2_s44_attention_lstm tuning c0 i1: {'epoch': 15, 'train_mse': 0.006587122946499503, 'validation_mae': 1.410156297501578}
+rico_h30_f2_s44_attention_lstm tuning c0 i1: {'epoch': 20, 'train_mse': 0.005829302694668426, 'validation_mae': 1.4588688320259966}
+START rico_h30_f2_s44_attention_lstm tuning candidate=1 inner=0
+rico_h30_f2_s44_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.8586642208583852, 'validation_mae': 3.540863855943323}
+rico_h30_f2_s44_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.024027930190139275, 'validation_mae': 1.927187546000761}
+rico_h30_f2_s44_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.012048897084426434, 'validation_mae': 1.9039875434426698}
+rico_h30_f2_s44_attention_lstm tuning c1 i0: {'epoch': 15, 'train_mse': 0.009457052829750082, 'validation_mae': 1.951460749274269}
+START rico_h30_f2_s44_attention_lstm tuning candidate=1 inner=1
+rico_h30_f2_s44_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.6222471401812558, 'validation_mae': 2.979820690441593}
+rico_h30_f2_s44_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.014410745528810484, 'validation_mae': 1.6923015915045214}
+rico_h30_f2_s44_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.008646814756214937, 'validation_mae': 1.6061717225481056}
+rico_h30_f2_s44_attention_lstm tuning c1 i1: {'epoch': 15, 'train_mse': 0.007711185620510004, 'validation_mae': 1.5031616107968844}
+rico_h30_f2_s44_attention_lstm tuning c1 i1: {'epoch': 20, 'train_mse': 0.0068537146560250116, 'validation_mae': 1.516640543227345}
+START rico_h30_f2_s44_attention_lstm final candidate=0 epochs=23
+rico_h30_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.2739108820068065}
+rico_h30_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.009009619080153353}
+rico_h30_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 10, 'train_mse': 0.006886835176795864}
+rico_h30_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 15, 'train_mse': 0.005864341773172432}
+rico_h30_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 20, 'train_mse': 0.005928185082527249}
+COMPLETE rico_h30_f2_s44_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "d77ff883b70c530d7ef4a845d9f8bb9579906f566e5c281d2756cae0377e97b9",
+  "full_study_ready": false,
+  "publication_ready": false
+}

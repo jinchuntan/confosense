@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "action": "resume",
+  "models_fitted": 0,
+  "reused_model_units": 3,
+  "fresh_data_identity_verified": true,
+  "preparation_resources": {
+    "seconds": 4.275057099992409,
+    "baseline_rss_bytes": 324280320,
+    "peak_rss_bytes": 397549568,
+    "baseline_private_bytes": 281952256,
+    "peak_private_bytes": 352210944,
+    "incremental_peak_rss_bytes": 73269248,
+    "lifetime_peak_rss_bytes": 410566656,
+    "min_available_ram_bytes": 4452515840,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 4.0
+  },
+  "protocol_hash": "5d84a3cdb1f24e4bae241c0a4e3a47bf0400815a82460b134e1a6e358a87472e",
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "all_run_files_unchanged": true
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "resume", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "pleia_energy", "--horizon", "6", "--outer-fold", "2", "--model-seed", "44", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s44_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\pleia_energy_h6_f2_s44_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\pleia_energy_h6_f2_s44_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\receipts\\pleia_energy_h6_f2_s44_v1\\resume_v1.json", "--forbid-fits"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T00:07:49.649431+00:00", "logger_pid": 24964, "child_pid": 26000, "ended_utc": "2026-09-14T00:07:58.392401+00:00", "seconds": 8.744128100006492, "exit_status": 0}

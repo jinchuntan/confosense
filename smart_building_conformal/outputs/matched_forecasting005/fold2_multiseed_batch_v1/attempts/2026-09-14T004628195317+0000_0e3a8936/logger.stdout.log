@@ -1,0 +1,48 @@
+LAUNCH bdg2_h6_f2_s44_persistence; available RAM=5.21 GiB
+START bdg2_h6_f2_s44_persistence final candidate=0 epochs=None
+COMPLETE bdg2_h6_f2_s44_persistence
+LAUNCH bdg2_h6_f2_s44_xgboost; available RAM=5.18 GiB
+START bdg2_h6_f2_s44_xgboost tuning candidate=0 inner=0
+START bdg2_h6_f2_s44_xgboost tuning candidate=0 inner=1
+START bdg2_h6_f2_s44_xgboost tuning candidate=1 inner=0
+START bdg2_h6_f2_s44_xgboost tuning candidate=1 inner=1
+START bdg2_h6_f2_s44_xgboost final candidate=0 epochs=None
+COMPLETE bdg2_h6_f2_s44_xgboost
+LAUNCH bdg2_h6_f2_s44_attention_lstm; available RAM=5.04 GiB
+START bdg2_h6_f2_s44_attention_lstm tuning candidate=0 inner=0
+bdg2_h6_f2_s44_attention_lstm tuning c0 i0: {'epoch': 1, 'train_mse': 0.28603622025992204, 'validation_mae': 49.2092604540446}
+bdg2_h6_f2_s44_attention_lstm tuning c0 i0: {'epoch': 5, 'train_mse': 0.11333395194408584, 'validation_mae': 44.755749796166434}
+bdg2_h6_f2_s44_attention_lstm tuning c0 i0: {'epoch': 10, 'train_mse': 0.07837357710171437, 'validation_mae': 42.768094143091325}
+START bdg2_h6_f2_s44_attention_lstm tuning candidate=0 inner=1
+bdg2_h6_f2_s44_attention_lstm tuning c0 i1: {'epoch': 1, 'train_mse': 0.1957166048921189, 'validation_mae': 56.51661057138227}
+bdg2_h6_f2_s44_attention_lstm tuning c0 i1: {'epoch': 5, 'train_mse': 0.08548034330127711, 'validation_mae': 46.414440120667976}
+bdg2_h6_f2_s44_attention_lstm tuning c0 i1: {'epoch': 10, 'train_mse': 0.07001719316651302, 'validation_mae': 49.849309669383935}
+START bdg2_h6_f2_s44_attention_lstm tuning candidate=1 inner=0
+bdg2_h6_f2_s44_attention_lstm tuning c1 i0: {'epoch': 1, 'train_mse': 0.3827856228132603, 'validation_mae': 53.098630002993204}
+bdg2_h6_f2_s44_attention_lstm tuning c1 i0: {'epoch': 5, 'train_mse': 0.1284026790182603, 'validation_mae': 43.27279170024259}
+bdg2_h6_f2_s44_attention_lstm tuning c1 i0: {'epoch': 10, 'train_mse': 0.09902274561895569, 'validation_mae': 44.25487074239113}
+START bdg2_h6_f2_s44_attention_lstm tuning candidate=1 inner=1
+bdg2_h6_f2_s44_attention_lstm tuning c1 i1: {'epoch': 1, 'train_mse': 0.2509655150298706, 'validation_mae': 62.409541429881614}
+bdg2_h6_f2_s44_attention_lstm tuning c1 i1: {'epoch': 5, 'train_mse': 0.09588472434624257, 'validation_mae': 48.54157739430121}
+bdg2_h6_f2_s44_attention_lstm tuning c1 i1: {'epoch': 10, 'train_mse': 0.0789038643294991, 'validation_mae': 49.425025430831376}
+START bdg2_h6_f2_s44_attention_lstm final candidate=0 epochs=6
+bdg2_h6_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 1, 'train_mse': 0.1587053897510983}
+bdg2_h6_f2_s44_attention_lstm final_fit c0 iNone: {'epoch': 5, 'train_mse': 0.07711995290430544}
+COMPLETE bdg2_h6_f2_s44_attention_lstm
+{
+  "status": "complete",
+  "point_cells": 3,
+  "interval_cells": 6,
+  "learned_tuning_fits": 8,
+  "learned_final_fits": 2,
+  "models": [
+    "persistence",
+    "xgboost",
+    "attention_lstm"
+  ],
+  "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+  "protocol_hash": "6dfe0e0bfd3dc2f5fff2b69f9b2dbbe2d7192a01735568515ad77c163d63c11a",
+  "full_study_ready": false,
+  "publication_ready": false
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.matched_forecasting005", "run", "--matrix", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\amendment005\\support_design_v1\\experiment_matrix.csv", "--dataset", "bdg2", "--horizon", "6", "--outer-fold", "2", "--model-seed", "44", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s44_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h6_f2_s44_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f2_s44_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T00:46:28.287685+00:00", "logger_pid": 9116, "child_pid": 25516, "ended_utc": "2026-09-14T00:51:23.190053+00:00", "seconds": 294.89900579999085, "exit_status": 0}

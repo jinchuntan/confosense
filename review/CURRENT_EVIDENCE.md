@@ -1,8 +1,8 @@
 # Fold-2 multiseed progress — 14 September 2026
 
-13/52 new units validated; 31/195 total. 104 tuning and 26 final fits; 39 point and 78 interval cells; 78 artifact checks; 13 zero-fit resumes. Seeds 43–43 complete. Main and historical results preserved.
+26/52 new units validated; 44/195 total. 208 tuning and 52 final fits; 78 point and 156 interval cells; 156 artifact checks; 26 zero-fit resumes. Seeds 43–44 complete. Main and historical results preserved.
 
-[Report](../MATCHED_FOLD2_MULTISEED_REPORT.md); [evidence index](matched_fold2_multiseed_20260914/EVIDENCE_INDEX.md). 164 matched units and broader-method obligations remain; full-study readiness is false.
+[Report](../MATCHED_FOLD2_MULTISEED_REPORT.md); [evidence index](matched_fold2_multiseed_20260914/EVIDENCE_INDEX.md). 151 matched units and broader-method obligations remain; full-study readiness is false.
 
 <!-- multiseed-20260914: preserved historical status follows -->
 
