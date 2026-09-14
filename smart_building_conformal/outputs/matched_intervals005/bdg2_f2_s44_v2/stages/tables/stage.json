@@ -1,0 +1,30 @@
+{
+  "key": "tables",
+  "payload": {
+    "method_cells": 30,
+    "seasonal_point_cells": 3,
+    "seasonal_interval_cells": 6,
+    "alert_streams": 30,
+    "operation_counts": {
+      "dscp_calibrator_fit": 1,
+      "quantile_estimator_fit": 18,
+      "calibrator_conformalize": 18,
+      "xgboost_estimator_fit": 33,
+      "enbpi_wrapper_fit": 3,
+      "cqr_wrapper_fit": 6,
+      "kmeans_candidate_fit": 5
+    }
+  },
+  "resources": {
+    "seconds": 14.943813299993053,
+    "baseline_rss_bytes": 580050944,
+    "peak_rss_bytes": 664674304,
+    "baseline_private_bytes": 668090368,
+    "peak_private_bytes": 778899456,
+    "incremental_peak_rss_bytes": 84623360,
+    "lifetime_peak_rss_bytes": 1035296768,
+    "min_available_ram_bytes": 2719514624,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 14.296875
+  }
+}

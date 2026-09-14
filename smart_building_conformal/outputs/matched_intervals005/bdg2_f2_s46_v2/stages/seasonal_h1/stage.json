@@ -1,0 +1,30 @@
+{
+  "key": "seasonal_h1",
+  "payload": {
+    "alias": true,
+    "requested_model_seed": 46,
+    "source_model_seed": 42,
+    "source_stage": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s42_v1\\stages\\seasonal_h1",
+    "source_hashes": {
+      "calibration.csv.gz": "da7b4af57fc65c92d3b03708bfd9973d7dec55396abecd50f7b58195da6fc5b9",
+      "interval_90.csv.gz": "09d6c18dd4048ba84ae88964e8d244d1ace8829d4f7c250eaf52d6ea08473ced",
+      "interval_95.csv.gz": "9e68df442ffb436039be0a9d2cd2ef9f51efe42d5fef22a7412e051b8f047331",
+      "point.json": "b9277335e227cc38cdb62b1121e6624753225679dc8b0517c5493646b0b9e77b",
+      "calibration.json": "7cacf33210875ac500b244276ee294dd312c6a22ef01138553ff6f2c13e5394b"
+    },
+    "target_support_hash": "b57c00d734ecf2193bf555669b2e5662f0e8634317096680bd62d91bca9d41b9",
+    "learned_fits": 0
+  },
+  "resources": {
+    "seconds": 0.21287229999143165,
+    "baseline_rss_bytes": 572850176,
+    "peak_rss_bytes": 596164608,
+    "baseline_private_bytes": 592830464,
+    "peak_private_bytes": 628781056,
+    "incremental_peak_rss_bytes": 23314432,
+    "lifetime_peak_rss_bytes": 1035825152,
+    "min_available_ram_bytes": 2363478016,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.21875
+  }
+}

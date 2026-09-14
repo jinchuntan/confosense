@@ -1,0 +1,27 @@
+{
+  "key": "dscp_assignment_020032_020544",
+  "payload": {
+    "start": 20032,
+    "end": 20544,
+    "n": 512,
+    "calibrator_sha256": "a4a252f38b420afe2e9feebfd5af4a68d90651cfb5ad9e0b473f5dede043d8bd",
+    "predicted_sequence_hash": "1736d9f383f1a12f341bc2b75f19c9856f5bf0f71a8cd09e3d23a5dc1562a6af",
+    "levels_shared": [
+      0.9,
+      0.95
+    ],
+    "planning_prefix_only": false
+  },
+  "resources": {
+    "seconds": 5.8507253999996465,
+    "baseline_rss_bytes": 575836160,
+    "peak_rss_bytes": 575856640,
+    "baseline_private_bytes": 662159360,
+    "peak_private_bytes": 662212608,
+    "incremental_peak_rss_bytes": 20480,
+    "lifetime_peak_rss_bytes": 1034448896,
+    "min_available_ram_bytes": 2905620480,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 5.75
+  }
+}

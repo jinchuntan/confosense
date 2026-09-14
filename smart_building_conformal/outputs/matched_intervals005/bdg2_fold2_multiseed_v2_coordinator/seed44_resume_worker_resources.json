@@ -1,0 +1,32 @@
+{
+  "started_utc": "2026-09-14T11:10:22.263246+00:00",
+  "ended_utc": "2026-09-14T11:10:25.799127+00:00",
+  "pid": 9192,
+  "action_argv": [
+    "resume",
+    "--design-dir",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s44_v2",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s44_v2",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s44_v2\\readiness.json",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_fold2_multiseed_v2_coordinator\\seed44_completed_resume.json",
+    "--forbid-fits"
+  ],
+  "actual_exit": 0,
+  "resources": {
+    "seconds": 3.533810799999628,
+    "baseline_rss_bytes": 320167936,
+    "peak_rss_bytes": 329064448,
+    "baseline_private_bytes": 278986752,
+    "peak_private_bytes": 286318592,
+    "incremental_peak_rss_bytes": 8896512,
+    "lifetime_peak_rss_bytes": 329216000,
+    "min_available_ram_bytes": 2717372416,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 3.515625
+  },
+  "error": null,
+  "interpretation": "whole Python CLI worker"
+}

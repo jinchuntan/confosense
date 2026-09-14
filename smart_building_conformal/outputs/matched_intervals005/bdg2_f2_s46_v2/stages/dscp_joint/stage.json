@@ -1,0 +1,23 @@
+{
+  "key": "dscp_joint",
+  "payload": {
+    "joint_support": {
+      "fit": 51534,
+      "calibration": 17270,
+      "test": 34590
+    },
+    "historical_models_refitted": 0
+  },
+  "resources": {
+    "seconds": 10.236799799997243,
+    "baseline_rss_bytes": 555524096,
+    "peak_rss_bytes": 664272896,
+    "baseline_private_bytes": 609480704,
+    "peak_private_bytes": 734162944,
+    "incremental_peak_rss_bytes": 108748800,
+    "lifetime_peak_rss_bytes": 1035825152,
+    "min_available_ram_bytes": 2464198656,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 10.078125
+  }
+}

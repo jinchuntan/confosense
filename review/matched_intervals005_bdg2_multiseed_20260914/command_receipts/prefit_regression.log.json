@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "smart_building_conformal/tests/test_matched_intervals005_multiseed.py",
+    "review/matched_intervals005_bdg2_20260914/test_coordinator.py"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense",
+  "started_utc": "2026-09-14T09:51:20.194982+00:00",
+  "logger_pid": 26148,
+  "child_pid": 33040,
+  "ended_utc": "2026-09-14T09:51:30.758345+00:00",
+  "seconds": 10.562755200007814,
+  "exit_status": 0
+}

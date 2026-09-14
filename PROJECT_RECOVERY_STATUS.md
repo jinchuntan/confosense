@@ -1,3 +1,11 @@
+# BDG2 five-seed interval extension completed
+
+The bounded fold-2 comparison now contains 150/1950 interval-method cells across model seeds 42–46. All four new seeds passed independent validation and zero-fit resume. Matched forecasting remains 70/195; full-study readiness remains false.
+
+[Report](BDG2_MATCHED_INTERVAL_METHODS_MULTISEED_REPORT.md) and [evidence index](review/matched_intervals005_bdg2_multiseed_20260914/EVIDENCE_INDEX.md).
+
+<!-- bdg2-interval-multiseed-20260914: historical content follows -->
+
 # Matched interval adapter and bounded BDG2 pilot completed
 
 30 interval-method cells, 3 seasonal point/6 seasonal interval cells and 30 clean-stream alert checks validated; completed resume performed zero learned/calibrator fits. Matched forecasting remains 70/195; interval methods 30/1950.

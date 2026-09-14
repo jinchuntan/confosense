@@ -1,0 +1,38 @@
+{
+  "key": "preparation_h1",
+  "payload": {
+    "resources": {
+      "seconds": 14.925631799997063,
+      "baseline_rss_bytes": 325099520,
+      "peak_rss_bytes": 904024064,
+      "baseline_private_bytes": 282140672,
+      "peak_private_bytes": 995119104,
+      "incremental_peak_rss_bytes": 578924544,
+      "lifetime_peak_rss_bytes": 1034448896,
+      "min_available_ram_bytes": 2269491200,
+      "sample_interval_seconds": 0.05,
+      "process_cpu_seconds": 14.4375
+    },
+    "native_rows": {
+      "fit": 51664,
+      "calibration": 17370,
+      "test": 34640,
+      "inner0_train": 17103,
+      "inner0_validation": 17225,
+      "inner1_train": 34328,
+      "inner1_validation": 17316
+    }
+  },
+  "resources": {
+    "seconds": 0.0007624999998370185,
+    "baseline_rss_bytes": 472883200,
+    "peak_rss_bytes": 472899584,
+    "baseline_private_bytes": 425885696,
+    "peak_private_bytes": 425918464,
+    "incremental_peak_rss_bytes": 16384,
+    "lifetime_peak_rss_bytes": 1034448896,
+    "min_available_ram_bytes": 2723901440,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.0
+  }
+}

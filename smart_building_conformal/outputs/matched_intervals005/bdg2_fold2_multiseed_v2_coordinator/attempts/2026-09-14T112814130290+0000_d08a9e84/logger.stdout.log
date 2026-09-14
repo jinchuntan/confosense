@@ -1,0 +1,30 @@
+VALIDATE horizon 1
+VALIDATE horizon 3
+VALIDATE horizon 6
+{
+  "passed": true,
+  "method_cells": 30,
+  "native_common_metric_rows": 60,
+  "seasonal_interval_cells": 6,
+  "alert_stream_checks": 30,
+  "maximum_observed_difference": 6.0546874919964466e-05,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "source_artifacts_unchanged": true,
+  "resources": {
+    "seconds": 920.5876219999918,
+    "baseline_rss_bytes": 328388608,
+    "peak_rss_bytes": 976699392,
+    "baseline_private_bytes": 286093312,
+    "peak_private_bytes": 1002270720,
+    "incremental_peak_rss_bytes": 648310784,
+    "lifetime_peak_rss_bytes": 1036779520,
+    "min_available_ram_bytes": 2187300864,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 904.078125
+  },
+  "source_hash": "5257ba9616206368298f280b80a7accc9e096eb803b51a94e04a5945444659b6",
+  "protocol_hash": "72a51e3acbb8de18403785bf6428756fcdb15afdd5e1e107b5109a8c05917a99",
+  "utc": "2026-09-14T11:43:40.681158+00:00"
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals005_bdg2_multiseed_20260914\\measured_action.py", "--measurement", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_fold2_multiseed_v2_coordinator\\seed45_validate_worker_resources.json", "--", "validate", "--design-dir", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s45_v2", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f2_s45_v2", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\matched_intervals005\\bdg2_f2_s45_v2\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\bdg2_fold2_multiseed_v2_coordinator\\seed45_validation"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T11:28:14.241902+00:00", "logger_pid": 29752, "child_pid": 6760, "ended_utc": "2026-09-14T11:43:41.390675+00:00", "seconds": 927.1505025000079, "exit_status": 0}
