@@ -66,4 +66,6 @@ This creates a new analysis directory and refreshes current report prefixes. It 
 
 [Report links, figure provenance and visual review](DELIVERY_QA.json).
 
+[Published artifact readbacks and full remote Git-tree verification](REMOTE_VERIFICATION.json). This receipt identifies the verified parent commit; the delivery commit adds the receipt and its index entry.
+
 [Exact byte manifest](EVIDENCE_MANIFEST.csv) covers the bounded task files except itself; the Git commit binds the manifest. All previous review heads/main and the entry backup chain remain preserved.

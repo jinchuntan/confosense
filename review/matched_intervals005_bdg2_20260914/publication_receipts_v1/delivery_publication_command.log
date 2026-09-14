@@ -1,0 +1,65 @@
+[review/matched-intervals005-bdg2-20260914 5bdea45] Publish matched intervals005 BDG2: delivery
+ 52 files changed, 1828 insertions(+), 44 deletions(-)
+ create mode 100644 review/matched_intervals005_bdg2_20260914/DELIVERY_QA.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_qa.py
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETE.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/COMPLETION_VERIFICATION.md
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/atomic_replace_retries.jsonl
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/command_receipts.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/completed_726ceee_publication.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0428069921623.log
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0428069921623.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0428069921623.log.launch.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0428069921623.log.started.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0457150750608.log
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0457150750608.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0457150750608.log.launch.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0457150750608.log.started.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0504082360746.log
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0504082360746.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0504082360746.log.launch.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0504082360746.log.started.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0510118507639.log
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0510118507639.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0510118507639.log.launch.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0510118507639.log.started.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0516471522973.log
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0516471522973.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0516471522973.log.launch.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/coordinator_20260914T0516471522973.log.started.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/copied_receipts.csv
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/measured_cli_help.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/prefit_4c2332d_publication.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/prefit_remote_verification.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation-erratum_1e084ee_publication.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_erratum_publication.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_v3_commit.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_v3_commit.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_v4_commit.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_v4_commit.log.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_v5_commit.json
+ create mode 100644 review/matched_intervals005_bdg2_20260914/delivery_v1/validation_v5_commit.log.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053340752156+0000_14b6b7f2/attempt.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053340752156+0000_14b6b7f2/command.log
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053340752156+0000_14b6b7f2/command.log.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053340752156+0000_14b6b7f2/command.log.started.json
+ create mode 100644 smart_building_conformal/outputs/matched_intervals005/bdg2_pilot_v1_coordinator/attempts/2026-09-14T053340752156+0000_14b6b7f2/logger.stdout.log
+The bundle contains this ref:
+5bdea4510d875cd84bd41ed9789df889fde9f9f7 refs/heads/review/matched-intervals005-bdg2-20260914
+The bundle requires this ref:
+c143fa16eaf9bfc6354b4cb1f8861915cb00f388 
+The bundle uses this hash algorithm: sha1
+C:/Users/nigel/ConfoSenseBackups/matched_intervals005_bdg2_20260914/delivery_5bdea45.bundle is okay
+{
+  "commit": "5bdea4510d875cd84bd41ed9789df889fde9f9f7",
+  "branch": "review/matched-intervals005-bdg2-20260914",
+  "utc": "2026-09-14T05:38:59.481169+00:00",
+  "backup": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals005_bdg2_20260914\\delivery_5bdea45.bundle",
+  "backup_sha256": "d05f9e2220918514a1b46b05318d2973b41f25712540365229000ac019e1b184",
+  "historical_files_preserved": true,
+  "main_and_prior_review_heads_unchanged": true,
+  "publication_status": "pending",
+  "push_exit": 128,
+  "push_output": "fatal: Cannot prompt because user interactivity has been disabled.\nfatal: could not read Username for 'https://github.com': terminal prompts disabled\n"
+}

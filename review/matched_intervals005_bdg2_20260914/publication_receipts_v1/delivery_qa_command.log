@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "utc": "2026-09-14T05:38:02.584351+00:00",
+  "local_report_links_checked": 126,
+  "scientific_fits": 0,
+  "immutable_analysis_and_delivery_verified": true,
+  "visual_review": {
+    "status": "passed",
+    "reviewer": "assistant",
+    "inspected": [
+      "native_interval_quality.png",
+      "common_interval_quality.png",
+      "stage_costs.png"
+    ],
+    "notes": "All three rendered PNGs were visually inspected before publication: readable axes and legends, no clipped labels. PDF exports share the same plotting canvas."
+  }
+}
