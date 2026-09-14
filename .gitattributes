@@ -63,3 +63,10 @@ BDG2_MATCHED_INTERVAL_METHODS_PILOT_REPORT.md -text -whitespace
 review/matched_intervals005_bdg2_multiseed_20260914/** -text -whitespace
 smart_building_conformal/configs/matched_intervals005_bdg2_multiseed_*_v2.json -text -whitespace
 smart_building_conformal/tests/test_matched_intervals005_multiseed.py -text -whitespace
+review/context_replay005_implementation_20260914/** -text -whitespace
+smart_building_conformal/src/context005_*.py -text -whitespace
+smart_building_conformal/src/conditional_context005.py -text -whitespace
+smart_building_conformal/src/energy_sensitivity005.py -text -whitespace
+smart_building_conformal/tests/test_context005*.py -text -whitespace
+smart_building_conformal/outputs/conditional_context005/** -text -whitespace
+smart_building_conformal/protocols/conditional_context005/** -text -whitespace

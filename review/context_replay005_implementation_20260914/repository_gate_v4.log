@@ -1,0 +1,26 @@
+........................................................................ [ 16%]
+........................................................................ [ 32%]
+........................................................................ [ 48%]
+........................................................................ [ 64%]
+.....................s.................................................. [ 80%]
+........................................................................ [ 96%]
+...............                                                          [100%]
+============================== warnings summary ===============================
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+  C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+    return cast(NDArray, np.nanmean(X, axis=1))
+
+tests/test_integration_delivery.py::test_real_enbpi_fallback_identity_records_exception_and_seed
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_serialized_owner_predictions_and_forbidden_completed_stage_resume
+tests/test_matched_intervals005.py::test_serialized_owner_predictions_and_forbidden_completed_stage_resume
+  C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+    return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

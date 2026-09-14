@@ -24,9 +24,18 @@ SCOPE_POLICIES={
 }
 
 
-def scope_policy(dataset):
-    try:return SCOPE_POLICIES[dataset]
+def scope_policy(dataset,outer_fold=2):
+    try:policy=dict(SCOPE_POLICIES[dataset])
     except KeyError as exc:raise ValueError('unsupported matched-interval dataset: '+str(dataset)) from exc
+    if outer_fold not in (0,1,2):raise ValueError('unknown outer fold')
+    # Read-only structural support is independent of availability of future fits.
+    support=frame(JOINT_SUPPORT)
+    selected=support[(support.dataset==dataset)&(support.outer_fold==outer_fold)]
+    count_column='common_origins'
+    if len(selected)!=3 or set(selected.role)!={'fit','calibration','test'}:
+        raise ValueError('published joint role support incomplete')
+    policy['joint_support']={r:int(selected[selected.role==r].iloc[0][count_column]) for r in ('fit','calibration','test')}
+    return policy
 
 
 def expected_operations(scope):
@@ -85,7 +94,7 @@ def freeze(matrix,authorization,design,synthetic_receipt):
     out.mkdir(parents=True)
     with Operations(forbid=True),PhaseMeter() as meter:
         refs=historical_references(c['dataset'],c['outer_fold'],c['model_seed'],c['horizons'])
-        roles_all={};support={};prepared=None;frequency=None;policy=scope_policy(c['dataset'])
+        roles_all={};support={};prepared=None;frequency=None;policy=scope_policy(c['dataset'],c['outer_fold'])
         for h in c['horizons']:
             data,roles,prepared=load_data(refs[str(h)],prepared)
             if data['freq'] != pd.Timedelta(policy['frequency']):raise ValueError('prepared sampling frequency differs from frozen policy')

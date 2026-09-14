@@ -1,0 +1,157 @@
+.................F.......F.............................................. [ 74%]
+..............F..........                                                [100%]
+================================== FAILURES ===================================
+_______ test_independent_scalar_features_and_future_perturbation[rico] ________
+
+dataset = 'rico'
+
+    @pytest.mark.parametrize('dataset',['pleia_energy','rico'])
+    def test_independent_scalar_features_and_future_perturbation(dataset):
+        d=synthetic(dataset);ctx,meta,base,season,frame,truth,obs,available,X=case(d)
+        expected=scalar_inputs(base,meta,d['fcfg'],d['horizon'],d['frequency'],season,X.columns,obs,available)
+>       np.testing.assert_allclose(X,expected,atol=1e-12,rtol=1e-12)
+
+tests\test_context005.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<function assert_allclose.<locals>.compare at 0x00000263C0E49F80>, array([[ 7.30089091,  7.18957387,  7.05545433, ......62,  0.        ],
+       [ 7.63374085,  7.71405939,  7.79014755, ..., -0.22252093,
+         0.97296947,  0.        ]]))
+kwds = {'err_msg': '', 'verbose': True, 'header': 'Not equal to tolerance rtol=1e-12, atol=1e-12', 'equal_nan': True, ...}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-12, atol=1e-12
+E           
+E           Mismatched elements: 1 / 3094 (0.0323%)
+E           Max absolute difference among violations: 1.239224e-12
+E           Max relative difference among violations: 7.6654744e-11
+E            ACTUAL: array([[ 7.300891,  7.189574,  7.055454, ..., -0.222521,  0.283662,
+E                    0.      ],
+E                  [ 7.387096,  7.300891,  7.189574, ..., -0.222521,  0.315463,...
+E            DESIRED: array([[ 7.300891,  7.189574,  7.055454, ..., -0.222521,  0.283662,
+E                    0.      ],
+E                  [ 7.387096,  7.300891,  7.189574, ..., -0.222521,  0.315463,...
+
+C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py:81: AssertionError
+______ test_corruption_changes_actual_predictor_and_rejects_clean_cache _______
+
+fitted = ({'dataset': 'pleia_energy', 'fold': 2, 'synthetic': True, 'meta':                                                  ro... object at 0x00000263C0F86690>, 'persistence_split': <src.context005_owner.ContextOwner object at 0x00000263C0F84390>})
+
+    def test_corruption_changes_actual_predictor_and_rejects_clean_cache(fitted):
+        d,models=fitted;clean=case(d);event=d['schedules'][(d['schedules'].family=='level_shift')&(d['schedules'].severity==2)].iloc[0].to_dict();changed=case(d,event)
+        model=models['cqr'];control=controls('pleia_energy')[2]
+        clean_raw=model.raw(clean[-1]);changed_raw=model.raw(changed[-1]);onset=changed[0]['onset_offset']
+>       assert np.any(clean_raw['point'][onset+1:onset+6]!=changed_raw['point'][onset+1:onset+6])
+E       assert np.False_
+E        +  where np.False_ = <function any at 0x00000263FE8B5570>(array([6.10154701, 6.10154701, 6.10154701, 6.10154701, 6.10154701]) != array([6.10154701, 6.10154701, 6.10154701, 6.10154701, 6.10154701]))
+E        +    where <function any at 0x00000263FE8B5570> = np.any
+
+tests\test_context005.py:74: AssertionError
+______________ test_smoke_runner_persists_validation_and_resume _______________
+
+tmp_path = WindowsPath('C:/Users/nigel/AppData/Local/Temp/pytest-of-nigel/pytest-71/test_smoke_runner_persists_val0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000263DEE30050>
+unit = ({'dataset': 'synthetic004', 'outer_fold': 0, 'model_seed': 42, 'evidence_status': 'SMOKE ONLY', ...}, {'surface':    ... ...         False
+8  synthetic004  ...         False
+9  synthetic004  ...         False
+
+[10 rows x 21 columns], ...})
+
+    def test_smoke_runner_persists_validation_and_resume(tmp_path,monkeypatch,unit):
+        from src import operational004_smoke as smoke
+        # The real CQR interface has its own test; reuse the completed two-fold
+        # unit here to test the actual CLI runner's serialization and result schema.
+        monkeypatch.setattr(smoke,'evaluate_unit',lambda *a,**kw:deepcopy(unit))
+        monkeypatch.setattr(smoke,'actual_cqr_probe',lambda:(dict(test_stub=True),{}))
+        configuration=Path(__file__).resolve().parents[1]/'configs/operational_amendment004.json'
+        result=smoke.run(tmp_path,configuration)
+        assert result['scope']=='SMOKE ONLY' and result['output_valid']
+        assert (tmp_path/'output_validation.json').is_file()
+>       result=smoke.run(tmp_path,configuration,resume=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_operational004.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\operational004_smoke.py:46: in run
+    payload,frames,status=checkpointed_unit(out,spec,compute,resume=resume)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\operational004_engine.py:245: in checkpointed_unit
+    store=UnitCheckpoint(out,spec,resume=resume,string_columns=('group_id','row_id'));key=f"outer{spec['outer_fold']}_model{spec['model_seed']}"
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <src.unit_checkpoint.UnitCheckpoint object at 0x00000263DE1A9090>
+root = WindowsPath('C:/Users/nigel/AppData/Local/Temp/pytest-of-nigel/pytest-71/test_smoke_runner_persists_val0')
+spec = {'scope': 'SMOKE ONLY', 'outer_fold': 0, 'model_seed': 42, 'config_hash': 'b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb', ...}
+resume = True, string_columns = ('group_id', 'row_id')
+
+    def __init__(self, root, spec, *, resume=False, string_columns=()):
+        self.root = Path(root)
+        self.root.mkdir(parents=True, exist_ok=True)
+        self.spec_hash = signature(spec)
+        # Opt-in schema for new runners: e.g. an asset literally named "None"
+        # must survive CSV loading. Historical readers retain their old default.
+        self.string_columns = tuple(string_columns)
+        manifest = self.root / "checkpoint_manifest.json"
+        if manifest.exists():
+            if not resume:
+                raise ValueError("run already exists; explicit resume is required")
+            saved = json.loads(manifest.read_text(encoding="utf-8"))
+            if saved["spec_hash"] != self.spec_hash:
+>               raise ValueError("resume code/config/data signature mismatch; use a new run directory")
+E               ValueError: resume code/config/data signature mismatch; use a new run directory
+
+src\unit_checkpoint.py:56: ValueError
+---------------------------- Captured stdout call -----------------------------
+{
+  "status": "complete",
+  "output_valid": true,
+  "candidate_fold_cells": 12,
+  "stream_hash_pairs": 60,
+  "outer_stream_hash_pairs": 20,
+  "persisted_streams_recomputed": 96,
+  "scientific_readiness": false,
+  "scope": "SMOKE ONLY",
+  "reused_units": 0,
+  "new_fit_invocations": 5,
+  "expected_inner_cells": 12,
+  "expected_inner_catalogue_pairs": 60,
+  "expected_outer_catalogue_pairs": 20,
+  "checkpoint_corruption_rejected_on_temporary_copy": true,
+  "full_study_validator_rejects_smoke": true,
+  "decision": "no_feasible_configuration",
+  "operational_feasible": false,
+  "fixture_feasible_selection": {
+    "candidate_id": "fixture_a"
+  },
+  "source_hash": "88bf10efd270176a0cc3e630f165e839c1876da392776e265ef7be464aa5f9b9",
+  "config_hash": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+  "design_hash": "5c1d4aedbbdedfb5d6cceedfd56b1dbe331233d0c497ea7b0126cf6095938c75",
+  "evaluated_commit": "236180a953f2a268f37e1a6d68a4ccd2eb7954b5",
+  "run_id": "test_smoke_runner_persists_val0"
+}
+============================== warnings summary ===============================
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+  C:\cfs_venv\Lib\site-packages\mapie\aggregation_functions.py:118: RuntimeWarning: Mean of empty slice
+    return cast(NDArray, np.nanmean(X, axis=1))
+
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_actual_shared_owner_counts
+tests/test_matched_intervals005.py::test_serialized_owner_predictions_and_forbidden_completed_stage_resume
+tests/test_matched_intervals005.py::test_serialized_owner_predictions_and_forbidden_completed_stage_resume
+  C:\cfs_venv\Lib\site-packages\mapie\estimator\regressor.py:298: RuntimeWarning: invalid value encountered in divide
+    return cast(NDArray, np.matmul(x, (K / (K.sum(axis=1, keepdims=True))).T))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_context005.py::test_independent_scalar_features_and_future_perturbation[rico]
+FAILED tests/test_context005.py::test_corruption_changes_actual_predictor_and_rejects_clean_cache
+FAILED tests/test_operational004.py::test_smoke_runner_persists_validation_and_resume

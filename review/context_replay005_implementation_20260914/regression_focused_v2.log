@@ -1,0 +1,18 @@
+.........................F..........                                     [100%]
+================================== FAILURES ===================================
+______ test_corruption_changes_actual_predictor_and_rejects_clean_cache _______
+
+fitted = ({'dataset': 'pleia_energy', 'fold': 2, 'synthetic': True, 'meta':                                                  ro... object at 0x00000176CDD24590>, 'persistence_split': <src.context005_owner.ContextOwner object at 0x00000176CDD26910>})
+
+    def test_corruption_changes_actual_predictor_and_rejects_clean_cache(fitted):
+        d,models=fitted;clean=case(d);event=d['schedules'][(d['schedules'].family=='level_shift')&(d['schedules'].severity==2)].iloc[0].to_dict();changed=case(d,event)
+        model=models['cqr'];control=controls('pleia_energy')[2]
+        clean_raw=model.raw(clean[-1]);changed_raw=model.raw(changed[-1]);onset=changed[0]['onset_offset']
+>       assert np.any(clean_raw['point'][onset+1:onset+6]!=changed_raw['point'][onset+1:onset+6])
+E       assert np.False_
+E        +  where np.False_ = <function any at 0x00000176BE4F62B0>(array([5.05782623, 5.05782623, 5.05782623, 5.05782623, 5.05782623]) != array([5.05782623, 5.05782623, 5.05782623, 5.05782623, 5.05782623]))
+E        +    where <function any at 0x00000176BE4F62B0> = np.any
+
+tests\test_context005.py:74: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_context005.py::test_corruption_changes_actual_predictor_and_rejects_clean_cache
