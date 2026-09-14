@@ -16,15 +16,59 @@ from .conformal_dscp import fit_dscp
 from .pilot_conformal import calibrate_absolute
 
 
+SCOPE_POLICIES={
+    'bdg2':dict(horizons=[1,3,6],frequency='1h',joint_support=dict(fit=51534,calibration=17270,test=34590),seasonal=True,season_steps=24),
+    'pleia':dict(horizons=[1,3,6],frequency='10min',joint_support=dict(fit=14845,calibration=4943,test=9902),seasonal=True,season_steps=144),
+    'pleia_energy':dict(horizons=[1,3,6],frequency='10min',joint_support=dict(fit=14845,calibration=4943,test=9902),seasonal=True,season_steps=144),
+    'rico':dict(horizons=[5,15,30,60],frequency='1min',joint_support=dict(fit=9577,calibration=3297,test=6437),seasonal=False,season_steps=None),
+}
+
+
+def scope_policy(dataset):
+    try:return SCOPE_POLICIES[dataset]
+    except KeyError as exc:raise ValueError('unsupported matched-interval dataset: '+str(dataset)) from exc
+
+
+def expected_operations(scope):
+    n=len(scope['horizons'])
+    return dict(cqr_wrapper_fit=2*n,quantile_estimator_fit=6*n,
+        enbpi_wrapper_fit=n,xgboost_estimator_fit=11*n,
+        random_forest_estimator_fit=0,dscp_calibrator_fit=1,
+        kmeans_candidate_fit=5,calibrator_conformalize=6*n)
+
+
+def expected_cells(scope):
+    n=len(scope['horizons']);seasonal=scope_policy(scope['dataset'])['seasonal']
+    return dict(interval_method=n*len(LEVELS)*len(METHODS),
+        seasonal_point=n if seasonal else 0,
+        seasonal_interval=n*len(LEVELS) if seasonal else 0,
+        seasonal_not_applicable=n if not seasonal else 0,
+        alert_streams=n*len(LEVELS)*len(METHODS))
+
+
+def protocol_frequency(protocol):
+    frequencies={str(v['frequency']) for v in protocol['support'].values()}
+    if len(frequencies)!=1:raise ValueError('protocol has mixed sampling frequencies')
+    frequency=pd.Timedelta(frequencies.pop())
+    if frequency != pd.Timedelta(scope_policy(protocol['scope']['dataset'])['frequency']):
+        raise ValueError('protocol frequency differs from the frozen dataset policy')
+    return frequency
+
+
 def config_scope(auth,matrix):
     c=auth['scope']
-    fixed={'dataset':'bdg2','outer_fold':2,'horizons':[1,3,6],'levels':LEVELS,'methods':METHODS}
     if not auth.get('real_fitting_authorized'):raise ValueError('outside bounded authorization')
+    fixed=lambda dataset:dict(dataset=dataset,outer_fold=2,horizons=scope_policy(dataset)['horizons'],levels=LEVELS,methods=METHODS)
     if auth.get('version') in (None,'matched_intervals005_bdg2_seed42_authorization_v1'):
-        if c!={**fixed,'model_seed':42}:raise ValueError('outside bounded authorization')
+        if c!={**fixed('bdg2'),'model_seed':42}:raise ValueError('outside bounded authorization')
     elif auth.get('version')=='matched_intervals005_bdg2_fold2_multiseed_authorization_v2':
-        if auth.get('authorized_model_seeds')!=[43,44,45,46] or c!={**fixed,'model_seed':c.get('model_seed')} or c['model_seed'] not in auth['authorized_model_seeds']:
+        if auth.get('authorized_model_seeds')!=[43,44,45,46] or c!={**fixed('bdg2'),'model_seed':c.get('model_seed')} or c['model_seed'] not in auth['authorized_model_seeds']:
             raise ValueError('outside bounded multiseed authorization')
+    elif auth.get('version')=='matched_intervals005_remaining_settings_authorization_v1':
+        if c.get('dataset') not in ('pleia_energy','pleia','rico') or c!={**fixed(c['dataset']),'model_seed':42}:
+            raise ValueError('outside bounded remaining-settings authorization')
+        expected={('pleia_energy',2,42),('pleia',2,42),('rico',2,42)}
+        if set(map(tuple,auth.get('authorized_units',[]))) != expected:raise ValueError('remaining authorization unit inventory changed')
     else:raise ValueError('unknown bounded authorization version')
     f=frame(matrix);f=f[(f.dataset==c['dataset'])&(f.outer_fold==c['outer_fold'])&(f.model_seed==c['model_seed'])&f.horizon.isin(c['horizons'])]
     from .unit_checkpoint import require_cells
@@ -41,25 +85,33 @@ def freeze(matrix,authorization,design,synthetic_receipt):
     out.mkdir(parents=True)
     with Operations(forbid=True),PhaseMeter() as meter:
         refs=historical_references(c['dataset'],c['outer_fold'],c['model_seed'],c['horizons'])
-        roles_all={};support={};prepared=None
+        roles_all={};support={};prepared=None;frequency=None;policy=scope_policy(c['dataset'])
         for h in c['horizons']:
             data,roles,prepared=load_data(refs[str(h)],prepared)
+            if data['freq'] != pd.Timedelta(policy['frequency']):raise ValueError('prepared sampling frequency differs from frozen policy')
+            frequency=data['freq'] if frequency is None else frequency
             roles_all[h]={r:role_frame(data,roles[r]) for r in ('fit','calibration','test')}
-            support[str(h)]=dict(data_hash=data['data_hash'],roles=data['old_protocol']['support']['roles'],features=data['feature_names'],available_by_role={r:int(data['available'][v].sum()) for r,v in roles.items()})
+            support[str(h)]=dict(data_hash=data['data_hash'],roles=data['old_protocol']['support']['roles'],features=data['feature_names'],frequency=str(data['freq']),available_by_role={r:int(data['available'][v].sum()) for r,v in roles.items()},seasonal_available_by_role={r:int(np.isfinite(data['seasonal'][v]).sum()) for r,v in roles.items()})
+            if policy['seasonal']:
+                if not np.isfinite(data['seasonal'][np.r_[roles['calibration'],roles['test']]]).all():raise ValueError('seasonal support unavailable for an applicable dataset')
+            elif np.isfinite(data['seasonal']).any():raise ValueError('inapplicable seasonal baseline unexpectedly materialized')
             del data;gc.collect()
         joint={}
         for role in ('fit','calibration','test'):
-            pieces=joint_join({h:roles_all[h][role] for h in c['horizons']},c['horizons'],expected=expected_joint(c['dataset'],c['outer_fold'],role))
+            pieces=joint_join({h:roles_all[h][role] for h in c['horizons']},c['horizons'],expected=expected_joint(c['dataset'],c['outer_fold'],role),frequency=frequency)
             joint[role]=len(pieces[c['horizons'][0]])
             csv(out/f'joint_{role}.csv.gz',pd.concat([f.assign(horizon=h,role=role) for h,f in pieces.items()],ignore_index=True))
-        if joint!={'fit':51534,'calibration':17270,'test':34590}:raise ValueError('published joint support changed')
+        if joint!=policy['joint_support']:raise ValueError('published joint support changed')
         csv(out/'native_membership.csv.gz',pd.concat([f.assign(horizon=h,role=r) for h,rr in roles_all.items() for r,f in rr.items()],ignore_index=True))
     csv(out/'scope.csv',cells)
     inputs=[Path(matrix).resolve(),Path(authorization).resolve(),Path(synthetic_receipt).resolve(),JOINT,JOINT_SUPPORT,LEDGER]
-    spec=method_spec(c['model_seed']);atomic(out/'method_specification.json',spec)
+    spec=method_spec(c['model_seed'],frequency);atomic(out/'method_specification.json',spec)
     alias_root=ROOT/'outputs/matched_intervals005/bdg2_f2_s42_v1/stages'
     alias={str(h):{name:digest(alias_root/f'seasonal_h{h}'/name) for name in ('calibration.csv.gz','interval_90.csv.gz','interval_95.csv.gz','point.json','calibration.json')} for h in c['horizons']} if c['model_seed']!=42 else None
-    protocol=dict(version=f'matched_intervals005_bdg2_f2_s{c["model_seed"]}_v2',scope=c,authorization=auth,entry_commit=ENTRY,historical_source_hash=OLD_SOURCE,source_hash=source_digest(),packages=packages(),references=refs,support=support,joint_support=joint,method_specification=spec,seasonal_alias_source=dict(model_seed=42,root=str(alias_root.relative_to(REPO)),files=alias) if alias else None,inputs={str(p.relative_to(REPO)):digest(p) for p in inputs},design_hashes=tree(out),expected_operations=dict(cqr_wrapper_fit=6,quantile_estimator_fit=18,enbpi_wrapper_fit=3,xgboost_estimator_fit=33,random_forest_estimator_fit=0,dscp_calibrator_fit=1,kmeans_candidate_fit=5,calibrator_conformalize=18),expected_cells=dict(interval_method=30,seasonal_point=0 if alias else 3,seasonal_alias=3 if alias else 0,seasonal_interval=0 if alias else 6,seasonal_interval_alias=6 if alias else 0,alert_streams=30),resource_policy=dict(device='cpu',threads=1,n_jobs=1,batch_size=256,launch_ram_reference_bytes=3*2**30,nonblocking_launch_ram=True,epoch_floor_bytes=256*2**20,disk_floor_bytes=8*2**30),tolerances=dict(prediction_atol=1e-7,prediction_rtol=1e-7,metric_atol=1e-10,metric_rtol=1e-12),frozen_utc=now(),freeze_resources=meter.result,models_fitted=0,full_study_ready=False)
+    cells_expected=expected_cells(c)
+    if alias:
+        cells_expected.update(seasonal_point=0,seasonal_alias=len(c['horizons']),seasonal_interval=0,seasonal_interval_alias=len(c['horizons'])*len(LEVELS))
+    protocol=dict(version=f'matched_intervals005_{c["dataset"]}_f2_s{c["model_seed"]}_v1',scope=c,authorization=auth,entry_commit=ENTRY,historical_source_hash=OLD_SOURCE,source_hash=source_digest(),packages=packages(),references=refs,support=support,joint_support=joint,method_specification=spec,seasonal_alias_source=dict(model_seed=42,root=str(alias_root.relative_to(REPO)),files=alias) if alias else None,inputs={str(p.relative_to(REPO)):digest(p) for p in inputs},design_hashes=tree(out),expected_operations=expected_operations(c),expected_cells=cells_expected,resource_policy=dict(device='cpu',threads=1,n_jobs=1,batch_size=256,launch_ram_reference_bytes=3*2**30,nonblocking_launch_ram=True,epoch_floor_bytes=256*2**20,disk_floor_bytes=8*2**30),tolerances=dict(prediction_atol=1e-7,prediction_rtol=1e-7,metric_atol=1e-10,metric_rtol=1e-12),frozen_utc=now(),freeze_resources=meter.result,models_fitted=0,full_study_ready=False)
     atomic(out/'frozen_protocol.json',protocol)
     return dict(frozen=True,models_fitted=0,joint_support=joint,source_hash=protocol['source_hash'])
 
@@ -95,7 +147,7 @@ def check_protocol(path,audit_manifest=None):
         for h,files in alias['files'].items():
             for name,value in files.items():
                 if digest(REPO/alias['root']/f'seasonal_h{h}'/name)!=value:raise ValueError('seasonal alias source changed')
-    actual=method_spec(p['scope']['model_seed'])
+    actual=method_spec(p['scope']['model_seed'],protocol_frequency(p))
     if audit_manifest is None:
         if signature(actual)!=signature(p['method_specification']):raise ValueError('factory specification drift')
     else:
@@ -110,12 +162,16 @@ def check_protocol(path,audit_manifest=None):
 
 def readiness(path,receipt):
     p=check_protocol(path);prepared=None
+    policy=scope_policy(p['scope']['dataset']);frequency=protocol_frequency(p)
     with Operations(forbid=True),PhaseMeter() as meter:
         for h,reference in p['references'].items():
             data,roles,prepared=load_data(reference,prepared)
             if data['data_hash']!=p['support'][h]['data_hash']:raise ValueError('fresh support changed')
+            if data['freq']!=frequency:raise ValueError('fresh sampling frequency changed')
             if min(len(roles['fit']),len(roles['calibration']))<400:raise ValueError('production support minimum')
-            if not np.isfinite(data['seasonal'][np.r_[roles['calibration'],roles['test']]]).all():raise ValueError('seasonal support unavailable')
+            if policy['seasonal']:
+                if not np.isfinite(data['seasonal'][np.r_[roles['calibration'],roles['test']]]).all():raise ValueError('seasonal support unavailable')
+            elif np.isfinite(data['seasonal']).any():raise ValueError('inapplicable seasonal baseline unexpectedly available')
             del data;gc.collect()
     r=dict(passed=True,ready=True,source_hash=source_digest(),protocol_hash=digest(path),models_fitted=0,calibrators_fitted=0,resources=resources(ROOT),preparation_resources=meter.result,utc=now())
     if Path(receipt).exists():raise ValueError('readiness receipt already exists')
@@ -135,7 +191,8 @@ def raw_stage(stages,key,owner_path,kind,level,data,roles):
 
 def finish_tables(stages,scope):
     def work(out):
-        metrics=[];groups=[];workloads=[];seasons=[];season_points=[]
+        metrics=[];groups=[];workloads=[];seasons=[];season_points=[];season_status=[]
+        policy=scope_policy(scope['dataset'])
         for h in scope['horizons']:
             joint=frame(stages.get('dscp_joint')/f'test_h{h}.csv.gz');common=set(joint.row_id)
             for l in LEVELS:
@@ -147,19 +204,28 @@ def finish_tables(stages,scope):
                         metrics.append(dict(tag,support=support,**interval_metrics(part,l)))
                         for group,sub in part.groupby('group_id'):groups.append(dict(tag,support=support,group_id=group,**interval_metrics(sub,l)))
                     workloads.append(frame(path/'background_workload.csv'))
-                seasonal=frame(stages.get(f'seasonal_h{h}')/f'interval_{int(l*100)}.csv.gz')
-                seasons.append(dict(dataset=scope['dataset'],outer_fold=scope['outer_fold'],model_seed=scope['model_seed'],horizon=h,level=l,method='seasonal_naive',**interval_metrics(seasonal,l)))
-            point=read(stages.get(f'seasonal_h{h}')/'point.json')
-            if scope['model_seed']!=42:point.update(model_seed=scope['model_seed'],source_model_seed=42,deterministic_seed_alias=True)
-            season_points.append(point)
+                if policy['seasonal']:
+                    seasonal=frame(stages.get(f'seasonal_h{h}')/f'interval_{int(l*100)}.csv.gz')
+                    seasons.append(dict(dataset=scope['dataset'],outer_fold=scope['outer_fold'],model_seed=scope['model_seed'],horizon=h,level=l,method='seasonal_naive',**interval_metrics(seasonal,l)))
+            if policy['seasonal']:
+                point=read(stages.get(f'seasonal_h{h}')/'point.json')
+                if scope['model_seed']!=42:point.update(model_seed=scope['model_seed'],source_model_seed=42,deterministic_seed_alias=True)
+                season_points.append(point)
+                season_status.append(dict(dataset=scope['dataset'],outer_fold=scope['outer_fold'],model_seed=scope['model_seed'],horizon=h,applicable=True,season_steps=policy['season_steps'],reason='daily seasonal-naive baseline evaluated and split-conformalized'))
+            else:
+                marker=read(stages.get(f'seasonal_not_applicable_h{h}')/'not_applicable.json')
+                season_status.append(marker)
         f=pd.DataFrame(metrics);csv(out/'native_support_metrics.csv',f[f.support=='native']);csv(out/'common_support_metrics.csv',f[f.support=='common'])
         csv(out/'per_building_metrics.csv',pd.DataFrame(groups));csv(out/'background_workload.csv',pd.concat(workloads,ignore_index=True))
-        csv(out/'seasonal_interval_metrics.csv',pd.DataFrame(seasons));csv(out/'seasonal_point_metrics.csv',pd.DataFrame(season_points))
+        csv(out/'seasonal_interval_metrics.csv',pd.DataFrame(seasons,columns=['dataset','outer_fold','model_seed','horizon','level','method','n','coverage','signed_coverage_deviation','absolute_coverage_deviation','mpiw','winkler','mae','rmse','sum_absolute_error','sum_squared_error','sum_width','sum_winkler','covered_count','available_count','unavailable_count','raw_crossed','status']))
+        csv(out/'seasonal_point_metrics.csv',pd.DataFrame(season_points,columns=['dataset','outer_fold','model_seed','horizon','model','n','mae','rmse','learned_fits','deterministic_seed_alias']))
+        csv(out/'seasonal_applicability.csv',pd.DataFrame(season_status))
         operations=[json.loads(s) for s in (stages.root/'operations.jsonl').read_text().splitlines()]
         csv(out/'operations.csv',pd.DataFrame(operations));counts={k:sum(r.get('kind')==k and r['event']=='returned' for r in operations) for k in set(r.get('kind') for r in operations) if k}
         costs=[dict(stage=p.name,**read(p/'stage.json')['resources']) for p in (stages.root/'stages').iterdir() if (p/'stage.json').exists()]
         csv(out/'stage_costs.csv',pd.DataFrame(costs));atomic(out/'operation_counts.json',counts)
-        return dict(method_cells=30,seasonal_point_cells=3,seasonal_interval_cells=6,alert_streams=30,operation_counts=counts)
+        expected=expected_cells(scope)
+        return dict(method_cells=expected['interval_method'],seasonal_point_cells=expected['seasonal_point'],seasonal_interval_cells=expected['seasonal_interval'],seasonal_not_applicable=expected['seasonal_not_applicable'],alert_streams=expected['alert_streams'],operation_counts=counts)
     return stages.run('tables',work)
 
 
@@ -180,10 +246,11 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manife
         if receipt:atomic(receipt,result)
         return result
     if forbid:raise ValueError('forbidden-fit resume requires complete scientific output')
-    resources(stages.root);scope=p['scope'];prepared=None;historical={}
+    resources(stages.root);scope=p['scope'];policy=scope_policy(scope['dataset']);frequency=protocol_frequency(p);prepared=None;historical={}
     for h in scope['horizons']:
         print(f'PREPARE horizon {h}',flush=True)
         with PhaseMeter() as preparation:data,roles,prepared=load_data(p['references'][str(h)],prepared)
+        if data['freq']!=frequency:raise ValueError('prepared frequency differs from frozen protocol')
         prep_key=f'preparation_h{h}'
         stages.run(prep_key,lambda dest:dict(resources=preparation.result,native_rows={k:len(v) for k,v in roles.items()}))
         def history_work(dest):
@@ -218,7 +285,13 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manife
             error=f.point-f.observed
             point=dict(dataset=scope['dataset'],outer_fold=scope['outer_fold'],model_seed=scope['model_seed'],horizon=h,model='seasonal_naive',n=len(f),mae=float(np.abs(error).mean()),rmse=float(np.sqrt(np.mean(error**2))),learned_fits=0,deterministic_seed_alias=True)
             atomic(dest/'point.json',point);atomic(dest/'calibration.json',records);return point
-        stages.run(f'seasonal_h{h}',seasonal_work)
+        if policy['seasonal']:
+            stages.run(f'seasonal_h{h}',seasonal_work)
+        else:
+            def seasonal_not_applicable(dest,h=h):
+                marker=dict(dataset=scope['dataset'],outer_fold=scope['outer_fold'],model_seed=scope['model_seed'],horizon=h,applicable=False,season_steps=None,reason='RICO segments are shorter than one daily cycle; no daily seasonal-naive baseline is defined',learned_fits=0)
+                atomic(dest/'not_applicable.json',marker);return marker
+            stages.run(f'seasonal_not_applicable_h{h}',seasonal_not_applicable)
         tr,ca,te=roles['fit'],roles['calibration'],roles['test']
         for kind,levels in [('cqr',LEVELS),('enbpi',[None])]:
             for l in levels:
@@ -238,7 +311,7 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manife
         del data;gc.collect()
     def join_work(dest):
         for role in ('fit','calibration','test'):
-            parts=joint_join({h:frame(historical[h]/(role+'.csv.gz')) for h in scope['horizons']},scope['horizons'],expected=expected_joint(scope['dataset'],scope['outer_fold'],role))
+            parts=joint_join({h:frame(historical[h]/(role+'.csv.gz')) for h in scope['horizons']},scope['horizons'],expected=expected_joint(scope['dataset'],scope['outer_fold'],role),frequency=frequency)
             for h,f in parts.items():csv(dest/f'{role}_h{h}.csv.gz',f)
         return dict(joint_support=p['joint_support'],historical_models_refitted=0)
     joint=stages.run('dscp_joint',join_work)
@@ -265,15 +338,16 @@ def execute(path,ready,out,*,resume=False,forbid=False,receipt=None,audit_manife
             calraw=pd.DataFrame(dict(point=P[:,j],raw_lower=P[:,j],raw_upper=P[:,j]))
             def dscp_stream(dest,l=l,h=h,raw=raw,calraw=calraw):
                 X=pd.DataFrame(T,columns=[f'matched_xgboost_h{k}' for k in scope['horizons']])
-                result=emit('dscp',l,digest(dscp/'calibrator.pkl'),X,test[h],raw,calibration[h],calraw,pd.Timedelta(hours=1))
+                result=emit('dscp',l,digest(dscp/'calibrator.pkl'),X,test[h],raw,calibration[h],calraw,frequency)
                 result['stream']['dscp_cluster']=assigned
-                return save_stream(dest,result,pd.Timedelta(hours=1),dict(horizon=h,level=l,method='dscp'))
+                return save_stream(dest,result,frequency,dict(horizon=h,level=l,method='dscp'))
             stages.run(f'stream_h{h}_l{int(l*100)}_dscp',dscp_stream)
     tables=finish_tables(stages,scope);counts=read(tables/'operation_counts.json')
     for k,n in p['expected_operations'].items():
         if counts.get(k,0)!=n:raise ValueError(f'actual operation count mismatch {k}: {counts.get(k,0)} != {n}')
-    atomic(stages.root/'COMPLETE.json',dict(status='complete',source_hash=p['source_hash'],protocol_hash=digest(path),utc=now(),method_cells=30,seasonal_interval_cells=6,stage_keys=sorted(s.name for s in (stages.root/'stages').iterdir()),files=tree(stages.root)))
-    return dict(status='complete',method_cells=30,seasonal_interval_cells=6,operation_counts=counts)
+    expected=expected_cells(scope)
+    atomic(stages.root/'COMPLETE.json',dict(status='complete',source_hash=p['source_hash'],protocol_hash=digest(path),utc=now(),method_cells=expected['interval_method'],seasonal_interval_cells=expected['seasonal_interval'],seasonal_not_applicable=expected['seasonal_not_applicable'],stage_keys=sorted(s.name for s in (stages.root/'stages').iterdir()),files=tree(stages.root)))
+    return dict(status='complete',method_cells=expected['interval_method'],seasonal_interval_cells=expected['seasonal_interval'],seasonal_not_applicable=expected['seasonal_not_applicable'],operation_counts=counts)
 
 
 def main():

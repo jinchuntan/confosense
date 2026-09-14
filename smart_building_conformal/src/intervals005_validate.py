@@ -29,8 +29,10 @@ def quantile_pair(sorted_scores,level,kind):
     return sorted_scores[lo-1],sorted_scores[hi-1]
 
 
-def scalar_replay(meta,raw,cal,rawcal,level,kind,strategy='static',*,every=1,window=None,freq=pd.Timedelta(hours=1)):
+def scalar_replay(meta,raw,cal,rawcal,level,kind,strategy='static',*,every=1,window=None,freq=None):
     """Independent ordered scalar state machine; never calls production replay."""
+    if freq is None:raise ValueError('scalar replay frequency must be explicit')
+    freq=pd.Timedelta(freq)
     y=np.asarray(meta.y_true,float);available=np.asarray(meta.available,bool)
     yc=np.asarray(cal.y_true,float)
     scorecal=np.maximum(rawcal.raw_lower-yc,yc-rawcal.raw_upper).to_numpy() if kind in ('cqr','quantile_uncalibrated') else yc-rawcal.point.to_numpy()
@@ -85,8 +87,9 @@ def independent_alert(f,freq,k=1,m=1):
 
 
 def validate(protocol_path,out,receipt,*,audit_manifest=None):
-    from .matched_intervals005 import check_protocol
+    from .matched_intervals005 import check_protocol,scope_policy,protocol_frequency,expected_cells
     p=check_protocol(protocol_path,audit_manifest);root=Path(out);before=tree(root);complete=read(root/'COMPLETE.json')
+    policy=scope_policy(p['scope']['dataset']);frequency=protocol_frequency(p);cells=expected_cells(p['scope'])
     frozen=dict(before);frozen.pop('COMPLETE.json')
     if frozen!=complete['files']:raise ValueError('completed scientific artifact hash mismatch')
     dest=Path(receipt)
@@ -102,6 +105,7 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
         for h in p['scope']['horizons']:
             print(f'VALIDATE horizon {h}',flush=True)
             data,roles,prepared=load_data(p['references'][str(h)],prepared)
+            if data['freq']!=frequency:raise ValueError('validated data frequency changed')
             histories,_=historical_predictions(p['references'][str(h)],data,roles)
             for role,hist in histories.items():close(frame(stage/f'historical_h{h}'/(role+'.csv.gz')).point,hist.point,f'historical_reload_{h}_{role}')
             calmeta=role_frame(data,roles['calibration']);testmeta=role_frame(data,roles['test'])
@@ -160,7 +164,7 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
                             close(raw.static_lower,native_point+lower,f'enbpi_native_lo_h{h}_{l}');close(raw.static_upper,native_point+upper,f'enbpi_native_hi_h{h}_{l}')
                         for method in (['quantile_uncalibrated','cqr'] if kind=='cqr' else ['recentred_enbpi_static','recentred_enbpi_updated']):
                             path=stage/f'stream_h{h}_l{int(l*100)}_{method}';f=frame(path/'issued.csv.gz')
-                            scalar=scalar_replay(testmeta,raw,calmeta,rawcal,l,method if kind=='cqr' else 'recentred_enbpi',strategy='native_updated' if method.endswith('_updated') else 'static')
+                            scalar=scalar_replay(testmeta,raw,calmeta,rawcal,l,method if kind=='cqr' else 'recentred_enbpi',strategy='native_updated' if method.endswith('_updated') else 'static',freq=frequency)
                             close(f.lower,scalar['lower'],f'scalar_lower_{h}_{l}_{method}');close(f.upper,scalar['upper'],f'scalar_upper_{h}_{l}_{method}')
                             if not np.array_equal(f.numerical_violation,scalar['numerical']):raise ValueError('numerical flag mismatch')
                             saved_release=frame(path/'released_scores.csv.gz')
@@ -184,7 +188,7 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
                         if not np.array_equal(pd.to_datetime(f[time_column]),pd.to_datetime(expected_meta[time_column])):raise ValueError('timestamp identity mismatch')
                     for col in ('row_id','group_id','origin_time','target_time','lower','upper','available'):
                         if not np.array_equal(f[col],consumed[col]):raise ValueError('consumed stream mismatch: '+col)
-                    flags,episodes=independent_alert(f,pd.Timedelta(hours=1));saved=frame(path/'episodes.csv.gz')
+                    flags,episodes=independent_alert(f,frequency);saved=frame(path/'episodes.csv.gz')
                     for name,expected in flags.items():
                         if not np.array_equal(consumed['alert_'+name],expected):raise ValueError('alert flag mismatch')
                     if len(saved)!=len(episodes):raise ValueError('episode count mismatch')
@@ -203,12 +207,16 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
                             gr=groups[groups.group_id.astype(str)==str(group)].iloc[0]
                             for col,value in independent_metrics(sub,l).items():close(gr[col],value,f'building_{support}_{h}_{l}_{method}_{group}_{col}',atol=1e-7,rtol=1e-12)
                         for col in ('n','covered_count','sum_absolute_error','sum_squared_error','sum_width','sum_winkler'):close(groups[col].sum(),expected[col],f'group_reconcile_{support}_{h}_{l}_{method}_{col}',atol=1e-7,rtol=1e-12)
-                sf=frame(stage/f'seasonal_h{h}'/f'interval_{int(l*100)}.csv.gz');ca=frame(stage/f'seasonal_h{h}'/'calibration.csv.gz')
-                close(sf.point,data['seasonal'][roles['test']],f'seasonal_point_h{h}_{l}')
-                residuals=sorted(np.abs(ca.y_true-ca.point));rank=math.ceil((len(residuals)+1)*l);q=residuals[rank-1]
-                close(sf.lower,sf.point-q,f'seasonal_lower_h{h}_{l}');close(sf.upper,sf.point+q,f'seasonal_upper_h{h}_{l}')
-                ss=frame(stage/'tables'/'seasonal_interval_metrics.csv');sr=ss[(ss.horizon==h)&(ss.level==l)].iloc[0]
-                for name,value in independent_metrics(sf,l).items():close(sr[name],value,f'seasonal_metric_{h}_{l}_{name}',atol=1e-7,rtol=1e-12)
+                if policy['seasonal']:
+                    sf=frame(stage/f'seasonal_h{h}'/f'interval_{int(l*100)}.csv.gz');ca=frame(stage/f'seasonal_h{h}'/'calibration.csv.gz')
+                    close(sf.point,data['seasonal'][roles['test']],f'seasonal_point_h{h}_{l}')
+                    residuals=sorted(np.abs(ca.y_true-ca.point));rank=math.ceil((len(residuals)+1)*l);q=residuals[rank-1]
+                    close(sf.lower,sf.point-q,f'seasonal_lower_h{h}_{l}');close(sf.upper,sf.point+q,f'seasonal_upper_h{h}_{l}')
+                    ss=frame(stage/'tables'/'seasonal_interval_metrics.csv');sr=ss[(ss.horizon==h)&(ss.level==l)].iloc[0]
+                    for name,value in independent_metrics(sf,l).items():close(sr[name],value,f'seasonal_metric_{h}_{l}_{name}',atol=1e-7,rtol=1e-12)
+                else:
+                    marker=read(stage/f'seasonal_not_applicable_h{h}'/'not_applicable.json')
+                    if marker['applicable'] or marker['season_steps'] is not None or marker['learned_fits']!=0:raise ValueError('invalid inapplicable seasonal marker')
             del data;gc.collect()
         calibrator=load_owner(stage/'dscp_fit'/'calibrator.pkl');hs=p['scope']['horizons']
         cal={h:frame(stage/'dscp_joint'/f'calibration_h{h}.csv.gz') for h in hs};test={h:frame(stage/'dscp_joint'/f'test_h{h}.csv.gz') for h in hs}
@@ -237,6 +245,6 @@ def validate(protocol_path,out,receipt,*,audit_manifest=None):
             if counts.get(name,0)!=n:raise ValueError('actual operations mismatch')
     if tree(root)!=before:raise ValueError('independent validation mutated source artifacts')
     csv(dest/'reconstruction_checks.csv',pd.DataFrame(checks));csv(dest/'independent_metrics.csv',pd.DataFrame(metric_checks));csv(dest/'alert_checks.csv',pd.DataFrame(alert_checks))
-    result=dict(passed=True,method_cells=30,native_common_metric_rows=len(metric_checks),seasonal_interval_cells=6,alert_stream_checks=len(alert_checks),maximum_observed_difference=maxdiff,models_fitted=0,calibrators_fitted=0,source_artifacts_unchanged=True,resources=meter.result,source_hash=p['source_hash'],protocol_hash=digest(protocol_path),utc=now())
+    result=dict(passed=True,method_cells=cells['interval_method'],native_common_metric_rows=len(metric_checks),seasonal_interval_cells=cells['seasonal_interval'],seasonal_not_applicable=cells['seasonal_not_applicable'],alert_stream_checks=len(alert_checks),maximum_observed_difference=maxdiff,models_fitted=0,calibrators_fitted=0,source_artifacts_unchanged=True,resources=meter.result,source_hash=p['source_hash'],protocol_hash=digest(protocol_path),utc=now())
     if audit_manifest:result.update(validator_source_hash=source_digest(),audit_manifest_sha256=digest(audit_manifest))
     atomic(dest/'validation.json',result);atomic(dest/'COMPLETE.json',dict(files=tree(dest)));return result

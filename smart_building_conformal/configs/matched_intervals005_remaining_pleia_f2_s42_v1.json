@@ -1,0 +1,13 @@
+{
+  "version": "matched_intervals005_remaining_settings_authorization_v1",
+  "real_fitting_authorized": true,
+  "synthetic_fitting_authorized": true,
+  "publication_authorized": true,
+  "instruction_commit": "4711b525048574e7aa5232194593a78d09139162",
+  "authorized_units": [["pleia_energy", 2, 42], ["pleia", 2, 42], ["rico", 2, 42]],
+  "scope": {"dataset": "pleia", "outer_fold": 2, "model_seed": 42, "horizons": [1, 3, 6], "levels": [0.9, 0.95], "methods": ["quantile_uncalibrated", "cqr", "recentred_enbpi_static", "recentred_enbpi_updated", "dscp"]},
+  "expected_new_method_cells": 30,
+  "expected_new_learned_estimator_fits": 51,
+  "seasonal": {"applicable": true, "daily_lag_steps": 144, "point_cells": 3, "interval_cells": 6},
+  "full_study_authorized": false
+}

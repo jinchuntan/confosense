@@ -51,15 +51,33 @@ def check_historical(reference):
     return old
 
 
+def _prepared_identity(cfg,c):
+    """Identity carried with the in-memory preparation cache.
+
+    A prepared object contains the target series.  Reusing it for a different
+    target, dataset, outer membership, or sampling grid would silently cross
+    the frozen owner boundary, so cache reuse is deliberately narrower than
+    the caller's convenience API.
+    """
+    return signature(dict(dataset=c['dataset'],outer_fold=c['outer_fold'],
+        target=cfg.get('target'),adapter=cfg.get('adapter'),
+        resample=cfg.get('resample'),missing=cfg.get('missing')))
+
+
 def load_data(reference,prepared=None):
     old=check_historical(reference);cfg=old['resolved_dataset_config'];c=old['config']
-    prepared=prepare(cfg) if prepared is None else prepared
-    data=build_support(prepared,cfg,c['horizon'],c['sequence_length'])
-    roles=forecast_roles(data['meta'],c['horizon'],prepared.freq,c['outer_fold'],c['dataset']=='rico')
+    identity=_prepared_identity(cfg,c)
+    if prepared is None:
+        prepared=(prepare(cfg),identity)
+    if not isinstance(prepared,tuple) or len(prepared)!=2 or prepared[1]!=identity:
+        raise ValueError('prepared cache dataset/target/membership identity mismatch')
+    prepared_object=prepared[0]
+    data=build_support(prepared_object,cfg,c['horizon'],c['sequence_length'])
+    roles=forecast_roles(data['meta'],c['horizon'],prepared_object.freq,c['outer_fold'],c['dataset']=='rico')
     forecasting.verify_data(data,roles,old)
     meta=data['meta'];available=np.zeros(len(meta),bool);seasonal=np.full(len(meta),np.nan)
     from .baselines import seasonal_naive_prediction
-    for series in prepared.series:
+    for series in prepared_object.series:
         idx=np.flatnonzero(meta.group_id.astype(str).eq(str(series.group_id)))
         times=pd.DatetimeIndex(meta.iloc[idx].target_time)
         source=series.frame.reindex(times)
@@ -70,7 +88,7 @@ def load_data(reference,prepared=None):
         if series.season_steps is not None:
             if series.season_steps<c['horizon']:raise ValueError('seasonal prediction would use future reading')
             seasonal[idx]=seasonal_naive_prediction(series.frame.target,times,series.season_steps,series.freq)
-    data['available']=available;data['seasonal']=seasonal;data['freq']=pd.Timedelta(prepared.freq)
+    data['available']=available;data['seasonal']=seasonal;data['freq']=pd.Timedelta(prepared_object.freq)
     data['old_protocol']=old
     return data,roles,prepared
 
@@ -99,8 +117,11 @@ def historical_predictions(reference,data,roles):
     return records,checks
 
 
-def joint_join(frames,horizons,*,expected=None,frequency=pd.Timedelta(hours=1)):
+def joint_join(frames,horizons,*,expected=None,frequency=None):
     if list(frames)!=list(horizons) or horizons!=sorted(set(horizons)):raise ValueError('joint horizons must have exact increasing order')
+    if frequency is None:raise ValueError('joint frequency must be explicit')
+    frequency=pd.Timedelta(frequency)
+    if frequency <= pd.Timedelta(0):raise ValueError('joint frequency must be positive')
     sets=[]
     for h,f in frames.items():
         if f.row_id.duplicated().any() or f[['group_id','origin_time']].duplicated().any():raise ValueError('duplicate horizon row/origin')
