@@ -1,0 +1,19 @@
+{
+  "version": "energy_sensitivity005_proposed_v1",
+  "status": "scientific_choice_unapproved",
+  "frequency": "10min",
+  "kind": "retrospective_evaluation_only",
+  "minimum_zero_run_steps": 6,
+  "training_positive_quantile": 0.99,
+  "catchup_lookahead_steps": 1,
+  "zero_alone_means_fault": false,
+  "mask_policy": "zero_run_and_immediate_large_successor",
+  "primary_values": "untouched",
+  "online_treatment": false,
+  "retraining": false,
+  "threshold": 496.0,
+  "threshold_source": "permitted fitting outcomes only",
+  "training_ids_hash": "26be7762aa6edfb07771f68ee67da5ae362cc21964ab614fa09d521772fe9241",
+  "training_values_hash": "10920749219345463c5071bc3a90c7bb9117e57b7b8d5234f9d60b80a0eb4e27",
+  "positive_training_rows": 500
+}

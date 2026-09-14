@@ -1,0 +1,33 @@
+{
+  "owner_sha256": "1f6e54429f7d4a3b28b95666ae248d2f2039e702ec5fd8b014ccc333f5cb2771",
+  "fit_sha256": "514778141579a65588a1e8a46380ac954acafa18a48c819e241cbf16adcd207a",
+  "source_hash": "83243b4bfb70f56831c7e092fed2a120f67bffc11880d54665c11607c4087841",
+  "model_seed": 42,
+  "dataset": "pleia_energy",
+  "roles": {
+    "final_fit": "6b5136047ce6998f93cc5736b518a7ad2193044c417c852773e5f543c083a9e0",
+    "final_calibration": "6c40aae15fad78f045ff577515b59024f1a613ee7f132b4518077a5cb2d19d93",
+    "outer_test": "8547105ff00d6610cccae3881a541453ce13ec7fda46c79db39bf7cb112cb1ba"
+  },
+  "columns": [
+    "target_lag_0",
+    "target_lag_1",
+    "target_lag_2",
+    "target_lag_5",
+    "target_daily_lag",
+    "target_rollmean_6",
+    "target_rollstd_6",
+    "target_rollmean_24",
+    "target_rollstd_24",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "ambient",
+    "target_was_missing"
+  ],
+  "persistence_radius": 0.3870000334817565,
+  "quantile_shared": true,
+  "new_learned_fits": 0,
+  "persistence_calibrations": 1
+}

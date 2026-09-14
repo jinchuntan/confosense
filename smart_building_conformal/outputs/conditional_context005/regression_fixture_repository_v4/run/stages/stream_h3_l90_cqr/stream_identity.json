@@ -1,0 +1,28 @@
+{
+  "emitted_hash": "e6ce4663ae5090eac25f7114f51b756ad0bf7fdd980f296c5e635adc57fe4132",
+  "consumed_hash": "e6ce4663ae5090eac25f7114f51b756ad0bf7fdd980f296c5e635adc57fe4132",
+  "identity": {
+    "owner_sha256": "848474e4bf000d66712b2d4f61a4a22f382f1b18194f6d8efd277fd404fdf8a9",
+    "method": "cqr",
+    "level": 0.9,
+    "mutable_state_identity": "df5a80c61cb25f259340d52c08fb863f8473be83ac89fdbd4e7b5368a4e9a590",
+    "score": "CQR max(raw_lower-y,y-raw_upper)"
+  },
+  "candidate": {
+    "method": "cqr",
+    "level": 0.9,
+    "strategy": "static",
+    "every": 0,
+    "window": null,
+    "min_samples": 50
+  },
+  "alert_rule": {
+    "k": 1,
+    "m": 1,
+    "frequency": "0 days 00:10:00"
+  },
+  "event_count": 0,
+  "horizon": 3,
+  "level": 0.9,
+  "method": "cqr"
+}

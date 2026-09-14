@@ -1,0 +1,181 @@
+{
+  "version": "conditional_context005_v1",
+  "manifest": {
+    "version": "conditional_context005_v1",
+    "dataset": "rico",
+    "outer_fold": 2,
+    "model_seed": 42,
+    "horizon": 5,
+    "synthetic": true,
+    "tiny_estimator": true,
+    "controls": [
+      {
+        "control_id": "quantile_static",
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_static",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_rolling",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 15,
+        "window": 200,
+        "min_samples": 50
+      },
+      {
+        "control_id": "persistence_static",
+        "method": "persistence_split",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      }
+    ],
+    "rules": [
+      {
+        "rule_id": "single_sample",
+        "window_minutes": 1.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true
+      },
+      {
+        "rule_id": "5min_2of5",
+        "window_minutes": 5,
+        "k": 2,
+        "m": 5,
+        "applicable": true
+      },
+      {
+        "rule_id": "15min_3of15",
+        "window_minutes": 15,
+        "k": 3,
+        "m": 15,
+        "applicable": true
+      },
+      {
+        "rule_id": "30min_3of30",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 30,
+        "applicable": true
+      },
+      {
+        "rule_id": "60min_4of60",
+        "window_minutes": 60,
+        "k": 4,
+        "m": 60,
+        "applicable": true
+      }
+    ],
+    "expected_contexts": 2,
+    "expected_schedules": 84,
+    "selection": "none",
+    "endpoint": "C_effective_fault_conditional_context",
+    "execution_authorized": true,
+    "authorization_kind": "bounded_synthetic_integration"
+  },
+  "manifest_path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\context_replay005_implementation_20260914\\synthetic_rico_v1.json",
+  "manifest_sha256": "f0b75ea2f4b71d074085a200e45b0c2676c48a51ccc37b50718185d764bd38fc",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "data_identity": {
+    "features": "8f4d8a9d31826e0c37c41b1ed427c690cec2c768ef300f9459f0a067e0864a7c",
+    "outcomes": "e29a84cc3141ff2e3929fb528c48860f13045bada7501d1ca9b2ed275a4f64bb",
+    "role_rows": {
+      "final_fit": "d0ebfa17e8c6210a486d0cd677682182da6e9ca89053191e5e1a246ed1afb753",
+      "final_calibration": "e78b2ff7750870146418846ec2864d9764cc6d0f21275e5c5d66f30edca1b24d",
+      "outer_test": "60c2495ba5ce79899ce8da82acd3254687cd141713052d72a2eafabfc908afc5"
+    },
+    "context_hash": "5d44fce8a978781ff854dc4743971bb66992e2d1dc8079a43715372382baed61",
+    "schedule_hash": "2c6999e0f98a7dd4ca80d91fa9af7034db7d71461dacbd6c1e0ccdfd7ff29ec1",
+    "cache_sha256": null,
+    "columns": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_5",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_24",
+      "target_rollstd_24",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "ambient",
+      "target_was_missing"
+    ],
+    "frequency": "0 days 00:01:00",
+    "fcfg": {
+      "target_lags": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "rolling_windows": [
+        6,
+        24
+      ],
+      "include_weekly": false,
+      "covariates": [
+        "ambient"
+      ]
+    }
+  },
+  "source_inputs": {},
+  "design_hashes": {
+    "contexts.csv": "eca172a7814754597da1677296fdaf81b50e6e16ad6a9657ad0af83c25163285",
+    "roles.csv.gz": "5d29c8be16988f7233aa8a9894bc87ff70ec3fd5916333ff973f0705297e0dc1",
+    "schedules.csv.gz": "6c2e51da85e68f406ef55643c0d8ee1f41c70ebc8a0c7febbe002ea9beff5ba6"
+  },
+  "rows": {
+    "final_fit": 520,
+    "final_calibration": 420,
+    "outer_test": 442
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "calibrator_conformalize": 2,
+    "persistence_radius": 1
+  },
+  "owner_reuse": "new C owner required unless exact features/roles/calibration/parameters/source contract proven",
+  "static_convention": "MAPIE1.4.1 native asymmetric tail correction; emitted pair ordered",
+  "rolling_convention": "max-score ceil((n+1)*.95); observe/compare/release before scheduled origin update",
+  "resource_policy": {
+    "threads": 1,
+    "device": "cpu",
+    "launch_ram_reference_nonblocking": true,
+    "launch_ram_reference_bytes": 3221225472,
+    "disk_floor_bytes": 8589934592,
+    "batch": 256
+  },
+  "frozen_utc": "2026-09-14T15:41:33.357477+00:00",
+  "full_study_ready": false,
+  "models_fitted": 0
+}

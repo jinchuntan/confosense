@@ -1,0 +1,65 @@
+{
+  "task": "pleia_energy/readiness",
+  "attempt_id": "2026-09-14T152834769922+0000_eb7c4534",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.conditional_context005",
+    "readiness",
+    "--manifest",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\context_replay005_implementation_20260914\\synthetic_pleia_energy_v1.json",
+    "--design",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_pleia_energy_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1\\readiness.json",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1\\readiness.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T15:28:34.769922+00:00",
+  "ended_utc": "2026-09-14T15:28:39.344705+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_v1_coordinator\\attempts\\2026-09-14T152834769922+0000_eb7c4534\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_v1_coordinator\\attempts\\2026-09-14T152834769922+0000_eb7c4534\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 27208,
+    "created": 134338733147762044,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 27208,
+  "process_family": [
+    {
+      "pid": 27424,
+      "created": 134338733148787819,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 548,
+      "created": 134338733148696689,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 27208,
+      "created": 134338733147762044,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 27628,
+      "created": 134338733147935625,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    }
+  ],
+  "worker_identity": {
+    "pid": 548,
+    "created": 134338733148696689,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_v1_coordinator\\attempts\\2026-09-14T152834769922+0000_eb7c4534\\command.log.json",
+  "seconds": 4.478392799996072,
+  "child_pid": 548
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.conditional_context005",
+    "readiness",
+    "--design",
+    "protocols/conditional_context005/pleia_energy_first_proposal_v2",
+    "--receipt",
+    "protocols/conditional_context005/pleia_energy_first_proposal_v2/readiness.json"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-14T15:35:42.084927+00:00",
+  "logger_pid": 10012,
+  "child_pid": 31708,
+  "ended_utc": "2026-09-14T15:35:47.207841+00:00",
+  "seconds": 5.1331482000096,
+  "exit_status": 0
+}

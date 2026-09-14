@@ -1,0 +1,9 @@
+control_id,target,n,unavailable_n,coverage,mpiw,winkler
+quantile_static,clean_counterfactual,144,0,1.0,3.906254434024117,3.906254434024117
+quantile_static,corrupted_observation,144,0,1.0,3.906254434024117,3.906254434024117
+cqr_static,clean_counterfactual,144,0,0.9375,2.5719188045425554,3.006714925529686
+cqr_static,corrupted_observation,144,0,0.9375,2.5719188045425554,3.006714925529686
+cqr_rolling,clean_counterfactual,144,0,0.9375,2.6048142590469165,3.0557617857548047
+cqr_rolling,corrupted_observation,144,0,0.9375,2.6048142590469165,3.0557617857548047
+persistence_static,clean_counterfactual,144,0,0.9166666666666666,0.774000066963513,2.8123185902558596
+persistence_static,corrupted_observation,144,0,0.9375,0.774000066963513,2.657398839777858

@@ -1,0 +1,32 @@
+{
+  "owner_sha256": "fb56ba5dfefe23c53e8d45bfbb65d3d44465d3337483799eb2539a715718c77b",
+  "fit_sha256": "b3f093eccbb7798f99d2a2906de113c6d798b56faaf91921ceefd4593bd67bd0",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "model_seed": 42,
+  "dataset": "rico",
+  "roles": {
+    "final_fit": "d0ebfa17e8c6210a486d0cd677682182da6e9ca89053191e5e1a246ed1afb753",
+    "final_calibration": "e78b2ff7750870146418846ec2864d9764cc6d0f21275e5c5d66f30edca1b24d",
+    "outer_test": "60c2495ba5ce79899ce8da82acd3254687cd141713052d72a2eafabfc908afc5"
+  },
+  "columns": [
+    "target_lag_0",
+    "target_lag_1",
+    "target_lag_2",
+    "target_lag_5",
+    "target_rollmean_6",
+    "target_rollstd_6",
+    "target_rollmean_24",
+    "target_rollstd_24",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "ambient",
+    "target_was_missing"
+  ],
+  "persistence_radius": 0.8029767611797825,
+  "quantile_shared": true,
+  "new_learned_fits": 0,
+  "persistence_calibrations": 1
+}

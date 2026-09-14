@@ -1,3 +1,15 @@
+# Conditional-context replay implemented and synthetically validated
+
+The amendment-005 C engine now executes observation-time faults through actual causal features and serialized predictors, with four fixed .95 controls, five rules, independent context state and original-stream workload. Both synthetic cadence workflows and zero-fit completed resumes passed. Real C fitting/replay was not launched.
+
+Current totals remain **70/195 matched forecasting units, 250/1950 interval cells, and 9/27 unique seasonal computations**. All five declared interval methods are implemented; the 1,700 remaining interval cells require scope execution and their recorded owner prerequisites, not additional method families. Full-study readiness remains false.
+
+The next bounded execution proposal is **PLEIA energy, fold 2, seed 42, h1: 68 published contexts, 2,856 fault slots, 68 clean identities, four controls and five rules, plus original clean workload**. Its C role masks require three new shared quantile estimators and one CQR conformalization; matched owners cannot be reused. This proposal awaits a new execution instruction. The separately versioned retrospective energy mask is proposed and unapproved; it does not block primary C execution.
+
+Links: [evidence index](review/context_replay005_implementation_20260914/EVIDENCE_INDEX.md), [implementation report](review/context_replay005_implementation_20260914/IMPLEMENTATION_REPORT.md), [support and exact dependencies](review/context_replay005_implementation_20260914/SUPPORT_GATE_STATUS.md), [interval diagnosis](review/context_replay005_implementation_20260914/INTERVAL_FAILURE_DIAGNOSTIC.md), [protocol crosswalk](review/context_replay005_implementation_20260914/PROTOCOL_TO_CODE_CROSSWALK.md), [energy sensitivity proposal](review/context_replay005_implementation_20260914/ENERGY_SENSITIVITY_SPEC.md), [exact first-run proposal](review/context_replay005_implementation_20260914/FIRST_CONDITIONAL_CONTEXT_RUN_PROPOSAL.md).
+
+<!-- context-replay005-implementation-20260914: historical status follows; current status is above -->
+
 # Matched interval adapter and bounded BDG2 pilot completed
 
 30 interval-method cells, 3 seasonal point/6 seasonal interval cells and 30 clean-stream alert checks validated; completed resume performed zero learned/calibrator fits. Matched forecasting remains 70/195; interval methods 30/1950.

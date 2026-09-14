@@ -30,12 +30,13 @@ def main(version):
                     selection='none',endpoint='C_effective_fault_conditional_context',execution_authorized=True,authorization_kind='bounded_synthetic_integration'))
                 del d
                 for action in ['freeze','readiness','run','validate','resume']:
-                    receipt=(batch/(ds+'_validation')) if action=='validate' else (batch/(ds+'_resume.json')) if action=='resume' else design/'readiness.json'
+                    receipt=(batch/(ds+'_validation_numeric_columns' if ds=='pleia_energy' and version=='v1' else ds+'_validation')) if action=='validate' else (batch/(ds+'_resume.json')) if action=='resume' else design/'readiness.json'
                     argv=[PYTHON,'-B','-m','src.conditional_context005',action,'--manifest',str(manifest),'--design',str(design),'--out',str(run),'--readiness',str(design/'readiness.json'),'--receipt',str(receipt)]
                     if action=='run' and (run/'checkpoint_manifest.json').exists():argv+=['--resume-incomplete']
                     engine.phase(ds+'/'+action,lambda folder,a=argv:a)
                     atomic(BACKUP/'latest_progress.json',engine.state)
-                if not read(batch/(ds+'_validation')/'validation.json')['passed'] or not read(batch/(ds+'_resume.json'))['passed']:raise ValueError('synthetic acceptance failed')
+                validation=batch/(ds+'_validation_numeric_columns' if ds=='pleia_energy' and version=='v1' else ds+'_validation')
+                if not read(validation/'validation.json')['passed'] or not read(batch/(ds+'_resume.json'))['passed']:raise ValueError('synthetic acceptance failed')
             engine.state.update(status='completed',active=None);engine.save();print('BOTH CADENCE CLI WORKFLOWS PASSED',flush=True)
         except BaseException as exc:
             engine.state.update(status='failed',failure=str(exc),traceback=traceback.format_exc());engine.save();raise

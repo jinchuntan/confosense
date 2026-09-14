@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "real_model_fits": 0,
+  "real_context_replays": 0,
+  "real_study_cells_added": 0,
+  "matched_forecasting_complete": 70,
+  "interval_methods_complete": 250,
+  "seasonal_unique_complete": 9,
+  "synthetic_cli_exit_zero": 10,
+  "synthetic_quantile_estimator_fits": 6,
+  "synthetic_cqr_wrapper_fits": 2,
+  "synthetic_nested_conformalize_calls": 4,
+  "full_study_ready": false,
+  "main": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "prior_review_heads_unchanged": true,
+  "tracked_historical_changes": [],
+  "untracked_historical_files_left_unstaged": [
+    "smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2/units/outer2_model42/streams.csv.gz",
+    "smart_building_conformal/outputs/amendment004/bdg2_threefold_f0_s42_v1/units/outer0_model42/released_scores.csv.gz",
+    "smart_building_conformal/outputs/amendment004/bdg2_threefold_f0_s42_v1/units/outer0_model42/streams.csv.gz",
+    "smart_building_conformal/outputs/amendment004/bdg2_threefold_f1_s42_v1/units/outer1_model42/streams.csv.gz"
+  ],
+  "current_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "publication_branch": "review/context-replay005-implementation-20260914"
+}

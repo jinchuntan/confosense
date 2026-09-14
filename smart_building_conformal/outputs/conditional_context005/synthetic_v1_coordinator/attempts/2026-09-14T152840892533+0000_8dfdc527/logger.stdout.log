@@ -1,0 +1,11 @@
+C CONTEXT COMPLETE pleia_energy 53a65a7f744a0aa6666e 32 unique realizations
+C CONTEXT COMPLETE pleia_energy cb9e29d8f275543d635a 33 unique realizations
+C CONTEXT COMPLETE pleia_energy a9562f9bf52a49152788 27 unique realizations
+C CONTEXT COMPLETE pleia_energy a22c6b7920e9b1883b2c 32 unique realizations
+{
+  "completed": true,
+  "synthetic": true,
+  "contexts": 4,
+  "schedules": 168
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.conditional_context005", "run", "--manifest", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\context_replay005_implementation_20260914\\synthetic_pleia_energy_v1.json", "--design", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_pleia_energy_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T15:28:40.987352+00:00", "logger_pid": 31932, "child_pid": 27336, "ended_utc": "2026-09-14T15:31:39.268368+00:00", "seconds": 178.2811042999965, "exit_status": 0}

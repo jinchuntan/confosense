@@ -1,0 +1,48 @@
+{
+  "counts": {
+    "calibrator_conformalize": 2
+  },
+  "operations": [
+    {
+      "operation_id": "052ae138df794465bcd13dde8b6bf6ad",
+      "stage": "owner_cal_cqr",
+      "synthetic": true,
+      "kind": "calibrator_conformalize",
+      "module": "mapie.regression.quantile_regression",
+      "call": "conformalize",
+      "estimator_class": "_MapieQuantileRegressor",
+      "pid": 11436,
+      "utc": "2026-09-14T15:28:44.808900+00:00",
+      "n_rows": 420,
+      "parameters": {
+        "alpha": 0.05,
+        "cv": "split",
+        "estimator": "HistGradientBoostingRegressor(early_stopping=False, learning_rate=0.05,\n                              loss='quantile', max_iter=3, max_leaf_nodes=7,\n                              min_samples_leaf=10, random_state=42)",
+        "method": "quantile"
+      },
+      "target_hash": "58814adb836f9a6318242b8c8887bfb3f13299f4108ca98c2ab8bddd5ff383ce",
+      "wall_seconds": 0.004078099998878315,
+      "process_cpu_seconds": 0.015625,
+      "event": "returned",
+      "return_is_none": false
+    },
+    {
+      "operation_id": "841c4d3d92d447068c4a1dcb3ad937b4",
+      "stage": "owner_cal_cqr",
+      "synthetic": true,
+      "kind": "calibrator_conformalize",
+      "module": "mapie.regression.quantile_regression",
+      "call": "conformalize",
+      "estimator_class": "ConformalizedQuantileRegressor",
+      "pid": 11436,
+      "utc": "2026-09-14T15:28:44.793196+00:00",
+      "n_rows": 420,
+      "parameters": {},
+      "target_hash": "58814adb836f9a6318242b8c8887bfb3f13299f4108ca98c2ab8bddd5ff383ce",
+      "wall_seconds": 0.006933399999979883,
+      "process_cpu_seconds": 0.015625,
+      "event": "returned",
+      "return_is_none": false
+    }
+  ]
+}

@@ -3,10 +3,17 @@ import math
 import numpy as np
 import pandas as pd
 from .intervals005_common import Operations,PhaseMeter,atomic,tree,load_owner,read,csv,signature,digest
-from .context005_spec import table,POLICIES,context_positions
+from .context005_spec import table as source_table,POLICIES,context_positions
 from .context005_data import load_real,synthetic
 from .context005_features import bounded_frame
 from .intervals005_validate import independent_alert
+
+def table(path):
+    """Known numeric stream fields decode CSV blanks, original IDs never do."""
+    f=source_table(path)
+    for column in ['observed','truth','point','lower','upper','raw_lower','raw_upper','score','correction_lower','correction_upper','delay_minutes','recall']:
+        if column in f:f[column]=pd.to_numeric(f[column].replace('',np.nan),errors='raise')
+    return f
 
 def scalar_inputs(frame,meta,cfg,horizon,freq,season,columns,observed,available):
     """Direct scalar features without production causal_features/inject/pandas rolling."""
@@ -89,6 +96,11 @@ def scalar_stream(model,X,meta,observed,available,control):
         else:lo[i],hi[i]=sorted((lower[i]-q,upper[i]+q))
     return dict(lower=lo,upper=hi,point=point,raw_lower=lower,raw_upper=upper,releases=pd.DataFrame(release),updates=pd.DataFrame(updates))
 
+def numeric_array(value):
+    """Decode only numeric cells; literal empty/None group identities stay intact."""
+    a=np.asarray(value,object).copy();a[a=='']=np.nan
+    return np.asarray(a,float)
+
 def validate(design,out,receipt):
     from pathlib import Path
     from .conditional_context005 import verify_complete,data_identity
@@ -97,7 +109,7 @@ def validate(design,out,receipt):
     dest.mkdir(parents=True);checks=[];maximum=0.;reconstructed_events=[]
     def close(a,b,label,tol=1e-10):
         nonlocal maximum
-        aa=np.asarray(a,float);bb=np.asarray(b,float)
+        aa=numeric_array(a);bb=numeric_array(b)
         diff=float(np.nanmax(np.abs(aa-bb))) if aa.size else 0.;maximum=max(maximum,diff)
         np.testing.assert_allclose(aa,bb,atol=tol,rtol=1e-10,equal_nan=True,err_msg=label);checks.append(dict(check=label,n=aa.size,maximum_difference=diff))
     with Operations(forbid=True),PhaseMeter() as meter:

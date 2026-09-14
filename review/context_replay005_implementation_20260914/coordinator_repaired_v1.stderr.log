@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\context_replay005_implementation_20260914\coordinator.py", line 46, in <module>
+    parser=argparse.ArgumentParser();parser.add_argument('--version',default='v1');main(parser.parse_args().version)
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\context_replay005_implementation_20260914\coordinator.py", line 36, in main
+    engine.phase(ds+'/'+action,lambda folder,a=argv:a)
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\context_replay005_implementation_20260914\coordinator.py", line 13, in phase
+    return super().phase(task,command_factory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\matched_intervals005_bdg2_20260914\coordinator.py", line 135, in phase
+    if result['status']!='passed':raise RuntimeError(f'phase {task} {result["status"]}; actual exit {result["exit_code"]}; {result["log"]}')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: phase pleia_energy/validate failed; actual exit 1; C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\synthetic_v1_coordinator\attempts\2026-09-14T153504119170+0000_a2e036f8\command.log

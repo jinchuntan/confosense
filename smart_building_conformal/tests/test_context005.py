@@ -16,6 +16,23 @@ from src.intervals005_common import Stages,atomic,Operations
 from src.energy_sensitivity005 import parameters,stratify
 from src.matched_intervals005 import scope_policy
 
+def test_numeric_missing_csv_cells_preserve_literal_group_ids():
+    from src.context005_validate import numeric_array
+    frame=pd.DataFrame({'group_id':['','None','g'],'observed':['',0.,1.]})
+    before=frame.copy();np.testing.assert_allclose(numeric_array(frame.observed),[np.nan,0,1],equal_nan=True)
+    pd.testing.assert_frame_equal(frame,before)
+    with pytest.raises(ValueError):numeric_array(['invalid_numeric_value'])
+
+def test_saved_missing_observation_passes_independent_alert_reader(tmp_path):
+    from src.context005_validate import table
+    from src.intervals005_validate import independent_alert
+    path=tmp_path/'stream.csv'
+    pd.DataFrame(dict(group_id=['None']*3,segment_id=['original']*3,row_id=['a','b','c'],target_time=pd.date_range('2020',periods=3,freq='10min'),available=[True,False,True],observed=[0,np.nan,2],lower=[-1]*3,upper=[1]*3)).to_csv(path,index=False)
+    f=table(path);assert f.group_id.tolist()==['None']*3 and np.isnan(f.observed.iloc[1])
+    flags,_=independent_alert(f,pd.Timedelta('10min'),1,1)
+    assert flags['numerical_only'].tolist()==[False,False,True]
+    assert flags['availability_only'].tolist()==[False,True,False]
+
 @pytest.fixture(scope='module')
 def fitted():
     d=synthetic('pleia_energy');r=d['roles'];o=new_cqr(.95,42,tiny=True)

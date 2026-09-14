@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "contexts": 2,
+  "scheduled_fault_slots": 84,
+  "unique_context_streams": 62,
+  "independently_reconstructed_event_rows": 5040,
+  "fullstream_workload_checks": 120,
+  "maximum_absolute_difference": 2.6645352591003757e-15,
+  "checks": 3054,
+  "source_artifacts_unchanged": true,
+  "resources": {
+    "seconds": 123.42080499998701,
+    "baseline_rss_bytes": 330735616,
+    "peak_rss_bytes": 347893760,
+    "baseline_private_bytes": 288935936,
+    "peak_private_bytes": 309882880,
+    "incremental_peak_rss_bytes": 17158144,
+    "lifetime_peak_rss_bytes": 348569600,
+    "min_available_ram_bytes": 1958100992,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 120.40625
+  },
+  "actual_exit_status": 0
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.conditional_context005", "validate", "--manifest", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\context_replay005_implementation_20260914\\synthetic_rico_v1.json", "--design", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_rico_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_rico_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_rico_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_v1_coordinator\\rico_validation"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T15:43:38.667801+00:00", "logger_pid": 13220, "child_pid": 30492, "ended_utc": "2026-09-14T15:45:51.846274+00:00", "seconds": 133.17775489999622, "exit_status": 0}

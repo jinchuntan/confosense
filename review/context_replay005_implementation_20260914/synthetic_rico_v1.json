@@ -1,0 +1,90 @@
+{
+  "version": "conditional_context005_v1",
+  "dataset": "rico",
+  "outer_fold": 2,
+  "model_seed": 42,
+  "horizon": 5,
+  "synthetic": true,
+  "tiny_estimator": true,
+  "controls": [
+    {
+      "control_id": "quantile_static",
+      "method": "quantile_uncalibrated",
+      "level": 0.95,
+      "strategy": "static",
+      "every": 0,
+      "window": null,
+      "min_samples": 50
+    },
+    {
+      "control_id": "cqr_static",
+      "method": "cqr",
+      "level": 0.95,
+      "strategy": "static",
+      "every": 0,
+      "window": null,
+      "min_samples": 50
+    },
+    {
+      "control_id": "cqr_rolling",
+      "method": "cqr",
+      "level": 0.95,
+      "strategy": "rolling",
+      "every": 15,
+      "window": 200,
+      "min_samples": 50
+    },
+    {
+      "control_id": "persistence_static",
+      "method": "persistence_split",
+      "level": 0.95,
+      "strategy": "static",
+      "every": 0,
+      "window": null,
+      "min_samples": 50
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "single_sample",
+      "window_minutes": 1.0,
+      "k": 1,
+      "m": 1,
+      "applicable": true
+    },
+    {
+      "rule_id": "5min_2of5",
+      "window_minutes": 5,
+      "k": 2,
+      "m": 5,
+      "applicable": true
+    },
+    {
+      "rule_id": "15min_3of15",
+      "window_minutes": 15,
+      "k": 3,
+      "m": 15,
+      "applicable": true
+    },
+    {
+      "rule_id": "30min_3of30",
+      "window_minutes": 30,
+      "k": 3,
+      "m": 30,
+      "applicable": true
+    },
+    {
+      "rule_id": "60min_4of60",
+      "window_minutes": 60,
+      "k": 4,
+      "m": 60,
+      "applicable": true
+    }
+  ],
+  "expected_contexts": 2,
+  "expected_schedules": 84,
+  "selection": "none",
+  "endpoint": "C_effective_fault_conditional_context",
+  "execution_authorized": true,
+  "authorization_kind": "bounded_synthetic_integration"
+}

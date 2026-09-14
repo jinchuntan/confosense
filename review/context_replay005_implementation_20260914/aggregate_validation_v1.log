@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\context_replay005_implementation_20260914\validate_aggregates.py", line 57, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--version',default='v1');main(p.parse_args().version)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\context_replay005_implementation_20260914\validate_aggregates.py", line 41, in main
+    expected=[len(f),f.effective.sum(),f['null'].sum(),f.alias.sum(),len(cm),int(len(cm)>=5),(~pos.detected).sum(),pos.detected.sum(),cm.recall.mean(),cm.delay.mean(),found.delay_minutes.median(),found.delay_minutes.quantile(.9)]
+                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\series.py", line 6559, in median
+    return NDFrame.median(self, axis, skipna, numeric_only, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\generic.py", line 12431, in median
+    return self._stat_function(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\generic.py", line 12377, in _stat_function
+    return self._reduce(
+           ^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\series.py", line 6457, in _reduce
+    return op(delegate, skipna=skipna, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\nanops.py", line 147, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\nanops.py", line 787, in nanmedian
+    raise TypeError(f"Cannot convert {values} to numeric")
+TypeError: Cannot convert ['50.0' '50.0' '40.0' '50.0' '40.0'] to numeric

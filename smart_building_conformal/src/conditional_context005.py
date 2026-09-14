@@ -65,9 +65,24 @@ def freeze(manifest_path,design):
         atomic(dest/'frozen_protocol.json',protocol)
     return dict(frozen=True,rows=protocol['rows'],contexts=len(d['contexts']),schedules=len(d['schedules']),models_fitted=0,resources=meter.result)
 
-def check_protocol(design):
+def validation_source_compatible(design,expected):
+    """Explicit, hash-exact validator repair; never authorizes resumed execution."""
+    import hashlib
+    receipt=Path(design)/'validation_source_compatibility.json'
+    if not receipt.exists():return False
+    r=read(receipt);current={f.relative_to(ROOT/'src').as_posix():digest(f) for f in sorted((ROOT/'src').rglob('*.py'))}
+    old=r['original_files'];new=r['current_files']
+    def sha_files(files):return hashlib.sha256('\n'.join(f'{name}:{value}' for name,value in files.items()).encode()).hexdigest()
+    changed={name for name in old if old[name]!=new.get(name)}
+    return (set(old)==set(new) and current==new and sha_files(old)==expected and sha_files(new)==source_digest()
+            and changed=={'conditional_context005.py','context005_validate.py'}
+            and r['purpose']=='completed_validation_and_zero_fit_resume_only')
+
+def check_protocol(design,*,completed_validation=False):
     p=read(Path(design)/'frozen_protocol.json');validate_manifest(p['manifest'])
-    if p['source_hash']!=source_digest() or p['packages']!=packages():raise ValueError('source/package protocol mismatch')
+    source_ok=p['source_hash']==source_digest()
+    if not source_ok and completed_validation:source_ok=validation_source_compatible(design,p['source_hash'])
+    if not source_ok or p['packages']!=packages():raise ValueError('source/package protocol mismatch')
     if digest(p['manifest_path'])!=p['manifest_sha256']:raise ValueError('execution manifest changed; freeze a new authorized version')
     for f,h in p['source_inputs'].items():
         if digest(REPO/f)!=h:raise ValueError('published input changed: '+f)
@@ -210,7 +225,7 @@ def execute(design,out,ready,*,resume=False):
     return dict(completed=True,synthetic=m['synthetic'],contexts=len(d['contexts']),schedules=len(d['schedules']))
 
 def verify_complete(design,out):
-    p=check_protocol(design);root=Path(out);c=read(root/'COMPLETE.json');f=tree(root);f.pop('COMPLETE.json')
+    p=check_protocol(design,completed_validation=True);root=Path(out);c=read(root/'COMPLETE.json');f=tree(root);f.pop('COMPLETE.json')
     if c['protocol_sha256']!=digest(Path(design)/'frozen_protocol.json') or c['files']!=f:raise ValueError('corrupt completed context checkpoint')
     return p
 

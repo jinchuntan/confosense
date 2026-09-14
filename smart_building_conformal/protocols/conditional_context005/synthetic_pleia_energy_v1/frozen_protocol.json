@@ -1,0 +1,182 @@
+{
+  "version": "conditional_context005_v1",
+  "manifest": {
+    "version": "conditional_context005_v1",
+    "dataset": "pleia_energy",
+    "outer_fold": 2,
+    "model_seed": 42,
+    "horizon": 1,
+    "synthetic": true,
+    "tiny_estimator": true,
+    "controls": [
+      {
+        "control_id": "quantile_static",
+        "method": "quantile_uncalibrated",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_static",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      },
+      {
+        "control_id": "cqr_rolling",
+        "method": "cqr",
+        "level": 0.95,
+        "strategy": "rolling",
+        "every": 24,
+        "window": 250,
+        "min_samples": 50
+      },
+      {
+        "control_id": "persistence_static",
+        "method": "persistence_split",
+        "level": 0.95,
+        "strategy": "static",
+        "every": 0,
+        "window": null,
+        "min_samples": 50
+      }
+    ],
+    "rules": [
+      {
+        "rule_id": "single_sample",
+        "window_minutes": 10.0,
+        "k": 1,
+        "m": 1,
+        "applicable": true
+      },
+      {
+        "rule_id": "30min_3of3",
+        "window_minutes": 30,
+        "k": 3,
+        "m": 3,
+        "applicable": true
+      },
+      {
+        "rule_id": "60min_4of6",
+        "window_minutes": 60,
+        "k": 4,
+        "m": 6,
+        "applicable": true
+      },
+      {
+        "rule_id": "180min_3of18",
+        "window_minutes": 180,
+        "k": 3,
+        "m": 18,
+        "applicable": true
+      },
+      {
+        "rule_id": "360min_4of36",
+        "window_minutes": 360,
+        "k": 4,
+        "m": 36,
+        "applicable": true
+      }
+    ],
+    "expected_contexts": 4,
+    "expected_schedules": 168,
+    "selection": "none",
+    "endpoint": "C_effective_fault_conditional_context",
+    "execution_authorized": true,
+    "authorization_kind": "bounded_synthetic_integration"
+  },
+  "manifest_path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\context_replay005_implementation_20260914\\synthetic_pleia_energy_v1.json",
+  "manifest_sha256": "1cbbd4cd7976e8f239f33179a79892698c61bcd1694f1b56b7c40e9b30753d7d",
+  "source_hash": "83243b4bfb70f56831c7e092fed2a120f67bffc11880d54665c11607c4087841",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "data_identity": {
+    "features": "11ee4c65d5f47fd0220e79582d14238a657eb068e8f935850cd066ca98942023",
+    "outcomes": "2cd8368fcd25997104e9dd3f750460484a180ac5138f6baab527dabaff8714ed",
+    "role_rows": {
+      "final_fit": "6b5136047ce6998f93cc5736b518a7ad2193044c417c852773e5f543c083a9e0",
+      "final_calibration": "6c40aae15fad78f045ff577515b59024f1a613ee7f132b4518077a5cb2d19d93",
+      "outer_test": "8547105ff00d6610cccae3881a541453ce13ec7fda46c79db39bf7cb112cb1ba"
+    },
+    "context_hash": "2a9c50293e2036e186e5d55e3ac71188e565cd247790aece0cfca3dc2c666a67",
+    "schedule_hash": "745b45fb0c8002dd89cbd313ba675235195d4361a0e3720489c056c8cc02b2d0",
+    "cache_sha256": null,
+    "columns": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_5",
+      "target_daily_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_24",
+      "target_rollstd_24",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "ambient",
+      "target_was_missing"
+    ],
+    "frequency": "0 days 00:10:00",
+    "fcfg": {
+      "target_lags": [
+        0,
+        1,
+        2,
+        5
+      ],
+      "rolling_windows": [
+        6,
+        24
+      ],
+      "include_weekly": false,
+      "covariates": [
+        "ambient"
+      ]
+    }
+  },
+  "source_inputs": {},
+  "design_hashes": {
+    "contexts.csv": "9965c221513eb18debefd6ee810910cbb380ca20a363cb0b3dc1ec0322219e05",
+    "roles.csv.gz": "156569375195fbec42aab7038c84eae6bf2e896a400857a29926fc9ad8f1756e",
+    "schedules.csv.gz": "d964b0c1e4ac1c635f913e7790a9f5aedd74cb11d054d250b030653330d9a0b6"
+  },
+  "rows": {
+    "final_fit": 520,
+    "final_calibration": 420,
+    "outer_test": 594
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "calibrator_conformalize": 2,
+    "persistence_radius": 1
+  },
+  "owner_reuse": "new C owner required unless exact features/roles/calibration/parameters/source contract proven",
+  "static_convention": "MAPIE1.4.1 native asymmetric tail correction; emitted pair ordered",
+  "rolling_convention": "max-score ceil((n+1)*.95); observe/compare/release before scheduled origin update",
+  "resource_policy": {
+    "threads": 1,
+    "device": "cpu",
+    "launch_ram_reference_nonblocking": true,
+    "launch_ram_reference_bytes": 3221225472,
+    "disk_floor_bytes": 8589934592,
+    "batch": 256
+  },
+  "frozen_utc": "2026-09-14T15:28:32.728745+00:00",
+  "full_study_ready": false,
+  "models_fitted": 0
+}

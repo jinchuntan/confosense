@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\conditional_context005.py", line 257, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\conditional_context005.py", line 254, in main
+    result=validate(a.design,a.out,a.receipt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\context005_validate.py", line 148, in validate
+    flags,episodes=independent_alert(stream,d['frequency'],rule['k'],rule['m']);prefix=cid+'_'+rule['rule_id']
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\intervals005_validate.py", line 74, in independent_alert
+    numerical=f.available.to_numpy(bool)&((f.observed<f.lower)|(f.observed>f.upper)).to_numpy()
+                                           ^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\ops\common.py", line 76, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\arraylike.py", line 48, in __lt__
+    return self._cmp_method(other, operator.lt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\series.py", line 6119, in _cmp_method
+    res_values = ops.comparison_op(lvalues, rvalues, op)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\ops\array_ops.py", line 344, in comparison_op
+    res_values = comp_method_OBJECT_ARRAY(op, lvalues, rvalues)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\ops\array_ops.py", line 127, in comp_method_OBJECT_ARRAY
+    result = libops.vec_compare(x.ravel(), y.ravel(), op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "ops.pyx", line 173, in pandas._libs.ops.vec_compare
+TypeError: '<' not supported between instances of 'str' and 'float'

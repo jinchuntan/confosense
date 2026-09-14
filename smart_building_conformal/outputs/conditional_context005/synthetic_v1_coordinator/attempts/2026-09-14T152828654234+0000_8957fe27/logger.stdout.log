@@ -1,0 +1,24 @@
+{
+  "frozen": true,
+  "rows": {
+    "final_fit": 520,
+    "final_calibration": 420,
+    "outer_test": 594
+  },
+  "contexts": 4,
+  "schedules": 168,
+  "models_fitted": 0,
+  "resources": {
+    "seconds": 0.6159578999941004,
+    "baseline_rss_bytes": 320512000,
+    "peak_rss_bytes": 324722688,
+    "baseline_private_bytes": 279298048,
+    "peak_private_bytes": 282009600,
+    "incremental_peak_rss_bytes": 4210688,
+    "lifetime_peak_rss_bytes": 325844992,
+    "min_available_ram_bytes": 2670305280,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.5625
+  }
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.conditional_context005", "freeze", "--manifest", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\context_replay005_implementation_20260914\\synthetic_pleia_energy_v1.json", "--design", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\synthetic_pleia_energy_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\synthetic_pleia_energy_v1\\readiness.json"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T15:28:28.746689+00:00", "logger_pid": 30308, "child_pid": 7348, "ended_utc": "2026-09-14T15:28:33.217883+00:00", "seconds": 4.472233599997708, "exit_status": 0}

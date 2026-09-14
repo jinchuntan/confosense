@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.conditional_context005",
+    "freeze",
+    "--manifest",
+    "../review/context_replay005_implementation_20260914/first_real_run_proposal_manifest.json",
+    "--design",
+    "protocols/conditional_context005/pleia_energy_first_proposal_v1"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense",
+  "started_utc": "2026-09-14T15:31:55.377121+00:00",
+  "logger_pid": 22332,
+  "child_pid": 30360,
+  "status": "started",
+  "exit_status": null
+}

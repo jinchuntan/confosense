@@ -1,3 +1,15 @@
+# Conditional-context replay implemented and synthetically validated
+
+The amendment-005 C engine now executes observation-time faults through actual causal features and serialized predictors, with four fixed .95 controls, five rules, independent context state and original-stream workload. Both synthetic cadence workflows and zero-fit completed resumes passed. Real C fitting/replay was not launched.
+
+Current totals remain **70/195 matched forecasting units, 250/1950 interval cells, and 9/27 unique seasonal computations**. All five declared interval methods are implemented; the 1,700 remaining interval cells require scope execution and their recorded owner prerequisites, not additional method families. Full-study readiness remains false.
+
+The next bounded execution proposal is **PLEIA energy, fold 2, seed 42, h1: 68 published contexts, 2,856 fault slots, 68 clean identities, four controls and five rules, plus original clean workload**. Its C role masks require three new shared quantile estimators and one CQR conformalization; matched owners cannot be reused. This proposal awaits a new execution instruction. The separately versioned retrospective energy mask is proposed and unapproved; it does not block primary C execution.
+
+Links: [evidence index](context_replay005_implementation_20260914/EVIDENCE_INDEX.md), [implementation report](context_replay005_implementation_20260914/IMPLEMENTATION_REPORT.md), [support and exact dependencies](context_replay005_implementation_20260914/SUPPORT_GATE_STATUS.md), [interval diagnosis](context_replay005_implementation_20260914/INTERVAL_FAILURE_DIAGNOSTIC.md), [protocol crosswalk](context_replay005_implementation_20260914/PROTOCOL_TO_CODE_CROSSWALK.md), [energy sensitivity proposal](context_replay005_implementation_20260914/ENERGY_SENSITIVITY_SPEC.md), [exact first-run proposal](context_replay005_implementation_20260914/FIRST_CONDITIONAL_CONTEXT_RUN_PROPOSAL.md).
+
+<!-- context-replay005-implementation-20260914: historical status follows; current status is above -->
+
 # Remaining fold-2 interval settings completed
 
 PLEIA energy, PLEIA temperature and RICO now contribute 100 independently validated interval-method cells at seed 42. The combined seed-42 cross-setting table has 130 cells; the full interval matrix is 250/1950.
