@@ -61,7 +61,7 @@ def pack(seed):
     for i in range(0,len(contexts),8):
         selected=set(contexts[i:i+8]);groups[f'contexts_{i+1:02d}_{min(i+8,len(contexts)):02d}']=[p for p in files if len(p.relative_to(src).parts)>1 and p.relative_to(src).parts[1].rsplit('_v',1)[0] in selected]
     assert len(contexts)==68 and sorted(p for g in groups.values() for p in g)==files
-    dest.mkdir(parents=True);preserve_incomplete_metadata(dest);members=[];parts=[]
+    dest.mkdir(parents=True,exist_ok=True);preserve_incomplete_metadata(dest);members=[];parts=[]
     expected_archives={label+'.zip' for label in groups}
     existing_archives={p.name for p in dest.glob('*.zip')}
     if existing_archives-expected_archives:raise ValueError('unexpected existing archive part '+str(existing_archives-expected_archives))

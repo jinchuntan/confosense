@@ -9,6 +9,7 @@ from common import atomic,append,now,read,digest
 WINDOWS_INTERRUPTED_EXIT=1073807364
 ANALYSIS_NULL_GROUP_KEYERROR="KeyError: 'control_id'"
 PACKAGE_CSV_SHADOW_ERROR="AttributeError: 'function' object has no attribute 'DictWriter'"
+PACKAGE_EXISTING_DIRECTORY_ERROR="FileExistsError: [WinError 183] Cannot create a file when that file already exists"
 
 def windows_boot_utc():
     """Use the Windows monotonic boot clock; no optional package dependency."""
@@ -67,5 +68,7 @@ def eligible_package_csv_shadow_recovery(record, *, receipt, log_text, publicati
     if not command or Path(command[-1]).name!='pack_evidence.py' or receipt.get('command')!=command:return None
     root=Path(publication_root)
     if not (root/'pleia_energy_f2_s43_C_v1_publication_v1').exists():return None
-    if PACKAGE_CSV_SHADOW_ERROR not in log_text:return None
-    return 'verified_package_csv_module_shadow_with_partial_archives'
+    if PACKAGE_CSV_SHADOW_ERROR in log_text:return 'verified_package_csv_module_shadow_with_partial_archives'
+    if PACKAGE_EXISTING_DIRECTORY_ERROR in log_text and 'dest.mkdir(parents=True)' in log_text:
+        return 'verified_package_existing_directory_reuse_path_with_partial_archives'
+    return None
