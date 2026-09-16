@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse,importlib.util,json,os,shutil,subprocess,sys,traceback
 from common import *
+from recovery import reclassify,windows_boot_utc
 
 # Reuse the already reviewed adoption/identity engine without copying it.
 LEGACY_DIR=REPO/'review/context_replay005_implementation_20260914'
@@ -50,7 +51,17 @@ def main(freeze_only=False):
             for name in ['append','atomic','read','now','identity','family','alive']:
                 if not callable(reviewed._legacy.__dict__.get(name)):raise RuntimeError('prelaunch missing coordinator helper: '+name)
             subprocess.run([PYTHON,'-B','-c','import src.conditional_context005,src.context005_validate,src.context005_metrics'],cwd=SMART,check=True)
-            engine.reconcile();save_external(engine)
+            engine.reconcile()
+            # A reboot produced a logged nonzero Windows interruption for the
+            # seed-44 run. Only the hash-bound recovery helper can turn that
+            # exact receipt into a resumable checkpoint; all other failures
+            # remain terminal and require investigation.
+            if engine.state['tasks'].get('seed_44/run',{}).get('status')=='failed':
+                attempt=engine.state['tasks']['seed_44/run']
+                ended=__import__('datetime').datetime.fromisoformat(attempt['ended_utc'])
+                boot=windows_boot_utc()
+                reclassify(engine,task='seed_44/run',boot_after_attempt=boot>ended,run_path=run(44))
+            save_external(engine)
             # Freeze every seed before any fit.
             for seed in SEEDS:
                 if not design(seed).exists():engine.phase(f'seed_{seed}/freeze',lambda folder,s=seed:argv(s,'freeze'))
