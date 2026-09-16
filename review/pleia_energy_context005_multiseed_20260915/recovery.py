@@ -10,6 +10,7 @@ WINDOWS_INTERRUPTED_EXIT=1073807364
 ANALYSIS_NULL_GROUP_KEYERROR="KeyError: 'control_id'"
 PACKAGE_CSV_SHADOW_ERROR="AttributeError: 'function' object has no attribute 'DictWriter'"
 PACKAGE_EXISTING_DIRECTORY_ERROR="FileExistsError: [WinError 183] Cannot create a file when that file already exists"
+PACKAGE_COMPLETE_MANIFEST_ERROR="KeyError: 'COMPLETE.json'"
 
 def windows_boot_utc():
     """Use the Windows monotonic boot clock; no optional package dependency."""
@@ -71,4 +72,6 @@ def eligible_package_csv_shadow_recovery(record, *, receipt, log_text, publicati
     if PACKAGE_CSV_SHADOW_ERROR in log_text:return 'verified_package_csv_module_shadow_with_partial_archives'
     if PACKAGE_EXISTING_DIRECTORY_ERROR in log_text and 'dest.mkdir(parents=True)' in log_text:
         return 'verified_package_existing_directory_reuse_path_with_partial_archives'
+    if PACKAGE_COMPLETE_MANIFEST_ERROR in log_text and 'verify_archive' in log_text:
+        return 'verified_package_complete_manifest_member_with_partial_archives'
     return None

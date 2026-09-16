@@ -23,7 +23,8 @@ def verify_archive(archive, paths, src, complete):
         members=[]
         for relative in expected:
             data=z.read(relative);actual=sha_data(data)
-            if actual!=complete['files'][relative]:raise ValueError('existing archive hash mismatch '+relative)
+            expected=digest(src/'COMPLETE.json') if relative=='COMPLETE.json' else complete['files'][relative]
+            if actual!=expected:raise ValueError('existing archive hash mismatch '+relative)
             members.append(dict(part=archive.name,path=relative,bytes=len(data),sha256=actual))
     if archive.stat().st_size>=LIMIT:raise ValueError('GitHub part too large '+str(archive))
     return members,dict(part=archive.name,bytes=archive.stat().st_size,sha256=digest(archive),members=len(paths),uncompressed_bytes=sum(p.stat().st_size for p in paths))
@@ -33,7 +34,8 @@ def write_archive(archive, paths, src, complete):
     with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6,allowZip64=True) as z:
         for path in paths:
             relative=path.relative_to(src).as_posix();data=path.read_bytes();actual=sha_data(data)
-            if actual!=complete['files'][relative]:raise ValueError('source hash mismatch '+relative)
+            expected=digest(src/'COMPLETE.json') if relative=='COMPLETE.json' else complete['files'][relative]
+            if actual!=expected:raise ValueError('source hash mismatch '+relative)
             info=zipfile.ZipInfo(relative,fixed);info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;z.writestr(info,data,compresslevel=6)
     return verify_archive(archive,paths,src,complete)
 

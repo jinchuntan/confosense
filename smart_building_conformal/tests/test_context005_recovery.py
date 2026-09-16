@@ -35,3 +35,4 @@ def test_only_recorded_partial_package_shadow_is_recoverable(tmp_path):
     assert recovery.eligible_package_csv_shadow_recovery(failed,receipt=receipt,log_text="AttributeError: 'function' object has no attribute 'DictWriter'",publication_root=root)
     assert recovery.eligible_package_csv_shadow_recovery(failed,receipt=receipt,log_text='different',publication_root=root) is None
     assert recovery.eligible_package_csv_shadow_recovery(failed,receipt=receipt,log_text='FileExistsError: [WinError 183] Cannot create a file when that file already exists\ndest.mkdir(parents=True)',publication_root=root)
+    assert recovery.eligible_package_csv_shadow_recovery(failed,receipt=receipt,log_text="KeyError: 'COMPLETE.json'\nverify_archive",publication_root=root)
