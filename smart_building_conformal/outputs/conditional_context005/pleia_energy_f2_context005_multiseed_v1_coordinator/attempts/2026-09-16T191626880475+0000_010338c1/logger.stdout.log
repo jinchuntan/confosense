@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "contribution_rows": 421800,
+  "original_contexts": 68,
+  "model_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "draw_seed": 20240601,
+  "draws": 2000,
+  "draw_shape": [
+    2000,
+    68
+  ],
+  "draw_hash": "044acd76e2c01d5abd437cb5c12e9744c158d3ec3e7e7f13be94e3452fc11bae",
+  "cells": 60,
+  "supported_bounds": 56,
+  "unavailable_bounds": 4,
+  "maximum_absolute_point_difference": 2.220446049250313e-16,
+  "maximum_absolute_bound_difference": 0.0,
+  "paired_draws_shared_across_all_controls": true,
+  "chronological_adjacent_seven_context_blocks": true,
+  "completed_resume_zero_fit_all_new_seeds": true
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_energy_context005_multiseed_20260915\\validate_aggregate.py"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-16T19:16:26.989211+00:00", "logger_pid": 13288, "child_pid": 15092, "ended_utc": "2026-09-16T19:16:35.849661+00:00", "seconds": 8.859475100005511, "exit_status": 0}

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "contexts": 68,
+  "scheduled_fault_slots": 2856,
+  "unique_context_streams": 2161,
+  "independently_reconstructed_event_rows": 171360,
+  "fullstream_workload_checks": 60,
+  "maximum_absolute_difference": 1.0547118733938987e-15,
+  "checks": 61200,
+  "source_artifacts_unchanged": true,
+  "resources": {
+    "seconds": 8489.481901699997,
+    "baseline_rss_bytes": 463372288,
+    "peak_rss_bytes": 900063232,
+    "baseline_private_bytes": 422088704,
+    "peak_private_bytes": 864165888,
+    "incremental_peak_rss_bytes": 436690944,
+    "lifetime_peak_rss_bytes": 900755456,
+    "min_available_ram_bytes": 2232745984,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 7424.1875
+  },
+  "actual_exit_status": 0
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "-m", "src.conditional_context005", "validate", "--manifest", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_energy_context005_multiseed_20260915\\pleia_energy_f2_s45_C_v1_execution_manifest.json", "--design", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_energy_f2_s45_C_v1", "--out", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_energy_f2_s45_C_v1", "--readiness", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_energy_f2_s45_C_v1\\readiness.json", "--receipt", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_energy_f2_context005_multiseed_v1_coordinator\\seed_45_validation"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-16T11:20:41.214829+00:00", "logger_pid": 17160, "child_pid": 14488, "ended_utc": "2026-09-16T13:48:19.184667+00:00", "seconds": 8857.969770900003, "exit_status": 0}

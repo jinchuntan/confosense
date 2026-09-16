@@ -1,0 +1,53 @@
+{
+  "task": "final/analyze",
+  "attempt_id": "2026-09-16T191424024255+0000_7eefe6e0",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_energy_context005_multiseed_20260915\\analyze.py"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-16T19:14:24.024255+00:00",
+  "ended_utc": "2026-09-16T19:16:25.694160+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_energy_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-16T191424024255+0000_7eefe6e0\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_energy_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-16T191424024255+0000_7eefe6e0\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 23120,
+    "created": 134340596640323085,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 23120,
+  "process_family": [
+    {
+      "pid": 23120,
+      "created": 134340596640323085,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 12676,
+      "created": 134340596641077549,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 28644,
+      "created": 134340596640458702,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 18204,
+      "created": 134340596641201039,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    }
+  ],
+  "worker_identity": {
+    "pid": 12676,
+    "created": 134340596641077549,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_energy_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-16T191424024255+0000_7eefe6e0\\command.log.json",
+  "seconds": 121.58758309998666,
+  "child_pid": 12676
+}

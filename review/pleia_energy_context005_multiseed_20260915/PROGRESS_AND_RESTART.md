@@ -1,6 +1,6 @@
 # Durable progress and restart
 
-Updated UTC: 2026-09-16T19:42:40.287068+00:00. Status: **failed**.
+Updated UTC: 2026-09-16T21:08:01.679553+00:00. Status: **science_and_evidence_complete**.
 
 Restart the sole coordinator from the repository root:
 
@@ -33,6 +33,5 @@ The exclusive lock prevents duplicate coordinators. An exact surviving logger or
 - seed_46/resume: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T181657766213+0000_cadef4ad\command.log.json`.
 - final/analyze: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T191424024255+0000_7eefe6e0\command.log.json`.
 - final/validate_aggregate: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T191626880475+0000_010338c1\command.log.json`.
-- final/package_raw: failed; actual exit 1; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T191637068502+0000_ba1d4088\command.log.json`.
-
-Failure: phase final/package_raw failed; actual exit 1; C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T191637068502+0000_ba1d4088\command.log
+- final/package_raw: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T200340756659+0000_d0214965\command.log.json`.
+- final/update_documents: passed; actual exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_energy_f2_context005_multiseed_v1_coordinator\attempts\2026-09-16T210755538343+0000_35ff42a2\command.log.json`.

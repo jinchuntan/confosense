@@ -1,0 +1,41 @@
+{
+  "owner_sha256": "2095f9856939950d8efe54526174023bc8b356f8b743ea20ce269789d2b54cd5",
+  "fit_sha256": "2905fe1b983a24ce50ebf9432921b603ad3ccaf649a81b69bf80dbd1932ca335",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "model_seed": 44,
+  "dataset": "pleia_energy",
+  "roles": {
+    "final_fit": "2acfca0abbb22fb417ee00902af6ff2acd211f5dd2458147c718b645b41333f0",
+    "final_calibration": "4cb1893676fdfda3a26b12ca5253a05a2c1133fd6c12c991d5881b6af61f326b",
+    "outer_test": "6c2d46717d71eb6b29b59a07408560e06a126e79712e681314be33b12ccea59d"
+  },
+  "columns": [
+    "target_lag_0",
+    "target_lag_1",
+    "target_lag_2",
+    "target_lag_3",
+    "target_lag_6",
+    "target_lag_12",
+    "target_daily_lag",
+    "target_weekly_lag",
+    "target_rollmean_6",
+    "target_rollstd_6",
+    "target_rollmean_144",
+    "target_rollstd_144",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "tmed",
+    "hrmed",
+    "radmed",
+    "target_was_missing",
+    "tmed_was_missing",
+    "hrmed_was_missing",
+    "radmed_was_missing"
+  ],
+  "persistence_radius": 0.0625,
+  "quantile_shared": true,
+  "new_learned_fits": 0,
+  "persistence_calibrations": 1
+}

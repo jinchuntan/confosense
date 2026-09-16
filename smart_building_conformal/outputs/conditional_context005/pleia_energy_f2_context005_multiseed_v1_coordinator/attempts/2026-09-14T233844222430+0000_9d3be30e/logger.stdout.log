@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "seeds": [
+    43,
+    44,
+    45,
+    46
+  ],
+  "unique_run_paths": 4,
+  "manifests": [
+    {
+      "model_seed": 43,
+      "manifest_sha256": "9980f0ee1a4309dd3b2f75a12f4a212ff320af3e79b9e6a18702392868b1fa27",
+      "protocol_sha256": "19e919d49283e7c571f138c9313b40bdf0055077a2448de4daaad687218d069f",
+      "context_hash": "68cfa81783a7dc7aae5f1178b4b8de88cad09109e63a829bb13b1cb7ca3abe48",
+      "schedule_hash": "5ccbe371ad00d06e5b5643404260f9244348aa27ed8470ee9db3d0a81c9ec5e2",
+      "feature_hash": "633e79eb79b8778c70bc95ea7872268a055c1ab806a8f7488b60ec806ab76a05",
+      "roles_hash": {
+        "final_fit": "2acfca0abbb22fb417ee00902af6ff2acd211f5dd2458147c718b645b41333f0",
+        "final_calibration": "4cb1893676fdfda3a26b12ca5253a05a2c1133fd6c12c991d5881b6af61f326b",
+        "outer_test": "6c2d46717d71eb6b29b59a07408560e06a126e79712e681314be33b12ccea59d"
+      },
+      "readiness_passed": true
+    },
+    {
+      "model_seed": 44,
+      "manifest_sha256": "ba04de5be758ba8d6d1a8a4016d8135036e8cde7564e936f19d30bf2b62e0293",
+      "protocol_sha256": "9e3ecd116a30121ddc7acbae42f577dba0e2c453490f3f0c1655c041fda7481f",
+      "context_hash": "68cfa81783a7dc7aae5f1178b4b8de88cad09109e63a829bb13b1cb7ca3abe48",
+      "schedule_hash": "5ccbe371ad00d06e5b5643404260f9244348aa27ed8470ee9db3d0a81c9ec5e2",
+      "feature_hash": "633e79eb79b8778c70bc95ea7872268a055c1ab806a8f7488b60ec806ab76a05",
+      "roles_hash": {
+        "final_fit": "2acfca0abbb22fb417ee00902af6ff2acd211f5dd2458147c718b645b41333f0",
+        "final_calibration": "4cb1893676fdfda3a26b12ca5253a05a2c1133fd6c12c991d5881b6af61f326b",
+        "outer_test": "6c2d46717d71eb6b29b59a07408560e06a126e79712e681314be33b12ccea59d"
+      },
+      "readiness_passed": true
+    },
+    {
+      "model_seed": 45,
+      "manifest_sha256": "c7741ef34b702d3764e5c7931f311e4f0f6b2ced1e5c7235e9d13acbce395a69",
+      "protocol_sha256": "3fe9fc8d9219f65773551040dda0b325c4b0e5fba1817240b700462a58880556",
+      "context_hash": "68cfa81783a7dc7aae5f1178b4b8de88cad09109e63a829bb13b1cb7ca3abe48",
+      "schedule_hash": "5ccbe371ad00d06e5b5643404260f9244348aa27ed8470ee9db3d0a81c9ec5e2",
+      "feature_hash": "633e79eb79b8778c70bc95ea7872268a055c1ab806a8f7488b60ec806ab76a05",
+      "roles_hash": {
+        "final_fit": "2acfca0abbb22fb417ee00902af6ff2acd211f5dd2458147c718b645b41333f0",
+        "final_calibration": "4cb1893676fdfda3a26b12ca5253a05a2c1133fd6c12c991d5881b6af61f326b",
+        "outer_test": "6c2d46717d71eb6b29b59a07408560e06a126e79712e681314be33b12ccea59d"
+      },
+      "readiness_passed": true
+    },
+    {
+      "model_seed": 46,
+      "manifest_sha256": "bc7d3041c26d484bcbccc8a7ee69da42bb54d8f99604416e5c879592a41a0748",
+      "protocol_sha256": "e4bfe2e5e8eab1a8271d2d6aab760b1f4696549d2bb3a6dbee830e20b8403b95",
+      "context_hash": "68cfa81783a7dc7aae5f1178b4b8de88cad09109e63a829bb13b1cb7ca3abe48",
+      "schedule_hash": "5ccbe371ad00d06e5b5643404260f9244348aa27ed8470ee9db3d0a81c9ec5e2",
+      "feature_hash": "633e79eb79b8778c70bc95ea7872268a055c1ab806a8f7488b60ec806ab76a05",
+      "roles_hash": {
+        "final_fit": "2acfca0abbb22fb417ee00902af6ff2acd211f5dd2458147c718b645b41333f0",
+        "final_calibration": "4cb1893676fdfda3a26b12ca5253a05a2c1133fd6c12c991d5881b6af61f326b",
+        "outer_test": "6c2d46717d71eb6b29b59a07408560e06a126e79712e681314be33b12ccea59d"
+      },
+      "readiness_passed": true
+    }
+  ],
+  "seed42_preserved": true,
+  "same_context_schedule_roles_features": true,
+  "slot_rng_seeds": [
+    42,
+    43
+  ],
+  "energy_sensitivity": false,
+  "worker_helpers_imported": true,
+  "seed_propagation": "manifest.model_seed -> models_from_stage seed -> fit_owner -> new_cqr -> HistGradientBoostingRegressor(random_state=seed)",
+  "operation_policy": "3 native quantile estimator fits per seed; verified again from runtime ledgers"
+}
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_energy_context005_multiseed_20260915\\preflight.py"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-14T23:38:44.315125+00:00", "logger_pid": 29648, "child_pid": 20664, "ended_utc": "2026-09-14T23:38:48.259995+00:00", "seconds": 3.9462667999905534, "exit_status": 0}

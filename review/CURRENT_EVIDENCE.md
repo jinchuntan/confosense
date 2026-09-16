@@ -1,3 +1,8 @@
+# Current evidence
+
+<!-- pleia-energy-context005-multiseed-20260915 -->
+15 September 2026: PLEIA-energy conditional-context C now has all five model seeds 42–46 for outer fold 2/h1. Seeds 43–46 completed per-unit independent validation and zero-fit resume; seed 42 was reused unchanged. The [five-seed report](pleia_energy_context005_multiseed_20260915/PLEIA_ENERGY_CONTEXT005_MULTISEED_REPORT.md), [evidence index](pleia_energy_context005_multiseed_20260915/EVIDENCE_INDEX.md), [all 60 comparisons](../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_five_seed_analysis_v1/five_seed_control_rule_channel.csv), and [independent aggregate validation](../smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_five_seed_analysis_v1/independent_validation.json) are canonical. Original-context uncertainty uses 68 contexts and paired chronological blocks; seeds are averaged within context. Main and previous evidence remain unchanged. Full-study readiness remains false.
+
 # First real amendment-005 conditional-context pilot completed
 
 PLEIA energy outer fold 2 / model seed 42 / h1 completed all 68 published contexts, 2,856 scheduled fault slots, 68 clean identities, four fixed 95% controls, five rules and the full 9,907-row clean workload. All five CLI actions, independent validation and zero-fit resume passed. The published analysis reports all 60 control/rule/channel cells; no outer-result selection occurred.

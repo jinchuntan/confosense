@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_energy_context005_multiseed_20260915\pack_evidence.py", line 91, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_energy_context005_multiseed_20260915\pack_evidence.py", line 87, in main
+    results=[pack(seed) for seed in SEEDS]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_energy_context005_multiseed_20260915\pack_evidence.py", line 87, in <listcomp>
+    results=[pack(seed) for seed in SEEDS]
+             ^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_energy_context005_multiseed_20260915\pack_evidence.py", line 70, in pack
+    current,part=verify_archive(archive,paths,src,complete) if archive.exists() else write_archive(archive,paths,src,complete)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_energy_context005_multiseed_20260915\pack_evidence.py", line 26, in verify_archive
+    if actual!=complete['files'][relative]:raise ValueError('existing archive hash mismatch '+relative)
+               ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'COMPLETE.json'
+{"command": ["C:/cfs_venv/Scripts/python.exe", "-B", "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_energy_context005_multiseed_20260915\\pack_evidence.py"], "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal", "started_utc": "2026-09-16T19:59:37.313585+00:00", "logger_pid": 7992, "child_pid": 5236, "ended_utc": "2026-09-16T20:01:51.007724+00:00", "seconds": 133.69056879999698, "exit_status": 1}
