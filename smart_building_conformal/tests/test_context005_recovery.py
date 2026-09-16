@@ -27,3 +27,10 @@ def test_only_empty_nullable_group_analysis_keyerror_is_recoverable(tmp_path):
     assert recovery.eligible_analysis_null_group_recovery(failed,receipt=receipt,log_text="KeyError: 'control_id'",analysis_dir=analysis)
     analysis.mkdir();(analysis/'partial.csv').write_text('preserve')
     assert recovery.eligible_analysis_null_group_recovery(failed,receipt=receipt,log_text="KeyError: 'control_id'",analysis_dir=analysis) is None
+
+def test_only_recorded_partial_package_shadow_is_recoverable(tmp_path):
+    root=tmp_path/'publication';(root/'pleia_energy_f2_s43_C_v1_publication_v1').mkdir(parents=True)
+    receipt={'exit_status':1,'command':['python','-B','pack_evidence.py']}
+    failed=dict(status='failed',task='final/package_raw',exit_code=1,argv=receipt['command'])
+    assert recovery.eligible_package_csv_shadow_recovery(failed,receipt=receipt,log_text="AttributeError: 'function' object has no attribute 'DictWriter'",publication_root=root)
+    assert recovery.eligible_package_csv_shadow_recovery(failed,receipt=receipt,log_text='different',publication_root=root) is None

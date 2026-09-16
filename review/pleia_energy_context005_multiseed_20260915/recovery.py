@@ -8,6 +8,7 @@ from common import atomic,append,now,read,digest
 # 2026-09-15 reboot. It is not accepted generally as a scientific failure.
 WINDOWS_INTERRUPTED_EXIT=1073807364
 ANALYSIS_NULL_GROUP_KEYERROR="KeyError: 'control_id'"
+PACKAGE_CSV_SHADOW_ERROR="AttributeError: 'function' object has no attribute 'DictWriter'"
 
 def windows_boot_utc():
     """Use the Windows monotonic boot clock; no optional package dependency."""
@@ -57,3 +58,14 @@ def eligible_analysis_null_group_recovery(record, *, receipt, log_text, analysis
     if path.exists() and any(path.iterdir()):return None
     if ANALYSIS_NULL_GROUP_KEYERROR not in log_text:return None
     return 'verified_nullable_group_id_analysis_keyerror_with_empty_output'
+
+def eligible_package_csv_shadow_recovery(record, *, receipt, log_text, publication_root):
+    """Recognize only the observed package-module shadowing failure."""
+    if record.get('status')!='failed' or record.get('task')!='final/package_raw':return None
+    if record.get('exit_code')!=1 or receipt.get('exit_status')!=1:return None
+    command=record.get('argv',[])
+    if not command or Path(command[-1]).name!='pack_evidence.py' or receipt.get('command')!=command:return None
+    root=Path(publication_root)
+    if not (root/'pleia_energy_f2_s43_C_v1_publication_v1').exists():return None
+    if PACKAGE_CSV_SHADOW_ERROR not in log_text:return None
+    return 'verified_package_csv_module_shadow_with_partial_archives'

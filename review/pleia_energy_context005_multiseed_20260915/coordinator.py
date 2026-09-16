@@ -2,7 +2,7 @@
 from __future__ import annotations
 import argparse,importlib.util,json,os,shutil,subprocess,sys,traceback
 from common import *
-from recovery import reclassify,windows_boot_utc,eligible_analysis_null_group_recovery
+from recovery import reclassify,windows_boot_utc,eligible_analysis_null_group_recovery,eligible_package_csv_shadow_recovery
 
 # Reuse the already reviewed adoption/identity engine without copying it.
 LEGACY_DIR=REPO/'review/context_replay005_implementation_20260914'
@@ -61,6 +61,23 @@ def recover_empty_analysis_keyerror(engine):
     engine.save()
     return True
 
+def recover_partial_package_csv_shadow(engine):
+    """Retry packaging only after validating its exact exited receipt."""
+    task='final/package_raw';record=engine.state['tasks'].get(task)
+    if not record or record.get('status')!='failed':return False
+    receipt=read(record['logger_receipt']);log_text=Path(record['log']).read_text(encoding='utf-8',errors='replace')
+    reason=eligible_package_csv_shadow_recovery(record,receipt=receipt,log_text=log_text,publication_root=BASE)
+    if not reason:return False
+    prior=dict(task=task,reason=reason,failed_record=record,reused_partial_archives=str(publication(43)),recovered_utc=now())
+    if engine.state.get('failure'):prior['failure']=engine.state.pop('failure')
+    if engine.state.get('traceback'):prior['traceback']=engine.state.pop('traceback')
+    engine.state.setdefault('prior_failures',[]).append(prior)
+    engine.state['tasks'].pop(task)
+    engine.state.update(status='package_recovery',active=None)
+    append(engine.root/'attempts.jsonl',dict(event='reclassified_package_failure_after_verified_partial_archives',**prior))
+    engine.save()
+    return True
+
 def main(freeze_only=False):
     os.chdir(SMART);BACKUP.mkdir(parents=True,exist_ok=True)
     with exclusive_lock(BACKUP/'coordinator.lock'):
@@ -83,6 +100,7 @@ def main(freeze_only=False):
                 boot=windows_boot_utc()
                 reclassify(engine,task='seed_44/run',boot_after_attempt=boot>ended,run_path=run(44))
             recover_empty_analysis_keyerror(engine)
+            recover_partial_package_csv_shadow(engine)
             save_external(engine)
             # Freeze every seed before any fit.
             for seed in SEEDS:
