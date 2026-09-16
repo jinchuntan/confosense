@@ -35,3 +35,13 @@ def test_aggregate_key_gate_rejects_duplicate_missing_and_support_mismatch():
     with pytest.raises(ValueError,match='seed completeness'):validate_contribution_keys(frame.iloc[:-1],expected_seeds=tuple(range(42,47)))
     changed=frame.copy();changed.loc[changed.model_seed==46,'effective_slots']=1
     with pytest.raises(ValueError,match='support mismatch'):validate_contribution_keys(changed,expected_seeds=tuple(range(42,47)))
+
+def test_macro_pooling_retains_nullable_group_id():
+    spec=importlib.util.spec_from_file_location('multiseed_analyze_nullable_group',REVIEW/'analyze.py')
+    analysis=importlib.util.module_from_spec(spec);spec.loader.exec_module(analysis)
+    rows=[]
+    for family,severity in [('spike',1),('bias',1)]:
+        rows.append(dict(dataset='pleia_energy',outer_fold=2,model_seed=42,control_id='c',rule_id='r',channel='combined',
+            context_id='a',original_segment_id='s',group_id=pd.NA,family=family,severity=severity,recall=.5,restricted_delay=10,effective_slots=2))
+    _,_,macro=analysis.macro_from_contributions(pd.DataFrame(rows))
+    assert list(macro[['control_id','rule_id','channel']].iloc[0])==['c','r','combined']

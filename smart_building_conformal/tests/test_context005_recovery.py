@@ -1,6 +1,7 @@
 """No-fit guard for the one documented Windows interruption recovery path."""
 import importlib.util,sys
 from pathlib import Path
+import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[2]
 REVIEW=ROOT/'review/pleia_energy_context005_multiseed_20260915'
@@ -18,3 +19,11 @@ def test_only_exact_documented_interruption_is_recoverable():
     assert recovery.eligible_interruption(record(task='seed_44/validate'),boot_after_attempt=True,checkpoint_exists=True,partial_exists=True) is None
     assert recovery.eligible_interruption(record(),boot_after_attempt=False,checkpoint_exists=True,partial_exists=True) is None
     assert recovery.eligible_interruption(record(),boot_after_attempt=True,checkpoint_exists=False,partial_exists=True) is None
+
+def test_only_empty_nullable_group_analysis_keyerror_is_recoverable(tmp_path):
+    analysis=tmp_path/'analysis'
+    receipt={'exit_status':1,'command':['python','-B','analyze.py']}
+    failed=dict(status='failed',task='final/analyze',exit_code=1,argv=receipt['command'])
+    assert recovery.eligible_analysis_null_group_recovery(failed,receipt=receipt,log_text="KeyError: 'control_id'",analysis_dir=analysis)
+    analysis.mkdir();(analysis/'partial.csv').write_text('preserve')
+    assert recovery.eligible_analysis_null_group_recovery(failed,receipt=receipt,log_text="KeyError: 'control_id'",analysis_dir=analysis) is None

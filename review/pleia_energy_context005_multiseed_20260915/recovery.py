@@ -7,6 +7,7 @@ from common import atomic,append,now,read,digest
 # The logger recorded this exact Windows forced-termination exit during the
 # 2026-09-15 reboot. It is not accepted generally as a scientific failure.
 WINDOWS_INTERRUPTED_EXIT=1073807364
+ANALYSIS_NULL_GROUP_KEYERROR="KeyError: 'control_id'"
 
 def windows_boot_utc():
     """Use the Windows monotonic boot clock; no optional package dependency."""
@@ -40,3 +41,19 @@ def reclassify(engine, *, task, boot_after_attempt, run_path):
     append(engine.root/'attempts.jsonl',dict(event='reclassified_interrupted_after_verified_reboot',**record))
     engine.state['tasks'][task]=record;engine.save()
     return True
+
+def eligible_analysis_null_group_recovery(record, *, receipt, log_text, analysis_dir):
+    """Recognize only the observed empty-output aggregate-analysis defect.
+
+    The failed command must be the fixed analysis entrypoint, its logger
+    receipt must agree, the exact pandas KeyError must be present, and no
+    completed or partial aggregate artifact may be overwritten.
+    """
+    if record.get('status')!='failed' or record.get('task')!='final/analyze':return None
+    if record.get('exit_code')!=1 or receipt.get('exit_status')!=1:return None
+    command=record.get('argv',[])
+    if not command or Path(command[-1]).name!='analyze.py' or receipt.get('command')!=command:return None
+    path=Path(analysis_dir)
+    if path.exists() and any(path.iterdir()):return None
+    if ANALYSIS_NULL_GROUP_KEYERROR not in log_text:return None
+    return 'verified_nullable_group_id_analysis_keyerror_with_empty_output'

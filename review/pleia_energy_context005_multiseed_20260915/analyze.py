@@ -40,7 +40,10 @@ def weighted(part):
         mpiw=float((part.mpiw*part.n).sum()/n),winkler=float((part.winkler*part.n).sum()/n)))
 
 def macro_from_contributions(contrib):
-    seedavg=contrib.groupby([k for k in KEYS if k not in ['dataset','outer_fold','original_segment_id','group_id']]+['original_segment_id','group_id'],as_index=False).agg(
+    # ``group_id`` is an explicitly nullable provenance field for this PLEIA
+    # design.  Retain its null group when pooling; pandas otherwise drops all
+    # contributions before the control/rule/channel macro rows are formed.
+    seedavg=contrib.groupby([k for k in KEYS if k not in ['dataset','outer_fold','original_segment_id','group_id']]+['original_segment_id','group_id'],as_index=False,dropna=False).agg(
         recall=('recall','mean'),restricted_delay=('restricted_delay','mean'),effective_slots=('effective_slots','first'))
     # Average original contexts equally within stratum, then 21 strata equally.
     strata=seedavg.groupby(['control_id','rule_id','channel','family','severity'],as_index=False).agg(

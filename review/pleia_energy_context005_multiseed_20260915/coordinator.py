@@ -2,7 +2,7 @@
 from __future__ import annotations
 import argparse,importlib.util,json,os,shutil,subprocess,sys,traceback
 from common import *
-from recovery import reclassify,windows_boot_utc
+from recovery import reclassify,windows_boot_utc,eligible_analysis_null_group_recovery
 
 # Reuse the already reviewed adoption/identity engine without copying it.
 LEGACY_DIR=REPO/'review/context_replay005_implementation_20260914'
@@ -40,6 +40,27 @@ def disk_gate():
     if free<8*2**30:raise RuntimeError(f'disk floor failed: {free} bytes free')
     return free
 
+def recover_empty_analysis_keyerror(engine):
+    """Archive and retry only the receipt-bound aggregate-analysis defect."""
+    task='final/analyze';record=engine.state['tasks'].get(task)
+    if not record or record.get('status')!='failed':return False
+    receipt=read(record['logger_receipt']);log_text=Path(record['log']).read_text(encoding='utf-8',errors='replace')
+    reason=eligible_analysis_null_group_recovery(record,receipt=receipt,log_text=log_text,analysis_dir=ANALYSIS)
+    if not reason:return False
+    archived=ANALYSIS.with_name(ANALYSIS.name+'_failed_nullable_group_20260916')
+    if ANALYSIS.exists():
+        if archived.exists():raise ValueError('failed analysis archive already exists')
+        shutil.move(str(ANALYSIS),str(archived))
+    prior=dict(task=task,reason=reason,failed_record=record,archived_empty_analysis_directory=str(archived),recovered_utc=now())
+    if engine.state.get('failure'):prior['failure']=engine.state.pop('failure')
+    if engine.state.get('traceback'):prior['traceback']=engine.state.pop('traceback')
+    engine.state.setdefault('prior_failures',[]).append(prior)
+    engine.state['tasks'].pop(task)
+    engine.state.update(status='analysis_recovery',active=None)
+    append(engine.root/'attempts.jsonl',dict(event='reclassified_analysis_failure_after_verified_empty_output',**prior))
+    engine.save()
+    return True
+
 def main(freeze_only=False):
     os.chdir(SMART);BACKUP.mkdir(parents=True,exist_ok=True)
     with exclusive_lock(BACKUP/'coordinator.lock'):
@@ -61,6 +82,7 @@ def main(freeze_only=False):
                 ended=__import__('datetime').datetime.fromisoformat(attempt['ended_utc'])
                 boot=windows_boot_utc()
                 reclassify(engine,task='seed_44/run',boot_after_attempt=boot>ended,run_path=run(44))
+            recover_empty_analysis_keyerror(engine)
             save_external(engine)
             # Freeze every seed before any fit.
             for seed in SEEDS:
