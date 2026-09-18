@@ -161,13 +161,20 @@ def github_readback(head, representative):
     checks = []
     for path in representative:
         rel = path.relative_to(REPO).as_posix()
-        local = path.read_bytes()
+        # Compare against the COMMITTED blob, which is what GitHub serves. The working
+        # tree may hold CRLF while git stores LF, so a working-tree comparison would
+        # report a spurious difference.
+        blob = subprocess.check_output(['git', 'cat-file', 'blob', f'{head}:{rel}'], cwd=REPO)
+        worktree = path.read_bytes()
         url = RAW.format(sha=head, path=urllib.parse.quote(rel))
         data, status = download(url)
         checks.append(dict(path=rel, url=url, http_status=status,
-                           local_bytes=len(local), downloaded_bytes=len(data),
-                           local_sha256=sha_bytes(local), downloaded_sha256=sha_bytes(data),
-                           identical=sha_bytes(local) == sha_bytes(data),
+                           committed_blob_bytes=len(blob), downloaded_bytes=len(data),
+                           committed_blob_sha256=sha_bytes(blob), downloaded_sha256=sha_bytes(data),
+                           identical=sha_bytes(blob) == sha_bytes(data),
+                           worktree_bytes=len(worktree),
+                           worktree_differs_by_line_endings_only=(
+                               worktree != blob and worktree.replace(b'\r\n', b'\n') == blob),
                            method='https_download_from_raw_githubusercontent_pinned_to_commit'))
     api, api_status = download(API.format(sha=head))
     commit = json.loads(api)
