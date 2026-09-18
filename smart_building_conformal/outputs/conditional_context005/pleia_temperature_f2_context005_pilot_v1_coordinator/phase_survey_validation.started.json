@@ -1,0 +1,20 @@
+{
+  "event": "phase_started",
+  "phase": "survey_validation",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\run_stage.py",
+    "survey_validation.py"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "utc": "2026-09-18T19:24:11.843942+00:00",
+  "coordinator_pid": 22692,
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\phase_survey_validation.log",
+  "progress_before": {
+    "committed_stages": 2929,
+    "context_stages": 2924,
+    "contexts_complete": 68,
+    "complete_json": true
+  }
+}

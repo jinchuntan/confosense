@@ -1,0 +1,13 @@
+{
+  "event": "validation_attempt_001_failed_preserved",
+  "attempt": 1,
+  "phase": "validate",
+  "exit_status": 1,
+  "failed_check": "lower_context_3c2ed441cb78fe67ef35_v0",
+  "preserved_receipt_dir": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\validation_failed_attempt_001",
+  "preserved_log": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\phase_validate.log",
+  "reason": "AssertionError: independent scalar reconstruction differs from saved bounds beyond frozen tolerance atol=1e-10 rtol=1e-10",
+  "diagnosis_file": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\VALIDATION_MISMATCH_DIAGNOSIS.txt",
+  "note": "Receipt directory was created by the validator then left empty when the assertion aborted. Preserved, not deleted.",
+  "utc": "2026-09-18T18:02:19Z"
+}

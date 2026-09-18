@@ -1,0 +1,123 @@
+=== feature reconstruction difference (validator X vs saved features) ===
+  target_rollmean_144      max|diff| = 1.776e-14
+  target_rollmean_6        max|diff| = 7.105e-15
+  target_rollstd_144       max|diff| = 1.110e-15
+  target_lag_0             max|diff| = 0.000e+00
+  target_lag_1             max|diff| = 0.000e+00
+  target_lag_2             max|diff| = 0.000e+00
+  overall max feature difference = 1.776e-14 (validator tolerance 1e-10)
+
+=== MISMATCH quantile_static / lower: 1 of 144 rows ===
+  row 100: saved=np.float64(22.543906686210498) scalar=np.float64(22.544309791830784) absdiff=4.031056e-04
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH quantile_static / upper: 2 of 144 rows ===
+  row 84: saved=np.float64(23.407544715110838) scalar=np.float64(23.40885421817674) absdiff=1.309503e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15'}
+    estimator preds from validator X : [22.35455328177816, 23.40885421817674, 22.63132670832303]
+    estimator preds from saved    X : [22.35455328177816, 23.407544715110838, 22.63132670832303]
+    identical given saved X? False
+  row 100: saved=np.float64(23.5425613193433) scalar=np.float64(23.53664818135977) absdiff=5.913138e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH quantile_static / raw_lower: 1 of 144 rows ===
+  row 100: saved=np.float64(22.543906686210498) scalar=np.float64(22.544309791830784) absdiff=4.031056e-04
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH quantile_static / raw_upper: 2 of 144 rows ===
+  row 84: saved=np.float64(23.407544715110838) scalar=np.float64(23.40885421817674) absdiff=1.309503e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15'}
+    estimator preds from validator X : [22.35455328177816, 23.40885421817674, 22.63132670832303]
+    estimator preds from saved    X : [22.35455328177816, 23.407544715110838, 22.63132670832303]
+    identical given saved X? False
+  row 100: saved=np.float64(23.5425613193433) scalar=np.float64(23.53664818135977) absdiff=5.913138e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_static / lower: 1 of 144 rows ===
+  row 100: saved=np.float64(22.5402838191491) scalar=np.float64(22.540686924769386) absdiff=4.031056e-04
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_static / upper: 2 of 144 rows ===
+  row 84: saved=np.float64(24.077515813253427) scalar=np.float64(24.078825316319328) absdiff=1.309503e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15'}
+    estimator preds from validator X : [22.35455328177816, 23.40885421817674, 22.63132670832303]
+    estimator preds from saved    X : [22.35455328177816, 23.407544715110838, 22.63132670832303]
+    identical given saved X? False
+  row 100: saved=np.float64(24.21253241748589) scalar=np.float64(24.20661927950236) absdiff=5.913138e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_static / raw_lower: 1 of 144 rows ===
+  row 100: saved=np.float64(22.543906686210498) scalar=np.float64(22.544309791830784) absdiff=4.031056e-04
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_static / raw_upper: 2 of 144 rows ===
+  row 84: saved=np.float64(23.407544715110838) scalar=np.float64(23.40885421817674) absdiff=1.309503e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15'}
+    estimator preds from validator X : [22.35455328177816, 23.40885421817674, 22.63132670832303]
+    estimator preds from saved    X : [22.35455328177816, 23.407544715110838, 22.63132670832303]
+    identical given saved X? False
+  row 100: saved=np.float64(23.5425613193433) scalar=np.float64(23.53664818135977) absdiff=5.913138e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_rolling / lower: 1 of 144 rows ===
+  row 100: saved=np.float64(21.995925808566753) scalar=np.float64(21.99632891418704) absdiff=4.031056e-04
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_rolling / upper: 2 of 144 rows ===
+  row 84: saved=np.float64(23.98864705709916) scalar=np.float64(23.989956560165062) absdiff=1.309503e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15'}
+    estimator preds from validator X : [22.35455328177816, 23.40885421817674, 22.63132670832303]
+    estimator preds from saved    X : [22.35455328177816, 23.407544715110838, 22.63132670832303]
+    identical given saved X? False
+  row 100: saved=np.float64(24.090542196987045) scalar=np.float64(24.084629059003515) absdiff=5.913138e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_rolling / raw_lower: 1 of 144 rows ===
+  row 100: saved=np.float64(22.543906686210498) scalar=np.float64(22.544309791830784) absdiff=4.031056e-04
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+
+=== MISMATCH cqr_rolling / raw_upper: 2 of 144 rows ===
+  row 84: saved=np.float64(23.407544715110838) scalar=np.float64(23.40885421817674) absdiff=1.309503e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15'}
+    estimator preds from validator X : [22.35455328177816, 23.40885421817674, 22.63132670832303]
+    estimator preds from saved    X : [22.35455328177816, 23.407544715110838, 22.63132670832303]
+    identical given saved X? False
+  row 100: saved=np.float64(23.5425613193433) scalar=np.float64(23.53664818135977) absdiff=5.913138e-03
+    nonzero feature input differences at this row: {'target_rollmean_144': '7.105e-15', 'target_rollmean_6': '3.553e-15', 'target_rollstd_144': '2.220e-16'}
+    estimator preds from validator X : [22.544309791830784, 23.53664818135977, 23.30950123633744]
+    estimator preds from saved    X : [22.543906686210498, 23.5425613193433, 23.30950123633744]
+    identical given saved X? False
+

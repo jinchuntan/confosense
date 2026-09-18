@@ -1,0 +1,24 @@
+{
+  "command": [
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\scripts\\log_pilot_command.py",
+    "--log",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\run_command.log",
+    "--",
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.conditional_context005",
+    "run",
+    "--manifest",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\pleia_f2_s42_C_v1_execution_manifest.json",
+    "--design",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1\\readiness.json"
+  ],
+  "logger_pid": 18928,
+  "created_utc": "2026-09-18T14:42:10.3774494Z"
+}

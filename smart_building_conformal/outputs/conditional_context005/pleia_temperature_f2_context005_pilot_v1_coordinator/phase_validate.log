@@ -1,0 +1,36 @@
+
+=== phase validate started 2026-09-18T17:34:39.770928+00:00 ===
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\conditional_context005.py", line 257, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\conditional_context005.py", line 254, in main
+    result=validate(a.design,a.out,a.receipt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\context005_validate.py", line 143, in validate
+    for col in ['lower','upper','point','raw_lower','raw_upper']:close(stream[col],scalar[col],col+'_'+vr['stage'])
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\src\context005_validate.py", line 114, in close
+    np.testing.assert_allclose(aa,bb,atol=tol,rtol=1e-10,equal_nan=True,err_msg=label);checks.append(dict(check=label,n=aa.size,maximum_difference=diff))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 1691, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "C:\Users\nigel\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\numpy\testing\_private\utils.py", line 889, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-10, atol=1e-10
+lower_context_3c2ed441cb78fe67ef35_v0
+Mismatched elements: 1 / 144 (0.694%)
+Max absolute difference among violations: 0.00040311
+Max relative difference among violations: 1.78805927e-05
+ ACTUAL: array([24.819549, 24.777322, 24.929712, 25.112109, 25.0921  , 24.971895,
+       24.971895, 24.971895, 24.96556 , 24.889951, 24.889951, 25.053246,
+       25.04541 , 25.036554, 25.022818, 25.022801, 24.969417, 24.792731,...
+ DESIRED: array([24.819549, 24.777322, 24.929712, 25.112109, 25.0921  , 24.971895,
+       24.971895, 24.971895, 24.96556 , 24.889951, 24.889951, 25.053246,
+       25.04541 , 25.036554, 25.022818, 25.022801, 24.969417, 24.792731,...

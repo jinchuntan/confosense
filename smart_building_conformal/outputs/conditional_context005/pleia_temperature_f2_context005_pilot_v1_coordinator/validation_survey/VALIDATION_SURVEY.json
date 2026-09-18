@@ -1,0 +1,49 @@
+{
+  "purpose": "full_extent_independent_validation_survey_frozen_tolerance_unchanged",
+  "tolerance": {
+    "atol": 1e-10,
+    "rtol": 1e-10,
+    "note": "frozen tolerance applied unchanged; nothing loosened"
+  },
+  "total_checks": 253938,
+  "total_violating_elements": 1281,
+  "maximum_observed_difference": 0.049460531307076394,
+  "unique_canonical_variants": 2151,
+  "variants": 2924,
+  "violations_by_kind": [
+    {
+      "kind": "bounds",
+      "checks_with_violations": 810,
+      "violations": 1077,
+      "maximum_difference": 0.049460531307076394
+    },
+    {
+      "kind": "release",
+      "checks_with_violations": 201,
+      "violations": 204,
+      "maximum_difference": 0.01386022897839112
+    }
+  ],
+  "scientific_outcome_violations": 204,
+  "scientific_outcome_breakdown": {
+    "alert_flags": 0,
+    "episode_onsets": 0,
+    "release_identity": 0,
+    "update_status": 0,
+    "update_counts": 0,
+    "release_counts": 0
+  },
+  "conclusion": "SCIENTIFIC OUTCOME DIFFERS - investigate",
+  "resources": {
+    "seconds": 5669.799127000002,
+    "baseline_rss_bytes": 324489216,
+    "peak_rss_bytes": 530997248,
+    "baseline_private_bytes": 283447296,
+    "peak_private_bytes": 499650560,
+    "incremental_peak_rss_bytes": 206508032,
+    "lifetime_peak_rss_bytes": 538828800,
+    "min_available_ram_bytes": 1763471360,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 5113.765625
+  }
+}

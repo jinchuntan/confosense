@@ -1,0 +1,72 @@
+{
+  "event": "historical_attempt_interrupted",
+  "recorded_utc": "2026-09-19T00:00:00Z",
+  "recorded_by": "claude_recovery_session_20260919",
+  "original_receipts_preserved": {
+    "run_command_log_started_json": {
+      "path": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\run_command.log.started.json",
+      "sha256": "8380a96da34ff6b7b1d1ddf34f4aab9c42fc3ca142201457f3603cb14fc6a628",
+      "status_field": "started",
+      "exit_status_field": null
+    },
+    "coordinator_status_json": {
+      "path": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\coordinator_status.json",
+      "sha256": "426f96c33316f116129a2bc6039e5520a7635bb0da249aef7714ea97cc292931",
+      "status_field": "adopted_run"
+    },
+    "run_launch_json": {
+      "path": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\RUN_LAUNCH.json",
+      "sha256": "3889b6537bc539ff101958f9960fd5e22cbcb74a8365d5e6e6d19e6a4dbb3c48"
+    }
+  },
+  "original_process_family": {
+    "logger_pid": 18928,
+    "logger_child_pid": 15328,
+    "venv_redirector_pid": 15732,
+    "scientific_worker_pid": 12824,
+    "worker_created_local": "2026-09-18T22:42:10+08:00",
+    "note": "venv Scripts/python.exe is a redirector stub; 15732 spawned worker 12824"
+  },
+  "coordinator_attempt": {
+    "pid": 14240,
+    "started_utc": "2026-09-18T14:57:58.4790184Z",
+    "terminal_status_written": false,
+    "defects": [
+      "probe used os.kill(pid,0) which raised WinError 87 on Windows; changed to psutil.pid_exists",
+      "coordinator waits for COMPLETE.json only and cannot resume an interrupted run",
+      "coordinator did not survive to observe logger exit; no exit receipt written"
+    ]
+  },
+  "verified_absent_utc": "2026-09-19 session inspection",
+  "process_verification": {
+    "method": "Win32_Process PID + creation time + command line + full command-line scan",
+    "pid_18928": "absent",
+    "pid_15328": "absent",
+    "pid_15732": "absent",
+    "pid_12824": "PID REUSED by unrelated conhost.exe created 2026-09-19T00:27:49 local; not the scientific worker",
+    "pid_14240": "absent",
+    "python_processes_running": 0
+  },
+  "historical_exit_status": "unknown",
+  "historical_exit_status_note": "No logger exit receipt was written. The terminal exit code of worker 12824 is unknown and is NOT fabricated. Cause of termination is undetermined from preserved evidence.",
+  "preserved_progress": {
+    "committed_stages": 692,
+    "context_stages": 688,
+    "contexts_complete": 16,
+    "contexts_total": 68,
+    "stages_expected": 2929,
+    "stages_remaining": 2237,
+    "all_stages_content_verified": true,
+    "leftover_partials": 0,
+    "last_journal_complete_utc": "2026-09-18T14:58:33.482553+00:00",
+    "atomic_rename_denials": 3,
+    "atomic_rename_denials_all_recovered": true
+  },
+  "fits_preserved": {
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "calibrator_conformalize": 2,
+    "persistence_radius": 1,
+    "refit_required": false
+  }
+}

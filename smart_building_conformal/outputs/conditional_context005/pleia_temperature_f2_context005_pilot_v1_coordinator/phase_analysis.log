@@ -1,0 +1,155 @@
+
+=== phase analysis started 2026-09-18T18:50:51.376128+00:00 ===
+Traceback (most recent call last):
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_pilot_20260918\run_stage.py", line 27, in <module>
+    main()
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_pilot_20260918\run_stage.py", line 23, in main
+    runpy.run_path(str(target), run_name='__main__')
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_pilot_20260918\analyze_temperature.py", line 338, in <module>
+    main()
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_pilot_20260918\analyze_temperature.py", line 332, in main
+    figures(summary)
+  File "C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_pilot_20260918\analyze_temperature.py", line 247, in figures
+    part = combined.set_index('rule_id').reindex(RULES)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\frame.py", line 5378, in reindex
+    return super().reindex(
+           ^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\generic.py", line 5610, in reindex
+    return self._reindex_axes(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\generic.py", line 5633, in _reindex_axes
+    new_index, indexer = ax.reindex(
+                         ^^^^^^^^^^^
+  File "C:\cfs_venv\Lib\site-packages\pandas\core\indexes\base.py", line 4429, in reindex
+    raise ValueError("cannot reindex on an axis with duplicate labels")
+ValueError: cannot reindex on an axis with duplicate labels
+
+=== phase analysis started 2026-09-18T18:54:22.712730+00:00 ===
+{
+  "analysis": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1_analysis",
+  "scope": {
+    "contexts": 68,
+    "scheduled_slots": 2856,
+    "context_stages": 2924,
+    "events": 171360,
+    "strata_rows": 1260,
+    "macro_rows": 60,
+    "workload_rows": 60
+  },
+  "operations": {
+    "dataset": "pleia",
+    "target": "temperature",
+    "model_seed": 42,
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "nested_calibrator_conformalize": 2,
+    "logical_conformalizations": 1,
+    "persistence_radius_computations": 1,
+    "persistence_learned_fits": 0,
+    "xgboost_fits": 0,
+    "attention_lstm_fits": 0,
+    "enbpi_fits": 0,
+    "dscp_fits": 0,
+    "tuning_runs": 0,
+    "matched_forecast_refits": 0,
+    "estimator_random_states": "42;42;42",
+    "owner_sha256": "22ede7e8d7e32759d4450dcc8c5324377569512f29e759cb6cc278f8675938c6",
+    "persistence_radius_degC": 0.7999999999999972
+  },
+  "ordering": [
+    {
+      "control_id": "cqr_rolling",
+      "stages": 2152,
+      "rows": 319651,
+      "raw_inversions": 0,
+      "emitted_inversions": 0,
+      "point_below_lower": 0,
+      "point_above_upper": 0,
+      "minimum_emitted_width": 0.7013553092114329,
+      "width_units": "degC",
+      "interpretation": "ordered_endpoints_only_median_tail_crossing"
+    },
+    {
+      "control_id": "cqr_static",
+      "stages": 2152,
+      "rows": 319651,
+      "raw_inversions": 0,
+      "emitted_inversions": 0,
+      "point_below_lower": 611,
+      "point_above_upper": 0,
+      "minimum_emitted_width": 1.0185353219753992,
+      "width_units": "degC",
+      "interpretation": "ordered_endpoints_only_median_tail_crossing"
+    },
+    {
+      "control_id": "persistence_static",
+      "stages": 2152,
+      "rows": 319651,
+      "raw_inversions": 0,
+      "emitted_inversions": 0,
+      "point_below_lower": 0,
+      "point_above_upper": 0,
+      "minimum_emitted_width": 1.5999999999999908,
+      "width_units": "degC",
+      "interpretation": "ordered_endpoints_only_median_tail_crossing"
+    },
+    {
+      "control_id": "quantile_static",
+      "stages": 2152,
+      "rows": 319651,
+      "raw_inversions": 0,
+      "emitted_inversions": 0,
+      "point_below_lower": 631,
+      "point_above_upper": 1,
+      "minimum_emitted_width": 0.344941356771411,
+      "width_units": "degC",
+      "interpretation": "ordered_endpoints_only_median_tail_crossing"
+    }
+  ],
+  "costs": {
+    "measured_stage_cpu_seconds": 1502.83,
+    "measured_stage_wall_seconds": 1541.49,
+    "measured_peak_rss_bytes": 660733952,
+    "stages_completed": 2929,
+    "first_stage_started_utc": "2026-09-18T14:42:15.365715+00:00",
+    "last_stage_completed_utc": "2026-09-18T17:22:51.588859+00:00",
+    "rename_denials": 58,
+    "recovered_ready_stages": 0,
+    "coordinator_phases": [
+      {
+        "phase": "run_resume",
+        "exit_status": 0,
+        "utc": "2026-09-18T17:34:39.607643+00:00",
+        "worker_peak_rss_bytes": 4493312
+      },
+      {
+        "phase": "validate",
+        "exit_status": 1,
+        "utc": "2026-09-18T18:02:19.033199+00:00",
+        "worker_peak_rss_bytes": 4505600
+      },
+      {
+        "phase": "completed_resume",
+        "exit_status": 0,
+        "utc": "2026-09-18T18:50:50.880694+00:00",
+        "worker_peak_rss_bytes": 731013120
+      },
+      {
+        "phase": "analysis",
+        "exit_status": 1,
+        "utc": "2026-09-18T18:53:23.631602+00:00",
+        "worker_peak_rss_bytes": 0
+      }
+    ],
+    "measurement_limitations": [
+      "The original 2026-09-18 attempt was interrupted without an exit receipt; its wall time is bounded by journal timestamps only and its terminal exit status is unknown.",
+      "Stage-level CPU and RSS are measured inside the worker by the engine PhaseMeter and cover both the original and the resumed attempt, because completed stage records are preserved.",
+      "Peak RSS is the maximum lifetime peak recorded across completed stages, not a continuous sample of the whole process lifetime.",
+      "Coordinator heartbeat worker CPU under-reports: it latched onto the venv redirector stub for the resumed run phase. The independent liveness probe records the real worker."
+    ]
+  }
+}

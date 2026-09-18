@@ -1,0 +1,14 @@
+{
+  "event": "analysis_attempt_001_failed_preserved",
+  "attempt": 1,
+  "exit_status": 1,
+  "cause": "vestigial pandas reindex on duplicate rule_id labels while drawing the second figure",
+  "scope": "figure rendering only; all CSVs and the analysis record had already been written",
+  "preserved_partial": "smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1_analysis_failed_attempt_001",
+  "preserved_log": "smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\phase_analysis.log",
+  "fixes": [
+    "removed the unused reindex in figures()",
+    "ANALYSIS_RECORD.json no longer embeds the 127161-entry COMPLETE.json file manifest (19.5 MB -> summary)"
+  ],
+  "utc": "2026-09-18T18:53:23Z"
+}

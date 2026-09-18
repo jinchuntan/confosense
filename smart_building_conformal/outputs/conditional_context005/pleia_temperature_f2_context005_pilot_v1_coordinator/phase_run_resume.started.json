@@ -1,0 +1,30 @@
+{
+  "event": "phase_started",
+  "phase": "run_resume",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.conditional_context005",
+    "run",
+    "--manifest",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\pleia_f2_s42_C_v1_execution_manifest.json",
+    "--design",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1",
+    "--readiness",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1\\readiness.json",
+    "--resume-incomplete"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "utc": "2026-09-18T16:48:10.298197+00:00",
+  "coordinator_pid": 15028,
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\phase_run_resume.log",
+  "progress_before": {
+    "committed_stages": 692,
+    "context_stages": 688,
+    "contexts_complete": 16,
+    "complete_json": false
+  }
+}

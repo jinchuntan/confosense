@@ -1,0 +1,29 @@
+{
+  "event": "phase_finished",
+  "phase": "validate",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "-m",
+    "src.conditional_context005",
+    "validate",
+    "--design",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1",
+    "--out",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1",
+    "--receipt",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\validation"
+  ],
+  "exit_status": 1,
+  "utc": "2026-09-18T18:02:19.033199+00:00",
+  "coordinator_pid": 15028,
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\phase_validate.log",
+  "worker_peak_rss_bytes": 4505600,
+  "worker_cpu_seconds": 0.0,
+  "progress_after": {
+    "committed_stages": 2929,
+    "context_stages": 2924,
+    "contexts_complete": 68,
+    "complete_json": true
+  }
+}

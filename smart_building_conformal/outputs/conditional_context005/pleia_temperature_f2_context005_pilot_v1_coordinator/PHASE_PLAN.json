@@ -1,0 +1,97 @@
+{
+  "unit": "pleia_f2_s42_C_v1",
+  "dataset": "pleia",
+  "target": "temperature",
+  "outer_fold": 2,
+  "horizon": 1,
+  "model_seed": 42,
+  "created_utc": "2026-09-19",
+  "note": "Phases are re-read before each phase so more can be appended without a second coordinator.",
+  "phases": [
+    {
+      "name": "run_resume",
+      "description": "Resumed replay (COMPLETE, exit 0).",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.conditional_context005",
+        "run",
+        "--design",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1\\readiness.json",
+        "--resume-incomplete"
+      ]
+    },
+    {
+      "name": "completed_resume",
+      "description": "Zero-fit completed resume proving unchanged scientific outputs.",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "-m",
+        "src.conditional_context005",
+        "resume",
+        "--design",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1",
+        "--out",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1",
+        "--readiness",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s42_C_v1\\readiness.json",
+        "--receipt",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\completed_resume.json"
+      ]
+    },
+    {
+      "name": "analysis",
+      "description": "Temperature-specific single-seed analysis, CSVs and figures.",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\run_stage.py",
+        "analyze_temperature.py"
+      ]
+    },
+    {
+      "name": "packaging",
+      "description": "Lossless raw packaging into verified GitHub-sized parts.",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\run_stage.py",
+        "pack_temperature.py"
+      ]
+    },
+    {
+      "name": "survey_validation",
+      "description": "Full-extent independent validation survey at the frozen tolerance.",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\run_stage.py",
+        "survey_validation.py"
+      ]
+    },
+    {
+      "name": "documents",
+      "description": "Report, evidence index and remaining-work note.",
+      "argv": [
+        "C:/cfs_venv/Scripts/python.exe",
+        "-B",
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_pilot_20260918\\run_stage.py",
+        "document_temperature.py"
+      ]
+    }
+  ],
+  "updated_utc": "2026-09-19",
+  "validate_attempt_001": {
+    "status": "failed",
+    "exit_status": 1,
+    "reason": "independent scalar reconstruction differs from saved bounds beyond frozen 1e-10 tolerance at gradient-boosting bin-boundary rows",
+    "preserved": "validation_failed_attempt_001 / VALIDATION_ATTEMPT_001_FAILED.json / phase_validate.log",
+    "not_retried_unchanged": "a rerun would abort identically; the full-extent survey quantifies it instead without loosening any tolerance"
+  }
+}

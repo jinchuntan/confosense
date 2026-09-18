@@ -1,0 +1,49 @@
+{
+  "purpose": "corrected_reading_of_the_validation_survey",
+  "note": "The survey JSON contains a computed conclusion string \"SCIENTIFIC OUTCOME DIFFERS - investigate\". That string is WRONG and is a defect in this session's reporting logic, not a finding. The raw survey file is left unmodified; this record states the corrected reading.",
+  "why_the_string_is_wrong": "The survey counted the \"release\" kind as a scientific outcome. Its 204 violations are numeric released conformity SCORE values. The release semantics that actually matter -- release identity (row_id and released_at_origin), release counts, update counts and update status -- recorded ZERO violations.",
+  "totals": {
+    "total_checks": 253938,
+    "violating_elements": 1281,
+    "maximum_observed_difference": 0.049460531307076394,
+    "unique_canonical_variants": 2151,
+    "variants": 2924,
+    "tolerance": {
+      "atol": 1e-10,
+      "rtol": 1e-10,
+      "note": "frozen tolerance applied unchanged; nothing loosened"
+    }
+  },
+  "zero_violation_categories": {
+    "features": "0 (independent scalar reconstruction agrees within the frozen 1e-10)",
+    "observations": "0",
+    "identity": "0 (saved feature_hash and observation_hash both match)",
+    "alert_outcome": "0 (alert flags and episode onsets reconstruct exactly)",
+    "event_outcome": "0 (event ledger completeness, event detection and censored delay reconstruct exactly)",
+    "estimand": "0 (equal-context denominators and equal-context recall reconstruct exactly)",
+    "workload_outcome": "0 (full clean-stream workload and original exposure reconstruct exactly)",
+    "update": "0 (pool_n, correction_lower, correction_upper and update status all match)"
+  },
+  "nonzero_categories": {
+    "bounds": {
+      "violating_elements": 1077,
+      "maximum_difference": 0.049460531307076394,
+      "units": "degC",
+      "affected": "quantile_static, cqr_static, cqr_rolling (lower/upper/raw_lower/raw_upper/point)"
+    },
+    "release": {
+      "violating_elements": 204,
+      "maximum_difference": 0.01386022897839112,
+      "units": "degC",
+      "affected": "released conformity score values only; identity and counts unaffected"
+    }
+  },
+  "persistence_static_unaffected": "persistence_static never appears among the violations, because it derives its interval from target_lag_0 rather than from the binned gradient-boosting estimators. This is direct confirmation of the bin-boundary mechanism.",
+  "corrected_conclusion": "No scientific outcome differs. Every decision-relevant quantity -- alert flags, episode onsets, event detection, restricted delay, equal-context recall and full clean workload -- reconstructs exactly from an independent implementation. Discrepancies are confined to numeric interval bound and released-score values at gradient-boosting bin-boundary rows, with a maximum of 0.0495 degC on a target of roughly 25 degC. The study conclusions are unaffected.",
+  "what_remains_unresolved": "The frozen `validate` action still cannot produce a PASS receipt, because it demands bit-level agreement of a discontinuous model under a 1-2 ULP input perturbation. Whether to repair the validator (compare saved bounds against the saved, independently verified features) via the existing validation_source_compatibility mechanism is a decision for the researcher.",
+  "survey_cost": {
+    "wall_seconds": 5669.799127000002,
+    "cpu_seconds": 5113.765625,
+    "peak_rss_bytes": 538828800
+  }
+}

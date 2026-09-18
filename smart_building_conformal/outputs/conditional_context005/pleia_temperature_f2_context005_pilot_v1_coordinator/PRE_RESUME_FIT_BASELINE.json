@@ -1,0 +1,21 @@
+{
+  "purpose": "pre_resume_fit_baseline_for_zero_additional_fit_proof",
+  "recorded_utc": "2026-09-19",
+  "operations_jsonl": {
+    "path": "smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1\\operations.jsonl",
+    "sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "bytes": 9201,
+    "records": 12,
+    "kind_counts": {
+      "cqr_wrapper_fit": 2,
+      "quantile_estimator_fit": 6,
+      "calibrator_conformalize": 4
+    }
+  },
+  "owner_stage_shas": {
+    "owner_fit_cqr_owner_pkl": "6ea134cdd690c7cf1e595e6874c0772d943514a91aaa46055351582326b7ac14",
+    "owner_cal_cqr_owner_pkl": "22ede7e8d7e32759d4450dcc8c5324377569512f29e759cb6cc278f8675938c6",
+    "controls_pkl": "cb1eedfcbaba2c04122dfd422a1fe864275f4a72229fad95aa6152525879a523"
+  },
+  "committed_stages": 692
+}

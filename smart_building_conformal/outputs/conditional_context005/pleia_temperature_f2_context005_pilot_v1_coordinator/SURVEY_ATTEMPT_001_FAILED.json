@@ -1,0 +1,9 @@
+{
+  "event": "survey_attempt_001_failed",
+  "exit_status": 1,
+  "cause": "imported table() from context005_spec instead of the validator's own coercing table(); blank numeric stream cells stayed as '' (object dtype) and broke the comparison",
+  "fix": "import table from src.context005_validate",
+  "smoke_test": "5 variants: 465 checks, 0 violations, max diff 1.78e-14",
+  "preserved_log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_pilot_v1_coordinator\\phase_survey_validation.log",
+  "utc": "2026-09-18T19:21:48Z"
+}

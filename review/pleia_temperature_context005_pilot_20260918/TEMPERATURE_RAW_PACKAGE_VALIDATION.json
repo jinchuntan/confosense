@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "unit": "pleia_f2_s42_C_v1",
+  "dataset": "pleia",
+  "target": "temperature",
+  "model_seed": 42,
+  "parts": 10,
+  "members": 127162,
+  "raw_files": 127162,
+  "contexts": 68,
+  "complete_tree_verified": true,
+  "maximum_part_bytes": 63068546,
+  "total_part_bytes": 549321115,
+  "github_part_limit_bytes": 99614720,
+  "reconstruction": "Extract every part into one empty directory; verify every byte with raw_file_manifest.csv.gz.",
+  "source_complete_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996"
+}
