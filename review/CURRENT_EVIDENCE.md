@@ -251,3 +251,15 @@ Use an appropriate existing Python executable on another machine. Check the actu
 Raw/interim/processed datasets remain under ignored local data directories. The baseline prepared-data cache used for diagnosis is local at `C:/Users/nigel/ConfoSenseBackups/pilot_followup_20260913/prepared_baseline.pkl`; it is not required to recompute the published diagnostics from their saved development predictions. Existing virtual environments, full legacy prediction dumps excluded by Git, external backup snapshots and Git bundles remain local. No new sharing service is used. [DATA_NOTICE.md](DATA_NOTICE.md) records source attribution and changes.
 
 That earlier next step is superseded by the completed amendment-004 implementation and bounded smoke indexed above. The single next proposal is the frozen BDG2 fold-2/seed-42 engineering pilot. Full multi-dataset fitting and robustness execution remain unlaunched, and global study/publication readiness remains false.
+
+## PLEIA temperature conditional-context pilot (fold 2, seed 42)
+
+Branch `review/pleia-temperature-context005-pilot-20260918`, primary results `31fdacbb29ef70bbb297cfe52d9fbf91fb789038`.
+One model seed (42), outer fold 2, horizon 1 (10 min), 95% intervals, endpoint `C_effective_fault_conditional_context`.
+
+- 68 original contexts, 2856 scheduled fault slots, 171360 event/control/rule/channel records, 60 summary rows.
+- Fitting budget spent exactly as authorized: 1 CQR wrapper, 3 HistGradientBoosting quantile estimators, 2 nested conformalize calls, 1 persistence radius; no XGBoost, Attention-LSTM, EnbPI, DSCP, tuning or matched refits.
+- Interval quality on the clean full stream at nominal 95%: persistence_static 0.965 coverage at 1.600 degC MPIW, cqr_rolling 0.908 at 8.934, cqr_static 0.325 at 3.343, quantile_static 0.224 at 2.669. Substantial undercoverage of the learned quantile controls on temperature.
+- Population intervals are UNAVAILABLE for this setting: a single model seed is descriptive only, and no energy bound is transferred.
+- The frozen `validate` action did not pass; see the delivery readback receipt for the bin-boundary cause and the full-extent survey.
+- Evidence index: `review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_EVIDENCE_INDEX.md`.

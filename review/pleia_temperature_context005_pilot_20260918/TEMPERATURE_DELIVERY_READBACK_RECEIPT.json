@@ -1,0 +1,253 @@
+{
+  "unit": "pleia_f2_s42_C_v1",
+  "dataset": "pleia",
+  "target": "temperature",
+  "outer_fold": 2,
+  "horizon": 1,
+  "model_seed": 42,
+  "branch": "review/pleia-temperature-context005-pilot-20260918",
+  "primary_results_commit": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "main_unchanged": true,
+  "main": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "generated_utc": "2026-09-18T21:21:29.220329+00:00",
+  "what_was_actually_checked": {
+    "recorded_run_exit_status": 0,
+    "completed_tree_files": 127161,
+    "scope_counts": {
+      "contexts": 68,
+      "scheduled_slots": 2856,
+      "context_stages": 2924,
+      "events": 171360,
+      "strata_rows": 1260,
+      "macro_rows": 60,
+      "workload_rows": 60
+    },
+    "zero_fit_completed_resume": {
+      "passed": true,
+      "models_fitted": 0,
+      "calibrators_fitted": 0,
+      "replay_updates": 0,
+      "scientific_artifacts_unchanged": true
+    },
+    "fits_preserved_across_interruption": {
+      "operations_jsonl_byte_identical_before_and_after_resume": true,
+      "fitted_artifact_hashes_unchanged": true,
+      "all_fit_stages_started_by_original_worker_pid": 12824,
+      "stages_by_original_worker": 692,
+      "stages_by_resumed_worker": 2237
+    },
+    "lossless_packaging": {
+      "parts": 10,
+      "members": 127162,
+      "raw_files": 127162,
+      "every_member_reopened_and_hashed": true,
+      "maximum_part_bytes": 63068546,
+      "total_part_bytes": 549321115
+    },
+    "github_download_verification": {
+      "passed": true,
+      "commit": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+      "api_status": 200,
+      "api_commit_sha": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+      "downloads": [
+        {
+          "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_publication_v1/parts_manifest.csv",
+          "url": "https://raw.githubusercontent.com/jinchuntan/confosense/31fdacbb29ef70bbb297cfe52d9fbf91fb789038/smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_publication_v1/parts_manifest.csv",
+          "http_status": 200,
+          "committed_blob_bytes": 1122,
+          "downloaded_bytes": 1122,
+          "committed_blob_sha256": "44165886dfa6a284d50bb85254bebb618a2fe95a167e01c42f278853f4fe5f3e",
+          "downloaded_sha256": "44165886dfa6a284d50bb85254bebb618a2fe95a167e01c42f278853f4fe5f3e",
+          "identical": true,
+          "worktree_bytes": 1122,
+          "worktree_differs_by_line_endings_only": false,
+          "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+        },
+        {
+          "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis/control_rule_channel_summary.csv",
+          "url": "https://raw.githubusercontent.com/jinchuntan/confosense/31fdacbb29ef70bbb297cfe52d9fbf91fb789038/smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis/control_rule_channel_summary.csv",
+          "http_status": 200,
+          "committed_blob_bytes": 15859,
+          "downloaded_bytes": 15859,
+          "committed_blob_sha256": "513e26f441dc46051c1b57dc9b5311e5f05f92e8d54b8ffff101d3481c20afa1",
+          "downloaded_sha256": "513e26f441dc46051c1b57dc9b5311e5f05f92e8d54b8ffff101d3481c20afa1",
+          "identical": true,
+          "worktree_bytes": 15859,
+          "worktree_differs_by_line_endings_only": false,
+          "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+        },
+        {
+          "path": "review/pleia_temperature_context005_pilot_20260918/PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+          "url": "https://raw.githubusercontent.com/jinchuntan/confosense/31fdacbb29ef70bbb297cfe52d9fbf91fb789038/review/pleia_temperature_context005_pilot_20260918/PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+          "http_status": 200,
+          "committed_blob_bytes": 13591,
+          "downloaded_bytes": 13591,
+          "committed_blob_sha256": "8c5d6fac859ed44e57c2779df5379336ba2428c88156924ee7276c4a88dfed48",
+          "downloaded_sha256": "8c5d6fac859ed44e57c2779df5379336ba2428c88156924ee7276c4a88dfed48",
+          "identical": true,
+          "worktree_bytes": 13768,
+          "worktree_differs_by_line_endings_only": true,
+          "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+        }
+      ],
+      "note": "Byte-for-byte HTTPS downloads from GitHub; not a local remote-tracking read."
+    },
+    "backup": {
+      "directory": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_pilot_20260918\\primary_evidence",
+      "files": 17,
+      "verified_all": true,
+      "entries": [
+        {
+          "name": "control_rule_channel_summary.csv",
+          "bytes": 15859,
+          "sha256": "513e26f441dc46051c1b57dc9b5311e5f05f92e8d54b8ffff101d3481c20afa1",
+          "verified": true
+        },
+        {
+          "name": "stratum_support.csv",
+          "bytes": 148613,
+          "sha256": "69e5d2c200e0a395c8be8069b3711b86d3b805981454438776a83677cf8c95ec",
+          "verified": true
+        },
+        {
+          "name": "interval_diagnostics.csv",
+          "bytes": 4612,
+          "sha256": "67ed141996282a70f661489bd825553c865300a68bf6e8e8aea5c28c4c9eeeca",
+          "verified": true
+        },
+        {
+          "name": "interval_ordering_assessment.csv",
+          "bytes": 560,
+          "sha256": "8b89cc4050956ecb5877f1dd5e250e8be006aa1e6a873caf8740a28c0a802111",
+          "verified": true
+        },
+        {
+          "name": "operation_counts.csv",
+          "bytes": 470,
+          "sha256": "8e96b696c5de99e7447cf5bc576a853308896d8d19f7a24822d8f3034443aca5",
+          "verified": true
+        },
+        {
+          "name": "execution_cost.csv",
+          "bytes": 287,
+          "sha256": "13c21c3517af9b7d8fe7da8a661dc79fae21c53653946edc956d1eb44a824ae9",
+          "verified": true
+        },
+        {
+          "name": "ANALYSIS_RECORD.json",
+          "bytes": 5775,
+          "sha256": "d4b138cbcb7c32c62e897513252172c86c7788204e5aa5c8c1537d486c9acf8a",
+          "verified": true
+        },
+        {
+          "name": "original_context_contributions.csv.gz",
+          "bytes": 357770,
+          "sha256": "bdf653f4f92e271d040152d453bb3753bda5e7ceb3fc33b2ea18d993c0751464",
+          "verified": true
+        },
+        {
+          "name": "parts_manifest.csv",
+          "bytes": 1122,
+          "sha256": "44165886dfa6a284d50bb85254bebb618a2fe95a167e01c42f278853f4fe5f3e",
+          "verified": true
+        },
+        {
+          "name": "raw_file_manifest.csv.gz",
+          "bytes": 3318527,
+          "sha256": "f4d04006e347cd63e45bd72172d0a132077f7ba112e198678a14767587e3abb1",
+          "verified": true
+        },
+        {
+          "name": "validation.json",
+          "bytes": 551,
+          "sha256": "45d899752916636fc7f45a1d7365e4868117f52c9dfb1a13ba205ac3601f3ff7",
+          "verified": true
+        },
+        {
+          "name": "COMPLETE.json",
+          "bytes": 19206570,
+          "sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+          "verified": true
+        },
+        {
+          "name": "operations.jsonl",
+          "bytes": 9201,
+          "sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+          "verified": true
+        },
+        {
+          "name": "completed_resume.json",
+          "bytes": 245,
+          "sha256": "8000728edf23fd8fccfa9f48a0e433749bd41f9fcc2d142ce2251ed3b5b8675f",
+          "verified": true
+        },
+        {
+          "name": "VALIDATION_SURVEY.json",
+          "bytes": 1460,
+          "sha256": "c3835d33ca5b80ffac8a95c044af282b59e3a72585d0783d2a1ceadf064af9ff",
+          "verified": true
+        },
+        {
+          "name": "PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+          "bytes": 13768,
+          "sha256": "029a72dd4af8a6c266c876b2d8d2ddd7559655e10a7b13ea5664e4f486d8d4d6",
+          "verified": true
+        },
+        {
+          "name": "TEMPERATURE_EVIDENCE_INDEX.md",
+          "bytes": 3606,
+          "sha256": "460370a95e9c59c679edb9fc586a2a3b2a1c3980cbbe7d3a9a676defd7b7980b",
+          "verified": true
+        }
+      ]
+    },
+    "git_bundles": [
+      "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_pilot_20260918\\temperature_primary_31fdacbb.bundle",
+      "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_pilot_20260918\\temperature_primary_e964cccb.bundle"
+    ]
+  },
+  "independent_validation": {
+    "frozen_validate_action": "FAILED at attempt 1 and was not retried unchanged",
+    "failure": "lower_context_3c2ed441cb78fe67ef35_v0 exceeded the frozen atol=1e-10 rtol=1e-10",
+    "cause": "gradient-boosting bin-boundary discontinuity: the engine computes causal features vectorised and the validator reconstructs them scalar-wise, agreeing to 1.78e-14 (1-2 float64 ULP), but HistGradientBoostingRegressor bins features into <=255 bins, so rows sitting on a bin threshold select a different leaf",
+    "tolerance_unchanged": true,
+    "frozen_validator_source_unchanged": true,
+    "survey": {
+      "total_checks": 253938,
+      "total_violating_elements": 1281,
+      "maximum_observed_difference": 0.049460531307076394,
+      "scientific_outcome_violations": 204,
+      "scientific_outcome_breakdown": {
+        "alert_flags": 0,
+        "episode_onsets": 0,
+        "release_identity": 0,
+        "update_status": 0,
+        "update_counts": 0,
+        "release_counts": 0
+      },
+      "conclusion": "SCIENTIFIC OUTCOME DIFFERS - investigate"
+    },
+    "decision_required_from_researcher": "Whether to repair the validator so that saved bounds are checked against the saved (independently verified) features rather than against a scalar re-derivation, using the existing validation_source_compatibility mechanism. Not done here: changing a frozen validation contract is the researcher's call."
+  },
+  "preservation": {
+    "energy_study_untouched": true,
+    "energy_primary_results": "da8700eed1a77124eafee538ae4c7f57eb21b963",
+    "energy_final_delivery": "80df3579dfe68ccf2c0d406c21c0fec967ff2b41",
+    "failed_attempts_preserved": [
+      "ATTEMPT_001_INTERRUPTION_RECORD.json",
+      "validation_failed_attempt_001/ + VALIDATION_ATTEMPT_001_FAILED.json",
+      "pleia_f2_s42_C_v1_analysis_failed_attempt_001/ + ANALYSIS_ATTEMPT_001_FAILED.json",
+      "SURVEY_ATTEMPT_001_FAILED.json",
+      "coordinator.py (the superseded 2026-09-18 coordinator) and its receipts"
+    ],
+    "stale_energy_copies_excluded_from_publication": 37
+  },
+  "scope_accounting": {
+    "matched_forecasting": "70/195",
+    "matched_interval_cells": "250/1950",
+    "unique_seasonal": "9/27",
+    "full_study_ready": false,
+    "conditional_context_tracked_separately": true
+  },
+  "receipt_scope_note": "This receipt describes checks completed up to and including the primary results commit named above. It does not assert verification of the final delivery commit that will contain this file; that commit is verified separately by TEMPERATURE_FINAL_DELIVERY_RECEIPT.json."
+}

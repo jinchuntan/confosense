@@ -1,0 +1,166 @@
+{
+  "passed": true,
+  "stage": "primary_results",
+  "branch": "review/pleia-temperature-context005-pilot-20260918",
+  "primary_results_commit": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "remote_commit": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "url": "https://github.com/jinchuntan/confosense/tree/31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "backup": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_pilot_20260918\\temperature_primary_31fdacbb.bundle",
+  "backup_bytes": 4756479230,
+  "backup_sha256": "a8837257a3d5b6e8ca40599e65834715fb2d8c8957c072ee12576ee8fac9aef1",
+  "evidence_files": 133,
+  "evidence_bytes": 586723263,
+  "github_readback": {
+    "passed": true,
+    "commit": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+    "api_status": 200,
+    "api_commit_sha": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+    "downloads": [
+      {
+        "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_publication_v1/parts_manifest.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/31fdacbb29ef70bbb297cfe52d9fbf91fb789038/smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_publication_v1/parts_manifest.csv",
+        "http_status": 200,
+        "committed_blob_bytes": 1122,
+        "downloaded_bytes": 1122,
+        "committed_blob_sha256": "44165886dfa6a284d50bb85254bebb618a2fe95a167e01c42f278853f4fe5f3e",
+        "downloaded_sha256": "44165886dfa6a284d50bb85254bebb618a2fe95a167e01c42f278853f4fe5f3e",
+        "identical": true,
+        "worktree_bytes": 1122,
+        "worktree_differs_by_line_endings_only": false,
+        "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+      },
+      {
+        "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis/control_rule_channel_summary.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/31fdacbb29ef70bbb297cfe52d9fbf91fb789038/smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis/control_rule_channel_summary.csv",
+        "http_status": 200,
+        "committed_blob_bytes": 15859,
+        "downloaded_bytes": 15859,
+        "committed_blob_sha256": "513e26f441dc46051c1b57dc9b5311e5f05f92e8d54b8ffff101d3481c20afa1",
+        "downloaded_sha256": "513e26f441dc46051c1b57dc9b5311e5f05f92e8d54b8ffff101d3481c20afa1",
+        "identical": true,
+        "worktree_bytes": 15859,
+        "worktree_differs_by_line_endings_only": false,
+        "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+      },
+      {
+        "path": "review/pleia_temperature_context005_pilot_20260918/PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/31fdacbb29ef70bbb297cfe52d9fbf91fb789038/review/pleia_temperature_context005_pilot_20260918/PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+        "http_status": 200,
+        "committed_blob_bytes": 13591,
+        "downloaded_bytes": 13591,
+        "committed_blob_sha256": "8c5d6fac859ed44e57c2779df5379336ba2428c88156924ee7276c4a88dfed48",
+        "downloaded_sha256": "8c5d6fac859ed44e57c2779df5379336ba2428c88156924ee7276c4a88dfed48",
+        "identical": true,
+        "worktree_bytes": 13768,
+        "worktree_differs_by_line_endings_only": true,
+        "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+      }
+    ],
+    "note": "Byte-for-byte HTTPS downloads from GitHub; not a local remote-tracking read."
+  },
+  "validation": {
+    "frozen_validate_passed": false,
+    "frozen_validate_status": "FAILED at attempt 1; preserved, not retried unchanged, no tolerance loosened",
+    "survey": {
+      "purpose": "full_extent_independent_validation_survey_frozen_tolerance_unchanged",
+      "tolerance": {
+        "atol": 1e-10,
+        "rtol": 1e-10,
+        "note": "frozen tolerance applied unchanged; nothing loosened"
+      },
+      "total_checks": 253938,
+      "total_violating_elements": 1281,
+      "maximum_observed_difference": 0.049460531307076394,
+      "unique_canonical_variants": 2151,
+      "variants": 2924,
+      "violations_by_kind": [
+        {
+          "kind": "bounds",
+          "checks_with_violations": 810,
+          "violations": 1077,
+          "maximum_difference": 0.049460531307076394
+        },
+        {
+          "kind": "release",
+          "checks_with_violations": 201,
+          "violations": 204,
+          "maximum_difference": 0.01386022897839112
+        }
+      ],
+      "scientific_outcome_violations": 204,
+      "scientific_outcome_breakdown": {
+        "alert_flags": 0,
+        "episode_onsets": 0,
+        "release_identity": 0,
+        "update_status": 0,
+        "update_counts": 0,
+        "release_counts": 0
+      },
+      "conclusion": "SCIENTIFIC OUTCOME DIFFERS - investigate",
+      "resources": {
+        "seconds": 5669.799127000002,
+        "baseline_rss_bytes": 324489216,
+        "peak_rss_bytes": 530997248,
+        "baseline_private_bytes": 283447296,
+        "peak_private_bytes": 499650560,
+        "incremental_peak_rss_bytes": 206508032,
+        "lifetime_peak_rss_bytes": 538828800,
+        "min_available_ram_bytes": 1763471360,
+        "sample_interval_seconds": 0.05,
+        "process_cpu_seconds": 5113.765625
+      }
+    },
+    "corrected_reading": {
+      "purpose": "corrected_reading_of_the_validation_survey",
+      "note": "The survey JSON contains a computed conclusion string \"SCIENTIFIC OUTCOME DIFFERS - investigate\". That string is WRONG and is a defect in this session's reporting logic, not a finding. The raw survey file is left unmodified; this record states the corrected reading.",
+      "why_the_string_is_wrong": "The survey counted the \"release\" kind as a scientific outcome. Its 204 violations are numeric released conformity SCORE values. The release semantics that actually matter -- release identity (row_id and released_at_origin), release counts, update counts and update status -- recorded ZERO violations.",
+      "totals": {
+        "total_checks": 253938,
+        "violating_elements": 1281,
+        "maximum_observed_difference": 0.049460531307076394,
+        "unique_canonical_variants": 2151,
+        "variants": 2924,
+        "tolerance": {
+          "atol": 1e-10,
+          "rtol": 1e-10,
+          "note": "frozen tolerance applied unchanged; nothing loosened"
+        }
+      },
+      "zero_violation_categories": {
+        "features": "0 (independent scalar reconstruction agrees within the frozen 1e-10)",
+        "observations": "0",
+        "identity": "0 (saved feature_hash and observation_hash both match)",
+        "alert_outcome": "0 (alert flags and episode onsets reconstruct exactly)",
+        "event_outcome": "0 (event ledger completeness, event detection and censored delay reconstruct exactly)",
+        "estimand": "0 (equal-context denominators and equal-context recall reconstruct exactly)",
+        "workload_outcome": "0 (full clean-stream workload and original exposure reconstruct exactly)",
+        "update": "0 (pool_n, correction_lower, correction_upper and update status all match)"
+      },
+      "nonzero_categories": {
+        "bounds": {
+          "violating_elements": 1077,
+          "maximum_difference": 0.049460531307076394,
+          "units": "degC",
+          "affected": "quantile_static, cqr_static, cqr_rolling (lower/upper/raw_lower/raw_upper/point)"
+        },
+        "release": {
+          "violating_elements": 204,
+          "maximum_difference": 0.01386022897839112,
+          "units": "degC",
+          "affected": "released conformity score values only; identity and counts unaffected"
+        }
+      },
+      "persistence_static_unaffected": "persistence_static never appears among the violations, because it derives its interval from target_lag_0 rather than from the binned gradient-boosting estimators. This is direct confirmation of the bin-boundary mechanism.",
+      "corrected_conclusion": "No scientific outcome differs. Every decision-relevant quantity -- alert flags, episode onsets, event detection, restricted delay, equal-context recall and full clean workload -- reconstructs exactly from an independent implementation. Discrepancies are confined to numeric interval bound and released-score values at gradient-boosting bin-boundary rows, with a maximum of 0.0495 degC on a target of roughly 25 degC. The study conclusions are unaffected.",
+      "what_remains_unresolved": "The frozen `validate` action still cannot produce a PASS receipt, because it demands bit-level agreement of a discontinuous model under a 1-2 ULP input perturbation. Whether to repair the validator (compare saved bounds against the saved, independently verified features) via the existing validation_source_compatibility mechanism is a decision for the researcher.",
+      "survey_cost": {
+        "wall_seconds": 5669.799127000002,
+        "cpu_seconds": 5113.765625,
+        "peak_rss_bytes": 538828800
+      }
+    }
+  },
+  "tolerated_whitespace_notes": [],
+  "main_unchanged": true,
+  "utc": "2026-09-18T21:21:06.438644+00:00"
+}
