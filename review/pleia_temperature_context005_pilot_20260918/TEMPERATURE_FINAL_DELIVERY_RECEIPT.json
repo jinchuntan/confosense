@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "stage": "final_delivery",
+  "branch": "review/pleia-temperature-context005-pilot-20260918",
+  "primary_results_commit": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "final_delivery_commit": "81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf",
+  "remote_commit": "81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf",
+  "url": "https://github.com/jinchuntan/confosense/tree/81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf",
+  "backup": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_pilot_20260918\\temperature_delivery_81bf57a9.bundle",
+  "backup_sha256": "ec3ca800247345cee76f5ea13c0942a4c3cbaf955dc3a21f59f1e929f91086b5",
+  "github_readback": {
+    "passed": true,
+    "commit": "81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf",
+    "api_status": 200,
+    "api_commit_sha": "81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf",
+    "downloads": [
+      {
+        "path": "review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_DELIVERY_READBACK_RECEIPT.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf/review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_DELIVERY_READBACK_RECEIPT.json",
+        "http_status": 200,
+        "committed_blob_bytes": 11077,
+        "downloaded_bytes": 11077,
+        "committed_blob_sha256": "a2c5a359e27974330c72668769788ca44e66542cb63c725b2240015a9006406a",
+        "downloaded_sha256": "a2c5a359e27974330c72668769788ca44e66542cb63c725b2240015a9006406a",
+        "identical": true,
+        "worktree_bytes": 11077,
+        "worktree_differs_by_line_endings_only": false,
+        "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+      },
+      {
+        "path": "review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_EVIDENCE_INDEX.md",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/81bf57a9003ec2e5b00db6ea9d2be4d316d0caaf/review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_EVIDENCE_INDEX.md",
+        "http_status": 200,
+        "committed_blob_bytes": 3565,
+        "downloaded_bytes": 3565,
+        "committed_blob_sha256": "7deeebcd73a24fdbdc6421bf2b4f3bd73cf01ef348cd624d1ae756e06310762b",
+        "downloaded_sha256": "7deeebcd73a24fdbdc6421bf2b4f3bd73cf01ef348cd624d1ae756e06310762b",
+        "identical": true,
+        "worktree_bytes": 3606,
+        "worktree_differs_by_line_endings_only": true,
+        "method": "https_download_from_raw_githubusercontent_pinned_to_commit"
+      }
+    ],
+    "note": "Byte-for-byte HTTPS downloads from GitHub; not a local remote-tracking read."
+  },
+  "main_unchanged": true,
+  "note": "This receipt describes checks performed up to and including the primary results commit and this delivery commit push/readback. It does not assert verification of any later commit.",
+  "utc": "2026-09-18T21:27:56.642525+00:00"
+}

@@ -228,10 +228,27 @@ def main():
     b('')
     b('| Artifact | Path |')
     b('| --- | --- |')
+    validation_rows = []
+    formal = common.validation() / 'validation.json'
+    if formal.exists():
+        validation_rows.append(('Independent validation receipt (frozen `validate`)', formal))
+    else:
+        validation_rows += [
+            ('Frozen `validate` attempt 1 FAILED (preserved)',
+             common.BATCH / 'VALIDATION_ATTEMPT_001_FAILED.json'),
+            ('Bin-boundary diagnosis of that failure',
+             common.BATCH / 'VALIDATION_MISMATCH_DIAGNOSIS.txt'),
+            ('Full-extent independent validation survey (frozen tolerance)',
+             common.BATCH / 'validation_survey/VALIDATION_SURVEY.json'),
+            ('Corrected reading of that survey',
+             common.BATCH / 'validation_survey/VALIDATION_SURVEY_CORRECTED_READING.json'),
+            ('Survey violation detail',
+             common.BATCH / 'validation_survey/validation_survey_violations.csv'),
+        ]
     for label, path in [
         ('Pilot report', REPORT),
         ('Analysis record', ANALYSIS / 'ANALYSIS_RECORD.json'),
-        ('Independent validation receipt', common.validation() / 'validation.json'),
+        *validation_rows,
         ('Zero-fit completed resume receipt', common.resume()),
         ('Raw package validation', REVIEW / 'TEMPERATURE_RAW_PACKAGE_VALIDATION.json'),
         ('Interruption record (attempt 1)', common.BATCH / 'ATTEMPT_001_INTERRUPTION_RECORD.json'),
