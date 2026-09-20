@@ -1,0 +1,98 @@
+{
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "all_ok": true,
+  "results": [
+    {
+      "test": "accept_unmodified",
+      "description": "Unmodified representation-equivalent artifacts must pass",
+      "expected": "pass",
+      "observed": "pass",
+      "ok": true,
+      "violations": 0,
+      "max_difference": 1.4210854715202004e-14,
+      "detected_by": ""
+    },
+    {
+      "test": "reject_feature_corruption",
+      "description": "A 0.5 degC change to one saved causal feature must fail provenance (Contract A)",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 2,
+      "max_difference": 0.5,
+      "detected_by": "A_feature_provenance;A_identity"
+    },
+    {
+      "test": "reject_observation_corruption",
+      "description": "A 1.0 degC change to a saved observation must fail Contract A",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1,
+      "max_difference": 1.0,
+      "detected_by": "A_observations"
+    },
+    {
+      "test": "reject_prediction_corruption",
+      "description": "A 0.25 degC change to a saved model prediction must fail Contract B",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1,
+      "max_difference": 0.25,
+      "detected_by": "B_model_application"
+    },
+    {
+      "test": "reject_interval_corruption",
+      "description": "A 0.3 degC change to a saved interval bound must fail Contract C",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1,
+      "max_difference": 0.3000000000000007,
+      "detected_by": "C_interval_construction"
+    },
+    {
+      "test": "reject_causal_update_corruption",
+      "description": "A 0.2 degC change to a rolling conformal correction must fail Contract C rolling state",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1,
+      "max_difference": 0.19999999999999996,
+      "detected_by": "C_rolling_state"
+    },
+    {
+      "test": "reject_alert_flag_corruption",
+      "description": "Flipping one saved alert flag must fail Contract C alert outcomes",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1,
+      "max_difference": 1.4210854715202004e-14,
+      "detected_by": "C_alert_flags"
+    },
+    {
+      "test": "reject_released_score_corruption",
+      "description": "A 0.4 degC change to a released conformity score must fail Contract C",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1,
+      "max_difference": 0.4,
+      "detected_by": "C_released_scores"
+    },
+    {
+      "test": "reject_model_corruption",
+      "description": "Shifting the saved upper-quantile model baseline by 0.05 degC must fail Contract B",
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "violations": 1191,
+      "max_difference": 0.05000000000000071,
+      "detected_by": "B_model_application;C_interval_construction;C_released_scores"
+    }
+  ]
+}

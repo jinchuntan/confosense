@@ -1,0 +1,10 @@
+test,description,expected,observed,ok,violations,max_difference,detected_by
+accept_unmodified,Unmodified representation-equivalent artifacts must pass,pass,pass,True,0,1.4210854715202004e-14,
+reject_feature_corruption,A 0.5 degC change to one saved causal feature must fail provenance (Contract A),reject,reject,True,2,0.5,A_feature_provenance;A_identity
+reject_observation_corruption,A 1.0 degC change to a saved observation must fail Contract A,reject,reject,True,1,1.0,A_observations
+reject_prediction_corruption,A 0.25 degC change to a saved model prediction must fail Contract B,reject,reject,True,1,0.25,B_model_application
+reject_interval_corruption,A 0.3 degC change to a saved interval bound must fail Contract C,reject,reject,True,1,0.3000000000000007,C_interval_construction
+reject_causal_update_corruption,A 0.2 degC change to a rolling conformal correction must fail Contract C rolling state,reject,reject,True,1,0.19999999999999996,C_rolling_state
+reject_alert_flag_corruption,Flipping one saved alert flag must fail Contract C alert outcomes,reject,reject,True,1,1.4210854715202004e-14,C_alert_flags
+reject_released_score_corruption,A 0.4 degC change to a released conformity score must fail Contract C,reject,reject,True,1,0.4,C_released_scores
+reject_model_corruption,Shifting the saved upper-quantile model baseline by 0.05 degC must fail Contract B,reject,reject,True,1191,0.05000000000000071,B_model_application;C_interval_construction;C_released_scores

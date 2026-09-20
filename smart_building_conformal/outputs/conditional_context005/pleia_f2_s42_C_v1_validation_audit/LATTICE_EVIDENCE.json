@@ -1,0 +1,25 @@
+{
+  "target_resolution_degC": 0.1,
+  "distinct_target_values": 186,
+  "rollmean_6_distinct": 2126,
+  "rollmean_144_distinct": 23858,
+  "thresholds_on_rollmean_6": 183,
+  "thresholds_equal_to_observed_value": 170,
+  "threshold_coincidence_pct": 92.89617486338798,
+  "rows_exactly_on_threshold": 6543,
+  "rows_total": 49535,
+  "rows_exactly_on_threshold_pct": 13.208842232764711,
+  "divergence_events": 219,
+  "divergence_by_feature": {
+    "target_rollmean_6": 219
+  },
+  "divergence_by_estimator": {
+    "q_index_1": 171,
+    "q_index_0": 47,
+    "q_index_2": 1
+  },
+  "rowcases_explained": 145,
+  "rowcases_total": 145,
+  "protocols_pinning_source_hash": 88,
+  "current_source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
+}

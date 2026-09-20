@@ -1,0 +1,18 @@
+{
+  "purpose": "post_audit_scientific_artifact_integrity",
+  "complete_json_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+  "files_in_manifest": 127161,
+  "files_on_disk": 127161,
+  "identical_to_COMPLETE_manifest": true,
+  "missing": [],
+  "extra": [],
+  "changed": [],
+  "recorded_run_exit_status": 0,
+  "owner_pkl_sha256": {
+    "owner_fit": "6ea134cdd690c7cf1e595e6874c0772d943514a91aaa46055351582326b7ac14",
+    "owner_cal": "22ede7e8d7e32759d4450dcc8c5324377569512f29e759cb6cc278f8675938c6",
+    "controls": "cb1eedfcbaba2c04122dfd422a1fe864275f4a72229fad95aa6152525879a523"
+  },
+  "operations_jsonl_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+  "note": "The audit ran read-only. The completed run tree still matches its own COMPLETE manifest exactly."
+}

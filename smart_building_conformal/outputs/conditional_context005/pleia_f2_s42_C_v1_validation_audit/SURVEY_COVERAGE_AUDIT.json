@@ -1,0 +1,22 @@
+{
+  "analytic_terms": {
+    "per-variant checks (5 x 2924)": 14620,
+    "per-unique-canonical checks (110 x 2151)": 236610,
+    "  static control (5 bounds + 2 release + 20 alert)": 27,
+    "  rolling control (5 bounds + 2 release + 2 update + 20 alert)": 29,
+    "aggregate event (ledger, detection, censored delay)": 3,
+    "aggregate strata (1260 rows x 2)": 2520,
+    "aggregate fullstream (1 stage x 65)": 65,
+    "aggregate exposure (60 groups x 2)": 120
+  },
+  "analytic_total": 253938,
+  "survey_reported": 253938,
+  "match": true,
+  "updates_rows_by_control": {
+    "quantile_static": 0,
+    "cqr_static": 0,
+    "cqr_rolling": 6,
+    "persistence_static": 0
+  },
+  "note": "Static controls have zero rolling-update rows, so their update assertions do not execute; this is why the per-control term differs between static (27) and rolling (29)."
+}

@@ -4,6 +4,9 @@ Unit `pleia_f2_s42_C_v1` | dataset `pleia` (temperature, degC) | outer fold 2 | 
 
 **This is a conditional synthetic-fault challenge on one model seed and one outer fold.** Detection and workload below are conditional on a predeclared fault being present. They are not prevalence, precision, F1 or deployment-feasibility estimates. Temperature units differ from the energy study, so no cross-dataset error is pooled and no energy uncertainty bound is transferred. BDG2 operational feasibility remains a separate endpoint.
 
+<!-- validation-audit-20260919 -->
+> **Acceptance status: execution and publication complete; scientific acceptance pending validation.** The frozen `validate` action did not pass and has not been made to pass. A validation audit on branch `review/pleia-temperature-context005-validation-audit-20260919` proves the failure mechanism, shows that no evaluated endpoint differs, and proposes a candidate validator that is NOT adopted here. See `review/pleia_temperature_context005_validation_audit_20260919/VALIDATION_AUDIT_REPORT.md`.
+
 ## Execution and scope
 
 | Item | Value |
@@ -19,6 +22,22 @@ Unit `pleia_f2_s42_C_v1` | dataset `pleia` (temperature, degC) | outer fold 2 | 
 | Null realizations | 197 |
 | Effective fault slots | 2727 |
 | Recorded run exit status | 0 |
+
+<!-- validation-audit-20260919 -->
+**Count identities.** The figures above are two distinct partitions of the same 2,924 context stages, plus a classification of the fault slots:
+
+| identity | arithmetic |
+| --- | --- |
+| context stages = clean identity replays + scheduled fault slots | 2924 = 68 + 2856 |
+| context stages = 68 contexts x 43 ordinals (0..42) | 2924 = 68 x 43 |
+| context stages = alias variants + unique canonical realizations (a different partition) | 2924 = 773 + 2151 |
+| unique canonical realizations = distinct realization hashes | 2151 = 2151 |
+| fault slots = effective fault slots + null fault slots | 2856 = 2727 + 129 |
+| null realizations = clean stages (null by definition) + null fault slots | 197 = 68 + 129 |
+| effective fault slots = scheduled fault slots - null fault slots | 2727 = 2856 - 129 |
+| clean stages are never effective | 0 = 0 |
+
+Clean identity replays are **not** fault slots: each context contributes one clean replay (ordinal 0) plus 42 scheduled fault slots (ordinals 1-42). Aliases arise only among fault slots (773), never among clean stages (0). `null` and `effective` are exact complements on the 2,856 fault slots, and the 68 clean stages are null by definition.
 
 ## Fitting budget (authorized and actually spent)
 
@@ -105,6 +124,20 @@ Workload denominators use the entire declared clean stream, including the untile
 | identity | quantile_static | clean_counterfactual | 9792.0 | 0.2266 | 2.668 | 71.725 |
 | identity | quantile_static | corrupted_observation | 9792.0 | 0.2266 | 2.668 | 71.725 |
 
+<!-- validation-audit-20260919 -->
+**Reading the coverage column against nominal 0.95.** Only `persistence_static` attains nominal coverage on the clean stream. The learned quantile controls do not:
+
+| control | clean-stream coverage | reaches nominal 0.95 | shortfall | MPIW (degC) |
+| --- | --- | --- | --- | --- |
+| `persistence_static` | 0.9652 | yes | -0.0152 | 1.600 |
+| `cqr_rolling` | 0.9081 | **no** | +0.0419 | 8.934 |
+| `cqr_static` | 0.3246 | **no** | +0.6254 | 3.343 |
+| `quantile_static` | 0.2240 | **no** | +0.7260 | 2.669 |
+
+`cqr_rolling` narrows the shortfall relative to the static conformal controls but remains 0.0419 below nominal, at the widest interval of the four. It does not reach nominal coverage.
+
+Leadership is also rule-dependent rather than uniform. At the immediate rule in the combined channel `persistence_static` detects most (0.9086) but raises MORE clean-stream episodes per asset-day than `cqr_rolling` (4.2443 versus 3.0815), and `cqr_rolling` leads detection at the 30- and 60-minute rules.
+
 ## Quantile-ordering warnings
 
 The run log retains MAPIE `The predictions are ill-sorted.` messages. They were assessed against the saved artifacts rather than suppressed. In MAPIE 1.4.1 `_check_lower_upper_bounds` only emits a log record; it never sorts, clips or recalibrates. It fires when the lower bound exceeds the upper bound **or** when the median prediction leaves the band. Counts on the emitted streams:
@@ -142,6 +175,8 @@ persistence_static never appears among the violations, because it derives its in
 
 A computed string in the raw survey file reads "SCIENTIFIC OUTCOME DIFFERS - investigate". That string is incorrect and is a defect in the survey's own reporting logic, not a finding: The survey counted the "release" kind as a scientific outcome. Its 204 violations are numeric released conformity SCORE values. The release semantics that actually matter -- release identity (row_id and released_at_origin), release counts, update counts and update status -- recorded ZERO violations. The raw file is preserved unmodified and `VALIDATION_SURVEY_CORRECTED_READING.json` records this correction.
 
+<!-- validation-audit-20260919 -->
+**Audit outcome (2026-09-19).** The failure mechanism is proven at node level: a 145-row, 98-stage sensitivity, every case attributable to a gradient-boosting split threshold that a feature value sits exactly on. A candidate representation-compatible contract passed across the complete pilot (271920 assertions, 0 violations) with scientific artifacts unchanged, and was verified to reject feature, model, prediction, interval, rolling-update, released-score and alert corruption. The candidate is proposed, NOT adopted; the frozen gate remains unmet.
 **Unresolved.** The frozen `validate` action still cannot produce a PASS receipt, because it demands bit-level agreement of a discontinuous model under a 1-2 ULP input perturbation. Whether to repair the validator (compare saved bounds against the saved, independently verified features) via the existing validation_source_compatibility mechanism is a decision for the researcher.
 - Completed resume: models fitted 0, calibrators fitted 0, replay updates 0, scientific artifacts unchanged True.
 

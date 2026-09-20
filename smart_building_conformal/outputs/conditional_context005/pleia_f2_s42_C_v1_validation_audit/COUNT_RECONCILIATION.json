@@ -1,0 +1,56 @@
+{
+  "context_stages": 2924,
+  "clean_stages": 68,
+  "fault_slots": 2856,
+  "aliases": 773,
+  "unique_canonical": 2151,
+  "distinct_realization_hashes": 2151,
+  "nulls_total": 197,
+  "null_fault_slots": 129,
+  "effective_fault_slots": 2727,
+  "aliases_among_clean": 0,
+  "aliases_among_fault": 773,
+  "identities": [
+    {
+      "identity": "context stages = clean identity replays + scheduled fault slots",
+      "arithmetic": "2924 = 68 + 2856",
+      "holds": true
+    },
+    {
+      "identity": "context stages = 68 contexts x 43 ordinals (0..42)",
+      "arithmetic": "2924 = 68 x 43",
+      "holds": true
+    },
+    {
+      "identity": "context stages = alias variants + unique canonical realizations (a different partition)",
+      "arithmetic": "2924 = 773 + 2151",
+      "holds": true
+    },
+    {
+      "identity": "unique canonical realizations = distinct realization hashes",
+      "arithmetic": "2151 = 2151",
+      "holds": true
+    },
+    {
+      "identity": "fault slots = effective fault slots + null fault slots",
+      "arithmetic": "2856 = 2727 + 129",
+      "holds": true
+    },
+    {
+      "identity": "null realizations = clean stages (null by definition) + null fault slots",
+      "arithmetic": "197 = 68 + 129",
+      "holds": true
+    },
+    {
+      "identity": "effective fault slots = scheduled fault slots - null fault slots",
+      "arithmetic": "2727 = 2856 - 129",
+      "holds": true
+    },
+    {
+      "identity": "clean stages are never effective",
+      "arithmetic": "0 = 0",
+      "holds": true
+    }
+  ],
+  "all_hold": true
+}

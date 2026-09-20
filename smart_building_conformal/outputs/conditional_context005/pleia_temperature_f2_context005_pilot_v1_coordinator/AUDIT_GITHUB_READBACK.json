@@ -1,0 +1,99 @@
+{
+  "purpose": "audit_github_download_verification",
+  "passed": true,
+  "method": "https download from raw.githubusercontent.com pinned to commit; compared against git cat-file blob",
+  "primary": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "delivery": "571408be0b51e81c6987306a292afc7fcae2ff94",
+  "checks": [
+    {
+      "commit": "31fdacbb",
+      "path": "review/pleia_temperature_context005_pilot_20260918/PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+      "http": 200,
+      "blob_bytes": 13591,
+      "dl_bytes": 13591,
+      "sha256": "8c5d6fac859ed44e57c2779df5379336ba2428c88156924ee7276c4a88dfed48",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis/control_rule_channel_summary.csv",
+      "http": 200,
+      "blob_bytes": 15859,
+      "dl_bytes": 15859,
+      "sha256": "513e26f441dc46051c1b57dc9b5311e5f05f92e8d54b8ffff101d3481c20afa1",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis/interval_diagnostics.csv",
+      "http": 200,
+      "blob_bytes": 4612,
+      "dl_bytes": 4612,
+      "sha256": "67ed141996282a70f661489bd825553c865300a68bf6e8e8aea5c28c4c9eeeca",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1/COMPLETE.json",
+      "http": 200,
+      "blob_bytes": 19206570,
+      "dl_bytes": 19206570,
+      "sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1/operations.jsonl",
+      "http": 200,
+      "blob_bytes": 9201,
+      "dl_bytes": 9201,
+      "sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_temperature_f2_context005_pilot_v1_coordinator/completed_resume.json",
+      "http": 200,
+      "blob_bytes": 245,
+      "dl_bytes": 245,
+      "sha256": "8000728edf23fd8fccfa9f48a0e433749bd41f9fcc2d142ce2251ed3b5b8675f",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_temperature_f2_context005_pilot_v1_coordinator/validation_survey/VALIDATION_SURVEY.json",
+      "http": 200,
+      "blob_bytes": 1460,
+      "dl_bytes": 1460,
+      "sha256": "c3835d33ca5b80ffac8a95c044af282b59e3a72585d0783d2a1ceadf064af9ff",
+      "identical": true
+    },
+    {
+      "commit": "31fdacbb",
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_publication_v1/parts_manifest.csv",
+      "http": 200,
+      "blob_bytes": 1122,
+      "dl_bytes": 1122,
+      "sha256": "44165886dfa6a284d50bb85254bebb618a2fe95a167e01c42f278853f4fe5f3e",
+      "identical": true
+    },
+    {
+      "commit": "571408be",
+      "path": "review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_DELIVERY_READBACK_RECEIPT.json",
+      "http": 200,
+      "blob_bytes": 11077,
+      "dl_bytes": 11077,
+      "sha256": "a2c5a359e27974330c72668769788ca44e66542cb63c725b2240015a9006406a",
+      "identical": true
+    },
+    {
+      "commit": "571408be",
+      "path": "review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_EVIDENCE_INDEX.md",
+      "http": 200,
+      "blob_bytes": 4399,
+      "dl_bytes": 4399,
+      "sha256": "2ca4d725677b810e55a9f2d68dce40945ab1974b008d5d85bd3855eaeb0d2741",
+      "identical": true
+    }
+  ]
+}
