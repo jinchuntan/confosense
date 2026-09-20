@@ -1,0 +1,90 @@
+{
+  "purpose": "validation_audit_delivery",
+  "branch": "review/pleia-temperature-context005-validation-audit-20260919",
+  "audit_commit": "ec9bed703db3d6bcb87a2acb7140d84a2a86c078",
+  "remote_commit": "ec9bed703db3d6bcb87a2acb7140d84a2a86c078",
+  "url": "https://github.com/jinchuntan/confosense/tree/ec9bed703db3d6bcb87a2acb7140d84a2a86c078",
+  "pilot_branch": "review/pleia-temperature-context005-pilot-20260918",
+  "pilot_primary": "31fdacbb29ef70bbb297cfe52d9fbf91fb789038",
+  "pilot_final_delivery": "571408be0b51e81c6987306a292afc7fcae2ff94",
+  "main": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "main_unchanged": true,
+  "pilot_branch_unchanged": true,
+  "prior_heads_moved": [],
+  "evidence_files": 27,
+  "evidence_bytes": 322152,
+  "github_readback": {
+    "passed": true,
+    "api_status": 200,
+    "api_commit_sha": "ec9bed703db3d6bcb87a2acb7140d84a2a86c078",
+    "downloads": [
+      {
+        "path": "review/pleia_temperature_context005_validation_audit_20260919/VALIDATION_AUDIT_REPORT.md",
+        "http_status": 200,
+        "committed_blob_bytes": 11935,
+        "downloaded_bytes": 11935,
+        "committed_blob_sha256": "14122a1dd695b16e113182b57d050a4b02074bc927835d72369763a7f0b9fbef",
+        "downloaded_sha256": "14122a1dd695b16e113182b57d050a4b02074bc927835d72369763a7f0b9fbef",
+        "identical": true
+      },
+      {
+        "path": "review/pleia_temperature_context005_validation_audit_20260919/CANDIDATE_VALIDATION_CONTRACT.md",
+        "http_status": 200,
+        "committed_blob_bytes": 4478,
+        "downloaded_bytes": 4478,
+        "committed_blob_sha256": "69865ccbc3a632e1039d33c3787a14d89d9cf2f98a6b17d39764ad6adf6e854c",
+        "downloaded_sha256": "69865ccbc3a632e1039d33c3787a14d89d9cf2f98a6b17d39764ad6adf6e854c",
+        "identical": true
+      },
+      {
+        "path": "review/pleia_temperature_context005_validation_audit_20260919/REPORT_CORRECTIONS.md",
+        "http_status": 200,
+        "committed_blob_bytes": 4121,
+        "downloaded_bytes": 4121,
+        "committed_blob_sha256": "640118746c21a8269c70b340633e0eef7c639ad75ce87308f340bffe35effa3c",
+        "downloaded_sha256": "640118746c21a8269c70b340633e0eef7c639ad75ce87308f340bffe35effa3c",
+        "identical": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validation_audit/candidate_v1/CANDIDATE_VALIDATION.json",
+        "http_status": 200,
+        "committed_blob_bytes": 3921,
+        "downloaded_bytes": 3921,
+        "committed_blob_sha256": "df68bea37d950cd4f3cc12a8df8bdd323b3e0b6705cd073d19a3c4494704e5d2",
+        "downloaded_sha256": "df68bea37d950cd4f3cc12a8df8bdd323b3e0b6705cd073d19a3c4494704e5d2",
+        "identical": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validation_audit/MECHANISM_PROOF.json",
+        "http_status": 200,
+        "committed_blob_bytes": 11206,
+        "downloaded_bytes": 11206,
+        "committed_blob_sha256": "5991b77a50bd0ae57aebcbb56ac363552019c13cd51c3a9f82adaf2ae5376e12",
+        "downloaded_sha256": "5991b77a50bd0ae57aebcbb56ac363552019c13cd51c3a9f82adaf2ae5376e12",
+        "identical": true
+      },
+      {
+        "path": "review/pleia_temperature_context005_pilot_20260918/PLEIA_TEMPERATURE_CONTEXT005_PILOT_REPORT.md",
+        "http_status": 200,
+        "committed_blob_bytes": 16965,
+        "downloaded_bytes": 16965,
+        "committed_blob_sha256": "a566500a90ce97379cea08e5dbede0c6ad561914fa0488d6e31158586077769d",
+        "downloaded_sha256": "a566500a90ce97379cea08e5dbede0c6ad561914fa0488d6e31158586077769d",
+        "identical": true
+      }
+    ],
+    "method": "https download from raw.githubusercontent.com pinned to commit, compared against git cat-file blob"
+  },
+  "backup": {
+    "bundle": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validation_audit_20260919\\audit_v1_ec9bed70.bundle",
+    "bundle_bytes": 4756546302,
+    "bundle_sha256": "52cba23d406fc9d1d9012c3d357503fb1551f92991722140e20dc9a94ea8a596",
+    "evidence_directory": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validation_audit_20260919\\audit_evidence",
+    "evidence_files": 12,
+    "all_verified": true,
+    "bundle_sha256_method": "streamed in 4 MiB chunks (the bundle exceeds 2 GiB)"
+  },
+  "tolerated_whitespace_notes": [],
+  "acceptance_status": "execution and publication complete; scientific acceptance pending validation",
+  "candidate_adopted": false
+}
