@@ -77,7 +77,10 @@ def backup(primary: str) -> int:
     paths = paths_at(primary)
     if not paths:
         raise SystemExit("primary commit does not contain acceptance paths")
-    dest = BACKUP_ROOT / f"primary_{primary}"
+    # V1/V2 preserved copied blobs but used revision spellings Git interpreted
+    # as empty bundles.  Keep both intact and write the ref-based V3 bundle to
+    # a distinct location.
+    dest = BACKUP_ROOT / f"primary_{primary}_v3"
     if dest.exists():
         raise SystemExit("preserve existing backup; destination already exists: " + str(dest))
     dest.mkdir(parents=True)
@@ -93,7 +96,8 @@ def backup(primary: str) -> int:
         writer = csv.DictWriter(f, fieldnames=["path", "bytes", "sha256", "backup_path"])
         writer.writeheader(); writer.writerows(rows)
     bundle = dest / f"acceptance_primary_{primary}.bundle"
-    create = subprocess.run(["git", "bundle", "create", str(bundle), primary, "^" + ENTRY], cwd=REPO, capture_output=True, text=True)
+    branch = "review/pleia-temperature-context005-validated-acceptance-20260921"
+    create = subprocess.run(["git", "bundle", "create", str(bundle), branch, "^" + ENTRY], cwd=REPO, capture_output=True, text=True)
     verify = subprocess.run(["git", "bundle", "verify", str(bundle)], cwd=REPO, capture_output=True, text=True) if create.returncode == 0 else None
     verified_rows = []
     for row in rows:
@@ -112,7 +116,14 @@ def backup(primary: str) -> int:
         "passed": bool(create.returncode == 0 and verify and verify.returncode == 0 and all(verified_rows)),
     }
     write_json(dest / "BACKUP_VERIFICATION.json", receipt)
-    write_json(OUT / "BACKUP_VERIFICATION.json", receipt)
+    current = OUT / "BACKUP_VERIFICATION.json"
+    if current.exists():
+        failed = OUT / "BACKUP_VERIFICATION_FAILED_V1.json"
+        if failed.exists():
+            failed = OUT / "BACKUP_VERIFICATION_FAILED_V2.json"
+        if not failed.exists():
+            failed.write_bytes(current.read_bytes())
+    write_json(current, receipt)
     print(json.dumps({k: receipt[k] for k in ["passed", "primary_commit", "exact_blob_files", "backup_root", "bundle"]}, indent=2))
     return 0 if receipt["passed"] else 1
 

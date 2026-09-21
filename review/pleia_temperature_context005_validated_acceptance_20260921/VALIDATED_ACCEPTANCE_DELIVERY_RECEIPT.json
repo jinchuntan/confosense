@@ -1,0 +1,273 @@
+{
+  "all_downloads_identical_to_committed_blobs": true,
+  "api_commit_sha": "affc006e64075558415d7fe038460ba560ee6dc6",
+  "api_matches_primary": true,
+  "api_status": 200,
+  "backup": {
+    "backup_root": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3",
+    "bundle": {
+      "bytes": 35038,
+      "create_returncode": 0,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3\\acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle",
+      "sha256": "0f12a38b06c7e97499bf734df4b14d8e6558a5aadfdbeda50de667f83d9e68aa",
+      "verify_returncode": 0,
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/primary_affc006e64075558415d7fe038460ba560ee6dc6_v3/acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\naffc006e64075558415d7fe038460ba560ee6dc6 refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921\nThe bundle requires this ref:\ne52a3ba6b94996f51300af523f898207162cac79 \nThe bundle uses this hash algorithm: sha1\n"
+    },
+    "passed": true
+  },
+  "branch": "review/pleia-temperature-context005-validated-acceptance-20260921",
+  "downloads": [
+    {
+      "committed_blob_bytes": 2021,
+      "committed_blob_sha256": "6d811ecf8b0bf55dfab0e68626f3c9ea8370f783b25e11bd04380fa212790511",
+      "downloaded_bytes": 2021,
+      "downloaded_sha256": "6d811ecf8b0bf55dfab0e68626f3c9ea8370f783b25e11bd04380fa212790511",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/EVIDENCE_INDEX.md"
+    },
+    {
+      "committed_blob_bytes": 1922,
+      "committed_blob_sha256": "7e63a2f75114c7a8cbc7b3b04621d9125c18da850f49cfd14179fe2cf574936e",
+      "downloaded_bytes": 1922,
+      "downloaded_sha256": "7e63a2f75114c7a8cbc7b3b04621d9125c18da850f49cfd14179fe2cf574936e",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/EVIDENCE_MANIFEST.csv"
+    },
+    {
+      "committed_blob_bytes": 678,
+      "committed_blob_sha256": "0bd5c24b556e7eb8989ea26a5b823e49498e64031b6eb5108badad44352c118f",
+      "downloaded_bytes": 678,
+      "downloaded_sha256": "0bd5c24b556e7eb8989ea26a5b823e49498e64031b6eb5108badad44352c118f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/README.md"
+    },
+    {
+      "committed_blob_bytes": 1208,
+      "committed_blob_sha256": "514188d414712e29c610380bc1326bfba0f6388cfe89e8d48a25d52f2f92a31f",
+      "downloaded_bytes": 1208,
+      "downloaded_sha256": "514188d414712e29c610380bc1326bfba0f6388cfe89e8d48a25d52f2f92a31f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/RECOVERY_AND_ATTEMPTS.md"
+    },
+    {
+      "committed_blob_bytes": 3647,
+      "committed_blob_sha256": "e26803444372400030c619ce2eff924619f38fab037acc440bb3eeb3e2fce0ac",
+      "downloaded_bytes": 3647,
+      "downloaded_sha256": "e26803444372400030c619ce2eff924619f38fab037acc440bb3eeb3e2fce0ac",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/VALIDATED_ACCEPTANCE_REPORT.md"
+    },
+    {
+      "committed_blob_bytes": 2225,
+      "committed_blob_sha256": "782f656715acef20956ec59028c6ff0e7e69c3888d769379d47f9cfafe2160e0",
+      "downloaded_bytes": 2225,
+      "downloaded_sha256": "782f656715acef20956ec59028c6ff0e7e69c3888d769379d47f9cfafe2160e0",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/VALIDATION_CONTRACT_AMENDMENT.md"
+    },
+    {
+      "committed_blob_bytes": 21116,
+      "committed_blob_sha256": "8f71cfc218ed576d9f7907bf1400159784b7e5ebb76ce373c8190cae0dc09424",
+      "downloaded_bytes": 21116,
+      "downloaded_sha256": "8f71cfc218ed576d9f7907bf1400159784b7e5ebb76ce373c8190cae0dc09424",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/acceptance_runner.py"
+    },
+    {
+      "committed_blob_bytes": 8560,
+      "committed_blob_sha256": "90b4a517b32af1e4c09b541c915475eb1bb7073d5232bd0f2a3e6fb4df866e6c",
+      "downloaded_bytes": 8560,
+      "downloaded_sha256": "90b4a517b32af1e4c09b541c915475eb1bb7073d5232bd0f2a3e6fb4df866e6c",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/delivery_tools.py"
+    },
+    {
+      "committed_blob_bytes": 11671,
+      "committed_blob_sha256": "90ccc4fbc1db341ccc09bfe52d5368c816f73f4f62548e077e00275c54536cb5",
+      "downloaded_bytes": 11671,
+      "downloaded_sha256": "90ccc4fbc1db341ccc09bfe52d5368c816f73f4f62548e077e00275c54536cb5",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/postprocess_acceptance.py"
+    },
+    {
+      "committed_blob_bytes": 9532,
+      "committed_blob_sha256": "1503929c7bde9dd40d2f03a2b20a660b0c6e0c94b5fa9c2ed8b9bb22fa8304f2",
+      "downloaded_bytes": 9532,
+      "downloaded_sha256": "1503929c7bde9dd40d2f03a2b20a660b0c6e0c94b5fa9c2ed8b9bb22fa8304f2",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_CONDITIONAL_MACRO.csv"
+    },
+    {
+      "committed_blob_bytes": 3509,
+      "committed_blob_sha256": "6ac6a299178d00aaf539fd83d4cc60ef873a9c4be449f39e354190ba0b3e71ea",
+      "downloaded_bytes": 3509,
+      "downloaded_sha256": "6ac6a299178d00aaf539fd83d4cc60ef873a9c4be449f39e354190ba0b3e71ea",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_DECISION.json"
+    },
+    {
+      "committed_blob_bytes": 7924,
+      "committed_blob_sha256": "81ebd2d5169757fdc50eaf9200cff3c39b4f585bde37e61442b7cb8384863c1b",
+      "downloaded_bytes": 7924,
+      "downloaded_sha256": "81ebd2d5169757fdc50eaf9200cff3c39b4f585bde37e61442b7cb8384863c1b",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_FULLSTREAM_WORKLOAD.csv"
+    },
+    {
+      "committed_blob_bytes": 2,
+      "committed_blob_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "downloaded_bytes": 2,
+      "downloaded_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv"
+    },
+    {
+      "committed_blob_bytes": 4007,
+      "committed_blob_sha256": "2ddbcd292b4008395f957a01f951baf8d44af6e1424707d7887427868cd949c8",
+      "downloaded_bytes": 4007,
+      "downloaded_sha256": "2ddbcd292b4008395f957a01f951baf8d44af6e1424707d7887427868cd949c8",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FOCUSED_TEST_RECEIPT.json"
+    },
+    {
+      "committed_blob_bytes": 2263,
+      "committed_blob_sha256": "941644bd6b220fcb1a99429c80d155a52556682f813e00879118e6a62d85b467",
+      "downloaded_bytes": 2263,
+      "downloaded_sha256": "941644bd6b220fcb1a99429c80d155a52556682f813e00879118e6a62d85b467",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FULL_VALIDATION_RECEIPT.json"
+    },
+    {
+      "committed_blob_bytes": 672,
+      "committed_blob_sha256": "56f27d6072f745c5e698cf64b99436895dd92705b0a8bf188fcc975d9b6b068e",
+      "downloaded_bytes": 672,
+      "downloaded_sha256": "56f27d6072f745c5e698cf64b99436895dd92705b0a8bf188fcc975d9b6b068e",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FULL_VALIDATION_STARTED.json"
+    },
+    {
+      "committed_blob_bytes": 11477,
+      "committed_blob_sha256": "d9ca7099f043c6334bd271152a7f0b9ec2c36332b371a5c770a040f24fd68fe5",
+      "downloaded_bytes": 11477,
+      "downloaded_sha256": "d9ca7099f043c6334bd271152a7f0b9ec2c36332b371a5c770a040f24fd68fe5",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/PRESERVATION_BASELINE.json"
+    },
+    {
+      "committed_blob_bytes": 3748,
+      "committed_blob_sha256": "c9c9d690826004275592405ac05fc650c5ceae9932ef36f182176e8649437e36",
+      "downloaded_bytes": 3748,
+      "downloaded_sha256": "c9c9d690826004275592405ac05fc650c5ceae9932ef36f182176e8649437e36",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/PRESERVATION_BASELINE_V2.json"
+    },
+    {
+      "committed_blob_bytes": 3776,
+      "committed_blob_sha256": "a928f52c0cca080f3573f727c2e97d297360cd48f1f6ff4a1a76d102314dc929",
+      "downloaded_bytes": 3776,
+      "downloaded_sha256": "a928f52c0cca080f3573f727c2e97d297360cd48f1f6ff4a1a76d102314dc929",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/PRESERVATION_BASELINE_V3.json"
+    },
+    {
+      "committed_blob_bytes": 776,
+      "committed_blob_sha256": "d4d2d3d62de0609254a0bf476b32481b827c0872625a2301e3f0816decba0e8e",
+      "downloaded_bytes": 776,
+      "downloaded_sha256": "d4d2d3d62de0609254a0bf476b32481b827c0872625a2301e3f0816decba0e8e",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/THRESHOLD_BOUNDARY_RECEIPT.json"
+    },
+    {
+      "committed_blob_bytes": 0,
+      "committed_blob_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "downloaded_bytes": 0,
+      "downloaded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/focused.stderr.log"
+    },
+    {
+      "committed_blob_bytes": 1308,
+      "committed_blob_sha256": "776a915221fae1e16aaf792ba12125e9ed3a7e07846f7fac35f0822eecc6be84",
+      "downloaded_bytes": 1308,
+      "downloaded_sha256": "776a915221fae1e16aaf792ba12125e9ed3a7e07846f7fac35f0822eecc6be84",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/focused.stdout.log"
+    },
+    {
+      "committed_blob_bytes": 0,
+      "committed_blob_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "downloaded_bytes": 0,
+      "downloaded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/full_validation.stderr.log"
+    },
+    {
+      "committed_blob_bytes": 5062,
+      "committed_blob_sha256": "2cd9a847b1d4116a6681d4db8a03fbfaecc32a92a2fff10851ac1c073373c181",
+      "downloaded_bytes": 5062,
+      "downloaded_sha256": "2cd9a847b1d4116a6681d4db8a03fbfaecc32a92a2fff10851ac1c073373c181",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/full_validation.stdout.log"
+    },
+    {
+      "committed_blob_bytes": 3922,
+      "committed_blob_sha256": "a2c1acd71fadcb048db6d469a91bb17d6a4b14531a1ff7f655450cec9724daec",
+      "downloaded_bytes": 3922,
+      "downloaded_sha256": "a2c1acd71fadcb048db6d469a91bb17d6a4b14531a1ff7f655450cec9724daec",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/validator_full/CANDIDATE_VALIDATION.json"
+    },
+    {
+      "committed_blob_bytes": 2,
+      "committed_blob_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "downloaded_bytes": 2,
+      "downloaded_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/validator_full/candidate_violations.csv"
+    },
+    {
+      "committed_blob_bytes": 161973,
+      "committed_blob_sha256": "4c7b89d05e5d061ff7b45bf78f3e788cc4aabe9b2cba06b08bcba632ffa0dd99",
+      "downloaded_bytes": 161973,
+      "downloaded_sha256": "4c7b89d05e5d061ff7b45bf78f3e788cc4aabe9b2cba06b08bcba632ffa0dd99",
+      "http_status": 200,
+      "identical": true,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/validator_full/sensitivity_attribution.json"
+    }
+  ],
+  "main_actual_at_receipt": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "main_expected": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+  "passed": true,
+  "primary_url": "https://github.com/jinchuntan/confosense/tree/affc006e64075558415d7fe038460ba560ee6dc6",
+  "purpose": "settled GitHub HTTPS delivery receipt",
+  "scope_note": "This receipt verifies the earlier primary commit named above, by direct HTTPS downloads compared to committed Git blobs. It does not claim to verify the later commit that contains this receipt.",
+  "utc": "2026-09-21T21:42:18.489050Z",
+  "verified_primary_commit": "affc006e64075558415d7fe038460ba560ee6dc6"
+}

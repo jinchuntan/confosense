@@ -60,9 +60,11 @@ def main() -> None:
         shutil.copyfile(src, dst)
         exports.append({"source": relative(src), "path": relative(dst), "bytes": dst.stat().st_size, "sha256": sha(dst)})
 
+    decision_path = OUT / "ACCEPTANCE_DECISION.json"
+    prior_decision = json.loads(decision_path.read_text(encoding="utf-8")) if decision_path.exists() else {}
     decision = {
         "purpose": "post-results validated acceptance decision",
-        "utc": utc(),
+        "utc": prior_decision.get("utc", utc()),
         "decision": "accepted_under_amended_A_and_B_and_C_contract_v1",
         "not_a_claim": [
             "The original frozen validate action is not relabelled as passing.",
@@ -77,7 +79,7 @@ def main() -> None:
         "negative_findings_retained": {"rolling_cqr_clean_coverage": 0.9081, "nominal_coverage": 0.95, "rolling_cqr_shortfall": 0.0419, "persistence_dominates_every_tradeoff": False, "population_bounds_available": False},
         "summary_exports": exports,
     }
-    (OUT / "ACCEPTANCE_DECISION.json").write_text(json.dumps(decision, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    decision_path.write_text(json.dumps(decision, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     report = f"""# PLEIA-temperature context005 seed-42: validated acceptance
 
@@ -142,6 +144,10 @@ No attempt changed `src`, a frozen protocol, the completed pilot, a model, or an
 - [Threshold-boundary receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/THRESHOLD_BOUNDARY_RECEIPT.json)
 - [Full validation receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FULL_VALIDATION_RECEIPT.json)
 - [Full candidate results](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/validator_full/CANDIDATE_VALIDATION.json)
+- [Verified v3 backup receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/BACKUP_VERIFICATION.json)
+- [Preserved failed backup receipt V1](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/BACKUP_VERIFICATION_FAILED_V1.json)
+- [Preserved failed backup receipt V2](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/BACKUP_VERIFICATION_FAILED_V2.json)
+- [Settled GitHub delivery receipt](VALIDATED_ACCEPTANCE_DELIVERY_RECEIPT.json)
 - [Recovery and failed tooling attempts](RECOVERY_AND_ATTEMPTS.md)
 - [Direct conditional summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_CONDITIONAL_MACRO.csv)
 - [Direct workload summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_FULLSTREAM_WORKLOAD.csv)
@@ -149,7 +155,9 @@ No attempt changed `src`, a frozen protocol, the completed pilot, a model, or an
 """
     (HERE / "EVIDENCE_INDEX.md").write_text(index, encoding="utf-8")
 
-    paths = [p for p in [OUT / "ACCEPTANCE_DECISION.json", *[OUT / Path(e["path"]).name for e in exports], *HERE.glob("*.md"), HERE / "acceptance_runner.py", HERE / "postprocess_acceptance.py"] if p.is_file()]
+    paths = [p for p in [OUT / "ACCEPTANCE_DECISION.json", *[OUT / Path(e["path"]).name for e in exports],
+                          OUT / "BACKUP_VERIFICATION.json", OUT / "BACKUP_VERIFICATION_FAILED_V1.json", OUT / "BACKUP_VERIFICATION_FAILED_V2.json",
+                          *HERE.glob("*.md"), HERE / "VALIDATED_ACCEPTANCE_DELIVERY_RECEIPT.json", HERE / "acceptance_runner.py", HERE / "postprocess_acceptance.py", HERE / "delivery_tools.py"] if p.is_file()]
     with (HERE / "EVIDENCE_MANIFEST.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["path", "bytes", "sha256"])
         writer.writeheader()

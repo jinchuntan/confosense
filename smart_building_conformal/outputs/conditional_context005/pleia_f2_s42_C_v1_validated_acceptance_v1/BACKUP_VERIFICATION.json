@@ -1,0 +1,21 @@
+{
+  "all_exact_blobs_verified": true,
+  "backup_root": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3",
+  "base_commit_not_in_incremental_bundle": "e52a3ba6b94996f51300af523f898207162cac79",
+  "bundle": {
+    "bytes": 35038,
+    "create_returncode": 0,
+    "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3\\acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle",
+    "sha256": "0f12a38b06c7e97499bf734df4b14d8e6558a5aadfdbeda50de667f83d9e68aa",
+    "verify_returncode": 0,
+    "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/primary_affc006e64075558415d7fe038460ba560ee6dc6_v3/acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle is okay\n",
+    "verify_stdout": "The bundle contains this ref:\naffc006e64075558415d7fe038460ba560ee6dc6 refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921\nThe bundle requires this ref:\ne52a3ba6b94996f51300af523f898207162cac79 \nThe bundle uses this hash algorithm: sha1\n"
+  },
+  "exact_blob_files": 27,
+  "passed": true,
+  "previous_full_backup": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validation_audit_20260919/audit_v1_ec9bed70.bundle",
+  "previous_full_backup_status": "verified by the audit receipt; this backup adds the exact primary acceptance commit blobs",
+  "primary_commit": "affc006e64075558415d7fe038460ba560ee6dc6",
+  "purpose": "incremental backup of validated-acceptance primary commit",
+  "utc": "2026-09-21T21:41:38.341864Z"
+}
