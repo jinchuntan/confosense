@@ -169,12 +169,37 @@ def readback(primary: str) -> int:
     return 0 if receipt["passed"] else 1
 
 
+def committed_manifest(commit: str) -> int:
+    """Create a byte manifest for an earlier commit, never for this new file."""
+    paths = paths_at(commit)
+    rows = []
+    for path in paths:
+        data = blob(commit, path)
+        rows.append({"path": path, "bytes": len(data), "sha256": sha(data)})
+    manifest = HERE / "COMMITTED_BLOB_MANIFEST_V2.csv"
+    receipt = HERE / "COMMITTED_BLOB_MANIFEST_V2_RECEIPT.json"
+    if manifest.exists() or receipt.exists():
+        raise SystemExit("preserve existing committed-blob manifest V2")
+    with manifest.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["path", "bytes", "sha256"], lineterminator="\n")
+        writer.writeheader(); writer.writerows(rows)
+    result = {"purpose": "committed-blob manifest correction for CRLF working-tree representation",
+              "verified_commit": commit, "utc": utc(), "files": len(rows),
+              "all_entries_read_from_git_blobs": True,
+              "scope_note": "This V2 manifest records exact blobs from the earlier verified commit named above. It does not claim to verify its own containing correction commit."}
+    write_json(receipt, result)
+    print(json.dumps(result, indent=2))
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["backup", "readback"])
+    parser.add_argument("action", choices=["backup", "readback", "committed-manifest"])
     parser.add_argument("primary")
     args = parser.parse_args()
-    return backup(args.primary) if args.action == "backup" else readback(args.primary)
+    if args.action == "backup": return backup(args.primary)
+    if args.action == "readback": return readback(args.primary)
+    return committed_manifest(args.primary)
 
 
 if __name__ == "__main__":
