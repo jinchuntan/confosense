@@ -1,0 +1,112 @@
+{
+  "candidate_source_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd",
+  "error": null,
+  "exit_code": 0,
+  "passed": true,
+  "purpose": "focused acceptance/rejection contract recheck",
+  "resources": {
+    "process_cpu_seconds": 3.5,
+    "wall_seconds": 65.37007910000011
+  },
+  "result": {
+    "all_ok": true,
+    "failed": 0,
+    "passed": 9,
+    "results": [
+      {
+        "description": "Unmodified representation-equivalent artifacts must pass",
+        "detected_by": "",
+        "expected": "pass",
+        "max_difference": 1.4210854715202004e-14,
+        "observed": "pass",
+        "ok": true,
+        "test": "accept_unmodified",
+        "violations": 0
+      },
+      {
+        "description": "A 0.5 degC change to one saved causal feature must fail provenance (Contract A)",
+        "detected_by": "A_feature_provenance;A_identity",
+        "expected": "reject",
+        "max_difference": 0.5,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_feature_corruption",
+        "violations": 2
+      },
+      {
+        "description": "A 1.0 degC change to a saved observation must fail Contract A",
+        "detected_by": "A_observations",
+        "expected": "reject",
+        "max_difference": 1.0,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_observation_corruption",
+        "violations": 1
+      },
+      {
+        "description": "A 0.25 degC change to a saved model prediction must fail Contract B",
+        "detected_by": "B_model_application",
+        "expected": "reject",
+        "max_difference": 0.25,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_prediction_corruption",
+        "violations": 1
+      },
+      {
+        "description": "A 0.3 degC change to a saved interval bound must fail Contract C",
+        "detected_by": "C_interval_construction",
+        "expected": "reject",
+        "max_difference": 0.3000000000000007,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_interval_corruption",
+        "violations": 1
+      },
+      {
+        "description": "A 0.2 degC change to a rolling conformal correction must fail Contract C rolling state",
+        "detected_by": "C_rolling_state",
+        "expected": "reject",
+        "max_difference": 0.19999999999999996,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_causal_update_corruption",
+        "violations": 1
+      },
+      {
+        "description": "Flipping one saved alert flag must fail Contract C alert outcomes",
+        "detected_by": "C_alert_flags",
+        "expected": "reject",
+        "max_difference": 1.4210854715202004e-14,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_alert_flag_corruption",
+        "violations": 1
+      },
+      {
+        "description": "A 0.4 degC change to a released conformity score must fail Contract C",
+        "detected_by": "C_released_scores",
+        "expected": "reject",
+        "max_difference": 0.4,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_released_score_corruption",
+        "violations": 1
+      },
+      {
+        "description": "Shifting the saved upper-quantile model baseline by 0.05 degC must fail Contract B",
+        "detected_by": "B_model_application;C_interval_construction;C_released_scores",
+        "expected": "reject",
+        "max_difference": 0.05000000000000071,
+        "observed": "reject",
+        "ok": true,
+        "test": "reject_model_corruption",
+        "violations": 1191
+      }
+    ],
+    "total": 9
+  },
+  "result_source": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validation_audit/contract_tests/CONTRACT_TESTS.json",
+  "test_source": "review/pleia_temperature_context005_validation_audit_20260919/test_candidate_contract.py",
+  "utc": "2026-09-21T18:33:05.978626Z"
+}

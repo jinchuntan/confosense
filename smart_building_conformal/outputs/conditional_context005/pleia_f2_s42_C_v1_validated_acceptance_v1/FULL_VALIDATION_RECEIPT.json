@@ -1,0 +1,57 @@
+{
+  "assertions": 271920,
+  "candidate_artifacts_unchanged": true,
+  "candidate_passed": true,
+  "candidate_source_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd",
+  "candidate_version": "candidate_representation_compatible_v1",
+  "error": null,
+  "exit_code": 0,
+  "fit_forbidden_guard": true,
+  "integrity_after": {
+    "completed_tree_unchanged_by_candidate": true,
+    "method": "the candidate hashes the complete run tree before and after validation; the immutable COMPLETE.json was checked at preflight",
+    "operations_matches_preflight": true,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4"
+  },
+  "integrity_before": {
+    "complete_exit_status": 0,
+    "complete_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+    "declared_files": 127161,
+    "hash_mismatch_count": 0,
+    "hash_mismatch_examples": [],
+    "method": "exact file list and SHA-256 values declared by COMPLETE.json; no recursive discovery",
+    "missing_count": 0,
+    "missing_examples": [],
+    "operations_bytes": 9201,
+    "operations_matches_complete": true,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "passed": true,
+    "protocol_sha256": "7454560c671e98b580eb4b6c0d1151bfa506dee16954029d87047009b67694ea"
+  },
+  "passed": true,
+  "purpose": "full post-results acceptance validation",
+  "resources": {
+    "candidate_resources": {
+      "baseline_private_bytes": 413818880,
+      "baseline_rss_bytes": 453824512,
+      "incremental_peak_rss_bytes": 424407040,
+      "lifetime_peak_rss_bytes": 879312896,
+      "min_available_ram_bytes": 3240886272,
+      "peak_private_bytes": 845357056,
+      "peak_rss_bytes": 878231552,
+      "process_cpu_seconds": 9661.71875,
+      "sample_interval_seconds": 0.05,
+      "seconds": 10804.709288499998
+    },
+    "process_cpu_seconds": 9766.765625,
+    "wall_seconds": 10941.7323722
+  },
+  "sensitivity": {
+    "all_divergences_explained_by_threshold_straddle": true,
+    "rows_affected": 145,
+    "stages_where_representations_diverge": 98,
+    "unexplained": []
+  },
+  "utc": "2026-09-21T21:36:34.897433Z",
+  "violations": 0
+}

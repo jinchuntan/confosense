@@ -1,0 +1,87 @@
+{
+  "decision": "accepted_under_amended_A_and_B_and_C_contract_v1",
+  "full_validation": {
+    "assertions": 271920,
+    "candidate_version": "candidate_representation_compatible_v1",
+    "resources": {
+      "candidate_resources": {
+        "baseline_private_bytes": 413818880,
+        "baseline_rss_bytes": 453824512,
+        "incremental_peak_rss_bytes": 424407040,
+        "lifetime_peak_rss_bytes": 879312896,
+        "min_available_ram_bytes": 3240886272,
+        "peak_private_bytes": 845357056,
+        "peak_rss_bytes": 878231552,
+        "process_cpu_seconds": 9661.71875,
+        "sample_interval_seconds": 0.05,
+        "seconds": 10804.709288499998
+      },
+      "process_cpu_seconds": 9766.765625,
+      "wall_seconds": 10941.7323722
+    },
+    "sensitivity": {
+      "all_divergences_explained_by_threshold_straddle": true,
+      "rows_affected": 145,
+      "stages_where_representations_diverge": 98,
+      "unexplained": []
+    },
+    "violations": 0
+  },
+  "gates": {
+    "focused_tests": true,
+    "full_validator": true,
+    "preservation_baseline": true,
+    "threshold_boundary": true
+  },
+  "immutable_run": {
+    "declared_files": 127161,
+    "operations_bytes": 9201,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
+  },
+  "negative_findings_retained": {
+    "nominal_coverage": 0.95,
+    "persistence_dominates_every_tradeoff": false,
+    "population_bounds_available": false,
+    "rolling_cqr_clean_coverage": 0.9081,
+    "rolling_cqr_shortfall": 0.0419
+  },
+  "not_a_claim": [
+    "The original frozen validate action is not relabelled as passing.",
+    "Sub-tolerance perturbation stability is not certified.",
+    "No population uncertainty interval is available at one model seed.",
+    "No energy uncertainty bound is transferred to temperature."
+  ],
+  "purpose": "post-results validated acceptance decision",
+  "scope": {
+    "confidence": 0.95,
+    "contexts": 68,
+    "dataset": "pleia",
+    "horizon": 1,
+    "model_seed": 42,
+    "outer_fold": 2,
+    "scheduled_fault_slots": 2856,
+    "target": "temperature"
+  },
+  "summary_exports": [
+    {
+      "bytes": 9532,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_CONDITIONAL_MACRO.csv",
+      "sha256": "1503929c7bde9dd40d2f03a2b20a660b0c6e0c94b5fa9c2ed8b9bb22fa8304f2",
+      "source": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1/stages/tables/conditional_macro.csv"
+    },
+    {
+      "bytes": 7924,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_FULLSTREAM_WORKLOAD.csv",
+      "sha256": "81ebd2d5169757fdc50eaf9200cff3c39b4f585bde37e61442b7cb8384863c1b",
+      "source": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1/stages/tables/fullstream_workload.csv"
+    },
+    {
+      "bytes": 2,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1/stages/tables/inference.csv"
+    }
+  ],
+  "utc": "2026-09-21T21:39:05.110610Z"
+}

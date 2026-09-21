@@ -1,0 +1,184 @@
+{
+  "branch": "review/pleia-temperature-context005-validated-acceptance-20260921",
+  "branch_heads": {
+    "main": {
+      "actual": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+      "expected": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+      "matches": true
+    },
+    "review/pleia-energy-context005-multiseed-20260915": {
+      "actual": "80df3579dfe68ccf2c0d406c21c0fec967ff2b41",
+      "expected": "80df3579dfe68ccf2c0d406c21c0fec967ff2b41",
+      "matches": true
+    },
+    "review/pleia-temperature-context005-pilot-20260918": {
+      "actual": "571408be0b51e81c6987306a292afc7fcae2ff94",
+      "expected": "571408be0b51e81c6987306a292afc7fcae2ff94",
+      "matches": true
+    },
+    "review/pleia-temperature-context005-validated-acceptance-20260921": {
+      "actual": "e52a3ba6b94996f51300af523f898207162cac79",
+      "expected": "e52a3ba6b94996f51300af523f898207162cac79",
+      "matches": true
+    },
+    "review/pleia-temperature-context005-validation-audit-20260919": {
+      "actual": "e52a3ba6b94996f51300af523f898207162cac79",
+      "expected": "e52a3ba6b94996f51300af523f898207162cac79",
+      "matches": true
+    }
+  },
+  "entry_head_expected": "e52a3ba6b94996f51300af523f898207162cac79",
+  "excluded_stage_pattern_present": true,
+  "git_status": {
+    "by_status": {
+      " M": [
+        "review/pleia_temperature_context005_pilot_20260918/TEMPERATURE_FINAL_DELIVERY_RECEIPT.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_multiseed_v1_coordinator/attempts.jsonl",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_multiseed_v1_coordinator/attempts/2026-09-16T210801683569+0000_70d0e09a/attempt.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_multiseed_v1_coordinator/attempts/2026-09-16T210801683569+0000_70d0e09a/command.log",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_multiseed_v1_coordinator/attempts/2026-09-16T210801683569+0000_70d0e09a/logger.stdout.log",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_multiseed_v1_coordinator/progress.json"
+      ],
+      "??": [
+        ".vscode/",
+        "review/pleia_energy_context005_multiseed_20260915/GITHUB_REMOTE_READBACK.json",
+        "review/pleia_energy_context005_multiseed_20260915/PUBLICATION_RECEIPT.json",
+        "review/pleia_temperature_context005_pilot_20260918/AUTHORIZING_HANDOFF_REFERENCE.md",
+        "review/pleia_temperature_context005_pilot_20260918/COMPLETION_VERIFICATION.json",
+        "review/pleia_temperature_context005_pilot_20260918/DELIVERY_READBACK_RECEIPT.json",
+        "review/pleia_temperature_context005_pilot_20260918/EVALUATED_COMMIT.json",
+        "review/pleia_temperature_context005_pilot_20260918/EVIDENCE_INDEX.md",
+        "review/pleia_temperature_context005_pilot_20260918/EVIDENCE_MANIFEST.csv",
+        "review/pleia_temperature_context005_pilot_20260918/FINAL_ANALYSIS_RECOVERY.md",
+        "review/pleia_temperature_context005_pilot_20260918/FROZEN_BATCH_MANIFEST.json",
+        "review/pleia_temperature_context005_pilot_20260918/GITHUB_REMOTE_READBACK.json",
+        "review/pleia_temperature_context005_pilot_20260918/PANEL_RESPONSE.md",
+        "review/pleia_temperature_context005_pilot_20260918/PLEIA_ENERGY_CONTEXT005_MULTISEED_REPORT.md",
+        "review/pleia_temperature_context005_pilot_20260918/PREFLIGHT_VALIDATION.json",
+        "review/pleia_temperature_context005_pilot_20260918/PRESERVATION_BASELINE.json",
+        "review/pleia_temperature_context005_pilot_20260918/PROGRESS_AND_RESTART.md",
+        "review/pleia_temperature_context005_pilot_20260918/PUBLICATION_RECEIPT.json",
+        "review/pleia_temperature_context005_pilot_20260918/RAW_PACKAGE_RECOVERY.md",
+        "review/pleia_temperature_context005_pilot_20260918/RAW_PACKAGE_VALIDATION.json",
+        "review/pleia_temperature_context005_pilot_20260918/RECOVERY_STATUS.md",
+        "review/pleia_temperature_context005_pilot_20260918/REMAINING_WORK.md",
+        "review/pleia_temperature_context005_pilot_20260918/analyze.py",
+        "review/pleia_temperature_context005_pilot_20260918/coordinator.stderr.log",
+        "review/pleia_temperature_context005_pilot_20260918/coordinator.stdout.log",
+        "review/pleia_temperature_context005_pilot_20260918/pack_evidence.py",
+        "review/pleia_temperature_context005_pilot_20260918/pleia_energy_f2_s43_C_v1_execution_manifest.json",
+        "review/pleia_temperature_context005_pilot_20260918/pleia_energy_f2_s44_C_v1_execution_manifest.json",
+        "review/pleia_temperature_context005_pilot_20260918/pleia_energy_f2_s45_C_v1_execution_manifest.json",
+        "review/pleia_temperature_context005_pilot_20260918/pleia_energy_f2_s46_C_v1_execution_manifest.json",
+        "review/pleia_temperature_context005_pilot_20260918/preflight.py",
+        "review/pleia_temperature_context005_pilot_20260918/prepare.py",
+        "review/pleia_temperature_context005_pilot_20260918/publish.py",
+        "review/pleia_temperature_context005_pilot_20260918/recovery.py",
+        "review/pleia_temperature_context005_pilot_20260918/recovery_coordinator.stderr.log",
+        "review/pleia_temperature_context005_pilot_20260918/recovery_coordinator.stdout.log",
+        "review/pleia_temperature_context005_pilot_20260918/seal_freeze.py",
+        "review/pleia_temperature_context005_pilot_20260918/update_documents.py",
+        "review/pleia_temperature_context005_pilot_20260918/validate_aggregate.py",
+        "review/pleia_temperature_context005_validated_acceptance_20260921/",
+        "smart_building_conformal/outputs/amendment004/bdg2_operational_pilot_f2_s42_v2/units/outer2_model42/streams.csv.gz",
+        "smart_building_conformal/outputs/amendment004/bdg2_threefold_f0_s42_v1/units/outer0_model42/released_scores.csv.gz",
+        "smart_building_conformal/outputs/amendment004/bdg2_threefold_f0_s42_v1/units/outer0_model42/streams.csv.gz",
+        "smart_building_conformal/outputs/amendment004/bdg2_threefold_f1_s42_v1/units/outer1_model42/streams.csv.gz",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_multiseed_v1_coordinator/attempts/2026-09-16T210801683569+0000_70d0e09a/command.log.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/checkpoint_manifest.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s42_C_v1/stage_journal.jsonl",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s43_C_v1/checkpoint_manifest.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s43_C_v1/stage_journal.jsonl",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s44_C_v1/.partial_context_56d11c632d69c3ef14ca_v42_47c7c33adb08498497aabee8ee47b2eb/",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s44_C_v1/checkpoint_manifest.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s44_C_v1/stage_journal.jsonl",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s45_C_v1/checkpoint_manifest.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s45_C_v1/stage_journal.jsonl",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s46_C_v1/checkpoint_manifest.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s46_C_v1/stage_journal.jsonl",
+        "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_analysis_failed_attempt_001/"
+      ],
+      "M ": [
+        "eview/pleia_energy_context005_multiseed_20260915/recovery_coordinator.stdout.log"
+      ]
+    },
+    "entry_count": 64,
+    "sha256": "6be5b32617df341d1c5702981666c2739935ed34a57640b4333d6976fc63c385"
+  },
+  "head": "e52a3ba6b94996f51300af523f898207162cac79",
+  "no_new_experiments_or_fits_authorized": true,
+  "protocol_compatibility": {
+    "all_check_protocol_passed": true,
+    "current_source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "designs": [
+      {
+        "check_protocol": "passed",
+        "design": "pleia_f2_s42_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s42_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s43_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s44_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s45_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s46_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      }
+    ],
+    "expected_source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "source_digest_matches": true
+  },
+  "purpose": "preservation baseline before acceptance validation; pre-existing changes are retained and unstaged",
+  "resources": {
+    "process_cpu_seconds": 385.296875,
+    "wall_seconds": 968.2320137999999
+  },
+  "scientific_run": {
+    "complete_exit_status": 0,
+    "complete_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+    "declared_files": 127161,
+    "hash_mismatch_count": 0,
+    "hash_mismatch_examples": [],
+    "method": "exact file list and SHA-256 values declared by COMPLETE.json; no recursive discovery",
+    "missing_count": 0,
+    "missing_examples": [],
+    "operations_bytes": 9201,
+    "operations_matches_complete": true,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "passed": true,
+    "protocol_sha256": "7454560c671e98b580eb4b6c0d1151bfa506dee16954029d87047009b67694ea"
+  },
+  "utc": "2026-09-21T18:13:11.792284Z",
+  "validator": {
+    "audit_commit": "e52a3ba6b94996f51300af523f898207162cac79",
+    "audited_git_blob_sha256": "a3e5fe142c6284dd88ebb79ecc457cdbfe2a0a791da3719133aeed880364d1ce",
+    "expected_sha256": "14cab398cf5ec389a1eae0a2f22d832a56ada31add44f93f6a38ea3095d2a091",
+    "source_identity_matches": false,
+    "source_path": "review/pleia_temperature_context005_validation_audit_20260919/candidate_validate_v1.py",
+    "version": "candidate_representation_compatible_v1",
+    "working_tree_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd"
+  }
+}

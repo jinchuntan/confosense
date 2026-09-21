@@ -1,0 +1,5645 @@
+[
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v0",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v2",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v3",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v5",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v6",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v7",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v9",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v11",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v13",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v15",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v17",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v19",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v21",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v23",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v25",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v26",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v27",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v28",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v29",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v30",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v31",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v32",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v33",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v34",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v35",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v36",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v37",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v38",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v39",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v40",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v41",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_3c2ed441cb78fe67ef35_v42",
+    "rows": [
+      84,
+      100
+    ],
+    "detail": [
+      {
+        "row": 84,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.299999999999997",
+              "engine_value": "23.3",
+              "validator_value": "23.299999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 214,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 214,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 92,
+              "node": 50,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.2",
+              "engine_value": "23.2",
+              "validator_value": "23.200000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v2",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v4",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v5",
+    "rows": [
+      71,
+      85
+    ],
+    "detail": [
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 187,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 187,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v6",
+    "rows": [
+      71,
+      85
+    ],
+    "detail": [
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 154,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 154,
+              "node": 22,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.5",
+              "engine_value": "22.5",
+              "validator_value": "22.500000000000004",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 195,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 195,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.5",
+              "engine_value": "22.5",
+              "validator_value": "22.500000000000004",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 134,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 134,
+              "node": 21,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.5",
+              "engine_value": "22.5",
+              "validator_value": "22.500000000000004",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v7",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v9",
+    "rows": [
+      69,
+      85
+    ],
+    "detail": [
+      {
+        "row": 69,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 164,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 164,
+              "node": 49,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.23333333333333",
+              "engine_value": "22.233333333333334",
+              "validator_value": "22.23333333333333",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v11",
+    "rows": [
+      71,
+      72,
+      85
+    ],
+    "detail": [
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 187,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 187,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 72,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 187,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 187,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v13",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v15",
+    "rows": [
+      69,
+      85
+    ],
+    "detail": [
+      {
+        "row": 69,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 164,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 164,
+              "node": 49,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.23333333333333",
+              "engine_value": "22.233333333333334",
+              "validator_value": "22.23333333333333",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v17",
+    "rows": [
+      71,
+      72,
+      85
+    ],
+    "detail": [
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 187,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 187,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 72,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 187,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 187,
+              "node": 45,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v21",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v23",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v25",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v26",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v27",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v28",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v31",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v32",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v33",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v34",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v35",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v36",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v37",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v38",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v39",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v40",
+    "rows": [
+      85
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 19,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 19,
+              "node": 36,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.53333333333333",
+              "engine_value": "23.53333333333333",
+              "validator_value": "23.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v0",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v1",
+    "rows": [
+      91,
+      102
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 102,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 56,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 56,
+              "node": 16,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.266666666666666",
+              "engine_value": "24.26666666666667",
+              "validator_value": "24.266666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v2",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v5",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v6",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v7",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v9",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v11",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v13",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v15",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v17",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v19",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v21",
+    "rows": [
+      91,
+      102
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 102,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 56,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 56,
+              "node": 16,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.266666666666666",
+              "engine_value": "24.26666666666667",
+              "validator_value": "24.266666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v23",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v25",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v26",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v27",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v28",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v29",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v30",
+    "rows": [
+      91,
+      102
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 102,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 56,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 56,
+              "node": 16,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.266666666666666",
+              "engine_value": "24.26666666666667",
+              "validator_value": "24.266666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v31",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v32",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v33",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v34",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v35",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v36",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v37",
+    "rows": [
+      91,
+      102
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 102,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 56,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 56,
+              "node": 16,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.266666666666666",
+              "engine_value": "24.26666666666667",
+              "validator_value": "24.266666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v38",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v39",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v40",
+    "rows": [
+      91,
+      102
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 102,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 56,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 56,
+              "node": 16,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.266666666666666",
+              "engine_value": "24.26666666666667",
+              "validator_value": "24.266666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v41",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v42",
+    "rows": [
+      91,
+      102
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 133,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 133,
+              "node": 46,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 162,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 162,
+              "node": 40,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 102,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 56,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 56,
+              "node": 16,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.266666666666666",
+              "engine_value": "24.26666666666667",
+              "validator_value": "24.266666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_9cb0d333b98f74f847ab_v21",
+    "rows": [
+      51
+    ],
+    "detail": [
+      {
+        "row": 51,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 100,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 100,
+              "node": 39,
+              "feature": "target_rollmean_6",
+              "num_threshold": "21.53333333333333",
+              "engine_value": "21.53333333333333",
+              "validator_value": "21.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 126,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 126,
+              "node": 32,
+              "feature": "target_rollmean_6",
+              "num_threshold": "21.53333333333333",
+              "engine_value": "21.53333333333333",
+              "validator_value": "21.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 157,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 157,
+              "node": 31,
+              "feature": "target_rollmean_6",
+              "num_threshold": "21.53333333333333",
+              "engine_value": "21.53333333333333",
+              "validator_value": "21.533333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_612a34cba7b4e3c2dac2_v19",
+    "rows": [
+      135
+    ],
+    "detail": [
+      {
+        "row": 135,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 92,
+              "node": 48,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.933333333333334",
+              "engine_value": "22.933333333333334",
+              "validator_value": "22.933333333333337",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 149,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 149,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.933333333333334",
+              "engine_value": "22.933333333333334",
+              "validator_value": "22.933333333333337",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 158,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 158,
+              "node": 29,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.933333333333334",
+              "engine_value": "22.933333333333334",
+              "validator_value": "22.933333333333337",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_612a34cba7b4e3c2dac2_v21",
+    "rows": [
+      135
+    ],
+    "detail": [
+      {
+        "row": 135,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 92,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 92,
+              "node": 48,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.933333333333334",
+              "engine_value": "22.933333333333334",
+              "validator_value": "22.933333333333337",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 149,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 149,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.933333333333334",
+              "engine_value": "22.933333333333334",
+              "validator_value": "22.933333333333337",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 158,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 158,
+              "node": 29,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.933333333333334",
+              "engine_value": "22.933333333333334",
+              "validator_value": "22.933333333333337",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_9c545d5dd7b52b39686b_v5",
+    "rows": [
+      79
+    ],
+    "detail": [
+      {
+        "row": 79,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 143,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 143,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.599999999999998",
+              "engine_value": "24.599999999999998",
+              "validator_value": "24.600000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 181,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 181,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.599999999999998",
+              "engine_value": "24.599999999999998",
+              "validator_value": "24.600000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_16087b4f2e552fc77bb5_v19",
+    "rows": [
+      100
+    ],
+    "detail": [
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 9,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 9,
+              "node": 6,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.349999999999998",
+              "engine_value": "23.350000000000005",
+              "validator_value": "23.349999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 30,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 30,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.349999999999998",
+              "engine_value": "23.350000000000005",
+              "validator_value": "23.349999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_5eecab36f17da3497a31_v19",
+    "rows": [
+      85,
+      89
+    ],
+    "detail": [
+      {
+        "row": 85,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 40,
+              "node": 8,
+              "feature": "target_rollmean_6",
+              "num_threshold": "17.383333333333333",
+              "engine_value": "17.383333333333333",
+              "validator_value": "17.383333333333336",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 89,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 98,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 98,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "21.45",
+              "engine_value": "21.45",
+              "validator_value": "21.450000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_5eecab36f17da3497a31_v21",
+    "rows": [
+      89
+    ],
+    "detail": [
+      {
+        "row": 89,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 98,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 98,
+              "node": 26,
+              "feature": "target_rollmean_6",
+              "num_threshold": "21.45",
+              "engine_value": "21.45",
+              "validator_value": "21.450000000000003",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_5429c70ed16977f0d59f_v19",
+    "rows": [
+      66
+    ],
+    "detail": [
+      {
+        "row": 66,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "21.083333333333332",
+              "engine_value": "21.083333333333332",
+              "validator_value": "21.083333333333336",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "branch": "review/pleia-temperature-context005-validated-acceptance-20260921",
+  "head": "e52a3ba6b94996f51300af523f898207162cac79",
+  "passed": true,
+  "protocol_compatibility": {
+    "all_check_protocol_passed": true,
+    "current_source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "designs": [
+      {
+        "check_protocol": "passed",
+        "design": "pleia_f2_s42_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s42_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s43_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s44_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s45_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      },
+      {
+        "check_protocol": "passed",
+        "design": "pleia_energy_f2_s46_C_v1",
+        "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+        "source_matches_frozen": true
+      }
+    ],
+    "expected_source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "source_digest_matches": true
+  },
+  "purpose": "source-identity reconciliation without repeating the immutable-tree hash pass",
+  "scientific_run": {
+    "complete_exit_status": 0,
+    "complete_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+    "declared_files": 127161,
+    "hash_mismatch_count": 0,
+    "hash_mismatch_examples": [],
+    "method": "exact file list and SHA-256 values declared by COMPLETE.json; no recursive discovery",
+    "missing_count": 0,
+    "missing_examples": [],
+    "operations_bytes": 9201,
+    "operations_matches_complete": true,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "passed": true,
+    "protocol_sha256": "7454560c671e98b580eb4b6c0d1151bfa506dee16954029d87047009b67694ea"
+  },
+  "superseded_reason": "the first baseline compared working-tree CRLF bytes directly to the LF committed blob",
+  "supersedes": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/PRESERVATION_BASELINE.json",
+  "utc": "2026-09-21T18:31:41.980215Z",
+  "validator": {
+    "audit_commit": "e52a3ba6b94996f51300af523f898207162cac79",
+    "audited_git_blob_sha256": "14cab398cf5ec389a1eae0a2f22d832a56ada31add44f93f6a38ea3095d2a091",
+    "expected_sha256": "14cab398cf5ec389a1eae0a2f22d832a56ada31add44f93f6a38ea3095d2a091",
+    "source_identity_matches": true,
+    "source_path": "review/pleia_temperature_context005_validation_audit_20260919/candidate_validate_v1.py",
+    "version": "candidate_representation_compatible_v1",
+    "working_tree_byte_difference_note": "CRLF checkout representation only",
+    "working_tree_byte_matches_committed_blob": false,
+    "working_tree_matches_committed_blob_after_line_ending_normalization_only": true,
+    "working_tree_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd"
+  }
+}

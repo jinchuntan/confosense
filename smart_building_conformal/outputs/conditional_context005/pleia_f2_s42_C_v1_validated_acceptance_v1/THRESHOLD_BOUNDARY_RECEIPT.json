@@ -1,0 +1,19 @@
+{
+  "all_cases_single_threshold_straddle": true,
+  "error": null,
+  "exit_code": 0,
+  "feature_max_difference": 1.7763568394002505e-14,
+  "frozen_tolerance": 1e-10,
+  "passed": true,
+  "purpose": "threshold-boundary mechanism recheck",
+  "resources": {
+    "process_cpu_seconds": 4.9375,
+    "wall_seconds": 5.329809800000021
+  },
+  "result_source": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validation_audit/MECHANISM_PROOF.json",
+  "routing_cases": 3,
+  "source": "review/pleia_temperature_context005_validation_audit_20260919/prove_mechanism.py",
+  "source_sha256": "5c7e853f944d6146bf20df4903ea63c795953d0e2500526d71aa100044f89523",
+  "stage": "context_3c2ed441cb78fe67ef35_v0",
+  "utc": "2026-09-21T18:33:57.158356Z"
+}

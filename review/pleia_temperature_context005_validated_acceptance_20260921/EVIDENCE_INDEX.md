@@ -1,0 +1,18 @@
+# Validated-acceptance evidence index
+
+- [Acceptance decision](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_DECISION.json)
+- [Acceptance report](VALIDATED_ACCEPTANCE_REPORT.md)
+- [Contract amendment](VALIDATION_CONTRACT_AMENDMENT.md)
+- [Versioned candidate validator](../pleia_temperature_context005_validation_audit_20260919/candidate_validate_v1.py)
+- [Focused contract-test source](../pleia_temperature_context005_validation_audit_20260919/test_candidate_contract.py)
+- [Reproducible runner](acceptance_runner.py)
+- [Backup/readback utility](delivery_tools.py)
+- [Preservation baseline V3](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/PRESERVATION_BASELINE_V3.json)
+- [Focused tests receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FOCUSED_TEST_RECEIPT.json)
+- [Threshold-boundary receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/THRESHOLD_BOUNDARY_RECEIPT.json)
+- [Full validation receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FULL_VALIDATION_RECEIPT.json)
+- [Full candidate results](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/validator_full/CANDIDATE_VALIDATION.json)
+- [Recovery and failed tooling attempts](RECOVERY_AND_ATTEMPTS.md)
+- [Direct conditional summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_CONDITIONAL_MACRO.csv)
+- [Direct workload summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_FULLSTREAM_WORKLOAD.csv)
+- [Direct inference summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv)

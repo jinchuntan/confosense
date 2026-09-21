@@ -1,0 +1,13 @@
+{
+  "candidate": "review/pleia_temperature_context005_validation_audit_20260919/candidate_validate_v1.py",
+  "candidate_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd",
+  "command": [
+    "review\\pleia_temperature_context005_validated_acceptance_20260921\\acceptance_runner.py",
+    "full"
+  ],
+  "fit_forbidden_guard": "candidate executes with src.intervals005_common.Operations(forbid=True)",
+  "output": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/validator_full",
+  "pid": 12920,
+  "purpose": "acceptance full validation launch",
+  "utc": "2026-09-21T18:34:13.189135Z"
+}

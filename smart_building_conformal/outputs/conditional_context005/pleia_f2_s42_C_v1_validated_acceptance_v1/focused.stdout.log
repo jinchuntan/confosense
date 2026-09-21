@@ -1,0 +1,21 @@
+OK  accept_unmodified                      expected=pass   observed=pass   detected_by=
+OK  reject_feature_corruption              expected=reject observed=reject detected_by=A_feature_provenance;A_identity
+OK  reject_observation_corruption          expected=reject observed=reject detected_by=A_observations
+OK  reject_prediction_corruption           expected=reject observed=reject detected_by=B_model_application
+OK  reject_interval_corruption             expected=reject observed=reject detected_by=C_interval_construction
+OK  reject_causal_update_corruption        expected=reject observed=reject detected_by=C_rolling_state
+OK  reject_alert_flag_corruption           expected=reject observed=reject detected_by=C_alert_flags
+OK  reject_released_score_corruption       expected=reject observed=reject detected_by=C_released_scores
+OK  reject_model_corruption                expected=reject observed=reject detected_by=B_model_application;C_interval_construction;C_released_scores
+
+{
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "all_ok": true
+}
+{
+  "passed": true,
+  "tests": 9,
+  "receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s42_C_v1_validated_acceptance_v1\\FOCUSED_TEST_RECEIPT.json"
+}
