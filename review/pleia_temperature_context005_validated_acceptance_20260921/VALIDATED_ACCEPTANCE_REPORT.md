@@ -22,12 +22,17 @@ All nine focused disposable-sandbox cases passed: one unmodified acceptance plus
 
 ## Scientific limitations retained
 
-Rolling CQR clean-stream coverage is **0.9081**, below nominal 0.95 by 0.0419; that finding is retained, not repaired away. Persistence does not dominate every detection/workload trade-off. This is a single-model-seed descriptive pilot, so population bounds are unavailable. No energy uncertainty bounds are transferred to temperature.
+Rolling CQR clean-stream coverage is **0.9081**, below nominal 0.95 by 0.0419; that finding is retained, not repaired away. Persistence does not dominate every detection/workload trade-off. This is a single-model-seed descriptive pilot, so population bounds are unavailable. No energy uncertainty bounds are transferred to temperature. The explicit [inference-status table](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/INFERENCE_STATUS.csv) records why no population interval is available and why the blank inference export is intentional.
 
 ## Direct summaries
 
 - [Conditional control/rule/channel macro summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_CONDITIONAL_MACRO.csv)
 - [Full clean-stream workload summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_FULLSTREAM_WORKLOAD.csv)
-- [Inference-status summary](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv)
+- [Preserved blank inference export](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv) (no population interval is estimated)
+- [Inference-status table](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/INFERENCE_STATUS.csv)
+
+## External-backup recovery proof
+
+The acceptance sequence was restored into an empty temporary Git repository using only local external bundles: a self-contained `c143fa16` base, the existing full audit archive, a small audit-receipt delta, the existing primary-acceptance delta, and a delivery delta. The restored tip was exactly `18d8dd15d06459b3b54ba629e9948b78494f4c8f`; the temporary repository had no remotes or object alternates, and `git fsck --full --no-dangling` passed. The complete scoped receipt is [EXTERNAL_BACKUP_RECOVERY_RECEIPT.json](EXTERNAL_BACKUP_RECOVERY_RECEIPT.json).
 
 The operational receipts and evidence index are linked from [EVIDENCE_INDEX.md](EVIDENCE_INDEX.md).

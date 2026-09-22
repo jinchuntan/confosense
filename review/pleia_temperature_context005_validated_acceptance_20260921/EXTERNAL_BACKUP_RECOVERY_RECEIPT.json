@@ -1,0 +1,101 @@
+{
+  "commits_present": [
+    "c143fa16eaf9bfc6354b4cb1f8861915cb00f388",
+    "06fe967be2be8d7898812c0c2d6e464d4e942351",
+    "ec9bed703db3d6bcb87a2acb7140d84a2a86c078",
+    "e52a3ba6b94996f51300af523f898207162cac79",
+    "affc006e64075558415d7fe038460ba560ee6dc6",
+    "47595bfd7081f125e1f65a01971d5a82b2d2c40c",
+    "18d8dd15d06459b3b54ba629e9948b78494f4c8f"
+  ],
+  "expected_restored_commit": "18d8dd15d06459b3b54ba629e9948b78494f4c8f",
+  "external_bundle_inputs": {
+    "audit_full_existing": {
+      "bytes": 4756546302,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validation_audit_20260919\\audit_v1_ec9bed70.bundle",
+      "sha256": "52cba23d406fc9d1d9012c3d357503fb1551f92991722140e20dc9a94ea8a596",
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validation_audit_20260919/audit_v1_ec9bed70.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\nec9bed703db3d6bcb87a2acb7140d84a2a86c078 refs/heads/review/pleia-temperature-context005-validation-audit-20260919\nThe bundle requires this ref:\nc143fa16eaf9bfc6354b4cb1f8861915cb00f388 \nThe bundle uses this hash algorithm: sha1\n"
+    },
+    "audit_receipt_delta": {
+      "bytes": 2063,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\audit_e52_from_ec9.bundle",
+      "sha256": "ff851596d741cd68c111fdad1718bb815595a6e997e214e11aaff729f83e38da",
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/recovery_18d8_v6/audit_e52_from_ec9.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\ne52a3ba6b94996f51300af523f898207162cac79 refs/heads/review/pleia-temperature-context005-validation-audit-20260919\nThe bundle requires this ref:\nec9bed703db3d6bcb87a2acb7140d84a2a86c078 \nThe bundle uses this hash algorithm: sha1\n"
+    },
+    "base_c143": {
+      "bytes": 2618609581,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\base_c143.bundle",
+      "sha256": "976fa335d736f71a28e0d1e05b72df4256b525cf0621fac3d54bae3c5b3f5c3c",
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/recovery_18d8_v6/base_c143.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\nc143fa16eaf9bfc6354b4cb1f8861915cb00f388 refs/heads/review/matched-fold2-multiseed-20260914\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1\n"
+    },
+    "delivery_delta": {
+      "bytes": 9772,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\delivery_18_from_affc.bundle",
+      "sha256": "4a3c0576fda88f5fdf7a342cacf61a0eab03a5f439d9d9f17afdd459671d2132",
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/recovery_18d8_v6/delivery_18_from_affc.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\n18d8dd15d06459b3b54ba629e9948b78494f4c8f refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921\nThe bundle requires this ref:\naffc006e64075558415d7fe038460ba560ee6dc6 \nThe bundle uses this hash algorithm: sha1\n"
+    },
+    "primary_existing": {
+      "bytes": 35038,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3\\acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle",
+      "sha256": "0f12a38b06c7e97499bf734df4b14d8e6558a5aadfdbeda50de667f83d9e68aa",
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/primary_affc006e64075558415d7fe038460ba560ee6dc6_v3/acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\naffc006e64075558415d7fe038460ba560ee6dc6 refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921\nThe bundle requires this ref:\ne52a3ba6b94996f51300af523f898207162cac79 \nThe bundle uses this hash algorithm: sha1\n"
+    }
+  },
+  "fetches": [
+    {
+      "refspec": "refs/heads/review/matched-fold2-multiseed-20260914:refs/heads/restored-base",
+      "source": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\base_c143.bundle",
+      "stderr": "From C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\base_c143.bundle\n * [new branch]      review/matched-fold2-multiseed-20260914 -> restored-base\n",
+      "stdout": ""
+    },
+    {
+      "refspec": "refs/heads/review/pleia-temperature-context005-validation-audit-20260919:refs/heads/restored-audit-base",
+      "source": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validation_audit_20260919\\audit_v1_ec9bed70.bundle",
+      "stderr": "From C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validation_audit_20260919\\audit_v1_ec9bed70.bundle\n * [new branch]      review/pleia-temperature-context005-validation-audit-20260919 -> restored-audit-base\n",
+      "stdout": ""
+    },
+    {
+      "refspec": "refs/heads/review/pleia-temperature-context005-validation-audit-20260919:refs/heads/restored-audit",
+      "source": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\audit_e52_from_ec9.bundle",
+      "stderr": "From C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\audit_e52_from_ec9.bundle\n * [new branch]        review/pleia-temperature-context005-validation-audit-20260919 -> restored-audit\n",
+      "stdout": ""
+    },
+    {
+      "refspec": "refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921:refs/heads/restored-primary",
+      "source": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3\\acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle",
+      "stderr": "From C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\primary_affc006e64075558415d7fe038460ba560ee6dc6_v3\\acceptance_primary_affc006e64075558415d7fe038460ba560ee6dc6.bundle\n * [new branch]        review/pleia-temperature-context005-validated-acceptance-20260921 -> restored-primary\n",
+      "stdout": ""
+    },
+    {
+      "refspec": "refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921:refs/heads/restored-delivery",
+      "source": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\delivery_18_from_affc.bundle",
+      "stderr": "From C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\delivery_18_from_affc.bundle\n * [new branch]        review/pleia-temperature-context005-validated-acceptance-20260921 -> restored-delivery\n",
+      "stdout": ""
+    }
+  ],
+  "fsck_stderr": "notice: HEAD points to an unborn branch (master)\n",
+  "fsck_stdout": "",
+  "isolated_repository": "C:\\Users\\nigel\\ConfoSenseRecoveryTests\\acceptance_restore_zcqkzts0",
+  "network_or_working_repository_objects_used_during_restore": false,
+  "object_alternates_absent": true,
+  "passed": true,
+  "purpose": "external-backup-only recovery proof through validated-acceptance commit",
+  "remote_configuration_absent": true,
+  "restore_method": "git init followed only by git fetch from the listed local external bundle paths",
+  "restored_commit": "18d8dd15d06459b3b54ba629e9948b78494f4c8f",
+  "restored_commit_matches_expected": true,
+  "scope_note": "The new self-contained c143 base, existing full audit archive, and new audit-receipt and delivery deltas are the minimum lineage prerequisites for the pre-existing primary incremental bundle. This proof restores commits through 18d8dd15d only; it makes no claim about later commits containing this receipt.",
+  "superseded_incomplete_preflights": [
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_prerequisites_through_18d8dd15d06459b3b54ba629e9948b78494f4c8f_v1",
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_prerequisites_through_18d8dd15d06459b3b54ba629e9948b78494f4c8f_v2",
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_prerequisites_through_18d8dd15d06459b3b54ba629e9948b78494f4c8f_v3",
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v4",
+    "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v5"
+  ],
+  "utc": "2026-09-22T01:06:32.531390Z"
+}

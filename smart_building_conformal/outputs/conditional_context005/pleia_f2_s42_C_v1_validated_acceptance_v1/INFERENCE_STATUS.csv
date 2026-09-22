@@ -1,0 +1,2 @@
+evidence_scope,model_seed_count,inference_artifact,status,population_intervals_available,reason,permitted_interpretation
+"PLEIA temperature, outer fold 2, horizon 1",1,ACCEPTANCE_INFERENCE.csv,not_available,false,"One completed model seed supplies no between-seed sampling distribution, so population intervals cannot be estimated.","The saved pilot summaries are descriptive only; the blank inference artifact is intentional and preserved."
