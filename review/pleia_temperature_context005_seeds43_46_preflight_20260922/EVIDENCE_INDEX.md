@@ -17,6 +17,9 @@
 - [Package verifier](verify_preflight.py)
 - [Authoritative package verification receipt](PACKAGE_VERIFICATION_V2.json)
 - [Preserved failed self-link verification attempt](PACKAGE_VERIFICATION.json)
+- [Delivery script](delivery.py)
+- [External backup verification receipt](PREFLIGHT_BACKUP_VERIFICATION.json)
+- [Commit-pinned HTTPS readback receipt](PREFLIGHT_HTTPS_READBACK_RECEIPT.json)
 - [Attempts and supersession note](ATTEMPTS_AND_SUPERSESSION.md)
 
 Draft manifests:

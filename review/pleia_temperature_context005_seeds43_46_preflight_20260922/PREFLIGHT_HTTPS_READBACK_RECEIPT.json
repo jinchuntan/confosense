@@ -1,0 +1,422 @@
+{
+  "all_downloads_identical_to_committed_blobs": true,
+  "api_commit_sha": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb",
+  "api_matches_verified_commit": true,
+  "api_status": 200,
+  "backup": {
+    "backup_root": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_seeds43_46_preflight_20260922\\primary_f28eb4c6edc3362ad930ec949fd4363a2ce759fb_v1",
+    "bundle": {
+      "bytes": 1499397,
+      "create_returncode": 0,
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_seeds43_46_preflight_20260922\\primary_f28eb4c6edc3362ad930ec949fd4363a2ce759fb_v1\\preflight_f28eb4c6edc3362ad930ec949fd4363a2ce759fb.bundle",
+      "sha256": "6b1837773e846df132342262ba1e83c360038807e4f242327b1f1df4c6f5a5f6",
+      "verify_returncode": 0,
+      "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_seeds43_46_preflight_20260922/primary_f28eb4c6edc3362ad930ec949fd4363a2ce759fb_v1/preflight_f28eb4c6edc3362ad930ec949fd4363a2ce759fb.bundle is okay\n",
+      "verify_stdout": "The bundle contains this ref:\nf28eb4c6edc3362ad930ec949fd4363a2ce759fb refs/heads/review/pleia-temperature-context005-seeds43-46-preflight-20260922\nThe bundle requires this ref:\n03ca62f2f0704725a13b93929b5ba5797f06e20f \nThe bundle uses this hash algorithm: sha1\n"
+    },
+    "passed": true
+  },
+  "downloads": [
+    {
+      "committed_blob_bytes": 1214,
+      "committed_blob_sha256": "d9382c0d4f04f279510f77a06621e4158d792396c6c4c894774c4056c11e8651",
+      "downloaded_bytes": 1214,
+      "downloaded_sha256": "d9382c0d4f04f279510f77a06621e4158d792396c6c4c894774c4056c11e8651",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/ATTEMPTS_AND_SUPERSESSION.md"
+    },
+    {
+      "committed_blob_bytes": 3956,
+      "committed_blob_sha256": "3c575a560ab0918d71e2ba8bcd3dc458316d0d2098af6b1097bc78cc7c4f07cd",
+      "downloaded_bytes": 3956,
+      "downloaded_sha256": "3c575a560ab0918d71e2ba8bcd3dc458316d0d2098af6b1097bc78cc7c4f07cd",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/DESIGN_PREFLIGHT.json"
+    },
+    {
+      "committed_blob_bytes": 1774,
+      "committed_blob_sha256": "23203f9aa3fafe7ab28df6efcba7adf826dad6011dab447fd118b806478de40a",
+      "downloaded_bytes": 1774,
+      "downloaded_sha256": "23203f9aa3fafe7ab28df6efcba7adf826dad6011dab447fd118b806478de40a",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/EVIDENCE_INDEX.md"
+    },
+    {
+      "committed_blob_bytes": 3090,
+      "committed_blob_sha256": "d1d44c6ed2ff14e5b6f35988fe570c55d156d7e6c494f2f9f4e9e75a3a407b33",
+      "downloaded_bytes": 3090,
+      "downloaded_sha256": "d1d44c6ed2ff14e5b6f35988fe570c55d156d7e6c494f2f9f4e9e75a3a407b33",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/FUTURE_COMMANDS.json"
+    },
+    {
+      "committed_blob_bytes": 3397,
+      "committed_blob_sha256": "f978c3e6127ac6bdc91a91ef102d5714005b9310bc695830d63d8b759f61fb5f",
+      "downloaded_bytes": 3397,
+      "downloaded_sha256": "f978c3e6127ac6bdc91a91ef102d5714005b9310bc695830d63d8b759f61fb5f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/MANIFEST_COMPARISON.csv"
+    },
+    {
+      "committed_blob_bytes": 5024,
+      "committed_blob_sha256": "cd6743bc46da8a903a527ad1c4160eea93e1e8b6ea2ac9b4203e75698f678941",
+      "downloaded_bytes": 5024,
+      "downloaded_sha256": "cd6743bc46da8a903a527ad1c4160eea93e1e8b6ea2ac9b4203e75698f678941",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/PACKAGE_VERIFICATION.json"
+    },
+    {
+      "committed_blob_bytes": 5167,
+      "committed_blob_sha256": "c840d464968a54b7d6de1116701107bddd4e537471ac4a2848c4d344be760d3e",
+      "downloaded_bytes": 5167,
+      "downloaded_sha256": "c840d464968a54b7d6de1116701107bddd4e537471ac4a2848c4d344be760d3e",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/PACKAGE_VERIFICATION_V2.json"
+    },
+    {
+      "committed_blob_bytes": 3899,
+      "committed_blob_sha256": "a2ba1d92007eb9c22c6d253f8bd3f75cb58960ab88e2d682cedda7a0ac4d707b",
+      "downloaded_bytes": 3899,
+      "downloaded_sha256": "a2ba1d92007eb9c22c6d253f8bd3f75cb58960ab88e2d682cedda7a0ac4d707b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/PREFLIGHT_READINESS.json"
+    },
+    {
+      "committed_blob_bytes": 4153,
+      "committed_blob_sha256": "5673c11852c0734e63ff7c9e37418700c7f09835276104e8c538f6ae02d8c415",
+      "downloaded_bytes": 4153,
+      "downloaded_sha256": "5673c11852c0734e63ff7c9e37418700c7f09835276104e8c538f6ae02d8c415",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/PREFLIGHT_READINESS_V2.json"
+    },
+    {
+      "committed_blob_bytes": 6872,
+      "committed_blob_sha256": "b9237be10d6b456320ee9beef08dd33d4344426b74ee0efafda22ef99b94ee61",
+      "downloaded_bytes": 6872,
+      "downloaded_sha256": "b9237be10d6b456320ee9beef08dd33d4344426b74ee0efafda22ef99b94ee61",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/PREFLIGHT_REPORT.md"
+    },
+    {
+      "committed_blob_bytes": 3616,
+      "committed_blob_sha256": "e43c2b681bd62d2eaf375aeea1cc069a1bb80f2e1c07785fdb0d42c1c9114dc6",
+      "downloaded_bytes": 3616,
+      "downloaded_sha256": "e43c2b681bd62d2eaf375aeea1cc069a1bb80f2e1c07785fdb0d42c1c9114dc6",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/PRESERVATION_BASELINE.json"
+    },
+    {
+      "committed_blob_bytes": 463,
+      "committed_blob_sha256": "1440ba10313e7dc1247a7c11325fe31eb64faadcc40bac9b4d79e8e1aab410fc",
+      "downloaded_bytes": 463,
+      "downloaded_sha256": "1440ba10313e7dc1247a7c11325fe31eb64faadcc40bac9b4d79e8e1aab410fc",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/README.md"
+    },
+    {
+      "committed_blob_bytes": 1221,
+      "committed_blob_sha256": "95f1e9d3ea17ed8c345940344228d89d9e0c46380c8da88064b9c7bb39aa675b",
+      "downloaded_bytes": 1221,
+      "downloaded_sha256": "95f1e9d3ea17ed8c345940344228d89d9e0c46380c8da88064b9c7bb39aa675b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/RESOURCE_BUDGET.json"
+    },
+    {
+      "committed_blob_bytes": 9740,
+      "committed_blob_sha256": "f61f9f973520a96b57aec68e6879df6be193a62a64e14759d3cb7e3d02681ae1",
+      "downloaded_bytes": 9740,
+      "downloaded_sha256": "f61f9f973520a96b57aec68e6879df6be193a62a64e14759d3cb7e3d02681ae1",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/candidate_validate_v2.py"
+    },
+    {
+      "committed_blob_bytes": 2541,
+      "committed_blob_sha256": "916696b0932bc4c20c85485e28168d661c2c2ea5a3df72c1ace710bbf386ff45",
+      "downloaded_bytes": 2541,
+      "downloaded_sha256": "916696b0932bc4c20c85485e28168d661c2c2ea5a3df72c1ace710bbf386ff45",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/common.py"
+    },
+    {
+      "committed_blob_bytes": 25575,
+      "committed_blob_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "downloaded_bytes": 25575,
+      "downloaded_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s43_C_v1/contexts.csv"
+    },
+    {
+      "committed_blob_bytes": 7482,
+      "committed_blob_sha256": "9fa21b41559adb38f0285a5b83863ea19d02df9e3590e8c288a1e95c0185206a",
+      "downloaded_bytes": 7482,
+      "downloaded_sha256": "9fa21b41559adb38f0285a5b83863ea19d02df9e3590e8c288a1e95c0185206a",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s43_C_v1/frozen_protocol.json"
+    },
+    {
+      "committed_blob_bytes": 1346121,
+      "committed_blob_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "downloaded_bytes": 1346121,
+      "downloaded_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s43_C_v1/roles.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 153086,
+      "committed_blob_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "downloaded_bytes": 153086,
+      "downloaded_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s43_C_v1/schedules.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 25575,
+      "committed_blob_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "downloaded_bytes": 25575,
+      "downloaded_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s44_C_v1/contexts.csv"
+    },
+    {
+      "committed_blob_bytes": 7482,
+      "committed_blob_sha256": "cf0f5f2f8544fea6e9e36eedea0b1e9a4836f0999c8d5dc963edc2fb13ec90ed",
+      "downloaded_bytes": 7482,
+      "downloaded_sha256": "cf0f5f2f8544fea6e9e36eedea0b1e9a4836f0999c8d5dc963edc2fb13ec90ed",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s44_C_v1/frozen_protocol.json"
+    },
+    {
+      "committed_blob_bytes": 1346121,
+      "committed_blob_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "downloaded_bytes": 1346121,
+      "downloaded_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s44_C_v1/roles.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 153086,
+      "committed_blob_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "downloaded_bytes": 153086,
+      "downloaded_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s44_C_v1/schedules.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 25575,
+      "committed_blob_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "downloaded_bytes": 25575,
+      "downloaded_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s45_C_v1/contexts.csv"
+    },
+    {
+      "committed_blob_bytes": 7482,
+      "committed_blob_sha256": "13bd11819fdd47e4fb49f4278e1d8abd08b1af5993a8085cc712198093388914",
+      "downloaded_bytes": 7482,
+      "downloaded_sha256": "13bd11819fdd47e4fb49f4278e1d8abd08b1af5993a8085cc712198093388914",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s45_C_v1/frozen_protocol.json"
+    },
+    {
+      "committed_blob_bytes": 1346121,
+      "committed_blob_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "downloaded_bytes": 1346121,
+      "downloaded_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s45_C_v1/roles.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 153086,
+      "committed_blob_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "downloaded_bytes": 153086,
+      "downloaded_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s45_C_v1/schedules.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 25575,
+      "committed_blob_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "downloaded_bytes": 25575,
+      "downloaded_sha256": "4087763ee236ea02db6ebce2024418c8ed9bc9ef26f8412d2ce4c9c5c4e0da1b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s46_C_v1/contexts.csv"
+    },
+    {
+      "committed_blob_bytes": 7482,
+      "committed_blob_sha256": "4d4b08506e4fb4810da211ccf2eac5f82c7d423cdf70108deb802204e0f4339e",
+      "downloaded_bytes": 7482,
+      "downloaded_sha256": "4d4b08506e4fb4810da211ccf2eac5f82c7d423cdf70108deb802204e0f4339e",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s46_C_v1/frozen_protocol.json"
+    },
+    {
+      "committed_blob_bytes": 1346121,
+      "committed_blob_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "downloaded_bytes": 1346121,
+      "downloaded_sha256": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s46_C_v1/roles.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 153086,
+      "committed_blob_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "downloaded_bytes": 153086,
+      "downloaded_sha256": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/draft_designs/pleia_f2_s46_C_v1/schedules.csv.gz"
+    },
+    {
+      "committed_blob_bytes": 6697,
+      "committed_blob_sha256": "c0050a8d832cd61547654c6f937a43ab094fa09dd2311cdbe7c055716c03d3d7",
+      "downloaded_bytes": 6697,
+      "downloaded_sha256": "c0050a8d832cd61547654c6f937a43ab094fa09dd2311cdbe7c055716c03d3d7",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/finalize_preflight.py"
+    },
+    {
+      "committed_blob_bytes": 4539,
+      "committed_blob_sha256": "d8381d7b9ae9f63bf45916398a28bcd4306beb1b3e22755917455f7bebadbef1",
+      "downloaded_bytes": 4539,
+      "downloaded_sha256": "d8381d7b9ae9f63bf45916398a28bcd4306beb1b3e22755917455f7bebadbef1",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/focused_tests/FOCUSED_TEST_RECEIPT.json"
+    },
+    {
+      "committed_blob_bytes": 2601,
+      "committed_blob_sha256": "8a920faa884bc9c462f8643c2bbcb7f74d262ee229d3739448812f5eb3067ed1",
+      "downloaded_bytes": 2601,
+      "downloaded_sha256": "8a920faa884bc9c462f8643c2bbcb7f74d262ee229d3739448812f5eb3067ed1",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/focused_tests/focused_test_results.csv"
+    },
+    {
+      "committed_blob_bytes": 4539,
+      "committed_blob_sha256": "a866f8bf2348e1697800c24a66c7d4476b53d262d6d482c9f8bcd7fcd9f6e9c8",
+      "downloaded_bytes": 4539,
+      "downloaded_sha256": "a866f8bf2348e1697800c24a66c7d4476b53d262d6d482c9f8bcd7fcd9f6e9c8",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/focused_tests_v2/FOCUSED_TEST_RECEIPT.json"
+    },
+    {
+      "committed_blob_bytes": 2601,
+      "committed_blob_sha256": "785da2cc3ddb408b3290b128c64e9004cbab674dc8cde969327218a372846021",
+      "downloaded_bytes": 2601,
+      "downloaded_sha256": "785da2cc3ddb408b3290b128c64e9004cbab674dc8cde969327218a372846021",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/focused_tests_v2/focused_test_results.csv"
+    },
+    {
+      "committed_blob_bytes": 4616,
+      "committed_blob_sha256": "48e12fd34ac4d24ffb61b74fa94e632e699e6345370fa3e7b693e77dcd7654cb",
+      "downloaded_bytes": 4616,
+      "downloaded_sha256": "48e12fd34ac4d24ffb61b74fa94e632e699e6345370fa3e7b693e77dcd7654cb",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/freeze_preflight.py"
+    },
+    {
+      "committed_blob_bytes": 1885,
+      "committed_blob_sha256": "f507b9282df670524b7433563124be2a28904f600e64612c9ed448772006cfbe",
+      "downloaded_bytes": 1885,
+      "downloaded_sha256": "f507b9282df670524b7433563124be2a28904f600e64612c9ed448772006cfbe",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s43_C_v1_draft_manifest.json"
+    },
+    {
+      "committed_blob_bytes": 1885,
+      "committed_blob_sha256": "449e2ab25c3abc96731b28036f5b079286529fe51404d924fd51e0b396cf0f83",
+      "downloaded_bytes": 1885,
+      "downloaded_sha256": "449e2ab25c3abc96731b28036f5b079286529fe51404d924fd51e0b396cf0f83",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s44_C_v1_draft_manifest.json"
+    },
+    {
+      "committed_blob_bytes": 1885,
+      "committed_blob_sha256": "259feb63827f3305e650fa03e50a09e0ddb1ec743094b4b93a63a46d1cd0d3cd",
+      "downloaded_bytes": 1885,
+      "downloaded_sha256": "259feb63827f3305e650fa03e50a09e0ddb1ec743094b4b93a63a46d1cd0d3cd",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s45_C_v1_draft_manifest.json"
+    },
+    {
+      "committed_blob_bytes": 1885,
+      "committed_blob_sha256": "b9ec6d8e828fffe5db9d0e8641172f71fd0110a89bea961bbf1910e6c36e1ca2",
+      "downloaded_bytes": 1885,
+      "downloaded_sha256": "b9ec6d8e828fffe5db9d0e8641172f71fd0110a89bea961bbf1910e6c36e1ca2",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s46_C_v1_draft_manifest.json"
+    },
+    {
+      "committed_blob_bytes": 10147,
+      "committed_blob_sha256": "880a72a765aef2358088bcb5e75d709183e51f28a9f6aa8216a1b18f6fe1ef9c",
+      "downloaded_bytes": 10147,
+      "downloaded_sha256": "880a72a765aef2358088bcb5e75d709183e51f28a9f6aa8216a1b18f6fe1ef9c",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/prepare_preflight.py"
+    },
+    {
+      "committed_blob_bytes": 10208,
+      "committed_blob_sha256": "63bc40b541b8ff72e92a39ae698020be797bd431f6a78d065bccb0a91767a215",
+      "downloaded_bytes": 10208,
+      "downloaded_sha256": "63bc40b541b8ff72e92a39ae698020be797bd431f6a78d065bccb0a91767a215",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/test_candidate_v2.py"
+    },
+    {
+      "committed_blob_bytes": 4231,
+      "committed_blob_sha256": "1359a9e9e59d1dd226d3f75b071609246c38199472c36a26a553dd6048f9e60b",
+      "downloaded_bytes": 4231,
+      "downloaded_sha256": "1359a9e9e59d1dd226d3f75b071609246c38199472c36a26a553dd6048f9e60b",
+      "http_status": 200,
+      "identical": true,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/verify_preflight.py"
+    }
+  ],
+  "passed": true,
+  "purpose": "commit-pinned GitHub HTTPS readback for substantive temperature preflight commit",
+  "scope_note": "This receipt verifies only the earlier substantive commit named above by HTTPS downloads pinned to that commit and compared with its committed Git blobs. It does not claim to verify the later commit that contains this receipt.",
+  "utc": "2026-09-22T19:35:39.409518Z",
+  "verified_commit": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb"
+}
