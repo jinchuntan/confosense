@@ -10,6 +10,8 @@
 - [External-backup recovery utility](recovery_backup.py)
 - [External-backup-only recovery receipt through 18d8dd15d](EXTERNAL_BACKUP_RECOVERY_RECEIPT.json)
 - [Follow-up backup/readback utility](followup_delivery.py)
+- [Follow-up exact-blob and bundle backup receipt](FOLLOWUP_BACKUP_VERIFICATION.json)
+- [Follow-up commit-pinned HTTPS readback receipt](FOLLOWUP_HTTPS_READBACK_RECEIPT.json)
 - [Preservation baseline V3](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/PRESERVATION_BASELINE_V3.json)
 - [Focused tests receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/FOCUSED_TEST_RECEIPT.json)
 - [Threshold-boundary receipt](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/THRESHOLD_BOUNDARY_RECEIPT.json)

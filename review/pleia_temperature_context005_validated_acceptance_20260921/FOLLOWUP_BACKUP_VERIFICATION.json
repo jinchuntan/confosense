@@ -1,0 +1,57 @@
+{
+  "all_exact_blobs_verified": true,
+  "backup_root": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\followup_03ca62f2f0704725a13b93929b5ba5797f06e20f_v1",
+  "base_commit_not_in_incremental_bundle": "18d8dd15d06459b3b54ba629e9948b78494f4c8f",
+  "bundle": {
+    "bytes": 9751,
+    "create_returncode": 0,
+    "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\followup_03ca62f2f0704725a13b93929b5ba5797f06e20f_v1\\followup_03ca62f2f0704725a13b93929b5ba5797f06e20f.bundle",
+    "sha256": "654ee36a1cd1879f665bbe55356b010b7d3b4496fe10d05752ae8cb10fa15767",
+    "verify_returncode": 0,
+    "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/followup_03ca62f2f0704725a13b93929b5ba5797f06e20f_v1/followup_03ca62f2f0704725a13b93929b5ba5797f06e20f.bundle is okay\n",
+    "verify_stdout": "The bundle contains this ref:\n03ca62f2f0704725a13b93929b5ba5797f06e20f refs/heads/review/pleia-temperature-context005-validated-acceptance-20260921\nThe bundle requires this ref:\n18d8dd15d06459b3b54ba629e9948b78494f4c8f \nThe bundle uses this hash algorithm: sha1\n"
+  },
+  "changed_paths": [
+    {
+      "backup_path": "exact_committed_blobs/review/pleia_temperature_context005_validated_acceptance_20260921/EVIDENCE_INDEX.md",
+      "bytes": 3208,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/EVIDENCE_INDEX.md",
+      "sha256": "96d0a68a730677ed93d89ca12b32f2d8a4f2aab3214f9f266f154c91f3f120e0"
+    },
+    {
+      "backup_path": "exact_committed_blobs/review/pleia_temperature_context005_validated_acceptance_20260921/EXTERNAL_BACKUP_RECOVERY_RECEIPT.json",
+      "bytes": 9163,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/EXTERNAL_BACKUP_RECOVERY_RECEIPT.json",
+      "sha256": "b2253c4afb72f15fdc63a3566728f6bbd6806f7bdb2d8020ae2299ec20a73e90"
+    },
+    {
+      "backup_path": "exact_committed_blobs/review/pleia_temperature_context005_validated_acceptance_20260921/VALIDATED_ACCEPTANCE_REPORT.md",
+      "bytes": 4703,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/VALIDATED_ACCEPTANCE_REPORT.md",
+      "sha256": "d860cb20938c418a3ef92fd9d936c21aab41f812928f8e4ece4b819824158ce9"
+    },
+    {
+      "backup_path": "exact_committed_blobs/review/pleia_temperature_context005_validated_acceptance_20260921/followup_delivery.py",
+      "bytes": 7472,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/followup_delivery.py",
+      "sha256": "6bc272fb1b0d8eb239e193bc4ec3fa27458a07d5ce2236e16893110a67dd6377"
+    },
+    {
+      "backup_path": "exact_committed_blobs/review/pleia_temperature_context005_validated_acceptance_20260921/recovery_backup.py",
+      "bytes": 7732,
+      "path": "review/pleia_temperature_context005_validated_acceptance_20260921/recovery_backup.py",
+      "sha256": "419a298cfb6cdbc144b3c7fd8fd932c977834c5f4e08749ca09428bd52897e00"
+    },
+    {
+      "backup_path": "exact_committed_blobs/smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/INFERENCE_STATUS.csv",
+      "bytes": 442,
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/INFERENCE_STATUS.csv",
+      "sha256": "a19bb24afd358479247f30bec8a3dc088d93aa06b8ba8e7bff54f1cb96c15d79"
+    }
+  ],
+  "passed": true,
+  "purpose": "exact committed-blob and incremental-bundle backup for earlier additive acceptance follow-up",
+  "scope_note": "This backup contains the named earlier additive evidence commit and its changed acceptance-evidence paths. It does not claim to verify a later receipt-containing commit.",
+  "utc": "2026-09-22T01:08:09.458599Z",
+  "verified_commit": "03ca62f2f0704725a13b93929b5ba5797f06e20f"
+}
