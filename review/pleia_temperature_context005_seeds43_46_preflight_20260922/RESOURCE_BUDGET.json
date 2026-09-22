@@ -1,0 +1,34 @@
+{
+  "backup_free_bytes": 4452564992,
+  "backup_volume": "C:",
+  "capacity_ready": false,
+  "engine_disk_floor_bytes": 8589934592,
+  "local_compute": {
+    "available_ram_bytes": 4699762688,
+    "cpu_logical_count": 20,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": true,
+    "physical_ram_bytes": 16890978304,
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "note": "Planning projection; revise from measured new-unit phases after execution authorization. Working and backup paths currently share one volume.",
+  "projection": {
+    "current_deficit_bytes": 12402098180,
+    "external_backup_objects_bytes": 2197284460,
+    "four_packaged_raw_sets_bytes": 2197284460,
+    "four_retained_raw_runs_bytes": 2217213944,
+    "incremental_bytes": 8264728580,
+    "one_package_temporary_peak_bytes": 549321115,
+    "one_restore_test_scratch_bytes": 1103624601,
+    "required_free_before_launch_including_8GiB_floor": 16854663172
+  },
+  "seed42_packaged_raw_bytes": 549321115,
+  "seed42_raw_run": {
+    "bytes": 554303486,
+    "files": 127162
+  },
+  "utc": "2026-09-22T19:18:09.088017Z",
+  "working_and_backup_share_volume": true,
+  "working_free_bytes": 4452564992,
+  "working_volume": "C:"
+}

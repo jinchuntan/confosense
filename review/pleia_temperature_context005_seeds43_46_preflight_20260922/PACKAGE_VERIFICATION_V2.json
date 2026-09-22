@@ -1,0 +1,199 @@
+{
+  "actual_operations": {
+    "calibrators_fitted": 0,
+    "experiments_started": 0,
+    "five_seed_analyses": 0,
+    "full_scientific_validations": 0,
+    "models_fitted": 0
+  },
+  "checks": {
+    "all_draft_protocols_zero_fit": true,
+    "all_drafts_unauthorized": true,
+    "all_local_links_exist": true,
+    "draft_design_checks_passed": true,
+    "exact_seed_order": true,
+    "execution_gate_rejected": true,
+    "focused_tests_passed": true,
+    "native_readiness_receipts_absent": true,
+    "no_source_or_canonical_protocol_diff": true,
+    "production_run_paths_absent": true,
+    "readiness_decision_is_not_authorized": true,
+    "seed42_complete_unchanged": true,
+    "seed42_operations_unchanged": true,
+    "source_digest_unchanged": true
+  },
+  "current_preservation_values": {
+    "complete_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+    "operations_bytes": 9201,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
+  },
+  "links_checked": [
+    {
+      "exists": true,
+      "source": "README.md",
+      "target": "PREFLIGHT_REPORT.md"
+    },
+    {
+      "exists": true,
+      "source": "README.md",
+      "target": "EVIDENCE_INDEX.md"
+    },
+    {
+      "exists": true,
+      "source": "PREFLIGHT_REPORT.md",
+      "target": "MANIFEST_COMPARISON.csv"
+    },
+    {
+      "exists": true,
+      "source": "PREFLIGHT_REPORT.md",
+      "target": "DESIGN_PREFLIGHT.json"
+    },
+    {
+      "exists": true,
+      "source": "PREFLIGHT_REPORT.md",
+      "target": "RESOURCE_BUDGET.json"
+    },
+    {
+      "exists": true,
+      "source": "PREFLIGHT_REPORT.md",
+      "target": "focused_tests_v2/FOCUSED_TEST_RECEIPT.json"
+    },
+    {
+      "exists": true,
+      "source": "PREFLIGHT_REPORT.md",
+      "target": "PREFLIGHT_READINESS_V2.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "PREFLIGHT_REPORT.md"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "PREFLIGHT_READINESS_V2.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "PRESERVATION_BASELINE.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "RESOURCE_BUDGET.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "DESIGN_PREFLIGHT.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "MANIFEST_COMPARISON.csv"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "candidate_validate_v2.py"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "test_candidate_v2.py"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "focused_tests_v2/FOCUSED_TEST_RECEIPT.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "focused_tests_v2/focused_test_results.csv"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "FUTURE_COMMANDS.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "prepare_preflight.py"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "freeze_preflight.py"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "finalize_preflight.py"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "verify_preflight.py"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "PACKAGE_VERIFICATION_V2.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "PACKAGE_VERIFICATION.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "ATTEMPTS_AND_SUPERSESSION.md"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "pleia_f2_s43_C_v1_draft_manifest.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "pleia_f2_s44_C_v1_draft_manifest.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "pleia_f2_s45_C_v1_draft_manifest.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "pleia_f2_s46_C_v1_draft_manifest.json"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "draft_designs/"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "focused_tests/"
+    },
+    {
+      "exists": true,
+      "source": "EVIDENCE_INDEX.md",
+      "target": "PREFLIGHT_READINESS.json"
+    }
+  ],
+  "missing_links": [],
+  "passed": true,
+  "purpose": "package-level verification of bounded temperature seeds 43--46 preflight",
+  "source_protocol_diff": "",
+  "supersedes_failed_receipt": "PACKAGE_VERIFICATION.json (failed only because its own not-yet-written link was checked)",
+  "utc": "2026-09-22T19:31:51.282845Z"
+}

@@ -1,0 +1,113 @@
+{
+  "all_ok": true,
+  "failed": 0,
+  "full_scientific_validation_performed": false,
+  "limited_receipts_satisfy_full_acceptance_gate": false,
+  "models_fitted": 0,
+  "passed": 12,
+  "pending_execution_checks": [
+    "Seeds 43--46 native estimator random_state and complete fitted-owner blob identity require future authorized fitted owners; static propagation and seed-42 native identity are checked now."
+  ],
+  "purpose": "focused no-fit tests of explicit-path validator interface",
+  "results": [
+    {
+      "detail": "bounded seed-42 numerical totals and categories match v1 exactly",
+      "expected": "pass_and_exact_match",
+      "new_exit": 0,
+      "observed": "pass_and_exact_match",
+      "ok": true,
+      "old_exit": 0,
+      "test": "accept_unmodified_and_old_new_equivalence"
+    },
+    {
+      "detail": "A_feature_provenance;A_identity",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_feature_corruption"
+    },
+    {
+      "detail": "A_observations",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_observation_corruption"
+    },
+    {
+      "detail": "B_model_application",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_prediction_corruption"
+    },
+    {
+      "detail": "C_interval_construction",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_interval_corruption"
+    },
+    {
+      "detail": "C_rolling_state",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_causal_update_corruption"
+    },
+    {
+      "detail": "C_alert_flags",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_alert_flag_corruption"
+    },
+    {
+      "detail": "C_released_scores",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_released_score_corruption"
+    },
+    {
+      "detail": "B_model_application;C_interval_construction;C_released_scores",
+      "exit": 1,
+      "expected": "reject",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_model_corruption"
+    },
+    {
+      "detail": "<module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py\", line 115, in main\n    raise IdentityError(f\"expected_identity_mismatch:expected={expected}:actual={actual}\")\nIdentityError: expected_identity_mismatch:expected={'dataset': 'pleia', 'fold': 2, 'horizon': 1, 'seed': 43}:actual={'dataset': 'pleia', 'fold': 2, 'horizon': 1, 'seed': 42}\n",
+      "exit": 1,
+      "expected": "reject_before_validation",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_wrong_expected_seed"
+    },
+    {
+      "detail": "idate_validate_v2.py\", line 122, in main\n    completion = check_limited_fixture(run, protocol_sha) if args.limit else check_full_complete(run, protocol_sha)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py\", line 62, in check_limited_fixture\n    raise IdentityError(\"run_design_protocol_mismatch\")\nIdentityError: run_design_protocol_mismatch\n",
+      "exit": 1,
+      "expected": "reject_before_validation",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_seed43_design_with_seed42_owner_run"
+    },
+    {
+      "detail": "\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py\", line 157, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py\", line 108, in main\n    raise IdentityError(\"output_path_could_overwrite_or_mix_with_evidence\")\nIdentityError: output_path_could_overwrite_or_mix_with_evidence\n",
+      "exit": 1,
+      "expected": "reject_before_validation",
+      "observed": "reject",
+      "ok": true,
+      "test": "reject_output_path_overwrite"
+    }
+  ],
+  "total": 12,
+  "utc": "2026-09-22T19:21:57.700735Z"
+}

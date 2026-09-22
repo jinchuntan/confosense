@@ -1,0 +1,100 @@
+{
+  "authorization": {
+    "experiments": false,
+    "five_seed_analysis": false,
+    "focused_no_fit_tests": true,
+    "full_validation": false
+  },
+  "branch": "review/pleia-temperature-context005-seeds43-46-preflight-20260922",
+  "entry_commit": "ed560464e8fecc3462d068e87ae019eae5b11300",
+  "matching_workers": [],
+  "packages": {
+    "mapie": "1.4.1",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "scipy": "1.17.1",
+    "torch": "2.13.0",
+    "xgboost": "3.2.0"
+  },
+  "prior_heads": {
+    "main": "06fe967be2be8d7898812c0c2d6e464d4e942351",
+    "review/pleia-energy-context005-multiseed-20260915": "80df3579dfe68ccf2c0d406c21c0fec967ff2b41",
+    "review/pleia-temperature-context005-pilot-20260918": "571408be0b51e81c6987306a292afc7fcae2ff94",
+    "review/pleia-temperature-context005-validated-acceptance-20260921": "ed560464e8fecc3462d068e87ae019eae5b11300",
+    "review/pleia-temperature-context005-validation-audit-20260919": "e52a3ba6b94996f51300af523f898207162cac79"
+  },
+  "proposed_run_paths_absent": {
+    "pleia_f2_s43_C_v1": true,
+    "pleia_f2_s44_C_v1": true,
+    "pleia_f2_s45_C_v1": true,
+    "pleia_f2_s46_C_v1": true
+  },
+  "purpose": "bounded preservation baseline before temperature seeds 43--46 zero-fit preflight",
+  "seed42": {
+    "complete_sha256": "5d4123f59d6c344d7337d11dc0b888e5a088864405e3b235c1d6ae197f953996",
+    "controls_sha256": "cb1eedfcbaba2c04122dfd422a1fe864275f4a72229fad95aa6152525879a523",
+    "declared_files": 127161,
+    "operations_bytes": 9201,
+    "operations_sha256": "db6b2ad378bad83b29a5d8f1f3839ea431bc4507b71df4475e84b637acfdc9d4",
+    "owner_identity": {
+      "columns": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "dataset": "pleia",
+      "fit_sha256": "6ea134cdd690c7cf1e595e6874c0772d943514a91aaa46055351582326b7ac14",
+      "model_seed": 42,
+      "new_learned_fits": 0,
+      "owner_sha256": "22ede7e8d7e32759d4450dcc8c5324377569512f29e759cb6cc278f8675938c6",
+      "persistence_calibrations": 1,
+      "persistence_radius": 0.7999999999999972,
+      "quantile_shared": true,
+      "roles": {
+        "final_calibration": "f8aade2b11a677fadaab3d7a4f1c12fed7420e15db08a6104f089bf51e826912",
+        "final_fit": "e3d454e7ba54a45ad4c1a4d452709edd11a74529b501f00137d397a025744aa2",
+        "outer_test": "44bd00b3e27da84b5c832be121cf8a7d8fe07dd990ea32a64d6ec3512e879011"
+      },
+      "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
+    },
+    "owner_identity_sha256": "73498ef15072c5da6d97f84bfcda6385a114df69c4f9da55db3ee4999484937f",
+    "protocol_sha256": "7454560c671e98b580eb4b6c0d1151bfa506dee16954029d87047009b67694ea",
+    "raw_bytes": 554303486,
+    "raw_files": 127162
+  },
+  "source_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "targeted_source_protocol_diff_from_entry": "",
+  "utc": "2026-09-22T19:18:09.476350Z",
+  "working_status_group_counts": {
+    " M": 6,
+    "??": 57,
+    "M ": 1
+  }
+}

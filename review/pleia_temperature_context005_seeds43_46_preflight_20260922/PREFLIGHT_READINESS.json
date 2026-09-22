@@ -1,0 +1,93 @@
+{
+  "blockers": [
+    "insufficient shared-volume free space for projected four-seed retained runs/packages/backups and the unchanged 8 GiB floor"
+  ],
+  "branch": "review/pleia-temperature-context005-seeds43-46-preflight-20260922",
+  "calibrators_fitted": 0,
+  "capacity_ready": false,
+  "draft_design_checks_passed": true,
+  "draft_manifests": [
+    {
+      "execution_authorized": false,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s43_C_v1_draft_manifest.json",
+      "seed": 43,
+      "sha256": "199c53420d9b0798916b3b916a5a4c6e7828ce8936b23e1d227f07efd5dd38b0"
+    },
+    {
+      "execution_authorized": false,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s44_C_v1_draft_manifest.json",
+      "seed": 44,
+      "sha256": "2ef6d9f91d303bbdf526c237fab950f4c178ded88b8af655b026cac67409b804"
+    },
+    {
+      "execution_authorized": false,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s45_C_v1_draft_manifest.json",
+      "seed": 45,
+      "sha256": "7ff80e04360b219108256e3f25e38afb505a7b26e1bc33a8dcc0451689e52894"
+    },
+    {
+      "execution_authorized": false,
+      "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/pleia_f2_s46_C_v1_draft_manifest.json",
+      "seed": 46,
+      "sha256": "9baf3463483a0d424fdeba66fa9400e16241d2f8fe0518eb7684d1f33f225c3e"
+    }
+  ],
+  "entry_commit": "ed560464e8fecc3462d068e87ae019eae5b11300",
+  "execution_authorized": false,
+  "experiments_started": 0,
+  "five_seed_analysis_run": false,
+  "focused_tests": {
+    "all_ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "full_scientific_validations_run": 0,
+  "launch_ready": false,
+  "models_fitted": 0,
+  "old_new_limited_equivalence": true,
+  "pending_execution_verification": [
+    "Seeds 43--46 native estimator random_state and complete fitted-owner blob identity require future authorized fitted owners; static propagation and seed-42 native identity are checked now."
+  ],
+  "planned_operations_not_spent": {
+    "four_seeds": {
+      "cqr_wrapper_fit": 4,
+      "logical_conformalizations": 4,
+      "native_quantile_estimator_fit": 12,
+      "persistence_radius": 4,
+      "recorded_nested_conformalize_calls": 8
+    },
+    "per_seed": {
+      "cqr_wrapper_fit": 1,
+      "logical_conformalizations": 1,
+      "native_quantile_estimator_fit": 3,
+      "persistence_radius": 1,
+      "recorded_nested_conformalize_calls": 2
+    },
+    "xgboost_lstm_enbpi_dscp_tuning_seed42_refits": 0
+  },
+  "planned_shapes_not_observed_results": {
+    "context_stages_per_seed": 2924,
+    "contexts_per_seed": 68,
+    "event_control_rule_channel_rows_per_seed": 171360,
+    "fault_slots_per_seed": 2856,
+    "five_seed_macro_rows": 300,
+    "four_seed_context_stages": 11696,
+    "four_seed_event_rows": 685440,
+    "new_per_seed_macro_rows": 240
+  },
+  "preflight_passed": false,
+  "purpose": "bounded zero-fit preflight readiness for PLEIA-temperature model seeds 43--46",
+  "remaining_decision": "Increase free capacity to the documented budget, then obtain explicit authorization for seeds 43--46. Only then create new final authorized manifests/protocols and launch one worker at a time; do not edit or execute these drafts.",
+  "scientific_files_changed": false,
+  "seed42_complete_unchanged": true,
+  "seed42_operations_unchanged": true,
+  "source_unchanged": true,
+  "technical_preflight_checks_passed": true,
+  "utc": "2026-09-22T19:23:43.314353Z",
+  "validator": {
+    "delegates_unchanged_v1_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd",
+    "path": "review/pleia_temperature_context005_seeds43_46_preflight_20260922/candidate_validate_v2.py",
+    "sha256": "f01f3a1638830dd10370a649dd61f6e1f0aa9f16d5af3725837a63e4ccf15323",
+    "version": "candidate_representation_compatible_v2_explicit_paths"
+  }
+}

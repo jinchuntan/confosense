@@ -1,0 +1,31 @@
+test,expected,observed,ok,detail,new_exit,old_exit,exit
+accept_unmodified_and_old_new_equivalence,pass_and_exact_match,pass_and_exact_match,True,bounded seed-42 numerical totals and categories match v1 exactly,0.0,0.0,
+reject_feature_corruption,reject,reject,True,A_feature_provenance;A_identity,,,1.0
+reject_observation_corruption,reject,reject,True,A_observations,,,1.0
+reject_prediction_corruption,reject,reject,True,B_model_application,,,1.0
+reject_interval_corruption,reject,reject,True,C_interval_construction,,,1.0
+reject_causal_update_corruption,reject,reject,True,C_rolling_state,,,1.0
+reject_alert_flag_corruption,reject,reject,True,C_alert_flags,,,1.0
+reject_released_score_corruption,reject,reject,True,C_released_scores,,,1.0
+reject_model_corruption,reject,reject,True,B_model_application;C_interval_construction;C_released_scores,,,1.0
+reject_wrong_expected_seed,reject_before_validation,reject,True,"<module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File ""C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_seeds43_46_preflight_20260922\candidate_validate_v2.py"", line 115, in main
+    raise IdentityError(f""expected_identity_mismatch:expected={expected}:actual={actual}"")
+IdentityError: expected_identity_mismatch:expected={'dataset': 'pleia', 'fold': 2, 'horizon': 1, 'seed': 43}:actual={'dataset': 'pleia', 'fold': 2, 'horizon': 1, 'seed': 42}
+",,,1.0
+reject_seed43_design_with_seed42_owner_run,reject_before_validation,reject,True,"idate_validate_v2.py"", line 122, in main
+    completion = check_limited_fixture(run, protocol_sha) if args.limit else check_full_complete(run, protocol_sha)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_seeds43_46_preflight_20260922\candidate_validate_v2.py"", line 62, in check_limited_fixture
+    raise IdentityError(""run_design_protocol_mismatch"")
+IdentityError: run_design_protocol_mismatch
+",,,1.0
+reject_output_path_overwrite,reject_before_validation,reject,True,"\GitHub\confosense\review\pleia_temperature_context005_seeds43_46_preflight_20260922\candidate_validate_v2.py"", line 157, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File ""C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\review\pleia_temperature_context005_seeds43_46_preflight_20260922\candidate_validate_v2.py"", line 108, in main
+    raise IdentityError(""output_path_could_overwrite_or_mix_with_evidence"")
+IdentityError: output_path_could_overwrite_or_mix_with_evidence
+",,,1.0

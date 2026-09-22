@@ -1,0 +1,119 @@
+{
+  "blocking_conditions": [
+    "insufficient shared-volume free space for projected four-seed retained runs/packages/backups and the unchanged 8 GiB floor"
+  ],
+  "calibrators_fitted": 0,
+  "draft_design_checks_passed": true,
+  "drafts": [
+    {
+      "data_identity_mismatches": [],
+      "design_file_byte_identity": {
+        "contexts.csv": true,
+        "roles.csv.gz": true,
+        "schedules.csv.gz": true
+      },
+      "execution_authorized": false,
+      "expected_operations_match": true,
+      "manifest_differences_from_seed42": [
+        "authorization_kind",
+        "execution_authorized",
+        "model_seed",
+        "unit_key"
+      ],
+      "manifest_sha256": "199c53420d9b0798916b3b916a5a4c6e7828ce8936b23e1d227f07efd5dd38b0",
+      "model_seed": 43,
+      "models_fitted": 0,
+      "passed": true,
+      "protocol_sha256": "9fa21b41559adb38f0285a5b83863ea19d02df9e3590e8c288a1e95c0185206a",
+      "rows_match": true,
+      "source_inputs_match": true,
+      "unit_key": "pleia_f2_s43_C_v1"
+    },
+    {
+      "data_identity_mismatches": [],
+      "design_file_byte_identity": {
+        "contexts.csv": true,
+        "roles.csv.gz": true,
+        "schedules.csv.gz": true
+      },
+      "execution_authorized": false,
+      "expected_operations_match": true,
+      "manifest_differences_from_seed42": [
+        "authorization_kind",
+        "execution_authorized",
+        "model_seed",
+        "unit_key"
+      ],
+      "manifest_sha256": "2ef6d9f91d303bbdf526c237fab950f4c178ded88b8af655b026cac67409b804",
+      "model_seed": 44,
+      "models_fitted": 0,
+      "passed": true,
+      "protocol_sha256": "cf0f5f2f8544fea6e9e36eedea0b1e9a4836f0999c8d5dc963edc2fb13ec90ed",
+      "rows_match": true,
+      "source_inputs_match": true,
+      "unit_key": "pleia_f2_s44_C_v1"
+    },
+    {
+      "data_identity_mismatches": [],
+      "design_file_byte_identity": {
+        "contexts.csv": true,
+        "roles.csv.gz": true,
+        "schedules.csv.gz": true
+      },
+      "execution_authorized": false,
+      "expected_operations_match": true,
+      "manifest_differences_from_seed42": [
+        "authorization_kind",
+        "execution_authorized",
+        "model_seed",
+        "unit_key"
+      ],
+      "manifest_sha256": "7ff80e04360b219108256e3f25e38afb505a7b26e1bc33a8dcc0451689e52894",
+      "model_seed": 45,
+      "models_fitted": 0,
+      "passed": true,
+      "protocol_sha256": "13bd11819fdd47e4fb49f4278e1d8abd08b1af5993a8085cc712198093388914",
+      "rows_match": true,
+      "source_inputs_match": true,
+      "unit_key": "pleia_f2_s45_C_v1"
+    },
+    {
+      "data_identity_mismatches": [],
+      "design_file_byte_identity": {
+        "contexts.csv": true,
+        "roles.csv.gz": true,
+        "schedules.csv.gz": true
+      },
+      "execution_authorized": false,
+      "expected_operations_match": true,
+      "manifest_differences_from_seed42": [
+        "authorization_kind",
+        "execution_authorized",
+        "model_seed",
+        "unit_key"
+      ],
+      "manifest_sha256": "9baf3463483a0d424fdeba66fa9400e16241d2f8fe0518eb7684d1f33f225c3e",
+      "model_seed": 46,
+      "models_fitted": 0,
+      "passed": true,
+      "protocol_sha256": "4d4b08506e4fb4810da211ccf2eac5f82c7d423cdf70108deb802204e0f4339e",
+      "rows_match": true,
+      "source_inputs_match": true,
+      "unit_key": "pleia_f2_s46_C_v1"
+    }
+  ],
+  "experiment_runs_started": 0,
+  "models_fitted": 0,
+  "native_readiness": {
+    "attempted": false,
+    "current_free_bytes": 4452564992,
+    "passed": false,
+    "reason": "shared working/backup volume is below the frozen 8 GiB disk floor",
+    "required_floor_bytes": 8589934592
+  },
+  "preflight_passed": false,
+  "purpose": "zero-fit draft-design and authorization-gate preflight",
+  "unauthorized_execution_error": "PermissionError('real execution proposal is not an execution authorization')",
+  "unauthorized_execution_rejected": true,
+  "utc": "2026-09-22T19:18:46.805829Z"
+}

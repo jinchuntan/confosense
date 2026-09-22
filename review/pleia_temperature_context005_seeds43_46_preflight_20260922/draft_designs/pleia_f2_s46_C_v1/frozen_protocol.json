@@ -1,0 +1,218 @@
+{
+  "version": "conditional_context005_v1",
+  "manifest": {
+    "authorization_kind": "preflight_only_not_authorized",
+    "controls": [
+      {
+        "control_id": "quantile_static",
+        "every": 0,
+        "level": 0.95,
+        "method": "quantile_uncalibrated",
+        "min_samples": 50,
+        "strategy": "static",
+        "window": null
+      },
+      {
+        "control_id": "cqr_static",
+        "every": 0,
+        "level": 0.95,
+        "method": "cqr",
+        "min_samples": 50,
+        "strategy": "static",
+        "window": null
+      },
+      {
+        "control_id": "cqr_rolling",
+        "every": 24,
+        "level": 0.95,
+        "method": "cqr",
+        "min_samples": 50,
+        "strategy": "rolling",
+        "window": 250
+      },
+      {
+        "control_id": "persistence_static",
+        "every": 0,
+        "level": 0.95,
+        "method": "persistence_split",
+        "min_samples": 50,
+        "strategy": "static",
+        "window": null
+      }
+    ],
+    "dataset": "pleia",
+    "endpoint": "C_effective_fault_conditional_context",
+    "execution_authorized": false,
+    "expected_contexts": 68,
+    "expected_schedules": 2856,
+    "horizon": 1,
+    "model_seed": 46,
+    "outer_fold": 2,
+    "rules": [
+      {
+        "applicable": true,
+        "k": 1,
+        "m": 1,
+        "rule_id": "single_sample",
+        "window_minutes": 10.0
+      },
+      {
+        "applicable": true,
+        "k": 3,
+        "m": 3,
+        "rule_id": "30min_3of3",
+        "window_minutes": 30
+      },
+      {
+        "applicable": true,
+        "k": 4,
+        "m": 6,
+        "rule_id": "60min_4of6",
+        "window_minutes": 60
+      },
+      {
+        "applicable": true,
+        "k": 3,
+        "m": 18,
+        "rule_id": "180min_3of18",
+        "window_minutes": 180
+      },
+      {
+        "applicable": true,
+        "k": 4,
+        "m": 36,
+        "rule_id": "360min_4of36",
+        "window_minutes": 360
+      }
+    ],
+    "selection": "none",
+    "synthetic": false,
+    "tiny_estimator": false,
+    "unit_key": "pleia_f2_s46_C_v1",
+    "version": "conditional_context005_v1"
+  },
+  "manifest_path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\pleia_f2_s46_C_v1_draft_manifest.json",
+  "manifest_sha256": "9baf3463483a0d424fdeba66fa9400e16241d2f8fe0518eb7684d1f33f225c3e",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "data_identity": {
+    "features": "0d2b9fc4f7d838b4494cd7ee87043cd5566d3ea97a3763a4457e2e659c84669b",
+    "outcomes": "8d7cc6737196c8c9ea21476b120d7654911f82a9935a9f3064ef91c9e2dd039c",
+    "role_rows": {
+      "final_fit": "e3d454e7ba54a45ad4c1a4d452709edd11a74529b501f00137d397a025744aa2",
+      "final_calibration": "f8aade2b11a677fadaab3d7a4f1c12fed7420e15db08a6104f089bf51e826912",
+      "outer_test": "44bd00b3e27da84b5c832be121cf8a7d8fe07dd990ea32a64d6ec3512e879011"
+    },
+    "context_hash": "d5be5f7249af198e272060f315d2ed5d3fbee92d03972180c3debf2135f628ef",
+    "schedule_hash": "5b56af8c3c06230e97eb9b7f8cf908608b9a62973afdb2d2372f3170fdb1a5f9",
+    "cache_sha256": "f64cfd7d464b4db0af365ac9a5bc1c09f8abc8c8d5a352ba153caab976810673",
+    "columns": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_6",
+      "target_lag_12",
+      "target_daily_lag",
+      "target_weekly_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_144",
+      "target_rollstd_144",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "V4",
+      "V12",
+      "V5_0",
+      "V5_1",
+      "V5_2",
+      "target_was_missing",
+      "tmed_was_missing",
+      "hrmed_was_missing",
+      "radmed_was_missing",
+      "V12_was_missing"
+    ],
+    "frequency": "0 days 00:10:00",
+    "fcfg": {
+      "target_lags": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        6,
+        144
+      ],
+      "include_weekly": true,
+      "covariates": [
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2"
+      ]
+    }
+  },
+  "source_inputs": {
+    "smart_building_conformal/outputs/amendment005/support_design_v1/proposal_spec.json": "9c3727839680ff020f9548cb6e4a2a9b6ca8750d40117a94d0262a8dd41b4234",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/proposal_roles.csv": "a7551c0bbc4fe349a89ecfd8fbd7ff45091a16d168f0dfc3d29697012cabcf55",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/challenge_contexts.csv": "cbe05d2143a6af9996c75573c941e17639f7253179542969e6864317be7354cc",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/challenge_schedules.csv.gz": "99328339f633694616b253217cefb1e0b15c6642b28b89b6e5fc91a6e61ccb88",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/challenge_rule_applicability.csv": "5bd575ed8a7d442b459555c93b6cacd791ff1b1e58da6429ff932f45a52c760b",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/original_groups.csv": "510dd308cfc1275d1cd67c379776a06640bdc8b4cb72ffead44607260135b646",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/pleia_operational_membership_observations.csv.gz": "41f9060f206462bfb04835e6e4b7edcd2e524670df7b7a1f892e67d15eb0a170",
+    "smart_building_conformal/outputs/amendment005/support_design_v1/validation.json": "7580ca96784f2f074b07ef899d0b59b173afba0f1d173980c9a129deb02958e6",
+    "smart_building_conformal/outputs/amendment005/support_final_checks_v1/challenge_zero_controls.csv": "8240823f19bc0371f92eb282ee2d1fd2194623fefd3253809a6b1beb79b9ac37",
+    "smart_building_conformal/outputs/amendment005/support_final_checks_v1/challenge_inference_support.csv": "f056ea5afca5de7ec240e1a7db2d1cabd83140c102a6250ece694ce263b75f5d",
+    "smart_building_conformal/outputs/amendment005/study_plan_v1/challenge_aliases.csv": "66d8904b3f697d973ff7005bd985296dcf4c40598d010f9e00a326ffd6fa4cf8"
+  },
+  "design_hashes": {
+    "contexts.csv": "8c6fbd329f3a4dd35ba52b7ac6b79baf8a87910fbfdd468e95a1b1213061854a",
+    "roles.csv.gz": "cab0301d0ac719f2f8643fb5c6974655d94a6fa36ada66757fd8336c8452d685",
+    "schedules.csv.gz": "fc46924208fb7634099c9b03b1a030bc4b9def256ad47a28db2b0b3bbf04285f"
+  },
+  "rows": {
+    "final_fit": 14855,
+    "final_calibration": 4954,
+    "outer_test": 9907
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "calibrator_conformalize": 2,
+    "persistence_radius": 1
+  },
+  "owner_reuse": "new C owner required unless exact features/roles/calibration/parameters/source contract proven",
+  "static_convention": "MAPIE1.4.1 native asymmetric tail correction; emitted pair ordered",
+  "rolling_convention": "max-score ceil((n+1)*.95); observe/compare/release before scheduled origin update",
+  "resource_policy": {
+    "threads": 1,
+    "device": "cpu",
+    "launch_ram_reference_nonblocking": true,
+    "launch_ram_reference_bytes": 3221225472,
+    "disk_floor_bytes": 8589934592,
+    "batch": 256
+  },
+  "frozen_utc": "2026-09-22T19:18:46.496760+00:00",
+  "full_study_ready": false,
+  "models_fitted": 0
+}

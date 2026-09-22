@@ -1,0 +1,112 @@
+{
+  "aggregation": {
+    "authorized_now": false,
+    "block_length_original_contexts": 7,
+    "draws": 2000,
+    "method": "average seeds within original context/stratum, pair controls on the same contexts, then use existing chronological fold/segment blocks and support/degeneracy rules",
+    "rng_seed": 20240601,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  "device": "cpu",
+  "monitoring": "Record the actual worker PID/family, CPU, RSS, durable stage journal, exit status and per-phase elapsed time; silence alone is not inactivity.",
+  "one_worker_at_a_time": true,
+  "per_seed_template": {
+    "amended_full_validation": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py",
+      "--design",
+      "<FINAL_DESIGN>",
+      "--run",
+      "<RUN>",
+      "--output",
+      "<NEW_VALIDATION_OUTPUT>",
+      "--expected-dataset",
+      "pleia",
+      "--expected-fold",
+      "2",
+      "--expected-horizon",
+      "1",
+      "--expected-seed",
+      "<SEED>"
+    ],
+    "completed_zero_fit_resume": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "-m",
+      "src.conditional_context005",
+      "resume",
+      "--design",
+      "<FINAL_DESIGN>",
+      "--out",
+      "<RUN>",
+      "--readiness",
+      "<FINAL_DESIGN>/readiness.json",
+      "--receipt",
+      "<NEW_RESUME_RECEIPT>"
+    ],
+    "freeze": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "-m",
+      "src.conditional_context005",
+      "freeze",
+      "--manifest",
+      "<FINAL_AUTHORIZED_MANIFEST>",
+      "--design",
+      "<FINAL_DESIGN>"
+    ],
+    "readiness": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "-m",
+      "src.conditional_context005",
+      "readiness",
+      "--design",
+      "<FINAL_DESIGN>",
+      "--receipt",
+      "<FINAL_DESIGN>/readiness.json"
+    ],
+    "resume_incomplete": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "-m",
+      "src.conditional_context005",
+      "run",
+      "--manifest",
+      "<FINAL_AUTHORIZED_MANIFEST>",
+      "--design",
+      "<FINAL_DESIGN>",
+      "--out",
+      "<RUN>",
+      "--readiness",
+      "<FINAL_DESIGN>/readiness.json",
+      "--resume-incomplete"
+    ],
+    "run": [
+      "C:/cfs_venv/Scripts/python.exe",
+      "-B",
+      "-m",
+      "src.conditional_context005",
+      "run",
+      "--manifest",
+      "<FINAL_AUTHORIZED_MANIFEST>",
+      "--design",
+      "<FINAL_DESIGN>",
+      "--out",
+      "<RUN>",
+      "--readiness",
+      "<FINAL_DESIGN>/readiness.json"
+    ]
+  },
+  "required_prior_action": "Create new final authorized manifests and final frozen protocols after explicit user authorization; never edit these draft manifests in place.",
+  "restart": "Resume only the exact matching seed unit after protocol, manifest, owner and checkpoint identity checks; preserve successful stages and never reuse another seed's owner.",
+  "status": "future_commands_only_not_run",
+  "threads": 1
+}
