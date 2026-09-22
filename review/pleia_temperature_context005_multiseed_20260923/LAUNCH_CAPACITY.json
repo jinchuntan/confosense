@@ -1,0 +1,31 @@
+{
+  "purpose": "fresh authorized launch capacity gate; historical preflight failure remains unchanged",
+  "utc": "2026-09-22T20:16:01.179756+00:00",
+  "required_free_bytes": 16854663172,
+  "disk_floor_bytes": 8589934592,
+  "measurements": {
+    "working": {
+      "path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense",
+      "volume": "C:",
+      "free_bytes": 105404055552
+    },
+    "package": {
+      "path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005",
+      "volume": "C:",
+      "free_bytes": 105404055552
+    },
+    "temporary": {
+      "path": "C:\\Users\\nigel\\AppData\\Local\\Temp",
+      "volume": "C:",
+      "free_bytes": 105404055552
+    },
+    "backup": {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_multiseed_20260923",
+      "volume": "C:",
+      "free_bytes": 105404055552
+    }
+  },
+  "minimum_usable_free_bytes": 105404055552,
+  "capacity_ready": true,
+  "working_package_temporary_backup_share_volume": true
+}

@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "implementation_ready": true,
+  "execution_authorized": true,
+  "protocol_sha256": "403ae635b7b2325bcb7ab8bdc680e765a8e657df167213a856d8fd0f3346a664",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "models_fitted": 0,
+  "required_new_quantile_estimators": 3,
+  "required_new_cqr_wrappers": 1,
+  "required_conformalize_calls": 2,
+  "resource_snapshot": {
+    "rss_bytes": 370233344,
+    "private_bytes": 327852032,
+    "lifetime_peak_rss_bytes": 424435712,
+    "available_ram_bytes": 2874781696,
+    "physical_ram_bytes": 16890978304,
+    "free_disk_bytes": 105402089472,
+    "launch_ram_reference_bytes": 3221225472,
+    "launch_ram_reference_met": false,
+    "launch_ram_reference_nonblocking": true
+  },
+  "scope": {
+    "authorization_kind": "explicit_real_C_run",
+    "controls": [
+      {
+        "control_id": "quantile_static",
+        "every": 0,
+        "level": 0.95,
+        "method": "quantile_uncalibrated",
+        "min_samples": 50,
+        "strategy": "static",
+        "window": null
+      },
+      {
+        "control_id": "cqr_static",
+        "every": 0,
+        "level": 0.95,
+        "method": "cqr",
+        "min_samples": 50,
+        "strategy": "static",
+        "window": null
+      },
+      {
+        "control_id": "cqr_rolling",
+        "every": 24,
+        "level": 0.95,
+        "method": "cqr",
+        "min_samples": 50,
+        "strategy": "rolling",
+        "window": 250
+      },
+      {
+        "control_id": "persistence_static",
+        "every": 0,
+        "level": 0.95,
+        "method": "persistence_split",
+        "min_samples": 50,
+        "strategy": "static",
+        "window": null
+      }
+    ],
+    "dataset": "pleia",
+    "endpoint": "C_effective_fault_conditional_context",
+    "execution_authorized": true,
+    "expected_contexts": 68,
+    "expected_schedules": 2856,
+    "horizon": 1,
+    "model_seed": 43,
+    "outer_fold": 2,
+    "rules": [
+      {
+        "applicable": true,
+        "k": 1,
+        "m": 1,
+        "rule_id": "single_sample",
+        "window_minutes": 10.0
+      },
+      {
+        "applicable": true,
+        "k": 3,
+        "m": 3,
+        "rule_id": "30min_3of3",
+        "window_minutes": 30
+      },
+      {
+        "applicable": true,
+        "k": 4,
+        "m": 6,
+        "rule_id": "60min_4of6",
+        "window_minutes": 60
+      },
+      {
+        "applicable": true,
+        "k": 3,
+        "m": 18,
+        "rule_id": "180min_3of18",
+        "window_minutes": 180
+      },
+      {
+        "applicable": true,
+        "k": 4,
+        "m": 36,
+        "rule_id": "360min_4of36",
+        "window_minutes": 360
+      }
+    ],
+    "selection": "none",
+    "synthetic": false,
+    "tiny_estimator": false,
+    "unit_key": "pleia_f2_s43_C_v1",
+    "version": "conditional_context005_v1",
+    "authorization_reference": "ConfoSense_Temperature_Seeds43-46_Execution_Prompt_2026-09-22.md"
+  },
+  "utc": "2026-09-22T20:16:34.275357+00:00"
+}
