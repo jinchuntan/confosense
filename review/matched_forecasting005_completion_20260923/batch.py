@@ -59,6 +59,9 @@ REQUIRED_FREE_BYTES = DISK_FLOOR + 5 * PROJECTED_RUN_BYTES + 2 * 2**30
 RECOVERED_UNIT_CHECK_TASK = "pleia_energy_h1_f0_s43_v1/unit_check"
 RECOVERED_UNIT_CHECK_ATTEMPT = "2026-09-23T055900469394+0000_23e1f57f"
 RECOVERED_UNIT_CHECK_LOG_SHA256 = "697c36c756b8898c7aea6f45338a015b230bd632fe208bd2e4122dd2a026188e"
+RECOVERED_ANALYSIS_TASK = "final/analyze"
+RECOVERED_ANALYSIS_ATTEMPT = "2026-09-23T164031180513+0000_641174df"
+RECOVERED_ANALYSIS_LOG_SHA256 = "b32480cd457013dc77bc877b903dbcb867283abc85d1ce9ae388d306a6c4b7ed"
 
 
 # Reuse the already-tested durable process engine and arithmetic helpers.
@@ -472,6 +475,42 @@ def recover_investigated_unit_check(engine) -> bool:
     return True
 
 
+def recover_investigated_analysis(engine) -> bool:
+    """Permit one zero-fit retry after the documented derived-column merge bug."""
+    record = engine.state["tasks"].get(RECOVERED_ANALYSIS_TASK)
+    if not record or record.get("status") != "failed":
+        return False
+    if record.get("attempt_id") != RECOVERED_ANALYSIS_ATTEMPT:
+        return False
+    if sha(Path(record["log"])) != RECOVERED_ANALYSIS_LOG_SHA256:
+        raise ValueError("investigated analysis failure log changed")
+    manifest = read(REVIEW / "FROZEN_BATCH_MANIFEST.json")
+    accepted = [u for u in manifest["units"] if engine.state["units"].get(u["stem"], {}).get("accepted")]
+    if len(accepted) != 125:
+        raise ValueError("analysis recovery requires all 125 accepted units")
+    if sum(engine.state["units"][u["stem"]]["tuning_fits"] for u in accepted) != 1000:
+        raise ValueError("analysis recovery tuning-fit reconciliation failed")
+    if sum(engine.state["units"][u["stem"]]["final_fits"] for u in accepted) != 250:
+        raise ValueError("analysis recovery final-fit reconciliation failed")
+    if ANALYSIS.exists() and any(ANALYSIS.iterdir()):
+        raise ValueError("failed analysis left nonempty destination")
+    failure = {"utc": now(), "failure": engine.state.pop("failure"),
+               "traceback": engine.state.pop("traceback", None)}
+    engine.state.setdefault("previous_failures", []).append(failure)
+    engine.state.setdefault("investigated_failures", []).append({
+        **record,
+        "investigation": "historical rows had derived coverage-deviation columns and new rows did not",
+        "recovery": "drop and recompute derived columns for all 585 point cells; rerun zero-fit analysis only",
+    })
+    record = {**record, "status": "investigated_retry_authorized",
+              "recovery_utc": now(), "accepted_scientific_units_reused": 125}
+    engine.state["tasks"][RECOVERED_ANALYSIS_TASK] = record
+    append(BATCH / "attempts.jsonl", {"event": "investigated_routine_failure", **failure,
+           "task": RECOVERED_ANALYSIS_TASK, "attempt_id": RECOVERED_ANALYSIS_ATTEMPT})
+    engine.save()
+    return True
+
+
 def coordinate() -> None:
     os.chdir(SMART)
     BACKUP.mkdir(parents=True, exist_ok=True)
@@ -484,7 +523,7 @@ def coordinate() -> None:
         verify_frozen(manifest)
         engine = durable.Engine(BATCH)
         try:
-            recovered = recover_investigated_unit_check(engine) if engine.state.get("failure") else False
+            recovered = (recover_investigated_unit_check(engine) or recover_investigated_analysis(engine)) if engine.state.get("failure") else False
             if engine.state.get("failure") and not recovered:
                 previous = {"utc": now(), "failure": engine.state.pop("failure"), "traceback": engine.state.pop("traceback", None)}
                 engine.state.setdefault("previous_failures", []).append(previous)
@@ -554,8 +593,10 @@ def model_owner(run: Path, key, model: str) -> tuple[Path, Path]:
 
 def analyze() -> None:
     if ANALYSIS.exists():
-        raise ValueError("analysis destination already exists")
-    ANALYSIS.mkdir(parents=True)
+        if any(ANALYSIS.iterdir()):
+            raise ValueError("analysis destination already exists and is nonempty")
+    else:
+        ANALYSIS.mkdir(parents=True)
     manifest = read(REVIEW / "FROZEN_BATCH_MANIFEST.json")
     state = read(BATCH / "progress.json")
     if sum(bool(state["units"].get(u["stem"], {}).get("accepted")) for u in manifest["units"]) != 125:
@@ -601,7 +642,10 @@ def analyze() -> None:
         fits.extend({**meta, **json.loads(line)} for line in (run / "fit_calls.jsonl").read_text().splitlines())
     for task, row in state["tasks"].items():
         command_rows.append({"task": task, **{field: row.get(field) for field in ("attempt_id", "argv", "cwd", "started_utc", "ended_utc", "exit_code", "logger_pid", "child_pid", "seconds", "log")}})
-    frame = fold_analysis.add_deviations(pd.DataFrame(combined["comparison"]))
+    frame = pd.DataFrame(combined["comparison"])
+    derived = [f"{kind}_coverage_deviation{level}" for level in (90, 95)
+               for kind in ("signed", "absolute")] + ["deterministic_baseline_alias"]
+    frame = fold_analysis.add_deviations(frame.drop(columns=derived, errors="ignore"))
     if len(frame) != 585 or frame.duplicated(KEYCOLS + ["model"]).any():
         raise ValueError("cumulative point-cell coverage failure")
     actual_keys = set(frame[KEYCOLS].itertuples(index=False, name=None))
