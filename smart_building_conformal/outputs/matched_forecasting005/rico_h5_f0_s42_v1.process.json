@@ -1,0 +1,24 @@
+{
+  "action": "run",
+  "action_resources": {
+    "seconds": 175.97630720000598,
+    "baseline_rss_bytes": 320335872,
+    "peak_rss_bytes": 641433600,
+    "baseline_private_bytes": 279437312,
+    "peak_private_bytes": 681377792,
+    "incremental_peak_rss_bytes": 321097728,
+    "lifetime_peak_rss_bytes": 643567616,
+    "min_available_ram_bytes": 5637345280,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 172.21875
+  },
+  "process_lifetime_cpu_seconds": 174.265625,
+  "ending_memory": {
+    "rss_bytes": 593534976,
+    "private_bytes": 636477440,
+    "lifetime_peak_rss_bytes": 643567616,
+    "available_ram_bytes": 5728198656,
+    "physical_ram_bytes": 16890978304
+  },
+  "timing_scope": "action excludes interpreter/import startup; lifetime CPU includes it"
+}

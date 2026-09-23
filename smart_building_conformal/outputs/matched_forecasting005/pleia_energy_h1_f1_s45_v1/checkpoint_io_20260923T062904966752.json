@@ -1,0 +1,41 @@
+[
+  {
+    "unit": "pleia_energy_h1_f1_s45_persistence",
+    "seconds": 0.6155699000228196,
+    "baseline_rss_bytes": 390803456,
+    "peak_rss_bytes": 394199040,
+    "baseline_private_bytes": 345862144,
+    "peak_private_bytes": 350109696,
+    "incremental_peak_rss_bytes": 3395584,
+    "lifetime_peak_rss_bytes": 408444928,
+    "min_available_ram_bytes": 5901320192,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 0.609375
+  },
+  {
+    "unit": "pleia_energy_h1_f1_s45_xgboost",
+    "seconds": 1.1178209999925457,
+    "baseline_rss_bytes": 499232768,
+    "peak_rss_bytes": 504348672,
+    "baseline_private_bytes": 525086720,
+    "peak_private_bytes": 531193856,
+    "incremental_peak_rss_bytes": 5115904,
+    "lifetime_peak_rss_bytes": 513097728,
+    "min_available_ram_bytes": 5792358400,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.046875
+  },
+  {
+    "unit": "pleia_energy_h1_f1_s45_attention_lstm",
+    "seconds": 1.1387937999970745,
+    "baseline_rss_bytes": 621981696,
+    "peak_rss_bytes": 628613120,
+    "baseline_private_bytes": 661184512,
+    "peak_private_bytes": 667344896,
+    "incremental_peak_rss_bytes": 6631424,
+    "lifetime_peak_rss_bytes": 637054976,
+    "min_available_ram_bytes": 5711572992,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 1.109375
+  }
+]

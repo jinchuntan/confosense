@@ -1,0 +1,7 @@
+dataset,horizon,outer_fold,model_seed,model,evidence_status,estimator_class,n_calibration,rank,q,status,nominal_level,n_evaluation,construction,coverage,mpiw,winkler,negative_lower_bounds
+pleia_energy,3,1,45,persistence,matched_forecasting005,src.pilot_forecasters.Persistence,7429,6687,0.5078125,ok,0.9,9907,ordinary_split_conformal_absolute_error,0.9002725345715151,1.015625,2.6996930831735138,6639
+pleia_energy,3,1,45,persistence,matched_forecasting005,src.pilot_forecasters.Persistence,7429,7059,0.640625,ok,0.95,9907,ordinary_split_conformal_absolute_error,0.9555869587160594,1.28125,4.265787448268899,7517
+pleia_energy,3,1,45,xgboost,matched_forecasting005,xgboost.sklearn.XGBRegressor,7429,6687,0.40005648136138916,ok,0.9,9907,ordinary_split_conformal_absolute_error,0.8957302917129303,0.8001129627227783,1.8809463977843803,4458
+pleia_energy,3,1,45,xgboost,matched_forecasting005,xgboost.sklearn.XGBRegressor,7429,7059,0.5472330451011658,ok,0.95,9907,ordinary_split_conformal_absolute_error,0.9506409609367115,1.0944660902023315,2.809012792251707,7523
+pleia_energy,3,1,45,attention_lstm,matched_forecasting005,src.attention_lstm.AttentionLSTM,7429,6687,0.40834730863571167,ok,0.9,9907,ordinary_split_conformal_absolute_error,0.8841223377409912,0.8166946172714233,2.032521429607699,5047
+pleia_energy,3,1,45,attention_lstm,matched_forecasting005,src.attention_lstm.AttentionLSTM,7429,7059,0.601355791091919,ok,0.95,9907,ordinary_split_conformal_absolute_error,0.9502372060159483,1.202711582183838,3.035934928941884,8702

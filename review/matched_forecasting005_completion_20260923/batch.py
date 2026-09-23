@@ -939,9 +939,161 @@ def package() -> None:
     print(json.dumps(receipt, indent=2), flush=True)
 
 
+def backup_bulk() -> None:
+    """Copy verified run archives and package non-Git execution evidence."""
+    package_validation = read(PACKAGES / "validation.json")
+    if not package_validation.get("passed") or int(package_validation["archives"]) != 125:
+        raise ValueError("run-package validation is not complete")
+    package_manifest = csv_read(PACKAGES / "package_manifest.csv")
+    if len(package_manifest) != 125 or package_manifest.archive.duplicated().any():
+        raise ValueError("run-package manifest coverage failure")
+
+    destination = BACKUP / "raw_and_execution_evidence_v1"
+    run_destination = destination / "run_packages"
+    support_destination = destination / "support_evidence"
+    run_destination.mkdir(parents=True, exist_ok=True)
+    support_destination.mkdir(parents=True, exist_ok=True)
+
+    copied_rows = []
+    for row in package_manifest.itertuples(index=False):
+        source = PACKAGES / row.archive
+        target = run_destination / row.archive
+        expected = str(row.sha256)
+        if not target.exists():
+            partial = target.with_suffix(target.suffix + ".partial")
+            if partial.exists():
+                raise ValueError(f"unresolved partial backup: {partial}")
+            shutil.copy2(source, partial)
+            if sha(partial) != expected:
+                raise ValueError(f"copied archive hash mismatch: {row.archive}")
+            partial.replace(target)
+        if target.stat().st_size != int(row.bytes) or sha(target) != expected:
+            raise ValueError(f"external archive verification failed: {row.archive}")
+        copied_rows.append({"archive": row.archive, "bytes": int(row.bytes), "sha256": expected,
+                            "external_relative_path": target.relative_to(BACKUP).as_posix()})
+        print(f"BACKED UP RUN ARCHIVE {len(copied_rows)}/125 {row.archive}", flush=True)
+
+    for name in ("package_manifest.csv", "raw_file_manifest.csv.gz", "validation.json"):
+        source = PACKAGES / name
+        target = run_destination / name
+        expected = sha(source)
+        if not target.exists():
+            shutil.copy2(source, target)
+        if sha(target) != expected:
+            raise ValueError(f"external package metadata mismatch: {name}")
+
+    manifest = read(REVIEW / "FROZEN_BATCH_MANIFEST.json")
+    support_paths = []
+    for unit in manifest["units"]:
+        support_paths.extend(path for path in Path(unit["design"]).rglob("*") if path.is_file())
+        process = BASE / f"{unit['stem']}.process.json"
+        if not process.is_file():
+            raise ValueError(f"missing process receipt: {process}")
+        support_paths.append(process)
+    support_paths.extend(path for path in BATCH.rglob("*") if path.is_file())
+    support_paths = sorted(set(support_paths), key=lambda path: path.relative_to(ROOT).as_posix())
+
+    maximum_uncompressed = 80 * 2**20
+    groups, group, group_bytes = [], [], 0
+    for path in support_paths:
+        size = path.stat().st_size
+        if size > maximum_uncompressed:
+            raise ValueError(f"support file exceeds part budget: {path}")
+        if group and group_bytes + size > maximum_uncompressed:
+            groups.append(group)
+            group, group_bytes = [], 0
+        group.append(path)
+        group_bytes += size
+    if group:
+        groups.append(group)
+
+    fixed = (2026, 9, 24, 0, 0, 0)
+    support_members, support_parts = [], []
+    for number, files in enumerate(groups, 1):
+        archive = support_destination / f"support_{number:02d}.zip"
+        expected_names = [path.relative_to(ROOT).as_posix() for path in files]
+        if not archive.exists():
+            partial = archive.with_suffix(archive.suffix + ".partial")
+            if partial.exists():
+                raise ValueError(f"unresolved partial support archive: {partial}")
+            with zipfile.ZipFile(partial, "x", zipfile.ZIP_DEFLATED, compresslevel=6, allowZip64=True) as packed:
+                for path, relative in zip(files, expected_names):
+                    info = zipfile.ZipInfo(relative, fixed)
+                    info.compress_type = zipfile.ZIP_DEFLATED
+                    info.external_attr = 0o100644 << 16
+                    packed.writestr(info, path.read_bytes(), compresslevel=6)
+            partial.replace(archive)
+        if archive.stat().st_size >= 95 * 2**20:
+            raise ValueError(f"support archive exceeds 95 MiB limit: {archive}")
+        with zipfile.ZipFile(archive) as packed:
+            if packed.namelist() != expected_names:
+                raise ValueError(f"support archive membership mismatch: {archive}")
+            for path, relative in zip(files, expected_names):
+                data = packed.read(relative)
+                digest = hashlib.sha256(data).hexdigest()
+                if digest != sha(path):
+                    raise ValueError(f"support archive byte mismatch: {relative}")
+                support_members.append({"archive": archive.name, "path": relative,
+                                        "bytes": len(data), "sha256": digest})
+        support_parts.append({"archive": archive.name, "bytes": archive.stat().st_size,
+                              "sha256": sha(archive), "members": len(files),
+                              "uncompressed_bytes": sum(path.stat().st_size for path in files),
+                              "external_relative_path": archive.relative_to(BACKUP).as_posix()})
+        print(f"VERIFIED SUPPORT ARCHIVE {number}/{len(groups)} {archive.name}", flush=True)
+
+    write_frame(PACKAGES / "external_run_archive_manifest.csv", copied_rows)
+    write_frame(PACKAGES / "external_support_archive_manifest.csv", support_parts)
+    with gzip.GzipFile(filename="", mode="wb", fileobj=(PACKAGES / "external_support_file_manifest.csv.gz").open("wb"), mtime=0) as raw:
+        import io
+        text = io.TextIOWrapper(raw, encoding="utf-8", newline="")
+        writer = csv_module.DictWriter(text, fieldnames=list(support_members[0]))
+        writer.writeheader(); writer.writerows(support_members); text.flush()
+    receipt = {
+        "passed": True, "utc": now(), "backup_root": str(BACKUP),
+        "run_archives": len(copied_rows),
+        "run_archive_bytes": sum(row["bytes"] for row in copied_rows),
+        "support_archives": len(support_parts),
+        "support_archive_bytes": sum(row["bytes"] for row in support_parts),
+        "support_members": len(support_members),
+        "support_uncompressed_bytes": sum(row["uncompressed_bytes"] for row in support_parts),
+        "maximum_support_archive_bytes": max(row["bytes"] for row in support_parts),
+        "publication_limit_bytes": 95 * 2**20,
+        "coverage": "125 verified run archives plus all 125 frozen protocols, process receipts, and coordinator attempts/receipts/journals",
+    }
+    atomic(PACKAGES / "external_backup_validation.json", receipt)
+    print(json.dumps(receipt, indent=2), flush=True)
+
+
+def stage_plan() -> None:
+    """Write the exact compact publication allowlist outside the repository."""
+    manifest = read(REVIEW / "FROZEN_BATCH_MANIFEST.json")
+    selected = {ROOT / "PROJECT_RECOVERY_STATUS.md"}
+    selected.update(path for path in REVIEW.rglob("*")
+                    if path.is_file() and "__pycache__" not in path.parts)
+    for unit in manifest["units"]:
+        run = Path(unit["run"])
+        selected.update(path for path in run.iterdir() if path.is_file())
+        selected.add(BASE / f"{unit['stem']}.process.json")
+    selected.update(BATCH / name for name in ("attempts.jsonl", "progress.json", "resources.jsonl"))
+    selected.update(path for path in ANALYSIS.rglob("*") if path.is_file())
+    selected.update(path for path in PACKAGES.iterdir() if path.is_file() and path.suffix != ".zip")
+    missing = sorted(path for path in selected if not path.is_file())
+    if missing:
+        raise ValueError(f"publication allowlist has missing paths: {missing[:3]}")
+    relative = sorted(path.relative_to(ROOT).as_posix() for path in selected)
+    stage_file = BACKUP / "substantive_stage_paths.txt"
+    stage_file.write_text("\n".join(relative) + "\n", encoding="utf-8", newline="\n")
+    receipt = {"passed": True, "utc": now(), "paths": len(relative),
+               "bytes": sum((ROOT / path).stat().st_size for path in relative),
+               "maximum_bytes": max((ROOT / path).stat().st_size for path in relative),
+               "allowlist": str(stage_file)}
+    atomic(BACKUP / "substantive_stage_plan.json", receipt)
+    print(json.dumps(receipt, indent=2), flush=True)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["prepare", "coordinate", "unit", "analyze", "validate-analysis", "package"])
+    parser.add_argument("action", choices=["prepare", "coordinate", "unit", "analyze", "validate-analysis", "package", "backup", "stage-plan"])
     parser.add_argument("--stem")
     parser.add_argument("--out")
     args = parser.parse_args()
@@ -951,6 +1103,8 @@ def main() -> None:
     elif args.action == "analyze": analyze()
     elif args.action == "validate-analysis": validate_analysis()
     elif args.action == "package": package()
+    elif args.action == "backup": backup_bulk()
+    elif args.action == "stage-plan": stage_plan()
 
 
 if __name__ == "__main__":

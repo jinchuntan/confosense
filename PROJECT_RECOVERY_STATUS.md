@@ -1,3 +1,13 @@
+# Matched-forecasting amendment-005 comparison completed
+
+The 125 authorized outstanding matched-forecasting units are accepted and combined by exact matrix key with 70 preserved historical units. The declared own-model comparison is now **195/195 paired units, 585/585 point cells and 1,170/1,170 90%/95% interval cells**. The new batch used exactly 1,000 tuning plus 250 final learned fits; all 125 completed resumes used zero fits, and the 70 historical units were not refitted.
+
+Cumulative and independent validation passed with zero maximum saved-versus-recomputed point or interval difference. Population inference remains unavailable under the prespecified overlapping-fold/five-training-seed design; results are descriptive. Verified external packages preserve all new raw runs, protocols and orchestration evidence. The separate 1,950-cell interval-method matrix, seasonal computations, operational-grid work and robustness/contamination/recovery obligations remain incomplete, so full-study readiness remains **false**.
+
+Evidence: [cumulative report](review/matched_forecasting005_completion_20260923/MATCHED_FORECASTING005_CUMULATIVE_REPORT.md), [evidence index](review/matched_forecasting005_completion_20260923/EVIDENCE_INDEX.md), [cumulative validation](smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/analysis_validation.json), [independent validation](smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/independent_validation.json), and [backup validation](smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_backup_validation.json).
+
+<!-- matched-forecasting005-completion-20260923: historical status follows -->
+
 # First real amendment-005 conditional-context pilot completed
 
 PLEIA energy outer fold 2 / model seed 42 / h1 completed all 68 published contexts, 2,856 scheduled fault slots, 68 clean identities, four fixed 95% controls, five rules and the full 9,907-row clean workload. All five CLI actions, independent validation and zero-fit resume passed. The published analysis reports all 60 control/rule/channel cells; no outer-result selection occurred.
