@@ -56,6 +56,9 @@ COLORS = {"persistence": "#555555", "xgboost": "#0072B2", "attention_lstm": "#D5
 DISK_FLOOR = 8 * 2**30
 PROJECTED_RUN_BYTES = 1_869_213_285
 REQUIRED_FREE_BYTES = DISK_FLOOR + 5 * PROJECTED_RUN_BYTES + 2 * 2**30
+RECOVERED_UNIT_CHECK_TASK = "pleia_energy_h1_f0_s43_v1/unit_check"
+RECOVERED_UNIT_CHECK_ATTEMPT = "2026-09-23T055900469394+0000_23e1f57f"
+RECOVERED_UNIT_CHECK_LOG_SHA256 = "697c36c756b8898c7aea6f45338a015b230bd632fe208bd2e4122dd2a026188e"
 
 
 # Reuse the already-tested durable process engine and arithmetic helpers.
@@ -85,6 +88,14 @@ git = legacy.git
 def csv_read(path: Path) -> pd.DataFrame:
     return pd.read_csv(path, keep_default_na=False, float_precision="round_trip",
                        dtype={"row_id": str, "group_id": str})
+
+
+def persistence_comparison(path: Path, columns: list[str]) -> pd.DataFrame:
+    """Normalize the two serialized spellings of an absent group identifier."""
+    frame = csv_read(path)[columns].copy()
+    if "group_id" in frame and set(frame["group_id"].unique()).issubset({"", "None"}):
+        frame["group_id"] = ""
+    return frame
 
 
 def key_list() -> list[tuple[str, int, int, int]]:
@@ -377,7 +388,9 @@ def unit_check(stem_name: str, output: Path) -> None:
             current = base_analysis.model_dir(unit["run"], key, "persistence")
             for filename, columns in (("calibration.csv.gz", ["row_id", "group_id", "origin_time", "target_time", "y_true", "point", "absolute_error"]),
                                       ("predictions.csv.gz", ["row_id", "group_id", "origin_time", "target_time", "y_true", "point", "nominal_level", "lower", "upper"])):
-                pd.testing.assert_frame_equal(csv_read(prior / filename)[columns], csv_read(current / filename)[columns], check_exact=True)
+                pd.testing.assert_frame_equal(persistence_comparison(prior / filename, columns),
+                                              persistence_comparison(current / filename, columns),
+                                              check_exact=True)
             alias_status = "exact_against_canonical"
     if attempts:
         raise AssertionError("unit check invoked fitting")
@@ -417,6 +430,48 @@ def accept(unit, engine) -> dict:
             "zero_fit_resume": True, "total_phase_seconds": seconds}
 
 
+def recover_investigated_unit_check(engine) -> bool:
+    """Permit one zero-fit rerun after the documented null-spelling comparison bug."""
+    record = engine.state["tasks"].get(RECOVERED_UNIT_CHECK_TASK)
+    if not record or record.get("status") != "failed":
+        return False
+    if record.get("attempt_id") != RECOVERED_UNIT_CHECK_ATTEMPT:
+        return False
+    if sha(Path(record["log"])) != RECOVERED_UNIT_CHECK_LOG_SHA256:
+        raise ValueError("investigated unit-check failure log changed")
+    stem = RECOVERED_UNIT_CHECK_TASK.split("/")[0]
+    for phase in ("run", "validate", "resume"):
+        prior = engine.state["tasks"].get(stem + "/" + phase)
+        if not prior or prior.get("status") != "passed":
+            raise ValueError("cannot recover unit check before passed " + phase)
+    audit = read(BATCH / "receipts" / stem / "audit_v1" / "validation.json")
+    resume = read(BATCH / "receipts" / stem / "resume_v1.json")
+    if not audit["passed"] or audit["real_tuning_fits_verified"] != 8 or audit["real_final_fits_verified"] != 2:
+        raise ValueError("existing validator did not accept investigated unit")
+    if audit["models_fitted"] != 0 or not audit["all_run_files_unchanged"]:
+        raise ValueError("validation mutated investigated run")
+    if resume["models_fitted"] != 0 or resume["reused_model_units"] != 3 or not resume["all_run_files_unchanged"]:
+        raise ValueError("completed resume was not zero-fit and immutable")
+    journal = [json.loads(line) for line in (BASE / stem / "fit_calls.jsonl").read_text().splitlines()]
+    if sum(row["event"] == "started" for row in journal) != 10 or sum(row["event"] == "complete" for row in journal) != 10:
+        raise ValueError("investigated unit fit journal is not exactly complete")
+    failure = {"utc": now(), "failure": engine.state.pop("failure"),
+               "traceback": engine.state.pop("traceback", None)}
+    engine.state.setdefault("previous_failures", []).append(failure)
+    engine.state.setdefault("investigated_failures", []).append({
+        **record,
+        "investigation": "historical empty string and current literal None both encode an absent group_id",
+        "recovery": "normalize absent group_id only in the orchestration comparison; rerun unit_check only",
+    })
+    record = {**record, "status": "investigated_retry_authorized",
+              "recovery_utc": now(), "scientific_commands_reused": ["run", "validate", "resume"]}
+    engine.state["tasks"][RECOVERED_UNIT_CHECK_TASK] = record
+    append(BATCH / "attempts.jsonl", {"event": "investigated_routine_failure", **failure,
+           "task": RECOVERED_UNIT_CHECK_TASK, "attempt_id": RECOVERED_UNIT_CHECK_ATTEMPT})
+    engine.save()
+    return True
+
+
 def coordinate() -> None:
     os.chdir(SMART)
     BACKUP.mkdir(parents=True, exist_ok=True)
@@ -429,7 +484,8 @@ def coordinate() -> None:
         verify_frozen(manifest)
         engine = durable.Engine(BATCH)
         try:
-            if engine.state.get("failure"):
+            recovered = recover_investigated_unit_check(engine) if engine.state.get("failure") else False
+            if engine.state.get("failure") and not recovered:
                 previous = {"utc": now(), "failure": engine.state.pop("failure"), "traceback": engine.state.pop("traceback", None)}
                 engine.state.setdefault("previous_failures", []).append(previous)
                 append(BATCH / "attempts.jsonl", {"event": "coordinator_restart", **previous})
