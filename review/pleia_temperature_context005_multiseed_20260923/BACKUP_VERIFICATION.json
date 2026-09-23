@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T03:51:05.275891+00:00",
+  "purpose": "scoped external delta backup of substantive temperature five-seed delivery",
+  "verified_commit": "475f92e3e2e42e6ae4cdefd6ece748c56474de1d",
+  "bundle": {
+    "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_multiseed_20260923\\substantive_475f92e3e2e42e6ae4cdefd6ece748c56474de1d_v1\\temperature_multiseed_475f92e3e2e42e6ae4cdefd6ece748c56474de1d.bundle",
+    "bytes": 1187696121,
+    "sha256": "0d4c3fa6d92f502a7b60434a47c887c608140f10f0485f080acd217ba20b1e88",
+    "create_stdout": "",
+    "create_stderr": "",
+    "verify_stdout": "The bundle contains this ref:\n475f92e3e2e42e6ae4cdefd6ece748c56474de1d refs/heads/review/pleia-temperature-context005-seeds43-46-execution-20260923\nThe bundle requires this ref:\nf28eb4c6edc3362ad930ec949fd4363a2ce759fb \nThe bundle uses this hash algorithm: sha1\n",
+    "verify_stderr": "C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_multiseed_20260923/substantive_475f92e3e2e42e6ae4cdefd6ece748c56474de1d_v1/temperature_multiseed_475f92e3e2e42e6ae4cdefd6ece748c56474de1d.bundle is okay\n"
+  },
+  "prerequisite_commit": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb",
+  "verified_prerequisites": [
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_seeds43_46_preflight_20260922\\primary_f28eb4c6edc3362ad930ec949fd4363a2ce759fb_v1\\preflight_f28eb4c6edc3362ad930ec949fd4363a2ce759fb.bundle",
+      "sha256": "6b1837773e846df132342262ba1e83c360038807e4f242327b1f1df4c6f5a5f6"
+    },
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\followup_03ca62f2f0704725a13b93929b5ba5797f06e20f_v1\\followup_03ca62f2f0704725a13b93929b5ba5797f06e20f.bundle",
+      "sha256": "654ee36a1cd1879f665bbe55356b010b7d3b4496fe10d05752ae8cb10fa15767"
+    }
+  ],
+  "scope_note": "The bundle contains commits after the externally backed f28eb4c prerequisite through the named substantive delivery. It does not claim to contain or duplicate the prerequisite's historical multi-gigabyte objects, nor a later receipt-containing commit."
+}

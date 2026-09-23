@@ -10,6 +10,13 @@
 - [Durable progress](PROGRESS_AND_RESTART.md)
 - [Raw-package validation](RAW_PACKAGE_VALIDATION.json)
 
+## Delivery verification
+
+- [Scoped external-backup verification](BACKUP_VERIFICATION.json)
+- [Commit-pinned HTTPS readback receipt](HTTPS_READBACK_RECEIPT.json)
+
+These receipts verify substantive commit `475f92e3e2e42e6ae4cdefd6ece748c56474de1d`. The later receipt commit is intentionally not claimed as self-verified.
+
 ## New-seed acceptance
 
 - Seed 43: [manifest](pleia_f2_s43_C_v1_execution_manifest.json), [protocol](../../smart_building_conformal/protocols/conditional_context005/pleia_f2_s43_C_v1/frozen_protocol.json), [completion](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s43_C_v1/COMPLETE.json), [operations](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s43_C_v1/operations.jsonl), [full validation](../../smart_building_conformal/outputs/conditional_context005/pleia_temperature_f2_context005_multiseed_v1_coordinator/seed_43_validation/ADAPTER_VALIDATION_RECEIPT.json), [unit acceptance](../../smart_building_conformal/outputs/conditional_context005/pleia_temperature_f2_context005_multiseed_v1_coordinator/seed_43_acceptance.json), [zero-fit resume](../../smart_building_conformal/outputs/conditional_context005/pleia_temperature_f2_context005_multiseed_v1_coordinator/seed_43_completed_resume.json), [package manifest](../../smart_building_conformal/outputs/conditional_context005/pleia_f2_s43_C_v1_publication_v1/parts_manifest.csv).
