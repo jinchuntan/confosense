@@ -1,0 +1,1326 @@
+{
+  "version": "matched_forecasting005_bdg2_h1_f0_s45_execution_v1",
+  "config": {
+    "dataset": "bdg2",
+    "horizon": 1,
+    "outer_fold": 0,
+    "model_seed": 45,
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "candidates": {
+      "persistence": [
+        {}
+      ],
+      "xgboost": [
+        {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        },
+        {
+          "n_estimators": 400,
+          "max_depth": 5,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "reg_alpha": 0.0
+        }
+      ],
+      "attention_lstm": [
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.001,
+          "max_epochs": 30,
+          "patience": 5
+        },
+        {
+          "hidden_size": 64,
+          "dropout": 0.2,
+          "batch_size": 256,
+          "learning_rate": 0.0005,
+          "max_epochs": 30,
+          "patience": 5
+        }
+      ]
+    },
+    "sequence_length": 24,
+    "interval_construction": "ordinary_split_conformal_absolute_error",
+    "inner_validation_folds": 2,
+    "selection_metric": "equally weighted mean of two inner validation MAEs in original target units",
+    "tie_rule": "exact score ties select the lower zero-based frozen candidate ID",
+    "final_lstm_epochs": "ceil(mean(selected candidate best epoch on each inner fold)); refit all final fitting rows",
+    "minimum_launch_available_ram_bytes": 3221225472,
+    "minimum_free_disk_bytes": 8589934592,
+    "inference_batch_size": 256,
+    "threads": 1,
+    "n_jobs": 1,
+    "minimum_epoch_available_ram_bytes": 268435456,
+    "memory_sampling_seconds": 0.05,
+    "clipping": false,
+    "missing_policy": "unchanged existing causal preprocessing and common support",
+    "device": "cpu",
+    "fallback": null,
+    "prediction_reload_atol": 1e-07,
+    "prediction_reload_rtol": 1e-07,
+    "metric_atol": 1e-12,
+    "metric_rtol": 1e-12,
+    "numeric_input": "flat original dtype; lazy float32, normalization float64",
+    "lstm_early_improvement": 1e-06,
+    "lstm_loss": "MSELoss",
+    "optimizer": "Adam",
+    "optimizer_defaults": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false
+    },
+    "xgboost_fixed": {
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "random_state": 45,
+      "n_jobs": 1
+    },
+    "xgboost_default_policy": "None wrapper values delegate to the pinned library; full wrapper params frozen and actual booster config saved",
+    "inference_clipping": false,
+    "test_selection": false,
+    "xgboost_wrapper_parameters": [
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 3,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 45,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": 1,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 400,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 45,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      }
+    ]
+  },
+  "support": {
+    "data_hash": "fa848b25f5d2ffb553914a71627dd43e06a0209f876a4c92fe46cfd09cfb3a4b",
+    "role_bank_hash": "64f6cf3ef3ea9b723a2e9bd493296fa6d34a88d08337919cf772e1d337daf042",
+    "roles": {
+      "fit": {
+        "n": 103684,
+        "membership_hash": "ee44d8613e8abfaa543acf0611da544c7ea75c304fc2b1601cec69088cb242fb",
+        "row_id_hash": "ba8eca07323406caa22658c0dda16afe57988e270615db43f33bb2b1df9c5dc9",
+        "origin_min": "2016-01-07 23:00:00",
+        "origin_max": "2017-03-17 05:00:00",
+        "target_min": "2016-01-08 00:00:00",
+        "target_max": "2017-03-17 06:00:00"
+      },
+      "calibration": {
+        "n": 34534,
+        "membership_hash": "20a19c9bb65b5ebae1ec5893b579e4045721b5bd2509a8bd9255d89c977d3ca5",
+        "row_id_hash": "7df0866a865ce5020ffd281c09f7331aeeded34f98d708ddb39ed213bf1f531b",
+        "origin_min": "2017-03-17 07:00:00",
+        "origin_max": "2017-08-09 01:00:00",
+        "target_min": "2017-03-17 08:00:00",
+        "target_max": "2017-08-09 02:00:00"
+      },
+      "test": {
+        "n": 34426,
+        "membership_hash": "0883bcec72707b2c585a3d1121c418e59665cbb4abf522ef48cdcdddfe2bb6b1",
+        "row_id_hash": "dd1d1b58d08dbe7c0b58c40bb954006c1a2895816cc447c803c9f72e0ae920ad",
+        "origin_min": "2017-08-09 03:00:00",
+        "origin_max": "2017-12-31 22:00:00",
+        "target_min": "2017-08-09 04:00:00",
+        "target_max": "2017-12-31 23:00:00"
+      },
+      "inner0_train": {
+        "n": 34348,
+        "membership_hash": "ca155d9e30e27b00878d71b37f1791c1c99e3c6dbc1ef0bcbf48a8765308b13f",
+        "row_id_hash": "752c7f6dce7b50411397a9551eed35162931aa0dbc8c63069c8fc9168f67c101",
+        "origin_min": "2016-01-07 23:00:00",
+        "origin_max": "2016-05-31 15:00:00",
+        "target_min": "2016-01-08 00:00:00",
+        "target_max": "2016-05-31 16:00:00"
+      },
+      "inner0_validation": {
+        "n": 34676,
+        "membership_hash": "9c697532cef8bda4df84fafacf6152c759ac0dac490dfc04545439fee078abf0",
+        "row_id_hash": "8c8a93d153b5265116902b02ee84a5b0371ed3e16d2788374abb03f0313d39b5",
+        "origin_min": "2016-05-31 17:00:00",
+        "origin_max": "2016-10-23 09:00:00",
+        "target_min": "2016-05-31 18:00:00",
+        "target_max": "2016-10-23 10:00:00"
+      },
+      "inner1_train": {
+        "n": 69024,
+        "membership_hash": "e1f6b754949e90617536de55965cb5dc71e3f6c0bc2aab56aa126a5cd08e57df",
+        "row_id_hash": "3db5f573f52193574925fbccbd7edb186154af2bb2386824bcb8d10e6e227fda",
+        "origin_min": "2016-01-07 23:00:00",
+        "origin_max": "2016-10-23 09:00:00",
+        "target_min": "2016-01-08 00:00:00",
+        "target_max": "2016-10-23 10:00:00"
+      },
+      "inner1_validation": {
+        "n": 34640,
+        "membership_hash": "0e3579cdb75106176669bf6bca3f3318da8d4ff2a22f8fcac20201e5a12aed25",
+        "row_id_hash": "30033a22333111d36546734e38159a0a9f0dc552f6eccab5fc3ebfe7075e88f8",
+        "origin_min": "2016-10-23 11:00:00",
+        "origin_max": "2017-03-17 05:00:00",
+        "target_min": "2016-10-23 12:00:00",
+        "target_max": "2017-03-17 06:00:00"
+      }
+    },
+    "feature_names": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_6",
+      "target_lag_12",
+      "target_lag_24",
+      "target_daily_lag",
+      "target_weekly_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_24",
+      "target_rollstd_24",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "airTemperature",
+      "dewTemperature",
+      "target_was_missing",
+      "airTemperature_was_missing",
+      "dewTemperature_was_missing"
+    ],
+    "sequence_channels": [
+      "target",
+      "airTemperature",
+      "dewTemperature",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ],
+    "eligible_rows": 172662,
+    "excluded_rows": 690,
+    "frequency": "0 days 01:00:00",
+    "target": null
+  },
+  "resolved_dataset_config": {
+    "seed": 42,
+    "paths": {
+      "raw_dir": "data/raw",
+      "interim_dir": "data/interim",
+      "processed_dir": "data/processed"
+    },
+    "split": {
+      "train_frac": 0.6,
+      "calib_frac": 0.2
+    },
+    "missing": {
+      "max_short_gap_steps": 3
+    },
+    "coverage_levels": [
+      0.9,
+      0.95,
+      0.975,
+      0.99,
+      0.995
+    ],
+    "features": {
+      "target_lags": [
+        1,
+        2,
+        3,
+        6,
+        12,
+        24
+      ],
+      "rolling_windows": [
+        6,
+        24
+      ],
+      "include_weekly": true,
+      "target_lags_include_zero": true
+    },
+    "models": {
+      "xgboost": {
+        "search_iter": 20,
+        "cv_splits": 3,
+        "seeds": 5,
+        "refit_n_jobs": 1,
+        "search_n_jobs": -1
+      },
+      "lstm": {
+        "seq_len": 24,
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5,
+        "val_fraction": 0.2,
+        "seeds": 3
+      }
+    },
+    "conformal": {
+      "cqr": {
+        "seeds": 5
+      },
+      "enbpi": {
+        "n_resamplings": 20,
+        "block_length": 48,
+        "base_n_estimators": 200,
+        "base_max_depth": 5,
+        "base_learning_rate": 0.05,
+        "update_step": 48,
+        "seeds": 3,
+        "n_jobs": 4
+      },
+      "dscp": {
+        "max_clusters": 6,
+        "ks_threshold": 0.05,
+        "neighbours": null,
+        "gamma": 1.0
+      }
+    },
+    "alerts": {
+      "primary_method": "cqr",
+      "primary_level": 0.95,
+      "detection_tolerance_steps": 3,
+      "max_false_alerts_per_day": 1.0,
+      "candidate_rules": [
+        "1-of-1",
+        "2-of-3",
+        "3-of-5",
+        "4-of-7"
+      ],
+      "selection": {
+        "calibration_conformal_fraction": 0.6,
+        "min_samples_per_block": 200
+      },
+      "events": {
+        "instances_per_type": 3,
+        "spike_sds": [
+          4.0
+        ],
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "bias_steps": 12,
+        "level_shift_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_steps": 8,
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_steps": 24,
+        "stuck_steps": 12,
+        "dropout_steps": 8,
+        "warmup_steps": 24,
+        "guard_steps": 4
+      },
+      "primary_level_selected_on_inner": true,
+      "rules_are_physical_time": true,
+      "primary_horizon": 1
+    },
+    "recalibration": {
+      "recovery_block": 24,
+      "grid": {
+        "update_every": [
+          12,
+          24,
+          48
+        ],
+        "window": [
+          200,
+          500
+        ],
+        "min_samples": 50
+      }
+    },
+    "robustness": {
+      "modes": [
+        "legacy_fixed_intervals",
+        "closed_loop"
+      ],
+      "random_missing": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "block_missing": [
+        0.05,
+        0.1
+      ],
+      "block_steps": 12,
+      "bias_sds": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "level_shift_sds": [
+        1.0,
+        2.0
+      ],
+      "drift_sds": [
+        1.0,
+        2.0
+      ],
+      "stuck_fractions": [
+        0.05
+      ],
+      "dropout_fractions": [
+        0.05
+      ],
+      "calibration_contamination": [
+        0.01,
+        0.05,
+        0.1
+      ]
+    },
+    "bootstrap": {
+      "n_boot": 2000,
+      "ci": 0.95
+    },
+    "plotting": {
+      "window_steps": 144
+    },
+    "adapter": "bdg2",
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "resample": {
+      "freq": "1h",
+      "season_steps": 24
+    },
+    "bdg2": {
+      "subdir": "bdg2",
+      "freq": "1h",
+      "season_steps": 24,
+      "auto_download": true,
+      "use_weather": true,
+      "weather_covariates": [
+        "airTemperature",
+        "dewTemperature"
+      ],
+      "selection": {
+        "n_buildings": 10,
+        "min_span_days": 300,
+        "min_coverage": 0.95,
+        "max_constant_fraction": 0.5,
+        "max_per_site": 2,
+        "require_documented_use": true
+      }
+    }
+  },
+  "authorization": {
+    "version": "matched_forecasting005_core_completion_125_v1",
+    "authorization_source": "user attachment d5652872-75f0-47f3-ae11-6f6a2b19abcc",
+    "entry_commit": "640aa76d0c4ff47d5fea09d160bfacf488b7c5e7",
+    "real_fitting_authorized": true,
+    "allowed_units": [
+      [
+        "pleia_energy",
+        1,
+        1,
+        42
+      ],
+      [
+        "pleia_energy",
+        3,
+        1,
+        42
+      ],
+      [
+        "pleia_energy",
+        6,
+        1,
+        42
+      ],
+      [
+        "pleia_energy",
+        3,
+        0,
+        42
+      ],
+      [
+        "pleia_energy",
+        6,
+        0,
+        42
+      ],
+      [
+        "pleia_energy",
+        1,
+        1,
+        43
+      ],
+      [
+        "pleia_energy",
+        3,
+        1,
+        43
+      ],
+      [
+        "pleia_energy",
+        6,
+        1,
+        43
+      ],
+      [
+        "pleia_energy",
+        1,
+        0,
+        43
+      ],
+      [
+        "pleia_energy",
+        3,
+        0,
+        43
+      ],
+      [
+        "pleia_energy",
+        6,
+        0,
+        43
+      ],
+      [
+        "pleia_energy",
+        1,
+        1,
+        44
+      ],
+      [
+        "pleia_energy",
+        3,
+        1,
+        44
+      ],
+      [
+        "pleia_energy",
+        6,
+        1,
+        44
+      ],
+      [
+        "pleia_energy",
+        1,
+        0,
+        44
+      ],
+      [
+        "pleia_energy",
+        3,
+        0,
+        44
+      ],
+      [
+        "pleia_energy",
+        6,
+        0,
+        44
+      ],
+      [
+        "pleia_energy",
+        1,
+        1,
+        45
+      ],
+      [
+        "pleia_energy",
+        3,
+        1,
+        45
+      ],
+      [
+        "pleia_energy",
+        6,
+        1,
+        45
+      ],
+      [
+        "pleia_energy",
+        1,
+        0,
+        45
+      ],
+      [
+        "pleia_energy",
+        3,
+        0,
+        45
+      ],
+      [
+        "pleia_energy",
+        6,
+        0,
+        45
+      ],
+      [
+        "pleia_energy",
+        1,
+        1,
+        46
+      ],
+      [
+        "pleia_energy",
+        3,
+        1,
+        46
+      ],
+      [
+        "pleia_energy",
+        6,
+        1,
+        46
+      ],
+      [
+        "pleia_energy",
+        1,
+        0,
+        46
+      ],
+      [
+        "pleia_energy",
+        3,
+        0,
+        46
+      ],
+      [
+        "pleia_energy",
+        6,
+        0,
+        46
+      ],
+      [
+        "rico",
+        5,
+        1,
+        42
+      ],
+      [
+        "rico",
+        15,
+        1,
+        42
+      ],
+      [
+        "rico",
+        30,
+        1,
+        42
+      ],
+      [
+        "rico",
+        60,
+        1,
+        42
+      ],
+      [
+        "rico",
+        5,
+        0,
+        42
+      ],
+      [
+        "rico",
+        15,
+        0,
+        42
+      ],
+      [
+        "rico",
+        30,
+        0,
+        42
+      ],
+      [
+        "rico",
+        60,
+        0,
+        42
+      ],
+      [
+        "rico",
+        5,
+        1,
+        43
+      ],
+      [
+        "rico",
+        15,
+        1,
+        43
+      ],
+      [
+        "rico",
+        30,
+        1,
+        43
+      ],
+      [
+        "rico",
+        60,
+        1,
+        43
+      ],
+      [
+        "rico",
+        5,
+        0,
+        43
+      ],
+      [
+        "rico",
+        15,
+        0,
+        43
+      ],
+      [
+        "rico",
+        30,
+        0,
+        43
+      ],
+      [
+        "rico",
+        60,
+        0,
+        43
+      ],
+      [
+        "rico",
+        5,
+        1,
+        44
+      ],
+      [
+        "rico",
+        15,
+        1,
+        44
+      ],
+      [
+        "rico",
+        30,
+        1,
+        44
+      ],
+      [
+        "rico",
+        60,
+        1,
+        44
+      ],
+      [
+        "rico",
+        5,
+        0,
+        44
+      ],
+      [
+        "rico",
+        15,
+        0,
+        44
+      ],
+      [
+        "rico",
+        30,
+        0,
+        44
+      ],
+      [
+        "rico",
+        60,
+        0,
+        44
+      ],
+      [
+        "rico",
+        5,
+        1,
+        45
+      ],
+      [
+        "rico",
+        15,
+        1,
+        45
+      ],
+      [
+        "rico",
+        30,
+        1,
+        45
+      ],
+      [
+        "rico",
+        60,
+        1,
+        45
+      ],
+      [
+        "rico",
+        5,
+        0,
+        45
+      ],
+      [
+        "rico",
+        15,
+        0,
+        45
+      ],
+      [
+        "rico",
+        30,
+        0,
+        45
+      ],
+      [
+        "rico",
+        60,
+        0,
+        45
+      ],
+      [
+        "rico",
+        5,
+        1,
+        46
+      ],
+      [
+        "rico",
+        15,
+        1,
+        46
+      ],
+      [
+        "rico",
+        30,
+        1,
+        46
+      ],
+      [
+        "rico",
+        60,
+        1,
+        46
+      ],
+      [
+        "rico",
+        5,
+        0,
+        46
+      ],
+      [
+        "rico",
+        15,
+        0,
+        46
+      ],
+      [
+        "rico",
+        30,
+        0,
+        46
+      ],
+      [
+        "rico",
+        60,
+        0,
+        46
+      ],
+      [
+        "bdg2",
+        3,
+        1,
+        42
+      ],
+      [
+        "bdg2",
+        6,
+        1,
+        42
+      ],
+      [
+        "bdg2",
+        1,
+        0,
+        42
+      ],
+      [
+        "bdg2",
+        3,
+        0,
+        42
+      ],
+      [
+        "bdg2",
+        6,
+        0,
+        42
+      ],
+      [
+        "bdg2",
+        1,
+        1,
+        43
+      ],
+      [
+        "bdg2",
+        3,
+        1,
+        43
+      ],
+      [
+        "bdg2",
+        6,
+        1,
+        43
+      ],
+      [
+        "bdg2",
+        1,
+        0,
+        43
+      ],
+      [
+        "bdg2",
+        3,
+        0,
+        43
+      ],
+      [
+        "bdg2",
+        6,
+        0,
+        43
+      ],
+      [
+        "bdg2",
+        1,
+        1,
+        44
+      ],
+      [
+        "bdg2",
+        3,
+        1,
+        44
+      ],
+      [
+        "bdg2",
+        6,
+        1,
+        44
+      ],
+      [
+        "bdg2",
+        1,
+        0,
+        44
+      ],
+      [
+        "bdg2",
+        3,
+        0,
+        44
+      ],
+      [
+        "bdg2",
+        6,
+        0,
+        44
+      ],
+      [
+        "bdg2",
+        1,
+        1,
+        45
+      ],
+      [
+        "bdg2",
+        3,
+        1,
+        45
+      ],
+      [
+        "bdg2",
+        6,
+        1,
+        45
+      ],
+      [
+        "bdg2",
+        1,
+        0,
+        45
+      ],
+      [
+        "bdg2",
+        3,
+        0,
+        45
+      ],
+      [
+        "bdg2",
+        6,
+        0,
+        45
+      ],
+      [
+        "bdg2",
+        1,
+        1,
+        46
+      ],
+      [
+        "bdg2",
+        3,
+        1,
+        46
+      ],
+      [
+        "bdg2",
+        6,
+        1,
+        46
+      ],
+      [
+        "bdg2",
+        1,
+        0,
+        46
+      ],
+      [
+        "bdg2",
+        3,
+        0,
+        46
+      ],
+      [
+        "bdg2",
+        6,
+        0,
+        46
+      ],
+      [
+        "pleia",
+        1,
+        1,
+        42
+      ],
+      [
+        "pleia",
+        3,
+        1,
+        42
+      ],
+      [
+        "pleia",
+        6,
+        1,
+        42
+      ],
+      [
+        "pleia",
+        1,
+        1,
+        43
+      ],
+      [
+        "pleia",
+        3,
+        1,
+        43
+      ],
+      [
+        "pleia",
+        6,
+        1,
+        43
+      ],
+      [
+        "pleia",
+        1,
+        0,
+        43
+      ],
+      [
+        "pleia",
+        3,
+        0,
+        43
+      ],
+      [
+        "pleia",
+        6,
+        0,
+        43
+      ],
+      [
+        "pleia",
+        1,
+        1,
+        44
+      ],
+      [
+        "pleia",
+        3,
+        1,
+        44
+      ],
+      [
+        "pleia",
+        6,
+        1,
+        44
+      ],
+      [
+        "pleia",
+        1,
+        0,
+        44
+      ],
+      [
+        "pleia",
+        3,
+        0,
+        44
+      ],
+      [
+        "pleia",
+        6,
+        0,
+        44
+      ],
+      [
+        "pleia",
+        1,
+        1,
+        45
+      ],
+      [
+        "pleia",
+        3,
+        1,
+        45
+      ],
+      [
+        "pleia",
+        6,
+        1,
+        45
+      ],
+      [
+        "pleia",
+        1,
+        0,
+        45
+      ],
+      [
+        "pleia",
+        3,
+        0,
+        45
+      ],
+      [
+        "pleia",
+        6,
+        0,
+        45
+      ],
+      [
+        "pleia",
+        1,
+        1,
+        46
+      ],
+      [
+        "pleia",
+        3,
+        1,
+        46
+      ],
+      [
+        "pleia",
+        6,
+        1,
+        46
+      ],
+      [
+        "pleia",
+        1,
+        0,
+        46
+      ],
+      [
+        "pleia",
+        3,
+        0,
+        46
+      ],
+      [
+        "pleia",
+        6,
+        0,
+        46
+      ]
+    ],
+    "models": [
+      "persistence",
+      "xgboost",
+      "attention_lstm"
+    ],
+    "nominal_levels": [
+      0.9,
+      0.95
+    ],
+    "tuning_fit_budget": 1000,
+    "final_fit_budget": 250,
+    "historical_refits_authorized": false,
+    "additional_experiments_authorized": false,
+    "nonblocking_launch_ram": true,
+    "resource_policy": "CPU only; one numerical/Torch thread; n_jobs=1; lazy batch256; 256 MiB epoch floor; 8 GiB disk floor",
+    "execution_order": "exact remaining_queue_updated.csv order; advance only after validation, group arithmetic and zero-fit resume",
+    "provenance_note": "Runner parent/instruction fields remain historical; this versioned authorization is the current execution authority."
+  },
+  "parent_review_commit": "f1a71a19b4e227a9894a8e2c74686a642dca962a",
+  "instruction_commit": "f44d4d1bd784254237bd643b9389fc9ce8c380a3",
+  "frozen_utc": "2026-09-23T05:18:20.678584+00:00",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "matrix_hash": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+  "input_hashes": {
+    "outputs/amendment005/study_plan_v1/next_forecast_unit.json": "35e133e2ba7f1eeda5557a2b65e2197ac76111015cf5bbea6ed44a087e97184b",
+    "outputs/amendment005/support_design_v1/experiment_matrix.csv": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+    "outputs/amendment005/support_design_v1/bdg2_h1_forecast_membership.csv.gz": "ed03a0853b151e157813f53c281977f22c2b9a3c3b6fb4bb5d0964d110eaf64d",
+    "outputs/amendment005/support_design_v1/forecast_roles.csv": "dea8f62c7e096574e8a6c07f5a50e2006ec67c63edf49319c640749f99d8e63a",
+    "configs/study_final_dissertation_v2.yaml": "8869fd2d20cb63f31968c61fdcbd7db4bddfe935940d372f7faa0e83d8d09857",
+    "configs/model_comparison_pilot_v1.json": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723",
+    "configs/matched_forecasting005_core_completion_125_v1.json": "74058455f29bc54db408d512a3e488fa4eb0cbdc0bd36c6ad41bc2c09dce2a12"
+  },
+  "membership_hash": "6f193ea11a707f535fe60ea9e4e17cfb16be2c4506e8d2ec703a2c1aa81714a5",
+  "boundaries_hash": "9b8a607f7cc00ff19d976f1509d9932b466ef37019eaba7d6c5debc78e79429c",
+  "preparation_resources": {
+    "seconds": 10.866300199995749,
+    "baseline_rss_bytes": 351584256,
+    "peak_rss_bytes": 951918592,
+    "baseline_private_bytes": 307200000,
+    "peak_private_bytes": 1000624128,
+    "incremental_peak_rss_bytes": 600334336,
+    "lifetime_peak_rss_bytes": 1036791808,
+    "min_available_ram_bytes": 5781958656,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 10.703125
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "matrix_units": 195,
+  "completed_units": 70,
+  "outstanding_units": 125,
+  "outstanding_distinct_keys": 125,
+  "completed_queue_overlap": 0,
+  "union_units": 195,
+  "unaccounted_matrix_keys": [],
+  "unknown_keys": [],
+  "inconsistent_completion_keys": [],
+  "queue_priority_unique": true,
+  "queue_priority_monotonic": true,
+  "learned_fit_budget": 1250,
+  "tuning_fit_budget": 1000,
+  "final_fit_budget": 250,
+  "point_cells_to_add": 375,
+  "interval_cells_to_add": 750,
+  "first_key": [
+    "pleia_energy",
+    1,
+    1,
+    42
+  ],
+  "last_key": [
+    "pleia",
+    6,
+    0,
+    46
+  ],
+  "queue_sha256": "c56f51a70adf5df0736a3b9277e86c70bd931786b07c00755267fdb7474eea6a",
+  "matrix_sha256": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+  "utc": "2026-09-23T04:43:14.044304+00:00",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
+}

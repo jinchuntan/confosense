@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "models_fitted": 0,
+  "source_paths": {
+    "model_seed_dispatch": true,
+    "dispatch_passes_seed": true,
+    "xgb_constructor": true,
+    "lstm_dispatch": true,
+    "lstm_initialization": true,
+    "shuffle_generator": true,
+    "shuffle_uses_generator": true
+  },
+  "rng_probes": [
+    {
+      "requested_seed": 42,
+      "numpy_seed": 42,
+      "torch_seed": 42,
+      "shuffle_generator_seed": 42,
+      "numpy_probe": [
+        0.3745401188473625,
+        0.9507143064099162,
+        0.7319939418114051
+      ],
+      "torch_probe": [
+        0.8822692632675171,
+        0.9150039553642273,
+        0.38286375999450684
+      ],
+      "shuffle_probe": [
+        2,
+        6,
+        1,
+        8,
+        4,
+        5,
+        0,
+        9,
+        3,
+        7
+      ]
+    },
+    {
+      "requested_seed": 43,
+      "numpy_seed": 43,
+      "torch_seed": 43,
+      "shuffle_generator_seed": 43,
+      "numpy_probe": [
+        0.11505456638977896,
+        0.6090665392794814,
+        0.13339096418598828
+      ],
+      "torch_probe": [
+        0.4539682865142822,
+        0.19649124145507812,
+        0.9210357069969177
+      ],
+      "shuffle_probe": [
+        8,
+        4,
+        9,
+        0,
+        5,
+        1,
+        6,
+        7,
+        2,
+        3
+      ]
+    },
+    {
+      "requested_seed": 44,
+      "numpy_seed": 44,
+      "torch_seed": 44,
+      "shuffle_generator_seed": 44,
+      "numpy_probe": [
+        0.8348421486656494,
+        0.10479610436986975,
+        0.7446404816795178
+      ],
+      "torch_probe": [
+        0.719590425491333,
+        0.7306768298149109,
+        0.8278036713600159
+      ],
+      "shuffle_probe": [
+        2,
+        6,
+        3,
+        8,
+        7,
+        9,
+        1,
+        4,
+        5,
+        0
+      ]
+    },
+    {
+      "requested_seed": 45,
+      "numpy_seed": 45,
+      "torch_seed": 45,
+      "shuffle_generator_seed": 45,
+      "numpy_probe": [
+        0.9890115134756001,
+        0.5495447268447254,
+        0.28144730195506285
+      ],
+      "torch_probe": [
+        0.1869475245475769,
+        0.961328387260437,
+        0.6834489703178406
+      ],
+      "shuffle_probe": [
+        7,
+        6,
+        5,
+        3,
+        4,
+        9,
+        0,
+        8,
+        2,
+        1
+      ]
+    },
+    {
+      "requested_seed": 46,
+      "numpy_seed": 46,
+      "torch_seed": 46,
+      "shuffle_generator_seed": 46,
+      "numpy_probe": [
+        0.7838323508057506,
+        0.6348337060527302,
+        0.24904309151574888
+      ],
+      "torch_probe": [
+        0.6610830426216125,
+        0.059986412525177,
+        0.517427921295166
+      ],
+      "shuffle_probe": [
+        3,
+        2,
+        1,
+        5,
+        6,
+        4,
+        8,
+        9,
+        7,
+        0
+      ]
+    }
+  ],
+  "predictions_required_to_differ": false,
+  "reused_regression_checks": 30,
+  "reused_regression_commit": "60882c2c405a0e62358c88ea0b8cff3fb52b2f2a",
+  "reason": "forecasting runner/model/validator dependencies are unchanged from the evaluated 30-check receipt",
+  "tiny_fits": 0
+}
