@@ -1,0 +1,1021 @@
+{
+  "version": "matched_intervals_seasonal005_completion_v1",
+  "scope": {
+    "dataset": "pleia",
+    "outer_fold": 2,
+    "model_seed": 45,
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "levels": [
+      0.9,
+      0.95
+    ],
+    "methods": [
+      "quantile_uncalibrated",
+      "cqr",
+      "recentred_enbpi_static",
+      "recentred_enbpi_updated",
+      "dscp"
+    ]
+  },
+  "authorization": {
+    "version": "matched_intervals_seasonal005_completion_v1",
+    "authorization_source": "user attachment 703d57a7-b9d5-4806-a375-ce15906e6b33",
+    "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+    "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "matrix_sha256": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+    "seasonal_queue_sha256": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+    "forecasting_ledger_sha256": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+    "scope_sha256": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+    "bundles": [
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 46
+      }
+    ],
+    "accepted_method_cells": 250,
+    "new_method_cells": 1700,
+    "final_method_cells": 1950,
+    "new_unique_seasonal_computations": 18,
+    "fit_ceiling": {
+      "cqr_wrapper_fit": 340,
+      "quantile_estimator_fit": 1020,
+      "enbpi_wrapper_fit": 170,
+      "xgboost_estimator_fit": 1870,
+      "random_forest_estimator_fit": 0,
+      "dscp_calibrator_fit": 52,
+      "kmeans_candidate_fit": 260,
+      "calibrator_conformalize": 1020
+    },
+    "historical_forecasting_refits": 0,
+    "full_study_ready": false
+  },
+  "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+  "historical_source_hashes": [
+    "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e"
+  ],
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "adapter_sha256": "79ab561e2db4b9a73a53b6ebe4ccd994ba4a9909e7b4fbff5da5792b2e4ffefe",
+  "validator_sha256": "28313cdc1c48e5c8f74b49c36a1eb47aa4d771657cf33bc7172a441b6329c2fa",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "references": {
+    "1": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h1_f2_s45_v1\\frozen_protocol.json",
+      "protocol_hash": "ce8d6b4c952de02d809dfc2b4fbd7b34988a37c2c5ca18c286a65afd2a71556a",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h1_f2_s45_v1\\frozen_protocol.json",
+      "original_protocol_hash": "ce8d6b4c952de02d809dfc2b4fbd7b34988a37c2c5ca18c286a65afd2a71556a",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/pleia_h1_f2_s45_v1",
+      "run_file_tree_hash": "6f0570c71b44651f5163d5a7eef4ffa9c3578d58598a6f05757c131273fc2420",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\pleia_h1_f2_s45_v1\\units\\pleia_h1_f2_s45_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "3b6cba469226602fa98b9b4ef4a9d89e3268d26cab7a52d1f45dd1c7b2b3debc",
+        "calibration.csv.gz": "2fc9c5833adcca254595e97b5a2c01f27fd1c0cbe268b8eda5b49bf005ac7ffc",
+        "COMPLETE.json": "2d7f076110ee58e4c61e74222928739873d91ee54d0ebc50a36fbcb5d6f2351c",
+        "fitting_membership.csv.gz": "5212ca3693acee76f0721637bf8760889608d597c91e7d3a0902444cb5d8e86c",
+        "model.ubj": "22c1cd05d93950c7e8b1d28dbadeac82f3cb49131ed299cdbe6edf33c6ec4922",
+        "payload.json": "8eb89d7fc80fbab8a73b7f45baaf4dd0e5049d3a4abce97ef166ea7d6cd8e96c",
+        "predictions.csv.gz": "dcfc35c3ecbbfd0ec1ecaa4ae187a8536b2bcaa17abe35c207b8fb9eac548b22",
+        "training_history.csv.gz": "e42c9fdd928fb87f77930453882a87710596c198a07a2e9da09932e29b34372a",
+        "tuning.csv.gz": "e6cebf73830741ccafba520e0311bb20b76efa9941c88ec094397a5f0e532de7",
+        "tuning_predictions.csv.gz": "e70ef390ea1022feef1c8e6c4a1a5358136a61244cfb7af348fd429fb46966f2"
+      },
+      "evaluated_commit": "02e13e0591ba5ce1559f2449743a1c7cf52b8db4",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    },
+    "3": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s45_v1\\frozen_protocol.json",
+      "protocol_hash": "43fdef7973feabb27f49a6f3a57657663ea1c46bff243e5d984ce84c66f35ce8",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h3_f2_s45_v1\\frozen_protocol.json",
+      "original_protocol_hash": "43fdef7973feabb27f49a6f3a57657663ea1c46bff243e5d984ce84c66f35ce8",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/pleia_h3_f2_s45_v1",
+      "run_file_tree_hash": "e66ce89a3d356499c0bc8c379f16a5b852b4ae46864ba33b1f19d55215903124",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\pleia_h3_f2_s45_v1\\units\\pleia_h3_f2_s45_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "d7c82ea11f0d6675b407a351e53d7ca405cd6e6ba3f23a201d08013a600474a8",
+        "calibration.csv.gz": "92ca65ef84901ea9d9df3ec28bd3a26c0bcd66b3b74087038e7fce8c7c1af813",
+        "COMPLETE.json": "3b9b130784cca6110a0005a48caa63c999f4cdc62d2f3194f26110ba166a14cf",
+        "fitting_membership.csv.gz": "283be402632c5947748959d3808403644efd9d3cd97b52140c878593c6fe68ea",
+        "model.ubj": "ad5f038fa0d9b663455f1ee05ac573f387dc7642d282f94da0c6589125148c29",
+        "payload.json": "ca151e4e244bde4730a428a9e19126b0790ab0c7d12711730f702ffea9802a28",
+        "predictions.csv.gz": "a731e922cec1b3f02b47b6f967dce9e4f8df179d9e1b90c3df12b4d99d80da4a",
+        "training_history.csv.gz": "a013e16f251486cd8003b0cbf7090a8a684dda63de080d670e0b23046475b82b",
+        "tuning.csv.gz": "1177e9b1bfa9da4297b46d194ce06f35fa7b9cca3fdde1911eb62c3be1735e60",
+        "tuning_predictions.csv.gz": "3935397de2cac7c50ab3f0d3c625070298b150329639b9198945fdbeb48024af"
+      },
+      "evaluated_commit": "02e13e0591ba5ce1559f2449743a1c7cf52b8db4",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    },
+    "6": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h6_f2_s45_v1\\frozen_protocol.json",
+      "protocol_hash": "7b3af2e5082254e020ca867fb95d22cc2dc6b99331e9a1c7f86c6a385461bbeb",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\pleia_h6_f2_s45_v1\\frozen_protocol.json",
+      "original_protocol_hash": "7b3af2e5082254e020ca867fb95d22cc2dc6b99331e9a1c7f86c6a385461bbeb",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/pleia_h6_f2_s45_v1",
+      "run_file_tree_hash": "438fc1f5953e1c6ab772098d0a82f985989791e2d5867debe0b2fd26e34a2dd2",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\pleia_h6_f2_s45_v1\\units\\pleia_h6_f2_s45_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "965f71e7157e7bcd8478b0dac817932724320538bf11936ddaec9d17cd3addd7",
+        "calibration.csv.gz": "50fa11ad0f33fbdfe50236470eb2e648f5cae74a443522e8257ce55156da84d4",
+        "COMPLETE.json": "c64691f1cafd9e05700460eddb7d69f143cf58112733a1bdb7f8bd12bafd38f1",
+        "fitting_membership.csv.gz": "5e29e272f443c889ee0a08f4f41ed73b50ec5a87e9fcef57a6e7d094c79a3378",
+        "model.ubj": "d73755e7226535b2cd4393d8aa00f8c95d2652a1cb0e5c389b8d3b716790c49f",
+        "payload.json": "d981eb03bddb3029c4f9eb528bef442d493ee590086b76325687031a560395ad",
+        "predictions.csv.gz": "31f1187c49b223845f8e0cee44eb457edd19f21bb116f8ea2dc43bbc10e0ce28",
+        "training_history.csv.gz": "49d51249f711227eb0b076dd2506b726bbf30ae7a73c845d212d57b4c52a1ab9",
+        "tuning.csv.gz": "7e6c9a9a080de571daf8a11da95ddf24e65ec1a198bc6058e207147ca8c61861",
+        "tuning_predictions.csv.gz": "9c929c271a4b28c17a6d957dda81f94c2d8a68c54bedbea66c1dedeb2520bf04"
+      },
+      "evaluated_commit": "02e13e0591ba5ce1559f2449743a1c7cf52b8db4",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    }
+  },
+  "support": {
+    "1": {
+      "data_hash": "ea4daa5dc3579aec204c02fd26d09ba7467a2ad3c45790efc705c7883bde6741",
+      "roles": {
+        "fit": {
+          "n": 14858,
+          "membership_hash": "082d3c719093d84e13379d5a2c367aacae289407ac707cb64d266f759ebb787b",
+          "row_id_hash": "a5da64445ac5f1af2fd4c56cb88650223d7690fede620e9a6758367516928aca",
+          "origin_min": "2021-01-08 00:00:00",
+          "origin_max": "2021-04-21 04:10:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-04-21 04:20:00"
+        },
+        "calibration": {
+          "n": 4953,
+          "membership_hash": "9eb8650e22c2484bd09a282820451387cd0610e0cf55aa2ec428816a260b5143",
+          "row_id_hash": "7794c3f938f5b39a6b7c298611ca6e5d91de32415f98091ff059cd97e6946b01",
+          "origin_min": "2021-04-21 04:40:00",
+          "origin_max": "2021-05-25 14:00:00",
+          "target_min": "2021-04-21 04:50:00",
+          "target_max": "2021-05-25 14:10:00"
+        },
+        "test": {
+          "n": 9907,
+          "membership_hash": "9873f938ec58b7643a4b9bb6625e3522fa47921a83ef136da20c6e62a17a410f",
+          "row_id_hash": "ca2d8ac2f6c4a85d87a0b3e689792f73277921d41eae2f48c6b4eb1e307d2a61",
+          "origin_min": "2021-05-25 14:20:00",
+          "origin_max": "2021-08-02 09:20:00",
+          "target_min": "2021-05-25 14:30:00",
+          "target_max": "2021-08-02 09:30:00"
+        },
+        "inner0_train": {
+          "n": 4951,
+          "membership_hash": "772e37103d6ec8c04ebb7c7e034fb82e77efacdfb42740094dd62aba1cdcbb46",
+          "row_id_hash": "9ff5cf13265f7071fd9c0761e23cbdb0a3b06a17108fe4c9e29d7b526dbb16f6",
+          "origin_min": "2021-01-08 00:00:00",
+          "origin_max": "2021-02-11 09:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-02-11 09:10:00"
+        },
+        "inner0_validation": {
+          "n": 4952,
+          "membership_hash": "3ee052b31b48d8aee119b1a1a23488da243b59b1055ebe21d22b810798c26df1",
+          "row_id_hash": "94101a1db88057481d0b93b3f6f6f8a0ba0768c95d5d786cc94219111fc8b01a",
+          "origin_min": "2021-02-11 09:20:00",
+          "origin_max": "2021-03-17 18:30:00",
+          "target_min": "2021-02-11 09:30:00",
+          "target_max": "2021-03-17 18:40:00"
+        },
+        "inner1_train": {
+          "n": 9903,
+          "membership_hash": "bc9acab132bf77c6fdb966545b0c1c36c2d8d40c0debf6ad9879832e8eed3f18",
+          "row_id_hash": "5bb7052421dc4dc1014d0183a0a86dc9346860360b70733932af01792401ebea",
+          "origin_min": "2021-01-08 00:00:00",
+          "origin_max": "2021-03-17 18:30:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-03-17 18:40:00"
+        },
+        "inner1_validation": {
+          "n": 4953,
+          "membership_hash": "af2dbfce54bc80c97b7250e3d85c70b3feb7714d2fb1b6436b4b00eeaec9ed9e",
+          "row_id_hash": "28760e0529920ab50fc08711863e3203a9e12a65c4321ba66c5ea2a7711920b5",
+          "origin_min": "2021-03-17 18:50:00",
+          "origin_max": "2021-04-21 04:10:00",
+          "target_min": "2021-03-17 19:00:00",
+          "target_max": "2021-04-21 04:20:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "frequency": "0 days 00:10:00",
+      "available_by_role": {
+        "fit": 14858,
+        "calibration": 4953,
+        "test": 9907,
+        "inner0_train": 4951,
+        "inner0_validation": 4952,
+        "inner1_train": 9903,
+        "inner1_validation": 4953
+      },
+      "seasonal_available_by_role": {
+        "fit": 14858,
+        "calibration": 4953,
+        "test": 9907,
+        "inner0_train": 4951,
+        "inner0_validation": 4952,
+        "inner1_train": 9903,
+        "inner1_validation": 4953
+      }
+    },
+    "3": {
+      "data_hash": "d9952ed2b0af11ec34f4cb849c9c45e91f7c74a3cdaa2393e449e2715e7f934c",
+      "roles": {
+        "fit": {
+          "n": 14855,
+          "membership_hash": "227c29f26e08b12144a3144f7b4e485ceef61eeffddfb8383055cdb14249180b",
+          "row_id_hash": "4074dfa6f8e6042743030c8386a0f02bf142e81c22c53c260629dc0e31aea099",
+          "origin_min": "2021-01-07 23:40:00",
+          "origin_max": "2021-04-21 03:20:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-04-21 03:50:00"
+        },
+        "calibration": {
+          "n": 4952,
+          "membership_hash": "7fa06de8c38dda4d17b6b0cf6e9ef56c1df4e74c93e4a91c0e4cc3ac109ef25d",
+          "row_id_hash": "e7a9e5a4d0f065e905f3b68d0ddcc8cfa81961e510bbeaa67844d8b295557883",
+          "origin_min": "2021-04-21 04:10:00",
+          "origin_max": "2021-05-25 13:20:00",
+          "target_min": "2021-04-21 04:40:00",
+          "target_max": "2021-05-25 13:50:00"
+        },
+        "test": {
+          "n": 9907,
+          "membership_hash": "bac99d6be4cb79fe22304f53e75236e112bbd0869eb6fec15e881e232b076cc3",
+          "row_id_hash": "980af583f5f37c78a95e0b099badf318c309a782627933d4b65363f009fed507",
+          "origin_min": "2021-05-25 14:00:00",
+          "origin_max": "2021-08-02 09:00:00",
+          "target_min": "2021-05-25 14:30:00",
+          "target_max": "2021-08-02 09:30:00"
+        },
+        "inner0_train": {
+          "n": 4948,
+          "membership_hash": "fdb3d26c48df5c39e6763480535e204d2594b8749ab6df0a1371c11c4991afd2",
+          "row_id_hash": "ddaf23d54fbb3a4e9b995b43253825c4ae6a3c46f5831e9bc1bc774c65ae348c",
+          "origin_min": "2021-01-07 23:40:00",
+          "origin_max": "2021-02-11 08:10:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-02-11 08:40:00"
+        },
+        "inner0_validation": {
+          "n": 4949,
+          "membership_hash": "249bb3d7f2b16be8c15ebb503c1a33019c0aed25686b3ca72cf4bf16dc16264d",
+          "row_id_hash": "1046774ecf67bd5d7b3cda329101e3229f1720d1f12b59feb24732dffedd21a3",
+          "origin_min": "2021-02-11 08:50:00",
+          "origin_max": "2021-03-17 17:30:00",
+          "target_min": "2021-02-11 09:20:00",
+          "target_max": "2021-03-17 18:00:00"
+        },
+        "inner1_train": {
+          "n": 9897,
+          "membership_hash": "e4a2af2e86062f34ecc2da38f038c54771899f808d45a3482679b08ab9163cba",
+          "row_id_hash": "50e5f199066eca1e0f35e3294dda145841773b547bab055401b3e8d8067ed3c0",
+          "origin_min": "2021-01-07 23:40:00",
+          "origin_max": "2021-03-17 17:30:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-03-17 18:00:00"
+        },
+        "inner1_validation": {
+          "n": 4952,
+          "membership_hash": "4439d1e24df439cf5dbec4b37090c9521460fad2488d498a7c821cf963a6daa2",
+          "row_id_hash": "e567401ae33f835a2879ba5be9304ca8129f612468e33f9ab19c6e25dd3b1e5c",
+          "origin_min": "2021-03-17 18:10:00",
+          "origin_max": "2021-04-21 03:20:00",
+          "target_min": "2021-03-17 18:40:00",
+          "target_max": "2021-04-21 03:50:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "frequency": "0 days 00:10:00",
+      "available_by_role": {
+        "fit": 14855,
+        "calibration": 4952,
+        "test": 9907,
+        "inner0_train": 4948,
+        "inner0_validation": 4949,
+        "inner1_train": 9897,
+        "inner1_validation": 4952
+      },
+      "seasonal_available_by_role": {
+        "fit": 14855,
+        "calibration": 4952,
+        "test": 9907,
+        "inner0_train": 4948,
+        "inner0_validation": 4949,
+        "inner1_train": 9897,
+        "inner1_validation": 4952
+      }
+    },
+    "6": {
+      "data_hash": "5f82d9b1241b651ae41db34771b44ea8dc61cee2367a2af45ca7be1d9403d5cb",
+      "roles": {
+        "fit": {
+          "n": 14850,
+          "membership_hash": "ef9d6a6abac88bf6870ca419233277f25ca38ffcec8d2e50ef36e5a7ae619400",
+          "row_id_hash": "1a376d5a8a154a77f83f187423efb4d9fc845968a0043a1454205c7b56a18c46",
+          "origin_min": "2021-01-07 23:10:00",
+          "origin_max": "2021-04-21 02:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-04-21 03:00:00"
+        },
+        "calibration": {
+          "n": 4951,
+          "membership_hash": "9247b241a0fa2d22e3929a301f0ff3511dbadd5e2e8ec374799c5c7abceab76d",
+          "row_id_hash": "2d7a6ad1c542e4d2f60a787f5e43892e1e19f63a3d75ff6e0accd70b674462a7",
+          "origin_min": "2021-04-21 03:20:00",
+          "origin_max": "2021-05-25 12:20:00",
+          "target_min": "2021-04-21 04:20:00",
+          "target_max": "2021-05-25 13:20:00"
+        },
+        "test": {
+          "n": 9907,
+          "membership_hash": "c6974f8d3bde0930d9d56239e658a56ee8f6554aea2606844b45a070315571f1",
+          "row_id_hash": "ac5e21416b994368c2c6ea779989080df106bc5896da0483b1f5982a7af732fa",
+          "origin_min": "2021-05-25 13:30:00",
+          "origin_max": "2021-08-02 08:30:00",
+          "target_min": "2021-05-25 14:30:00",
+          "target_max": "2021-08-02 09:30:00"
+        },
+        "inner0_train": {
+          "n": 4944,
+          "membership_hash": "7e1d872fdae249702364dcedccb8344e6e44d13dde4694244d1d8af8576495fb",
+          "row_id_hash": "8f691537f61aeaf3b6b2bce9234e1f3f2fce1fa89f579c6620a77d4e9430bbe6",
+          "origin_min": "2021-01-07 23:10:00",
+          "origin_max": "2021-02-11 07:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-02-11 08:00:00"
+        },
+        "inner0_validation": {
+          "n": 4944,
+          "membership_hash": "2984744e642beefa7ce03314b45942af4ef6594d8939fdf4b62e61c263f6bdb8",
+          "row_id_hash": "2d75f8c14ab352752c56668098b1a13d6f545d051d41b03dbb9af51140add5f3",
+          "origin_min": "2021-02-11 08:10:00",
+          "origin_max": "2021-03-17 16:00:00",
+          "target_min": "2021-02-11 09:10:00",
+          "target_max": "2021-03-17 17:00:00"
+        },
+        "inner1_train": {
+          "n": 9888,
+          "membership_hash": "b302ee02c2b16f2a988275f6ff329f6f03774c4c85d10d37902b32b54795d4e0",
+          "row_id_hash": "2330831bef316a2f27daff3f18c8507290a36952db81e8e9e7594e746f48686e",
+          "origin_min": "2021-01-07 23:10:00",
+          "origin_max": "2021-03-17 16:00:00",
+          "target_min": "2021-01-08 00:10:00",
+          "target_max": "2021-03-17 17:00:00"
+        },
+        "inner1_validation": {
+          "n": 4950,
+          "membership_hash": "94c11b73e5e68059ca8334f73f6dc70805df5c01f5112cc20d147b640c4f52fd",
+          "row_id_hash": "30c0df9856e41df5c927bceaf854572d24fb209861c6708cc43afdf2762d6890",
+          "origin_min": "2021-03-17 17:10:00",
+          "origin_max": "2021-04-21 02:00:00",
+          "target_min": "2021-03-17 18:10:00",
+          "target_max": "2021-04-21 03:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_144",
+        "target_rollstd_144",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "tmed",
+        "hrmed",
+        "radmed",
+        "V4",
+        "V12",
+        "V5_0",
+        "V5_1",
+        "V5_2",
+        "target_was_missing",
+        "tmed_was_missing",
+        "hrmed_was_missing",
+        "radmed_was_missing",
+        "V12_was_missing"
+      ],
+      "frequency": "0 days 00:10:00",
+      "available_by_role": {
+        "fit": 14850,
+        "calibration": 4951,
+        "test": 9907,
+        "inner0_train": 4944,
+        "inner0_validation": 4944,
+        "inner1_train": 9888,
+        "inner1_validation": 4950
+      },
+      "seasonal_available_by_role": {
+        "fit": 14850,
+        "calibration": 4951,
+        "test": 9907,
+        "inner0_train": 4944,
+        "inner0_validation": 4944,
+        "inner1_train": 9888,
+        "inner1_validation": 4950
+      }
+    }
+  },
+  "joint_support": {
+    "fit": 14845,
+    "calibration": 4943,
+    "test": 9902
+  },
+  "method_specification": {
+    "version": "matched_intervals005_native_and_causal_v1",
+    "seed": 45,
+    "cqr": {
+      "factory": "src.conformal_cqr._quantile_estimator + MAPIE ConformalizedQuantileRegressor",
+      "estimator_parameters": {
+        "categorical_features": "warn",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 0.0,
+        "learning_rate": 0.05,
+        "loss": "quantile",
+        "max_bins": 255,
+        "max_depth": null,
+        "max_features": 1.0,
+        "max_iter": 300,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 50,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 45,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "wrapper_parameters": {
+        "confidence_levels": [
+          0.9,
+          0.95
+        ],
+        "prefit": false
+      },
+      "objects_per_horizon": 2,
+      "estimators_per_object": 3,
+      "sharing": "uncalibrated/CQR share exact raw lower/upper/median owner; levels have distinct objects",
+      "score": "native static: separate raw_lower-y and y-raw_upper tail scores; method-preserving online replay: max(raw_lower-y,y-raw_upper)",
+      "native_quantile": "asymmetric native tails: numpy.quantile(each tail score, (1-(1-level)/2)*(1+1/n), method=higher); MAPIE 1.4.1",
+      "native_predict_parameters": {
+        "symmetric_correction": false
+      },
+      "crossing": "retain raw pair; order only emitted pair"
+    },
+    "enbpi": {
+      "factory": "src.interval_stream.IntervalEstimator resolved MAPIE TimeSeriesRegressor",
+      "base_class": "xgboost.sklearn.XGBRegressor",
+      "base_parameters": {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": null,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 60,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 45,
+        "reg_alpha": null,
+        "reg_lambda": null,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      "bootstrap": {
+        "n_resamplings": 5,
+        "length": 24,
+        "overlapping": true,
+        "random_state": 45
+      },
+      "wrapper": {
+        "method": "enbpi",
+        "agg_function": "mean",
+        "random_state": 45,
+        "n_jobs": 1
+      },
+      "sharing": "static/updated and both nominal levels share exact final calibrated owner; updates never mutate it",
+      "operations": "fit: full-data estimator plus five training bootstraps; explicit conformalize: five calibration bootstraps; verify synthetic actual ledger before real freeze",
+      "native_score": "installed MAPIE conformity score with OOB predictions; retain nonfinite OOB score counts explicitly",
+      "native_interval": "original _recentered_intervals; native offsets shifted from ensemble to full-fit point; no test-truth fitting",
+      "updated_policy": {
+        "version": "amendment004_method_preserving_native_updated_v1",
+        "score": "signed observed-minus-own-full-fit-point",
+        "every": 1,
+        "window": null,
+        "min_samples": 50,
+        "initialization": "fixed pre-test same-group calibration history, otherwise fixed whole historical pool; global supported quantiles as initial hold",
+        "quantile": "lower floor((n+1)*(1-level)/2+1e-12), upper ceil((n+1)*(1-(1-level)/2)-1e-12), one-indexed; no interpolation",
+        "group_policy": "isolated original group and contiguous segment; reset to fixed historical calibration",
+        "legacy_difference": "legacy updated EnbPI used interpolated numpy quantiles/min_samples1; this named adapter preserves amendment004 ranks/min_samples50; no bit-identity claim"
+      }
+    },
+    "dscp": {
+      "factory": "src.conformal_dscp.fit_dscp",
+      "max_clusters": 6,
+      "ks_threshold": 0.05,
+      "neighbours": null,
+      "gamma": 1.0,
+      "seed": 45,
+      "silhouette_sample": 2000,
+      "n_init": 10,
+      "score": "signed y-yhat",
+      "quantile": "numpy.quantile default linear on fixed cluster/merged-step error pool",
+      "assignment": "soft-DTW to all calibration predicted sequences; smallest-cluster-size neighbours; argpartition then majority/lowest-index tie",
+      "assignment_batch_size": 64,
+      "minimum_calibration": 400,
+      "owner": "verified historical matched XGBoost direct horizon artifacts",
+      "labels": [
+        "direct_horizon_adaptation",
+        "from_paper_implementation"
+      ],
+      "test_truth_used_for_fit": false
+    },
+    "replay": {
+      "calibration_minimum": 400,
+      "update_minimum": 50,
+      "release": "compare matured observation to its immutable issued bounds before release; target_time <= current origin; available readings only",
+      "static": "uncalibrated/CQR/static EnbPI/DSCP keep native static construction",
+      "availability": "original target_was_missing and finite source observation; imputed does not imply observed"
+    },
+    "alert": {
+      "rule": "immediate_single_sample",
+      "k": 1,
+      "m": 1,
+      "sampling_frequency": "0 days 00:10:00",
+      "events": "empty; background workload only; no recall/F1/delay/primary feasibility"
+    },
+    "references": {
+      "cqr": "https://arxiv.org/abs/1905.03222",
+      "enbpi": "https://proceedings.mlr.press/v139/xu21h.html",
+      "dscp": "https://arxiv.org/abs/2503.21251",
+      "mapie": "https://mapie.readthedocs.io/en/stable/"
+    }
+  },
+  "seasonal_alias_source": {
+    "model_seed": 42,
+    "root": "smart_building_conformal\\outputs\\matched_intervals005\\pleia_f2_s42_v1\\stages",
+    "files": {
+      "1": {
+        "calibration.csv.gz": "4949fda98376d720b52146d6fba302ec3b287586c468402fe84640b4353a942f",
+        "interval_90.csv.gz": "0b23c89d817cd03fe527ddba8d81a6b37c8d305c7b8e3528248b18798d64530e",
+        "interval_95.csv.gz": "33b676dcef3b0ed72619d6827fab77a246d68033686d16ae2604e1b3edc64130",
+        "point.json": "2c2b919719ed9fb89d69f7118732fd3955f1fe743dc9813081d3c0f434f2be32",
+        "calibration.json": "43743742d3d264793ab457c49c64325e6ef1f528c8cb229a61c803824811e7f0"
+      },
+      "3": {
+        "calibration.csv.gz": "b2127bd58c74e2c4bae3a745e0cea5a05b302e3a6e14b26b2338607ec56b38bb",
+        "interval_90.csv.gz": "9ca5f59d26fa959728a63335eeb057f9582f401b5f284abfe6e5ec304adf1a32",
+        "interval_95.csv.gz": "7107cff86191a1c47d38bfa16f1ddc3cf23176e484fe66954cd739e78dbb2a6e",
+        "point.json": "68908023d4344fcda4b71bb2f2edc199479de51812b9310eb9cafd2e1e7921a5",
+        "calibration.json": "4aec080670639b34fc1723a4c0db05179ba22c42e828a14a0100b3e6e0aaf536"
+      },
+      "6": {
+        "calibration.csv.gz": "48f1bbe113ec6cf5a7a2f8775e31998a58c7c7e73e852a9f641562a0bc1664c5",
+        "interval_90.csv.gz": "5346e111af14eaf10f90b156becc6b471ee022c73b88798f92718da3319215ad",
+        "interval_95.csv.gz": "92e3c7a13e5ca1779e4b8586a3e27c986c8945c8d02dbe744c8396e102e10259",
+        "point.json": "fb09232339f8a3eec5baf9d34492880775ab52273474e8d7b2ebad7cd7cae4ce",
+        "calibration.json": "5f4961decff553c7b06b7ef561a9d63c9e48a7d17895830a25932e743ceedab3"
+      }
+    }
+  },
+  "inputs": {
+    "smart_building_conformal\\outputs\\amendment005\\study_plan_v1\\interval_method_matrix.csv": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+    "smart_building_conformal\\outputs\\amendment005\\study_plan_v1\\seasonal_execution_queue.csv": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+    "smart_building_conformal\\outputs\\matched_forecasting005\\core_completion_195_v1_analysis\\cumulative_completion_reuse_ledger.csv": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+    "smart_building_conformal\\outputs\\amendment005\\support_final_checks_v1\\dscp_joint_origin_support.csv": "e2ad8c1f181de98152fcc22f619f0a9f21938befa58a5d65c7e7a0fd4f7fb819",
+    "smart_building_conformal\\outputs\\amendment005\\support_final_checks_v1\\dscp_joint_origin_membership.csv.gz": "176e5d10ab4d44568ddc736aeebd8886545b0e5921190bea1159b0d66bf59feb",
+    "review\\matched_intervals_seasonal005_completion_20260924\\remaining_scope.csv": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+    "review\\matched_intervals_seasonal005_completion_20260924\\AUTHORIZATION.json": "917ae5eaefb676f742635a07287012954e44814da129e88cd9022ff58d119c92",
+    "review\\matched_intervals005_bdg2_20260914\\SYNTHETIC_ACCEPTANCE.json": "6264f72690a14f3809e2f879467aea79a6a0b9d0d6264077966a18096f88ad41"
+  },
+  "design_hashes": {
+    "joint_calibration.csv.gz": "fd9a320c7f029239ccdb6ae67e234951c9619f3f07530b3e73eda97cfc585173",
+    "joint_fit.csv.gz": "efcb7aa0fd0b06d010da6994576b087d95250b4ef046c28d59816fb7f29da630",
+    "joint_test.csv.gz": "aff1d49019c6962b158a9c3aa495825639acbdfa1ac8bd3ad2ccc3fef5fd85d5",
+    "method_specification.json": "e40bd84cc763c59eca1c3d529510b383cb849f23568eee3ce5f0e1eb583a763c",
+    "native_membership.csv.gz": "6f75ea6eccd1e33869e8bea57739d860bfd650edf2a37e901ffb64a7a794e304",
+    "scope.csv": "090d3da27cb3fa99c7b5365eac21f3fb90acd0bb19c18c5f12d6ffda97135e64"
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 6,
+    "quantile_estimator_fit": 18,
+    "enbpi_wrapper_fit": 3,
+    "xgboost_estimator_fit": 33,
+    "random_forest_estimator_fit": 0,
+    "dscp_calibrator_fit": 1,
+    "kmeans_candidate_fit": 5,
+    "calibrator_conformalize": 18
+  },
+  "expected_cells": {
+    "interval_method": 30,
+    "seasonal_point": 0,
+    "seasonal_interval": 0,
+    "seasonal_not_applicable": 0,
+    "alert_streams": 30,
+    "seasonal_alias": 3,
+    "seasonal_interval_alias": 6
+  },
+  "resource_policy": {
+    "device": "cpu",
+    "threads": 1,
+    "n_jobs": 1,
+    "batch_size": 256,
+    "launch_ram_reference_bytes": 3221225472,
+    "nonblocking_launch_ram": true,
+    "epoch_floor_bytes": 268435456,
+    "disk_floor_bytes": 8589934592
+  },
+  "tolerances": {
+    "prediction_atol": 1e-07,
+    "prediction_rtol": 1e-07,
+    "metric_atol": 1e-10,
+    "metric_rtol": 1e-12
+  },
+  "frozen_utc": "2026-09-23T19:34:19.183894+00:00",
+  "freeze_resources": {
+    "seconds": 14.53862940002,
+    "baseline_rss_bytes": 328347648,
+    "peak_rss_bytes": 1088987136,
+    "baseline_private_bytes": 284962816,
+    "peak_private_bytes": 1215242240,
+    "incremental_peak_rss_bytes": 760639488,
+    "lifetime_peak_rss_bytes": 1250721792,
+    "min_available_ram_bytes": 6635769856,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 14.421875
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}

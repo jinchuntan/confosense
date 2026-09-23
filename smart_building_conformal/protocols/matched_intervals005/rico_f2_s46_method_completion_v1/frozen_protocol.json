@@ -1,0 +1,1225 @@
+{
+  "version": "matched_intervals_seasonal005_completion_v1",
+  "scope": {
+    "dataset": "rico",
+    "outer_fold": 2,
+    "model_seed": 46,
+    "horizons": [
+      5,
+      15,
+      30,
+      60
+    ],
+    "levels": [
+      0.9,
+      0.95
+    ],
+    "methods": [
+      "quantile_uncalibrated",
+      "cqr",
+      "recentred_enbpi_static",
+      "recentred_enbpi_updated",
+      "dscp"
+    ]
+  },
+  "authorization": {
+    "version": "matched_intervals_seasonal005_completion_v1",
+    "authorization_source": "user attachment 703d57a7-b9d5-4806-a375-ce15906e6b33",
+    "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+    "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "matrix_sha256": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+    "seasonal_queue_sha256": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+    "forecasting_ledger_sha256": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+    "scope_sha256": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+    "bundles": [
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 46
+      }
+    ],
+    "accepted_method_cells": 250,
+    "new_method_cells": 1700,
+    "final_method_cells": 1950,
+    "new_unique_seasonal_computations": 18,
+    "fit_ceiling": {
+      "cqr_wrapper_fit": 340,
+      "quantile_estimator_fit": 1020,
+      "enbpi_wrapper_fit": 170,
+      "xgboost_estimator_fit": 1870,
+      "random_forest_estimator_fit": 0,
+      "dscp_calibrator_fit": 52,
+      "kmeans_candidate_fit": 260,
+      "calibrator_conformalize": 1020
+    },
+    "historical_forecasting_refits": 0,
+    "full_study_ready": false
+  },
+  "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+  "historical_source_hashes": [
+    "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e"
+  ],
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "adapter_sha256": "79ab561e2db4b9a73a53b6ebe4ccd994ba4a9909e7b4fbff5da5792b2e4ffefe",
+  "validator_sha256": "28313cdc1c48e5c8f74b49c36a1eb47aa4d771657cf33bc7172a441b6329c2fa",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "references": {
+    "5": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h5_f2_s46_v1\\frozen_protocol.json",
+      "protocol_hash": "bc0f06119e0a0e1ed46353afd0b76b2c92cad9e7003e51737073831e86c9ecd3",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h5_f2_s46_v1\\frozen_protocol.json",
+      "original_protocol_hash": "bc0f06119e0a0e1ed46353afd0b76b2c92cad9e7003e51737073831e86c9ecd3",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/rico_h5_f2_s46_v1",
+      "run_file_tree_hash": "534afbcf810301151574a4ba018510081dea31549a7bf1d6ebc54e4f11f341fd",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\rico_h5_f2_s46_v1\\units\\rico_h5_f2_s46_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "292e2392a2f3f75d20aae26aaeeff5b0f653902d01682d4e9edcfec2ca7f1818",
+        "calibration.csv.gz": "bc06f2278922c30015b52e0ac4d766ea70e4479c1adc6078a19f973feb262b6f",
+        "COMPLETE.json": "e4cc1abefadb78e0a933b6598ad7b61fd12a379e3b67774adee26d8f88830e69",
+        "fitting_membership.csv.gz": "26cd7a88f6df047b899f9f15598e0b8449458ec5b8bca3efec4948d5bfd5da76",
+        "model.ubj": "70723dfca6c7b37dfac6470947ef7db0a0c6443765fd3fbf4a2581de46004ecb",
+        "payload.json": "a6a29a5aa43d59c39995578cbd17dca9e0265d432b302340dafa3c5dbb120133",
+        "predictions.csv.gz": "bc51ad902d79e00246271ef8a32e6180d226da6bcd5d6f9ddf00aa76c0b0bf52",
+        "training_history.csv.gz": "aa7f2710cdc166183929afb5ec92b8fa69e989e42c4d6bf1cee36e9c127718a6",
+        "tuning.csv.gz": "eb83da76fe28fd9050f748e82138b70baa5ee208b32f74deb60c8b72ea1c05e0",
+        "tuning_predictions.csv.gz": "01c59a9fc86074d01917f54a29ee6520d5d2ff07822a2a49b2bbd9566b18927b"
+      },
+      "evaluated_commit": "04cc77ec9b6aee35990711b6bafaeab3bc0fa7a9",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    },
+    "15": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h15_f2_s46_v1\\frozen_protocol.json",
+      "protocol_hash": "fba4163656ab14c306dd508668113d90ba96f38e46ee7b8f52fa4a00e8ee546f",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h15_f2_s46_v1\\frozen_protocol.json",
+      "original_protocol_hash": "fba4163656ab14c306dd508668113d90ba96f38e46ee7b8f52fa4a00e8ee546f",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/rico_h15_f2_s46_v1",
+      "run_file_tree_hash": "42c5b79976d1d6490cf810ed8db5161401e9492d9724df6f87aeb7df46396de2",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\rico_h15_f2_s46_v1\\units\\rico_h15_f2_s46_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "b5ab460db99a1c65327e62a723b40b8f6b5799568e596f2e6cad917c55968bb5",
+        "calibration.csv.gz": "f02e1819a168a76409ce2275b68e0460821168d8b8c62e4658f24d7c2ad203a0",
+        "COMPLETE.json": "78fadbf77b87b51509da2168169986d386912c715f2195817214cfeb99cb4c24",
+        "fitting_membership.csv.gz": "f912ac6351446746ede1d88bf7df9dcb06b424051b23581cd24a214218611a7e",
+        "model.ubj": "68a6b68232a879b58c0617515c0df62f7f4af4feda74b82889af229dfd594d21",
+        "payload.json": "1325c61ba57e2eebc4b567aaa169fd9c3ea178d4d113f73b1b7ed5ce499f66d1",
+        "predictions.csv.gz": "00e5e16c24ed5ad320bb110b71f47240e7894e6ad9aa7f49c74efc5dff0822b8",
+        "training_history.csv.gz": "797f8571d9358bd7de9d14ae6881cd3c346a79a654ae99acb05c23cb96c474dc",
+        "tuning.csv.gz": "5dd62841d99c797ee04775230c2179a4f99edcab69ed88a3433f28b41179a98c",
+        "tuning_predictions.csv.gz": "2282a7844f85ad4f60ea79b8b537a34a485cc09a4d6f4f3817d2f8a429a5af48"
+      },
+      "evaluated_commit": "04cc77ec9b6aee35990711b6bafaeab3bc0fa7a9",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    },
+    "30": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h30_f2_s46_v1\\frozen_protocol.json",
+      "protocol_hash": "0db7f0a10aa75d45d291b57c800923360aa803d8a48eb3fa75d6968e1b6a27fe",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h30_f2_s46_v1\\frozen_protocol.json",
+      "original_protocol_hash": "0db7f0a10aa75d45d291b57c800923360aa803d8a48eb3fa75d6968e1b6a27fe",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/rico_h30_f2_s46_v1",
+      "run_file_tree_hash": "a9f8f15dc878dc21c5a71295f6386a990064754801261f103304362ec11b0ead",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\rico_h30_f2_s46_v1\\units\\rico_h30_f2_s46_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "c5a3527c094324bb0a1c6cb0821b8bfdca0324b6c34173682542bdd48aeb2650",
+        "calibration.csv.gz": "90f6d2887f1d0e1c1b6eedd578e9d1ba0d64c7a50268b0cf5029d890cd64898a",
+        "COMPLETE.json": "587495990721f042874796ac00d71db6c4adbabaf3b292d8b68be81efd9a7d8d",
+        "fitting_membership.csv.gz": "f1780986c0934c839061acb58313ae5b1a81bd2ccab3329301ea026adbe6b2c5",
+        "model.ubj": "0aa54ddc2bedb0b6ccbd62e603b517cd5598db85cf433dfebd218aed250ae40e",
+        "payload.json": "4cc9a32bf2153dcf53e162a052f8432e83a89b1e56484d5313bdd9a736c7acc3",
+        "predictions.csv.gz": "3ace2ed67bbd57dfea20cf70b0be9127effc5c77ad81d4d57cf120437dbd176d",
+        "training_history.csv.gz": "7ff1622d4f2324da368328842669c5fb47e6e5b9c111ef45d58e4b3be60610ce",
+        "tuning.csv.gz": "0cb45125b5475ed97fedf2590f6e1466a0da69994f7e49f74e33bb44b6b3d58e",
+        "tuning_predictions.csv.gz": "d64a83ea7bcc53453b47567c6a09ee7feb1f4ca02bcae1659de8ecdecf7de6db"
+      },
+      "evaluated_commit": "04cc77ec9b6aee35990711b6bafaeab3bc0fa7a9",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    },
+    "60": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h60_f2_s46_v1\\frozen_protocol.json",
+      "protocol_hash": "27622b6cebbf93f20aeec4af03f6497dc542faf718a8e023032df13475a84c65",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\rico_h60_f2_s46_v1\\frozen_protocol.json",
+      "original_protocol_hash": "27622b6cebbf93f20aeec4af03f6497dc542faf718a8e023032df13475a84c65",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/rico_h60_f2_s46_v1",
+      "run_file_tree_hash": "8c4f6e8859e3a2e54f1ea102733f204a93cc9601d588e311917d2750295ed95e",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\rico_h60_f2_s46_v1\\units\\rico_h60_f2_s46_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "ad9972a6aa3b2633ee674dd0dcc9a63c69d296d393a27c80b9547edb247f0efa",
+        "calibration.csv.gz": "78e60eb71b6f1c9402be1862864f9ec5ee44e9ee301b09795691bf14ee8634c0",
+        "COMPLETE.json": "c8059722685981a2edf9fa315e44f68ea9ffa26662b0a3af8a960dd199216333",
+        "fitting_membership.csv.gz": "7a687e9a98ec20d353795deaece9f9633411e874a33a56813315264c1a401836",
+        "model.ubj": "6177a36e6adfcf14b4d4fb8ba3ff87ca74e3105747c9cc55c50ce7ad7ab005f7",
+        "payload.json": "2c7c7c55623cae5e05d7e2807a806fa80b39b278bda5ec020510791773d0b776",
+        "predictions.csv.gz": "58d22bdee569d97d74795b1afcd2b61c7d7f16aeb01435676ba74bb6d05007ff",
+        "training_history.csv.gz": "33fb6ee4ab8ec2b6f09e6b0a0e8c369243a5a310589327bba382271eef135304",
+        "tuning.csv.gz": "285a8d4064d82945cb0a0980381b986579c89a4775888458d388f6982cba328f",
+        "tuning_predictions.csv.gz": "92027b80eaeb763261356ac3d42333063fa463a7a7b6b88a085638b32cf8c7af"
+      },
+      "evaluated_commit": "04cc77ec9b6aee35990711b6bafaeab3bc0fa7a9",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    }
+  },
+  "support": {
+    "5": {
+      "data_hash": "cc0f3758889c55292cd641d866995da797e5144f79a6beaca9bfb01d2d278ff5",
+      "roles": {
+        "fit": {
+          "n": 12932,
+          "membership_hash": "3658387a50ac69383d169c4cd64e0f10af6cb1173d670d23cd36cc41340234e7",
+          "row_id_hash": "c755dd01ece762dbd51ba428c055e8553cdf95dcc026a35d8a864ea2dda9baaa",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-07 22:55:00",
+          "target_min": "2023-07-26 15:29:00",
+          "target_max": "2023-08-07 23:00:00"
+        },
+        "calibration": {
+          "n": 4452,
+          "membership_hash": "5d80e479d7f2d8194826bd75f476bb30f29d341ebeb04f975816feb43ded72c5",
+          "row_id_hash": "95fbd3e9e78192059585691a00d55cc264e607ec334a8f3a3988fe57e1814fdc",
+          "origin_min": "2023-08-07 23:24:00",
+          "origin_max": "2023-08-12 02:55:00",
+          "target_min": "2023-08-07 23:29:00",
+          "target_max": "2023-08-12 03:00:00"
+        },
+        "test": {
+          "n": 8692,
+          "membership_hash": "0083f660ce00ba82b7680ac8a176432167c878e986a4911db7dc1df20306108f",
+          "row_id_hash": "7d1aee54ebd66b5f6541f1af4efedc077913db45c4fb7ea01f732b52411d52d0",
+          "origin_min": "2023-08-12 07:24:00",
+          "origin_max": "2024-02-04 10:55:00",
+          "target_min": "2023-08-12 07:29:00",
+          "target_max": "2024-02-04 11:00:00"
+        },
+        "inner0_train": {
+          "n": 4240,
+          "membership_hash": "c1a4e771c1a038bd72f692838b5d8582f89cb22ed86367cf0f4b67f5ee82d04c",
+          "row_id_hash": "d0fae55550952c749ca4cb3c93ec3f59e8b3a9f62c2bdde723c9cc80c6bf88de",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-07-30 22:55:00",
+          "target_min": "2023-07-26 15:29:00",
+          "target_max": "2023-07-30 23:00:00"
+        },
+        "inner0_validation": {
+          "n": 4240,
+          "membership_hash": "e3a07ebc686275bff2d1dc7d8558595990613af830655e24b8a205e8d43a0609",
+          "row_id_hash": "28e29d294b80eeb6a5f8994b0744951494a3e4717e07f370f158f948a33d0e48",
+          "origin_min": "2023-07-30 23:24:00",
+          "origin_max": "2023-08-03 22:55:00",
+          "target_min": "2023-07-30 23:29:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_train": {
+          "n": 8480,
+          "membership_hash": "6e488b9c421d5b5bde8e49d51a5acc9fd405fbdec90e71ed8be66f739b614b6e",
+          "row_id_hash": "2208aa8747a405f6e07db0aca45f47b897d2142c3d45af5770fdc650c204e411",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-03 22:55:00",
+          "target_min": "2023-07-26 15:29:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_validation": {
+          "n": 4452,
+          "membership_hash": "4ed20a262cd2134ba3c9e63f62e81a4e9e1ba38dc0ab4bbcbffcb4b038b50f0f",
+          "row_id_hash": "f610fdc1f2fd8e841130d8948f2add6ece5b3ea6a1cb4ee8babd9615dfaf6e16",
+          "origin_min": "2023-08-03 23:24:00",
+          "origin_max": "2023-08-07 22:55:00",
+          "target_min": "2023-08-03 23:29:00",
+          "target_max": "2023-08-07 23:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_5",
+        "target_lag_10",
+        "target_rollmean_10",
+        "target_rollstd_10",
+        "target_rollmean_30",
+        "target_rollstd_30",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "SB47",
+        "SB46",
+        "SB43",
+        "EC3",
+        "pid.SB47.setpoint",
+        "pid.SB46.setpoint",
+        "pid.SB43.setpoint",
+        "pid.EC3.setpoint",
+        "RTD420",
+        "RTD509",
+        "RTD417",
+        "RTD508",
+        "RTD410.T",
+        "RTD406A",
+        "WS1_Temperature",
+        "WS1_Relative_humidity",
+        "WS1_Solar_radiation",
+        "WS1_Wind_speed",
+        "target_was_missing",
+        "SB47_was_missing",
+        "SB46_was_missing",
+        "SB43_was_missing",
+        "EC3_was_missing",
+        "pid.SB47.setpoint_was_missing",
+        "pid.SB46.setpoint_was_missing",
+        "pid.SB43.setpoint_was_missing",
+        "pid.EC3.setpoint_was_missing",
+        "RTD420_was_missing",
+        "RTD509_was_missing",
+        "RTD417_was_missing",
+        "RTD508_was_missing",
+        "RTD410.T_was_missing",
+        "RTD406A_was_missing",
+        "WS1_Temperature_was_missing",
+        "WS1_Relative_humidity_was_missing",
+        "WS1_Solar_radiation_was_missing",
+        "WS1_Wind_speed_was_missing"
+      ],
+      "frequency": "0 days 00:01:00",
+      "available_by_role": {
+        "fit": 12932,
+        "calibration": 4452,
+        "test": 8692,
+        "inner0_train": 4240,
+        "inner0_validation": 4240,
+        "inner1_train": 8480,
+        "inner1_validation": 4452
+      },
+      "seasonal_available_by_role": {
+        "fit": 0,
+        "calibration": 0,
+        "test": 0,
+        "inner0_train": 0,
+        "inner0_validation": 0,
+        "inner1_train": 0,
+        "inner1_validation": 0
+      }
+    },
+    "15": {
+      "data_hash": "7e4af27dc022bb221d3b1e6ac6c130c46417825d4cf4e768c0617fa61a5e9667",
+      "roles": {
+        "fit": {
+          "n": 12322,
+          "membership_hash": "43b916ba9404ba05674434bee730459042f5429db85147bf7480e4994566518e",
+          "row_id_hash": "78091d5eff830e5cec75e981f2374fa92a1411659cefc3dbe1f2a66d39d9d20a",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-07 22:45:00",
+          "target_min": "2023-07-26 15:39:00",
+          "target_max": "2023-08-07 23:00:00"
+        },
+        "calibration": {
+          "n": 4242,
+          "membership_hash": "33982386d1966661ed68b05d6d47cf1b0655579aae4145632efa839b722621cd",
+          "row_id_hash": "b24b1ffac74ec3618d19e253737eb069d0f486f2215540f259dccc4a7533bdc7",
+          "origin_min": "2023-08-07 23:24:00",
+          "origin_max": "2023-08-12 02:45:00",
+          "target_min": "2023-08-07 23:39:00",
+          "target_max": "2023-08-12 03:00:00"
+        },
+        "test": {
+          "n": 8282,
+          "membership_hash": "94377b43ba0ad98a55be4a3e803052ff54825de93fe43932bd54dd5a5999210f",
+          "row_id_hash": "70ee9d673d19e218dbcf71db42bc92f130090496931b95a3f5272b32330ac9ff",
+          "origin_min": "2023-08-12 07:24:00",
+          "origin_max": "2024-02-04 10:45:00",
+          "target_min": "2023-08-12 07:39:00",
+          "target_max": "2024-02-04 11:00:00"
+        },
+        "inner0_train": {
+          "n": 4040,
+          "membership_hash": "5829454b8cc8ac6982c945339d4310a9a179cdd14bcd461b9599ce0e6d31a025",
+          "row_id_hash": "8b5377dedc5eef41e49d14b9d7048a8d4b20a24cc3f0213b3b402a19a9daf73e",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-07-30 22:45:00",
+          "target_min": "2023-07-26 15:39:00",
+          "target_max": "2023-07-30 23:00:00"
+        },
+        "inner0_validation": {
+          "n": 4040,
+          "membership_hash": "6649edb21bb9388ae4121dd285b20bb3005dcbe0c29f1f6f44aeabe295515229",
+          "row_id_hash": "e40b4a7e2ed7d0eff6a01bcacf6dd491fd4801938e5c53b8aeade8bf81122560",
+          "origin_min": "2023-07-30 23:24:00",
+          "origin_max": "2023-08-03 22:45:00",
+          "target_min": "2023-07-30 23:39:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_train": {
+          "n": 8080,
+          "membership_hash": "f9a21800560e18a5ee7609e4a2a91977dcc135238791f272cd6cd8c2fe8fb273",
+          "row_id_hash": "9180db22b831fe0e7ca58b24616399502cd01d6e796e73eda4fa4cf2184cfcec",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-03 22:45:00",
+          "target_min": "2023-07-26 15:39:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_validation": {
+          "n": 4242,
+          "membership_hash": "869e32a55876afd5037cfa569780a029ba6195f2b33156bd33c1e987f35d2fdc",
+          "row_id_hash": "57e398b6b31b811e1694aff2168883e9bc8e05d8adeeda9dcf5e072c177a184c",
+          "origin_min": "2023-08-03 23:24:00",
+          "origin_max": "2023-08-07 22:45:00",
+          "target_min": "2023-08-03 23:39:00",
+          "target_max": "2023-08-07 23:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_5",
+        "target_lag_10",
+        "target_rollmean_10",
+        "target_rollstd_10",
+        "target_rollmean_30",
+        "target_rollstd_30",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "SB47",
+        "SB46",
+        "SB43",
+        "EC3",
+        "pid.SB47.setpoint",
+        "pid.SB46.setpoint",
+        "pid.SB43.setpoint",
+        "pid.EC3.setpoint",
+        "RTD420",
+        "RTD509",
+        "RTD417",
+        "RTD508",
+        "RTD410.T",
+        "RTD406A",
+        "WS1_Temperature",
+        "WS1_Relative_humidity",
+        "WS1_Solar_radiation",
+        "WS1_Wind_speed",
+        "target_was_missing",
+        "SB47_was_missing",
+        "SB46_was_missing",
+        "SB43_was_missing",
+        "EC3_was_missing",
+        "pid.SB47.setpoint_was_missing",
+        "pid.SB46.setpoint_was_missing",
+        "pid.SB43.setpoint_was_missing",
+        "pid.EC3.setpoint_was_missing",
+        "RTD420_was_missing",
+        "RTD509_was_missing",
+        "RTD417_was_missing",
+        "RTD508_was_missing",
+        "RTD410.T_was_missing",
+        "RTD406A_was_missing",
+        "WS1_Temperature_was_missing",
+        "WS1_Relative_humidity_was_missing",
+        "WS1_Solar_radiation_was_missing",
+        "WS1_Wind_speed_was_missing"
+      ],
+      "frequency": "0 days 00:01:00",
+      "available_by_role": {
+        "fit": 12322,
+        "calibration": 4242,
+        "test": 8282,
+        "inner0_train": 4040,
+        "inner0_validation": 4040,
+        "inner1_train": 8080,
+        "inner1_validation": 4242
+      },
+      "seasonal_available_by_role": {
+        "fit": 0,
+        "calibration": 0,
+        "test": 0,
+        "inner0_train": 0,
+        "inner0_validation": 0,
+        "inner1_train": 0,
+        "inner1_validation": 0
+      }
+    },
+    "30": {
+      "data_hash": "eeb750317701dae7f55594ab5587faa8c9ebea97e3975d6b334e974d3ade445f",
+      "roles": {
+        "fit": {
+          "n": 11407,
+          "membership_hash": "3d3d4fbb4d8f672ec67c556a83ae19646d5a6de50b7cef115aeeb5cfb30d6489",
+          "row_id_hash": "6694a63ad907e314cbbc07e2400b311ddd6b4f95f7a83bc06ccbfbeb0182f11d",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-07 22:30:00",
+          "target_min": "2023-07-26 15:54:00",
+          "target_max": "2023-08-07 23:00:00"
+        },
+        "calibration": {
+          "n": 3927,
+          "membership_hash": "1342cd8dc9aab44620a5efca7a56fe3be333047033313391a9fdd3a20a8b7ca6",
+          "row_id_hash": "f9b289627840a6d96ddd5e6badfd891669d409792d950a9f947a49ad9da2cce1",
+          "origin_min": "2023-08-07 23:24:00",
+          "origin_max": "2023-08-12 02:30:00",
+          "target_min": "2023-08-07 23:54:00",
+          "target_max": "2023-08-12 03:00:00"
+        },
+        "test": {
+          "n": 7667,
+          "membership_hash": "4290f7193c9add8034e3beb246e9dc5ec1c5c7bc64043a75f4aef0370f2da91a",
+          "row_id_hash": "c55446a7da7e2c214397a68556bddc7f23f1100285beae4d6b6b40dd40de0584",
+          "origin_min": "2023-08-12 07:24:00",
+          "origin_max": "2024-02-04 10:30:00",
+          "target_min": "2023-08-12 07:54:00",
+          "target_max": "2024-02-04 11:00:00"
+        },
+        "inner0_train": {
+          "n": 3740,
+          "membership_hash": "198603de0d21c28b727a91bb36f1d71531516714d0ef322aad814988637b63aa",
+          "row_id_hash": "9d917672abf8233ef65c066aade1c65e97bc2f98f30ac865e3880f9148611e97",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-07-30 22:30:00",
+          "target_min": "2023-07-26 15:54:00",
+          "target_max": "2023-07-30 23:00:00"
+        },
+        "inner0_validation": {
+          "n": 3740,
+          "membership_hash": "1587766cd9a1b662669f11a62c95e7d2fd19b24001ef93ceaa6cfb25ca8059b0",
+          "row_id_hash": "0097da66de91d3a060f37562847bdc9aac7b47a0108c449f7bb67c62b7b490ce",
+          "origin_min": "2023-07-30 23:24:00",
+          "origin_max": "2023-08-03 22:30:00",
+          "target_min": "2023-07-30 23:54:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_train": {
+          "n": 7480,
+          "membership_hash": "e8aa89ac449919910789c941c06679a8faba7d42a3be6a5e7d1c598619b933ac",
+          "row_id_hash": "39428fb6ae40555288f096d7afd6fd9eb71c9e5d48b714de4c1f38d81aebc06c",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-03 22:30:00",
+          "target_min": "2023-07-26 15:54:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_validation": {
+          "n": 3927,
+          "membership_hash": "0c1086ba100d4a63d10c3054ddcf3d1803ca6464fc6960b4acbf90b625f25618",
+          "row_id_hash": "776e68499bf8cfa868629e2b39477d8a3b6a9656f0f716467b99404358cfdea4",
+          "origin_min": "2023-08-03 23:24:00",
+          "origin_max": "2023-08-07 22:30:00",
+          "target_min": "2023-08-03 23:54:00",
+          "target_max": "2023-08-07 23:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_5",
+        "target_lag_10",
+        "target_rollmean_10",
+        "target_rollstd_10",
+        "target_rollmean_30",
+        "target_rollstd_30",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "SB47",
+        "SB46",
+        "SB43",
+        "EC3",
+        "pid.SB47.setpoint",
+        "pid.SB46.setpoint",
+        "pid.SB43.setpoint",
+        "pid.EC3.setpoint",
+        "RTD420",
+        "RTD509",
+        "RTD417",
+        "RTD508",
+        "RTD410.T",
+        "RTD406A",
+        "WS1_Temperature",
+        "WS1_Relative_humidity",
+        "WS1_Solar_radiation",
+        "WS1_Wind_speed",
+        "target_was_missing",
+        "SB47_was_missing",
+        "SB46_was_missing",
+        "SB43_was_missing",
+        "EC3_was_missing",
+        "pid.SB47.setpoint_was_missing",
+        "pid.SB46.setpoint_was_missing",
+        "pid.SB43.setpoint_was_missing",
+        "pid.EC3.setpoint_was_missing",
+        "RTD420_was_missing",
+        "RTD509_was_missing",
+        "RTD417_was_missing",
+        "RTD508_was_missing",
+        "RTD410.T_was_missing",
+        "RTD406A_was_missing",
+        "WS1_Temperature_was_missing",
+        "WS1_Relative_humidity_was_missing",
+        "WS1_Solar_radiation_was_missing",
+        "WS1_Wind_speed_was_missing"
+      ],
+      "frequency": "0 days 00:01:00",
+      "available_by_role": {
+        "fit": 11407,
+        "calibration": 3927,
+        "test": 7667,
+        "inner0_train": 3740,
+        "inner0_validation": 3740,
+        "inner1_train": 7480,
+        "inner1_validation": 3927
+      },
+      "seasonal_available_by_role": {
+        "fit": 0,
+        "calibration": 0,
+        "test": 0,
+        "inner0_train": 0,
+        "inner0_validation": 0,
+        "inner1_train": 0,
+        "inner1_validation": 0
+      }
+    },
+    "60": {
+      "data_hash": "0c5fe27756b43d49f61814b8caa31857212c601f949748975dc68470e36cac57",
+      "roles": {
+        "fit": {
+          "n": 9577,
+          "membership_hash": "3b2ee7b2aa12c1ffb1d92fa0d145bb40ec7eda5553d5aea200e775ff319f45fe",
+          "row_id_hash": "917983dc467388ac885978e9b74c0f5ae88208d9e772efb9a39ac7017ffda1e5",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-07 22:00:00",
+          "target_min": "2023-07-26 16:24:00",
+          "target_max": "2023-08-07 23:00:00"
+        },
+        "calibration": {
+          "n": 3297,
+          "membership_hash": "19a46d1f1e763d33d1e2c9dbf5a850710435131d3255b74cb7409a8b19d08a11",
+          "row_id_hash": "4a3e49a4d097af747bc134411c84fb6696c6a47b21c1662b14e547fb2301bda0",
+          "origin_min": "2023-08-07 23:24:00",
+          "origin_max": "2023-08-12 02:00:00",
+          "target_min": "2023-08-08 00:24:00",
+          "target_max": "2023-08-12 03:00:00"
+        },
+        "test": {
+          "n": 6437,
+          "membership_hash": "96e3e48ce62ca523eaae571b05e9ad301988a1f12a3ac66ae726426480decd2d",
+          "row_id_hash": "11822b6b9a8ddf1e52a552fb0d6807f186a45a3e449b33787f74c1ab55098a86",
+          "origin_min": "2023-08-12 07:24:00",
+          "origin_max": "2024-02-04 10:00:00",
+          "target_min": "2023-08-12 08:24:00",
+          "target_max": "2024-02-04 11:00:00"
+        },
+        "inner0_train": {
+          "n": 3140,
+          "membership_hash": "e1a9b7343d9985a4ced316edb7ca5ace194bf2d2e7e084f168c35f13e080aa6d",
+          "row_id_hash": "906ab9a1ce19f9094aefe6e85d3d493ca1b0ddbbfc4ec199202eb446fe8e10a3",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-07-30 22:00:00",
+          "target_min": "2023-07-26 16:24:00",
+          "target_max": "2023-07-30 23:00:00"
+        },
+        "inner0_validation": {
+          "n": 3140,
+          "membership_hash": "39d39957ce206e9dc8190020883a07fd168cf109f8d1fef65ca5b15ba45f3e7b",
+          "row_id_hash": "406473e2a41452b02d46fde11295f5af4f59560a02cff20d21cc7edb15b284d6",
+          "origin_min": "2023-07-30 23:24:00",
+          "origin_max": "2023-08-03 22:00:00",
+          "target_min": "2023-07-31 00:24:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_train": {
+          "n": 6280,
+          "membership_hash": "c3047313f13abd432da4994930a13dcfbc9e03a7b7b859795cb091b4566b1a2c",
+          "row_id_hash": "1291fe31555aec90de912a6b974688464079c6c237fe80da5387b28dbf887b01",
+          "origin_min": "2023-07-26 15:24:00",
+          "origin_max": "2023-08-03 22:00:00",
+          "target_min": "2023-07-26 16:24:00",
+          "target_max": "2023-08-03 23:00:00"
+        },
+        "inner1_validation": {
+          "n": 3297,
+          "membership_hash": "a6ae4c6f274995caa3ad0f21a8955eef12dc85407e9117f47e34988102374fe8",
+          "row_id_hash": "b2de499abb1d5fd66ddd772d071f835e97be3afc0f2f49bebe556b036ece718e",
+          "origin_min": "2023-08-03 23:24:00",
+          "origin_max": "2023-08-07 22:00:00",
+          "target_min": "2023-08-04 00:24:00",
+          "target_max": "2023-08-07 23:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_5",
+        "target_lag_10",
+        "target_rollmean_10",
+        "target_rollstd_10",
+        "target_rollmean_30",
+        "target_rollstd_30",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "SB47",
+        "SB46",
+        "SB43",
+        "EC3",
+        "pid.SB47.setpoint",
+        "pid.SB46.setpoint",
+        "pid.SB43.setpoint",
+        "pid.EC3.setpoint",
+        "RTD420",
+        "RTD509",
+        "RTD417",
+        "RTD508",
+        "RTD410.T",
+        "RTD406A",
+        "WS1_Temperature",
+        "WS1_Relative_humidity",
+        "WS1_Solar_radiation",
+        "WS1_Wind_speed",
+        "target_was_missing",
+        "SB47_was_missing",
+        "SB46_was_missing",
+        "SB43_was_missing",
+        "EC3_was_missing",
+        "pid.SB47.setpoint_was_missing",
+        "pid.SB46.setpoint_was_missing",
+        "pid.SB43.setpoint_was_missing",
+        "pid.EC3.setpoint_was_missing",
+        "RTD420_was_missing",
+        "RTD509_was_missing",
+        "RTD417_was_missing",
+        "RTD508_was_missing",
+        "RTD410.T_was_missing",
+        "RTD406A_was_missing",
+        "WS1_Temperature_was_missing",
+        "WS1_Relative_humidity_was_missing",
+        "WS1_Solar_radiation_was_missing",
+        "WS1_Wind_speed_was_missing"
+      ],
+      "frequency": "0 days 00:01:00",
+      "available_by_role": {
+        "fit": 9577,
+        "calibration": 3297,
+        "test": 6437,
+        "inner0_train": 3140,
+        "inner0_validation": 3140,
+        "inner1_train": 6280,
+        "inner1_validation": 3297
+      },
+      "seasonal_available_by_role": {
+        "fit": 0,
+        "calibration": 0,
+        "test": 0,
+        "inner0_train": 0,
+        "inner0_validation": 0,
+        "inner1_train": 0,
+        "inner1_validation": 0
+      }
+    }
+  },
+  "joint_support": {
+    "fit": 9577,
+    "calibration": 3297,
+    "test": 6437
+  },
+  "method_specification": {
+    "version": "matched_intervals005_native_and_causal_v1",
+    "seed": 46,
+    "cqr": {
+      "factory": "src.conformal_cqr._quantile_estimator + MAPIE ConformalizedQuantileRegressor",
+      "estimator_parameters": {
+        "categorical_features": "warn",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 0.0,
+        "learning_rate": 0.05,
+        "loss": "quantile",
+        "max_bins": 255,
+        "max_depth": null,
+        "max_features": 1.0,
+        "max_iter": 300,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 50,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 46,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "wrapper_parameters": {
+        "confidence_levels": [
+          0.9,
+          0.95
+        ],
+        "prefit": false
+      },
+      "objects_per_horizon": 2,
+      "estimators_per_object": 3,
+      "sharing": "uncalibrated/CQR share exact raw lower/upper/median owner; levels have distinct objects",
+      "score": "native static: separate raw_lower-y and y-raw_upper tail scores; method-preserving online replay: max(raw_lower-y,y-raw_upper)",
+      "native_quantile": "asymmetric native tails: numpy.quantile(each tail score, (1-(1-level)/2)*(1+1/n), method=higher); MAPIE 1.4.1",
+      "native_predict_parameters": {
+        "symmetric_correction": false
+      },
+      "crossing": "retain raw pair; order only emitted pair"
+    },
+    "enbpi": {
+      "factory": "src.interval_stream.IntervalEstimator resolved MAPIE TimeSeriesRegressor",
+      "base_class": "xgboost.sklearn.XGBRegressor",
+      "base_parameters": {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": null,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 60,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 46,
+        "reg_alpha": null,
+        "reg_lambda": null,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      "bootstrap": {
+        "n_resamplings": 5,
+        "length": 24,
+        "overlapping": true,
+        "random_state": 46
+      },
+      "wrapper": {
+        "method": "enbpi",
+        "agg_function": "mean",
+        "random_state": 46,
+        "n_jobs": 1
+      },
+      "sharing": "static/updated and both nominal levels share exact final calibrated owner; updates never mutate it",
+      "operations": "fit: full-data estimator plus five training bootstraps; explicit conformalize: five calibration bootstraps; verify synthetic actual ledger before real freeze",
+      "native_score": "installed MAPIE conformity score with OOB predictions; retain nonfinite OOB score counts explicitly",
+      "native_interval": "original _recentered_intervals; native offsets shifted from ensemble to full-fit point; no test-truth fitting",
+      "updated_policy": {
+        "version": "amendment004_method_preserving_native_updated_v1",
+        "score": "signed observed-minus-own-full-fit-point",
+        "every": 1,
+        "window": null,
+        "min_samples": 50,
+        "initialization": "fixed pre-test same-group calibration history, otherwise fixed whole historical pool; global supported quantiles as initial hold",
+        "quantile": "lower floor((n+1)*(1-level)/2+1e-12), upper ceil((n+1)*(1-(1-level)/2)-1e-12), one-indexed; no interpolation",
+        "group_policy": "isolated original group and contiguous segment; reset to fixed historical calibration",
+        "legacy_difference": "legacy updated EnbPI used interpolated numpy quantiles/min_samples1; this named adapter preserves amendment004 ranks/min_samples50; no bit-identity claim"
+      }
+    },
+    "dscp": {
+      "factory": "src.conformal_dscp.fit_dscp",
+      "max_clusters": 6,
+      "ks_threshold": 0.05,
+      "neighbours": null,
+      "gamma": 1.0,
+      "seed": 46,
+      "silhouette_sample": 2000,
+      "n_init": 10,
+      "score": "signed y-yhat",
+      "quantile": "numpy.quantile default linear on fixed cluster/merged-step error pool",
+      "assignment": "soft-DTW to all calibration predicted sequences; smallest-cluster-size neighbours; argpartition then majority/lowest-index tie",
+      "assignment_batch_size": 64,
+      "minimum_calibration": 400,
+      "owner": "verified historical matched XGBoost direct horizon artifacts",
+      "labels": [
+        "direct_horizon_adaptation",
+        "from_paper_implementation"
+      ],
+      "test_truth_used_for_fit": false
+    },
+    "replay": {
+      "calibration_minimum": 400,
+      "update_minimum": 50,
+      "release": "compare matured observation to its immutable issued bounds before release; target_time <= current origin; available readings only",
+      "static": "uncalibrated/CQR/static EnbPI/DSCP keep native static construction",
+      "availability": "original target_was_missing and finite source observation; imputed does not imply observed"
+    },
+    "alert": {
+      "rule": "immediate_single_sample",
+      "k": 1,
+      "m": 1,
+      "sampling_frequency": "0 days 00:01:00",
+      "events": "empty; background workload only; no recall/F1/delay/primary feasibility"
+    },
+    "references": {
+      "cqr": "https://arxiv.org/abs/1905.03222",
+      "enbpi": "https://proceedings.mlr.press/v139/xu21h.html",
+      "dscp": "https://arxiv.org/abs/2503.21251",
+      "mapie": "https://mapie.readthedocs.io/en/stable/"
+    }
+  },
+  "seasonal_alias_source": null,
+  "inputs": {
+    "smart_building_conformal\\outputs\\amendment005\\study_plan_v1\\interval_method_matrix.csv": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+    "smart_building_conformal\\outputs\\amendment005\\study_plan_v1\\seasonal_execution_queue.csv": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+    "smart_building_conformal\\outputs\\matched_forecasting005\\core_completion_195_v1_analysis\\cumulative_completion_reuse_ledger.csv": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+    "smart_building_conformal\\outputs\\amendment005\\support_final_checks_v1\\dscp_joint_origin_support.csv": "e2ad8c1f181de98152fcc22f619f0a9f21938befa58a5d65c7e7a0fd4f7fb819",
+    "smart_building_conformal\\outputs\\amendment005\\support_final_checks_v1\\dscp_joint_origin_membership.csv.gz": "176e5d10ab4d44568ddc736aeebd8886545b0e5921190bea1159b0d66bf59feb",
+    "review\\matched_intervals_seasonal005_completion_20260924\\remaining_scope.csv": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+    "review\\matched_intervals_seasonal005_completion_20260924\\AUTHORIZATION.json": "917ae5eaefb676f742635a07287012954e44814da129e88cd9022ff58d119c92",
+    "review\\matched_intervals005_bdg2_20260914\\SYNTHETIC_ACCEPTANCE.json": "6264f72690a14f3809e2f879467aea79a6a0b9d0d6264077966a18096f88ad41"
+  },
+  "design_hashes": {
+    "joint_calibration.csv.gz": "00bfc282592acb929efa3568fa24cd5d127858c1a5ef528f79cfc4d1adfda665",
+    "joint_fit.csv.gz": "c9d9abb97f4de9a5fbe0c68f266dc12c05eca35357e44a4fbd1d855fc44c9791",
+    "joint_test.csv.gz": "1531db07da32f2e7bdab19f8be0cc0f5a9c42e5d5e5681fc5589e79276acc8f3",
+    "method_specification.json": "222ca5988b45e3d3019f0ffef3c1b971e62c8019e91f077cdd532335f26da790",
+    "native_membership.csv.gz": "0d74771ec9369161a43fab754d8ae5fda97ed02be4268bf49fe1672bea768815",
+    "scope.csv": "5b368e8b0e91427ac9f3e501f9b9ecfcf88634012a753ea814b3a73b179b6b7a"
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 8,
+    "quantile_estimator_fit": 24,
+    "enbpi_wrapper_fit": 4,
+    "xgboost_estimator_fit": 44,
+    "random_forest_estimator_fit": 0,
+    "dscp_calibrator_fit": 1,
+    "kmeans_candidate_fit": 5,
+    "calibrator_conformalize": 24
+  },
+  "expected_cells": {
+    "interval_method": 40,
+    "seasonal_point": 0,
+    "seasonal_interval": 0,
+    "seasonal_not_applicable": 4,
+    "alert_streams": 40
+  },
+  "resource_policy": {
+    "device": "cpu",
+    "threads": 1,
+    "n_jobs": 1,
+    "batch_size": 256,
+    "launch_ram_reference_bytes": 3221225472,
+    "nonblocking_launch_ram": true,
+    "epoch_floor_bytes": 268435456,
+    "disk_floor_bytes": 8589934592
+  },
+  "tolerances": {
+    "prediction_atol": 1e-07,
+    "prediction_rtol": 1e-07,
+    "metric_atol": 1e-10,
+    "metric_rtol": 1e-12
+  },
+  "frozen_utc": "2026-09-23T20:05:49.009396+00:00",
+  "freeze_resources": {
+    "seconds": 40.67385600000853,
+    "baseline_rss_bytes": 329728000,
+    "peak_rss_bytes": 577626112,
+    "baseline_private_bytes": 286928896,
+    "peak_private_bytes": 529190912,
+    "incremental_peak_rss_bytes": 247898112,
+    "lifetime_peak_rss_bytes": 610066432,
+    "min_available_ram_bytes": 7337304064,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 40.203125
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}

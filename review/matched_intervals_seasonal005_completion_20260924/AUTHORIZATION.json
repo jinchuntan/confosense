@@ -1,0 +1,288 @@
+{
+  "version": "matched_intervals_seasonal005_completion_v1",
+  "authorization_source": "user attachment 703d57a7-b9d5-4806-a375-ce15906e6b33",
+  "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+  "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "matrix_sha256": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+  "seasonal_queue_sha256": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+  "forecasting_ledger_sha256": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+  "scope_sha256": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+  "bundles": [
+    {
+      "dataset": "pleia",
+      "outer_fold": 0,
+      "model_seed": 42
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 0,
+      "model_seed": 43
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 0,
+      "model_seed": 44
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 0,
+      "model_seed": 45
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 0,
+      "model_seed": 46
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 1,
+      "model_seed": 42
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 1,
+      "model_seed": 43
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 1,
+      "model_seed": 44
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 1,
+      "model_seed": 45
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 1,
+      "model_seed": 46
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 2,
+      "model_seed": 43
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 2,
+      "model_seed": 44
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 2,
+      "model_seed": 45
+    },
+    {
+      "dataset": "pleia",
+      "outer_fold": 2,
+      "model_seed": 46
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 0,
+      "model_seed": 42
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 0,
+      "model_seed": 43
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 0,
+      "model_seed": 44
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 0,
+      "model_seed": 45
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 0,
+      "model_seed": 46
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 1,
+      "model_seed": 42
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 1,
+      "model_seed": 43
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 1,
+      "model_seed": 44
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 1,
+      "model_seed": 45
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 1,
+      "model_seed": 46
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 2,
+      "model_seed": 43
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 2,
+      "model_seed": 44
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 2,
+      "model_seed": 45
+    },
+    {
+      "dataset": "pleia_energy",
+      "outer_fold": 2,
+      "model_seed": 46
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 0,
+      "model_seed": 42
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 0,
+      "model_seed": 43
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 0,
+      "model_seed": 44
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 0,
+      "model_seed": 45
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 0,
+      "model_seed": 46
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 1,
+      "model_seed": 42
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 1,
+      "model_seed": 43
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 1,
+      "model_seed": 44
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 1,
+      "model_seed": 45
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 1,
+      "model_seed": 46
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 2,
+      "model_seed": 43
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 2,
+      "model_seed": 44
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 2,
+      "model_seed": 45
+    },
+    {
+      "dataset": "rico",
+      "outer_fold": 2,
+      "model_seed": 46
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 0,
+      "model_seed": 42
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 0,
+      "model_seed": 43
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 0,
+      "model_seed": 44
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 0,
+      "model_seed": 45
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 0,
+      "model_seed": 46
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 1,
+      "model_seed": 42
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 1,
+      "model_seed": 43
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 1,
+      "model_seed": 44
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 1,
+      "model_seed": 45
+    },
+    {
+      "dataset": "bdg2",
+      "outer_fold": 1,
+      "model_seed": 46
+    }
+  ],
+  "accepted_method_cells": 250,
+  "new_method_cells": 1700,
+  "final_method_cells": 1950,
+  "new_unique_seasonal_computations": 18,
+  "fit_ceiling": {
+    "cqr_wrapper_fit": 340,
+    "quantile_estimator_fit": 1020,
+    "enbpi_wrapper_fit": 170,
+    "xgboost_estimator_fit": 1870,
+    "random_forest_estimator_fit": 0,
+    "dscp_calibrator_fit": 52,
+    "kmeans_candidate_fit": 260,
+    "calibrator_conformalize": 1020
+  },
+  "historical_forecasting_refits": 0,
+  "full_study_ready": false
+}

@@ -1,0 +1,15 @@
+# Matched interval/seasonal completion: pre-fit gate
+
+The exact declared matrix has 1,950 method cells. Accepted evidence covers 250 cells in eight bundles; the versioned scope authorizes exactly 1,700 new cells in 52 bundles (170 horizon units), plus 18 missing unique seasonal computations. The scientific source digest is `a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f`.
+
+Twenty-eight dependency-ready bundle protocols and readiness receipts were sealed before any new fit. The other 24 are fold-0/1 seed-43–46 seasonal aliases whose exact source-stage hashes do not exist until the corresponding seed-42 bundle completes. The sequential coordinator freezes each dependent protocol only after that seed-42 run passes validation and zero-fit resume, before fitting the dependent seed.
+
+The adapter resolves exact XGBoost owner rows from the 195-unit cumulative ledger, checks historical run, protocol, model and acceptance identities, and verifies fresh role and joint-origin memberships. Three PLEIA fold-0 seed-42 horizons use the earlier pilot's frozen resolved configuration. Its original study-config file has since changed; the compatibility records expose this drift, retain the historical source identity and verify every saved pilot role/row and owner prediction. They do not claim the current config file is byte-identical to the pilot's.
+
+Focused no-fit checks passed for the old pilot and a newer cross-fold owner, including saved calibration/test predictions and joint membership. Accepted BDG2 fold-2 seed-42 owner references and saved-artifact tree match without fitting. Negative checks reject ambiguous/corrupt or cross-key owners and wrong seasonal aliases. Existing checkpoint-corruption and incomplete-fit tests, six remaining-scope tests, and the corrupted-feature independent scalar-replay test passed. No scientific source, protocol or historical output was edited.
+
+The authorized ceilings for the 52 new bundles are 340 CQR wrappers, 1,020 quantile-estimator fits, 170 EnbPI wrappers, 1,870 EnbPI XGBoost-estimator fits, 52 DSCP calibrators, 260 KMeans candidates and 1,020 recorded conformalize calls; random-forest fallback and forecasting refits are zero. Wrapper operations are not additional predictive-estimator fits. The sequential worker must reconcile each bundle's ledger and validate/resume it with fits forbidden before proceeding.
+
+Local exclusions cover only new raw stage trees, partials, checkpoints, native/joint membership bulk, command-attempt logs, caches and package ZIPs. These are preserved locally for verified external backup; compact protocols, readiness, manifests, result tables and validation receipts remain eligible for explicit Git staging. The coordinator measured 71,931,559,936 bytes free at the end of pre-fit, above the 8 GiB floor; its conservative remaining-run plus same-volume-backup projection also cleared that floor.
+
+The programme remains incomplete after this bounded batch: separate operational-grid and robustness/contamination/recovery obligations remain, and no population interval is inferred from overlapping observations or seed aliases.

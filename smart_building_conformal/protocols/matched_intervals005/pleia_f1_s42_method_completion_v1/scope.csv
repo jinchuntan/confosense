@@ -1,0 +1,31 @@
+dataset,horizon,outer_fold,model_seed,level,method,status,owner,prerequisite
+pleia,1,1,42,0.9,quantile_uncalibrated,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.9,quantile_uncalibrated,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.9,quantile_uncalibrated,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.9,cqr,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.9,cqr,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.9,cqr,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.9,recentred_enbpi_static,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.9,recentred_enbpi_static,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.9,recentred_enbpi_static,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.9,recentred_enbpi_updated,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.9,recentred_enbpi_updated,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.9,recentred_enbpi_updated,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.9,dscp,required_new_versioned_evidence,matched XGBoost predictions plus joint-horizon DSCP calibrator,joint-origin adapter for all declared horizons
+pleia,3,1,42,0.9,dscp,required_new_versioned_evidence,matched XGBoost predictions plus joint-horizon DSCP calibrator,joint-origin adapter for all declared horizons
+pleia,6,1,42,0.9,dscp,required_new_versioned_evidence,matched XGBoost predictions plus joint-horizon DSCP calibrator,joint-origin adapter for all declared horizons
+pleia,1,1,42,0.95,quantile_uncalibrated,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.95,quantile_uncalibrated,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.95,quantile_uncalibrated,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.95,cqr,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.95,cqr,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.95,cqr,required_new_versioned_evidence,shared CQR quantile fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.95,recentred_enbpi_static,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.95,recentred_enbpi_static,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.95,recentred_enbpi_static,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.95,recentred_enbpi_updated,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,3,1,42,0.95,recentred_enbpi_updated,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,6,1,42,0.95,recentred_enbpi_updated,required_new_versioned_evidence,shared static/updated EnbPI fit,method-comparison runner with own-model streams and owner/sub-estimator ledger
+pleia,1,1,42,0.95,dscp,required_new_versioned_evidence,matched XGBoost predictions plus joint-horizon DSCP calibrator,joint-origin adapter for all declared horizons
+pleia,3,1,42,0.95,dscp,required_new_versioned_evidence,matched XGBoost predictions plus joint-horizon DSCP calibrator,joint-origin adapter for all declared horizons
+pleia,6,1,42,0.95,dscp,required_new_versioned_evidence,matched XGBoost predictions plus joint-horizon DSCP calibrator,joint-origin adapter for all declared horizons

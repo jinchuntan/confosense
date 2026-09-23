@@ -1,0 +1,973 @@
+{
+  "version": "matched_intervals_seasonal005_completion_v1",
+  "scope": {
+    "dataset": "bdg2",
+    "outer_fold": 1,
+    "model_seed": 42,
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "levels": [
+      0.9,
+      0.95
+    ],
+    "methods": [
+      "quantile_uncalibrated",
+      "cqr",
+      "recentred_enbpi_static",
+      "recentred_enbpi_updated",
+      "dscp"
+    ]
+  },
+  "authorization": {
+    "version": "matched_intervals_seasonal005_completion_v1",
+    "authorization_source": "user attachment 703d57a7-b9d5-4806-a375-ce15906e6b33",
+    "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+    "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "matrix_sha256": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+    "seasonal_queue_sha256": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+    "forecasting_ledger_sha256": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+    "scope_sha256": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+    "bundles": [
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "pleia_energy",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 1,
+        "model_seed": 46
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 43
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 44
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 45
+      },
+      {
+        "dataset": "rico",
+        "outer_fold": 2,
+        "model_seed": 46
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 42
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 43
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 44
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 45
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 0,
+        "model_seed": 46
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 42
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 43
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 44
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 45
+      },
+      {
+        "dataset": "bdg2",
+        "outer_fold": 1,
+        "model_seed": 46
+      }
+    ],
+    "accepted_method_cells": 250,
+    "new_method_cells": 1700,
+    "final_method_cells": 1950,
+    "new_unique_seasonal_computations": 18,
+    "fit_ceiling": {
+      "cqr_wrapper_fit": 340,
+      "quantile_estimator_fit": 1020,
+      "enbpi_wrapper_fit": 170,
+      "xgboost_estimator_fit": 1870,
+      "random_forest_estimator_fit": 0,
+      "dscp_calibrator_fit": 52,
+      "kmeans_candidate_fit": 260,
+      "calibrator_conformalize": 1020
+    },
+    "historical_forecasting_refits": 0,
+    "full_study_ready": false
+  },
+  "entry_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+  "historical_source_hashes": [
+    "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e"
+  ],
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "adapter_sha256": "79ab561e2db4b9a73a53b6ebe4ccd994ba4a9909e7b4fbff5da5792b2e4ffefe",
+  "validator_sha256": "28313cdc1c48e5c8f74b49c36a1eb47aa4d771657cf33bc7172a441b6329c2fa",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.5.2",
+    "mapie": "1.4.1",
+    "xgboost": "3.2.0",
+    "torch": "2.13.0"
+  },
+  "references": {
+    "1": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\frozen_protocol.json",
+      "protocol_hash": "3a12b8bb0420a6d8259bdf93ab6cb7ae75b0cf7fa3bea5f7cdbd7e0113915139",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\frozen_protocol.json",
+      "original_protocol_hash": "3a12b8bb0420a6d8259bdf93ab6cb7ae75b0cf7fa3bea5f7cdbd7e0113915139",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/bdg2_h1_f1_s42_v1",
+      "run_file_tree_hash": "e45a41cacce8ae4033f19daae64ee4fb950998719705e4e6d52f0761ad882015",
+      "source_hash": "cd907183301a189ddfcc195774dad58c8fa07d5b326d2ac29cf3636383dc681e",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h1_f1_s42_v1\\units\\bdg2_h1_f1_s42_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "4f89d3a46e6f44aa302fc06cb18fe39e32285e1760637edbb35a9f8a5868df60",
+        "calibration.csv.gz": "20eef7625d5aaef5f00cb6b1c3746e63fa5aeea0a5b68df319c2882464c3b873",
+        "COMPLETE.json": "37e4fb3beececd2f94b5a2f206dd631272964e46f14a2507364fa3438c5830fe",
+        "fitting_membership.csv.gz": "26b8af179f2d23b28096ae5423face5d5eb6e6a918cc2a037c793ab6180c60ca",
+        "model.ubj": "acc45e93d2045197b40a7866795261381a4cd9480f21809bb3888d0b0952dd5a",
+        "payload.json": "0621f045517b18fee5e6786de6b93d6101972a2b370ebc6b4033551fe4762582",
+        "predictions.csv.gz": "154bbee0c04211a764f23007e593387eb5030b1d0d400b9a7525995b18045ae2",
+        "training_history.csv.gz": "11c889141d35ed55a4b4c5d85d1c40cddf2800053db765aa552a161ee7a8e17a",
+        "tuning.csv.gz": "bd5378190c9069b55cb17cdab7b25d36628053f1ccbb67ffaae0d5359c7d33de",
+        "tuning_predictions.csv.gz": "b979c2ce122a704955df3519a0c01081f225c49072f58073d04b3de959f6db1b"
+      },
+      "evaluated_commit": "278a89377c932a4360311e7cec4b0c01ade27659",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\fold2_multiseed_batch_v1\\analysis_v1\\evidence_reuse_ledger.csv",
+      "historical_reuse": true
+    },
+    "3": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f1_s42_v1_core_completion_v1\\frozen_protocol.json",
+      "protocol_hash": "ad66c8593217d635e7ccbc0d6004290473fb9169afeb10f8d024d50a5e53f48f",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h3_f1_s42_v1_core_completion_v1\\frozen_protocol.json",
+      "original_protocol_hash": "ad66c8593217d635e7ccbc0d6004290473fb9169afeb10f8d024d50a5e53f48f",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/bdg2_h3_f1_s42_v1",
+      "run_file_tree_hash": "65c0601627eefcc2b44588d472c30ad098d14b115237af96b7af16ddcad2253c",
+      "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h3_f1_s42_v1\\units\\bdg2_h3_f1_s42_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "788beb085eda9a03276834f83300e35fbb71611a7d56d9074aafc8f90ac59afc",
+        "calibration.csv.gz": "bc1ed4a94e130edee4f5d4b315ed7c3d110f2e31e1f7628868aa280b1c07c66c",
+        "COMPLETE.json": "e12c2fbbf88e4d4769b9283b827e0133fd2f7be36cd3169dcfcc5e9ea08a4930",
+        "fitting_membership.csv.gz": "2a55e4aefc3105a7b848d8c9b63bb07af4f3da3d929dff937c686b76d584c835",
+        "model.ubj": "43d5ae2bd9173f7115fbe9b51c574efecf6958bf98db0649765656c95f0eb5dd",
+        "payload.json": "5b7695a9aa43a5df106272389bceeea5d4cd51ac3ed3792eac38a1183d2754d8",
+        "predictions.csv.gz": "12d41db8b563db89bade5c46160e7ef2287c61cabb594dcd8836d9e78c4aff05",
+        "training_history.csv.gz": "2d8918c3e6531532d6e6751162f711eb590c6012a565bb7e466f2f5f8c255814",
+        "tuning.csv.gz": "1217655a205080c7c3b5ccac19757f881f177e838e2554d44dd7727c23773123",
+        "tuning_predictions.csv.gz": "dbed9d1daf794538d0bdb4030ee3fdc3fe40111713ab19ec02c45d64563d2ef1"
+      },
+      "evaluated_commit": "c8173136fa2e531e457791f8df5f3fc50ecf2454",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\core_completion_125_v1_coordinator\\receipts\\bdg2_h3_f1_s42_v1\\audit_v1\\validation.json",
+      "historical_reuse": false
+    },
+    "6": {
+      "protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f1_s42_v1_core_completion_v1\\frozen_protocol.json",
+      "protocol_hash": "b84f501d2e055a22e83c4ad2a296e2d89b986e587233bf753b8309b2fd241ac0",
+      "original_protocol": "smart_building_conformal\\protocols\\matched_forecasting005\\bdg2_h6_f1_s42_v1_core_completion_v1\\frozen_protocol.json",
+      "original_protocol_hash": "b84f501d2e055a22e83c4ad2a296e2d89b986e587233bf753b8309b2fd241ac0",
+      "run": "smart_building_conformal/outputs/matched_forecasting005/bdg2_h6_f1_s42_v1",
+      "run_file_tree_hash": "a830f33d41c0e16c85e9316ae67031761aa31f80bf26479ab3244e36af5442e5",
+      "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+      "owner_directory": "smart_building_conformal\\outputs\\matched_forecasting005\\bdg2_h6_f1_s42_v1\\units\\bdg2_h6_f1_s42_xgboost",
+      "owner_hashes": {
+        "booster_config.json": "0e9c3738fdcff362c71766d909b029e3f56d7a9629790edc2d5fc3137e23ca5b",
+        "calibration.csv.gz": "f7a6eda44307c11b8f4275cd6b3f417862c6ffa7537ee26e624daa3ba7114b13",
+        "COMPLETE.json": "b7665858671c5ed3d5ea0bbd64c83720099fbc9f41f8213247d2e6ea8ba14407",
+        "fitting_membership.csv.gz": "772fa112897d3689de56bb44cab2c9f78b97e2545d38ce199e4873f2d22f3e53",
+        "model.ubj": "dfac4480456db5ec850881378553f4bb3fdb83a167707039da0a228521775579",
+        "payload.json": "93c41436698ff23fdaac2015dc6d1aa8d8f9c2fe9f4a5298c04b98a108e98822",
+        "predictions.csv.gz": "df54d9a7cf40cc2b805717892ef7d1a150eed41b2f45227815644b9b1941f544",
+        "training_history.csv.gz": "6b7c86deb572ade05b6fe257bf762bda8e0c4f5d478dcc46ae32d8706e35ffb5",
+        "tuning.csv.gz": "bb0e6388e38f68fe0182e8a098455649b45956c9c511c86107c0717a72433196",
+        "tuning_predictions.csv.gz": "4d61c6cfc167bd2ba62bb72bb8fe53db0a7c8a7ed2404c5e42db74d2bf012e35"
+      },
+      "evaluated_commit": "c8173136fa2e531e457791f8df5f3fc50ecf2454",
+      "acceptance_reference": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_forecasting005\\core_completion_125_v1_coordinator\\receipts\\bdg2_h6_f1_s42_v1\\audit_v1\\validation.json",
+      "historical_reuse": false
+    }
+  },
+  "support": {
+    "1": {
+      "data_hash": "fa848b25f5d2ffb553914a71627dd43e06a0209f876a4c92fe46cfd09cfb3a4b",
+      "roles": {
+        "fit": {
+          "n": 77682,
+          "membership_hash": "c61d0ce87333c6036353f5043be4d611484d01df556131b179fa36886e30a124",
+          "row_id_hash": "f4417d3de06dff4be913c74297a30f7a355a70b1c3ce4787282cad5b65ac9d38",
+          "origin_min": "2016-01-07 23:00:00",
+          "origin_max": "2016-11-28 15:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-11-28 16:00:00"
+        },
+        "calibration": {
+          "n": 26002,
+          "membership_hash": "3774890259ec0793a54689f2982a53890a212f20f2e6e36f991e42ee0fd1109c",
+          "row_id_hash": "0279fb765fd96b32167f13dc6a90fa6cb929738a01ee551f7fe6b06926492957",
+          "origin_min": "2016-11-28 17:00:00",
+          "origin_max": "2017-03-17 06:00:00",
+          "target_min": "2016-11-28 18:00:00",
+          "target_max": "2017-03-17 07:00:00"
+        },
+        "test": {
+          "n": 34532,
+          "membership_hash": "f2c4357ca265b1e18601ff28abb7f7e467f6b38d1dfce7780de59e268059325e",
+          "row_id_hash": "4db6c2b7916d5090baddb51977c7b31a2a9e18a6052a49186a774153b13a6a49",
+          "origin_min": "2017-03-17 08:00:00",
+          "origin_max": "2017-08-09 02:00:00",
+          "target_min": "2017-03-17 09:00:00",
+          "target_max": "2017-08-09 03:00:00"
+        },
+        "inner0_train": {
+          "n": 25658,
+          "membership_hash": "8ff1e3de0fca7927fb288f419e3563bffd95cf16da9a3c161023f9b9948cb1e2",
+          "row_id_hash": "86a6edee6781dd3b168513dc38b7d136591ab2e921ea51336d7c5f26d88c3a22",
+          "origin_min": "2016-01-07 23:00:00",
+          "origin_max": "2016-04-25 10:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-04-25 11:00:00"
+        },
+        "inner0_validation": {
+          "n": 25996,
+          "membership_hash": "fb86f291f2e99fa59b705fc7639cb55a3c9bc712b56be4cee8d1307a3a9d7a79",
+          "row_id_hash": "3f6d019b2c2a64fdd4acf1d9d7bfa90fe20049b9c48c26db5467e5e4dc684237",
+          "origin_min": "2016-04-25 12:00:00",
+          "origin_max": "2016-08-12 00:00:00",
+          "target_min": "2016-04-25 13:00:00",
+          "target_max": "2016-08-12 01:00:00"
+        },
+        "inner1_train": {
+          "n": 51654,
+          "membership_hash": "e8f744967dede1b64800de45e210ffb04f41bcbce897a4af8fff67dfb860f602",
+          "row_id_hash": "2dd249431441716a6d68caf342bfa9ad07e00255c482209205f0c93f6d6238fd",
+          "origin_min": "2016-01-07 23:00:00",
+          "origin_max": "2016-08-12 00:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-08-12 01:00:00"
+        },
+        "inner1_validation": {
+          "n": 26008,
+          "membership_hash": "449998e9a797cf2ad7b981dd4272d4488091f44fb20a45b8b874956e2f9a7dcc",
+          "row_id_hash": "0798bdf7cc372103837f5cbcc1163262f75751e55fa5f728b80dcc04973812c2",
+          "origin_min": "2016-08-12 02:00:00",
+          "origin_max": "2016-11-28 15:00:00",
+          "target_min": "2016-08-12 03:00:00",
+          "target_max": "2016-11-28 16:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_lag_24",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_24",
+        "target_rollstd_24",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "airTemperature",
+        "dewTemperature",
+        "target_was_missing",
+        "airTemperature_was_missing",
+        "dewTemperature_was_missing"
+      ],
+      "frequency": "0 days 01:00:00",
+      "available_by_role": {
+        "fit": 77682,
+        "calibration": 26002,
+        "test": 34532,
+        "inner0_train": 25658,
+        "inner0_validation": 25996,
+        "inner1_train": 51654,
+        "inner1_validation": 26008
+      },
+      "seasonal_available_by_role": {
+        "fit": 77682,
+        "calibration": 26002,
+        "test": 34532,
+        "inner0_train": 25658,
+        "inner0_validation": 25996,
+        "inner1_train": 51654,
+        "inner1_validation": 26008
+      }
+    },
+    "3": {
+      "data_hash": "9f5a2d248e63aadf2db9e2701591a2d16924b87085f18ded69819a86cfadad9c",
+      "roles": {
+        "fit": {
+          "n": 77642,
+          "membership_hash": "bc26a52c2cd92278e47813f8602921cb15f573793c5566a4412b8fb96b34c8e3",
+          "row_id_hash": "df7e90af28ac334a706d5f2e6f4f74b6bccae2e4068f647043199e32fc17715e",
+          "origin_min": "2016-01-07 21:00:00",
+          "origin_max": "2016-11-28 09:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-11-28 12:00:00"
+        },
+        "calibration": {
+          "n": 25992,
+          "membership_hash": "1b1a728474782130776d95baf6ee1aa897dd3fd5e5ad8e3f9b5f90b17dda47ed",
+          "row_id_hash": "ce2b16c29e364bdf860ab75228ad9c07939230262790b6d4972229b68245a811",
+          "origin_min": "2016-11-28 14:00:00",
+          "origin_max": "2017-03-17 02:00:00",
+          "target_min": "2016-11-28 17:00:00",
+          "target_max": "2017-03-17 05:00:00"
+        },
+        "test": {
+          "n": 34536,
+          "membership_hash": "414fbe698b05bc437e34a8bb0715cd644800d3b8059788d2fe04f2dc9212c2d1",
+          "row_id_hash": "bc304a101928ca0eecc5631ae0a417aa87f808274be4045f942bbf0d1d339e2c",
+          "origin_min": "2017-03-17 06:00:00",
+          "origin_max": "2017-08-09 00:00:00",
+          "target_min": "2017-03-17 09:00:00",
+          "target_max": "2017-08-09 03:00:00"
+        },
+        "inner0_train": {
+          "n": 25628,
+          "membership_hash": "0661d81968993b9dd8c70ca53b239fac0469d68e9b7bd2926c0401a68f65a25c",
+          "row_id_hash": "1e981b2154788a416fe78d882f09a2681b12f96178a440b782a0a71e2224f4f7",
+          "origin_min": "2016-01-07 21:00:00",
+          "origin_max": "2016-04-25 05:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-04-25 08:00:00"
+        },
+        "inner0_validation": {
+          "n": 25956,
+          "membership_hash": "b08abac9f6657ee9618c85efe679fa80598dc89c88138f32cd08cd95f119d142",
+          "row_id_hash": "f16944ce3dc98b840504e177410a5df1d4bcb63e88ab979a2538a7055bc56916",
+          "origin_min": "2016-04-25 09:00:00",
+          "origin_max": "2016-08-11 17:00:00",
+          "target_min": "2016-04-25 12:00:00",
+          "target_max": "2016-08-11 20:00:00"
+        },
+        "inner1_train": {
+          "n": 51584,
+          "membership_hash": "7e142879d9fa748e10060bd6aac21f3b02d2edcf39c160f39fcf8b3db7072e58",
+          "row_id_hash": "72c05071cca56041c94c4906a3c3ca74e18115d03f00e5a5215272dbc48d77df",
+          "origin_min": "2016-01-07 21:00:00",
+          "origin_max": "2016-08-11 17:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-08-11 20:00:00"
+        },
+        "inner1_validation": {
+          "n": 25998,
+          "membership_hash": "ca81f2a5d1e1fd94654b6b6d0925f5ad860b17185dc843a4f5f58ca04f02efa5",
+          "row_id_hash": "1f591a54c5bdc4e9ab327666e92f57b70099efd135df938736b2834d276ba1d2",
+          "origin_min": "2016-08-11 21:00:00",
+          "origin_max": "2016-11-28 09:00:00",
+          "target_min": "2016-08-12 00:00:00",
+          "target_max": "2016-11-28 12:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_lag_24",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_24",
+        "target_rollstd_24",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "airTemperature",
+        "dewTemperature",
+        "target_was_missing",
+        "airTemperature_was_missing",
+        "dewTemperature_was_missing"
+      ],
+      "frequency": "0 days 01:00:00",
+      "available_by_role": {
+        "fit": 77642,
+        "calibration": 25992,
+        "test": 34536,
+        "inner0_train": 25628,
+        "inner0_validation": 25956,
+        "inner1_train": 51584,
+        "inner1_validation": 25998
+      },
+      "seasonal_available_by_role": {
+        "fit": 77642,
+        "calibration": 25992,
+        "test": 34536,
+        "inner0_train": 25628,
+        "inner0_validation": 25956,
+        "inner1_train": 51584,
+        "inner1_validation": 25998
+      }
+    },
+    "6": {
+      "data_hash": "79cd64593080031680a39460f2948bf4cd4b4562c85f66f5d8f6565610b946b8",
+      "roles": {
+        "fit": {
+          "n": 77592,
+          "membership_hash": "d879f002216d85c82c3d828f5f9b87a9f4aa8c3d37d2bd03abdcbf836519a73e",
+          "row_id_hash": "4d3f2765266c193e55ecb0dba767d8ce8db2dc0f1327e84c00e39b727f744bec",
+          "origin_min": "2016-01-07 18:00:00",
+          "origin_max": "2016-11-28 01:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-11-28 07:00:00"
+        },
+        "calibration": {
+          "n": 25982,
+          "membership_hash": "88cf068f7e50fb074d54793f78dad884fc2d70d8589c710c333d667a11fb62d2",
+          "row_id_hash": "9ab0b294172b2efca99479e0c31340b2f19f17651daa09ccab2600e97d4d0d77",
+          "origin_min": "2016-11-28 09:00:00",
+          "origin_max": "2017-03-16 20:00:00",
+          "target_min": "2016-11-28 15:00:00",
+          "target_max": "2017-03-17 02:00:00"
+        },
+        "test": {
+          "n": 34542,
+          "membership_hash": "bae73ee6295ceff906e927fdff4a127189f14acbe39345a78b485e1d6772a642",
+          "row_id_hash": "f31af9d36b9364497694606a5a1a05f04f81672f32ab867e0a747652761209fd",
+          "origin_min": "2017-03-17 03:00:00",
+          "origin_max": "2017-08-08 21:00:00",
+          "target_min": "2017-03-17 09:00:00",
+          "target_max": "2017-08-09 03:00:00"
+        },
+        "inner0_train": {
+          "n": 25578,
+          "membership_hash": "b8c31e0cada2bf4caabd5223e43f1fa86eeb1048d40e387178cc1514462c7407",
+          "row_id_hash": "af13fffb1e16ee388a113300c7f397cfb1f9bef744f55ebfcf0c513456f6196c",
+          "origin_min": "2016-01-07 18:00:00",
+          "origin_max": "2016-04-24 21:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-04-25 03:00:00"
+        },
+        "inner0_validation": {
+          "n": 25916,
+          "membership_hash": "d65ae941d669016a70b071a3d02a9939ddb8eed5a6b7e85727b3d2f108eef1b3",
+          "row_id_hash": "295229ee4f5fbebbc1b969d461292703fb77ee8a71c067b2a4f738082e4c353f",
+          "origin_min": "2016-04-25 04:00:00",
+          "origin_max": "2016-08-11 08:00:00",
+          "target_min": "2016-04-25 10:00:00",
+          "target_max": "2016-08-11 14:00:00"
+        },
+        "inner1_train": {
+          "n": 51494,
+          "membership_hash": "ef9646ae4e6085ed056d41dc98b3569df29b027561df9c3af2ed53efbbe968cf",
+          "row_id_hash": "68da5476eab19172364d7648a731cc6be6bc68bc602a8049922f2466d20d363d",
+          "origin_min": "2016-01-07 18:00:00",
+          "origin_max": "2016-08-11 08:00:00",
+          "target_min": "2016-01-08 00:00:00",
+          "target_max": "2016-08-11 14:00:00"
+        },
+        "inner1_validation": {
+          "n": 25978,
+          "membership_hash": "1d7c3c912e310a067c1b08129508095795f845ea1846a8a8d284f46b77a1884f",
+          "row_id_hash": "948d1555e881596980cd339e9a379166014fa2b7d96fd7f973b3480602e0fc52",
+          "origin_min": "2016-08-11 15:00:00",
+          "origin_max": "2016-11-28 01:00:00",
+          "target_min": "2016-08-11 21:00:00",
+          "target_max": "2016-11-28 07:00:00"
+        }
+      },
+      "features": [
+        "target_lag_0",
+        "target_lag_1",
+        "target_lag_2",
+        "target_lag_3",
+        "target_lag_6",
+        "target_lag_12",
+        "target_lag_24",
+        "target_daily_lag",
+        "target_weekly_lag",
+        "target_rollmean_6",
+        "target_rollstd_6",
+        "target_rollmean_24",
+        "target_rollstd_24",
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos",
+        "airTemperature",
+        "dewTemperature",
+        "target_was_missing",
+        "airTemperature_was_missing",
+        "dewTemperature_was_missing"
+      ],
+      "frequency": "0 days 01:00:00",
+      "available_by_role": {
+        "fit": 77592,
+        "calibration": 25982,
+        "test": 34542,
+        "inner0_train": 25578,
+        "inner0_validation": 25916,
+        "inner1_train": 51494,
+        "inner1_validation": 25978
+      },
+      "seasonal_available_by_role": {
+        "fit": 77592,
+        "calibration": 25982,
+        "test": 34542,
+        "inner0_train": 25578,
+        "inner0_validation": 25916,
+        "inner1_train": 51494,
+        "inner1_validation": 25978
+      }
+    }
+  },
+  "joint_support": {
+    "fit": 77542,
+    "calibration": 25902,
+    "test": 34492
+  },
+  "method_specification": {
+    "version": "matched_intervals005_native_and_causal_v1",
+    "seed": 42,
+    "cqr": {
+      "factory": "src.conformal_cqr._quantile_estimator + MAPIE ConformalizedQuantileRegressor",
+      "estimator_parameters": {
+        "categorical_features": "warn",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 0.0,
+        "learning_rate": 0.05,
+        "loss": "quantile",
+        "max_bins": 255,
+        "max_depth": null,
+        "max_features": 1.0,
+        "max_iter": 300,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 50,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 42,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "wrapper_parameters": {
+        "confidence_levels": [
+          0.9,
+          0.95
+        ],
+        "prefit": false
+      },
+      "objects_per_horizon": 2,
+      "estimators_per_object": 3,
+      "sharing": "uncalibrated/CQR share exact raw lower/upper/median owner; levels have distinct objects",
+      "score": "native static: separate raw_lower-y and y-raw_upper tail scores; method-preserving online replay: max(raw_lower-y,y-raw_upper)",
+      "native_quantile": "asymmetric native tails: numpy.quantile(each tail score, (1-(1-level)/2)*(1+1/n), method=higher); MAPIE 1.4.1",
+      "native_predict_parameters": {
+        "symmetric_correction": false
+      },
+      "crossing": "retain raw pair; order only emitted pair"
+    },
+    "enbpi": {
+      "factory": "src.interval_stream.IntervalEstimator resolved MAPIE TimeSeriesRegressor",
+      "base_class": "xgboost.sklearn.XGBRegressor",
+      "base_parameters": {
+        "objective": "reg:squarederror",
+        "base_score": null,
+        "booster": null,
+        "callbacks": null,
+        "colsample_bylevel": null,
+        "colsample_bynode": null,
+        "colsample_bytree": 0.8,
+        "device": null,
+        "early_stopping_rounds": null,
+        "enable_categorical": false,
+        "eval_metric": null,
+        "feature_types": null,
+        "feature_weights": null,
+        "gamma": null,
+        "grow_policy": null,
+        "importance_type": null,
+        "interaction_constraints": null,
+        "learning_rate": 0.05,
+        "max_bin": null,
+        "max_cat_threshold": null,
+        "max_cat_to_onehot": null,
+        "max_delta_step": null,
+        "max_depth": 5,
+        "max_leaves": null,
+        "min_child_weight": null,
+        "missing": NaN,
+        "monotone_constraints": null,
+        "multi_strategy": null,
+        "n_estimators": 60,
+        "n_jobs": 1,
+        "num_parallel_tree": null,
+        "random_state": 42,
+        "reg_alpha": null,
+        "reg_lambda": null,
+        "sampling_method": null,
+        "scale_pos_weight": null,
+        "subsample": 0.8,
+        "tree_method": "hist",
+        "validate_parameters": null,
+        "verbosity": null
+      },
+      "bootstrap": {
+        "n_resamplings": 5,
+        "length": 24,
+        "overlapping": true,
+        "random_state": 42
+      },
+      "wrapper": {
+        "method": "enbpi",
+        "agg_function": "mean",
+        "random_state": 42,
+        "n_jobs": 1
+      },
+      "sharing": "static/updated and both nominal levels share exact final calibrated owner; updates never mutate it",
+      "operations": "fit: full-data estimator plus five training bootstraps; explicit conformalize: five calibration bootstraps; verify synthetic actual ledger before real freeze",
+      "native_score": "installed MAPIE conformity score with OOB predictions; retain nonfinite OOB score counts explicitly",
+      "native_interval": "original _recentered_intervals; native offsets shifted from ensemble to full-fit point; no test-truth fitting",
+      "updated_policy": {
+        "version": "amendment004_method_preserving_native_updated_v1",
+        "score": "signed observed-minus-own-full-fit-point",
+        "every": 1,
+        "window": null,
+        "min_samples": 50,
+        "initialization": "fixed pre-test same-group calibration history, otherwise fixed whole historical pool; global supported quantiles as initial hold",
+        "quantile": "lower floor((n+1)*(1-level)/2+1e-12), upper ceil((n+1)*(1-(1-level)/2)-1e-12), one-indexed; no interpolation",
+        "group_policy": "isolated original group and contiguous segment; reset to fixed historical calibration",
+        "legacy_difference": "legacy updated EnbPI used interpolated numpy quantiles/min_samples1; this named adapter preserves amendment004 ranks/min_samples50; no bit-identity claim"
+      }
+    },
+    "dscp": {
+      "factory": "src.conformal_dscp.fit_dscp",
+      "max_clusters": 6,
+      "ks_threshold": 0.05,
+      "neighbours": null,
+      "gamma": 1.0,
+      "seed": 42,
+      "silhouette_sample": 2000,
+      "n_init": 10,
+      "score": "signed y-yhat",
+      "quantile": "numpy.quantile default linear on fixed cluster/merged-step error pool",
+      "assignment": "soft-DTW to all calibration predicted sequences; smallest-cluster-size neighbours; argpartition then majority/lowest-index tie",
+      "assignment_batch_size": 64,
+      "minimum_calibration": 400,
+      "owner": "verified historical matched XGBoost direct horizon artifacts",
+      "labels": [
+        "direct_horizon_adaptation",
+        "from_paper_implementation"
+      ],
+      "test_truth_used_for_fit": false
+    },
+    "replay": {
+      "calibration_minimum": 400,
+      "update_minimum": 50,
+      "release": "compare matured observation to its immutable issued bounds before release; target_time <= current origin; available readings only",
+      "static": "uncalibrated/CQR/static EnbPI/DSCP keep native static construction",
+      "availability": "original target_was_missing and finite source observation; imputed does not imply observed"
+    },
+    "alert": {
+      "rule": "immediate_single_sample",
+      "k": 1,
+      "m": 1,
+      "sampling_frequency": "0 days 01:00:00",
+      "events": "empty; background workload only; no recall/F1/delay/primary feasibility"
+    },
+    "references": {
+      "cqr": "https://arxiv.org/abs/1905.03222",
+      "enbpi": "https://proceedings.mlr.press/v139/xu21h.html",
+      "dscp": "https://arxiv.org/abs/2503.21251",
+      "mapie": "https://mapie.readthedocs.io/en/stable/"
+    }
+  },
+  "seasonal_alias_source": null,
+  "inputs": {
+    "smart_building_conformal\\outputs\\amendment005\\study_plan_v1\\interval_method_matrix.csv": "5b9f8321fa75ed778c8fc12789f2e9507f2a374121dc1cc867822f6b7c13f0a4",
+    "smart_building_conformal\\outputs\\amendment005\\study_plan_v1\\seasonal_execution_queue.csv": "64ce19c1c59c6ed0e3397a1de30ffcf5b2d00a603aeb604337d5dea6668fba41",
+    "smart_building_conformal\\outputs\\matched_forecasting005\\core_completion_195_v1_analysis\\cumulative_completion_reuse_ledger.csv": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+    "smart_building_conformal\\outputs\\amendment005\\support_final_checks_v1\\dscp_joint_origin_support.csv": "e2ad8c1f181de98152fcc22f619f0a9f21938befa58a5d65c7e7a0fd4f7fb819",
+    "smart_building_conformal\\outputs\\amendment005\\support_final_checks_v1\\dscp_joint_origin_membership.csv.gz": "176e5d10ab4d44568ddc736aeebd8886545b0e5921190bea1159b0d66bf59feb",
+    "review\\matched_intervals_seasonal005_completion_20260924\\remaining_scope.csv": "fb3021cd4967035237d4eb629f32157dd143fe679a93286ea666f96538b31a94",
+    "review\\matched_intervals_seasonal005_completion_20260924\\AUTHORIZATION.json": "917ae5eaefb676f742635a07287012954e44814da129e88cd9022ff58d119c92",
+    "review\\matched_intervals005_bdg2_20260914\\SYNTHETIC_ACCEPTANCE.json": "6264f72690a14f3809e2f879467aea79a6a0b9d0d6264077966a18096f88ad41"
+  },
+  "design_hashes": {
+    "joint_calibration.csv.gz": "058c88cfa7406a26c4217177dde7cd8b7cb6450f34e801dc41b4db211bff11d7",
+    "joint_fit.csv.gz": "7280198322b3f2fd407138e23af02d8e67d1da04c1a5d8c07b952c8d66a9d70f",
+    "joint_test.csv.gz": "27b57d16ce52d976269aabed8784770a4d81c548d9ac7e26fc75f8fc11f6edab",
+    "method_specification.json": "559e0a91067dc96ea85a1c7e392467855668f0249c10801b9d92c10b9bf6b687",
+    "native_membership.csv.gz": "d48820ce96b061e13e19e383318fadade0b2e2bfc2ffa437cc9a7501f8c4a49f",
+    "scope.csv": "08268051b30fbce86b3063cd9dbe8024cd72cedacbb85847a027b14a1c72d92c"
+  },
+  "expected_operations": {
+    "cqr_wrapper_fit": 6,
+    "quantile_estimator_fit": 18,
+    "enbpi_wrapper_fit": 3,
+    "xgboost_estimator_fit": 33,
+    "random_forest_estimator_fit": 0,
+    "dscp_calibrator_fit": 1,
+    "kmeans_candidate_fit": 5,
+    "calibrator_conformalize": 18
+  },
+  "expected_cells": {
+    "interval_method": 30,
+    "seasonal_point": 3,
+    "seasonal_interval": 6,
+    "seasonal_not_applicable": 0,
+    "alert_streams": 30
+  },
+  "resource_policy": {
+    "device": "cpu",
+    "threads": 1,
+    "n_jobs": 1,
+    "batch_size": 256,
+    "launch_ram_reference_bytes": 3221225472,
+    "nonblocking_launch_ram": true,
+    "epoch_floor_bytes": 268435456,
+    "disk_floor_bytes": 8589934592
+  },
+  "tolerances": {
+    "prediction_atol": 1e-07,
+    "prediction_rtol": 1e-07,
+    "metric_atol": 1e-10,
+    "metric_rtol": 1e-12
+  },
+  "frozen_utc": "2026-09-23T19:30:49.309650+00:00",
+  "freeze_resources": {
+    "seconds": 45.14788289999706,
+    "baseline_rss_bytes": 329195520,
+    "peak_rss_bytes": 868982784,
+    "baseline_private_bytes": 286257152,
+    "peak_private_bytes": 1000554496,
+    "incremental_peak_rss_bytes": 539787264,
+    "lifetime_peak_rss_bytes": 1038053376,
+    "min_available_ram_bytes": 6704320512,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 44.765625
+  },
+  "models_fitted": 0,
+  "full_study_ready": false
+}

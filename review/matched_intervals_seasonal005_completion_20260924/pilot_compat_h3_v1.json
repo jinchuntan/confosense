@@ -1,0 +1,365 @@
+{
+  "version": "matched_intervals_seasonal005_completion_v1_pilot_owner_compat_v1",
+  "original_protocol": "smart_building_conformal\\protocols\\model_comparison_pilot_v1\\frozen_protocol.json",
+  "original_protocol_hash": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3",
+  "historical_source_identity": "965ff02d8cb67183210632bfbc3a2251c430a2b027b8b44d87df356fd19e3d71",
+  "source_hash": "965ff02d8cb67183210632bfbc3a2251c430a2b027b8b44d87df356fd19e3d71",
+  "input_hashes": {
+    "protocols\\model_comparison_pilot_v1\\frozen_protocol.json": "af29d2340427f043c605f777e54389bc86ccbb44c9630aba57964536d0845ce3",
+    "protocols\\model_comparison_pilot_v1\\membership.csv.gz": "4a3d5d9902d5332d396f6feffe00ab7fdf931aadd39f33bbd1164bf26cc6cf9d",
+    "protocols\\model_comparison_pilot_v1\\boundaries.csv": "8e4c7fd316eab987a7974174b5d440491baec91f7119c62270d25e8affed72c1"
+  },
+  "original_config_file_hash": "fd896757796d1cd41f7878ff8dd8004b65d1408a83c4fda0f045ec9955184723",
+  "current_config_file_hash": "8869fd2d20cb63f31968c61fdcbd7db4bddfe935940d372f7faa0e83d8d09857",
+  "original_config_file_changed_since_pilot": true,
+  "config": {
+    "dataset": "pleia",
+    "horizon": 3,
+    "outer_fold": 0,
+    "model_seed": 42,
+    "sequence_length": 24
+  },
+  "resolved_dataset_config": {
+    "seed": 42,
+    "paths": {
+      "raw_dir": "data/raw",
+      "interim_dir": "data/interim",
+      "processed_dir": "data/processed"
+    },
+    "split": {
+      "train_frac": 0.6,
+      "calib_frac": 0.2
+    },
+    "missing": {
+      "max_short_gap_steps": 3
+    },
+    "coverage_levels": [
+      0.9,
+      0.95,
+      0.975,
+      0.99,
+      0.995
+    ],
+    "features": {
+      "target_lags": [
+        1,
+        2,
+        3,
+        6,
+        12
+      ],
+      "rolling_windows": [
+        6,
+        144
+      ],
+      "include_weekly": true,
+      "target_lags_include_zero": true
+    },
+    "models": {
+      "xgboost": {
+        "search_iter": 20,
+        "cv_splits": 3,
+        "seeds": 5,
+        "refit_n_jobs": 1,
+        "search_n_jobs": -1
+      },
+      "lstm": {
+        "seq_len": 24,
+        "hidden_size": 64,
+        "dropout": 0.2,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "max_epochs": 30,
+        "patience": 5,
+        "val_fraction": 0.2,
+        "seeds": 3
+      }
+    },
+    "conformal": {
+      "cqr": {
+        "seeds": 5
+      },
+      "enbpi": {
+        "n_resamplings": 20,
+        "block_length": 48,
+        "base_n_estimators": 200,
+        "base_max_depth": 5,
+        "base_learning_rate": 0.05,
+        "update_step": 48,
+        "seeds": 3,
+        "n_jobs": 4
+      },
+      "dscp": {
+        "max_clusters": 6,
+        "ks_threshold": 0.05,
+        "neighbours": null,
+        "gamma": 1.0
+      }
+    },
+    "alerts": {
+      "primary_method": "cqr",
+      "primary_level": 0.95,
+      "detection_tolerance_steps": 6,
+      "max_false_alerts_per_day": 1.0,
+      "candidate_rules": [
+        "1-of-1",
+        "2-of-3",
+        "3-of-5",
+        "4-of-7"
+      ],
+      "selection": {
+        "calibration_conformal_fraction": 0.6,
+        "min_samples_per_block": 200
+      },
+      "events": {
+        "instances_per_type": 3,
+        "spike_sds": [
+          4.0
+        ],
+        "bias_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "bias_steps": 18,
+        "level_shift_sds": [
+          0.5,
+          1.0,
+          2.0
+        ],
+        "level_shift_steps": 12,
+        "drift_sds": [
+          1.0,
+          2.0
+        ],
+        "drift_steps": 36,
+        "stuck_steps": 18,
+        "dropout_steps": 12,
+        "warmup_steps": 6,
+        "guard_steps": 6
+      },
+      "primary_level_selected_on_inner": true,
+      "rules_are_physical_time": true,
+      "primary_horizon": 1
+    },
+    "recalibration": {
+      "recovery_block": 144,
+      "grid": {
+        "update_every": [
+          24,
+          48,
+          144
+        ],
+        "window": [
+          250,
+          500,
+          1000
+        ],
+        "min_samples": 50
+      }
+    },
+    "robustness": {
+      "modes": [
+        "legacy_fixed_intervals",
+        "closed_loop"
+      ],
+      "random_missing": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "block_missing": [
+        0.05,
+        0.1
+      ],
+      "block_steps": 12,
+      "bias_sds": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "level_shift_sds": [
+        1.0,
+        2.0
+      ],
+      "drift_sds": [
+        1.0,
+        2.0
+      ],
+      "stuck_fractions": [
+        0.05
+      ],
+      "dropout_fractions": [
+        0.05
+      ],
+      "calibration_contamination": [
+        0.01,
+        0.05,
+        0.1
+      ]
+    },
+    "bootstrap": {
+      "n_boot": 2000,
+      "ci": 0.95
+    },
+    "plotting": {
+      "window_steps": 144
+    },
+    "adapter": "pleia",
+    "target_kind": "temperature",
+    "horizons": [
+      1,
+      3,
+      6
+    ],
+    "resample": {
+      "freq": "10min",
+      "season_steps": 144
+    },
+    "outliers": {
+      "target_min": 15.0,
+      "target_max": 40.0
+    },
+    "dataset": {
+      "zenodo_record_id": "7620136",
+      "room_all_file": "Data_Nature/processed_data/data-room10T-all.csv",
+      "csv_sep": ";",
+      "timestamp_col": "Date",
+      "block_col": "block",
+      "room_col": "room",
+      "target_var": "V2"
+    },
+    "target_selection": {
+      "min_std": 0.5,
+      "min_valid_obs": 5000
+    },
+    "covariates": {
+      "outdoor_temp": "tmed",
+      "humidity": "hrmed",
+      "radiation": "radmed",
+      "hvac_state": "V4",
+      "setpoint": "V12",
+      "hvac_mode_onehot": [
+        "V5_0",
+        "V5_1",
+        "V5_2"
+      ]
+    }
+  },
+  "support": {
+    "data_hash": "d9952ed2b0af11ec34f4cb849c9c45e91f7c74a3cdaa2393e449e2715e7f934c",
+    "roles": {
+      "fit": {
+        "n": 29715,
+        "membership_hash": "d245653f52ba66016741583cf542612b29fde554e261b4f0fa6270f760dc7ada",
+        "row_id_hash": "47aacd6ad88c805dc3cb9e2dbfec0440b139095b9e1d7eebe18d99e23e82e83b",
+        "origin_min": "2021-01-07 23:40:00",
+        "origin_max": "2021-08-02 08:00:00",
+        "target_min": "2021-01-08 00:10:00",
+        "target_max": "2021-08-02 08:30:00"
+      },
+      "calibration": {
+        "n": 9906,
+        "membership_hash": "7b1e40754283d2d9c9144efbcdb44852c434152aaa2b63b8b7442cb618548a5f",
+        "row_id_hash": "9ac7f4a49319efe4e8b60323c2b02865521335b53ce94ef9a75d62cc77f2ea96",
+        "origin_min": "2021-08-02 08:50:00",
+        "origin_max": "2021-10-10 03:40:00",
+        "target_min": "2021-08-02 09:20:00",
+        "target_max": "2021-10-10 04:10:00"
+      },
+      "test": {
+        "n": 9907,
+        "membership_hash": "2c56104e38d2b03ffb6873b914346890d589bc0240acd42fd31d3b6d068570b6",
+        "row_id_hash": "2224bcc28a343573d83568d964edaeb53cfd91dea82cb5667b6715ffc66eb13c",
+        "origin_min": "2021-10-10 04:20:00",
+        "origin_max": "2021-12-17 23:20:00",
+        "target_min": "2021-10-10 04:50:00",
+        "target_max": "2021-12-17 23:50:00"
+      },
+      "inner0_train": {
+        "n": 9902,
+        "membership_hash": "224c212938ebf4d74fdaf10c4d17a4e36f964f91f8692efea4610e7ad1dfe608",
+        "row_id_hash": "11a5b766ccfe191c250f8e9881ae4d83f6fd7d28e844b4013a4e8b281bf7e072",
+        "origin_min": "2021-01-07 23:40:00",
+        "origin_max": "2021-03-17 17:50:00",
+        "target_min": "2021-01-08 00:10:00",
+        "target_max": "2021-03-17 18:20:00"
+      },
+      "inner0_validation": {
+        "n": 9902,
+        "membership_hash": "db263981b40846508d608885a705bb8098d7e7d2818e46895735c7ca57b7af84",
+        "row_id_hash": "f57227f815477b175e308c4a6ee30b6a2d2919629718285c9bb29a0d7e5ce9aa",
+        "origin_min": "2021-03-17 18:30:00",
+        "origin_max": "2021-05-25 12:40:00",
+        "target_min": "2021-03-17 19:00:00",
+        "target_max": "2021-05-25 13:10:00"
+      },
+      "inner1_train": {
+        "n": 19804,
+        "membership_hash": "11f2a12231f4b8e50d3deb7d0cc3f02ac16673c23f8ab4f76efcc896f9935227",
+        "row_id_hash": "a250d9b51150896f9865a37187a1f73918474225f9fd514679d376c3b66db1e7",
+        "origin_min": "2021-01-07 23:40:00",
+        "origin_max": "2021-05-25 12:40:00",
+        "target_min": "2021-01-08 00:10:00",
+        "target_max": "2021-05-25 13:10:00"
+      },
+      "inner1_validation": {
+        "n": 9905,
+        "membership_hash": "0aeaba3bd737827b3212fd827591840a37eb9240cd8fc4e0f997dea2140ceedc",
+        "row_id_hash": "8e8e113845d29804111c66a3dc99d8860f6dce9b97424ca23a29c6752c4ccb3d",
+        "origin_min": "2021-05-25 13:20:00",
+        "origin_max": "2021-08-02 08:00:00",
+        "target_min": "2021-05-25 13:50:00",
+        "target_max": "2021-08-02 08:30:00"
+      }
+    },
+    "role_bank_hash": "cde97dc58725844b7e46b83147c5f50fc26dfd453ef5fbe1a82ee8c14cc7c4a0",
+    "feature_names": [
+      "target_lag_0",
+      "target_lag_1",
+      "target_lag_2",
+      "target_lag_3",
+      "target_lag_6",
+      "target_lag_12",
+      "target_daily_lag",
+      "target_weekly_lag",
+      "target_rollmean_6",
+      "target_rollstd_6",
+      "target_rollmean_144",
+      "target_rollstd_144",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "V4",
+      "V12",
+      "V5_0",
+      "V5_1",
+      "V5_2",
+      "target_was_missing",
+      "tmed_was_missing",
+      "hrmed_was_missing",
+      "radmed_was_missing",
+      "V12_was_missing"
+    ],
+    "sequence_channels": [
+      "target",
+      "tmed",
+      "hrmed",
+      "radmed",
+      "V4",
+      "V12",
+      "V5_0",
+      "V5_1",
+      "V5_2",
+      "hour_sin",
+      "hour_cos",
+      "dow_sin",
+      "dow_cos"
+    ]
+  },
+  "membership_equality": "all pilot roles and rows, exact ordered identity"
+}
