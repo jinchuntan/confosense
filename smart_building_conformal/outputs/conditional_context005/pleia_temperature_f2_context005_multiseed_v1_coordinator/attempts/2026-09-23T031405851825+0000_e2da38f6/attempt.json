@@ -1,0 +1,53 @@
+{
+  "task": "final/package_raw",
+  "attempt_id": "2026-09-23T031405851825+0000_e2da38f6",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_multiseed_20260923\\pack_evidence.py"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-23T03:14:05.851825+00:00",
+  "ended_utc": "2026-09-23T03:42:23.030052+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-23T031405851825+0000_e2da38f6\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-23T031405851825+0000_e2da38f6\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 24712,
+    "created": 134346068458584900,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 24712,
+  "process_family": [
+    {
+      "pid": 22368,
+      "created": 134346068459227292,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 12548,
+      "created": 134346068458662166,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 25732,
+      "created": 134346068459299199,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    },
+    {
+      "pid": 24712,
+      "created": 134346068458584900,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    }
+  ],
+  "worker_identity": {
+    "pid": 22368,
+    "created": 134346068459227292,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-23T031405851825+0000_e2da38f6\\command.log.json",
+  "seconds": 1697.1084087000054,
+  "child_pid": 22368
+}

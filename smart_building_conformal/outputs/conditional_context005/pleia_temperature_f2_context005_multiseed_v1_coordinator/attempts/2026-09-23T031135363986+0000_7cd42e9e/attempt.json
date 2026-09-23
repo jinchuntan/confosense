@@ -1,0 +1,40 @@
+{
+  "task": "seed_46/verify",
+  "attempt_id": "2026-09-23T031135363986+0000_7cd42e9e",
+  "argv": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_multiseed_20260923\\verify_unit.py",
+    "--seed",
+    "46"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-23T03:11:35.363986+00:00",
+  "ended_utc": "2026-09-23T03:11:39.474824+00:00",
+  "exit_code": 0,
+  "status": "passed",
+  "log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-23T031135363986+0000_7cd42e9e\\command.log",
+  "attempt_record": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-23T031135363986+0000_7cd42e9e\\attempt.json",
+  "previous_attempt": null,
+  "logger_identity": {
+    "pid": 22952,
+    "created": 134346066953720464,
+    "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+  },
+  "logger_pid": 22952,
+  "process_family": [
+    {
+      "pid": 22952,
+      "created": 134346066953720464,
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe"
+    },
+    {
+      "pid": 13264,
+      "created": 134346066953808691,
+      "executable": "C:\\Users\\nigel\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+    }
+  ],
+  "logger_receipt": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\attempts\\2026-09-23T031135363986+0000_7cd42e9e\\command.log.json",
+  "seconds": 4.021458599992911,
+  "child_pid": 15628
+}

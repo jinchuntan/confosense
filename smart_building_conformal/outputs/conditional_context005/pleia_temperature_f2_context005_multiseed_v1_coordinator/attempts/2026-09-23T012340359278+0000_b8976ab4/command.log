@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T01:23:42.996348+00:00",
+  "model_seed": 45,
+  "dataset": "pleia",
+  "protocol_sha256": "582b8fc10c45f8f73729daf64711de5860ba1e70a6b836cb480ae0b3109a6771",
+  "complete_sha256": "64bfb8f8c70be373e5ef7fd53a925f7ce69a9f25a9c04ef794a1228f5bc14568",
+  "declared_files": 127161,
+  "operation_counts": {
+    "cqr_wrapper_fit": 1,
+    "quantile_estimator_fit": 3,
+    "calibrator_conformalize": 2
+  },
+  "logical_conformalizations": 1,
+  "persistence_radius_computations": 1,
+  "native_estimator_random_states": [
+    45,
+    45,
+    45
+  ],
+  "owner_sha256": "ca2572d89145c5a9cec546da009ab5e4a52b5f3b0875697f42775bf82df21dda",
+  "full_validation_passed": true,
+  "validation_assertions": 271920,
+  "validation_violations": 0,
+  "completed_resume_zero_fit": true,
+  "scientific_artifacts_unchanged": true
+}

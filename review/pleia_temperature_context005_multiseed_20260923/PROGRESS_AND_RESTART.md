@@ -1,7 +1,7 @@
 # Temperature seeds 43--46 durable progress
 
-Updated UTC: 2026-09-22T20:18:55.721039+00:00.
-Status: **frozen_no_fits**.
+Updated UTC: 2026-09-23T03:42:34.434791+00:00.
+Status: **science_and_evidence_complete**.
 
 Restart the sole coordinator from the repository root:
 
@@ -20,3 +20,23 @@ The exclusive lock prevents duplicate coordinators. Passed tasks are reused; kno
 - seed_46/freeze: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T201725131668+0000_d6e8c47a\command.log.json`.
 - seed_46/readiness: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T201740291250+0000_6cc409a5\command.log.json`.
 - batch/preflight: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T201750459149+0000_7e5d8e55\command.log.json`.
+- seed_43/run: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T202001671546+0000_e5399220\command.log.json`.
+- seed_43/validate: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T205005274607+0000_d076df3d\command.log.json`.
+- seed_43/resume: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T215733756740+0000_ab98ed5f\command.log.json`.
+- seed_43/verify: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T220149319702+0000_d1640d4d\command.log.json`.
+- seed_44/run: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T220154387929+0000_3a22a9e3\command.log.json`.
+- seed_44/validate: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T223022675559+0000_da92b2e8\command.log.json`.
+- seed_44/resume: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T233811538151+0000_30172108\command.log.json`.
+- seed_44/verify: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T234227125373+0000_5890a5ae\command.log.json`.
+- seed_45/run: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-22T234232188276+0000_2fd7cf24\command.log.json`.
+- seed_45/validate: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T001115587679+0000_d9d78403\command.log.json`.
+- seed_45/resume: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T011914753123+0000_fea6347b\command.log.json`.
+- seed_45/verify: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T012340359278+0000_b8976ab4\command.log.json`.
+- seed_46/run: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T012345431861+0000_0bbbc785\command.log.json`.
+- seed_46/validate: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T015259030959+0000_453195ce\command.log.json`.
+- seed_46/resume: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T030714727652+0000_b0636b77\command.log.json`.
+- seed_46/verify: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T031135363986+0000_7cd42e9e\command.log.json`.
+- final/analyze: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T031140426385+0000_02129d12\command.log.json`.
+- final/validate_aggregate: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T031355779950+0000_6f08671e\command.log.json`.
+- final/package_raw: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T031405851825+0000_e2da38f6\command.log.json`.
+- final/update_documents: passed; exit 0; receipt `C:\Users\nigel\OneDrive\Desktop\GitHub\confosense\smart_building_conformal\outputs\conditional_context005\pleia_temperature_f2_context005_multiseed_v1_coordinator\attempts\2026-09-23T034224351742+0000_5e3cf8fd\command.log.json`.

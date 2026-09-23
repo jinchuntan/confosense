@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T03:42:28.162075+00:00",
+  "branch": "review/pleia-temperature-context005-seeds43-46-execution-20260923",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "completed_new_seeds": [
+    43,
+    44,
+    45,
+    46
+  ],
+  "accepted_all_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "seed42_reused_without_rerun": true,
+  "contexts": 68,
+  "schedules_per_seed": 2856,
+  "new_event_records": 685440,
+  "total_event_records": 856800,
+  "aggregate_cells": 60,
+  "supported_bounds": 56,
+  "unavailable_bounds": 4,
+  "full_validation_all_new_seeds": true,
+  "completed_resume_zero_fit_all_new_seeds": true,
+  "new_operation_totals": {
+    "cqr_wrapper_fit": 4,
+    "quantile_estimator_fit": 12,
+    "nested_calibrator_conformalize": 8,
+    "logical_conformalizations": 4,
+    "persistence_radius_computations": 4,
+    "persistence_learned_fits": 0
+  },
+  "run_wall_hours": 1.9393511284722222,
+  "validation_wall_hours": 4.623118533277779,
+  "all_recorded_phase_wall_hours": 6.869076969388884,
+  "peak_family_working_set_bytes": 888811520,
+  "minimum_disk_free_bytes": 99569369088,
+  "raw_archive_parts": 40,
+  "raw_archive_bytes": 2197204899,
+  "scientific_source_changed": false,
+  "matched_forecasting_complete": 70,
+  "interval_quality_complete": 250,
+  "seasonal_unique_complete": 9,
+  "full_study_ready": false
+}

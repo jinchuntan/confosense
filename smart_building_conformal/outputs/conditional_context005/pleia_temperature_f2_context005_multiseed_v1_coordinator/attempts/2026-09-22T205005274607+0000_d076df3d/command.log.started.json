@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:/cfs_venv/Scripts/python.exe",
+    "-B",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py",
+    "--design",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s43_C_v1",
+    "--run",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s43_C_v1",
+    "--output",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\seed_43_validation",
+    "--expected-dataset",
+    "pleia",
+    "--expected-fold",
+    "2",
+    "--expected-horizon",
+    "1",
+    "--expected-seed",
+    "43"
+  ],
+  "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+  "started_utc": "2026-09-22T20:50:05.350126+00:00",
+  "logger_pid": 25092,
+  "child_pid": 8380,
+  "status": "started",
+  "exit_status": null
+}

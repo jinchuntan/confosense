@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T03:13:49.640242+00:00",
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "model_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "new_model_seeds": [
+    43,
+    44,
+    45,
+    46
+  ],
+  "seed42_reused_without_rerun": true,
+  "contexts": 68,
+  "contexts_not_pseudoreplicated": 68,
+  "schedules_per_seed": 2856,
+  "event_records": 856800,
+  "seed_specific_macro_cells": 300,
+  "aggregate_cells": 60,
+  "contribution_validation": {
+    "passed": true,
+    "rows": 420300,
+    "keys": 84060,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "minimum_effective_slots": 1,
+    "maximum_effective_slots": 2
+  },
+  "event_support_invariant": true,
+  "inference_status_counts": {
+    "supported": 56,
+    "unavailable_valid_draw_or_degenerate": 4
+  },
+  "draw_hash": "044acd76e2c01d5abd437cb5c12e9744c158d3ec3e7e7f13be94e3452fc11bae",
+  "draws": 2000,
+  "new_operation_totals": {
+    "cqr_wrapper_fit": 4,
+    "quantile_estimator_fit": 12,
+    "nested_calibrator_conformalize": 8,
+    "logical_conformalizations": 4,
+    "persistence_radius_computations": 4,
+    "persistence_learned_fits": 0
+  },
+  "matched_forecasting_complete": 70,
+  "interval_quality_complete": 250,
+  "seasonal_unique_complete": 9,
+  "full_study_ready": false
+}

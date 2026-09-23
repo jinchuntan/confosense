@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "utc": "2026-09-22T20:17:53.861379+00:00",
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "seeds": [
+    43,
+    44,
+    45,
+    46
+  ],
+  "manifests": [
+    {
+      "model_seed": 43,
+      "manifest_sha256": "23108f26a2f647197ba5c5ee26da791eb2d1cc937a825269c48f6dc9902df0e4",
+      "protocol_sha256": "403ae635b7b2325bcb7ab8bdc680e765a8e657df167213a856d8fd0f3346a664",
+      "readiness_sha256": "c39961563d94ae714b82df705cc9a6a8003baf8e4eb38fe1ddc575744ce7e5c0",
+      "readiness_passed": true,
+      "execution_authorized": true
+    },
+    {
+      "model_seed": 44,
+      "manifest_sha256": "f1b2ca056ddfb83d982d8a0f57ad0298ce764af2c464f09ec5c26c1f82d327df",
+      "protocol_sha256": "39fe8553e90f7a76ffad7b2ccb5fca8ab23c419a355b31e839d2599e1378e716",
+      "readiness_sha256": "0ec5383858ac4645f9284c9e48781937d650ce4e77e5b098c76ad37795ffb59b",
+      "readiness_passed": true,
+      "execution_authorized": true
+    },
+    {
+      "model_seed": 45,
+      "manifest_sha256": "735107187653ab91e95334883044a32e5dd691614a4230eeb2fd4e1ca295e345",
+      "protocol_sha256": "582b8fc10c45f8f73729daf64711de5860ba1e70a6b836cb480ae0b3109a6771",
+      "readiness_sha256": "8f74ab53613669f6b9241480a2c4a08fe8c22d34eb98c226fbbc2c8169b0d4d0",
+      "readiness_passed": true,
+      "execution_authorized": true
+    },
+    {
+      "model_seed": 46,
+      "manifest_sha256": "54f98dd5d1ae97767bbe54da19aad52b0036a455f9fa0a24c848bf12cc64530c",
+      "protocol_sha256": "331a493d058ec671c73fe395eec7a8c16899fd2a4c7f13b3bc926b1dbb2b5dde",
+      "readiness_sha256": "a6df7429080b6bb8d81daa42672e5cf126471547727cc5d57f68f431ec34f007",
+      "readiness_passed": true,
+      "execution_authorized": true
+    }
+  ],
+  "capacity_gate_sha256": "7201d708a2bdd5a0894cca8cb6b630ec0e387733778af5f2e175d78c77ee422c",
+  "seed42_preserved": true,
+  "same_scientific_scope_and_data_identity": true,
+  "validator_path": "review\\pleia_temperature_context005_seeds43_46_preflight_20260922\\candidate_validate_v2.py",
+  "validator_sha256": "f61f9f973520a96b57aec68e6879df6be193a62a64e14759d3cb7e3d02681ae1",
+  "focused_preflight_cases_reused": 12,
+  "focused_preflight_all_passed": true,
+  "operation_policy": "one wrapper/three native estimators/two recorded conformalize calls/one logical conformalization/one persistence radius per seed"
+}

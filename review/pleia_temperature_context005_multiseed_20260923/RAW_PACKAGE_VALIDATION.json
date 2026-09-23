@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T03:42:20.802197+00:00",
+  "seeds": [
+    43,
+    44,
+    45,
+    46
+  ],
+  "parts": 40,
+  "members": 508648,
+  "total_part_bytes": 2197204899,
+  "results": [
+    {
+      "passed": true,
+      "model_seed": 43,
+      "parts": 10,
+      "members": 127162,
+      "raw_files": 127162,
+      "contexts": 68,
+      "complete_tree_verified": true,
+      "maximum_part_bytes": 62993214,
+      "total_part_bytes": 549142535,
+      "github_part_limit_bytes": 99614720,
+      "source_complete_sha256": "51c744d8b57fa65e4119df78533f48c724a8ef19bfdae330fe6df76ac3f700be",
+      "reconstruction": "Extract every part into one empty directory and verify every byte with raw_file_manifest.csv.gz."
+    },
+    {
+      "passed": true,
+      "model_seed": 44,
+      "parts": 10,
+      "members": 127162,
+      "raw_files": 127162,
+      "contexts": 68,
+      "complete_tree_verified": true,
+      "maximum_part_bytes": 63258398,
+      "total_part_bytes": 551668308,
+      "github_part_limit_bytes": 99614720,
+      "source_complete_sha256": "d9e1273802a1e1d4fc94d61a1db6d17b14e5bcf49e63e5a0f56001110b49cc70",
+      "reconstruction": "Extract every part into one empty directory and verify every byte with raw_file_manifest.csv.gz."
+    },
+    {
+      "passed": true,
+      "model_seed": 45,
+      "parts": 10,
+      "members": 127162,
+      "raw_files": 127162,
+      "contexts": 68,
+      "complete_tree_verified": true,
+      "maximum_part_bytes": 63039739,
+      "total_part_bytes": 549892512,
+      "github_part_limit_bytes": 99614720,
+      "source_complete_sha256": "64bfb8f8c70be373e5ef7fd53a925f7ce69a9f25a9c04ef794a1228f5bc14568",
+      "reconstruction": "Extract every part into one empty directory and verify every byte with raw_file_manifest.csv.gz."
+    },
+    {
+      "passed": true,
+      "model_seed": 46,
+      "parts": 10,
+      "members": 127162,
+      "raw_files": 127162,
+      "contexts": 68,
+      "complete_tree_verified": true,
+      "maximum_part_bytes": 62723144,
+      "total_part_bytes": 546501544,
+      "github_part_limit_bytes": 99614720,
+      "source_complete_sha256": "f0740e2a829669ad4c412fbe1cc87c53cbeff5d3bb369f2bd9fb2c180c6654cd",
+      "reconstruction": "Extract every part into one empty directory and verify every byte with raw_file_manifest.csv.gz."
+    }
+  ]
+}

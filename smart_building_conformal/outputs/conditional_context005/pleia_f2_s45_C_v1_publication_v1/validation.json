@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "model_seed": 45,
+  "parts": 10,
+  "members": 127162,
+  "raw_files": 127162,
+  "contexts": 68,
+  "complete_tree_verified": true,
+  "maximum_part_bytes": 63039739,
+  "total_part_bytes": 549892512,
+  "github_part_limit_bytes": 99614720,
+  "source_complete_sha256": "64bfb8f8c70be373e5ef7fd53a925f7ce69a9f25a9c04ef794a1228f5bc14568",
+  "reconstruction": "Extract every part into one empty directory and verify every byte with raw_file_manifest.csv.gz."
+}

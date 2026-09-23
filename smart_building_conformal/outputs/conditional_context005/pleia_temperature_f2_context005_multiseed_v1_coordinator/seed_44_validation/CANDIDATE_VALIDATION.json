@@ -1,0 +1,158 @@
+{
+  "version": "candidate_representation_compatible_v1",
+  "limited": false,
+  "contract": {
+    "A": "independent causal feature reconstruction vs saved features, frozen tolerance 1e-10",
+    "B": "saved model applied to the verified saved feature representation reproduces saved predictions",
+    "C": "calibration, causal release/update state, interval construction and alert outcomes re-derived independently",
+    "tolerance_changed": false,
+    "tolerance": {
+      "atol": 1e-10,
+      "rtol": 1e-10
+    }
+  },
+  "totals": {
+    "assertions": 271920,
+    "elements": 21012059,
+    "violations": 0,
+    "maximum_observed_difference": 3.907985046680551e-14
+  },
+  "by_kind": {
+    "A_alias": {
+      "assertions": 773,
+      "elements": 773,
+      "violations": 0
+    },
+    "A_availability": {
+      "assertions": 2924,
+      "elements": 2924,
+      "violations": 0
+    },
+    "A_feature_provenance": {
+      "assertions": 2925,
+      "elements": 12497927,
+      "violations": 0
+    },
+    "A_identity": {
+      "assertions": 5848,
+      "elements": 5848,
+      "violations": 0
+    },
+    "A_observations": {
+      "assertions": 2924,
+      "elements": 421056,
+      "violations": 0
+    },
+    "B_model_application": {
+      "assertions": 25812,
+      "elements": 3716928,
+      "violations": 0
+    },
+    "C_alert_flags": {
+      "assertions": 129060,
+      "elements": 129060,
+      "violations": 0
+    },
+    "C_censored_delay": {
+      "assertions": 1,
+      "elements": 171360,
+      "violations": 0
+    },
+    "C_episode_onsets": {
+      "assertions": 43020,
+      "elements": 43020,
+      "violations": 0
+    },
+    "C_equal_context_denominator": {
+      "assertions": 1260,
+      "elements": 1260,
+      "violations": 0
+    },
+    "C_equal_context_recall": {
+      "assertions": 1260,
+      "elements": 1260,
+      "violations": 0
+    },
+    "C_event_detection": {
+      "assertions": 1,
+      "elements": 171360,
+      "violations": 0
+    },
+    "C_event_ledger": {
+      "assertions": 1,
+      "elements": 1,
+      "violations": 0
+    },
+    "C_full_exposure": {
+      "assertions": 120,
+      "elements": 120,
+      "violations": 0
+    },
+    "C_interval_construction": {
+      "assertions": 17212,
+      "elements": 2557208,
+      "violations": 0
+    },
+    "C_release_count": {
+      "assertions": 8604,
+      "elements": 8604,
+      "violations": 0
+    },
+    "C_release_identity": {
+      "assertions": 8604,
+      "elements": 8604,
+      "violations": 0
+    },
+    "C_released_scores": {
+      "assertions": 8604,
+      "elements": 1225212,
+      "violations": 0
+    },
+    "C_rolling_state": {
+      "assertions": 2151,
+      "elements": 38718,
+      "violations": 0
+    },
+    "C_update_count": {
+      "assertions": 8604,
+      "elements": 8604,
+      "violations": 0
+    },
+    "C_update_status": {
+      "assertions": 2151,
+      "elements": 2151,
+      "violations": 0
+    },
+    "C_workload": {
+      "assertions": 60,
+      "elements": 60,
+      "violations": 0
+    },
+    "integrity": {
+      "assertions": 1,
+      "elements": 1,
+      "violations": 0
+    }
+  },
+  "passed": true,
+  "candidate_violations": [],
+  "sensitivity": {
+    "stages_where_representations_diverge": 106,
+    "rows_affected": 142,
+    "all_divergences_explained_by_threshold_straddle": true,
+    "unexplained": []
+  },
+  "artifacts_unchanged": true,
+  "resources": {
+    "seconds": 3768.496011700001,
+    "baseline_rss_bytes": 466661376,
+    "peak_rss_bytes": 879157248,
+    "baseline_private_bytes": 427212800,
+    "peak_private_bytes": 845557760,
+    "incremental_peak_rss_bytes": 412495872,
+    "lifetime_peak_rss_bytes": 880664576,
+    "min_available_ram_bytes": 2261200896,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 3706.8125
+  }
+}

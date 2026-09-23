@@ -1,0 +1,4651 @@
+[
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v0",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v2",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v4",
+    "rows": [
+      59,
+      70
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 70,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.350000000000005",
+              "validator_value": "22.349999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v5",
+    "rows": [
+      59,
+      70,
+      71
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 70,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 142,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 142,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.549999999999997",
+              "engine_value": "22.55",
+              "validator_value": "22.549999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 150,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 150,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.549999999999997",
+              "engine_value": "22.55",
+              "validator_value": "22.549999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 188,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 188,
+              "node": 42,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 221,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 221,
+              "node": 20,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 223,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 223,
+              "node": 30,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 228,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 228,
+              "node": 5,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 232,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 232,
+              "node": 19,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v6",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v7",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v9",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v11",
+    "rows": [
+      59,
+      70,
+      71,
+      72
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 70,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 142,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 142,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.549999999999997",
+              "engine_value": "22.55",
+              "validator_value": "22.549999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 150,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 150,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.549999999999997",
+              "engine_value": "22.55",
+              "validator_value": "22.549999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 188,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 188,
+              "node": 42,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 221,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 221,
+              "node": 20,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 223,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 223,
+              "node": 30,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 228,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 228,
+              "node": 5,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 232,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 232,
+              "node": 19,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 72,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 188,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 188,
+              "node": 42,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 221,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 221,
+              "node": 20,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 223,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 223,
+              "node": 30,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 228,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 228,
+              "node": 5,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 232,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 232,
+              "node": 19,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v13",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v15",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v17",
+    "rows": [
+      59,
+      70,
+      71,
+      72
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 70,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 142,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 142,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.549999999999997",
+              "engine_value": "22.55",
+              "validator_value": "22.549999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 0,
+            "stage": 150,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 150,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.549999999999997",
+              "engine_value": "22.55",
+              "validator_value": "22.549999999999997",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 71,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 188,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 188,
+              "node": 42,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 221,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 221,
+              "node": 20,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 223,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 223,
+              "node": 30,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 228,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 228,
+              "node": 5,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 232,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 232,
+              "node": 19,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      },
+      {
+        "row": 72,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 188,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 188,
+              "node": 42,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 221,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 221,
+              "node": 20,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 223,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 223,
+              "node": 30,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 228,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 228,
+              "node": 5,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 232,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 232,
+              "node": 19,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.599999999999998",
+              "engine_value": "22.6",
+              "validator_value": "22.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v19",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v21",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v23",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v25",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v26",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v27",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v28",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v29",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v30",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v31",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v32",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v33",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v34",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v35",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v36",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v37",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v38",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v39",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v40",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v41",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_8b9681a4024d46b3e7ec_v42",
+    "rows": [
+      59
+    ],
+    "detail": [
+      {
+        "row": 59,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 170,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 170,
+              "node": 57,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.349999999999998",
+              "engine_value": "22.349999999999998",
+              "validator_value": "22.350000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v0",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v1",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v2",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v5",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v6",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v7",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v9",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v11",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v13",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v15",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v17",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v19",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v21",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v23",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v25",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v26",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v27",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v28",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v29",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v30",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v31",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v32",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v33",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v34",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v35",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v36",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v37",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v38",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v39",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v40",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v41",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_45e3b6a5fdbd65e8305e_v42",
+    "rows": [
+      91
+    ],
+    "detail": [
+      {
+        "row": 91,
+        "divergences": [
+          {
+            "estimator": 0,
+            "stage": 151,
+            "divergent_node": {
+              "estimator": 0,
+              "stage": 151,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 35,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 35,
+              "node": 53,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.6",
+              "engine_value": "23.599999999999998",
+              "validator_value": "23.600000000000005",
+              "engine_on_threshold": false,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_9c545d5dd7b52b39686b_v5",
+    "rows": [
+      79
+    ],
+    "detail": [
+      {
+        "row": 79,
+        "divergences": [
+          {
+            "estimator": 2,
+            "stage": 149,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 149,
+              "node": 54,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.599999999999998",
+              "engine_value": "24.599999999999998",
+              "validator_value": "24.600000000000005",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_16087b4f2e552fc77bb5_v19",
+    "rows": [
+      100
+    ],
+    "detail": [
+      {
+        "row": 100,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 17,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 17,
+              "node": 2,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.349999999999998",
+              "engine_value": "23.350000000000005",
+              "validator_value": "23.349999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_68ad9b110fdf27884f7e_v23",
+    "rows": [
+      89
+    ],
+    "detail": [
+      {
+        "row": 89,
+        "divergences": [
+          {
+            "estimator": 2,
+            "stage": 139,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 139,
+              "node": 6,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.516666666666666",
+              "engine_value": "22.51666666666667",
+              "validator_value": "22.516666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 140,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 140,
+              "node": 6,
+              "feature": "target_rollmean_6",
+              "num_threshold": "22.516666666666666",
+              "engine_value": "22.51666666666667",
+              "validator_value": "22.516666666666666",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_09ef47e6b1f1491bf9c8_v23",
+    "rows": [
+      38
+    ],
+    "detail": [
+      {
+        "row": 38,
+        "divergences": [
+          {
+            "estimator": 2,
+            "stage": 149,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 149,
+              "node": 54,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.599999999999998",
+              "engine_value": "24.600000000000005",
+              "validator_value": "24.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_36de58d27c666754f38a_v21",
+    "rows": [
+      90
+    ],
+    "detail": [
+      {
+        "row": 90,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 68,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 68,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 70,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 70,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 72,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 72,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 73,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 73,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 74,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 74,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 75,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 75,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 76,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 76,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 77,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 77,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 78,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 78,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 79,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 79,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 80,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 80,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 81,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 81,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 82,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 82,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 84,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 84,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 85,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 85,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 86,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 86,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 87,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 87,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 88,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 88,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 89,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 89,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 95,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 95,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 101,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 101,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 103,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 103,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 138,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 138,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 139,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 139,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 140,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 140,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 141,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 141,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 142,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 142,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 143,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 143,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 145,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 145,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 152,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 152,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.100000000000001",
+              "validator_value": "15.1",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_36de58d27c666754f38a_v23",
+    "rows": [
+      89
+    ],
+    "detail": [
+      {
+        "row": 89,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 68,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 68,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 70,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 70,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 72,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 72,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 73,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 73,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 74,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 74,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 75,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 75,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 76,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 76,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 77,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 77,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 78,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 78,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 79,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 79,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 80,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 80,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 81,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 81,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 82,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 82,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 84,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 84,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 85,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 85,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 86,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 86,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 87,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 87,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 88,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 88,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 89,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 89,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 95,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 95,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 101,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 101,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 1,
+            "stage": 103,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 103,
+              "node": 1,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 138,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 138,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 139,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 139,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 140,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 140,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 141,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 141,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 142,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 142,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 143,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 143,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 145,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 145,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 152,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 152,
+              "node": 0,
+              "feature": "target_rollmean_6",
+              "num_threshold": "15.1",
+              "engine_value": "15.1",
+              "validator_value": "15.100000000000001",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_10c5d571f33a0eaf5823_v19",
+    "rows": [
+      80
+    ],
+    "detail": [
+      {
+        "row": 80,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 47,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.78333333333333",
+              "engine_value": "23.78333333333333",
+              "validator_value": "23.783333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 130,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 130,
+              "node": 34,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.78333333333333",
+              "engine_value": "23.78333333333333",
+              "validator_value": "23.783333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_10c5d571f33a0eaf5823_v21",
+    "rows": [
+      80
+    ],
+    "detail": [
+      {
+        "row": 80,
+        "divergences": [
+          {
+            "estimator": 1,
+            "stage": 40,
+            "divergent_node": {
+              "estimator": 1,
+              "stage": 40,
+              "node": 47,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.78333333333333",
+              "engine_value": "23.78333333333333",
+              "validator_value": "23.783333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          },
+          {
+            "estimator": 2,
+            "stage": 130,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 130,
+              "node": 34,
+              "feature": "target_rollmean_6",
+              "num_threshold": "23.78333333333333",
+              "engine_value": "23.78333333333333",
+              "validator_value": "23.783333333333335",
+              "engine_on_threshold": true,
+              "validator_on_threshold": false,
+              "straddles_threshold": true,
+              "gap_in_ulps": 1.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  },
+  {
+    "stage": "context_0093306fd4c7e4c38ccb_v21",
+    "rows": [
+      69
+    ],
+    "detail": [
+      {
+        "row": 69,
+        "divergences": [
+          {
+            "estimator": 2,
+            "stage": 149,
+            "divergent_node": {
+              "estimator": 2,
+              "stage": 149,
+              "node": 54,
+              "feature": "target_rollmean_6",
+              "num_threshold": "24.599999999999998",
+              "engine_value": "24.600000000000005",
+              "validator_value": "24.599999999999998",
+              "engine_on_threshold": false,
+              "validator_on_threshold": true,
+              "straddles_threshold": true,
+              "gap_in_ulps": 2.0
+            },
+            "explained": true
+          }
+        ],
+        "all_explained": true
+      }
+    ]
+  }
+]

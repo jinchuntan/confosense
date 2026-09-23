@@ -1,0 +1,49 @@
+{
+  "artifacts_unchanged": true,
+  "candidate_assertions": 271920,
+  "candidate_passed": true,
+  "candidate_violations": 0,
+  "completion": {
+    "complete_sha256": "f0740e2a829669ad4c412fbe1cc87c53cbeff5d3bb369f2bd9fb2c180c6654cd",
+    "declared_files": 127161,
+    "mismatched": 0,
+    "missing": 0,
+    "mode": "full"
+  },
+  "delegated_source_identity": {
+    "audit_commit": "e52a3ba6b94996f51300af523f898207162cac79",
+    "audited_blob_sha256": "14cab398cf5ec389a1eae0a2f22d832a56ada31add44f93f6a38ea3095d2a091",
+    "matches_after_line_ending_normalization_only": true,
+    "working_tree_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd"
+  },
+  "delegated_validator": "review/pleia_temperature_context005_validation_audit_20260919/candidate_validate_v1.py",
+  "delegated_validator_sha256": "5305e3d6fb67cf4b416f7334d257d6e18717cd340d03ef608d9d77bc9ebc75fd",
+  "design": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\protocols\\conditional_context005\\pleia_f2_s46_C_v1",
+  "expected_identity": {
+    "dataset": "pleia",
+    "fold": 2,
+    "horizon": 1,
+    "seed": 46
+  },
+  "fit_and_calibration_forbidden": true,
+  "full_acceptance_gate_satisfied": true,
+  "limited": false,
+  "limited_receipt_cannot_satisfy_full_acceptance_gate": false,
+  "limited_variants": 0,
+  "output": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_temperature_f2_context005_multiseed_v1_coordinator\\seed_46_validation",
+  "owner": {
+    "controls_sha256": "836684979730ad2f16bb5137b8540592b6a0359f64aaad7cd97b173dbefdecc6",
+    "full_owner_blob_hashes_checked": true,
+    "identity_path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s46_C_v1\\stages\\controls\\identity.json",
+    "native_estimator_random_states": [
+      46,
+      46,
+      46
+    ],
+    "owner_model_seed": 46
+  },
+  "purpose": "explicit-path A-and-B-and-C validation adapter receipt",
+  "run": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\conditional_context005\\pleia_f2_s46_C_v1",
+  "utc": "2026-09-23T03:07:10.115225Z",
+  "version": "candidate_representation_compatible_v2_explicit_paths"
+}
