@@ -6,6 +6,8 @@ Cumulative and independent validation passed with zero maximum saved-versus-reco
 
 Evidence: [cumulative report](review/matched_forecasting005_completion_20260923/MATCHED_FORECASTING005_CUMULATIVE_REPORT.md), [evidence index](review/matched_forecasting005_completion_20260923/EVIDENCE_INDEX.md), [cumulative validation](smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/analysis_validation.json), [independent validation](smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/independent_validation.json), and [backup validation](smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_backup_validation.json).
 
+Published substantive commit: `be8487668e82fc91a42491fb26615c6cfbca0362` on `review/matched-forecasting005-completion-20260923`. External-only recovery and commit-pinned HTTPS readback are recorded in the linked evidence index.
+
 <!-- matched-forecasting005-completion-20260923: historical status follows -->
 
 # First real amendment-005 conditional-context pilot completed

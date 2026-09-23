@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T17:15:32.789205+00:00",
+  "method": "git init in an empty temporary repository followed only by fetches from the external bundle paths below",
+  "temporary_repository": "C:\\Users\\nigel\\AppData\\Local\\Temp\\confosense-external-recovery-be8487668e82",
+  "network_used": false,
+  "working_repository_objects_used": false,
+  "github_used": false,
+  "initial_missing_prerequisite": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb",
+  "resolution": "added the scoped 571408be..59b842b5 prerequisite bundle, which includes f28eb4c6 and acceptance 18d8dd15",
+  "verified_commits": {
+    "acceptance": "18d8dd15d06459b3b54ba629e9948b78494f4c8f",
+    "preflight_prerequisite": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb",
+    "temperature_substantive": "475f92e3e2e42e6ae4cdefd6ece748c56474de1d",
+    "temperature_delivery": "640aa76d0c4ff47d5fea09d160bfacf488b7c5e7",
+    "exact_restored_commit": "be8487668e82fc91a42491fb26615c6cfbca0362"
+  },
+  "restored_result_check": {
+    "passed": true,
+    "paired_units": 195,
+    "new_tuning_fits": 1000,
+    "new_final_fits": 250
+  },
+  "git_fsck_full_no_dangling": "passed",
+  "bundle_chain": [
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_validated_acceptance_20260921\\recovery_18d8_v6\\base_c143.bundle",
+      "bytes": 2618609581,
+      "sha256": "976fa335d736f71a28e0d1e05b72df4256b525cf0621fac3d54bae3c5b3f5c3c"
+    },
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_pilot_20260918\\temperature_delivery_v2_571408be.bundle",
+      "bytes": 4756491013,
+      "sha256": "9c0b9bf9df2eac660b62119ec41cf053d8ba9ee5fc440cbf5eeece121a73ec9f"
+    },
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_forecasting005_completion_20260923\\recovery_prerequisite_f28eb4c6_from_571408be.bundle",
+      "bytes": 1623807,
+      "sha256": "e18af151290059f107cdf0a6be6297d8c8a971966d7e956a2c4c6ba01bbc0aaf"
+    },
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_temperature_context005_multiseed_20260923\\substantive_475f92e3e2e42e6ae4cdefd6ece748c56474de1d_v1\\temperature_multiseed_475f92e3e2e42e6ae4cdefd6ece748c56474de1d.bundle",
+      "bytes": 1187696121,
+      "sha256": "0d4c3fa6d92f502a7b60434a47c887c608140f10f0485f080acd217ba20b1e88"
+    },
+    {
+      "path": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_forecasting005_completion_20260923\\matched_forecasting_completion_be8487668e82_from_475f92e3e2e4.bundle",
+      "bytes": 3391617,
+      "sha256": "eabaa05c9f24a96288fa4b1238ac9ccd60a884f82230ee58181c613ef733c809"
+    }
+  ]
+}

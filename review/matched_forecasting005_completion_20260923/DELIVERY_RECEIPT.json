@@ -1,0 +1,157 @@
+{
+  "passed": true,
+  "utc": "2026-09-23T17:15:32.789205+00:00",
+  "substantive_commit_verified": "be8487668e82fc91a42491fb26615c6cfbca0362",
+  "receipt_commit_scope": "this later receipt verifies the earlier substantive commit; it does not self-verify",
+  "remote": "https://github.com/jinchuntan/confosense.git",
+  "remote_branch": "review/matched-forecasting005-completion-20260923",
+  "remote_ref_at_verification": "be8487668e82fc91a42491fb26615c6cfbca0362",
+  "remote_ref_verified": true,
+  "https_readback": {
+    "commit_pinned": true,
+    "scope": "the 15 representative publication, validation, package, checkpoint, figure, and preserved blank-inference files listed here; not every tracked file or external raw archive",
+    "files": [
+      {
+        "path": "PROJECT_RECOVERY_STATUS.md",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/PROJECT_RECOVERY_STATUS.md",
+        "http_status": 200,
+        "bytes": 46411,
+        "sha256": "98e5aed5800042eaf589c2fabcc161133a7f0ab374da8cc89387468a4489f3f6",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "review/matched_forecasting005_completion_20260923/MATCHED_FORECASTING005_CUMULATIVE_REPORT.md",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/review/matched_forecasting005_completion_20260923/MATCHED_FORECASTING005_CUMULATIVE_REPORT.md",
+        "http_status": 200,
+        "bytes": 6483,
+        "sha256": "13d90522b12d5910f09d286f79dcaf4af91cb8ed53450988cba43da1b561bfad",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "review/matched_forecasting005_completion_20260923/EVIDENCE_INDEX.md",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/review/matched_forecasting005_completion_20260923/EVIDENCE_INDEX.md",
+        "http_status": 200,
+        "bytes": 2264,
+        "sha256": "9e42ccb688b74f3cc1864628541742f517c99614d783b05a6a2776e3816d4142",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/analysis_validation.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/analysis_validation.json",
+        "http_status": 200,
+        "bytes": 938,
+        "sha256": "17bf6f6b1c98b42defce52b8a4e5b522fa504fc5874474db6bb1d0f076e459d0",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/independent_validation.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/independent_validation.json",
+        "http_status": 200,
+        "bytes": 414,
+        "sha256": "048785063100a784cccb02f391f3c766b04c7ce48bc28f5896517ab6de5b7bd1",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/inference_status.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/inference_status.csv",
+        "http_status": 200,
+        "bytes": 8824,
+        "sha256": "849fe97d45dafca8e64de2831d204bd4c0d958aee186a9df01e20a5b2dbe3d30",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/cumulative_completion_reuse_ledger.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/cumulative_completion_reuse_ledger.csv",
+        "http_status": 200,
+        "bytes": 516197,
+        "sha256": "fc99ecad4f443656679e480b720051f3d6068902ad5dfb69d3de006b65b87b17",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/paired_model_contrasts.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/paired_model_contrasts.csv",
+        "http_status": 200,
+        "bytes": 445868,
+        "sha256": "8da8045edfc754250b9b28b9c1a48e87cce3f6f752ab26ef66576074eb895821",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/figures/mae_by_fold.png",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/figures/mae_by_fold.png",
+        "http_status": 200,
+        "bytes": 271514,
+        "sha256": "90c2f5c79936952ca6d8e9914dc152889586f4abde88d58d93ad19c20c96a5e2",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/validation.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/validation.json",
+        "http_status": 200,
+        "bytes": 383,
+        "sha256": "efca871671f06aa7382cfb1207048d18908bcb3db434e60b6ced96718500f780",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_backup_validation.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_backup_validation.json",
+        "http_status": 200,
+        "bytes": 577,
+        "sha256": "615b08d4f78b2b72bb568f70d59f6de63d78d8a4c62c894a03ddbddd71f18f46",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_run_archive_manifest.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_run_archive_manifest.csv",
+        "http_status": 200,
+        "bytes": 20855,
+        "sha256": "9324db208c36833466a26f49898f6c354199643f4d2223053885224523bcfcaf",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/pleia_energy_h1_f1_s42_v1/checkpoint_manifest.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/pleia_energy_h1_f1_s42_v1/checkpoint_manifest.json",
+        "http_status": 200,
+        "bytes": 6654,
+        "sha256": "6e4872654639311d6291f53e0f9c43b8a6c5e04bd18c86e515deb904a6fc50ce",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/matched_forecasting005/pleia_h6_f0_s46_v1/run_summary.json",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/matched_forecasting005/pleia_h6_f0_s46_v1/run_summary.json",
+        "http_status": 200,
+        "bytes": 446,
+        "sha256": "7ca4f690c1a2a11aa6e8b038dc2a93369444345801054419f124f925753109f2",
+        "exact_commit_blob_match": true
+      },
+      {
+        "path": "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv",
+        "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be8487668e82fc91a42491fb26615c6cfbca0362/smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv",
+        "http_status": 200,
+        "bytes": 2,
+        "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+        "exact_commit_blob_match": true
+      }
+    ]
+  },
+  "substantive_stage": {
+    "allowlist": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_forecasting005_completion_20260923\\substantive_stage_paths.txt",
+    "files": 1047,
+    "bytes": 26721674,
+    "maximum_file_bytes": 7344487
+  },
+  "bulk_backup": {
+    "passed": true,
+    "utc": "2026-09-23T16:56:25.317302+00:00",
+    "backup_root": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_forecasting005_completion_20260923",
+    "run_archives": 125,
+    "run_archive_bytes": 2498898475,
+    "support_archives": 10,
+    "support_archive_bytes": 733612820,
+    "support_members": 6039,
+    "support_uncompressed_bytes": 780152694,
+    "maximum_support_archive_bytes": 79883929,
+    "publication_limit_bytes": 99614720,
+    "coverage": "125 verified run archives plus all 125 frozen protocols, process receipts, and coordinator attempts/receipts/journals"
+  },
+  "external_recovery_receipt": "EXTERNAL_RECOVERY_RECEIPT.json"
+}

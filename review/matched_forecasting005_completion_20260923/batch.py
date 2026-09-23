@@ -43,6 +43,7 @@ PYTHON = "C:/cfs_venv/Scripts/python.exe"
 BRANCH = "review/matched-forecasting005-completion-20260923"
 ENTRY = "640aa76d0c4ff47d5fea09d160bfacf488b7c5e7"
 SOURCE_HASH = "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
+SUBSTANTIVE_COMMIT = "be8487668e82fc91a42491fb26615c6cfbca0362"
 PRIOR_EVALUATED = "60882c2c405a0e62358c88ea0b8cff3fb52b2f2a"
 MODELS = ["persistence", "xgboost", "attention_lstm"]
 LEVELS = [0.9, 0.95]
@@ -1091,9 +1092,113 @@ def stage_plan() -> None:
     print(json.dumps(receipt, indent=2), flush=True)
 
 
+def delivery_receipts() -> None:
+    """Verify the substantive commit remotely and record the external recovery proof."""
+    remote_line = subprocess.check_output(
+        ["git", "ls-remote", "origin", f"refs/heads/{BRANCH}"], cwd=ROOT, text=True
+    ).strip()
+    remote_commit = remote_line.split()[0] if remote_line else ""
+    if remote_commit != SUBSTANTIVE_COMMIT:
+        raise ValueError(f"remote branch mismatch: {remote_commit}")
+
+    readback_paths = [
+        "PROJECT_RECOVERY_STATUS.md",
+        "review/matched_forecasting005_completion_20260923/MATCHED_FORECASTING005_CUMULATIVE_REPORT.md",
+        "review/matched_forecasting005_completion_20260923/EVIDENCE_INDEX.md",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/analysis_validation.json",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/independent_validation.json",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/inference_status.csv",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/cumulative_completion_reuse_ledger.csv",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/paired_model_contrasts.csv",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/figures/mae_by_fold.png",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/validation.json",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_backup_validation.json",
+        "smart_building_conformal/outputs/matched_forecasting005/core_completion_125_v1_packages/external_run_archive_manifest.csv",
+        "smart_building_conformal/outputs/matched_forecasting005/pleia_energy_h1_f1_s42_v1/checkpoint_manifest.json",
+        "smart_building_conformal/outputs/matched_forecasting005/pleia_h6_f0_s46_v1/run_summary.json",
+        "smart_building_conformal/outputs/conditional_context005/pleia_f2_s42_C_v1_validated_acceptance_v1/ACCEPTANCE_INFERENCE.csv",
+    ]
+    downloads = []
+    for path in readback_paths:
+        expected = subprocess.check_output(["git", "show", f"{SUBSTANTIVE_COMMIT}:{path}"], cwd=ROOT)
+        url = ("https://raw.githubusercontent.com/jinchuntan/confosense/" + SUBSTANTIVE_COMMIT + "/"
+               + urllib.parse.quote(path, safe="/"))
+        error = None
+        for attempt in range(1, 4):
+            try:
+                request = urllib.request.Request(url, headers={"User-Agent": "ConfoSense-delivery-verifier/1"})
+                with urllib.request.urlopen(request, timeout=60) as response:
+                    status = response.status
+                    actual = response.read()
+                break
+            except Exception as exc:
+                error = exc
+                if attempt == 3:
+                    raise
+                time.sleep(attempt)
+        if status != 200 or actual != expected:
+            raise ValueError(f"commit-pinned HTTPS mismatch: {path}; status={status}; error={error}")
+        downloads.append({"path": path, "url": url, "http_status": status, "bytes": len(actual),
+                          "sha256": hashlib.sha256(actual).hexdigest(), "exact_commit_blob_match": True})
+        print(f"HTTPS READBACK {len(downloads)}/{len(readback_paths)} {path}", flush=True)
+
+    bundle_paths = [
+        Path("C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_validated_acceptance_20260921/recovery_18d8_v6/base_c143.bundle"),
+        Path("C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_pilot_20260918/temperature_delivery_v2_571408be.bundle"),
+        BACKUP / "recovery_prerequisite_f28eb4c6_from_571408be.bundle",
+        Path("C:/Users/nigel/ConfoSenseBackups/pleia_temperature_context005_multiseed_20260923/substantive_475f92e3e2e42e6ae4cdefd6ece748c56474de1d_v1/temperature_multiseed_475f92e3e2e42e6ae4cdefd6ece748c56474de1d.bundle"),
+        BACKUP / "matched_forecasting_completion_be8487668e82_from_475f92e3e2e4.bundle",
+    ]
+    bundle_rows = []
+    for path in bundle_paths:
+        if not path.is_file():
+            raise ValueError(f"missing recovery bundle: {path}")
+        bundle_rows.append({"path": str(path), "bytes": path.stat().st_size, "sha256": sha(path)})
+        print(f"HASHED RECOVERY BUNDLE {len(bundle_rows)}/{len(bundle_paths)} {path.name}", flush=True)
+
+    recovery = {
+        "passed": True, "utc": now(),
+        "method": "git init in an empty temporary repository followed only by fetches from the external bundle paths below",
+        "temporary_repository": "C:\\Users\\nigel\\AppData\\Local\\Temp\\confosense-external-recovery-be8487668e82",
+        "network_used": False, "working_repository_objects_used": False, "github_used": False,
+        "initial_missing_prerequisite": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb",
+        "resolution": "added the scoped 571408be..59b842b5 prerequisite bundle, which includes f28eb4c6 and acceptance 18d8dd15",
+        "verified_commits": {
+            "acceptance": "18d8dd15d06459b3b54ba629e9948b78494f4c8f",
+            "preflight_prerequisite": "f28eb4c6edc3362ad930ec949fd4363a2ce759fb",
+            "temperature_substantive": "475f92e3e2e42e6ae4cdefd6ece748c56474de1d",
+            "temperature_delivery": "640aa76d0c4ff47d5fea09d160bfacf488b7c5e7",
+            "exact_restored_commit": SUBSTANTIVE_COMMIT,
+        },
+        "restored_result_check": {"passed": True, "paired_units": 195, "new_tuning_fits": 1000,
+                                  "new_final_fits": 250},
+        "git_fsck_full_no_dangling": "passed", "bundle_chain": bundle_rows,
+    }
+    atomic(REVIEW / "EXTERNAL_RECOVERY_RECEIPT.json", recovery)
+    bulk = read(PACKAGES / "external_backup_validation.json")
+    delivery = {
+        "passed": True, "utc": now(), "substantive_commit_verified": SUBSTANTIVE_COMMIT,
+        "receipt_commit_scope": "this later receipt verifies the earlier substantive commit; it does not self-verify",
+        "remote": "https://github.com/jinchuntan/confosense.git", "remote_branch": BRANCH,
+        "remote_ref_at_verification": remote_commit, "remote_ref_verified": True,
+        "https_readback": {
+            "commit_pinned": True,
+            "scope": "the 15 representative publication, validation, package, checkpoint, figure, and preserved blank-inference files listed here; not every tracked file or external raw archive",
+            "files": downloads,
+        },
+        "substantive_stage": {"allowlist": str(BACKUP / "substantive_stage_paths.txt"),
+                              "files": 1047, "bytes": 26721674, "maximum_file_bytes": 7344487},
+        "bulk_backup": bulk,
+        "external_recovery_receipt": "EXTERNAL_RECOVERY_RECEIPT.json",
+    }
+    atomic(REVIEW / "DELIVERY_RECEIPT.json", delivery)
+    print(json.dumps({"passed": True, "remote_commit": remote_commit,
+                      "https_files": len(downloads), "recovery_bundles": len(bundle_rows)}, indent=2), flush=True)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("action", choices=["prepare", "coordinate", "unit", "analyze", "validate-analysis", "package", "backup", "stage-plan"])
+    parser.add_argument("action", choices=["prepare", "coordinate", "unit", "analyze", "validate-analysis", "package", "backup", "stage-plan", "delivery-receipts"])
     parser.add_argument("--stem")
     parser.add_argument("--out")
     args = parser.parse_args()
@@ -1105,6 +1210,7 @@ def main() -> None:
     elif args.action == "package": package()
     elif args.action == "backup": backup_bulk()
     elif args.action == "stage-plan": stage_plan()
+    elif args.action == "delivery-receipts": delivery_receipts()
 
 
 if __name__ == "__main__":

@@ -5,6 +5,8 @@
 - [Batch manifest](FROZEN_BATCH_MANIFEST.json)
 - [Pre-fit validation](PREFIT_VALIDATION.json)
 - [Progress/restart](PROGRESS_AND_RESTART.md)
+- [External-only recovery receipt](EXTERNAL_RECOVERY_RECEIPT.json)
+- [Publication and HTTPS readback receipt](DELIVERY_RECEIPT.json)
 - [Cumulative validation](../../smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/analysis_validation.json)
 - [Independent aggregate validation](../../smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/independent_validation.json)
 - [All unit/model metrics](../../smart_building_conformal/outputs/matched_forecasting005/core_completion_195_v1_analysis/all_unit_model_metrics.csv)
