@@ -170,13 +170,19 @@ def main() -> None:
                          readback_commit=substantive_sha, readback_scope=remote,
                          readback_scope_statement="These six exact paths only; not every published file or the receipt itself",
                          full_study_ready=False))
+    receipt_payload = read(receipt)
     git("add", "--", receipt.relative_to(REPO).as_posix())
     second = staged_audit([receipt.relative_to(REPO).as_posix()])
     print(json.dumps({key: second[key] for key in ("count", "bytes", "maximum_bytes")}), flush=True)
     git("commit", "-m", "Record commit-pinned scoped delivery readback")
     final_sha = git("rev-parse", "HEAD")
+    # The live supervisor treats this working-tree path as the delivery marker.
+    # Keep it absent between the receipt commit and successful final bundle/push
+    # so a partial final publication cannot be reported as delivered.
+    receipt.unlink()
     final_bundle = bundle(final_sha, "publication_final_from_0c57f736.bundle")
     git("push", "origin", f"HEAD:refs/heads/{BRANCH}")
+    atomic(receipt, receipt_payload)
     print(json.dumps(dict(branch=BRANCH, substantive_commit=substantive_sha,
                           receipt_commit=final_sha, final_external_bundle=final_bundle,
                           readback_paths=len(remote)), indent=2), flush=True)
