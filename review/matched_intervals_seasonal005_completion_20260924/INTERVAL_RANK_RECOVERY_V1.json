@@ -1,0 +1,86 @@
+{
+  "version": "matched_intervals005_enbpi_decimal_rank_validator_v1",
+  "passed": true,
+  "established_cause": "frozen independent-validator floating-point rank defect",
+  "correction_scope": "external validator only; frozen scientific src and outputs unchanged",
+  "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "correction_module_sha256": "c13f4da453b59add612cb37996e45477c3b56a6618a3439116d7e42a790909b5",
+  "corrected_validator_source_sha256": "c6ff8cf0f7bfdb386706a860475e8971c631cbf5caff2cccb0dd332b1a914f49",
+  "frozen_validator_sha256": "28313cdc1c48e5c8f74b49c36a1eb47aa4d771657cf33bc7172a441b6329c2fa",
+  "diagnosis_sha256": "bd5b6222c2781f9caa4bd416128ee37ae87bf9a74e44ecb8c994bdb7b9887c31",
+  "corrected_validation_sha256": "c3ed8b983798f9d763024ffc541eb6b43eb04cd863360c71a1ece11e6f37e35c",
+  "completed_bundle_check_sha256": "aeab91af400fbcdd96660e227e2b3c035ceb6a8514a206eb84dfe9239913e130",
+  "focused_tests_sha256": "394ec7889c29c0e76c3787077b05cdcb5b9995512d9241a96820d380248c9cc0",
+  "zero_fit_resume_sha256": "9fa3d7f5569c22f2081890c53cea0dfa723c6a971eaa5ee08fbd2ea9018ed1c8",
+  "failed_log": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\completion_52_v1_coordinator\\attempts\\2026-09-23T225509679650+0000_e0411b9e\\command.log",
+  "failed_validation_preserved_sha256": "2ca5e268cb62ef57c14c0b42f803a823624f0ddad47c44fce15ba480cadf6c49",
+  "failed_validation_directory": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\completion_52_v1_coordinator\\validation\\bdg2_f0_s46",
+  "failed_validation_directory_preserved_empty": true,
+  "original_calibration_test_identities": [
+    {
+      "horizon": 1,
+      "role": "calibration",
+      "rows": 34534,
+      "sha256": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+      "path": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f0_s46_method_completion_v1\\stages\\raw_h1_enbpi\\calibration_metadata.csv.gz"
+    },
+    {
+      "horizon": 1,
+      "role": "test",
+      "rows": 34426,
+      "sha256": "5335a6897b3b5626e41b4214d2e61a712c599c75801d96ca668a572ebb81cebf",
+      "path": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f0_s46_method_completion_v1\\stages\\raw_h1_enbpi\\test_metadata.csv.gz"
+    },
+    {
+      "horizon": 3,
+      "role": "calibration",
+      "rows": 34532,
+      "sha256": "23c55f6ae0e553350de99d9ff43ebe0ce189e43182be7f6223029e6843cd6b89",
+      "path": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f0_s46_method_completion_v1\\stages\\raw_h3_enbpi\\calibration_metadata.csv.gz"
+    },
+    {
+      "horizon": 3,
+      "role": "test",
+      "rows": 34422,
+      "sha256": "fb16abc15c97271def668f0e4a68cf32b8cb29a07b332bb48ff58c2b76db2f04",
+      "path": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f0_s46_method_completion_v1\\stages\\raw_h3_enbpi\\test_metadata.csv.gz"
+    },
+    {
+      "horizon": 6,
+      "role": "calibration",
+      "rows": 34524,
+      "sha256": "e5c1a75b2d2c48a24a069933d6e36be486ba6d9b89ac814c8ec77ab9617f7bf4",
+      "path": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f0_s46_method_completion_v1\\stages\\raw_h6_enbpi\\calibration_metadata.csv.gz"
+    },
+    {
+      "horizon": 6,
+      "role": "test",
+      "rows": 34416,
+      "sha256": "de36ee1173c184ada2be439738afbd1df11249a1e0ecb2cc1728937512a640c3",
+      "path": "smart_building_conformal\\outputs\\matched_intervals005\\bdg2_f0_s46_method_completion_v1\\stages\\raw_h6_enbpi\\test_metadata.csv.gz"
+    }
+  ],
+  "operation_counts": {
+    "cqr_wrapper_fit": 6,
+    "quantile_estimator_fit": 18,
+    "enbpi_wrapper_fit": 3,
+    "xgboost_estimator_fit": 33,
+    "random_forest_estimator_fit": 0,
+    "dscp_calibrator_fit": 1,
+    "kmeans_candidate_fit": 5,
+    "calibrator_conformalize": 18
+  },
+  "operation_counts_match_frozen_protocol": true,
+  "operations_sha256": "ede89b6dc39d6573de8670573692e9acec164157722ad570426bd13c6c552085",
+  "complete_manifest_sha256": "1af44bd18bf810546e63010a95cd7a929c190e55aaddb5415bdbd1aeb482289f",
+  "scientific_tree_unchanged": true,
+  "completed_bundles_checked": 4,
+  "completed_bound_cells_checked": 48,
+  "completed_rows_checked": 1652224,
+  "full_corrected_validation_passed": true,
+  "seed46_zero_fit_resume_passed": true,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "tolerances_unchanged": true,
+  "remaining_authorized_bundles": 47
+}

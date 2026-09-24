@@ -25,6 +25,9 @@ Engine, exclusive_lock = _legacy.Engine, _legacy.exclusive_lock
 PYTHON = "C:/cfs_venv/Scripts/python.exe"
 ROOT = SMART / "outputs/matched_intervals005/completion_52_v1_coordinator"
 ADAPTER = HERE / "adapter.py"
+CORRECTED_VALIDATOR = HERE / "corrected_validator_v1.py"
+RANK_RECOVERY = HERE / "INTERVAL_RANK_RECOVERY_V1.json"
+RANK_ROOT = ROOT / "rank_recovery_v1"
 SYNTHETIC = REPO / "review/matched_intervals005_bdg2_20260914/SYNTHETIC_ACCEPTANCE.json"
 BRANCH = "review/matched-intervals-seasonal005-completion-20260924"
 DISK_FLOOR = 8 * 2**30
@@ -37,6 +40,9 @@ def bundles() -> list[tuple[str, int, int]]:
 
 def command(action: str, key: tuple[str, int, int], receipt: Path | None = None) -> list[str]:
     dataset, fold, seed = key
+    if action == "validate_corrected":
+        return [PYTHON, "-B", str(CORRECTED_VALIDATOR), "--dataset", dataset,
+                "--fold", str(fold), "--seed", str(seed), "--receipt", str(receipt)]
     args = [PYTHON, "-B", str(ADAPTER), action, "--dataset", dataset,
             "--fold", str(fold), "--seed", str(seed)]
     if action == "freeze":
@@ -56,7 +62,12 @@ def summary(engine: Engine, phase: str) -> None:
         design, output = bundle_paths(*key)
         if (design / "frozen_protocol.json").exists() and (design / "readiness.json").exists():
             frozen.append(key)
-        if (output / "COMPLETE.json").exists() and (ROOT / "validation" / f"{key[0]}_f{key[1]}_s{key[2]}" / "validation.json").exists() and (ROOT / "resumes" / f"{key[0]}_f{key[1]}_s{key[2]}.json").exists():
+        name = f"{key[0]}_f{key[1]}_s{key[2]}"
+        original = ((ROOT / "validation" / name / "validation.json").exists()
+                    and (ROOT / "resumes" / f"{name}.json").exists())
+        recovered = ((RANK_ROOT / "corrected_validation" / name / "validation.json").exists()
+                     and (RANK_ROOT / "resumes" / f"{name}.json").exists())
+        if (output / "COMPLETE.json").exists() and (original or recovered):
             completed.append(key)
     free = shutil.disk_usage(SMART).free
     start = engine.state.setdefault("started_epoch", time.time())
@@ -129,6 +140,11 @@ def main() -> None:
             if prefit["source_hash"] != SOURCE_HASH or prefit["adapter_sha256"] != digest(ADAPTER):
                 raise ValueError("prefit identity mismatch")
             subprocess.run(["git", "merge-base", "--is-ancestor", prefit["commit"], "HEAD"], cwd=REPO, check=True)
+            recovery = read(RANK_RECOVERY)
+            if (not recovery["passed"] or recovery["scientific_source_hash"] != SOURCE_HASH
+                    or recovery["correction_module_sha256"] != digest(CORRECTED_VALIDATOR)
+                    or recovery["failed_validation_preserved_sha256"] != digest(Path(recovery["failed_log"]))):
+                raise ValueError("interval-rank recovery gate identity mismatch")
             for ordinal, key in enumerate(queue):
                 dataset, fold, seed = key
                 name = f"{dataset}_f{fold}_s{seed}"
@@ -137,11 +153,23 @@ def main() -> None:
                 design, output = bundle_paths(*key)
                 action = "resume" if (output / "checkpoint_manifest.json").exists() else "run"
                 engine.phase(f"{name}/run", lambda _, a=action, k=key: command(a, k))
-                validation = ROOT / "validation" / name
-                engine.phase(f"{name}/validate", lambda _, k=key, p=validation: command("validate", k, p))
-                resume = ROOT / "resumes" / f"{name}.json"
-                resume.parent.mkdir(parents=True, exist_ok=True)
-                engine.phase(f"{name}/completed_resume", lambda _, k=key, p=resume: command("resume", k, p))
+                original_validation = ROOT / "validation" / name
+                original_resume = ROOT / "resumes" / f"{name}.json"
+                recovered_validation = RANK_ROOT / "corrected_validation" / name
+                recovered_resume = RANK_ROOT / "resumes" / f"{name}.json"
+                if (original_validation / "validation.json").exists() and original_resume.exists():
+                    validation, resume = original_validation, original_resume
+                elif ((recovered_validation / "validation.json").exists()
+                      and recovered_resume.exists()):
+                    validation, resume = recovered_validation, recovered_resume
+                else:
+                    validation, resume = original_validation, original_resume
+                    engine.phase(
+                        f"{name}/validate_decimal_rank_v1",
+                        lambda _, k=key, p=validation: command("validate_corrected", k, p),
+                    )
+                    resume.parent.mkdir(parents=True, exist_ok=True)
+                    engine.phase(f"{name}/completed_resume", lambda _, k=key, p=resume: command("resume", k, p))
                 v, r = read(validation / "validation.json"), read(resume)
                 expected = 40 if dataset == "rico" else 30
                 if (not v["passed"] or v["method_cells"] != expected or

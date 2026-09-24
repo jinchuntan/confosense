@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\cfs_venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals_seasonal005_completion_20260924\\test_corrected_validator_v1.py"
+  ],
+  "exit_code": 0,
+  "stdout": "........                                                                 [100%]\n8 passed in 2.17s\n",
+  "stderr": "",
+  "test_source_sha256": "be1176ed0d35eb6255dd2db44fc92604a8a6cdcc52cfa4856f5c7a02f820771b"
+}
