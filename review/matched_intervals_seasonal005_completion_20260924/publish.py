@@ -95,6 +95,19 @@ def staged_audit(expected: list[str]) -> dict:
     return dict(count=len(staged), bytes=sum(sizes.values()), maximum_bytes=max(sizes.values()), paths=staged)
 
 
+def staged_publication_delta(allowed: list[str]) -> list[str]:
+    """Return the exact staged delta while accepting clean files in ancestry."""
+    staged = git("diff", "--cached", "--name-only").splitlines()
+    if not staged or not set(staged).issubset(set(allowed)):
+        raise ValueError("staged paths are empty or exceed the publication allowlist")
+    for path in set(allowed) - set(staged):
+        git("ls-files", "--error-unmatch", "--", path)
+        clean = subprocess.run(["git", "diff", "--quiet", "HEAD", "--", path], cwd=REPO)
+        if clean.returncode != 0:
+            raise ValueError(f"allowed path was not staged or clean in ancestry: {path}")
+    return staged
+
+
 def bundle(commit: str, name: str) -> dict:
     previous = read(PARENT_BACKUP)
     if not previous["passed"] or previous["commit"] != BASE or not previous["external_only_restore_verified"]:
@@ -145,7 +158,7 @@ def main() -> None:
     paths = allowed_paths()
     for start in range(0, len(paths), 40):
         git("add", "--", *paths[start:start+40])
-    audit = staged_audit(paths)
+    audit = staged_audit(staged_publication_delta(paths))
     print(json.dumps({key: audit[key] for key in ("count", "bytes", "maximum_bytes")}), flush=True)
     substantive = git("commit", "-m", "Deliver validated matched interval and seasonal completion")
     substantive_sha = git("rev-parse", "HEAD")
