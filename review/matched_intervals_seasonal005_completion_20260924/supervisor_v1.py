@@ -38,6 +38,7 @@ PUBLICATION = HERE / "PUBLICATION_RECEIPT.json"
 BACKUP = Path("C:/Users/nigel/ConfoSenseBackups/matched_intervals_seasonal005_completion_20260924")
 DISK_FLOOR = 8 * 2**30
 INTERVAL = 120
+MANAGED: dict[str, subprocess.Popen] = {}
 
 
 def now() -> str:
@@ -84,7 +85,11 @@ def process_rows() -> list[dict]:
         "Get-CimInstance Win32_Process -Filter \"Name='python.exe' OR Name='pythonw.exe'\" | "
         "Select-Object @{n='pid';e={$_.ProcessId}},@{n='ppid';e={$_.ParentProcessId}},"
         "@{n='created';e={$_.CreationDate.ToUniversalTime().ToString('o')}},"
-        "@{n='exe';e={$_.ExecutablePath}},@{n='command';e={$_.CommandLine}} | "
+        "@{n='exe';e={$_.ExecutablePath}},@{n='command';e={$_.CommandLine}},"
+        "@{n='cpu_100ns';e={[int64]$_.KernelModeTime+[int64]$_.UserModeTime}},"
+        "@{n='working_set';e={[int64]$_.WorkingSetSize}},"
+        "@{n='read_bytes';e={[int64]$_.ReadTransferCount}},"
+        "@{n='write_bytes';e={[int64]$_.WriteTransferCount}} | "
         "ConvertTo-Json -Compress"
     )
     result = subprocess.run(
@@ -172,7 +177,9 @@ def choose_action(*, progress: dict, coordinator_count: int, worker_count: int,
     if free_bytes < DISK_FLOOR:
         return "block", f"free disk below 8 GiB floor: {free_bytes}"
     if delivery_complete:
-        return "delivered", "scoped publication receipt is present"
+        if finalizer_count == 1:
+            return "finalizing", "delivery checks passed; waiting for guarded finisher exit"
+        return "delivered", "scoped publication receipt is present after final bundle and push"
     if progress.get("status") == "science_validated" and progress.get("completed_bundles") == 52:
         if coordinator_count or worker_count:
             return "wait", "science complete while coordinator family exits"
@@ -190,8 +197,8 @@ def choose_action(*, progress: dict, coordinator_count: int, worker_count: int,
         return "launch_coordinator", "versioned import recovery gate passed"
     if classification:
         return "block", classification
-    if progress.get("status") in {"running", "recovering"} and retries < 2:
-        return "launch_coordinator", "recoverable coordinator absence after ledger observation"
+    if progress.get("status") in {"running", "recovering"}:
+        return "block", "unexpected coordinator absence requires checkpoint/ledger reconciliation"
     return "block", "coordinator is absent without a classified recoverable state"
 
 
@@ -209,6 +216,7 @@ def launch(script: Path, argument: str, label: str) -> dict:
     )
     stdout.close()
     stderr.close()
+    MANAGED[label] = process
     record = {
         "pid": process.pid,
         "created_utc": now(),
@@ -224,13 +232,52 @@ def launch(script: Path, argument: str, label: str) -> dict:
 
 def compact_family(family: dict) -> dict:
     root = family["root"]
+    members = family["members"]
     return {
         "root_pid": int(root["pid"]),
         "root_created": root.get("created"),
         "root_executable": root.get("exe"),
         "root_command": root.get("command"),
-        "member_pids": [int(item["pid"]) for item in family["members"]],
+        "member_pids": [int(item["pid"]) for item in members],
+        "cpu_seconds": sum(int(item.get("cpu_100ns") or 0) for item in members) / 10_000_000,
+        "working_set_bytes": sum(int(item.get("working_set") or 0) for item in members),
+        "read_bytes": sum(int(item.get("read_bytes") or 0) for item in members),
+        "write_bytes": sum(int(item.get("write_bytes") or 0) for item in members),
     }
+
+
+def log_observation(progress: dict) -> dict | None:
+    active = progress.get("active") or {}
+    candidate = active.get("log")
+    if not candidate and progress.get("status") == "blocked":
+        failure = str(progress.get("failure", ""))
+        marker = failure.rfind(";")
+        candidate = failure[marker + 1:].strip() if marker >= 0 else None
+    if not candidate:
+        return None
+    path = Path(candidate)
+    if not path.is_file():
+        return {"path": str(path), "present": False}
+    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    return {
+        "path": str(path), "present": True, "bytes": path.stat().st_size,
+        "modified_utc": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(),
+        "tail": lines[-8:],
+        "interpretation": "quiet output or unchanged counters alone are not treated as a hang",
+    }
+
+
+def managed_exit_updates(previous: dict) -> dict:
+    updates = dict(previous.get("managed_child_exits", {}))
+    for label, process in list(MANAGED.items()):
+        code = process.poll()
+        if code is None:
+            continue
+        row = {"pid": process.pid, "exit_code": code, "observed_utc": now()}
+        updates[label] = row
+        event("managed_child_exit", label=label, **row)
+        del MANAGED[label]
+    return updates
 
 
 def inspect(previous: dict) -> tuple[dict, str, str]:
@@ -275,6 +322,8 @@ def inspect(previous: dict) -> tuple[dict, str, str]:
         "free_disk_bytes": free,
         "disk_floor_bytes": DISK_FLOOR,
         "observation_errors": int(previous.get("observation_errors", 0)),
+        "managed_child_exits": managed_exit_updates(previous),
+        "latest_log": log_observation(progress),
     }
     return status, action, reason
 
@@ -340,6 +389,9 @@ def run(interval: int) -> None:
                 }
                 atomic(STATUS, previous)
                 event("observation_error", error=repr(exc), traceback=traceback.format_exc())
+            if previous.get("state") == "delivered":
+                event("supervisor_exited", state="delivered", reason=previous.get("reason"))
+                return
             time.sleep(max(0, interval - (time.monotonic() - started)))
     finally:
         lock.close()

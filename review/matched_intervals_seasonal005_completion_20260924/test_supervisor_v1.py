@@ -63,6 +63,22 @@ class SupervisorTests(unittest.TestCase):
         self.assertEqual(action, "block")
         self.assertIn("finisher exited", reason)
 
+    def test_unexpected_running_coordinator_absence_requires_reconciliation(self):
+        action, reason = supervisor.choose_action(
+            progress=progress("running"), coordinator_count=0, worker_count=0,
+            finalizer_count=0, delivery_complete=False, recovery_ready=True,
+            retries=0, finalizer_started=False, free_bytes=supervisor.DISK_FLOOR + 1)
+        self.assertEqual(action, "block")
+        self.assertIn("ledger reconciliation", reason)
+
+    def test_delivery_waits_for_finisher_exit(self):
+        action, _ = supervisor.choose_action(
+            progress=progress("science_validated", completed=52), coordinator_count=0,
+            worker_count=0, finalizer_count=1, delivery_complete=True,
+            recovery_ready=True, retries=1, finalizer_started=True,
+            free_bytes=supervisor.DISK_FLOOR + 1)
+        self.assertEqual(action, "finalizing")
+
     def test_atomic_status_and_single_event_log(self):
         with tempfile.TemporaryDirectory() as temporary:
             old_root, old_status, old_events = supervisor.ROOT, supervisor.STATUS, supervisor.EVENTS
