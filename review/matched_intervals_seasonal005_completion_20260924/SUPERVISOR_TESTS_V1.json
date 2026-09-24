@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "utc": "2026-09-24T12:34:20+00:00",
+  "interpreter": "C:\\cfs_venv\\Scripts\\python.exe",
+  "command": "python -B -m unittest -v test_supervisor_v1.py",
+  "tests_run": 7,
+  "scientific_fits": 0,
+  "fixtures": "pure decision records and a harmless temporary directory",
+  "coverage": [
+    "logical process-family adoption and duplicate launch prevention",
+    "recorded failure detection",
+    "exact import-failure classification",
+    "recoverable retry limited to two launches",
+    "hard-validation blocking",
+    "finisher exit before delivery detection",
+    "single atomic status and append-only event log"
+  ],
+  "supervisor_sha256": "7455a2e5f2070a916287524f40cce85e2d9b70ab05261165772d50bcac04ad16",
+  "test_source_sha256": "8d2e610eadb23800f13cb69d5ee67b365310960076f5464268db01391cbc73e0",
+  "delivery_receipt_resolution_check": {
+    "passed": true,
+    "rank_recovery_bundle": "bdg2_f0_s46",
+    "standard_import_recovery_bundle": "bdg2_f1_s42",
+    "fit_or_conformalization_calls": 0
+  }
+}

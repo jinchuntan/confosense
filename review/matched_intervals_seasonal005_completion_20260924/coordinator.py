@@ -25,12 +25,23 @@ Engine, exclusive_lock = _legacy.Engine, _legacy.exclusive_lock
 PYTHON = "C:/cfs_venv/Scripts/python.exe"
 ROOT = SMART / "outputs/matched_intervals005/completion_52_v1_coordinator"
 ADAPTER = HERE / "adapter.py"
-CORRECTED_VALIDATOR = HERE / "corrected_validator_v1.py"
+CORRECTED_VALIDATOR_V1 = HERE / "corrected_validator_v1.py"
+CORRECTED_VALIDATOR = HERE / "corrected_validator_v2.py"
 RANK_RECOVERY = HERE / "INTERVAL_RANK_RECOVERY_V1.json"
+IMPORT_RECOVERY = HERE / "IMPORT_BOOTSTRAP_RECOVERY_V2.json"
 RANK_ROOT = ROOT / "rank_recovery_v1"
 SYNTHETIC = REPO / "review/matched_intervals005_bdg2_20260914/SYNTHETIC_ACCEPTANCE.json"
 BRANCH = "review/matched-intervals-seasonal005-completion-20260924"
 DISK_FLOOR = 8 * 2**30
+
+
+def configure_child_environment() -> None:
+    """Give every new Python child the frozen scientific import root."""
+    current = [part for part in os.environ.get("PYTHONPATH", "").split(os.pathsep) if part]
+    smart = str(SMART.resolve())
+    os.environ["PYTHONPATH"] = os.pathsep.join(
+        [smart, *[part for part in current if Path(part).resolve() != SMART.resolve()]]
+    )
 
 
 def bundles() -> list[tuple[str, int, int]]:
@@ -113,6 +124,7 @@ def main() -> None:
     args = parser.parse_args()
     if args.prefit == args.run:
         parser.error("choose exactly one of --prefit or --run")
+    configure_child_environment()
     os.chdir(SMART)
     if subprocess.check_output(["git", "branch", "--show-current"], cwd=REPO, text=True).strip() != BRANCH:
         raise ValueError("wrong review branch")
@@ -142,9 +154,15 @@ def main() -> None:
             subprocess.run(["git", "merge-base", "--is-ancestor", prefit["commit"], "HEAD"], cwd=REPO, check=True)
             recovery = read(RANK_RECOVERY)
             if (not recovery["passed"] or recovery["scientific_source_hash"] != SOURCE_HASH
-                    or recovery["correction_module_sha256"] != digest(CORRECTED_VALIDATOR)
+                    or recovery["correction_module_sha256"] != digest(CORRECTED_VALIDATOR_V1)
                     or recovery["failed_validation_preserved_sha256"] != digest(Path(recovery["failed_log"]))):
                 raise ValueError("interval-rank recovery gate identity mismatch")
+            import_recovery = read(IMPORT_RECOVERY)
+            if (not import_recovery["passed"]
+                    or import_recovery["scientific_source_hash"] != SOURCE_HASH
+                    or import_recovery["preserved_validator_sha256"] != digest(CORRECTED_VALIDATOR_V1)
+                    or import_recovery["bootstrap_entrypoint_sha256"] != digest(CORRECTED_VALIDATOR)):
+                raise ValueError("fresh-process import recovery gate identity mismatch")
             for ordinal, key in enumerate(queue):
                 dataset, fold, seed = key
                 name = f"{dataset}_f{fold}_s{seed}"
@@ -165,7 +183,7 @@ def main() -> None:
                 else:
                     validation, resume = original_validation, original_resume
                     engine.phase(
-                        f"{name}/validate_decimal_rank_v1",
+                        f"{name}/validate_decimal_rank_bootstrap_v2",
                         lambda _, k=key, p=validation: command("validate_corrected", k, p),
                     )
                     resume.parent.mkdir(parents=True, exist_ok=True)

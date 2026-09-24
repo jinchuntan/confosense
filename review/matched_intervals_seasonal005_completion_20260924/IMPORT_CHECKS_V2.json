@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checked_utc": "2026-09-24T12:17:00+00:00",
+  "production_interpreter": "C:\\cfs_venv\\Scripts\\python.exe",
+  "preserved_v1": {
+    "sha256": "c13f4da453b59add612cb37996e45477c3b56a6618a3439116d7e42a790909b5",
+    "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+    "exit_code": 1,
+    "result": "ModuleNotFoundError: No module named 'src'",
+    "purpose": "import-only reproduction; argument parsing and scientific execution were not reached"
+  },
+  "bootstrap_v2_scientific_cwd": {
+    "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+    "exit_code": 0,
+    "src_root": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src"
+  },
+  "bootstrap_v2_external_cwd": {
+    "cwd": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924",
+    "exit_code": 0,
+    "src_root": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src"
+  },
+  "finisher_external_cwd": {
+    "cwd": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924",
+    "exit_code": 0,
+    "src_root": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src"
+  },
+  "coordinator_external_cwd": {
+    "cwd": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924",
+    "exit_code": 0,
+    "check": "import-only argparse help"
+  },
+  "scientific_execution_used_as_smoke_test": false
+}
