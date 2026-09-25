@@ -1,0 +1,160 @@
+{
+  "version": "matched_intervals005_native_and_causal_v1",
+  "seed": 45,
+  "cqr": {
+    "factory": "src.conformal_cqr._quantile_estimator + MAPIE ConformalizedQuantileRegressor",
+    "estimator_parameters": {
+      "categorical_features": "warn",
+      "early_stopping": "auto",
+      "interaction_cst": null,
+      "l2_regularization": 0.0,
+      "learning_rate": 0.05,
+      "loss": "quantile",
+      "max_bins": 255,
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 50,
+      "monotonic_cst": null,
+      "n_iter_no_change": 10,
+      "quantile": null,
+      "random_state": 45,
+      "scoring": "loss",
+      "tol": 1e-07,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "wrapper_parameters": {
+      "confidence_levels": [
+        0.9,
+        0.95
+      ],
+      "prefit": false
+    },
+    "objects_per_horizon": 2,
+    "estimators_per_object": 3,
+    "sharing": "uncalibrated/CQR share exact raw lower/upper/median owner; levels have distinct objects",
+    "score": "native static: separate raw_lower-y and y-raw_upper tail scores; method-preserving online replay: max(raw_lower-y,y-raw_upper)",
+    "native_quantile": "asymmetric native tails: numpy.quantile(each tail score, (1-(1-level)/2)*(1+1/n), method=higher); MAPIE 1.4.1",
+    "native_predict_parameters": {
+      "symmetric_correction": false
+    },
+    "crossing": "retain raw pair; order only emitted pair"
+  },
+  "enbpi": {
+    "factory": "src.interval_stream.IntervalEstimator resolved MAPIE TimeSeriesRegressor",
+    "base_class": "xgboost.sklearn.XGBRegressor",
+    "base_parameters": {
+      "objective": "reg:squarederror",
+      "base_score": null,
+      "booster": null,
+      "callbacks": null,
+      "colsample_bylevel": null,
+      "colsample_bynode": null,
+      "colsample_bytree": 0.8,
+      "device": null,
+      "early_stopping_rounds": null,
+      "enable_categorical": false,
+      "eval_metric": null,
+      "feature_types": null,
+      "feature_weights": null,
+      "gamma": null,
+      "grow_policy": null,
+      "importance_type": null,
+      "interaction_constraints": null,
+      "learning_rate": 0.05,
+      "max_bin": null,
+      "max_cat_threshold": null,
+      "max_cat_to_onehot": null,
+      "max_delta_step": null,
+      "max_depth": 5,
+      "max_leaves": null,
+      "min_child_weight": null,
+      "missing": NaN,
+      "monotone_constraints": null,
+      "multi_strategy": null,
+      "n_estimators": 60,
+      "n_jobs": 1,
+      "num_parallel_tree": null,
+      "random_state": 45,
+      "reg_alpha": null,
+      "reg_lambda": null,
+      "sampling_method": null,
+      "scale_pos_weight": null,
+      "subsample": 0.8,
+      "tree_method": "hist",
+      "validate_parameters": null,
+      "verbosity": null
+    },
+    "bootstrap": {
+      "n_resamplings": 5,
+      "length": 24,
+      "overlapping": true,
+      "random_state": 45
+    },
+    "wrapper": {
+      "method": "enbpi",
+      "agg_function": "mean",
+      "random_state": 45,
+      "n_jobs": 1
+    },
+    "sharing": "static/updated and both nominal levels share exact final calibrated owner; updates never mutate it",
+    "operations": "fit: full-data estimator plus five training bootstraps; explicit conformalize: five calibration bootstraps; verify synthetic actual ledger before real freeze",
+    "native_score": "installed MAPIE conformity score with OOB predictions; retain nonfinite OOB score counts explicitly",
+    "native_interval": "original _recentered_intervals; native offsets shifted from ensemble to full-fit point; no test-truth fitting",
+    "updated_policy": {
+      "version": "amendment004_method_preserving_native_updated_v1",
+      "score": "signed observed-minus-own-full-fit-point",
+      "every": 1,
+      "window": null,
+      "min_samples": 50,
+      "initialization": "fixed pre-test same-group calibration history, otherwise fixed whole historical pool; global supported quantiles as initial hold",
+      "quantile": "lower floor((n+1)*(1-level)/2+1e-12), upper ceil((n+1)*(1-(1-level)/2)-1e-12), one-indexed; no interpolation",
+      "group_policy": "isolated original group and contiguous segment; reset to fixed historical calibration",
+      "legacy_difference": "legacy updated EnbPI used interpolated numpy quantiles/min_samples1; this named adapter preserves amendment004 ranks/min_samples50; no bit-identity claim"
+    }
+  },
+  "dscp": {
+    "factory": "src.conformal_dscp.fit_dscp",
+    "max_clusters": 6,
+    "ks_threshold": 0.05,
+    "neighbours": null,
+    "gamma": 1.0,
+    "seed": 45,
+    "silhouette_sample": 2000,
+    "n_init": 10,
+    "score": "signed y-yhat",
+    "quantile": "numpy.quantile default linear on fixed cluster/merged-step error pool",
+    "assignment": "soft-DTW to all calibration predicted sequences; smallest-cluster-size neighbours; argpartition then majority/lowest-index tie",
+    "assignment_batch_size": 64,
+    "minimum_calibration": 400,
+    "owner": "verified historical matched XGBoost direct horizon artifacts",
+    "labels": [
+      "direct_horizon_adaptation",
+      "from_paper_implementation"
+    ],
+    "test_truth_used_for_fit": false
+  },
+  "replay": {
+    "calibration_minimum": 400,
+    "update_minimum": 50,
+    "release": "compare matured observation to its immutable issued bounds before release; target_time <= current origin; available readings only",
+    "static": "uncalibrated/CQR/static EnbPI/DSCP keep native static construction",
+    "availability": "original target_was_missing and finite source observation; imputed does not imply observed"
+  },
+  "alert": {
+    "rule": "immediate_single_sample",
+    "k": 1,
+    "m": 1,
+    "sampling_frequency": "0 days 00:10:00",
+    "events": "empty; background workload only; no recall/F1/delay/primary feasibility"
+  },
+  "references": {
+    "cqr": "https://arxiv.org/abs/1905.03222",
+    "enbpi": "https://proceedings.mlr.press/v139/xu21h.html",
+    "dscp": "https://arxiv.org/abs/2503.21251",
+    "mapie": "https://mapie.readthedocs.io/en/stable/"
+  }
+}

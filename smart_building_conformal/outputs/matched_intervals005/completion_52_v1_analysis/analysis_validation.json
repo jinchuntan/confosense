@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "accepted_method_cells": 250,
+  "new_method_cells": 1700,
+  "total_method_cells": 1950,
+  "native_rows": 1950,
+  "common_rows": 1950,
+  "unique_seasonal_computations": 27,
+  "new_unique_seasonal_computations": 18,
+  "seasonal_point_alias_rows": 135,
+  "seasonal_interval_alias_rows": 270,
+  "operation_totals": {
+    "cqr_wrapper_fit": 340,
+    "quantile_estimator_fit": 1020,
+    "enbpi_wrapper_fit": 170,
+    "xgboost_estimator_fit": 1870,
+    "random_forest_estimator_fit": 0,
+    "dscp_calibrator_fit": 52,
+    "kmeans_candidate_fit": 260,
+    "calibrator_conformalize": 1020
+  },
+  "models_fitted_by_analysis": 0,
+  "recorded_run_validation_resume_wall_seconds": 57171.85267140003,
+  "resume_wall_seconds_recorded": 50,
+  "measured_run_stage_and_validation_cpu_seconds": 54343.75,
+  "peak_measured_rss_bytes": 1250824192,
+  "minimum_post_bundle_free_disk_bytes": 52825083904,
+  "full_study_ready": false
+}

@@ -1,3 +1,15 @@
+# Matched interval-method and seasonal completion validated
+
+The bounded 52-bundle extension is complete: 1,700 new cells plus 250 preserved accepted cells cover all **1,950/1,950** declared interval-method cells. The three applicable datasets have **27/27 unique seasonal dataset/fold/horizon computations**, 18 new, with 135 point and 270 interval seed-alias rows. RICO seasonal remains inapplicable. Every new bundle passed scoped independent validation, exact operation-ledger reconciliation and an unchanged-artifact zero-fit resume. The scientific source digest stayed `a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f`.
+
+The native/common evaluation views are separate views of the same cells. Fold/seed results are descriptive; overlapping observations and aliases do not support population intervals. Clean-stream workload is not labelled-event detection performance. Verified external backup packages preserve the new raw runs, protocols and exact forecasting-owner prerequisites; the published review branch has a scoped, commit-pinned HTTPS readback receipt.
+
+Full-study readiness remains **false**. The separate operational grid and robustness, contamination and recovery obligations remain unresolved; no such runs were launched here.
+
+[Cumulative report](smart_building_conformal/outputs/matched_intervals005/completion_52_v1_analysis/CUMULATIVE_REPORT.md), [evidence index](review/matched_intervals_seasonal005_completion_20260924/EVIDENCE_INDEX.md), [analysis validation](smart_building_conformal/outputs/matched_intervals005/completion_52_v1_analysis/analysis_validation.json), [external backup validation](smart_building_conformal/outputs/matched_intervals005/completion_52_v1_packages/external_backup_validation.json).
+
+<!-- matched-intervals-seasonal005-completion-20260924: historical status follows -->
+
 # Matched-forecasting amendment-005 comparison completed
 
 The 125 authorized outstanding matched-forecasting units are accepted and combined by exact matrix key with 70 preserved historical units. The declared own-model comparison is now **195/195 paired units, 585/585 point cells and 1,170/1,170 90%/95% interval cells**. The new batch used exactly 1,000 tuning plus 250 final learned fits; all 125 completed resumes used zero fits, and the 70 historical units were not refitted.

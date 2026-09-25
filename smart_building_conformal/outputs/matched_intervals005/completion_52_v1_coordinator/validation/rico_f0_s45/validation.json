@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "method_cells": 40,
+  "native_common_metric_rows": 80,
+  "seasonal_interval_cells": 0,
+  "seasonal_not_applicable": 4,
+  "alert_stream_checks": 40,
+  "maximum_observed_difference": 1.9067382837079094e-06,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "source_artifacts_unchanged": true,
+  "resources": {
+    "seconds": 382.280883600004,
+    "baseline_rss_bytes": 327921664,
+    "peak_rss_bytes": 652328960,
+    "baseline_private_bytes": 285130752,
+    "peak_private_bytes": 684081152,
+    "incremental_peak_rss_bytes": 324407296,
+    "lifetime_peak_rss_bytes": 668393472,
+    "min_available_ram_bytes": 6196297728,
+    "sample_interval_seconds": 0.05,
+    "process_cpu_seconds": 370.703125
+  },
+  "source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "protocol_hash": "8d2735e66795e613c3c4b7148e2b0a06080ba5c09197ad4f5c0026fcb0c3ae0b",
+  "utc": "2026-09-24T23:06:21.141842+00:00",
+  "correction_version": "matched_intervals005_enbpi_decimal_rank_validator_v1",
+  "correction_module_sha256": "c13f4da453b59add612cb37996e45477c3b56a6618a3439116d7e42a790909b5",
+  "corrected_validator_source_sha256": "c6ff8cf0f7bfdb386706a860475e8971c631cbf5caff2cccb0dd332b1a914f49",
+  "frozen_validator": {
+    "path": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\src\\intervals005_validate.py",
+    "sha256": "28313cdc1c48e5c8f74b49c36a1eb47aa4d771657cf33bc7172a441b6329c2fa"
+  },
+  "mapie_probability_contract": "alpha=float(Decimal('1')-Decimal(str(level))); beta=alpha/2; upper_alpha=1-alpha+beta; probability=((1-2*quantile_alpha)*reversed+quantile_alpha)",
+  "failure_provenance": null,
+  "tolerances_unchanged": true,
+  "scientific_source_modified": false
+}

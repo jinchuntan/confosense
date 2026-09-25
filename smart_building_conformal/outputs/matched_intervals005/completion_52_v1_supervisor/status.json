@@ -1,0 +1,54 @@
+{
+  "checked_utc": "2026-09-25T01:29:07.822682+00:00",
+  "coordinator_launches": 1,
+  "disk_floor_bytes": 8589934592,
+  "finalizer_launched_utc": "2026-09-25T01:19:07.725778+00:00",
+  "free_disk_bytes": 44494147584,
+  "last_scientific_progress_utc": "2026-09-25T01:18:43.819523+00:00",
+  "latest_log": null,
+  "managed_child_exits": {},
+  "observation_errors": 0,
+  "processes": {
+    "coordinator_families": [],
+    "finalizer_families": [
+      {
+        "cpu_seconds": 1.9375,
+        "member_pids": [
+          17936,
+          24772
+        ],
+        "read_bytes": 54107615,
+        "root_command": "C:\\cfs_venv\\Scripts\\python.exe -B C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals_seasonal005_completion_20260924\\finalize.py --run",
+        "root_created": "2026-09-25T01:19:07.7286170Z",
+        "root_executable": "C:\\cfs_venv\\Scripts\\python.exe",
+        "root_pid": 24772,
+        "working_set_bytes": 331931648,
+        "write_bytes": 0
+      }
+    ],
+    "supervisor": {
+      "argv": [
+        "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\review\\matched_intervals_seasonal005_completion_20260924\\supervisor_v1.py",
+        "--run",
+        "--interval",
+        "120"
+      ],
+      "cwd": "C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal",
+      "executable": "C:\\cfs_venv\\Scripts\\python.exe",
+      "pid": 16684
+    },
+    "worker_families": []
+  },
+  "progress": {
+    "active": null,
+    "completed_bundles": 52,
+    "failure": "phase bdg2_f1_s42/validate_decimal_rank_v1 failed; actual exit 1; C:\\Users\\nigel\\OneDrive\\Desktop\\GitHub\\confosense\\smart_building_conformal\\outputs\\matched_intervals005\\completion_52_v1_coordinator\\attempts\\2026-09-24T020808283316+0000_a142ffc9\\command.log",
+    "frozen_bundles": 52,
+    "phase": "science_validated",
+    "remaining_bundles": 0,
+    "status": "science_validated"
+  },
+  "reason": "adopted guarded finisher",
+  "state": "finalizing",
+  "version": "matched_intervals_seasonal005_supervisor_v1"
+}
