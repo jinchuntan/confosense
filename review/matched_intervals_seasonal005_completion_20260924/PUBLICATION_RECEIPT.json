@@ -1,0 +1,86 @@
+{
+  "substantive_commit": "be9ada91b314ae1a56def6b64de72e3f2894625e",
+  "branch": "review/matched-intervals-seasonal005-completion-20260924",
+  "publication_recovery": "review/matched_intervals_seasonal005_completion_20260924/PUBLICATION_RECOVERY_V1.json",
+  "external_substantive_bundle": {
+    "path": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924\\publication_substantive_recovery_v1_from_0c57f736.bundle",
+    "sha256": "2660266f4f83cabfec58895b4ed5dfaa22cd908f255ee60441b6515a52f86871",
+    "bytes": 4704779,
+    "prerequisite_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+    "prerequisite_bundle": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_forecasting005_completion_20260923\\delivery_receipts_0c57f7361855_from_be8487668e82.bundle",
+    "prerequisite_bundle_sha256": "af4a090a24ffbc70b6f2dd932a182e83b4b01c1ecf835c4649119edb91b99a73",
+    "positive_ref": "refs/heads/review/matched-intervals-seasonal005-completion-20260924",
+    "selected_commit": "be9ada91b314ae1a56def6b64de72e3f2894625e",
+    "selected_commit_count": 8,
+    "create_argv": [
+      "git",
+      "bundle",
+      "create",
+      "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924\\publication_substantive_recovery_v1_from_0c57f736.bundle",
+      "refs/heads/review/matched-intervals-seasonal005-completion-20260924",
+      "^0c57f73618552514d41c6b78c631bd575beeebbc"
+    ],
+    "advertised_heads": [
+      "be9ada91b314ae1a56def6b64de72e3f2894625e refs/heads/review/matched-intervals-seasonal005-completion-20260924"
+    ],
+    "verify_output": "The bundle contains this ref:\nbe9ada91b314ae1a56def6b64de72e3f2894625e refs/heads/review/matched-intervals-seasonal005-completion-20260924\nThe bundle requires this ref:\n0c57f73618552514d41c6b78c631bd575beeebbc \nThe bundle uses this hash algorithm: sha1\nC:/Users/nigel/ConfoSenseBackups/matched_intervals_seasonal005_completion_20260924/publication_substantive_recovery_v1_from_0c57f736.bundle is okay"
+  },
+  "external_only_substantive_restore": {
+    "passed": true,
+    "repository": "C:\\Users\\nigel\\AppData\\Local\\Temp\\confosense-external-recovery-be8487668e82",
+    "alternates": false,
+    "remotes": [],
+    "prerequisite_commit": "0c57f73618552514d41c6b78c631bd575beeebbc",
+    "bundle": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924\\publication_substantive_recovery_v1_from_0c57f736.bundle",
+    "bundle_sha256": "2660266f4f83cabfec58895b4ed5dfaa22cd908f255ee60441b6515a52f86871",
+    "restored_ref": "refs/heads/interval-publication-substantive-be9ada91b314",
+    "restored_commit": "be9ada91b314ae1a56def6b64de72e3f2894625e",
+    "restored_tree": "c445ce1fecfe5f2293bc75cfdb0890187b74ae40",
+    "verify_output": "The bundle contains this ref:\nbe9ada91b314ae1a56def6b64de72e3f2894625e refs/heads/review/matched-intervals-seasonal005-completion-20260924\nThe bundle requires this ref:\n0c57f73618552514d41c6b78c631bd575beeebbc \nThe bundle uses this hash algorithm: sha1\nC:/Users/nigel/ConfoSenseBackups/matched_intervals_seasonal005_completion_20260924/publication_substantive_recovery_v1_from_0c57f736.bundle is okay"
+  },
+  "readback_commit": "be9ada91b314ae1a56def6b64de72e3f2894625e",
+  "readback_scope": [
+    {
+      "path": "review/matched_intervals_seasonal005_completion_20260924/adapter.py",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be9ada91b314ae1a56def6b64de72e3f2894625e/review/matched_intervals_seasonal005_completion_20260924/adapter.py",
+      "bytes": 25490,
+      "sha256": "79ab561e2db4b9a73a53b6ebe4ccd994ba4a9909e7b4fbff5da5792b2e4ffefe"
+    },
+    {
+      "path": "review/matched_intervals_seasonal005_completion_20260924/AUTHORIZATION.json",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be9ada91b314ae1a56def6b64de72e3f2894625e/review/matched_intervals_seasonal005_completion_20260924/AUTHORIZATION.json",
+      "bytes": 5673,
+      "sha256": "917ae5eaefb676f742635a07287012954e44814da129e88cd9022ff58d119c92"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_intervals005/completion_52_v1_analysis/CUMULATIVE_REPORT.md",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be9ada91b314ae1a56def6b64de72e3f2894625e/smart_building_conformal/outputs/matched_intervals005/completion_52_v1_analysis/CUMULATIVE_REPORT.md",
+      "bytes": 8750,
+      "sha256": "87c20b872516e1b9cf809b02ab3e8e34b3d2c2e1a6817c6c15956406e1191aaf"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_intervals005/completion_52_v1_analysis/analysis_validation.json",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be9ada91b314ae1a56def6b64de72e3f2894625e/smart_building_conformal/outputs/matched_intervals005/completion_52_v1_analysis/analysis_validation.json",
+      "bytes": 933,
+      "sha256": "008c3a3ec5a106c930e1c8f08f9332dc3fcea4f51ed2ab64edf76c112fa0f346"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_intervals005/completion_52_v1_packages/external_backup_validation.json",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be9ada91b314ae1a56def6b64de72e3f2894625e/smart_building_conformal/outputs/matched_intervals005/completion_52_v1_packages/external_backup_validation.json",
+      "bytes": 1407,
+      "sha256": "5d10c5ce08c07c32964c126234f7f33a04fab0c39d1b40ea9eb566d5fb293d2b"
+    },
+    {
+      "path": "smart_building_conformal/outputs/matched_intervals005/bdg2_f0_s42_method_completion_v1/COMPLETE.json",
+      "url": "https://raw.githubusercontent.com/jinchuntan/confosense/be9ada91b314ae1a56def6b64de72e3f2894625e/smart_building_conformal/outputs/matched_intervals005/bdg2_f0_s42_method_completion_v1/COMPLETE.json",
+      "bytes": 90355,
+      "sha256": "8451616c796b2b65cae9aa15a99a32e4293fa7da642cba775af88f8f4baea4f0"
+    }
+  ],
+  "readback_scope_statement": "These six exact paths only; not every published file or the receipt itself",
+  "failed_attempt_preserved": {
+    "path": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924\\supervisor_finalizer.stderr.log",
+    "sha256": "6b94c62d2210d4012aabf4fb750c7eb03a516712a96c340e3aa2f54810d16491"
+  },
+  "full_study_ready": false
+}
