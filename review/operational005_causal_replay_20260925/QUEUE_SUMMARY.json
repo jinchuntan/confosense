@@ -1,0 +1,27 @@
+{
+  "version": "operational005_causal_replay_v1",
+  "authorization_source": "user attachment 57a4912c-2519-4677-9975-05d69fd83ec1",
+  "entry_commit": "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead",
+  "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "operational_configuration": "smart_building_conformal/configs/operational_amendment004.json",
+  "operational_configuration_sha256": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+  "unique_candidate_definitions": 264,
+  "evaluation_rows": 3960,
+  "metric_view_rows": 7920,
+  "ready_unique_candidate_definitions": 165,
+  "ready_evaluation_rows": 2475,
+  "unavailable_unique_candidate_definitions": 99,
+  "unavailable_evaluation_rows": 1485,
+  "unavailable_reason": "no exact saved 97.5/99/99.5 CQR or uncalibrated-quantile owner; fitting is forbidden",
+  "catalogue_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "catalogues_are_independent_experiments": false,
+  "native_common_are_metric_views": true,
+  "population_inference_authorized": false,
+  "full_study_ready": false
+}

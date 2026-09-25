@@ -1,0 +1,77 @@
+{
+  "version": "operational005_causal_replay_v1",
+  "authorization_source": "user attachment 57a4912c-2519-4677-9975-05d69fd83ec1",
+  "preparation_predecessors": {
+    "PROTOCOL_PREPARATION_FAILED_V1.json": "ff284deed240f5e9a2d408812cec1ff7bfae89b80da2e50149089d312eef6bcc",
+    "PROTOCOL_PREPARATION_FAILED_V2.json": "fcf07c96ed91dd64c92eaf5946a11c8df10d3f10518d340837723d55fe79209b"
+  },
+  "preparation_corrections": [
+    "standalone validator import path and runtime protocol-hash enforcement",
+    "pin the populated scientific interpreter without adding psutil to it"
+  ],
+  "entry_commit": "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead",
+  "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "runtime": {
+    "python": "C:\\cfs_venv\\Scripts\\python.exe",
+    "python_sha256": "bfff517165ad6d1f3bf02d1782eaf7588fb7c20cd78d1c81788c4444e7bc5d82",
+    "python_version": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]",
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "xgboost": "3.2.0",
+      "MAPIE": "1.4.1",
+      "matplotlib": "3.11.1"
+    }
+  },
+  "operational_configuration": "smart_building_conformal/configs/operational_amendment004.json",
+  "operational_configuration_sha256": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+  "candidate_queue_sha256": "d05c4d3b59ac27154ceae2ec05c510294a155457a77369b7eb6f589bb44f2014",
+  "candidate_definitions_sha256": "078d6c546105f86579ff7ceeb671b99fe173f6ee4bd43d05745da62d4040734d",
+  "metric_view_queue_sha256": "767023a2db4907f6da2cf4306403f433390feaccfc4f7e2e897e1324022e5937",
+  "owner_inventory_sha256": "750fcc32b2a47351f1689a268565faff4795111227b0a23c8ea78d6738647343",
+  "queue_summary_sha256": "dbdc86cb9ecd841adb8b9c1b1fe1af80e4ca47a59ee13a1b04dd4c99f47b54d9",
+  "preflight_sha256": "0a91eb39a6512a1744883ad0d09c39f776550fab0fa43fac75592b840ccd8d81",
+  "adapter_sha256": "2de8d74615b6c3249ff0d9941f02510c5b7659f835092532f9905d28a68d1128",
+  "validator_sha256": "46180ebea91ed5f3cf2c1a42caec263ff6908916cb4403b5c41699196398eff9",
+  "code_hashes": {
+    "common.py": "aca767279326384c3b4e69d1b95175387fc5397298a5e2c49a5e9265acb04414",
+    "prepare.py": "1e66ff75d806f0979f4abec9da496733b600cbef598fcf19e8fc6ae29e6064a2",
+    "adapter.py": "2de8d74615b6c3249ff0d9941f02510c5b7659f835092532f9905d28a68d1128",
+    "preflight.py": "8f1bf270e94e5abe8b824677ee6868f537ac61bd978515ea5c215a7df3f56c14",
+    "validate.py": "46180ebea91ed5f3cf2c1a42caec263ff6908916cb4403b5c41699196398eff9",
+    "coordinator.py": "03b9f1063bc4a5a41f93323441d1530e04ec6faee80a115b560895755af24341",
+    "supervisor.py": "a110b8f2325b5ff5db9f7e6ae02e20ba38558570a22d83f65c6ca8e2643fe1e5",
+    "aggregate.py": "2383dc423dec9b95646d17d6c4c83bb1f26b8f512f94a55227d71fa841ad574e",
+    "test_guards.py": "9a29c10a8ec5371a7f6bf86a13a523a220128d958562d3e76ad7b26a830099f7",
+    "freeze_protocol.py": "91cd9c445857de3027d8db63cadf72098a6c0af58663ad1d55b78fa0a565fda1",
+    "PROTOCOL_SCHEMA.json": "599f3edc6849df9e6d5b223ad0a326f35dbded6b39d0470a62a994b34fa9ea25"
+  },
+  "fault_specification_hashes": {
+    "operational004_design.py": "6bc5a40652d4db3693551c68a359312b211f1a9a9abb47d860701414141238f8",
+    "operational004_events.py": "c96ded715f3ea1453d30503ef640671f86becfd23d57f4ec4791aed20984a8e4",
+    "operational004_stream.py": "94ac8bf842ed278470d4eb5e16e02c4ded4333f7f774ccf1544c90079a9f4e15",
+    "operational004_metrics.py": "6ab23fa693e52e867b696b8965cd8e3c96147c330989c7dc64cd0253264eda73"
+  },
+  "exact_scope": {
+    "unique_candidate_definitions": 264,
+    "evaluation_rows": 3960,
+    "ready_unique_candidate_definitions": 165,
+    "ready_evaluation_rows": 2475,
+    "unavailable_unique_candidate_definitions": 99,
+    "unavailable_evaluation_rows": 1485,
+    "policy_blocks_per_unit": 55,
+    "units": 15
+  },
+  "fit_budget": {
+    "forecasting_models": 0,
+    "quantile_estimators": 0,
+    "conformalizer_fits": 0,
+    "new_seeds": 0
+  },
+  "disk_floor_bytes": 8589934592,
+  "supervisor_poll_seconds": 120,
+  "publication_allowed_only_after": "all 2475 accepted evaluation rows validate and zero-fit resume; unavailable rows remain explicit",
+  "population_inference": "not authorized",
+  "full_study_ready": false
+}

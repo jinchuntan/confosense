@@ -1,0 +1,17 @@
+{
+  "schema_id": "operational005_causal_replay_protocol_v1",
+  "required_identity_fields": [
+    "version", "authorization_source", "entry_commit", "scientific_source_hash",
+    "candidate_queue_sha256", "metric_view_queue_sha256", "owner_inventory_sha256",
+    "adapter_sha256", "validator_sha256", "fault_specification_hashes",
+    "fit_budget", "disk_floor_bytes"
+  ],
+  "fit_budget": {
+    "forecasting_models": 0,
+    "quantile_estimators": 0,
+    "conformalizer_fits": 0,
+    "new_seeds": 0
+  },
+  "failure_policy": "Scientific assertion, identity, hash, leakage, source/protocol, missing-rule, uncertain-checkpoint or operation-budget failures block without retry.",
+  "full_study_ready": false
+}

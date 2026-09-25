@@ -1,0 +1,55 @@
+{
+  "version": "operational005_causal_replay_v1",
+  "authorization_source": "user attachment 57a4912c-2519-4677-9975-05d69fd83ec1",
+  "entry_commit": "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead",
+  "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "operational_configuration": "smart_building_conformal/configs/operational_amendment004.json",
+  "operational_configuration_sha256": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
+  "candidate_queue_sha256": "d05c4d3b59ac27154ceae2ec05c510294a155457a77369b7eb6f589bb44f2014",
+  "candidate_definitions_sha256": "078d6c546105f86579ff7ceeb671b99fe173f6ee4bd43d05745da62d4040734d",
+  "metric_view_queue_sha256": "767023a2db4907f6da2cf4306403f433390feaccfc4f7e2e897e1324022e5937",
+  "owner_inventory_sha256": "750fcc32b2a47351f1689a268565faff4795111227b0a23c8ea78d6738647343",
+  "queue_summary_sha256": "dbdc86cb9ecd841adb8b9c1b1fe1af80e4ca47a59ee13a1b04dd4c99f47b54d9",
+  "preflight_sha256": "56954f68c04898516519f3a644e076af0f7ca31a89072c5fa47cefafe32996fc",
+  "adapter_sha256": "0d72ac25988975176ca343bca62b78ef49a95921a955cc51ede93d0502e3ef74",
+  "validator_sha256": "cd92fe66aa7c29831e1ad94962cb8964ad83d2b6996784572b76af0c07434888",
+  "code_hashes": {
+    "common.py": "adf1e8f1f56a468c47f041ad2686bb227b233e128aff51266491d655be0e652d",
+    "prepare.py": "1e66ff75d806f0979f4abec9da496733b600cbef598fcf19e8fc6ae29e6064a2",
+    "adapter.py": "0d72ac25988975176ca343bca62b78ef49a95921a955cc51ede93d0502e3ef74",
+    "preflight.py": "8f1bf270e94e5abe8b824677ee6868f537ac61bd978515ea5c215a7df3f56c14",
+    "validate.py": "cd92fe66aa7c29831e1ad94962cb8964ad83d2b6996784572b76af0c07434888",
+    "coordinator.py": "e507482f183ad36606cde131460193a08a2601b1313a3f92947e4c393f90ec96",
+    "supervisor.py": "a8ae7d279c8b1872b47182fcb963fbd96388ccd9455cb8f64953703f97158a83",
+    "aggregate.py": "52b0440f00418cac62e71b49bfd7250abb922c1de9094361ef65580f09a7c96d",
+    "test_guards.py": "9a29c10a8ec5371a7f6bf86a13a523a220128d958562d3e76ad7b26a830099f7",
+    "PROTOCOL_SCHEMA.json": "599f3edc6849df9e6d5b223ad0a326f35dbded6b39d0470a62a994b34fa9ea25"
+  },
+  "fault_specification_hashes": {
+    "operational004_design.py": "6bc5a40652d4db3693551c68a359312b211f1a9a9abb47d860701414141238f8",
+    "operational004_events.py": "c96ded715f3ea1453d30503ef640671f86becfd23d57f4ec4791aed20984a8e4",
+    "operational004_stream.py": "94ac8bf842ed278470d4eb5e16e02c4ded4333f7f774ccf1544c90079a9f4e15",
+    "operational004_metrics.py": "6ab23fa693e52e867b696b8965cd8e3c96147c330989c7dc64cd0253264eda73"
+  },
+  "exact_scope": {
+    "unique_candidate_definitions": 264,
+    "evaluation_rows": 3960,
+    "ready_unique_candidate_definitions": 165,
+    "ready_evaluation_rows": 2475,
+    "unavailable_unique_candidate_definitions": 99,
+    "unavailable_evaluation_rows": 1485,
+    "policy_blocks_per_unit": 55,
+    "units": 15
+  },
+  "fit_budget": {
+    "forecasting_models": 0,
+    "quantile_estimators": 0,
+    "conformalizer_fits": 0,
+    "new_seeds": 0
+  },
+  "disk_floor_bytes": 8589934592,
+  "supervisor_poll_seconds": 120,
+  "publication_allowed_only_after": "all 2475 accepted evaluation rows validate and zero-fit resume; unavailable rows remain explicit",
+  "population_inference": "not authorized",
+  "full_study_ready": false
+}
