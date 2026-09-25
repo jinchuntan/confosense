@@ -83,6 +83,15 @@ class GuardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "tampered_conformalized_bounds"):
             validate(dict(self.base, lower=float.fromhex(lower.hex()), upper=0.0007), self.expected)
 
+    def test_unavailable_nan_hex_token_is_parseable(self):
+        self.assertEqual(float("nan").hex(), "nan")
+        self.assertTrue(math.isnan(float.fromhex("nan")))
+
+    def test_empty_decimal_unavailable_token_is_parseable(self):
+        values = [float(value) if value else float("nan") for value in ("", "0.0007")]
+        self.assertTrue(math.isnan(values[0]))
+        self.assertEqual(values[1], 0.0007)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,20 @@
+{
+  "status": "preserved_validator_failure",
+  "version": "operational005_causal_replay_v2",
+  "unit": "bdg2_f0_s42",
+  "block_index": 0,
+  "candidate_count": 3,
+  "models_fitted": 0,
+  "replay_completed_utc": "2026-09-25T05:56:36.546346+00:00",
+  "replay_elapsed_seconds": 185.1323005000013,
+  "policy_stream_rows": 206556,
+  "policy_stream_sha256": "9936ca82f15633e1f39542eb37918349d658917a19efafa2eabc31a6dd22a114",
+  "validation_error": "TypeError: bad argument type for float.fromhex",
+  "literal_nan_tokens": 1698,
+  "cause": "pandas default NA conversion replaced exact-evidence string token nan with floating NaN before parsing",
+  "classification": "independent-validator parser defect; no replay or scientific-output defect established",
+  "correction": "protocol revision 2.1 loads exact-evidence columns as strings with default NA conversion disabled",
+  "v2_replay_preserved": true,
+  "replay_rerun_required": false,
+  "v2_zero_fit_resume_performed": false
+}

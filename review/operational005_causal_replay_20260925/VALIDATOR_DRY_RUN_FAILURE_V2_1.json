@@ -1,0 +1,12 @@
+{
+  "status": "preserved_read_only_validator_dry_run_failure",
+  "version": "operational005_causal_replay_v2.1",
+  "unit": "bdg2_f0_s42",
+  "block_index": 0,
+  "scientific_replay_rerun": false,
+  "receipt_write_suppressed": true,
+  "validation_error": "ValueError: could not convert string to float: empty token",
+  "cause": "disabling default NA conversion also preserves unavailable ordinary decimal observations as empty strings",
+  "correction": "revision 2.2 preserves all six evidence columns as strings and explicitly maps empty decimal observation tokens to NaN",
+  "v2_replay_preserved": true
+}

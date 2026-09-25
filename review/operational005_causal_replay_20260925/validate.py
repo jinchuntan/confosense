@@ -88,7 +88,17 @@ def validate_block(fold: int, seed: int, block_index: int) -> dict:
     identity = read(stage / "identity.json")
     if identity["models_fitted"] != 0 or identity["scientific_source_hash"] != SOURCE_HASH:
         raise ValueError("block source/fit identity mismatch")
-    streams = pd.read_csv(stage / "policy_streams.csv.gz", low_memory=False)
+    numeric_names = ("observed", "lower", "upper")
+    exact_columns = {name: "string" for name in numeric_names}
+    exact_columns.update({name + "_hex": "string" for name in numeric_names})
+    streams = pd.read_csv(
+        stage / "policy_streams.csv.gz", low_memory=False,
+        dtype=exact_columns, keep_default_na=False,
+    )
+    for name in numeric_names:
+        streams[name] = np.asarray(
+            [float(value) if value else np.nan for value in streams[name]], dtype=np.float64
+        )
     metrics = pd.read_csv(stage / "metrics.csv")
     catalogues = pd.read_csv(stage / "catalogues.csv.gz")
     expected_ids = {"clean", "42", "43", "44", "45", "46"}
@@ -108,10 +118,12 @@ def validate_block(fold: int, seed: int, block_index: int) -> dict:
         if (released.notna() & (released > pd.to_datetime(part.origin_time))).any():
             raise ValueError("future residual leakage")
         exact = {}
-        for name in ("observed", "lower", "upper"):
+        for name in numeric_names:
             exact[name] = np.asarray([float.fromhex(value) for value in part[name + "_hex"]], dtype=np.float64)
             decimal = part[name].to_numpy(np.float64)
-            if not np.array_equal(decimal.view(np.uint64), exact[name].view(np.uint64)):
+            same_bits = decimal.view(np.uint64) == exact[name].view(np.uint64)
+            same_nan = np.isnan(decimal) & np.isnan(exact[name])
+            if not np.all(same_bits | same_nan):
                 raise ValueError(f"lossy or tampered exact numeric evidence: {name}")
         if (exact["lower"] > exact["upper"]).any() or not np.isfinite(
                 np.column_stack((part.point.to_numpy(float), exact["lower"], exact["upper"]))).all():

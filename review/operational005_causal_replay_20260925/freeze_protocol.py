@@ -21,7 +21,8 @@ def run():
         "predecessor_protocols": {
             name: digest(HERE / name) for name in (
                 "PROTOCOL_PREPARATION_FAILED_V1.json", "PROTOCOL_PREPARATION_FAILED_V2.json",
-                "PROTOCOL_EXECUTION_FAILED_V1.json",
+                "PROTOCOL_EXECUTION_FAILED_V1.json", "PROTOCOL_VALIDATION_FAILED_V2.json",
+                "PROTOCOL_VALIDATION_FAILED_V2_1.json",
             )
         },
         "preparation_corrections": [
@@ -29,6 +30,7 @@ def run():
             "pin the populated scientific interpreter without adding psutil to it",
         ],
         "execution_correction": "preserve exact IEEE-754 observed/lower/upper values after v1 CSV boundary collapse",
+        "validator_revision": "2.2 preserves exact decimal and hex tokens, including unavailable empty/nan tokens, and resumes the completed v2 block",
         "entry_commit": ENTRY_COMMIT,
         "scientific_source_hash": SOURCE_HASH,
         "runtime": {

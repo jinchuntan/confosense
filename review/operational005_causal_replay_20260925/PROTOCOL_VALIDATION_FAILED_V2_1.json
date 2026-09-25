@@ -1,19 +1,18 @@
 {
-  "version": "operational005_causal_replay_v2.2",
+  "version": "operational005_causal_replay_v2.1",
   "authorization_source": "user attachment 57a4912c-2519-4677-9975-05d69fd83ec1",
   "predecessor_protocols": {
     "PROTOCOL_PREPARATION_FAILED_V1.json": "ff284deed240f5e9a2d408812cec1ff7bfae89b80da2e50149089d312eef6bcc",
     "PROTOCOL_PREPARATION_FAILED_V2.json": "fcf07c96ed91dd64c92eaf5946a11c8df10d3f10518d340837723d55fe79209b",
     "PROTOCOL_EXECUTION_FAILED_V1.json": "fe97224b79dc9e2fdd572c53463c007c21244c7bb47ba351fd1d533bf5fe6375",
-    "PROTOCOL_VALIDATION_FAILED_V2.json": "3c7786a4dee3176bbdfb34b4f4caa9f23e439d70e50714a14422c0e0ef211e61",
-    "PROTOCOL_VALIDATION_FAILED_V2_1.json": "3fe71a576080493cb277fb6749560c78552a51704cd527721951e50ef51619b2"
+    "PROTOCOL_VALIDATION_FAILED_V2.json": "3c7786a4dee3176bbdfb34b4f4caa9f23e439d70e50714a14422c0e0ef211e61"
   },
   "preparation_corrections": [
     "standalone validator import path and runtime protocol-hash enforcement",
     "pin the populated scientific interpreter without adding psutil to it"
   ],
   "execution_correction": "preserve exact IEEE-754 observed/lower/upper values after v1 CSV boundary collapse",
-  "validator_revision": "2.2 preserves exact decimal and hex tokens, including unavailable empty/nan tokens, and resumes the completed v2 block",
+  "validator_revision": "2.1 preserves literal nan tokens in exact-evidence columns and resumes the completed v2 block",
   "entry_commit": "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead",
   "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
   "runtime": {
@@ -36,21 +35,21 @@
   "metric_view_queue_sha256": "767023a2db4907f6da2cf4306403f433390feaccfc4f7e2e897e1324022e5937",
   "owner_inventory_sha256": "750fcc32b2a47351f1689a268565faff4795111227b0a23c8ea78d6738647343",
   "queue_summary_sha256": "dbdc86cb9ecd841adb8b9c1b1fe1af80e4ca47a59ee13a1b04dd4c99f47b54d9",
-  "preflight_sha256": "f4de94b0e7bc727fbf9d3b5c2d9705f15780c5d3d7f836253f868f5df60bd3fe",
+  "preflight_sha256": "0e32f902f7a2a025d0f431358022359466d5d7fdc3d44eb6a61393731c3ec9c3",
   "adapter_sha256": "55395dfa4f6042194cc0db0c1a44ed2e431b005dc8b81ab7c83b51a52a1e6305",
-  "validator_sha256": "7a63342a8da2c55b7efd487cdc87956a10603290e2b3265d66f4f0aef0fc0e0a",
+  "validator_sha256": "d4d567c7b1243db0e374183aaab76f1ff65af685d6004a72a05e7fa07050dccc",
   "code_hashes": {
-    "common.py": "1d8f44eb0a4660463c3fe4035394f5a3ac8e302ee49bdd1afe7080d68cf65712",
+    "common.py": "a55438381af0664b9f02bb5cf8ab53f94abb2481e62035d0e837513434d6a7d6",
     "prepare.py": "1e66ff75d806f0979f4abec9da496733b600cbef598fcf19e8fc6ae29e6064a2",
     "adapter.py": "55395dfa4f6042194cc0db0c1a44ed2e431b005dc8b81ab7c83b51a52a1e6305",
     "preflight.py": "8f1bf270e94e5abe8b824677ee6868f537ac61bd978515ea5c215a7df3f56c14",
-    "validate.py": "7a63342a8da2c55b7efd487cdc87956a10603290e2b3265d66f4f0aef0fc0e0a",
+    "validate.py": "d4d567c7b1243db0e374183aaab76f1ff65af685d6004a72a05e7fa07050dccc",
     "coordinator.py": "1313d10885c0db12fe373540da48cb62045be7aeafa4b078c55d2c5e30785825",
     "supervisor.py": "a110b8f2325b5ff5db9f7e6ae02e20ba38558570a22d83f65c6ca8e2643fe1e5",
     "aggregate.py": "2383dc423dec9b95646d17d6c4c83bb1f26b8f512f94a55227d71fa841ad574e",
-    "test_guards.py": "a36f1b9966f7a3d16cd25f00fea89ac22d71ec72adb781c62bfd3d07c607a756",
-    "freeze_protocol.py": "ae3c2d1eadb05f10b7b12ef18ffe41a8273ae999d699324460fa9b5090645608",
-    "PROTOCOL_SCHEMA.json": "fd06ef7e47b53cd98b76182e9280a2a56a89e72d84fc6e914aab6cfe10c24061"
+    "test_guards.py": "81ff1f624237e41f55bc4586c696f132776d40a870c9ff6cc4b775ce2c4658f0",
+    "freeze_protocol.py": "dc12889d5d5ba2db7ceb0f6b178abf2b1c41861921af48a9f29e960f27b0d42f",
+    "PROTOCOL_SCHEMA.json": "a85f448fa65e0dd96eee2b5bac7dd8bc3c52aab87101aa3754b5c9aab2c6675d"
   },
   "fault_specification_hashes": {
     "operational004_design.py": "6bc5a40652d4db3693551c68a359312b211f1a9a9abb47d860701414141238f8",
