@@ -1,7 +1,7 @@
 # Operational005 zero-fit preflight blocker
 
 The authorized operational evaluation did **not** start. The gate performed zero fits, zero
-conformalizations and zero scientific evaluations. Its code SHA-256 is `367b9e67d503ba50587102e91932cc377648c2e79ca6703c4388bf0fed108987`. The current
+conformalizations and zero scientific evaluations. Its code SHA-256 is `4b0888a18bef5f2f5adcbbdedd4374f9f8189aebe76f52c1f79bc27c86bac691`. The current
 scientific tree remains `a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f`. The 15 accepted input bundles retain their three
 historical evaluated-source identities rather than being relabelled with the current digest.
 

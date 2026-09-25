@@ -16,8 +16,8 @@ recall, F1 or restricted time to detection.
 
 The gate therefore stopped safely with **zero fits, zero conformalizations and zero scientific
 evaluations**: 0/3,960 candidate/fold/seed applications completed here and 3,960 remain. No native
-or common-support cohort was substituted for another. The 2.52-second preflight observed a minimum
-of 41,340,153,856 free bytes (38.50 GiB), above the 8 GiB floor; scientific peak memory is not
+or common-support cohort was substituted for another. The 2.46-second preflight observed a minimum
+of 41,337,135,104 free bytes (38.50 GiB), above the 8 GiB floor; scientific peak memory is not
 applicable because no evaluation process launched. All eight focused zero-fit rejection fixtures
 passed. No worker, supervisor, backup or publication was started. Completing the declared
 operational question requires either a

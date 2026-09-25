@@ -1,7 +1,7 @@
 {
   "status": "blocked_before_scientific_execution",
   "passed": false,
-  "generated_utc": "2026-09-25T05:10:49.994313+00:00",
+  "generated_utc": "2026-09-25T05:13:10.730190+00:00",
   "models_fitted": 0,
   "conformalizations_performed": 0,
   "scientific_evaluations_started": 0,
@@ -16,7 +16,8 @@
     "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
   ],
   "accepted_input_source_identities_preserved": true,
-  "preflight_code_sha256": "367b9e67d503ba50587102e91932cc377648c2e79ca6703c4388bf0fed108987",
+  "preflight_code_sha256": "4b0888a18bef5f2f5adcbbdedd4374f9f8189aebe76f52c1f79bc27c86bac691",
+  "preflight_code_hash_scope": "committed canonical LF text",
   "authority": {
     "configuration": "smart_building_conformal/configs/operational_amendment004.json",
     "configuration_sha256": "b49eb9b3802e715b150c5cf3ed7681f0da85b913425c29c6460b74ef8c19a5fb",
@@ -301,8 +302,8 @@
   "full_study_ready": false,
   "publication_ready": false,
   "preflight_resources": {
-    "elapsed_seconds": 2.516212099988479,
-    "minimum_observed_free_disk_bytes": 41340153856,
+    "elapsed_seconds": 2.463671699981205,
+    "minimum_observed_free_disk_bytes": 41337135104,
     "required_free_disk_floor_bytes": 8589934592,
     "free_disk_floor_passed": true,
     "peak_memory_not_applicable_reason": "no scientific evaluation process was launched"

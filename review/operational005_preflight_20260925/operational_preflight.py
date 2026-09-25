@@ -40,6 +40,14 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def canonical_text_bytes(path: Path) -> bytes:
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
+def canonical_text_sha256(path: Path) -> str:
+    return hashlib.sha256(canonical_text_bytes(path)).hexdigest()
+
+
 def current_source_digest() -> str:
     root = SCI / "src"
     manifest = "\n".join(
@@ -299,7 +307,7 @@ def run() -> int:
         fail("zero_fit_guard_fixture_failure")
     old_events = old_event_sources()
     unique_routes = sorted(stream_routes, key=lambda x: (x[0], x[1], x[2]))
-    code_hash = sha256(Path(__file__))
+    code_hash = canonical_text_sha256(Path(__file__))
     source_hash = current_source_digest()
     if source_hash != EXPECTED_SOURCE_HASH:
         fail("current_scientific_source_digest_changed")
@@ -321,6 +329,7 @@ def run() -> int:
         "accepted_input_evaluated_source_digests": evaluated_source_hashes,
         "accepted_input_source_identities_preserved": True,
         "preflight_code_sha256": code_hash,
+        "preflight_code_hash_scope": "committed canonical LF text",
         "authority": {
             "configuration": CONFIG.relative_to(ROOT).as_posix(),
             "configuration_sha256": sha256(CONFIG),
@@ -433,11 +442,16 @@ Full-study readiness and publication readiness remain false.
         "prior_event_sources.csv",
         "zero_fit_guard_fixtures.csv",
     ]
-    manifest = [
-        {"path": name, "bytes": (HERE / name).stat().st_size, "sha256": sha256(HERE / name)}
-        for name in manifest_names
-    ]
-    csv_write(HERE / "EVIDENCE_MANIFEST.csv", manifest, ["path", "bytes", "sha256"])
+    manifest = []
+    for name in manifest_names:
+        content = canonical_text_bytes(HERE / name)
+        manifest.append({
+            "path": name,
+            "bytes": len(content),
+            "sha256": hashlib.sha256(content).hexdigest(),
+            "hash_scope": "committed canonical LF text",
+        })
+    csv_write(HERE / "EVIDENCE_MANIFEST.csv", manifest, ["path", "bytes", "sha256", "hash_scope"])
     print(json.dumps({
         "status": result["status"],
         "unique_candidates": len(candidates),
