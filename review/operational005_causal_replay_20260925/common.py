@@ -20,7 +20,7 @@ OUTPUTS = SMART / "outputs" / "operational005_causal_replay_v2"
 UNITS = OUTPUTS / "units"
 SUPERVISOR = OUTPUTS / "supervisor"
 SOURCE_HASH = "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
-VERSION = "operational005_causal_replay_v2.2"
+VERSION = "operational005_causal_replay_v2.3"
 ENTRY_COMMIT = "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead"
 SCIENTIFIC_PYTHON = Path(r"C:\cfs_venv\Scripts\python.exe")
 

@@ -126,7 +126,8 @@ def run():
     total_blocks = 15 * len(policy_blocks())
     write_progress(status="running", total_policy_blocks=total_blocks, ready_evaluation_rows=2475,
                    unavailable_evaluation_rows=1485, coordinator_pid=os.getpid(), started_utc=utc(),
-                   current_phase="preflight", last_scientific_progress_utc=None, retry_count=0)
+                   current_phase="preflight", last_scientific_progress_utc=None, retry_count=0,
+                   exact_error=None, current_scientific_worker=None, resumed_utc=utc())
     for fold in range(3):
         for seed in range(42, 47):
             for block in range(55):

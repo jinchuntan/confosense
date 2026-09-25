@@ -58,7 +58,8 @@ def run():
     worker = subprocess.Popen([str(SCIENTIFIC_PYTHON), "-B", str(HERE / "coordinator.py"), "run"], cwd=HERE,
                               stdout=stdout, stderr=stderr, text=True)
     event(event="coordinator_started", pid=worker.pid)
-    status(worker, state="running", poll_seconds=120, started_utc=utc(), last_error=None)
+    status(worker, state="running", poll_seconds=120, started_utc=utc(), last_error=None,
+           coordinator_exit_code=None, finished_utc=None)
     try:
         while worker.poll() is None:
             time.sleep(120)

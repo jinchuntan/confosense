@@ -23,6 +23,7 @@ def run():
                 "PROTOCOL_PREPARATION_FAILED_V1.json", "PROTOCOL_PREPARATION_FAILED_V2.json",
                 "PROTOCOL_EXECUTION_FAILED_V1.json", "PROTOCOL_VALIDATION_FAILED_V2.json",
                 "PROTOCOL_VALIDATION_FAILED_V2_1.json",
+                "PROTOCOL_VALIDATED_V2_2.json",
             )
         },
         "preparation_corrections": [
@@ -31,6 +32,7 @@ def run():
         ],
         "execution_correction": "preserve exact IEEE-754 observed/lower/upper values after v1 CSV boundary collapse",
         "validator_revision": "2.2 preserves exact decimal and hex tokens, including unavailable empty/nan tokens, and resumes the completed v2 block",
+        "resume_revision": "2.3 clears stale live error/exit fields only after their failed receipts are preserved",
         "entry_commit": ENTRY_COMMIT,
         "scientific_source_hash": SOURCE_HASH,
         "runtime": {
