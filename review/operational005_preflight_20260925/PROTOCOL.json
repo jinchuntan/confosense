@@ -1,0 +1,18 @@
+{
+  "protocol_id": "operational005_zero_fit_preflight_v1",
+  "date": "2026-09-25",
+  "status": "pre_scientific_gate",
+  "scientific_source_changes_permitted": false,
+  "model_fits_permitted": 0,
+  "conformalizations_permitted": 0,
+  "input_authorities": [
+    "smart_building_conformal/configs/operational_amendment004.json",
+    "smart_building_conformal/outputs/amendment005/study_plan_v1/scope_ledger.csv",
+    "smart_building_conformal/outputs/amendment005/study_plan_v1/interval_method_matrix.csv",
+    "smart_building_conformal/protocols/matched_intervals005/"
+  ],
+  "required_gate": "Every operational route must have an exact saved issued stream and a protocol-matched predeclared event replay before scientific execution.",
+  "code_hash_location": "PREFLIGHT_FAILURE.json",
+  "on_failure": "Do not launch a supervisor, scientific worker, backup, publication or readback. Preserve and report the exact prerequisite failure.",
+  "full_study_ready": false
+}

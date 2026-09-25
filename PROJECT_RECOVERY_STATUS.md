@@ -1,3 +1,38 @@
+# Operational005 preflight blocked before scientific execution
+
+25 September 2026. The bounded zero-fit preflight resolved the only versioned `264` authority as
+264 unique BDG2 candidate definitions. The frozen design crosses them with three outer folds and
+five model seeds: **3,960 candidate/fold/seed applications** (and 7,920 two-inner-role selection
+cells), while catalogue seeds remain repeated synthetic catalogues rather than independent
+experiments.
+
+The completed interval delivery contains 450 BDG2 issued-stream instances and keeps the scientific
+source digest `a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f`, but its protocol is
+90%/95% with five completed methods. Only 12/264 old candidate definitions have an exact saved h1
+policy route. None of the completed bundles contains a protocol-matched fault/event replay; the
+preserved amendment-004 event streams use separate fitted owners and cover only model seed 42 and
+the nine-candidate reduced grid. Clean streams can measure background workload, not detection
+recall, F1 or restricted time to detection.
+
+The gate therefore stopped safely with **zero fits, zero conformalizations and zero scientific
+evaluations**: 0/3,960 candidate/fold/seed applications completed here and 3,960 remain. No native
+or common-support cohort was substituted for another. The 2.52-second preflight observed a minimum
+of 41,340,153,856 free bytes (38.50 GiB), above the 8 GiB floor; scientific peak memory is not
+applicable because no evaluation process launched. All eight focused zero-fit rejection fixtures
+passed. No worker, supervisor, backup or publication was started. Completing the declared
+operational question requires either a
+versioned queue matching the saved 90%/95% issued streams plus matching precomputed corrupted
+replays, or separate authorization for causal fault replay/inference and any required
+conformalization. The separate robustness extension remains 60 units × 15 cells = **900 cells**
+(clean, zero control, seven fault, three contamination and three recovery cells per unit), pending
+the amendment-005 crosswalk and serialized-owner prerequisites. Full-study readiness is **false**.
+
+[Preflight blocker](review/operational005_preflight_20260925/PREFLIGHT_BLOCKER.md),
+[machine-readable failure](review/operational005_preflight_20260925/PREFLIGHT_FAILURE.json),
+[candidate prerequisites](review/operational005_preflight_20260925/candidate_prerequisites.csv).
+
+<!-- operational005-preflight-20260925: historical status follows -->
+
 # Matched interval-method and seasonal completion validated
 
 The bounded 52-bundle extension is complete: 1,700 new cells plus 250 preserved accepted cells cover all **1,950/1,950** declared interval-method cells. The three applicable datasets have **27/27 unique seasonal dataset/fold/horizon computations**, 18 new, with 135 point and 270 interval seed-alias rows. RICO seasonal remains inapplicable. Every new bundle passed scoped independent validation, exact operation-ledger reconciliation and an unchanged-artifact zero-fit resume. The scientific source digest stayed `a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f`.
