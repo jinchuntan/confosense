@@ -11,7 +11,7 @@ import time
 from datetime import datetime, timezone
 
 from common import (HERE, OUTPUTS, SCIENTIFIC_PYTHON, SUPERVISOR, atomic_json,
-                    process_identity, read, verify_protocol)
+                    process_identity, read, retry_count_for, verify_protocol)
 
 STATUS = SUPERVISOR / "status.json"
 EVENTS = SUPERVISOR / "events.jsonl"
@@ -41,7 +41,8 @@ def status(worker=None, **updates):
             scientific_worker = dict(recorded, **active)
     value.update(updates, heartbeat_utc=utc(), supervisor_pid=os.getpid(), worker=process,
                  scientific_worker=scientific_worker, scientific_progress=progress,
-                 free_disk_bytes=shutil.disk_usage(OUTPUTS).free)
+                 free_disk_bytes=shutil.disk_usage(OUTPUTS).free,
+                 file_access_retry_count=retry_count_for(SUPERVISOR))
     atomic_json(STATUS, value)
 
 

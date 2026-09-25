@@ -1,0 +1,18 @@
+{
+  "status": "preserved_retryable_file_access_failure",
+  "protocol_version": "operational005_causal_replay_v2.3",
+  "unit": "bdg2_f0_s42",
+  "block_index": 1,
+  "phase": "zero_fit_resume",
+  "replay_passed": true,
+  "independent_validation_passed": true,
+  "validation_maximum_absolute_difference": 2.220446049250313e-16,
+  "failure": "PermissionError WinError 5 replacing coordinator/progress.json from progress.json.tmp-9524",
+  "classification": "idempotent transient file-access failure",
+  "scientific_output_defect": false,
+  "replay_rerun_required": false,
+  "validation_rerun_required": false,
+  "zero_fit_resume_receipt_written": false,
+  "failed_temporary_file_preserved": true,
+  "correction": "atomic JSON replacement retries PermissionError at most twice and records each retry"
+}

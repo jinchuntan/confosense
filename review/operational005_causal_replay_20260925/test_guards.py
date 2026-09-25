@@ -3,7 +3,12 @@ from __future__ import annotations
 
 import copy
 import math
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
+
+import common
 
 
 def validate(record, expected):
@@ -91,6 +96,24 @@ class GuardTests(unittest.TestCase):
         values = [float(value) if value else float("nan") for value in ("", "0.0007")]
         self.assertTrue(math.isnan(values[0]))
         self.assertEqual(values[1], 0.0007)
+
+    def test_atomic_replace_retries_at_most_twice(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "receipt.json"
+            original = common.os.replace
+            calls = []
+
+            def transient(source, destination):
+                calls.append((source, destination))
+                if len(calls) < 3:
+                    raise PermissionError("synthetic sharing violation")
+                return original(source, destination)
+
+            with mock.patch.object(common.os, "replace", side_effect=transient):
+                retries = common.atomic_json(target, {"passed": True})
+            self.assertEqual(retries, 2)
+            self.assertEqual(len(calls), 3)
+            self.assertEqual(common.read(target), {"passed": True})
 
 
 if __name__ == "__main__":

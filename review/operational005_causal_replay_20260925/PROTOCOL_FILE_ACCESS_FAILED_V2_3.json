@@ -1,5 +1,5 @@
 {
-  "version": "operational005_causal_replay_v2.4",
+  "version": "operational005_causal_replay_v2.3",
   "authorization_source": "user attachment 57a4912c-2519-4677-9975-05d69fd83ec1",
   "predecessor_protocols": {
     "PROTOCOL_PREPARATION_FAILED_V1.json": "ff284deed240f5e9a2d408812cec1ff7bfae89b80da2e50149089d312eef6bcc",
@@ -7,8 +7,7 @@
     "PROTOCOL_EXECUTION_FAILED_V1.json": "fe97224b79dc9e2fdd572c53463c007c21244c7bb47ba351fd1d533bf5fe6375",
     "PROTOCOL_VALIDATION_FAILED_V2.json": "3c7786a4dee3176bbdfb34b4f4caa9f23e439d70e50714a14422c0e0ef211e61",
     "PROTOCOL_VALIDATION_FAILED_V2_1.json": "3fe71a576080493cb277fb6749560c78552a51704cd527721951e50ef51619b2",
-    "PROTOCOL_VALIDATED_V2_2.json": "7b63104275510492683e31aea361da6c36c5591f7679e2827c625cd32406dbda",
-    "PROTOCOL_FILE_ACCESS_FAILED_V2_3.json": "646e623aa56a87b78196a5cf7f4e4c4e2e4cb71e84de280630cdcb88767095a6"
+    "PROTOCOL_VALIDATED_V2_2.json": "7b63104275510492683e31aea361da6c36c5591f7679e2827c625cd32406dbda"
   },
   "preparation_corrections": [
     "standalone validator import path and runtime protocol-hash enforcement",
@@ -17,7 +16,6 @@
   "execution_correction": "preserve exact IEEE-754 observed/lower/upper values after v1 CSV boundary collapse",
   "validator_revision": "2.2 preserves exact decimal and hex tokens, including unavailable empty/nan tokens, and resumes the completed v2 block",
   "resume_revision": "2.3 clears stale live error/exit fields only after their failed receipts are preserved",
-  "file_access_revision": "2.4 retries atomic replace after transient PermissionError at most twice and records each retry",
   "entry_commit": "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead",
   "scientific_source_hash": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
   "runtime": {
@@ -40,21 +38,21 @@
   "metric_view_queue_sha256": "767023a2db4907f6da2cf4306403f433390feaccfc4f7e2e897e1324022e5937",
   "owner_inventory_sha256": "750fcc32b2a47351f1689a268565faff4795111227b0a23c8ea78d6738647343",
   "queue_summary_sha256": "dbdc86cb9ecd841adb8b9c1b1fe1af80e4ca47a59ee13a1b04dd4c99f47b54d9",
-  "preflight_sha256": "0f829f5fa3fddce31313f225e010f93edf35b9da36c97787f2cfae3ffca1dd64",
+  "preflight_sha256": "5c1cfc7dd1e3118d7fde1dca59d54f573f9477b643fec39d55f6fe8852a055eb",
   "adapter_sha256": "55395dfa4f6042194cc0db0c1a44ed2e431b005dc8b81ab7c83b51a52a1e6305",
   "validator_sha256": "7a63342a8da2c55b7efd487cdc87956a10603290e2b3265d66f4f0aef0fc0e0a",
   "code_hashes": {
-    "common.py": "5254e344678f02a0cf58070b5cb6b6b031ad913fd6f75025c7fd4b5ec5d9aa71",
+    "common.py": "aa0aea8d26cd244823a49c367f3d8db2fee2d3a17a5eee98098ea3e4e8c57f28",
     "prepare.py": "1e66ff75d806f0979f4abec9da496733b600cbef598fcf19e8fc6ae29e6064a2",
     "adapter.py": "55395dfa4f6042194cc0db0c1a44ed2e431b005dc8b81ab7c83b51a52a1e6305",
     "preflight.py": "8f1bf270e94e5abe8b824677ee6868f537ac61bd978515ea5c215a7df3f56c14",
     "validate.py": "7a63342a8da2c55b7efd487cdc87956a10603290e2b3265d66f4f0aef0fc0e0a",
-    "coordinator.py": "a6c603caa4cb66b7b13cf2ef8a234983d1e0cc93618ab418fe468b8c855732ed",
-    "supervisor.py": "1f86933f63355340589acec35b2d0e6117b7e85f5dbde2d4f183e000430e517a",
+    "coordinator.py": "86139368768bb4bb755fd300498c94465c4b8e7df636383ee51e2ba2c9185b6d",
+    "supervisor.py": "8b21efc574d27a452705d0aa45ee098b43136bbeb3d0203401e859d88aa1ede1",
     "aggregate.py": "2383dc423dec9b95646d17d6c4c83bb1f26b8f512f94a55227d71fa841ad574e",
-    "test_guards.py": "6c0c066d566649b0371134595313c7d719a7b31dddd23cdb07413e706665960a",
-    "freeze_protocol.py": "ee6bc93fc8e62c0a06ffb1e7d5d48f246f9f3c12b0a2d174d81c02dbacd2a06b",
-    "PROTOCOL_SCHEMA.json": "639f66ed7a4b7aa3bc3d366098d1784f5297bae768c02298aabedd98f4a0b32f"
+    "test_guards.py": "a36f1b9966f7a3d16cd25f00fea89ac22d71ec72adb781c62bfd3d07c607a756",
+    "freeze_protocol.py": "ef41e9e5f0fbcf7fd14d943e0ea0f58615ba82862a2aedfea7eb5d6d70873352",
+    "PROTOCOL_SCHEMA.json": "4bd847a9c7abaa26f2f2ae9b9611b82e409b18c46094c2454db146154a931c69"
   },
   "fault_specification_hashes": {
     "operational004_design.py": "6bc5a40652d4db3693551c68a359312b211f1a9a9abb47d860701414141238f8",

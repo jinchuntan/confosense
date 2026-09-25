@@ -7,6 +7,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -20,7 +21,7 @@ OUTPUTS = SMART / "outputs" / "operational005_causal_replay_v2"
 UNITS = OUTPUTS / "units"
 SUPERVISOR = OUTPUTS / "supervisor"
 SOURCE_HASH = "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
-VERSION = "operational005_causal_replay_v2.3"
+VERSION = "operational005_causal_replay_v2.4"
 ENTRY_COMMIT = "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead"
 SCIENTIFIC_PYTHON = Path(r"C:\cfs_venv\Scripts\python.exe")
 
@@ -41,11 +42,38 @@ def read(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def atomic_json(path: Path, value: Any) -> None:
+def retry_count_for(directory: Path) -> int:
+    log = directory / "file_access_retries.jsonl"
+    if not log.exists():
+        return 0
+    with log.open("r", encoding="utf-8", errors="replace") as handle:
+        return sum(1 for line in handle if line.strip())
+
+
+def atomic_json(path: Path, value: Any) -> int:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + f".tmp-{os.getpid()}")
     temporary.write_text(json.dumps(value, indent=2, default=str) + "\n", encoding="utf-8")
-    os.replace(temporary, path)
+    retries = 0
+    for attempt in range(3):
+        try:
+            os.replace(temporary, path)
+            return retries
+        except PermissionError as exc:
+            if attempt >= 2:
+                raise
+            retries += 1
+            record = {
+                "unix_time": time.time(), "pid": os.getpid(), "target": str(path),
+                "retry": retries, "maximum_retries": 2, "error": repr(exc),
+            }
+            try:
+                with (path.parent / "file_access_retries.jsonl").open("a", encoding="utf-8") as handle:
+                    handle.write(json.dumps(record, separators=(",", ":")) + "\n")
+            except OSError:
+                pass
+            time.sleep(.25 * retries)
+    raise AssertionError("unreachable atomic write retry state")
 
 
 def csv_write(path: Path, rows: Iterable[dict[str, Any]], fields: list[str] | None = None) -> None:

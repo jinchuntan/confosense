@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from common import (HERE, OUTPUTS, SCIENTIFIC_PYTHON, UNITS, atomic_json, digest,
-                    process_identity, read, verify_protocol)
+                    process_identity, read, retry_count_for, verify_protocol)
 from adapter import policy_blocks, verify_complete
 
 ROOT = OUTPUTS / "coordinator"
@@ -32,7 +32,7 @@ def event(**row):
 
 def write_progress(**updates):
     state = read(PROGRESS) if PROGRESS.exists() else {}
-    state.update(updates, heartbeat_utc=utc())
+    state.update(updates, heartbeat_utc=utc(), retry_count=retry_count_for(ROOT))
     atomic_json(PROGRESS, state)
     return state
 
