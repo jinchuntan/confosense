@@ -1,0 +1,29 @@
+{
+  "status": "preserved_validator_failure",
+  "version": "operational005_causal_replay_v1",
+  "unit": "bdg2_f0_s42",
+  "block_index": 0,
+  "candidate_count": 3,
+  "models_fitted": 0,
+  "replay_completed_utc": "2026-09-25T05:48:28.441679+00:00",
+  "replay_elapsed_seconds": 184.95509120001225,
+  "policy_stream_rows": 206556,
+  "policy_stream_sha256": "42fd636f001d36b9fc1b06eb1f73ae17add279629200c777d8a1003b23453523",
+  "validation_error": "tampered numerical alert record",
+  "total_mismatches": 884,
+  "mismatch_direction": "saved true; reconstruction from decimal CSV false",
+  "boundary_evidence": "all 884 serialized observed values equal their serialized lower bound; none equal upper",
+  "mismatches_by_stream": {
+    "clean": 188,
+    "42": 78,
+    "43": 150,
+    "44": 150,
+    "45": 145,
+    "46": 173
+  },
+  "cause": "default CSV serialization collapsed distinct adjacent floating-point boundary values",
+  "classification": "evidence-serialization and independent-validator contract defect; no scientific policy output defect established",
+  "correction": "version 2 records round-trippable decimal values plus exact IEEE-754 hex values and validates their bit identity",
+  "v1_artifacts_preserved": true,
+  "v1_zero_fit_resume_performed": false
+}

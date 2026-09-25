@@ -51,7 +51,12 @@ def command(phase: str, fold: int, seed: int, block: int):
     started = utc(); event(event="phase_started", phase=phase, fold=fold, model_seed=seed, block_index=block, argv=argv)
     with out.open("w", encoding="utf-8") as stdout, err.open("w", encoding="utf-8") as stderr:
         result = subprocess.Popen(argv, cwd=HERE, stdout=stdout, stderr=stderr, text=True)
-        observed = process_identity(result.pid)
+        observed = None
+        for _ in range(20):
+            observed = process_identity(result.pid)
+            if observed is not None and observed.get("pid") != result.pid:
+                break
+            time.sleep(.25)
         if observed is None:
             result.terminate(); result.wait()
             raise ValueError("could not verify scientific worker identity")

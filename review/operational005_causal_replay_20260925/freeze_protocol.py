@@ -18,15 +18,17 @@ def run():
     protocol = {
         "version": VERSION,
         "authorization_source": "user attachment 57a4912c-2519-4677-9975-05d69fd83ec1",
-        "preparation_predecessors": {
+        "predecessor_protocols": {
             name: digest(HERE / name) for name in (
-                "PROTOCOL_PREPARATION_FAILED_V1.json", "PROTOCOL_PREPARATION_FAILED_V2.json"
+                "PROTOCOL_PREPARATION_FAILED_V1.json", "PROTOCOL_PREPARATION_FAILED_V2.json",
+                "PROTOCOL_EXECUTION_FAILED_V1.json",
             )
         },
         "preparation_corrections": [
             "standalone validator import path and runtime protocol-hash enforcement",
             "pin the populated scientific interpreter without adding psutil to it",
         ],
+        "execution_correction": "preserve exact IEEE-754 observed/lower/upper values after v1 CSV boundary collapse",
         "entry_commit": ENTRY_COMMIT,
         "scientific_source_hash": SOURCE_HASH,
         "runtime": {

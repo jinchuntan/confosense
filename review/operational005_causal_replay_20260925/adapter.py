@@ -357,9 +357,13 @@ def run_block(fold: int, seed: int, block_index: int) -> dict:
                                     "point", "raw_lower", "raw_upper", "lower", "upper", "numerical_violation",
                                     "availability_violation", "combined_violation", "latest_released_target",
                                     "update_pool_n", "updated", "update_status"]].copy()
+        for name in ("observed", "lower", "upper"):
+            compact[name + "_hex"] = compact[name].map(float.hex)
         compact["stream_id"] = stream_id
         policy_streams.append(compact)
-    pd.concat(policy_streams, ignore_index=True).to_csv(partial / "policy_streams.csv.gz", index=False)
+    pd.concat(policy_streams, ignore_index=True).to_csv(
+        partial / "policy_streams.csv.gz", index=False, float_format="%.17g"
+    )
     pd.DataFrame(metric_rows).to_csv(partial / "metrics.csv", index=False)
     pd.concat(event_rows, ignore_index=True).to_csv(partial / "event_scores.csv.gz", index=False)
     pd.concat(group_rows, ignore_index=True).to_csv(partial / "group_metrics.csv", index=False)
@@ -372,6 +376,7 @@ def run_block(fold: int, seed: int, block_index: int) -> dict:
         "owner": owner.reference, "fit_identity": owner.fit_identity,
         "interval_protocol_sha256": digest(bundle_paths(fold, seed)[0] / "frozen_protocol.json"),
         "scientific_source_hash": source_digest(), "models_fitted": 0, "new_seeds": 0,
+        "numeric_evidence": "decimal_roundtrip_plus_ieee754_hex_v2",
         "native_rows": len(meta), "common_rows": len(common_ids), "catalogue_allocations": allocations,
     })
     files = {path.name: digest(path) for path in partial.iterdir() if path.is_file()}

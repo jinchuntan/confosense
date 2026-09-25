@@ -1,5 +1,5 @@
 {
-  "schema_id": "operational005_causal_replay_protocol_v1",
+  "schema_id": "operational005_causal_replay_protocol_v2",
   "required_identity_fields": [
     "version", "authorization_source", "entry_commit", "scientific_source_hash",
     "candidate_queue_sha256", "metric_view_queue_sha256", "owner_inventory_sha256",

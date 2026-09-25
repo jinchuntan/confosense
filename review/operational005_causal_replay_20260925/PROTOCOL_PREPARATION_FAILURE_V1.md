@@ -11,4 +11,5 @@ A second preserved draft, `PROTOCOL_PREPARATION_FAILED_V2.json`, added the impor
 but still relied on `psutil`, which is absent from the populated scientific environment. It too was
 rejected before scientific work. The final preparation pins `C:\cfs_venv\Scripts\python.exe` and
 uses read-only Windows process queries, avoiding package installation or upgrade. Both corrections
-precede the executable `PROTOCOL.json` freeze.
+preceded the v1 executable freeze. That protocol is now preserved separately after its first-block
+validation failure; the version-2 execution correction has its own newly frozen `PROTOCOL.json`.

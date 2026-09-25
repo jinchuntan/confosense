@@ -88,7 +88,7 @@ def validate_block(fold: int, seed: int, block_index: int) -> dict:
     identity = read(stage / "identity.json")
     if identity["models_fitted"] != 0 or identity["scientific_source_hash"] != SOURCE_HASH:
         raise ValueError("block source/fit identity mismatch")
-    streams = pd.read_csv(stage / "policy_streams.csv.gz")
+    streams = pd.read_csv(stage / "policy_streams.csv.gz", low_memory=False)
     metrics = pd.read_csv(stage / "metrics.csv")
     catalogues = pd.read_csv(stage / "catalogues.csv.gz")
     expected_ids = {"clean", "42", "43", "44", "45", "46"}
@@ -96,6 +96,8 @@ def validate_block(fold: int, seed: int, block_index: int) -> dict:
     if set(streams.stream_id) != expected_ids:
         raise ValueError("policy stream inventory mismatch")
     clean = streams[streams.stream_id == "clean"].reset_index(drop=True)
+    if identity.get("numeric_evidence") != "decimal_roundtrip_plus_ieee754_hex_v2":
+        raise ValueError("missing exact numeric evidence contract")
     for stream_id, part in streams.groupby("stream_id"):
         part = part.reset_index(drop=True)
         if list(part.row_id.astype(str)) != list(clean.row_id.astype(str)):
@@ -105,10 +107,19 @@ def validate_block(fold: int, seed: int, block_index: int) -> dict:
         released = pd.to_datetime(part.latest_released_target, errors="coerce")
         if (released.notna() & (released > pd.to_datetime(part.origin_time))).any():
             raise ValueError("future residual leakage")
-        if (part.lower > part.upper).any() or not np.isfinite(part[["point", "lower", "upper"]]).all().all():
+        exact = {}
+        for name in ("observed", "lower", "upper"):
+            exact[name] = np.asarray([float.fromhex(value) for value in part[name + "_hex"]], dtype=np.float64)
+            decimal = part[name].to_numpy(np.float64)
+            if not np.array_equal(decimal.view(np.uint64), exact[name].view(np.uint64)):
+                raise ValueError(f"lossy or tampered exact numeric evidence: {name}")
+        if (exact["lower"] > exact["upper"]).any() or not np.isfinite(
+                np.column_stack((part.point.to_numpy(float), exact["lower"], exact["upper"]))).all():
             raise ValueError("corrupted bound")
-        numerical = part.available.astype(bool) & ((part.observed < part.lower) | (part.observed > part.upper))
-        if not np.array_equal(numerical.to_numpy(), part.numerical_violation.astype(bool).to_numpy()):
+        numerical = part.available.to_numpy(bool) & (
+            (exact["observed"] < exact["lower"]) | (exact["observed"] > exact["upper"])
+        )
+        if not np.array_equal(numerical, part.numerical_violation.astype(bool).to_numpy()):
             raise ValueError("tampered numerical alert record")
         if not np.array_equal((~part.available.astype(bool)).to_numpy(), part.availability_violation.astype(bool).to_numpy()):
             raise ValueError("tampered availability alert record")

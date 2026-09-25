@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import math
 import unittest
 
 
@@ -68,6 +69,19 @@ class GuardTests(unittest.TestCase):
         rows = [("u1", False), ("u1", False)]
         primary = [key for key, alias in rows if not alias]
         self.assertNotEqual(len(primary), len(set(primary)))
+
+    def test_ieee754_boundary_survives_evidence_roundtrip(self):
+        observed = 0.0007
+        lower = math.nextafter(observed, math.inf)
+        self.assertTrue(observed < lower)
+        self.assertEqual(float.fromhex(observed.hex()), observed)
+        self.assertEqual(float.fromhex(lower.hex()), lower)
+        self.assertTrue(float.fromhex(observed.hex()) < float.fromhex(lower.hex()))
+
+    def test_tampered_exact_bound_is_rejected(self):
+        lower = math.nextafter(0.0007, math.inf)
+        with self.assertRaisesRegex(ValueError, "tampered_conformalized_bounds"):
+            validate(dict(self.base, lower=float.fromhex(lower.hex()), upper=0.0007), self.expected)
 
 
 if __name__ == "__main__":

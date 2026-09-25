@@ -16,11 +16,11 @@ HERE = Path(__file__).resolve().parent
 CONFIG = SMART / "configs" / "operational_amendment004.json"
 INTERVAL_PROTOCOLS = SMART / "protocols" / "matched_intervals005"
 INTERVAL_OUTPUTS = SMART / "outputs" / "matched_intervals005"
-OUTPUTS = SMART / "outputs" / "operational005_causal_replay_v1"
+OUTPUTS = SMART / "outputs" / "operational005_causal_replay_v2"
 UNITS = OUTPUTS / "units"
 SUPERVISOR = OUTPUTS / "supervisor"
 SOURCE_HASH = "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f"
-VERSION = "operational005_causal_replay_v1"
+VERSION = "operational005_causal_replay_v2"
 ENTRY_COMMIT = "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead"
 SCIENTIFIC_PYTHON = Path(r"C:\cfs_venv\Scripts\python.exe")
 
@@ -134,10 +134,13 @@ def process_identity(pid: int) -> dict[str, Any] | None:
     """Read a Windows process identity without adding a package to the scientific environment."""
     pid = int(pid)
     script = (
-        f'$p=Get-CimInstance Win32_Process -Filter "ProcessId = {pid}"; '
-        f'$g=Get-Process -Id {pid} -ErrorAction SilentlyContinue; '
+        f'$launchPid={pid}; $p=Get-CimInstance Win32_Process -Filter "ProcessId = {pid}"; '
+        'for($depth=0; $depth -lt 8 -and $null -ne $p; $depth++) {'
+        '$child=Get-CimInstance Win32_Process -Filter ("ParentProcessId = " + $p.ProcessId) '
+        '|Sort-Object CreationDate|Select-Object -Last 1; if($null -eq $child){break}; $p=$child}; '
+        '$g=if($null -ne $p){Get-Process -Id $p.ProcessId -ErrorAction SilentlyContinue}; '
         'if ($null -ne $p -and $null -ne $g) {'
-        '[pscustomobject]@{pid=[int]$p.ProcessId;'
+        '[pscustomobject]@{launch_pid=[int]$launchPid;pid=[int]$p.ProcessId;'
         'creation_time=$g.StartTime.ToUniversalTime().ToString("o");'
         'executable=$p.ExecutablePath;command=$p.CommandLine;'
         'cpu_seconds=[double]$g.CPU;rss_bytes=[int64]$g.WorkingSet64}'
