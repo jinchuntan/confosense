@@ -1,3 +1,38 @@
+# Current candidature PD feedback checklist — 29 September 2026
+
+This section is the current checklist for the nine original Proposal Defence
+comments. It distinguishes completed implementation/validation from dissertation
+and presentation work. The dated execution updates below are retained as an
+append-only history, but their intermediate completion totals are superseded by
+[`RESULTS_INDEX.md`](RESULTS_INDEX.md).
+
+| Original PD comment | Implemented and validated evidence | Literature, rationale, or presentation still required |
+|---|---|---|
+| Explain conformal prediction simply and why it matters | Own-model split conformal, CQR, EnbPI, DSCP, ACP, interval-quality metrics, and interval-driven monitoring were executed on their declared scopes. Independent validators checked finite-sample ranks, bounds, common support, and saved predictions. | **Writing remains.** Give a short nontechnical explanation; distinguish prediction intervals from confidence intervals; explain that nominal coverage is not the probability an alert is a real fault; retain the temporal-dependence caveat. |
+| Explain dataset sources, original purposes, and selection | Three source datasets and four separate tasks have frozen provenance, temporal memberships, targets, row/group identities, and BDG2 cohort selection. RICO's revised whole-run identities are recorded in the robustness crosswalk. | **Writing remains.** Consolidate and verify the final source-purpose-selection and licence table against the original publications. Explain retained/excluded data and why each task is relevant to the research question. |
+| State whether datasets are evaluated separately or merged | The maintained workflows train and evaluate by dataset/target; results preserve task-specific units, horizons, folds, and physical scales. PLEIA temperature and energy are separate tasks from one source dataset. | **Presentation remains.** State explicitly: “three source datasets, four evaluation tasks.” Explain that combined indexes are navigation/aggregation views, not pooled training or pooled raw-error estimates. |
+| Cite and justify every method | Persistence, seasonal naive, XGBoost, Attention-LSTM, split conformal, CQR, EnbPI, DSCP, ACP, alert controls, and recovery variants have attributable code paths and frozen protocol roles. The matched and interval grids verify what actually ran. | **Literature/rationale remains.** Complete the method-to-primary-source bibliography, include exact versions, and distinguish cited methods from project-specific engineering choices. Do not infer justification solely from successful code execution. |
+| Justify the historical 60/20/20 split and explain the actual evaluation protocol | The accepted results use frozen chronological outer folds, purged inner tuning, reserved calibration support, common targets, and explicit reuse/zero-fit rules. Their memberships and boundaries were validated; the current design is not merely a generic 60/20/20 split. | **Writing remains.** Describe 60/20/20 as a historical allocation choice, not an optimum or conformal requirement. Explain the actual amended protocol, prior inspection, overlapping folds, calibration ownership, and the consequences for inference. |
+| Explain and justify leakage-safe k-of-m alert rules | Physical-time rule windows, group resets, causal features, delayed residual availability, clean workload, conditional faults, censoring, and group-specific recovery were tested. The two five-seed conditional challenges and 900-cell robustness extension passed independent validation. | **Evidence and writing remain bounded.** Explain k-of-m with one readable example and justify frozen choices without claiming universal optimality. The separate operational grid stopped at 72/825 blocks, so do not present it as completed natural/deployment feasibility evidence. |
+| Make the presentation simpler | A single results index now links the accepted reports, compact tables, figures, validators, and limits. Current and historical commands are separated in both READMEs. | **Presentation remains.** Revise the candidature manuscript/slides around mechanism → protocol → matched results → stress tests → limitations. Move large grids and recovery chronology to appendices; do not treat documentation cleanup as proof that the slides are resolved. |
+| Verify the complete methodology with baselines and ablations | The declared matched forecasting (195 units), interval-method (1,950 cells), seasonal (27 unique computations), PLEIA conditional-context, and robustness (900 cells) scopes completed with saved-artifact validation and zero-fit resume. Unavailable outcomes and negative findings were preserved. | **Synthesis remains.** Explain which comparisons are confirmatory versus descriptive, how shared owners and nested streams avoid double counting, and why the partial operational replay is excluded from completion claims. Do not claim every possible ablation or deployment condition was tested. |
+| Does Attention-LSTM's extra computation buy better intervals than XGBoost? | The matched grid now provides common-target point error, own-model coverage/width/Winkler, fit/inference time, and memory evidence across the declared tasks, horizons, folds, and seeds. This evidence did **not** establish a general computational benefit for Attention-LSTM. | **Writing remains.** Report task- and metric-specific trade-offs, including negative findings, without requiring LSTM to win or turning repeated seeds/folds into population replicates. Avoid relabelling HistGradientBoosting-owned CQR evidence as LSTM or XGBoost intervals. |
+
+## Current evidence boundaries
+
+- Completed robustness is evidence for the frozen five-fault, contamination, and
+  recovery design, not proof of universal robustness.
+- Population inference remains unavailable under the dependence structure
+  recorded for the matched, interval, seasonal, and robustness summaries.
+- Conditional-context block bounds retain 68 original contexts as the
+  observational units; five model seeds do not create 340 independent contexts.
+- The operational causal replay remains partial and inactive. No operational
+  completion, final aggregation, backup, or publication claim is made.
+- Code completion does not close literature review, scientific rationale,
+  dissertation prose, or slide-design comments.
+
+## Historical execution updates (superseded status, preserved evidence trail)
+
 # First real amendment-005 conditional-context pilot completed
 
 PLEIA energy outer fold 2 / model seed 42 / h1 completed all 68 published contexts, 2,856 scheduled fault slots, 68 clean identities, four fixed 95% controls, five rules and the full 9,907-row clean workload. All five CLI actions, independent validation and zero-fit resume passed. The published analysis reports all 60 control/rule/channel cells; no outer-result selection occurred.
