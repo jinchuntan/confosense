@@ -32,11 +32,27 @@
     "scientific_definition_equivalent": true,
     "reason_for_new_root": "control/resource provenance changed after this completed unit; its immutable checkpoint is retained and validated in place"
   },
-  "failed_precheckpoint_root": {
+  "v2_root": {
     "path": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v2",
-    "accepted_units": 0,
-    "reason": "PLEIA raw None group identity was stringified before fault-window merge"
+    "checkpoint_spec_hash": "2a88296e35c75ba53a5543af5397dc6b4c51777cfdc96a2370c5556ac32dbe59",
+    "accepted_unit_hashes": {
+      "bdg2_h1_f0_s43": "bdb62281ca55d9fc0dfa171ac394872bc6467314960fbdce32934c90ab375f2e",
+      "bdg2_h1_f0_s44": "356744d55ae6dce53142cc25b6876ba098a60f93cbd2eb83d53d43bd906a55c4",
+      "bdg2_h1_f0_s45": "3c61ebcf5d4821a8eef2364c5ada0e2d0d7ddd2cd0427d88a44d8a94ca4144a8",
+      "bdg2_h1_f0_s46": "f858bb2146a8e8d17a68428d15c1eacfacc6d6fe87c79657ae2878ab26800093",
+      "bdg2_h1_f1_s42": "318d26d19b5227f8570cb5bc244e44051c27b1b38dbc9f4499a0ec4673166641",
+      "bdg2_h1_f1_s43": "0304ba6ccb026630327417cf81ec7927863d0c68862f807879dbceb087cc9267",
+      "bdg2_h1_f1_s44": "63e9197b2ee05f0767292ce5107d87a7edc10246c1971b1e259d7257ec1c8c3d",
+      "bdg2_h1_f1_s45": "6970bf2cf865578544b85cfbab385ed8152fbcbefc1e84a8e708cd6da8c69e34",
+      "bdg2_h1_f1_s46": "7409bc0d5f7e94127731e9a1e66602cabcce9c31d2e3c39214e0542389f41b8f",
+      "bdg2_h1_f2_s43": "9fe87e012b78575c4ca1c565dec14e8f52224952f33704cd7df62c67b4bbc25d",
+      "bdg2_h1_f2_s44": "51ffee334d7e95e8302486afd8aa790c71c3555f4ad3fc64b18a54b0b8f566e8",
+      "bdg2_h1_f2_s45": "88701520a307c8c71181db5490f9c8bfbf892477eaf6d2852326035bb666d799",
+      "bdg2_h1_f2_s46": "01fa386819b007eee9354e2b431cb37ad873ceb305962941cc3beb2809f51011"
+    },
+    "failed_precheckpoint_unit": "pleia_h1_f0_s42",
+    "failure_reason": "raw None group identity was stringified before fault-window merge"
   },
   "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v3",
-  "remaining_units": 58
+  "remaining_units": 45
 }

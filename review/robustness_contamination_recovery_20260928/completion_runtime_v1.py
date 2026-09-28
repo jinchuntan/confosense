@@ -63,7 +63,9 @@ def unit_key(row):
 
 
 def checkpoint_root(key):
-    return LEGACY_FULL_ROOT if key == "bdg2_h1_f0_s42" else FULL_ROOT
+    if key == "bdg2_h1_f0_s42": return LEGACY_FULL_ROOT
+    if key in read(SCIENTIFIC_CONTRACT)["v2_root"]["accepted_unit_hashes"]: return FAILED_V2_ROOT
+    return FULL_ROOT
 
 
 def completion_protocol():

@@ -264,14 +264,23 @@ def checkpoint_spec() -> dict[str, Any]:
 
 
 def checkpoint_location(key: str) -> tuple[Path, dict[str, Any]]:
+    full_contract = A.read(SCIENTIFIC_CONTRACT)
     if key == "bdg2_h1_f0_s42":
         manifest = A.read(LEGACY_FULL_ROOT / "checkpoint_manifest.json")
-        contract = A.read(SCIENTIFIC_CONTRACT)["legacy_completed_unit"]
+        contract = full_contract["legacy_completed_unit"]
         if manifest["spec_hash"] != contract["checkpoint_spec_hash"]:
             raise ValueError("legacy completed unit spec changed")
         if A.digest(LEGACY_FULL_ROOT / "units" / key / "COMPLETE.json") != contract["complete_sha256"]:
             raise ValueError("legacy completed unit bytes changed")
         return LEGACY_FULL_ROOT, manifest["spec"]
+    if key in full_contract["v2_root"]["accepted_unit_hashes"]:
+        manifest = A.read(FAILED_V2_ROOT / "checkpoint_manifest.json")
+        if manifest["spec_hash"] != full_contract["v2_root"]["checkpoint_spec_hash"]:
+            raise ValueError("v2 completed-unit spec changed")
+        expected = full_contract["v2_root"]["accepted_unit_hashes"][key]
+        if A.digest(FAILED_V2_ROOT / "units" / key / "COMPLETE.json") != expected:
+            raise ValueError("v2 completed-unit bytes changed")
+        return FAILED_V2_ROOT, manifest["spec"]
     return FULL_ROOT, checkpoint_spec()
 
 
