@@ -99,16 +99,17 @@
     "population_inference": "do not treat seed aliases, groups or stream rows as independent replicates"
   },
   "versioned_corrections": {
-    "pleia_raw_none_identity": "45cda176c3b1e7a80b8fc2883c01990af912e511c320c08b493724a0a5f308d4"
+    "pleia_raw_none_identity": "45cda176c3b1e7a80b8fc2883c01990af912e511c320c08b493724a0a5f308d4",
+    "pleia_recovery_identity": "1f21acf2e6ca949045f1035916f5e43dec9c259fa98e248de6f1a169a487e538"
   },
   "source_sha256": {
-    "completion_v1.py": "447013f0ec64f8479255702da429e135645f80f312f8435912377330cc707b2e",
-    "completion_validate_v1.py": "4ee13e7f491e22d651d6d1394048d41012d70abe315927fc8c65faa0dd18a590",
-    "completion_delivery_v1.py": "1eba4677a195573420720080204a6db7bb4b1838899a587a943f3506cecdc881",
+    "completion_v1.py": "76f10a1a9bb1252de1568a9ae32bbfeb20d464b779314d05f96e5f2da36c4bfe",
+    "completion_validate_v1.py": "7b1131c941e5e5dc8f7792d2e0808524fee559e38fed120f0b62c8201c8b0b6c",
+    "completion_delivery_v1.py": "eb6e2d8bcba6f88148fea9c07cfc6b445092ee3885438410e71258db2893180b",
     "completion_runtime_v1.py": "ea2e23465a86e756ec32f304f6470d838f6391c90181c829e756ac6f1a43fd78",
     "completion_coordinator_v1.py": "d19bc462ee0b6e015d7faa69f1843e7bef6a2c5d65c9f3442d888811444c735f",
     "completion_supervisor_v1.py": "bda0877fdfadf2cfd03a7df7c3c15b94b606aa1c99d022fa40c93d4b202c1fae",
-    "test_completion_v1.py": "226b9339f815c5f22622caec29fd8372953f915a861440ccd4752d18208c1640",
-    "SCIENTIFIC_REPLAY_CONTRACT.json": "cfc12fb21215ce0cf2911cf5f9ac3b6e74fc75e41c06fc1cf239aab72016b462"
+    "test_completion_v1.py": "4f64da5d08c9ccca25759177ec33d677ca285d7cf5a5d5c7d5d5bc95534a48d2",
+    "SCIENTIFIC_REPLAY_CONTRACT.json": "13fdfec0fc90b347ce8a6d2aaf922d5f833237850a2df394b709c70294168ab2"
   }
 }

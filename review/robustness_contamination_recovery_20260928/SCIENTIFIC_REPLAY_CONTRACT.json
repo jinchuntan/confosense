@@ -1,5 +1,5 @@
 {
-  "version": "robustness_contamination_recovery005_scientific_replay_contract_v3",
+  "version": "robustness_contamination_recovery005_scientific_replay_contract_v4",
   "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
   "preparation_protocol_sha256": "e65f52b9c7ee2510e185c7ea83da5068760dd399bee39c6e7e9e13a22ef451a4",
   "constructed_owner_registry_sha256": "8460ce75c63b38ea76fbd42e53064919147a5e25be369fba771248b030aa3e8a",
@@ -53,6 +53,13 @@
     "failed_precheckpoint_unit": "pleia_h1_f0_s42",
     "failure_reason": "raw None group identity was stringified before fault-window merge"
   },
-  "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v3",
+  "v3_root": {
+    "path": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v3",
+    "checkpoint_spec_hash": "080c72bfce0daa06bf5c46bdfae7f5a031b55c520a49acdf161ea80eca200e41",
+    "failed_validation_unit": "pleia_h1_f0_s42",
+    "failed_unit_complete_sha256": "efd95c468b19b0527fb12a116bd234f54206f39c40e02e37e6ecee753a9e27d2",
+    "failure_reason": "missing PLEIA group identity was represented as NaN in fault windows but None in emitted streams, suppressing the required recovery computation"
+  },
+  "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v4",
   "remaining_units": 45
 }

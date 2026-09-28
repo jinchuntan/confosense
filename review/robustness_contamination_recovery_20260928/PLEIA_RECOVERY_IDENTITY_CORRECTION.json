@@ -1,0 +1,21 @@
+{
+  "version": "robustness_completion_pleia_recovery_identity_v1",
+  "status": "scientific_adapter_identity_defect_corrected_before_acceptance",
+  "failed_unit": "pleia_h1_f0_s42",
+  "failed_phase": "independent_validation",
+  "failed_attempt": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_59_v1_coordinator/attempts/0053_validate_pleia_h1_f0_s42_901316f3_20260928T144717131699+0000",
+  "failure": "recovery window absent for canonical group label 'None'",
+  "established_cause": "pandas groupby(dropna=false) represents the raw missing PLEIA group key as float NaN, while the emitted stream preserves the raw Python None value as the canonical string label 'None'; fault-event construction used str(NaN) and therefore could not join the one physical group",
+  "evidence": {
+    "raw_test_group_value": "Python None",
+    "group_test_windows_key_repr": "nan",
+    "emitted_stream_group_label": "None",
+    "v3_recovery_rows": 0,
+    "v3_recovery_status": "insufficient_recovery_support",
+    "v3_complete_sha256": "efd95c468b19b0527fb12a116bd234f54206f39c40e02e37e6ecee753a9e27d2",
+    "v3_checkpoint_spec_hash": "080c72bfce0daa06bf5c46bdfae7f5a031b55c520a49acdf161ea80eca200e41"
+  },
+  "correction": "canonicalize every missing raw group identifier to the stream label 'None' for emitted stream rows, fault events, and independent recovery-window lookup; retain the raw identity for feature reconstruction",
+  "scientific_effect": "restores the already-declared one-group recovery and censoring computation without changing rows, times, features, targets, faults, owners, seeds, policies, tolerances or fitting",
+  "disposition": "preserve the v3 checkpoint and failed validation as historical evidence; rerun this zero-fit unit in the new v4 checkpoint root and require independent validation before acceptance"
+}

@@ -161,7 +161,8 @@ def backup() -> dict[str, Any]:
     if result["status"] != "passed": raise ValueError("aggregation not passed")
     sources = {"completion_59_v1_legacy": C.LEGACY_FULL_ROOT,
                "completion_58_v2_bdg2_and_failed_pleia_attempt": C.FAILED_V2_ROOT,
-               "completion_58_v3": C.FULL_ROOT,
+               "completion_58_v3_failed_pleia_recovery_identity": C.FAILED_V3_ROOT,
+               "completion_58_v4": C.FULL_ROOT,
                "constructed_owners_v1": C.OWNER_ROOT}
     source_manifest = {name: _tree(path) for name, path in sources.items()}
     total = sum(item["bytes"] for tree in source_manifest.values() for item in tree.values())

@@ -26,7 +26,8 @@ OUTPUT_ROOT = SMART / "outputs" / "robustness_contamination_recovery005"
 OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
 LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
 FAILED_V2_ROOT = OUTPUT_ROOT / "completion_58_v2"
-FULL_ROOT = OUTPUT_ROOT / "completion_58_v3"
+FAILED_V3_ROOT = OUTPUT_ROOT / "completion_58_v3"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v4"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
 SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
@@ -76,6 +77,20 @@ def crosswalk() -> pd.DataFrame:
 
 def unit_key(row: dict[str, Any]) -> str:
     return f"{row['dataset']}_h{int(row['horizon'])}_f{int(row['outer_fold'])}_s{int(row['model_seed'])}"
+
+
+def group_label(value: Any) -> str:
+    """Canonical publication label for a raw group identity, including missing IDs."""
+    return "None" if pd.isna(value) else str(value)
+
+
+def fault_events(windows: dict) -> pd.DataFrame:
+    """Express raw fault-window keys in the same identity domain as emitted streams."""
+    return pd.DataFrame([
+        {"group_id": group_label(group), "onset": times.min(), "end": times.max(),
+         "effective": bool(len(times))}
+        for group, times in windows.items()
+    ])
 
 
 def selected_row(key: str) -> dict[str, Any]:
@@ -338,7 +353,7 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
     owner = A.SavedOwner(row, data, roles)
     test_rows = roles["test"]
     meta_identity = data["meta"].iloc[test_rows].reset_index(drop=True).copy()
-    meta = meta_identity.copy(); meta["group_id"] = meta.group_id.astype(str)
+    meta = meta_identity.copy(); meta["group_id"] = meta.group_id.map(group_label)
     test = role_frame(data, test_rows).reset_index(drop=True)
     clean_X = data["X"].iloc[test_rows].reset_index(drop=True)
     truth = np.asarray(data["y"])[test_rows]
@@ -379,7 +394,7 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
         raw_bank[name] = owner.raw(features); resource_gate(f"saved_owner_inference:{name}")
     selected_strategy = A.historical_strategy(row)
     streams, cells, recovery_rows, recovery_summaries, contamination_rows = [], [], [], [], []
-    events = A._fault_events(windows)
+    events = fault_events(windows)
     freq_minutes = data["freq"] / pd.Timedelta(minutes=1)
     tolerance = int(data["old_protocol"]["resolved_dataset_config"].get("alerts", {}).get("detection_tolerance_steps", 6))
 

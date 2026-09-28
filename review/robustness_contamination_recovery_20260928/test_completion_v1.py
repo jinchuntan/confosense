@@ -87,3 +87,20 @@ def test_pleia_none_group_uses_raw_identity_for_fault_rebuild():
     with pytest.raises(ValueError, match="lost frozen test identities"):
         C.A.rebuild_fault(prepared, string_meta, clean, windows, scales, fcfg,
                           1, "level_shift", 0.0, 42)
+
+
+def test_missing_group_identity_is_canonical_for_recovery():
+    times = pd.date_range("2026-01-01", periods=12, freq="h")
+    windows = {np.nan: pd.DatetimeIndex(times[3:7])}
+    events = C.fault_events(windows)
+    assert events.group_id.tolist() == ["None"]
+    stream = pd.DataFrame({
+        "group_id": ["None"] * len(times), "target_time": times,
+        "lower": np.zeros(len(times)), "upper": np.ones(len(times)),
+    })
+    groups, summary = V.V.independent_recovery(
+        stream, np.full(len(times), .5), {C.group_label(np.nan): windows[np.nan]},
+        pd.Timedelta(hours=1),
+    )
+    assert groups.group_id.tolist() == ["None"]
+    assert summary["status"] == "descriptive_group_recovery"

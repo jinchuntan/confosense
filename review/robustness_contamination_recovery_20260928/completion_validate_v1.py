@@ -44,7 +44,7 @@ def _load(key: str):
 def _rebuild_features(row: dict[str, Any], data, roles, prepared):
     test_rows = roles["test"]
     meta_identity = data["meta"].iloc[test_rows].reset_index(drop=True).copy()
-    meta = meta_identity.copy(); meta["group_id"] = meta.group_id.astype(str)
+    meta = meta_identity.copy(); meta["group_id"] = meta.group_id.map(C.group_label)
     clean = data["X"].iloc[test_rows].reset_index(drop=True)
     truth = np.asarray(data["y"])[test_rows]
     fcfg = windowing.feature_config(data["old_protocol"]["resolved_dataset_config"], prepared.series[0].covariates)
@@ -155,7 +155,7 @@ def validate_metrics(frames, level: float):
 def validate_recovery(frames, payload, truth, windows, freq):
     streams = frames["streams"]; saved_groups = frames["recovery_by_group"]
     summaries = {x["cell"]: x for x in payload["recovery_summaries"]}
-    string_windows = {str(key): value for key, value in windows.items()}
+    string_windows = {C.group_label(key): value for key, value in windows.items()}
     for cell in ("recovery_static", "recovery_periodic", "recovery_rolling"):
         part = streams[streams.cell == cell].reset_index(drop=True)
         groups, summary = V.independent_recovery(part, truth, string_windows, freq)
