@@ -32,6 +32,34 @@ def write_progress(value: dict[str, Any]) -> None:
     value["updated_utc"] = R.utc(); R.atomic_json(PROGRESS, value)
 
 
+def process_identity(pid: int):
+    script = (
+        f"$p=Get-CimInstance Win32_Process -Filter \"ProcessId={pid}\" -ErrorAction SilentlyContinue;"
+        "if($null -eq $p){'null'}else{$p|Select-Object ProcessId,ParentProcessId,CreationDate,ExecutablePath,CommandLine|ConvertTo-Json -Compress}"
+    )
+    value = subprocess.run(["powershell.exe", "-NoProfile", "-Command", script],
+                           capture_output=True, text=True, timeout=30).stdout.strip()
+    return None if not value or value == "null" else json.loads(value)
+
+
+def actual_worker_identity(launcher_pid: int, expected_script: Path):
+    deadline = time.monotonic() + 30
+    script = (
+        f"$p=Get-CimInstance Win32_Process -Filter \"ParentProcessId={launcher_pid}\" -ErrorAction SilentlyContinue;"
+        "if($null -eq $p){'null'}else{$p|Select-Object ProcessId,ParentProcessId,CreationDate,ExecutablePath,CommandLine|ConvertTo-Json -Compress}"
+    )
+    while time.monotonic() < deadline:
+        value = subprocess.run(["powershell.exe", "-NoProfile", "-Command", script],
+                               capture_output=True, text=True, timeout=30).stdout.strip()
+        if value and value != "null":
+            identity = json.loads(value)
+            candidates = identity if isinstance(identity, list) else [identity]
+            hits = [x for x in candidates if str(expected_script).lower() in str(x.get("CommandLine", "")).lower()]
+            if len(hits) == 1: return hits[0]
+        time.sleep(.25)
+    raise RuntimeError("actual scientific worker identity unavailable or ambiguous")
+
+
 def tasks():
     records = R.crosswalk_records()
     missing = [R.unit_key(x) for x in records if x["interval_owner_support"] != "exact_saved_owner"]
@@ -116,15 +144,30 @@ def run(run_token: str) -> int:
             stdout = (attempt / "stdout.log").open("w", encoding="utf-8")
             stderr = (attempt / "stderr.log").open("w", encoding="utf-8")
             process = subprocess.Popen(command, cwd=R.REPO, stdout=stdout, stderr=stderr)
+            launcher_identity = process_identity(process.pid)
+            actual_identity = actual_worker_identity(process.pid, script)
             state.update(status="running", current_phase=phase, current_unit=key,
-                         worker={"pid": process.pid, "created_utc": R.utc(), "executable": PYTHON,
+                         worker={"pid": int(actual_identity["ProcessId"]),
+                                 "created_utc": actual_identity["CreationDate"],
+                                 "executable": actual_identity["ExecutablePath"],
                                  "command": command, "attempt": attempt.relative_to(R.REPO).as_posix()},
                          resource_snapshot=gate)
-            write_progress(state); append_event({"utc": R.utc(), "event": "worker_started", "phase": phase, "unit": key, "pid": process.pid})
+            state["worker"]["actual_identity"] = actual_identity
+            state["worker"]["launcher_identity"] = launcher_identity
+            write_progress(state); append_event({"utc": R.utc(), "event": "worker_started", "phase": phase,
+                                                  "unit": key, "pid": actual_identity["ProcessId"],
+                                                  "launcher_pid": process.pid})
+            next_identity_check = time.monotonic() + 60
             while process.poll() is None:
+                if time.monotonic() >= next_identity_check:
+                    observed = process_identity(int(actual_identity["ProcessId"]))
+                    if observed is None or str(script).lower() not in str(observed.get("CommandLine", "")).lower():
+                        raise RuntimeError("scientific worker identity changed while launcher remained active")
+                    state["worker"]["actual_identity"] = observed; next_identity_check = time.monotonic() + 60
                 state["worker"]["last_observed_alive_utc"] = R.utc(); write_progress(state); time.sleep(10)
             stdout.close(); stderr.close(); code = process.returncode
-            append_event({"utc": R.utc(), "event": "worker_exited", "phase": phase, "unit": key, "pid": process.pid, "exit_code": code})
+            append_event({"utc": R.utc(), "event": "worker_exited", "phase": phase, "unit": key,
+                          "pid": actual_identity["ProcessId"], "launcher_pid": process.pid, "exit_code": code})
             if code != 0 or not complete(phase, key):
                 state.update(status="blocked", current_phase=phase, current_unit=key, worker=None,
                              error=f"worker exit {code}; completion evidence absent or invalid",

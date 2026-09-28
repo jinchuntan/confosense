@@ -70,7 +70,8 @@
       "recovery_level_shift_2_reuses_fault_features_and_inference": true,
       "contamination_reuses_clean_test_features_and_point_predictions": true,
       "zero_control_is_one_distinct_rebuild": true,
-      "group_recovery_rows_are_descriptive_outputs_not_independent_computations": true
+      "group_recovery_rows_are_descriptive_outputs_not_independent_computations": true,
+      "mapie_internal_quantile_conformalize_is_nested_within_each_authorized_cqr_wrapper_conformalization": true
     }
   },
   "resources": {
@@ -98,11 +99,11 @@
     "population_inference": "do not treat seed aliases, groups or stream rows as independent replicates"
   },
   "source_sha256": {
-    "completion_v1.py": "8a6d4f258afb3adcb86d713f84291b5228a9825f778bdbd89856a142d0f8e848",
+    "completion_v1.py": "111fb17752ea6936e5d8de4ab5e31691c17de95510612a2739b1eef85ee54f77",
     "completion_validate_v1.py": "f8fb18a2a57d01464756153fae59f4ef34a044d36a6c4a2f6d9a7209d8be1d84",
     "completion_delivery_v1.py": "4d5dd4fb205d70f95258054e516b3bbf03077b78d6fa9ea74e218f142f72a13d",
     "completion_runtime_v1.py": "51903a7c376ec45fe59c5b7454b2a9b4a56e8c51170bb54a4ea79e71d03a0b56",
-    "completion_coordinator_v1.py": "b01dc07bd23f82206f0b56dc013d3a5ee20481c8c77910449e0570077d87da6e",
+    "completion_coordinator_v1.py": "6a96fdb84335bc534d8b29edf7247b04119fdbcb2f23bcc61c9c98d59561594b",
     "completion_supervisor_v1.py": "bda0877fdfadf2cfd03a7df7c3c15b94b606aa1c99d022fa40c93d4b202c1fae",
     "test_completion_v1.py": "e1d6dc456db690ada43974d44b6ca6acdc63ce7b7951874b05908a642a9c6898"
   }

@@ -161,11 +161,18 @@ def construct_owner(key: str, *, resume: bool) -> dict[str, Any]:
 
     reference = stages.run("calibration_reference", calibration_reference)
     fit_counts = A.read(fitted / "operation_counts.json")["counts"]
-    cal_counts = A.read(calibrated / "operation_counts.json")["counts"]
+    cal_evidence = A.read(calibrated / "operation_counts.json")
+    cal_counts = cal_evidence["counts"]
     if int(fit_counts.get("quantile_estimator_fit", 0)) != 3:
         raise ValueError(f"owner fit count is not exactly three: {fit_counts}")
-    if int(cal_counts.get("calibrator_conformalize", 0)) != 1:
-        raise ValueError(f"owner conformalization count is not exactly one: {cal_counts}")
+    external_calibrations = [x for x in cal_evidence["operations"]
+                             if x["estimator_class"] == "ConformalizedQuantileRegressor"]
+    nested_calibrations = [x for x in cal_evidence["operations"]
+                           if x["estimator_class"] == "_MapieQuantileRegressor"]
+    if len(external_calibrations) != 1 or len(nested_calibrations) != 1:
+        raise ValueError(f"owner conformalization wrapper/nested accounting changed: {cal_counts}")
+    if external_calibrations[0]["target_hash"] != nested_calibrations[0]["target_hash"]:
+        raise ValueError("nested conformalization calibration identity changed")
     final = resource_gate("owner_construct_complete")
     result = {
         "status": "complete", "unit": key,
@@ -178,6 +185,7 @@ def construct_owner(key: str, *, resume: bool) -> dict[str, Any]:
         "calibration_values_path": (reference / "calibration_values.csv.gz").relative_to(REPO).as_posix(),
         "calibration_values_sha256": A.digest(reference / "calibration_values.csv.gz"),
         "quantile_estimator_fits": 3, "conformalizations": 1,
+        "nested_internal_conformalize_calls": 1,
         "fit_operation_counts": fit_counts, "conformalize_operation_counts": cal_counts,
         "resource_launch": launch, "resource_complete": final,
         "checkpoint_manifest_sha256": A.digest(root / "checkpoint_manifest.json"),
