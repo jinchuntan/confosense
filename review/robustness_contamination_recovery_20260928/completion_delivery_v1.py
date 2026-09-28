@@ -25,6 +25,13 @@ from src.unit_checkpoint import UnitCheckpoint, require_cells  # noqa: E402
 
 VERSION = "robustness_contamination_recovery005_delivery_v1"
 BACKUP = Path(r"C:\Users\nigel\ConfoSenseBackups\robustness_contamination_recovery005_20260928\completion_v1")
+METRIC_COLUMNS = [
+    "coverage_all", "coverage_pre", "coverage_during", "coverage_post",
+    "delta_coverage_during_vs_pre", "mean_width", "median_width", "winkler",
+    "fault_detected", "fault_detection_rate", "n_fault_groups", "n_detected_groups",
+    "detection_delay_steps", "background_episodes", "background_per_asset_day",
+    "post_fault_cascade_episodes", "n_episodes_total",
+]
 
 
 def expected_keys() -> list[str]:
@@ -84,11 +91,12 @@ def aggregate() -> dict[str, Any]:
     if len(resumes) != 60 or any(x["models_fitted"] or x["conformalize_calls"] for x in resumes):
         raise ValueError("zero-fit resume coverage incomplete")
 
-    metric_columns = ["coverage_all", "coverage_pre", "coverage_during", "coverage_post",
-                      "mean_width", "median_width", "winkler", "fault_detected", "detection_delay_minutes"]
     grouping = ["dataset", "outer_fold", "cell", "family", "fault_type", "severity_sd",
                 "contamination_rate", "recal_policy"]
-    means = cells.groupby(grouping, dropna=False, as_index=False)[metric_columns].mean()
+    missing_metrics = sorted(set(METRIC_COLUMNS) - set(cells.columns))
+    if missing_metrics:
+        raise ValueError(f"aggregate metric schema changed: {missing_metrics}")
+    means = cells.groupby(grouping, dropna=False, as_index=False)[METRIC_COLUMNS].mean()
     means["seed_aliases"] = 5; means["independent_population_replicates"] = 1
     means["population_interval_status"] = "unavailable_correlated_seeds_single_fold_unit"
     inference = pd.DataFrame([

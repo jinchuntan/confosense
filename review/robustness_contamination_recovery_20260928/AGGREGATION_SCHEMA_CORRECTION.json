@@ -1,0 +1,9 @@
+{
+  "version": "robustness_completion_aggregation_schema_v1",
+  "status": "aggregation_bookkeeping_corrected_before_output",
+  "failed_attempt": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_59_v1_coordinator/attempts/0187_aggregate_all_0afb491a_20260928T163629193065+0000",
+  "failure": "requested absent column detection_delay_minutes",
+  "established_schema": "the frozen score_cell evidence records detection_delay_steps and group-explicit fault_detection_rate, n_fault_groups and n_detected_groups",
+  "correction": "aggregate the exact frozen metric names and retain single-group detection, multi-group detection-rate, background-workload and cascade fields; reject any future missing metric explicitly",
+  "scientific_effect": "none; the failed attempt wrote no aggregate result and no unit checkpoint, validation receipt or resume receipt was changed"
+}

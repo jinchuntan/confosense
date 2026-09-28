@@ -12,6 +12,7 @@ HERE = Path(__file__).resolve().parent
 SMART = HERE.parents[1] / "smart_building_conformal"
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(SMART))
 import completion_v1 as C  # noqa: E402
+import completion_delivery_v1 as D  # noqa: E402
 import completion_runtime_v1 as R  # noqa: E402
 import completion_validate_v1 as V  # noqa: E402
 
@@ -152,3 +153,10 @@ def test_checkpoint_pins_are_full_sha256_and_route_to_preserved_roots():
         assert all(len(value) == 64 for value in contract[root_name]["accepted_unit_hashes"].values())
     assert C.checkpoint_location("pleia_h1_f0_s42")[0] == C.ACCEPTED_V4_ROOT
     assert C.checkpoint_location("rico_h5_f0_s42")[0] == C.ACCEPTED_V5_ROOT
+
+
+def test_aggregate_metrics_match_frozen_cell_schema():
+    _, frames, _ = D._unit_payload("rico_h5_f0_s42")
+    assert set(D.METRIC_COLUMNS).issubset(frames["cell_metrics"].columns)
+    assert "detection_delay_steps" in D.METRIC_COLUMNS
+    assert "detection_delay_minutes" not in D.METRIC_COLUMNS
