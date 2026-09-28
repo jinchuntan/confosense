@@ -1,0 +1,11 @@
+{
+  "status": "failed_before_checkpoint_commit",
+  "unit": "bdg2_h1_f2_s42",
+  "failed_phase": "saved_point_metric_reuse",
+  "error": "saved persistence prediction identity mismatch",
+  "established_cause": "the matched-forecasting prediction file repeats each row_id at nominal levels 0.90 and 0.95; the first adapter version compared all 69,280 rows with the 34,640-row test role without selecting the exact historical 0.95 level",
+  "scientific_effect": "none; no model fit, conformalization, or checkpoint unit was committed",
+  "correction": "verify point equality across saved nominal levels, then select the historical 0.95 rows before computing point metrics",
+  "preserved_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/pilot_bdg2_h1_f2_s42_v1_failed_attempt_001",
+  "preserved_checkpoint_manifest_sha256": "3de5ec9384302548525b72ea39c20b05881fd143758ee69497d41217a7bf3c7e"
+}

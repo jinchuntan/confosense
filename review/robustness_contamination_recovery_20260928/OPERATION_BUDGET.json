@@ -1,0 +1,44 @@
+{
+  "version": "robustness_contamination_recovery005_saved_owner_v1",
+  "scope": {
+    "units": 60,
+    "cells": 900,
+    "clean": 60,
+    "zero_controls": 60,
+    "fault_cells": 420,
+    "contamination_cells": 180,
+    "recovery_cells": 180
+  },
+  "unique_operations": {
+    "corrupted_feature_rebuilds": 480,
+    "saved_owner_inference_passes": 540,
+    "emitted_cell_streams": 900,
+    "contamination_reconstructions": 180,
+    "nonzero_contamination_reconstructions": 120,
+    "recovery_policy_computations": 180,
+    "point_metric_rows_from_saved_predictions": 120,
+    "unit_checkpoint_validations": 60,
+    "zero_fit_resume_validations": 60
+  },
+  "not_double_counted": {
+    "recovery_level_shift_2_reuses_fault_feature_and_prediction_stream": true,
+    "contamination_cells_reuse_clean_test_features_and_point_predictions": true,
+    "zero_control_is_a_distinct_rebuild_and_evidence stream": true
+  },
+  "currently_supported": {
+    "units": 52,
+    "cells": 780,
+    "new_model_fits": 0,
+    "new_conformalizations": 0
+  },
+  "missing_owner_construction": {
+    "units": 8,
+    "cells": 120,
+    "quantile_estimator_fits": 24,
+    "owner_conformalizations": 8
+  },
+  "full_scope_after_owner_authorization": {
+    "new_model_fits": 24,
+    "new_conformalizations": 8
+  }
+}

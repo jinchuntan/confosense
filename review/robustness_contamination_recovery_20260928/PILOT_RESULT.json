@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-09-28T10:53:21.931857+00:00",
+  "unit": "bdg2_h1_f2_s42",
+  "cells": 15,
+  "models_fitted": 0,
+  "conformalize_calls": 0,
+  "wall_seconds": 61.82089709999855,
+  "output_bytes": 47742826,
+  "peak_working_set_bytes": 1046503424,
+  "peak_pagefile_usage_bytes": 2283675648,
+  "checkpoint_complete_sha256": "191704fe524ea390aec04110f646e55a5304788bdac8f6a359c84a84753d280d",
+  "checkpoint_files": {
+    "calibration.csv.gz": "674bce8571042b442ed5f75e6131b9e1a18c27387b836939585a528557fe215a",
+    "cell_metrics.csv.gz": "23801749f245bdc0e8aef389f7c4af523b69aafe6dc99544adfcb5182a1c1f42",
+    "contamination_evidence.csv.gz": "1a3ce51bab81d7f1fa2894bc5246b50613dcc89279aeda1df9cf65d5c05a7e41",
+    "feature_audit.csv.gz": "816e104cfb0abe2be2b426242ca1549aa2b30e744033f01cbb4c8d880685f576",
+    "payload.json": "6f5771a2437193475b3eff7c32b3eab7a59dd85ead62541dabb65d666a423d66",
+    "point_accuracy.csv.gz": "be8cc495d50d2490e0d04624f582cb2ec5128b450e8ffc483f81dedb2b2e04e3",
+    "recovery_by_group.csv.gz": "72e9f63e5bea1ae182dfd0a98d0075437eb401ff1cc9a0b5e1a2786bcb93f1f8",
+    "streams.csv.gz": "f51727b7ad705713a266af723efa4fdbff56dd40e99df496e162bf00c4ff299c"
+  },
+  "operation_counts": {
+    "historical_obligation_cells": 15,
+    "unique_corrupted_feature_rebuilds": 8,
+    "unique_saved_owner_inference_passes": 9,
+    "emitted_cell_streams": 15,
+    "contamination_reconstructions": 3,
+    "nonzero_contamination_reconstructions": 2,
+    "recovery_policy_computations": 3,
+    "group_recovery_rows": 30,
+    "point_metric_rows_from_saved_predictions": 2,
+    "model_fits": 0,
+    "conformalize_calls": 0,
+    "new_seeds": 0
+  },
+  "recovery_summaries": [
+    {
+      "cell": "recovery_static",
+      "status": "descriptive_group_recovery",
+      "groups": 10,
+      "common_horizon_minutes": 92400.0,
+      "probability_recovered_by_horizon": 1.0,
+      "restricted_mean_recovery_minutes": 1854.0,
+      "median_recovery_minutes": 1500.0,
+      "censored_groups": 0
+    },
+    {
+      "cell": "recovery_periodic",
+      "status": "descriptive_group_recovery",
+      "groups": 10,
+      "common_horizon_minutes": 92400.0,
+      "probability_recovered_by_horizon": 1.0,
+      "restricted_mean_recovery_minutes": 2070.0,
+      "median_recovery_minutes": 1500.0,
+      "censored_groups": 0
+    },
+    {
+      "cell": "recovery_rolling",
+      "status": "descriptive_group_recovery",
+      "groups": 10,
+      "common_horizon_minutes": 92400.0,
+      "probability_recovered_by_horizon": 1.0,
+      "restricted_mean_recovery_minutes": 1560.0,
+      "median_recovery_minutes": 1440.0,
+      "censored_groups": 0
+    }
+  ]
+}

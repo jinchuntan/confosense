@@ -1,0 +1,224 @@
+{
+  "version": "robustness_contamination_recovery005_saved_owner_v1",
+  "frozen_utc": "2026-09-28T10:51:36.970554+00:00",
+  "authorization_scope": "implementation plus one zero-fit BDG2 h1/f2/s42 pilot",
+  "historical_scope": {
+    "units": 60,
+    "cells_per_unit": 15,
+    "cells": 900,
+    "cell_names": [
+      "clean",
+      "zero_control",
+      "random_missing@na",
+      "dropout@na",
+      "stuck@na",
+      "level_shift@1.0",
+      "level_shift@2.0",
+      "drift@1.0",
+      "drift@2.0",
+      "contam_clean_ref",
+      "contam@0.05",
+      "contam@0.1",
+      "recovery_static",
+      "recovery_periodic",
+      "recovery_rolling"
+    ]
+  },
+  "fault_contract": {
+    "types": [
+      "random_missing",
+      "dropout",
+      "stuck",
+      "level_shift",
+      "drift"
+    ],
+    "magnitude_faults": [
+      "drift",
+      "level_shift"
+    ],
+    "severities_sd": [
+      1.0,
+      2.0
+    ],
+    "random_missing_fraction": 0.2,
+    "window_fraction": [
+      0.25,
+      0.55
+    ],
+    "segments": {
+      "pre": [
+        0.0,
+        0.25
+      ],
+      "during": [
+        0.25,
+        0.55
+      ],
+      "post": [
+        0.55,
+        1.0
+      ]
+    },
+    "zero_control": "level_shift@0 through identical rebuild/replay machinery",
+    "contamination": "calibration targets only; 5%/10%; +2 train-only pooled sigma; clean test",
+    "recovery": "level_shift@2; static/periodic/rolling; group physical follow-up and right censoring"
+  },
+  "crosswalk": {
+    "version": "robustness_contamination_recovery005_saved_owner_v1",
+    "created_utc": "2026-09-28T10:47:34.927407+00:00",
+    "units": 60,
+    "cells": 900,
+    "exact_saved_owner_units": 52,
+    "missing_exact_owner_units": 8,
+    "missing_exact_owner_cells": 120,
+    "missing_owner_estimator_fits": 24,
+    "missing_owner_conformalizations": 8,
+    "rico_identity_version": "rico_whole_run_group_blocked_v005",
+    "operational_replay_dependency": false,
+    "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
+    "unsupported_units": [
+      {
+        "legacy_unit_id": "pleia_h1_f0_s44_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.995,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_h1_f0_s46_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.995,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_h1_f2_s44_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.975,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_h1_f2_s45_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.99,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_h1_f2_s46_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.995,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_energy_h1_f0_s43_amendment003",
+        "historical_interval_method": "quantile_uncalibrated",
+        "historical_level": 0.975,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_energy_h1_f1_s43_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.975,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      },
+      {
+        "legacy_unit_id": "pleia_energy_h1_f1_s46_amendment003",
+        "historical_interval_method": "cqr",
+        "historical_level": 0.975,
+        "support_reason": "exact saved CQR/quantile owner absent at historical level",
+        "missing_owner_estimator_fits": 3,
+        "missing_owner_conformalizations": 1
+      }
+    ]
+  },
+  "operation_budget": {
+    "version": "robustness_contamination_recovery005_saved_owner_v1",
+    "scope": {
+      "units": 60,
+      "cells": 900,
+      "clean": 60,
+      "zero_controls": 60,
+      "fault_cells": 420,
+      "contamination_cells": 180,
+      "recovery_cells": 180
+    },
+    "unique_operations": {
+      "corrupted_feature_rebuilds": 480,
+      "saved_owner_inference_passes": 540,
+      "emitted_cell_streams": 900,
+      "contamination_reconstructions": 180,
+      "nonzero_contamination_reconstructions": 120,
+      "recovery_policy_computations": 180,
+      "point_metric_rows_from_saved_predictions": 120,
+      "unit_checkpoint_validations": 60,
+      "zero_fit_resume_validations": 60
+    },
+    "not_double_counted": {
+      "recovery_level_shift_2_reuses_fault_feature_and_prediction_stream": true,
+      "contamination_cells_reuse_clean_test_features_and_point_predictions": true,
+      "zero_control_is_a_distinct_rebuild_and_evidence stream": true
+    },
+    "currently_supported": {
+      "units": 52,
+      "cells": 780,
+      "new_model_fits": 0,
+      "new_conformalizations": 0
+    },
+    "missing_owner_construction": {
+      "units": 8,
+      "cells": 120,
+      "quantile_estimator_fits": 24,
+      "owner_conformalizations": 8
+    },
+    "full_scope_after_owner_authorization": {
+      "new_model_fits": 24,
+      "new_conformalizations": 8
+    }
+  },
+  "pilot": {
+    "dataset": "bdg2",
+    "horizon": 1,
+    "outer_fold": 2,
+    "model_seed": 42,
+    "interval_method": "cqr",
+    "level": 0.95,
+    "new_model_fits": 0,
+    "new_conformalizations": 0,
+    "rss_limit_bytes": 3221225472,
+    "additional_disk_limit_bytes": 536870912,
+    "disk_floor_bytes": 8589934592
+  },
+  "prohibited_until_separate_authorization": {
+    "missing_owner_quantile_estimator_fits": 24,
+    "missing_owner_conformalizations": 8,
+    "remaining_units": 59
+  },
+  "inputs": {
+    "amendment003": "8306811999cfc9e4e925a400bcec1c8b57a17315af4870f36f762f7f4507fb41",
+    "frozen_protocol": "8262e441efc7bf662c3a14e75f4f61de2c8bfa11c427469d278287a740080df2",
+    "historical_provenance": {
+      "pleia": "26d6a11f972bfc84754cb4d62dfcd2a81d11c2493802af4a26920c14d4c9c917",
+      "pleia_energy": "2ff350645def52466199dbcac942e38b94e54f5b557d65289f2a8267e20a579a",
+      "rico": "b0a09b31cd075404f7fe8c0ebe3b700434de57d0cf1be8e1b171ff05e626a4f0",
+      "bdg2": "9747b8d1dfbf7c9dffda3030ec4b3637eaeb1092eac74cd7332e05035d1137d2"
+    },
+    "experiment_matrix": "82001c4a2533ce9638978fc24e246275e9a0becd7b0902b721eb69141f931f8c",
+    "crosswalk": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
+    "adapter": "34e62a4603977efff56063a9333a9d8681c977c89908aa2c985a021705130cc7",
+    "independent_validator": "19da4f9c44aad3a1c249a7abfa25f6c4a8f5befc5d6618b5b78852a4e17185ef",
+    "focused_tests": "c66eaf9389ce291c0ba53b5cca7f123aee7782e5a6d733b4fc9fca967b8d5cea"
+  },
+  "operational_replay_dependency": false
+}

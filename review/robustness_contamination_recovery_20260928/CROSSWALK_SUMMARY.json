@@ -1,0 +1,80 @@
+{
+  "version": "robustness_contamination_recovery005_saved_owner_v1",
+  "created_utc": "2026-09-28T10:47:34.927407+00:00",
+  "units": 60,
+  "cells": 900,
+  "exact_saved_owner_units": 52,
+  "missing_exact_owner_units": 8,
+  "missing_exact_owner_cells": 120,
+  "missing_owner_estimator_fits": 24,
+  "missing_owner_conformalizations": 8,
+  "rico_identity_version": "rico_whole_run_group_blocked_v005",
+  "operational_replay_dependency": false,
+  "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
+  "unsupported_units": [
+    {
+      "legacy_unit_id": "pleia_h1_f0_s44_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.995,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_h1_f0_s46_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.995,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_h1_f2_s44_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.975,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_h1_f2_s45_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.99,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_h1_f2_s46_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.995,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_energy_h1_f0_s43_amendment003",
+      "historical_interval_method": "quantile_uncalibrated",
+      "historical_level": 0.975,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_energy_h1_f1_s43_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.975,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    },
+    {
+      "legacy_unit_id": "pleia_energy_h1_f1_s46_amendment003",
+      "historical_interval_method": "cqr",
+      "historical_level": 0.975,
+      "support_reason": "exact saved CQR/quantile owner absent at historical level",
+      "missing_owner_estimator_fits": 3,
+      "missing_owner_conformalizations": 1
+    }
+  ]
+}
