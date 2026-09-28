@@ -80,14 +80,14 @@ def test_pleia_none_group_uses_raw_identity_for_fault_rebuild():
                                       prepared.series[0].covariates)
     scales = C.SI.training_scale(np.asarray(data["y"]), data["meta"], roles["fit"])
     windows = C.group_test_windows(data["meta"], test_rows, C.WINDOW_FRAC)
-    rebuilt, observed = C.A.rebuild_fault(prepared, raw_meta, clean, windows, scales, fcfg,
-                                          1, "level_shift", 0.0, 42)
+    rebuilt, observed = C.rebuild_test_fault(prepared, raw_meta, clean, windows, scales, fcfg,
+                                             1, "level_shift", 0.0, 42)
     pd.testing.assert_frame_equal(rebuilt, clean, check_exact=True)
     np.testing.assert_array_equal(observed, truth)
     string_meta = raw_meta.copy(); string_meta["group_id"] = string_meta.group_id.astype(str)
     with pytest.raises(ValueError, match="lost frozen test identities"):
-        C.A.rebuild_fault(prepared, string_meta, clean, windows, scales, fcfg,
-                          1, "level_shift", 0.0, 42)
+        C.rebuild_test_fault(prepared, string_meta, clean, windows, scales, fcfg,
+                             1, "level_shift", 0.0, 42)
 
 
 def test_missing_group_identity_is_canonical_for_recovery():
@@ -123,3 +123,24 @@ def test_control_record_atomic_replace_retries_transient_access_denial(tmp_path,
     R.atomic_json(destination, {"status": "running"})
     assert len(calls) == 3
     assert R.read(destination) == {"status": "running"}
+
+
+def test_rico_fault_rebuild_changes_only_outer_test_groups_without_fitting():
+    row = C.selected_row("rico_h5_f0_s42")
+    _, data, roles, prepared = C.A.load_unit(row)
+    test_rows = roles["test"]
+    meta = data["meta"].iloc[test_rows].reset_index(drop=True).copy()
+    clean = data["X"].iloc[test_rows].reset_index(drop=True)
+    truth = np.asarray(data["y"])[test_rows]
+    fcfg = C.windowing.feature_config(data["old_protocol"]["resolved_dataset_config"],
+                                      prepared.series[0].covariates)
+    scales = C.SI.training_scale(np.asarray(data["y"]), data["meta"], roles["fit"])
+    windows = C.group_test_windows(data["meta"], test_rows, C.WINDOW_FRAC)
+    assert len(windows) == 43 and C._test_window(windows, "P1S1") is None
+    rebuilt_zero, observed_zero = C.rebuild_test_fault(
+        prepared, meta, clean, windows, scales, fcfg, 5, "level_shift", 0.0, 42)
+    pd.testing.assert_frame_equal(rebuilt_zero, clean, check_exact=True)
+    np.testing.assert_array_equal(observed_zero, truth)
+    rebuilt_fault, _ = C.rebuild_test_fault(
+        prepared, meta, clean, windows, scales, fcfg, 5, "level_shift", 2.0, 42)
+    assert np.any(rebuilt_fault.to_numpy() != clean.to_numpy())

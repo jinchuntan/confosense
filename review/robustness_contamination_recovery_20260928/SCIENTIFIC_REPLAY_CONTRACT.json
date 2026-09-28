@@ -1,5 +1,5 @@
 {
-  "version": "robustness_contamination_recovery005_scientific_replay_contract_v4",
+  "version": "robustness_contamination_recovery005_scientific_replay_contract_v5",
   "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
   "preparation_protocol_sha256": "e65f52b9c7ee2510e185c7ea83da5068760dd399bee39c6e7e9e13a22ef451a4",
   "constructed_owner_registry_sha256": "8460ce75c63b38ea76fbd42e53064919147a5e25be369fba771248b030aa3e8a",
@@ -60,6 +60,44 @@
     "failed_unit_complete_sha256": "efd95c468b19b0527fb12a116bd234f54206f39c40e02e37e6ecee753a9e27d2",
     "failure_reason": "missing PLEIA group identity was represented as NaN in fault windows but None in emitted streams, suppressing the required recovery computation"
   },
-  "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v4",
-  "remaining_units": 45
+  "v4_root": {
+    "path": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v4",
+    "checkpoint_spec_hash": "0fa5743e5453a302741e6554fb298c97f0cd1fb554746dd8fe76d87021d085a4",
+    "accepted_unit_hashes": {
+      "pleia_energy_h1_f0_s42": "dc4b763620964136e4e275aefd8fc0d0a615f297c48f7ad2b48591b1477212bf",
+      "pleia_energy_h1_f0_s43": "5af9bc664d9d73b2dcbed8c1ba77bc3b2bec4ab01bf1afe273690c98abcc273c",
+      "pleia_energy_h1_f0_s44": "266eaa285222cb59042fba0c75b456046c362b26661ba8669724111970cc0da5",
+      "pleia_energy_h1_f0_s45": "a8a730900474db3549d7bfb0975a5c9c894b89e65f244043b6e4acb3ef1d3ff7",
+      "pleia_energy_h1_f0_s46": "4cee217e4a3e3cd24c795938bee36a41558247ea2db52f1e2eb576eb220496a7",
+      "pleia_energy_h1_f1_s42": "0ebd2ebc7a8673725e2fdd52b69ed3e94177c5a631850244c6149d2d7874cc56",
+      "pleia_energy_h1_f1_s43": "6f78cf55919e2359ac839180a9189a8292e1c0b3cf66f745b7beecc4258bdf2c",
+      "pleia_energy_h1_f1_s44": "a1f4f330df0e277c5365bc12ef59d5260a6f797c5d815f73dd4b9fe3bbcaadc7",
+      "pleia_energy_h1_f1_s45": "b630a21cfa9ede8a93b0be740210adc1fb0df0ce971cf7e7802b32558284a49b",
+      "pleia_energy_h1_f1_s46": "96d686572ab7a2855b6278368bcff1aa589d85fb0b12bf77",
+      "pleia_energy_h1_f2_s42": "5ebe73561cef042b744b83874f3b3e686b7ae950bce19ec73cfe06613051d1f1",
+      "pleia_energy_h1_f2_s43": "36551b427ed0859964d39d87913bf61e86f9d3ef1cb037a87db3ed24e30caf5c",
+      "pleia_energy_h1_f2_s44": "3e0fdf9189e3547c2af3b0b8864abaf439c2f9a83234b2eb1e1d822ae6eee1bd",
+      "pleia_energy_h1_f2_s45": "fee57610f5f35b2067a8cd796e02c4a997039e8c98984f2a519a5317d8e8e7a0",
+      "pleia_energy_h1_f2_s46": "d4dc576c7af45615dec4a3ac2bf975765eda7e371cc01163ba07816c0fe58a95",
+      "pleia_h1_f0_s42": "4c23c5be8abf6ed85443459ecd32513e6df478cb8a677f2ac9bab6e675a92206",
+      "pleia_h1_f0_s43": "ca7396a50e383a5fd26a515438ef59de020e69c6740e9baaa77a5880bf0980d5",
+      "pleia_h1_f0_s44": "1642921561f297e4f0b99a628d634e4695b50b0e33bf717449104067f454bcf3",
+      "pleia_h1_f0_s45": "c7561f209e85fb97a98ad188758774ddc6ab54a9da0822075576444e3688be50",
+      "pleia_h1_f0_s46": "1a606eb4e62474d08c03ee8c255c86a591e1197c94bab81bde17e04488fb4b57",
+      "pleia_h1_f1_s42": "4ebad0e6456b3cdc3662941c2a4e75ac342442dc48e74e3b595992cec84db5e7",
+      "pleia_h1_f1_s43": "8e7acd7b7a6f0372fc28e04f5a9d578b3ce97b894a8ddb3652ba5bee1e89b99f",
+      "pleia_h1_f1_s44": "f60d020f9eec2d0bf7908d89d9ce6a3d410f76ec55596fa1a54d1073d43e14dd",
+      "pleia_h1_f1_s45": "451c8f897b055fc501e9692dd0ed6d4369e44d10ab62f9df6c3cb83fb45a0c35",
+      "pleia_h1_f1_s46": "989c312757c28f5d2953f65d189a88d123fc22085d819cec4e36f5d444b9380e",
+      "pleia_h1_f2_s42": "66cbca98e1881a0cf66d6a9d4639d8e644918d45a30b180352f5f724312ac326",
+      "pleia_h1_f2_s43": "45d5bfcfcefc367723c1051b1774f029c91a44aa6d2c07505045c5e17ab55ad8",
+      "pleia_h1_f2_s44": "35541c57f6d86941a71f2e5e2a5b81fc8207b8be310cbcc36731ffe4ace7d1dc",
+      "pleia_h1_f2_s45": "5390a656c1bbddfec59013bcea222c0c090181c105a0e4d1d69e2fa7c0be4290",
+      "pleia_h1_f2_s46": "0e37c7295fa3268a057b6919bb8c8cf97582bb65808a88931c4be33b88484e4e"
+    },
+    "failed_precheckpoint_unit": "rico_h5_f0_s42",
+    "failure_reason": "adapter required a test fault window for all 207 prepared RICO series instead of changing only the 43 frozen outer-test groups"
+  },
+  "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v5",
+  "remaining_units": 15
 }

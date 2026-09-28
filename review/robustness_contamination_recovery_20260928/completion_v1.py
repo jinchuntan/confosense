@@ -7,6 +7,7 @@ historical unit at a time, and supports content-verified zero-fit resumes.
 from __future__ import annotations
 
 import argparse
+from dataclasses import replace
 import json
 import math
 import os
@@ -27,7 +28,8 @@ OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
 LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
 FAILED_V2_ROOT = OUTPUT_ROOT / "completion_58_v2"
 FAILED_V3_ROOT = OUTPUT_ROOT / "completion_58_v3"
-FULL_ROOT = OUTPUT_ROOT / "completion_58_v4"
+ACCEPTED_V4_ROOT = OUTPUT_ROOT / "completion_58_v4"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v5"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
 SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
@@ -91,6 +93,41 @@ def fault_events(windows: dict) -> pd.DataFrame:
          "effective": bool(len(times))}
         for group, times in windows.items()
     ])
+
+
+def _test_window(windows: dict, group: Any):
+    for key, value in windows.items():
+        if (pd.isna(key) and pd.isna(group)) or str(key) == str(group):
+            return value
+    return None
+
+
+def rebuild_test_fault(prepared, meta_test: pd.DataFrame, clean_X: pd.DataFrame,
+                       windows: dict, scale_map: dict, fcfg, horizon: int,
+                       kind: str, magnitude_sd: float, seed: int):
+    """Rebuild all series while injecting faults only into frozen outer-test groups."""
+    series = []
+    for item in prepared.series:
+        window = _test_window(windows, item.group_id)
+        if window is None:
+            series.append(item)
+            continue
+        magnitude = magnitude_sd * float(scale_map.get(item.group_id, scale_map["__pooled__"]))
+        series.append(replace(item, frame=A.apply_fault_to_frame(
+            item.frame, window, kind, magnitude, seed + 7
+        )))
+    built = windowing.build_dataset_windows(replace(prepared, series=series), horizon, fcfg)
+    lookup = built["meta"][["group_id", "origin_time"]].copy(); lookup["row"] = np.arange(len(lookup))
+    selected = meta_test[["group_id", "origin_time"]].merge(
+        lookup, on=["group_id", "origin_time"], how="left", validate="one_to_one"
+    )
+    if selected.row.isna().any():
+        raise ValueError("test-scoped fault rebuild lost frozen test identities")
+    indices = selected.row.to_numpy(int)
+    X = built["X"].iloc[indices].reset_index(drop=True); y = np.asarray(built["y"])[indices]
+    if list(X.columns) != list(clean_X.columns):
+        raise ValueError("test-scoped fault rebuild changed feature schema")
+    return X, y
 
 
 def selected_row(key: str) -> dict[str, Any]:
@@ -296,6 +333,14 @@ def checkpoint_location(key: str) -> tuple[Path, dict[str, Any]]:
         if A.digest(FAILED_V2_ROOT / "units" / key / "COMPLETE.json") != expected:
             raise ValueError("v2 completed-unit bytes changed")
         return FAILED_V2_ROOT, manifest["spec"]
+    if key in full_contract["v4_root"]["accepted_unit_hashes"]:
+        manifest = A.read(ACCEPTED_V4_ROOT / "checkpoint_manifest.json")
+        if manifest["spec_hash"] != full_contract["v4_root"]["checkpoint_spec_hash"]:
+            raise ValueError("v4 completed-unit spec changed")
+        expected = full_contract["v4_root"]["accepted_unit_hashes"][key]
+        if A.digest(ACCEPTED_V4_ROOT / "units" / key / "COMPLETE.json") != expected:
+            raise ValueError("v4 completed-unit bytes changed")
+        return ACCEPTED_V4_ROOT, manifest["spec"]
     return FULL_ROOT, checkpoint_spec()
 
 
@@ -375,8 +420,8 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
             rebuilds.append((f"{kind}@{magnitude if kind in MAGNITUDE_FAULTS else 'na'}", kind, magnitude))
     clean_values = clean_X.to_numpy()
     for name, kind, magnitude in rebuilds:
-        X2, observed = A.rebuild_fault(prepared, meta_identity, clean_X, windows, scale_map, fcfg,
-                                       int(row["horizon"]), kind, magnitude, int(row["model_seed"]))
+        X2, observed = rebuild_test_fault(prepared, meta_identity, clean_X, windows, scale_map, fcfg,
+                                          int(row["horizon"]), kind, magnitude, int(row["model_seed"]))
         feature_sets[name] = (X2, observed)
         changed = np.any(X2.to_numpy() != clean_values, axis=1)
         audit_rows.append({"stream": name, "feature_sha256": A.frame_hash(X2),

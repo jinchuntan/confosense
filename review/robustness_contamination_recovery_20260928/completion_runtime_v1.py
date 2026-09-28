@@ -20,7 +20,8 @@ OUTPUT_ROOT = SMART / "outputs" / "robustness_contamination_recovery005"
 OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
 LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
 FAILED_V2_ROOT = OUTPUT_ROOT / "completion_58_v2"
-FULL_ROOT = OUTPUT_ROOT / "completion_58_v4"
+ACCEPTED_V4_ROOT = OUTPUT_ROOT / "completion_58_v4"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v5"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
 SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
@@ -72,7 +73,9 @@ def unit_key(row):
 
 def checkpoint_root(key):
     if key == "bdg2_h1_f0_s42": return LEGACY_FULL_ROOT
-    if key in read(SCIENTIFIC_CONTRACT)["v2_root"]["accepted_unit_hashes"]: return FAILED_V2_ROOT
+    contract = read(SCIENTIFIC_CONTRACT)
+    if key in contract["v2_root"]["accepted_unit_hashes"]: return FAILED_V2_ROOT
+    if key in contract["v4_root"]["accepted_unit_hashes"]: return ACCEPTED_V4_ROOT
     return FULL_ROOT
 
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from dataclasses import replace
 import json
 import math
 import sys
@@ -57,8 +58,29 @@ def _rebuild_features(row: dict[str, Any], data, roles, prepared):
         for magnitude in ((1.0, 2.0) if kind in MAGNITUDE_FAULTS else (1.0,)):
             definitions.append((f"{kind}@{magnitude if kind in MAGNITUDE_FAULTS else 'na'}", kind, magnitude))
     for name, kind, magnitude in definitions:
-        result[name] = A.rebuild_fault(prepared, meta_identity, clean, windows, scales, fcfg,
-                                       int(row["horizon"]), kind, magnitude, int(row["model_seed"]))
+        series = []
+        for item in prepared.series:
+            window = next((value for key, value in windows.items()
+                           if (pd.isna(key) and pd.isna(item.group_id)) or str(key) == str(item.group_id)), None)
+            if window is None:
+                series.append(item)
+                continue
+            magnitude_value = magnitude * float(scales.get(item.group_id, scales["__pooled__"]))
+            series.append(replace(item, frame=A.apply_fault_to_frame(
+                item.frame, window, kind, magnitude_value, int(row["model_seed"]) + 7
+            )))
+        built = windowing.build_dataset_windows(replace(prepared, series=series), int(row["horizon"]), fcfg)
+        lookup = built["meta"][["group_id", "origin_time"]].copy(); lookup["row"] = np.arange(len(lookup))
+        selected = meta_identity[["group_id", "origin_time"]].merge(
+            lookup, on=["group_id", "origin_time"], how="left", validate="one_to_one"
+        )
+        if selected.row.isna().any():
+            raise ValueError("independent test-scoped fault rebuild lost frozen identities")
+        indices = selected.row.to_numpy(int)
+        X = built["X"].iloc[indices].reset_index(drop=True); y = np.asarray(built["y"])[indices]
+        if list(X.columns) != list(clean.columns):
+            raise ValueError("independent test-scoped fault rebuild changed feature schema")
+        result[name] = X, y
     return meta, truth, windows, masks, scales, result
 
 

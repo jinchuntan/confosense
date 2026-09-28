@@ -1,0 +1,20 @@
+{
+  "version": "robustness_completion_rico_test_group_fault_v1",
+  "status": "scientific_adapter_scope_defect_corrected_before_checkpoint",
+  "failed_unit": "rico_h5_f0_s42",
+  "failed_phase": "fault feature rebuild",
+  "failed_attempt": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_59_v1_coordinator/attempts/0142_run_rico_h5_f0_s42_1524daac_20260928T160122113009+0000",
+  "failure": "fault window absent for group 'P1S1'",
+  "established_cause": "the RICO prepared dataset correctly contains all 207 whole-run series, while the frozen fold-0 outer test contains only 43 P5 test groups; the adapter incorrectly required an outer-test fault window for every fit, calibration and test series during dataset-window reconstruction",
+  "identity_evidence": {
+    "identity_version": "rico_whole_run_group_blocked_v005",
+    "prepared_groups": 207,
+    "fold0_test_groups": 43,
+    "first_non_test_prepared_group": "P1S1",
+    "first_test_group": "P5S17",
+    "v4_checkpoint_created": false
+  },
+  "correction": "retain every non-test prepared series byte-for-byte and inject the frozen fault only into series with a frozen outer-test window; rebuild all windows, then select the exact frozen outer-test row and time identities",
+  "scientific_effect": "implements the already-declared outer-test-only fault scope for whole-run group-blocked RICO without changing roles, faults, rows, owners, seeds, policies, tolerances, fitting or conformalization",
+  "validation": "use a separately implemented reconstruction and require zero-control equality, nonzero causal propagation, all 43 group recovery rows per policy, and zero-fit resume"
+}
