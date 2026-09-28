@@ -32,7 +32,8 @@ VERSION = "robustness_contamination_recovery005_completion_validator_v1"
 
 
 def _load(key: str):
-    store = UnitCheckpoint(C.FULL_ROOT, C.checkpoint_spec(), resume=True,
+    root, spec = C.checkpoint_location(key)
+    store = UnitCheckpoint(root, spec, resume=True,
                            string_columns=("group_id", "row_id"))
     loaded = store.load(key)
     if loaded is None:
@@ -189,7 +190,8 @@ def validate_operations(payload, groups: int):
 def validate_unit(key: str) -> dict[str, Any]:
     C.completion_protocol(); launch = C.resource_gate("validation_launch")
     original = C.selected_row(key); row = C.resolved_row(original)
-    before = A.digest(C.FULL_ROOT / "units" / key / "COMPLETE.json")
+    checkpoint_root, _ = C.checkpoint_location(key)
+    before = A.digest(checkpoint_root / "units" / key / "COMPLETE.json")
     start = time.perf_counter()
     with Operations(None, stage="independent_completion_validation", forbid=True) as attempts:
         _, payload, frames, complete = _load(key)
@@ -212,7 +214,7 @@ def validate_unit(key: str) -> dict[str, Any]:
                                       check_exact=False, rtol=1e-12, atol=1e-10, check_dtype=False)
     if attempts.rows:
         raise ValueError("validator unexpectedly executed fitting or conformalization")
-    after = A.digest(C.FULL_ROOT / "units" / key / "COMPLETE.json")
+    after = A.digest(checkpoint_root / "units" / key / "COMPLETE.json")
     if after != before:
         raise ValueError("validator changed completed checkpoint")
     final = C.resource_gate("validation_complete")
@@ -227,7 +229,7 @@ def validate_unit(key: str) -> dict[str, Any]:
         "wall_seconds": time.perf_counter() - start,
         "resource_launch": launch, "resource_complete": final,
     }
-    destination = C.FULL_ROOT / "validation_v1" / key
+    destination = checkpoint_root / "validation_v1" / key
     if destination.exists():
         saved = A.read(destination / "validation.json")
         if saved["checkpoint_complete_sha256"] != after or saved["status"] != "passed":
@@ -239,11 +241,12 @@ def validate_unit(key: str) -> dict[str, Any]:
 
 
 def resume_unit(key: str) -> dict[str, Any]:
-    C.completion_protocol(); before = A.digest(C.FULL_ROOT / "units" / key / "COMPLETE.json")
+    C.completion_protocol(); checkpoint_root, _ = C.checkpoint_location(key)
+    before = A.digest(checkpoint_root / "units" / key / "COMPLETE.json")
     start = time.perf_counter()
     with Operations(None, stage="completion_zero_fit_resume", forbid=True) as attempts:
         result = C.resume_unit(key)
-    after = A.digest(C.FULL_ROOT / "units" / key / "COMPLETE.json")
+    after = A.digest(checkpoint_root / "units" / key / "COMPLETE.json")
     if attempts.rows or before != after or result["status"] != "complete_zero_fit_resume":
         raise ValueError("zero-fit resume invariant failed")
     receipt = {
@@ -253,7 +256,7 @@ def resume_unit(key: str) -> dict[str, Any]:
         "checkpoint_complete_sha256_after": after,
         "wall_seconds": time.perf_counter() - start,
     }
-    destination = C.FULL_ROOT / "resume_v1" / key
+    destination = checkpoint_root / "resume_v1" / key
     if destination.exists():
         saved = A.read(destination / "resume.json")
         if saved["checkpoint_complete_sha256_after"] != after:

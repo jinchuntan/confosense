@@ -1,0 +1,37 @@
+{
+  "version": "robustness_contamination_recovery005_scientific_replay_contract_v2",
+  "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
+  "preparation_protocol_sha256": "e65f52b9c7ee2510e185c7ea83da5068760dd399bee39c6e7e9e13a22ef451a4",
+  "constructed_owner_registry_sha256": "8460ce75c63b38ea76fbd42e53064919147a5e25be369fba771248b030aa3e8a",
+  "saved_owner_adapter_sha256": "34e62a4603977efff56063a9333a9d8681c977c89908aa2c985a021705130cc7",
+  "completion_scientific_baseline_source_sha256": "776d6de11ec4ab30d02862ce086c6984fd3ba48b95b8298baf34af0169140a09",
+  "cells": [
+    "clean",
+    "zero_control",
+    "random_missing@na",
+    "dropout@na",
+    "stuck@na",
+    "level_shift@1.0",
+    "level_shift@2.0",
+    "drift@1.0",
+    "drift@2.0",
+    "contam_clean_ref",
+    "contam@0.05",
+    "contam@0.1",
+    "recovery_static",
+    "recovery_periodic",
+    "recovery_rolling"
+  ],
+  "replay_fit_budget": 0,
+  "replay_conformalization_budget": 0,
+  "legacy_completed_unit": {
+    "unit": "bdg2_h1_f0_s42",
+    "root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_59_v1",
+    "checkpoint_spec_hash": "198c6b8977a69bf35e175287ee2b5245ceb6fe8a9f04f261d67fe6d051bd9dbf",
+    "complete_sha256": "a8bd7d6feabb0ba1614792d319434aef17455df228c7d9905afa84d85ab574c0",
+    "scientific_definition_equivalent": true,
+    "reason_for_new_root": "control/resource provenance changed after this completed unit; its immutable checkpoint is retained and validated in place"
+  },
+  "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v2",
+  "remaining_units": 58
+}

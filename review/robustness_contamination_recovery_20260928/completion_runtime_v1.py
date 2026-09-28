@@ -17,9 +17,11 @@ REPO = HERE.parents[1]
 SMART = REPO / "smart_building_conformal"
 OUTPUT_ROOT = SMART / "outputs" / "robustness_contamination_recovery005"
 OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
-FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
+LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v2"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
+SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
 SCIENTIFIC_PYTHON = Path(r"C:\cfs_venv\Scripts\python.exe")
 DISK_FLOOR = 8 * 2**30
 UNIT_ALLOWANCE = 512 * 2**20
@@ -57,6 +59,10 @@ def crosswalk_records():
 
 def unit_key(row):
     return f"{row['dataset']}_h{int(row['horizon'])}_f{int(row['outer_fold'])}_s{int(row['model_seed'])}"
+
+
+def checkpoint_root(key):
+    return LEGACY_FULL_ROOT if key == "bdg2_h1_f0_s42" else FULL_ROOT
 
 
 def completion_protocol():

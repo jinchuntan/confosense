@@ -86,17 +86,17 @@ def complete(phase: str, key: str) -> bool:
         if phase == "owner_registry":
             value = R.read(R.REGISTRY); return value["units"] == 8 and value["quantile_estimator_fits"] == 24
         if phase == "run":
-            manifest = R.read(R.FULL_ROOT / "checkpoint_manifest.json")
-            unit = R.FULL_ROOT / "units" / key; marker = R.read(unit / "COMPLETE.json")
+            root = R.checkpoint_root(key); manifest = R.read(root / "checkpoint_manifest.json")
+            unit = root / "units" / key; marker = R.read(unit / "COMPLETE.json")
             if marker["spec_hash"] != manifest["spec_hash"]: return False
             return all((unit / name).is_file() and R.digest(unit / name) == expected
                        for name, expected in marker["hashes"].items())
         if phase == "validate":
-            value = R.read(R.FULL_ROOT / "validation_v1" / key / "validation.json")
-            return value["status"] == "passed" and value["checkpoint_complete_sha256"] == R.digest(R.FULL_ROOT / "units" / key / "COMPLETE.json")
+            root = R.checkpoint_root(key); value = R.read(root / "validation_v1" / key / "validation.json")
+            return value["status"] == "passed" and value["checkpoint_complete_sha256"] == R.digest(root / "units" / key / "COMPLETE.json")
         if phase == "resume":
-            value = R.read(R.FULL_ROOT / "resume_v1" / key / "resume.json")
-            return value["status"] == "passed" and value["checkpoint_complete_sha256_after"] == R.digest(R.FULL_ROOT / "units" / key / "COMPLETE.json")
+            root = R.checkpoint_root(key); value = R.read(root / "resume_v1" / key / "resume.json")
+            return value["status"] == "passed" and value["checkpoint_complete_sha256_after"] == R.digest(root / "units" / key / "COMPLETE.json")
         if phase == "aggregate": return R.read(HERE / "COMPLETION_RESULT.json")["status"] == "passed"
         if phase == "backup": return R.read(Path(r"C:\Users\nigel\ConfoSenseBackups\robustness_contamination_recovery005_20260928\completion_v1\BACKUP_RECEIPT.json"))["status"] == "passed"
     except (FileNotFoundError, ValueError, KeyError, json.JSONDecodeError):

@@ -35,7 +35,8 @@ def _unit_payload(key: str):
     if key == "bdg2_h1_f2_s42":
         payload, frames, marker = V.checkpoint_frames()
         return payload, frames, marker
-    store = UnitCheckpoint(C.FULL_ROOT, C.checkpoint_spec(), resume=True,
+    root, spec = C.checkpoint_location(key)
+    store = UnitCheckpoint(root, spec, resume=True,
                            string_columns=("group_id", "row_id"))
     loaded = store.load(key)
     if loaded is None: raise ValueError(f"missing unit {key}")
@@ -46,8 +47,9 @@ def _receipt(key: str, phase: str) -> dict[str, Any]:
     if key == "bdg2_h1_f2_s42":
         path = HERE / ("PILOT_VALIDATION.json" if phase == "validation" else "PILOT_ZERO_FIT_RESUME.json")
     else:
+        root, _ = C.checkpoint_location(key)
         name = "validation.json" if phase == "validation" else "resume.json"
-        path = C.FULL_ROOT / ("validation_v1" if phase == "validation" else "resume_v1") / key / name
+        path = root / ("validation_v1" if phase == "validation" else "resume_v1") / key / name
     value = A.read(path)
     accepted = {"passed"} if phase == "validation" else {"passed", "complete_zero_fit_resume"}
     if value["status"] not in accepted: raise ValueError(f"{phase} did not pass: {key}")
@@ -120,6 +122,7 @@ def aggregate() -> dict[str, Any]:
                 "recovery_policy_computations": 180, "group_recovery_rows": 2415,
                 "point_metric_rows_from_saved_predictions": 120}
     if unique_counts != expected: raise ValueError(f"aggregate operation accounting mismatch: {unique_counts}")
+    legacy_bytes = sum(p.stat().st_size for p in C.LEGACY_FULL_ROOT.rglob("*") if p.is_file())
     full_bytes = sum(p.stat().st_size for p in C.FULL_ROOT.rglob("*") if p.is_file())
     owner_bytes = sum(p.stat().st_size for p in C.OWNER_ROOT.rglob("*") if p.is_file())
     result = {
@@ -134,7 +137,9 @@ def aggregate() -> dict[str, Any]:
         "validation_wall_seconds": float(sum(float(v.get("wall_seconds", 0)) for v in validations)),
         "peak_worker_rss_bytes": int(max(int(p["resource_pre_checkpoint"]["peak_working_set_bytes"]) for p in payloads)),
         "peak_worker_commit_bytes": int(max(int(p["resource_pre_checkpoint"]["peak_pagefile_usage_bytes"]) for p in payloads)),
-        "completion_output_bytes": full_bytes, "constructed_owner_bytes": owner_bytes,
+        "completion_output_bytes": legacy_bytes + full_bytes,
+        "legacy_completed_unit_bytes": legacy_bytes, "remaining_v2_bytes": full_bytes,
+        "constructed_owner_bytes": owner_bytes,
         "population_inference": "unavailable; seed aliases/groups/rows not treated as independent replicates",
         "aggregation_wall_seconds": time.perf_counter() - start,
         "files": {name: A.digest(HERE / name) for name in (
@@ -154,7 +159,9 @@ def backup() -> dict[str, Any]:
     C.completion_protocol()
     result = A.read(HERE / "COMPLETION_RESULT.json")
     if result["status"] != "passed": raise ValueError("aggregation not passed")
-    sources = {"completion_59_v1": C.FULL_ROOT, "constructed_owners_v1": C.OWNER_ROOT}
+    sources = {"completion_59_v1_legacy": C.LEGACY_FULL_ROOT,
+               "completion_58_v2": C.FULL_ROOT,
+               "constructed_owners_v1": C.OWNER_ROOT}
     source_manifest = {name: _tree(path) for name, path in sources.items()}
     total = sum(item["bytes"] for tree in source_manifest.values() for item in tree.values())
     C.resource_gate("backup_launch", total + 256 * 2**20)

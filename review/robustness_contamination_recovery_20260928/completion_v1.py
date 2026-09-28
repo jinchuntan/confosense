@@ -24,9 +24,11 @@ SMART = REPO / "smart_building_conformal"
 SCIENTIFIC_PYTHON = Path(r"C:\cfs_venv\Scripts\python.exe")
 OUTPUT_ROOT = SMART / "outputs" / "robustness_contamination_recovery005"
 OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
-FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
+LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v2"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
+SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
 VERSION = "robustness_contamination_recovery005_completion_v1"
 DISK_FLOOR = 8 * 2**30
 UNIT_ALLOWANCE = 512 * 2**20
@@ -240,18 +242,36 @@ def resolved_row(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def checkpoint_spec() -> dict[str, Any]:
-    protocol = completion_protocol()
+    completion_protocol()
     if not REGISTRY.is_file():
         raise ValueError("constructed-owner registry absent")
-    return {
-        "version": VERSION, "purpose": "remaining 59 frozen robustness units",
-        "preparation_commit": protocol["preparation_commit"],
+    contract = A.read(SCIENTIFIC_CONTRACT)
+    checks = {
         "crosswalk_sha256": A.digest(HERE / "CROSSWALK.csv"),
         "preparation_protocol_sha256": A.digest(HERE / "PROTOCOL.json"),
-        "completion_protocol_sha256": A.digest(PROTOCOL),
         "constructed_owner_registry_sha256": A.digest(REGISTRY),
-        "cells": expected_cell_names(False), "fit_budget_during_replay": 0,
+        "saved_owner_adapter_sha256": A.digest(HERE / "robustness_saved_owner_v1.py"),
     }
+    for name, actual in checks.items():
+        if contract[name] != actual:
+            raise ValueError(f"scientific replay contract identity mismatch: {name}")
+    return {
+        "version": contract["version"], "purpose": "remaining 58 frozen robustness units",
+        "scientific_replay_contract_sha256": A.digest(SCIENTIFIC_CONTRACT),
+        **checks, "cells": contract["cells"], "fit_budget_during_replay": 0,
+    }
+
+
+def checkpoint_location(key: str) -> tuple[Path, dict[str, Any]]:
+    if key == "bdg2_h1_f0_s42":
+        manifest = A.read(LEGACY_FULL_ROOT / "checkpoint_manifest.json")
+        contract = A.read(SCIENTIFIC_CONTRACT)["legacy_completed_unit"]
+        if manifest["spec_hash"] != contract["checkpoint_spec_hash"]:
+            raise ValueError("legacy completed unit spec changed")
+        if A.digest(LEGACY_FULL_ROOT / "units" / key / "COMPLETE.json") != contract["complete_sha256"]:
+            raise ValueError("legacy completed unit bytes changed")
+        return LEGACY_FULL_ROOT, manifest["spec"]
+    return FULL_ROOT, checkpoint_spec()
 
 
 def point_accuracy(row: dict[str, Any], test: pd.DataFrame) -> pd.DataFrame:
@@ -293,7 +313,8 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
         raise ValueError("accepted pilot must be reused, not repeated")
     row = resolved_row(original)
     initial = resource_gate("unit_launch")
-    store = UnitCheckpoint(FULL_ROOT, checkpoint_spec(), resume=resume, string_columns=("group_id", "row_id"))
+    checkpoint_root, spec = checkpoint_location(key)
+    store = UnitCheckpoint(checkpoint_root, spec, resume=resume, string_columns=("group_id", "row_id"))
     loaded = store.load(key) if resume else None
     if loaded is not None:
         payload, frames = loaded
@@ -456,7 +477,7 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
         "status": "complete", "completed_utc": A.utc(), "unit": key, "cells": 15,
         "wall_seconds": elapsed, "peak_working_set_bytes": final_resource["peak_working_set_bytes"],
         "peak_pagefile_usage_bytes": final_resource["peak_pagefile_usage_bytes"],
-        "checkpoint_complete_sha256": A.digest(FULL_ROOT / "units" / key / "COMPLETE.json"),
+        "checkpoint_complete_sha256": A.digest(checkpoint_root / "units" / key / "COMPLETE.json"),
         "checkpoint_files": marker["hashes"], "operation_counts": operation_counts,
     }
 
