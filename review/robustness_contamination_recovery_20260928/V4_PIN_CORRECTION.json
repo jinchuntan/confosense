@@ -1,0 +1,12 @@
+{
+  "version": "robustness_completion_v4_pin_correction_v1",
+  "status": "bookkeeping_transcription_corrected",
+  "failed_phase": "aggregation_preflight",
+  "failed_attempt": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_59_v1_coordinator/attempts/0187_aggregate_all_ec1bb615_20260928T163201898781+0000",
+  "affected_unit": "pleia_energy_h1_f1_s46",
+  "recorded_truncated_value": "96d686572ab7a2855b6278368bcff1aa589d85fb0b12bf77",
+  "exact_complete_sha256": "96d686572ab7a2855b6278368bc2f1d47f2ddc3e8bcff1aa589d85fb0b12bf77",
+  "evidence": "all other 29 v4 pins matched; the recorded value was 48 hexadecimal characters while the unchanged COMPLETE.json digest is the 64-character value above",
+  "scientific_effect": "none; no unit, validation, resume, owner, output or operation ledger was changed",
+  "prevention": "focused tests now require every accepted checkpoint pin to be a full 64-character SHA-256 and verify representative v4/v5 routing"
+}

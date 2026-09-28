@@ -1,5 +1,5 @@
 {
-  "version": "robustness_contamination_recovery005_scientific_replay_contract_v5",
+  "version": "robustness_contamination_recovery005_scientific_replay_contract_v6",
   "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
   "preparation_protocol_sha256": "e65f52b9c7ee2510e185c7ea83da5068760dd399bee39c6e7e9e13a22ef451a4",
   "constructed_owner_registry_sha256": "8460ce75c63b38ea76fbd42e53064919147a5e25be369fba771248b030aa3e8a",
@@ -73,7 +73,7 @@
       "pleia_energy_h1_f1_s43": "6f78cf55919e2359ac839180a9189a8292e1c0b3cf66f745b7beecc4258bdf2c",
       "pleia_energy_h1_f1_s44": "a1f4f330df0e277c5365bc12ef59d5260a6f797c5d815f73dd4b9fe3bbcaadc7",
       "pleia_energy_h1_f1_s45": "b630a21cfa9ede8a93b0be740210adc1fb0df0ce971cf7e7802b32558284a49b",
-      "pleia_energy_h1_f1_s46": "96d686572ab7a2855b6278368bcff1aa589d85fb0b12bf77",
+      "pleia_energy_h1_f1_s46": "96d686572ab7a2855b6278368bc2f1d47f2ddc3e8bcff1aa589d85fb0b12bf77",
       "pleia_energy_h1_f2_s42": "5ebe73561cef042b744b83874f3b3e686b7ae950bce19ec73cfe06613051d1f1",
       "pleia_energy_h1_f2_s43": "36551b427ed0859964d39d87913bf61e86f9d3ef1cb037a87db3ed24e30caf5c",
       "pleia_energy_h1_f2_s44": "3e0fdf9189e3547c2af3b0b8864abaf439c2f9a83234b2eb1e1d822ae6eee1bd",
@@ -98,6 +98,27 @@
     "failed_precheckpoint_unit": "rico_h5_f0_s42",
     "failure_reason": "adapter required a test fault window for all 207 prepared RICO series instead of changing only the 43 frozen outer-test groups"
   },
-  "remaining_root": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v5",
-  "remaining_units": 15
+  "v5_root": {
+    "path": "smart_building_conformal/outputs/robustness_contamination_recovery005/completion_58_v5",
+    "checkpoint_spec_hash": "3deb78405fb6c61f6c5914e277e6768daf96b40ca617ddc608b9c6fa2d62ca88",
+    "accepted_unit_hashes": {
+      "rico_h5_f0_s42": "f6f551f27bbaccf97601b1980a41bbad613b6452381c6056260ba10ca6e1eab3",
+      "rico_h5_f0_s43": "65f1e1f66f623e0f1467da53cc8049da4fa80e0102cb44777c8a87d0a25fa556",
+      "rico_h5_f0_s44": "362d1f8bb192bc1b391999c66025cd00c027941a4af913436b530f17fec3e1f5",
+      "rico_h5_f0_s45": "75f0bda645bde238497749208231ca90c089a4a97b595e5de1b8db5a45b3e487",
+      "rico_h5_f0_s46": "80a2fe5d4813703991dffb267dab648a950cc28fd545ea40013f19db1b1d7d8f",
+      "rico_h5_f1_s42": "3563ced49543e3497bbffbef42eaf98a25f8ebb10c0b3e49b22aff5e52b7b863",
+      "rico_h5_f1_s43": "4dc325375b537f73ee2e9832ae527817e5fcdc762da8294f1a3f7eec489fc1dd",
+      "rico_h5_f1_s44": "7eb8e6ec623edcaf1e44ea7706c88e750c6e7ce698267716d7aa5e7636038fc7",
+      "rico_h5_f1_s45": "ed0c87f187d034c45632aa74d788229cd4ad7acc922aca885a2b1da439e62d32",
+      "rico_h5_f1_s46": "9ed373901bb1cd8ddf6ed012d920449f65004e1a8f3bc471a4e51b3a8b2f576d",
+      "rico_h5_f2_s42": "a8540d928d5a4046a39983681b62d789907a5177f9bf8f179bd3470ad97a842e",
+      "rico_h5_f2_s43": "11923f516c7b382b15d74531a4f115615848826f071730eee3049ca6e96168d3",
+      "rico_h5_f2_s44": "e3e00bdaebf3cd7a51cca7d65868d0f0f83c8f29d665edeec2e2b736507b5dc5",
+      "rico_h5_f2_s45": "8cc84f512f072f6e1329f2980570b4cebe0b9dd3657f80e937bf01a7fbc66fd0",
+      "rico_h5_f2_s46": "a020a55b45656f392c89e7eeedaef5fd9ed55c1e9f7e59c7bb82cab4fdcc7775"
+    }
+  },
+  "remaining_root": null,
+  "remaining_units": 0
 }

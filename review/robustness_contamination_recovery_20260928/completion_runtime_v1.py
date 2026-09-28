@@ -21,7 +21,8 @@ OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
 LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
 FAILED_V2_ROOT = OUTPUT_ROOT / "completion_58_v2"
 ACCEPTED_V4_ROOT = OUTPUT_ROOT / "completion_58_v4"
-FULL_ROOT = OUTPUT_ROOT / "completion_58_v5"
+ACCEPTED_V5_ROOT = OUTPUT_ROOT / "completion_58_v5"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v6"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
 SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
@@ -76,6 +77,7 @@ def checkpoint_root(key):
     contract = read(SCIENTIFIC_CONTRACT)
     if key in contract["v2_root"]["accepted_unit_hashes"]: return FAILED_V2_ROOT
     if key in contract["v4_root"]["accepted_unit_hashes"]: return ACCEPTED_V4_ROOT
+    if key in contract["v5_root"]["accepted_unit_hashes"]: return ACCEPTED_V5_ROOT
     return FULL_ROOT
 
 

@@ -144,3 +144,11 @@ def test_rico_fault_rebuild_changes_only_outer_test_groups_without_fitting():
     rebuilt_fault, _ = C.rebuild_test_fault(
         prepared, meta, clean, windows, scales, fcfg, 5, "level_shift", 2.0, 42)
     assert np.any(rebuilt_fault.to_numpy() != clean.to_numpy())
+
+
+def test_checkpoint_pins_are_full_sha256_and_route_to_preserved_roots():
+    contract = C.A.read(C.SCIENTIFIC_CONTRACT)
+    for root_name in ("v2_root", "v4_root", "v5_root"):
+        assert all(len(value) == 64 for value in contract[root_name]["accepted_unit_hashes"].values())
+    assert C.checkpoint_location("pleia_h1_f0_s42")[0] == C.ACCEPTED_V4_ROOT
+    assert C.checkpoint_location("rico_h5_f0_s42")[0] == C.ACCEPTED_V5_ROOT
