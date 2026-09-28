@@ -76,6 +76,9 @@
   "resources": {
     "physical_ram_headroom_before_each_worker_bytes": 3221225472,
     "windows_commit_headroom_before_each_worker_bytes": 3221225472,
+    "worker_launch_reconstruction": "available plus the scientific process measured footprint; lightweight coordinator enforces literal threshold before process creation",
+    "runtime_physical_floor_bytes": 536870912,
+    "runtime_commit_floor_bytes": 1073741824,
     "worker_peak_rss_limit_bytes": 3221225472,
     "free_disk_floor_bytes": 8589934592,
     "estimated_additional_disk_bytes": 8096014664,
@@ -95,7 +98,7 @@
     "population_inference": "do not treat seed aliases, groups or stream rows as independent replicates"
   },
   "source_sha256": {
-    "completion_v1.py": "ec7039ab48fc6fce3913aeb4391a1ea32ee4eb1fac4201c268a41d2abd7db1b4",
+    "completion_v1.py": "8a6d4f258afb3adcb86d713f84291b5228a9825f778bdbd89856a142d0f8e848",
     "completion_validate_v1.py": "f8fb18a2a57d01464756153fae59f4ef34a044d36a6c4a2f6d9a7209d8be1d84",
     "completion_delivery_v1.py": "4d5dd4fb205d70f95258054e516b3bbf03077b78d6fa9ea74e218f142f72a13d",
     "completion_runtime_v1.py": "51903a7c376ec45fe59c5b7454b2a9b4a56e8c51170bb54a4ea79e71d03a0b56",

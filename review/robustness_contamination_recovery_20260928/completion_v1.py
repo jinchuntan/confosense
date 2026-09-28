@@ -86,12 +86,22 @@ def selected_row(key: str) -> dict[str, Any]:
 
 def resource_gate(stage: str, allowance: int = UNIT_ALLOWANCE) -> dict[str, Any]:
     value = A.resources(); value.update(stage=stage, utc=A.utc(), disk_allowance_bytes=int(allowance))
+    # The lightweight coordinator enforces the literal threshold immediately
+    # before process creation.  Once imported, this scientific process itself
+    # has consumed physical/commit headroom; add only its measured footprint to
+    # reconstruct that launch boundary rather than double-counting the worker.
+    value["prelaunch_equivalent_physical_bytes"] = value["physical_available_bytes"] + value["working_set_bytes"]
+    value["prelaunch_equivalent_commit_bytes"] = value["commit_headroom_bytes"] + value["pagefile_usage_bytes"]
     if value["disk_free_bytes"] < DISK_FLOOR + allowance:
         raise RuntimeError("completion disk resource gate failed")
-    if value["physical_available_bytes"] < LAUNCH_HEADROOM:
+    if value["prelaunch_equivalent_physical_bytes"] < LAUNCH_HEADROOM:
         raise RuntimeError("completion physical-RAM resource gate failed")
-    if value["commit_headroom_bytes"] < LAUNCH_HEADROOM:
+    if value["prelaunch_equivalent_commit_bytes"] < LAUNCH_HEADROOM:
         raise RuntimeError("completion Windows-commit resource gate failed")
+    if value["physical_available_bytes"] < 512 * 2**20:
+        raise RuntimeError("completion runtime physical-RAM floor failed")
+    if value["commit_headroom_bytes"] < 1024 * 2**20:
+        raise RuntimeError("completion runtime Windows-commit floor failed")
     if value["peak_working_set_bytes"] > RSS_LIMIT:
         raise RuntimeError("completion worker exceeded 3 GiB RSS limit")
     return value
