@@ -25,7 +25,8 @@ SCIENTIFIC_PYTHON = Path(r"C:\cfs_venv\Scripts\python.exe")
 OUTPUT_ROOT = SMART / "outputs" / "robustness_contamination_recovery005"
 OWNER_ROOT = OUTPUT_ROOT / "constructed_owners_v1"
 LEGACY_FULL_ROOT = OUTPUT_ROOT / "completion_59_v1"
-FULL_ROOT = OUTPUT_ROOT / "completion_58_v2"
+FAILED_V2_ROOT = OUTPUT_ROOT / "completion_58_v2"
+FULL_ROOT = OUTPUT_ROOT / "completion_58_v3"
 PROTOCOL = HERE / "COMPLETION_PROTOCOL.json"
 REGISTRY = HERE / "CONSTRUCTED_OWNERS.json"
 SCIENTIFIC_CONTRACT = HERE / "SCIENTIFIC_REPLAY_CONTRACT.json"
@@ -327,7 +328,8 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
     _, data, roles, prepared = A.load_unit(original)
     owner = A.SavedOwner(row, data, roles)
     test_rows = roles["test"]
-    meta = data["meta"].iloc[test_rows].reset_index(drop=True).copy(); meta["group_id"] = meta.group_id.astype(str)
+    meta_identity = data["meta"].iloc[test_rows].reset_index(drop=True).copy()
+    meta = meta_identity.copy(); meta["group_id"] = meta.group_id.astype(str)
     test = role_frame(data, test_rows).reset_index(drop=True)
     clean_X = data["X"].iloc[test_rows].reset_index(drop=True)
     truth = np.asarray(data["y"])[test_rows]
@@ -349,7 +351,7 @@ def run_unit(key: str, *, resume: bool) -> dict[str, Any]:
             rebuilds.append((f"{kind}@{magnitude if kind in MAGNITUDE_FAULTS else 'na'}", kind, magnitude))
     clean_values = clean_X.to_numpy()
     for name, kind, magnitude in rebuilds:
-        X2, observed = A.rebuild_fault(prepared, meta, clean_X, windows, scale_map, fcfg,
+        X2, observed = A.rebuild_fault(prepared, meta_identity, clean_X, windows, scale_map, fcfg,
                                        int(row["horizon"]), kind, magnitude, int(row["model_seed"]))
         feature_sets[name] = (X2, observed)
         changed = np.any(X2.to_numpy() != clean_values, axis=1)

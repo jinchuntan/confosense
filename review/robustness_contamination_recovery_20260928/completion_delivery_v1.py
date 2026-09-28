@@ -160,7 +160,8 @@ def backup() -> dict[str, Any]:
     result = A.read(HERE / "COMPLETION_RESULT.json")
     if result["status"] != "passed": raise ValueError("aggregation not passed")
     sources = {"completion_59_v1_legacy": C.LEGACY_FULL_ROOT,
-               "completion_58_v2": C.FULL_ROOT,
+               "completion_58_v2_failed_precheckpoint": C.FAILED_V2_ROOT,
+               "completion_58_v3": C.FULL_ROOT,
                "constructed_owners_v1": C.OWNER_ROOT}
     source_manifest = {name: _tree(path) for name, path in sources.items()}
     total = sum(item["bytes"] for tree in source_manifest.values() for item in tree.values())

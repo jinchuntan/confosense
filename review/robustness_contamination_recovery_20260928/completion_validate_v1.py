@@ -43,7 +43,8 @@ def _load(key: str):
 
 def _rebuild_features(row: dict[str, Any], data, roles, prepared):
     test_rows = roles["test"]
-    meta = data["meta"].iloc[test_rows].reset_index(drop=True).copy(); meta["group_id"] = meta.group_id.astype(str)
+    meta_identity = data["meta"].iloc[test_rows].reset_index(drop=True).copy()
+    meta = meta_identity.copy(); meta["group_id"] = meta.group_id.astype(str)
     clean = data["X"].iloc[test_rows].reset_index(drop=True)
     truth = np.asarray(data["y"])[test_rows]
     fcfg = windowing.feature_config(data["old_protocol"]["resolved_dataset_config"], prepared.series[0].covariates)
@@ -56,7 +57,7 @@ def _rebuild_features(row: dict[str, Any], data, roles, prepared):
         for magnitude in ((1.0, 2.0) if kind in MAGNITUDE_FAULTS else (1.0,)):
             definitions.append((f"{kind}@{magnitude if kind in MAGNITUDE_FAULTS else 'na'}", kind, magnitude))
     for name, kind, magnitude in definitions:
-        result[name] = A.rebuild_fault(prepared, meta, clean, windows, scales, fcfg,
+        result[name] = A.rebuild_fault(prepared, meta_identity, clean, windows, scales, fcfg,
                                        int(row["horizon"]), kind, magnitude, int(row["model_seed"]))
     return meta, truth, windows, masks, scales, result
 
