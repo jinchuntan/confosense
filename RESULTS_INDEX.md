@@ -52,6 +52,14 @@ particular:
 - bulk raw evidence remains outside the compact Git publication where specified,
   with verified backup manifests preserved by each completed delivery.
 
+The reviewer surface is compact, but the integrated branch history is not a
+small Git diff: it contains 28,726 paths and approximately 11.61 GiB of blobs
+relative to `main`, dominated by scientific streams, split archives, and other
+evidence already committed by the historical review deliveries. Those objects
+were retained to preserve provenance; this integration did not duplicate them,
+delete them, or rewrite history. External-only evidence remains governed by the
+linked backup manifests.
+
 See the [package README](smart_building_conformal/README.md) for the maintained
 module map, exact environment lock, lightweight inspection commands, and the
 separate expensive reproduction entry points.
