@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 import time
+import uuid
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -47,20 +48,36 @@ def run() -> int:
     try: handle = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     except FileExistsError: raise RuntimeError(f"supervisor lock already exists: {LOCK}")
     os.write(handle, json.dumps({"pid": os.getpid(), "created_utc": A.utc(), "command": sys.argv}).encode()); os.close(handle)
-    command = [str(C.SCIENTIFIC_PYTHON), "-u", str(HERE / "completion_coordinator_v1.py")]
+    run_token = uuid.uuid4().hex
+    command = [str(C.SCIENTIFIC_PYTHON), "-u", str(HERE / "completion_coordinator_v1.py"),
+               "--run-token", run_token]
     log = (ROOT / "coordinator.log").open("a", encoding="utf-8")
     process = subprocess.Popen(command, cwd=C.REPO, stdout=log, stderr=subprocess.STDOUT)
-    state = {"version": VERSION, "status": "running", "supervisor_pid": os.getpid(),
+    state = {"version": VERSION, "run_token": run_token, "status": "starting", "supervisor_pid": os.getpid(),
              "supervisor_created_utc": A.utc(), "poll_seconds": 120,
              "supervisor_identity": process_identity(os.getpid()),
              "coordinator_launcher_pid": process.pid, "coordinator_command": command,
              "coordinator_created_utc": A.utc(), "coordinator_identity": None}
     append({"utc": A.utc(), "event": "supervisor_started", "pid": os.getpid(), "coordinator_pid": process.pid})
     try:
+        progress = C.OUTPUT_ROOT / "completion_59_v1_coordinator" / "progress.json"
+        deadline = time.monotonic() + 60
+        progress_value = None
+        while time.monotonic() < deadline and process.poll() is None:
+            if progress.exists():
+                candidate = A.read(progress)
+                if candidate.get("run_token") == run_token:
+                    progress_value = candidate; break
+            time.sleep(.5)
+        if progress_value is None:
+            state.update(status="blocked_startup_identity", coordinator_exit_code=process.poll())
+            write(state); append({"utc": A.utc(), "event": "startup_identity_timeout"}); return 2
         while process.poll() is None:
-            progress = C.OUTPUT_ROOT / "completion_59_v1_coordinator" / "progress.json"
             progress_value = A.read(progress) if progress.exists() else None
-            actual_pid = int(progress_value["coordinator_pid"]) if progress_value else process.pid
+            if not progress_value or progress_value.get("run_token") != run_token:
+                state.update(status="blocked_progress_identity", progress=progress_value)
+                write(state); append({"utc": A.utc(), "event": "progress_identity_mismatch"}); return 2
+            actual_pid = int(progress_value["coordinator_pid"])
             identity = process_identity(actual_pid)
             expected_script = str(HERE / "completion_coordinator_v1.py").lower()
             command_line = str((identity or {}).get("CommandLine", "")).lower()

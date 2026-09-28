@@ -1,6 +1,7 @@
 """Sequential durable coordinator for the authorized robustness completion."""
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import subprocess
@@ -73,15 +74,16 @@ def complete(phase: str, key: str) -> bool:
     return False
 
 
-def run() -> int:
+def run(run_token: str) -> int:
     C.completion_protocol(); ROOT.mkdir(parents=True, exist_ok=True)
     try:
         handle = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     except FileExistsError:
         raise RuntimeError(f"coordinator identity lock already exists: {LOCK}")
-    os.write(handle, json.dumps({"pid": os.getpid(), "created_utc": A.utc(), "command": sys.argv}).encode()); os.close(handle)
+    os.write(handle, json.dumps({"pid": os.getpid(), "created_utc": A.utc(), "command": sys.argv,
+                                "run_token": run_token}).encode()); os.close(handle)
     queue = tasks(); state = {
-        "version": VERSION, "status": "running", "coordinator_pid": os.getpid(),
+        "version": VERSION, "run_token": run_token, "status": "running", "coordinator_pid": os.getpid(),
         "coordinator_created_utc": A.utc(), "total_tasks": len(queue), "completed_tasks": 0,
         "accepted_units": 1, "accepted_cells": 15, "current_phase": "preflight",
         "current_unit": None, "scientific_progress_utc": None, "worker": None,
@@ -138,4 +140,6 @@ def run() -> int:
         if LOCK.exists(): LOCK.unlink()
 
 
-if __name__ == "__main__": raise SystemExit(run())
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(); parser.add_argument("--run-token", required=True)
+    raise SystemExit(run(parser.parse_args().run_token))
