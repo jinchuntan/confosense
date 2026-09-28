@@ -109,7 +109,8 @@ def run(run_token: str) -> int:
                     write_progress(state); append_event({"utc": R.utc(), "event": "resource_wait", "phase": phase, "unit": key, "error": str(exc)})
                     time.sleep(120)
             command = [PYTHON, "-u", str(script), *arguments]
-            attempt = ROOT / "attempts" / f"{ordinal:04d}_{phase}_{key}"
+            attempt_stamp = R.utc().replace(":", "").replace("-", "").replace(".", "")
+            attempt = ROOT / "attempts" / f"{ordinal:04d}_{phase}_{key}_{run_token[:8]}_{attempt_stamp}"
             attempt.mkdir(parents=True, exist_ok=False)
             (attempt / "command.json").write_text(json.dumps(command, indent=2), encoding="utf-8")
             stdout = (attempt / "stdout.log").open("w", encoding="utf-8")
