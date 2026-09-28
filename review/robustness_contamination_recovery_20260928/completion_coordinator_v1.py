@@ -67,9 +67,12 @@ def tasks():
     result = []
     result += [("owner_construct", key, HERE / "completion_v1.py", ["construct-owner", "--unit", key, "--resume"]) for key in missing]
     result += [("owner_registry", "all", HERE / "completion_v1.py", ["build-owner-registry"])]
-    result += [("run", key, HERE / "completion_v1.py", ["run-unit", "--unit", key, "--resume"]) for key in remaining]
-    result += [("validate", key, HERE / "completion_validate_v1.py", ["validate", "--unit", key]) for key in remaining]
-    result += [("resume", key, HERE / "completion_validate_v1.py", ["resume", "--unit", key]) for key in remaining]
+    # Close each unit's scientific gates before launching the next unit.  This
+    # keeps execution sequential and detects validator/resume defects early.
+    for key in remaining:
+        result.append(("run", key, HERE / "completion_v1.py", ["run-unit", "--unit", key, "--resume"]))
+        result.append(("validate", key, HERE / "completion_validate_v1.py", ["validate", "--unit", key]))
+        result.append(("resume", key, HERE / "completion_validate_v1.py", ["resume", "--unit", key]))
     result += [("aggregate", "all", HERE / "completion_delivery_v1.py", ["aggregate"])]
     result += [("backup", "all", HERE / "completion_delivery_v1.py", ["backup"])]
     return result
