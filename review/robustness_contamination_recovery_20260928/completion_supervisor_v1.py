@@ -52,19 +52,24 @@ def run() -> int:
     process = subprocess.Popen(command, cwd=C.REPO, stdout=log, stderr=subprocess.STDOUT)
     state = {"version": VERSION, "status": "running", "supervisor_pid": os.getpid(),
              "supervisor_created_utc": A.utc(), "poll_seconds": 120,
-             "coordinator_pid": process.pid, "coordinator_command": command,
-             "coordinator_created_utc": A.utc(), "coordinator_identity": process_identity(process.pid)}
+             "supervisor_identity": process_identity(os.getpid()),
+             "coordinator_launcher_pid": process.pid, "coordinator_command": command,
+             "coordinator_created_utc": A.utc(), "coordinator_identity": None}
     append({"utc": A.utc(), "event": "supervisor_started", "pid": os.getpid(), "coordinator_pid": process.pid})
     try:
         while process.poll() is None:
-            identity = process_identity(process.pid)
-            if identity is None or int(identity["ProcessId"]) != process.pid:
+            progress = C.OUTPUT_ROOT / "completion_59_v1_coordinator" / "progress.json"
+            progress_value = A.read(progress) if progress.exists() else None
+            actual_pid = int(progress_value["coordinator_pid"]) if progress_value else process.pid
+            identity = process_identity(actual_pid)
+            expected_script = str(HERE / "completion_coordinator_v1.py").lower()
+            command_line = str((identity or {}).get("CommandLine", "")).lower()
+            if identity is None or int(identity["ProcessId"]) != actual_pid or expected_script not in command_line:
                 state.update(status="blocked_identity_mismatch", coordinator_identity=identity)
                 write(state); append({"utc": A.utc(), "event": "identity_mismatch", "identity": identity})
                 return 2
-            state["coordinator_identity"] = identity
-            progress = C.OUTPUT_ROOT / "completion_59_v1_coordinator" / "progress.json"
-            state["progress"] = A.read(progress) if progress.exists() else None
+            state["coordinator_pid"] = actual_pid; state["coordinator_identity"] = identity
+            state["progress"] = progress_value
             state["resource_snapshot"] = A.resources(); write(state)
             time.sleep(120)
         code = process.returncode; log.flush()
