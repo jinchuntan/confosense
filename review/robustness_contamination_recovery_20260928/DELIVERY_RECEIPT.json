@@ -1,0 +1,59 @@
+{
+  "version": "robustness_contamination_recovery005_delivery_receipt_v1",
+  "status": "passed",
+  "created_utc": "2026-09-28T17:03:34.7391112Z",
+  "branch": "review/operational005-causal-replay-20260925",
+  "substantive_commit": "22e77456605be6d1de7e7d32183a85ae18e8fc29",
+  "remote": {
+    "name": "origin",
+    "url": "https://github.com/jinchuntan/confosense.git",
+    "head_before_publication": null,
+    "head_after_substantive_publication": "22e77456605be6d1de7e7d32183a85ae18e8fc29",
+    "force_push": false,
+    "main_modified": false
+  },
+  "git_backup": {
+    "status": "passed",
+    "bundle": "C:\\Users\\nigel\\ConfoSenseBackups\\robustness_contamination_recovery005_20260928\\git_delivery_v1\\robustness_substantive_22e774566_from_9d7f326e.bundle",
+    "bundle_bytes": 4954262,
+    "bundle_sha256": "755d439b709f6d6323f3bfa8838b24794c9a030b05774ac680a3e4fd27e4c719",
+    "advertised_ref": "refs/backup/robustness-contamination-recovery005/substantive-22e774566",
+    "advertised_tip": "22e77456605be6d1de7e7d32183a85ae18e8fc29",
+    "prerequisite_commit": "9d7f326e66664b4b1f70d78a6abd36caa61fcf94",
+    "prerequisite_bundle": "C:\\Users\\nigel\\ConfoSenseBackups\\matched_intervals_seasonal005_completion_20260924\\rank_recovery_9d7f326e6.bundle",
+    "prerequisite_bundle_bytes": 8360980466,
+    "prerequisite_bundle_sha256": "1874db58e5df612f12dcef99a233c29dda06329c43f30f25b5edafa83aed5163",
+    "revision_set_commits": 33,
+    "revision_set_object_lines": 939,
+    "bundle_verify": "passed"
+  },
+  "external_recovery": {
+    "status": "passed",
+    "repository": "C:\\Users\\nigel\\ConfoSenseBackups\\robustness_contamination_recovery005_20260928\\git_delivery_v1\\recovery_22e774566",
+    "inputs": "external prerequisite and additive bundles only",
+    "restored_commit": "22e77456605be6d1de7e7d32183a85ae18e8fc29",
+    "restored_prerequisite": "9d7f326e66664b4b1f70d78a6abd36caa61fcf94",
+    "object_alternates_present": false,
+    "github_used": false,
+    "full_fsck_exit": 0,
+    "connectivity_fsck_exit": 0
+  },
+  "https_readback": {
+    "status": "passed",
+    "commit": "22e77456605be6d1de7e7d32183a85ae18e8fc29",
+    "base_url": "https://raw.githubusercontent.com/jinchuntan/confosense/22e77456605be6d1de7e7d32183a85ae18e8fc29/",
+    "scope": "every committed blob under review/robustness_contamination_recovery_20260928 at the substantive commit",
+    "scope_prefix": "review/robustness_contamination_recovery_20260928",
+    "files": 36,
+    "bytes": 1009316,
+    "comparison": "downloaded byte streams were hashed as Git blobs and matched the corresponding commit-pinned blob IDs",
+    "readback_copy": "C:\\Users\\nigel\\ConfoSenseBackups\\robustness_contamination_recovery005_20260928\\git_delivery_v1\\https_readback_22e774566"
+  },
+  "raw_scientific_backup": {
+    "status": "passed",
+    "receipt_sha256": "3dfc11c33f74842614aefeedc63c0e70c9652777e6194782ab0b6b33bdf4d352",
+    "completion_files": 917,
+    "completion_bytes": 1227726258,
+    "all_60_units_covered": true
+  }
+}
