@@ -77,7 +77,7 @@
   "resources": {
     "physical_ram_headroom_before_each_worker_bytes": 3221225472,
     "windows_commit_headroom_before_each_worker_bytes": 3221225472,
-    "worker_launch_reconstruction": "available plus the scientific process measured footprint; lightweight coordinator enforces literal threshold before process creation",
+    "worker_launch_reconstruction": "available plus the scientific process measured footprint; lightweight coordinator enforces literal threshold before process creation; the 3 GiB threshold applies at launch, while runtime uses the separately frozen floors and RSS cap",
     "runtime_physical_floor_bytes": 536870912,
     "runtime_commit_floor_bytes": 1073741824,
     "worker_peak_rss_limit_bytes": 3221225472,
@@ -99,7 +99,7 @@
     "population_inference": "do not treat seed aliases, groups or stream rows as independent replicates"
   },
   "source_sha256": {
-    "completion_v1.py": "111fb17752ea6936e5d8de4ab5e31691c17de95510612a2739b1eef85ee54f77",
+    "completion_v1.py": "776d6de11ec4ab30d02862ce086c6984fd3ba48b95b8298baf34af0169140a09",
     "completion_validate_v1.py": "f8fb18a2a57d01464756153fae59f4ef34a044d36a6c4a2f6d9a7209d8be1d84",
     "completion_delivery_v1.py": "4d5dd4fb205d70f95258054e516b3bbf03077b78d6fa9ea74e218f142f72a13d",
     "completion_runtime_v1.py": "51903a7c376ec45fe59c5b7454b2a9b4a56e8c51170bb54a4ea79e71d03a0b56",

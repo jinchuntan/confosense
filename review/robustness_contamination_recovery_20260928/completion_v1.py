@@ -94,14 +94,14 @@ def resource_gate(stage: str, allowance: int = UNIT_ALLOWANCE) -> dict[str, Any]
     value["prelaunch_equivalent_commit_bytes"] = value["commit_headroom_bytes"] + value["pagefile_usage_bytes"]
     if value["disk_free_bytes"] < DISK_FLOOR + allowance:
         raise RuntimeError("completion disk resource gate failed")
-    if value["prelaunch_equivalent_physical_bytes"] < LAUNCH_HEADROOM:
-        raise RuntimeError("completion physical-RAM resource gate failed")
-    if value["prelaunch_equivalent_commit_bytes"] < LAUNCH_HEADROOM:
-        raise RuntimeError("completion Windows-commit resource gate failed")
+    if stage.endswith("launch") and value["prelaunch_equivalent_physical_bytes"] < LAUNCH_HEADROOM:
+        raise RuntimeError(f"completion physical-RAM launch gate failed: {value}")
+    if stage.endswith("launch") and value["prelaunch_equivalent_commit_bytes"] < LAUNCH_HEADROOM:
+        raise RuntimeError(f"completion Windows-commit launch gate failed: {value}")
     if value["physical_available_bytes"] < 512 * 2**20:
-        raise RuntimeError("completion runtime physical-RAM floor failed")
+        raise RuntimeError(f"completion runtime physical-RAM floor failed: {value}")
     if value["commit_headroom_bytes"] < 1024 * 2**20:
-        raise RuntimeError("completion runtime Windows-commit floor failed")
+        raise RuntimeError(f"completion runtime Windows-commit floor failed: {value}")
     if value["peak_working_set_bytes"] > RSS_LIMIT:
         raise RuntimeError("completion worker exceeded 3 GiB RSS limit")
     return value
