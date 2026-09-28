@@ -12,6 +12,7 @@ HERE = Path(__file__).resolve().parent
 SMART = HERE.parents[1] / "smart_building_conformal"
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(SMART))
 import completion_v1 as C  # noqa: E402
+import completion_runtime_v1 as R  # noqa: E402
 import completion_validate_v1 as V  # noqa: E402
 
 
@@ -104,3 +105,21 @@ def test_missing_group_identity_is_canonical_for_recovery():
     )
     assert groups.group_id.tolist() == ["None"]
     assert summary["status"] == "descriptive_group_recovery"
+
+
+def test_control_record_atomic_replace_retries_transient_access_denial(tmp_path, monkeypatch):
+    destination = tmp_path / "progress.json"
+    real_replace = R.os.replace
+    calls = []
+
+    def flaky_replace(source, target):
+        calls.append((source, target))
+        if len(calls) < 3:
+            raise PermissionError("simulated transient OneDrive access denial")
+        return real_replace(source, target)
+
+    monkeypatch.setattr(R.os, "replace", flaky_replace)
+    monkeypatch.setattr(R.time, "sleep", lambda _: None)
+    R.atomic_json(destination, {"status": "running"})
+    assert len(calls) == 3
+    assert R.read(destination) == {"status": "running"}

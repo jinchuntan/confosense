@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import time
 import uuid
 
 HERE = Path(__file__).resolve().parent
@@ -47,7 +48,14 @@ def atomic_json(path, value):
     temporary = path.with_name(path.name + "." + uuid.uuid4().hex + ".tmp")
     with temporary.open("w", encoding="utf-8", newline="\n") as handle:
         json.dump(value, handle, indent=2, default=str); handle.write("\n"); handle.flush(); os.fsync(handle.fileno())
-    os.replace(temporary, path)
+    for attempt in range(8):
+        try:
+            os.replace(temporary, path)
+            break
+        except PermissionError:
+            if attempt == 7:
+                raise
+            time.sleep(min(.1 * (2 ** attempt), 2.0))
 
 
 def crosswalk_records():
