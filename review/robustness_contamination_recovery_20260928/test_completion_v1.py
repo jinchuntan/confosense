@@ -1,0 +1,67 @@
+"""Focused zero-fit tests for the authorized completion layer."""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import pytest
+
+HERE = Path(__file__).resolve().parent
+SMART = HERE.parents[1] / "smart_building_conformal"
+sys.path.insert(0, str(HERE)); sys.path.insert(0, str(SMART))
+import completion_v1 as C  # noqa: E402
+import completion_validate_v1 as V  # noqa: E402
+
+
+def test_frozen_scope_and_exact_missing_owner_budget():
+    frame = C.crosswalk(); missing = frame[frame.interval_owner_support != "exact_saved_owner"]
+    assert len(frame) == 60 and frame.historical_obligation_cells.astype(int).sum() == 900
+    assert len(missing) == 8
+    assert missing.missing_owner_estimator_fits.astype(int).sum() == 24
+    assert missing.missing_owner_conformalizations.astype(int).sum() == 8
+    assert set(missing.historical_level.astype(float)) == {.975, .99, .995}
+
+
+def test_high_level_contamination_quantiles_are_not_fixed_to_095():
+    residual = np.arange(400, dtype=float)
+    lo95, hi95 = V._quantiles(residual, .95)
+    lo995, hi995 = V._quantiles(residual, .995)
+    assert lo995 < lo95 and hi995 > hi95
+
+
+def test_dynamic_group_operation_accounting_and_corruption_rejected():
+    counts = {
+        "historical_obligation_cells": 15, "unique_corrupted_feature_rebuilds": 8,
+        "unique_saved_owner_inference_passes": 9, "emitted_cell_streams": 15,
+        "contamination_reconstructions": 3, "nonzero_contamination_reconstructions": 2,
+        "recovery_policy_computations": 3, "group_recovery_rows": 9,
+        "point_metric_rows_from_saved_predictions": 2, "model_fits": 0,
+        "conformalize_calls": 0, "new_seeds": 0,
+    }
+    V.validate_operations({"operation_counts": counts}, groups=3)
+    with pytest.raises(ValueError, match="group_recovery_rows"):
+        V.validate_operations({"operation_counts": dict(counts, group_recovery_rows=10)}, groups=3)
+
+
+def test_feature_evidence_rejects_deliberately_corrupted_hash():
+    masks = {"pre": np.array([True, False, False])}
+    clean = pd.DataFrame({"x": [1.0, 2.0, 3.0]})
+    features = {"clean": (clean, np.array([1.0, 2.0, 3.0]))}
+    for name in ("zero_control", "random_missing@na", "dropout@na", "stuck@na",
+                 "level_shift@1.0", "level_shift@2.0", "drift@1.0", "drift@2.0"):
+        changed = clean.copy()
+        if name != "zero_control": changed.loc[2, "x"] += 1.0
+        features[name] = (changed, np.array([1.0, 2.0, 3.0]))
+    rows = []
+    for name, (frame, observed) in features.items():
+        changed = np.any(frame.to_numpy() != clean.to_numpy(), axis=1)
+        rows.append({"stream": name, "feature_sha256": C.A.frame_hash(frame),
+                     "observed_sha256": C.A.ordered_hash(map(float.hex, observed)),
+                     "changed_feature_rows": int(changed.sum()),
+                     "changed_pre_rows": int((changed & masks["pre"]).sum())})
+    audit = pd.DataFrame(rows); V.validate_feature_evidence({"feature_audit": audit}, features, masks)
+    audit.loc[audit.stream == "drift@2.0", "feature_sha256"] = "corrupt"
+    with pytest.raises(ValueError, match="feature hash mismatch"):
+        V.validate_feature_evidence({"feature_audit": audit}, features, masks)

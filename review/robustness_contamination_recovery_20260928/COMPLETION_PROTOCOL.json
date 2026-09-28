@@ -1,0 +1,105 @@
+{
+  "version": "robustness_contamination_recovery005_completion_v1",
+  "frozen_utc": "2026-09-28T00:00:00+00:00",
+  "preparation_commit": "138c9d6d47b01953669d8d4b88e4e662ac5e2fc4",
+  "preparation_crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae",
+  "preparation_protocol_sha256": "e65f52b9c7ee2510e185c7ea83da5068760dd399bee39c6e7e9e13a22ef451a4",
+  "accepted_pilot": {
+    "unit": "bdg2_h1_f2_s42",
+    "cells": 15,
+    "result_sha256": "bd171cf3f6242dbfcaeaeb5c06f06e02f778b277ebe696d08e6529e61b5bbf5f",
+    "validation_sha256": "ae73060ed443ce53a25f74f98e1c4fef3fc7c0c8a6397b3a1078290fc6fd2657",
+    "zero_fit_resume_sha256": "c17b93a0b6eb876bb69ba34e370be60ba40633068ac7ecbcc3b7420e3f64e140",
+    "backup_receipt_sha256": "a88f8ee0db37835a0009e7db7e4a9f07db0cbef3ceebdc4aa3bb1bf809b0a1a8",
+    "execution_repeated": false
+  },
+  "scope": {
+    "total_units": 60,
+    "total_cells": 900,
+    "remaining_units": 59,
+    "remaining_cells": 885,
+    "missing_exact_owner_units": 8,
+    "point_model_refits": 0,
+    "new_seeds": 0,
+    "operational_replay_dependency": false
+  },
+  "owner_construction_budget": {
+    "maximum_quantile_estimator_fits": 24,
+    "maximum_conformalizations": 8,
+    "owners": 8,
+    "substitutions_permitted": false
+  },
+  "operation_ledger": {
+    "full_scope": {
+      "corrupted_feature_rebuilds": 480,
+      "saved_owner_inference_passes": 540,
+      "emitted_cell_streams": 900,
+      "contamination_reconstructions": 180,
+      "nonzero_contamination_reconstructions": 120,
+      "recovery_policy_computations": 180,
+      "group_recovery_rows": 2415,
+      "point_metric_rows": 120,
+      "independent_validations": 60,
+      "zero_fit_resumes": 60
+    },
+    "accepted_pilot": {
+      "corrupted_feature_rebuilds": 8,
+      "saved_owner_inference_passes": 9,
+      "emitted_cell_streams": 15,
+      "contamination_reconstructions": 3,
+      "nonzero_contamination_reconstructions": 2,
+      "recovery_policy_computations": 3,
+      "group_recovery_rows": 30,
+      "point_metric_rows": 2,
+      "independent_validations": 1,
+      "zero_fit_resumes": 1
+    },
+    "remaining": {
+      "corrupted_feature_rebuilds": 472,
+      "saved_owner_inference_passes": 531,
+      "emitted_cell_streams": 885,
+      "contamination_reconstructions": 177,
+      "nonzero_contamination_reconstructions": 118,
+      "recovery_policy_computations": 177,
+      "group_recovery_rows": 2385,
+      "point_metric_rows": 118,
+      "independent_validations": 59,
+      "zero_fit_resumes": 59
+    },
+    "not_double_counted": {
+      "recovery_level_shift_2_reuses_fault_features_and_inference": true,
+      "contamination_reuses_clean_test_features_and_point_predictions": true,
+      "zero_control_is_one_distinct_rebuild": true,
+      "group_recovery_rows_are_descriptive_outputs_not_independent_computations": true
+    }
+  },
+  "resources": {
+    "physical_ram_headroom_before_each_worker_bytes": 3221225472,
+    "windows_commit_headroom_before_each_worker_bytes": 3221225472,
+    "worker_peak_rss_limit_bytes": 3221225472,
+    "free_disk_floor_bytes": 8589934592,
+    "estimated_additional_disk_bytes": 8096014664,
+    "estimated_additional_disk_gib": 7.54,
+    "all_paths_share_volume": "C:",
+    "poll_seconds": 120,
+    "execution": "sequential"
+  },
+  "validation": {
+    "zero_control_exact": true,
+    "calibration_only_contamination": true,
+    "causal_feature_propagation": true,
+    "delayed_residual_availability": true,
+    "group_specific_recovery": true,
+    "right_censoring_preserved": true,
+    "unavailable_metrics_preserved": true,
+    "population_inference": "do not treat seed aliases, groups or stream rows as independent replicates"
+  },
+  "source_sha256": {
+    "completion_v1.py": "ec7039ab48fc6fce3913aeb4391a1ea32ee4eb1fac4201c268a41d2abd7db1b4",
+    "completion_validate_v1.py": "f8fb18a2a57d01464756153fae59f4ef34a044d36a6c4a2f6d9a7209d8be1d84",
+    "completion_delivery_v1.py": "4d5dd4fb205d70f95258054e516b3bbf03077b78d6fa9ea74e218f142f72a13d",
+    "completion_coordinator_v1.py": "e428b65f3ed89be4000017b9481c17678c15e27bac7996691679111974b5812b",
+    "completion_supervisor_v1.py": "d4274370245c4af85d1e83ba79f787fa3836faa8f88dbdb24d1ed64188598a5a",
+    "test_completion_v1.py": "e1d6dc456db690ada43974d44b6ca6acdc63ce7b7951874b05908a642a9c6898"
+  }
+}
