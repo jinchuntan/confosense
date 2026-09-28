@@ -1,0 +1,19 @@
+{
+  "version": "robustness_contamination_recovery005_raw_backup_verification_v1",
+  "status": "passed",
+  "verified_utc": "2026-09-28T16:42:00.670797+00:00",
+  "destination": "C:\\Users\\nigel\\ConfoSenseBackups\\robustness_contamination_recovery005_20260928\\completion_v1",
+  "receipt": "C:\\Users\\nigel\\ConfoSenseBackups\\robustness_contamination_recovery005_20260928\\completion_v1\\BACKUP_RECEIPT.json",
+  "receipt_sha256": "3dfc11c33f74842614aefeedc63c0e70c9652777e6194782ab0b6b33bdf4d352",
+  "completion_files": 917,
+  "completion_bytes": 1227726258,
+  "pilot_lineage": {
+    "status": "verified",
+    "files": 10,
+    "bytes": 47742826,
+    "checkpoint_complete_sha256": "191704fe524ea390aec04110f646e55a5304788bdac8f6a359c84a84753d280d"
+  },
+  "all_60_units_covered": true,
+  "verification": "relative paths, byte counts and SHA-256 matched for every completion file; the accepted pilot is covered by its previously verified backup lineage",
+  "capacity_note": "live outputs and ConfoSenseBackups are both on C:; this is redundant evidence, not independent physical-volume capacity"
+}

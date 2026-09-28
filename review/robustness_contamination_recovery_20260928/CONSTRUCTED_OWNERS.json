@@ -1,0 +1,426 @@
+{
+  "version": "robustness_contamination_recovery005_completion_v1",
+  "created_utc": "2026-09-28T13:20:17.425980+00:00",
+  "owners": [
+    {
+      "status": "complete",
+      "unit": "pleia_h1_f0_s44",
+      "historical_method": "cqr",
+      "level": 0.995,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s44/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "477e49a24d421f1a16879ae4eb8a621e4be334d49e32581f7ef11eee0afc99e9",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s44/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "bea0cc4e2c37de98404cbff68b4b30cc7e0b5af74d2b38642f165562057dd3b0",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s44/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "2eb2ed87cfa585a8f2ade08d95b8bbb148f759805fa87323bd7fb4a50be62423",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 2976382976,
+        "commit_headroom_bytes": 4030406656,
+        "disk_free_bytes": 57337360384,
+        "working_set_bytes": 332324864,
+        "peak_working_set_bytes": 333422592,
+        "pagefile_usage_bytes": 1569140736,
+        "peak_pagefile_usage_bytes": 1575493632,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:14:00.069854+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3308707840,
+        "prelaunch_equivalent_commit_bytes": 5599547392
+      },
+      "resource_complete": {
+        "physical_available_bytes": 2929782784,
+        "commit_headroom_bytes": 3999666176,
+        "disk_free_bytes": 57337294848,
+        "working_set_bytes": 415764480,
+        "peak_working_set_bytes": 1253646336,
+        "pagefile_usage_bytes": 1648844800,
+        "peak_pagefile_usage_bytes": 2496831488,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:14:17.539845+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3345547264,
+        "prelaunch_equivalent_commit_bytes": 5648510976
+      },
+      "checkpoint_manifest_sha256": "49f284e4c69b90cd004289a84c62d84e3b1a5e9cd506dcc9d345e66c18b0d61d"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_h1_f0_s46",
+      "historical_method": "cqr",
+      "level": 0.995,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s46/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "00b96d0cf0c720c8e00337e64c58600f469afcc7857427295c4b3edad3dfc9af",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s46/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "bea0cc4e2c37de98404cbff68b4b30cc7e0b5af74d2b38642f165562057dd3b0",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s46/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "5f96dbfa751bead7e0b9ed49a81a4e2f221191522e022bfba3ea69d3111a5747",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 2970652672,
+        "commit_headroom_bytes": 4030976000,
+        "disk_free_bytes": 57337352192,
+        "working_set_bytes": 332189696,
+        "peak_working_set_bytes": 333287424,
+        "pagefile_usage_bytes": 1569169408,
+        "peak_pagefile_usage_bytes": 1575497728,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:14:30.918898+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3302842368,
+        "prelaunch_equivalent_commit_bytes": 5600145408
+      },
+      "resource_complete": {
+        "physical_available_bytes": 2945474560,
+        "commit_headroom_bytes": 3968462848,
+        "disk_free_bytes": 57332477952,
+        "working_set_bytes": 419692544,
+        "peak_working_set_bytes": 1254211584,
+        "pagefile_usage_bytes": 1652142080,
+        "peak_pagefile_usage_bytes": 2497687552,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:15:23.231852+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3365167104,
+        "prelaunch_equivalent_commit_bytes": 5620604928
+      },
+      "checkpoint_manifest_sha256": "a81a5ac47bbfad623466057386ef28639d18770004e1281781b779cdf1404f02"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_h1_f2_s44",
+      "historical_method": "cqr",
+      "level": 0.975,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s44/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "99dc8637936aec8179dda553c70fd76f8633f75270310d8897c2713b0a1e10d7",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s44/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "1e5bf20d24fe6d00336e25f3d2e8f73033ed5b4bc2f5cdfae9f736b91693ae97",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s44/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "0d6facd9d64c60791c852b26ea22f2d773366c5daaa0be5b341c0b49b25ee216",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 3040620544,
+        "commit_headroom_bytes": 4083412992,
+        "disk_free_bytes": 57332338688,
+        "working_set_bytes": 331309056,
+        "peak_working_set_bytes": 332386304,
+        "pagefile_usage_bytes": 1568305152,
+        "peak_pagefile_usage_bytes": 1574653952,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:15:31.674566+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3371929600,
+        "prelaunch_equivalent_commit_bytes": 5651718144
+      },
+      "resource_complete": {
+        "physical_available_bytes": 2977050624,
+        "commit_headroom_bytes": 3992989696,
+        "disk_free_bytes": 57325744128,
+        "working_set_bytes": 420298752,
+        "peak_working_set_bytes": 1253867520,
+        "pagefile_usage_bytes": 1652924416,
+        "peak_pagefile_usage_bytes": 2496610304,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:16:11.404163+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3397349376,
+        "prelaunch_equivalent_commit_bytes": 5645914112
+      },
+      "checkpoint_manifest_sha256": "39c50c5db09bb0317aeb35fdb3efa0ee56c0aeabdba3740b2cea1302842f5415"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_h1_f2_s45",
+      "historical_method": "cqr",
+      "level": 0.99,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s45/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "74b89578d7b377843860d6add99adc6726615fcd6705e2174e0f1cb725460a61",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s45/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "1e5bf20d24fe6d00336e25f3d2e8f73033ed5b4bc2f5cdfae9f736b91693ae97",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s45/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "c16f5d880a09a9a420b484fe451f43d78a18b5acba4f9416f568c0bbc7d6b651",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 3119026176,
+        "commit_headroom_bytes": 4153049088,
+        "disk_free_bytes": 57325539328,
+        "working_set_bytes": 331800576,
+        "peak_working_set_bytes": 332881920,
+        "pagefile_usage_bytes": 1569062912,
+        "peak_pagefile_usage_bytes": 1575424000,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:16:22.662107+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3450826752,
+        "prelaunch_equivalent_commit_bytes": 5722112000
+      },
+      "resource_complete": {
+        "physical_available_bytes": 3002818560,
+        "commit_headroom_bytes": 4002996224,
+        "disk_free_bytes": 57321492480,
+        "working_set_bytes": 419196928,
+        "peak_working_set_bytes": 1253339136,
+        "pagefile_usage_bytes": 1652334592,
+        "peak_pagefile_usage_bytes": 2496581632,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:16:55.017738+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3422015488,
+        "prelaunch_equivalent_commit_bytes": 5655330816
+      },
+      "checkpoint_manifest_sha256": "32e0f47239625b6fe5ad8698effec6197e22b528d78d9b06e138dc19e08e6028"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_h1_f2_s46",
+      "historical_method": "cqr",
+      "level": 0.995,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s46/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "e24fdba4d954d77ca96f7302921a7b200570f42e711860c265a8c479cc27f003",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s46/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "1e5bf20d24fe6d00336e25f3d2e8f73033ed5b4bc2f5cdfae9f736b91693ae97",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s46/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "ecfde3e83c7cf731df9115c65069877459109396a4f6cc08529f035f3a05259a",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 3034808320,
+        "commit_headroom_bytes": 4016402432,
+        "disk_free_bytes": 57320566784,
+        "working_set_bytes": 331681792,
+        "peak_working_set_bytes": 332779520,
+        "pagefile_usage_bytes": 1568813056,
+        "peak_pagefile_usage_bytes": 1575157760,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:17:03.542945+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3366490112,
+        "prelaunch_equivalent_commit_bytes": 5585215488
+      },
+      "resource_complete": {
+        "physical_available_bytes": 2926899200,
+        "commit_headroom_bytes": 3932884992,
+        "disk_free_bytes": 57316114432,
+        "working_set_bytes": 415793152,
+        "peak_working_set_bytes": 1254068224,
+        "pagefile_usage_bytes": 1648492544,
+        "peak_pagefile_usage_bytes": 2498453504,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:17:34.109727+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3342692352,
+        "prelaunch_equivalent_commit_bytes": 5581377536
+      },
+      "checkpoint_manifest_sha256": "b4a6583f43ec2d1def1412685bc61898f518bbf2a77483e77bd060b49e9294d4"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_energy_h1_f0_s43",
+      "historical_method": "quantile_uncalibrated",
+      "level": 0.975,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f0_s43/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "54d08db7811f6d9fcab039838548729cb4a17b1750e4a76e9c6d2b043ed1904a",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f0_s43/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "a91810d2a2d18fb7a987261b9a25b1ff8760b5a4044a7cbd44a6d0ff1452ea29",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f0_s43/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "df819f493513676dcbd6f345c63d44dab00a2237e72d25fd2fddd6923b575920",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 3020017664,
+        "commit_headroom_bytes": 4015427584,
+        "disk_free_bytes": 57316036608,
+        "working_set_bytes": 331902976,
+        "peak_working_set_bytes": 332980224,
+        "pagefile_usage_bytes": 1569148928,
+        "peak_pagefile_usage_bytes": 1575510016,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:17:44.487745+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3351920640,
+        "prelaunch_equivalent_commit_bytes": 5584576512
+      },
+      "resource_complete": {
+        "physical_available_bytes": 2901942272,
+        "commit_headroom_bytes": 3917295616,
+        "disk_free_bytes": 57307930624,
+        "working_set_bytes": 407977984,
+        "peak_working_set_bytes": 421666816,
+        "pagefile_usage_bytes": 1640546304,
+        "peak_pagefile_usage_bytes": 1654489088,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:18:30.950915+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3309920256,
+        "prelaunch_equivalent_commit_bytes": 5557841920
+      },
+      "checkpoint_manifest_sha256": "5f618a342de33752ef5a04fa67aa774baaad0d6f7b3f6b69a1937cba99333566"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_energy_h1_f1_s43",
+      "historical_method": "cqr",
+      "level": 0.975,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s43/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "abc85d2e1ae392dc6169e678e75b67da0723355c102c32e5a6948f390d5a1d16",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s43/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "ed20d411a9dd682a7b56408333ab2650a36dbac76711b3065e64c793d4372df1",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s43/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "e43e12b4fee7add5fbacd17ce44c7326a91049e6c660b67c9b90eaeb118e0b9a",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 3029131264,
+        "commit_headroom_bytes": 4046942208,
+        "disk_free_bytes": 57308688384,
+        "working_set_bytes": 331427840,
+        "peak_working_set_bytes": 332525568,
+        "pagefile_usage_bytes": 1568555008,
+        "peak_pagefile_usage_bytes": 1574907904,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:18:35.849018+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3360559104,
+        "prelaunch_equivalent_commit_bytes": 5615497216
+      },
+      "resource_complete": {
+        "physical_available_bytes": 2887393280,
+        "commit_headroom_bytes": 3877904384,
+        "disk_free_bytes": 57301401600,
+        "working_set_bytes": 406720512,
+        "peak_working_set_bytes": 416837632,
+        "pagefile_usage_bytes": 1638957056,
+        "peak_pagefile_usage_bytes": 1650356224,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:19:13.675983+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3294113792,
+        "prelaunch_equivalent_commit_bytes": 5516861440
+      },
+      "checkpoint_manifest_sha256": "cf3c2d1f9f7c068043bf1c76e1ac94613fdab9c6d4f690dca2519a40733740c3"
+    },
+    {
+      "status": "complete",
+      "unit": "pleia_energy_h1_f1_s46",
+      "historical_method": "cqr",
+      "level": 0.975,
+      "owner_kind": "cqr",
+      "owner_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s46/stages/owner_cal_exact/owner.pkl",
+      "owner_sha256": "c2465b74b08ebe5384456a65ced90ae67ccd43d4d06ad958342eaaff3d65731b",
+      "calibration_metadata_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s46/stages/calibration_reference/calibration_metadata.csv.gz",
+      "calibration_metadata_sha256": "ed20d411a9dd682a7b56408333ab2650a36dbac76711b3065e64c793d4372df1",
+      "calibration_values_path": "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s46/stages/calibration_reference/calibration_values.csv.gz",
+      "calibration_values_sha256": "bbe18eb3da8e8eab62a70bb504c0efbf38c96de610b26e0986520d2dfbff9053",
+      "quantile_estimator_fits": 3,
+      "conformalizations": 1,
+      "nested_internal_conformalize_calls": 1,
+      "fit_operation_counts": {
+        "cqr_wrapper_fit": 1,
+        "quantile_estimator_fit": 3
+      },
+      "conformalize_operation_counts": {
+        "calibrator_conformalize": 2
+      },
+      "resource_launch": {
+        "physical_available_bytes": 3002478592,
+        "commit_headroom_bytes": 4012122112,
+        "disk_free_bytes": 57301323776,
+        "working_set_bytes": 331714560,
+        "peak_working_set_bytes": 332754944,
+        "pagefile_usage_bytes": 1568915456,
+        "peak_pagefile_usage_bytes": 1575239680,
+        "stage": "owner_construct_launch",
+        "utc": "2026-09-28T13:19:26.363752+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3334193152,
+        "prelaunch_equivalent_commit_bytes": 5581037568
+      },
+      "resource_complete": {
+        "physical_available_bytes": 3008303104,
+        "commit_headroom_bytes": 4016566272,
+        "disk_free_bytes": 57295785984,
+        "working_set_bytes": 405532672,
+        "peak_working_set_bytes": 418058240,
+        "pagefile_usage_bytes": 1638072320,
+        "peak_pagefile_usage_bytes": 1651884032,
+        "stage": "owner_construct_complete",
+        "utc": "2026-09-28T13:20:07.217498+00:00",
+        "disk_allowance_bytes": 536870912,
+        "prelaunch_equivalent_physical_bytes": 3413835776,
+        "prelaunch_equivalent_commit_bytes": 5654638592
+      },
+      "checkpoint_manifest_sha256": "fcc402c9a1888e805fd6af1d667e50cfa3568c7a231cc5e4c3d064d4e440b58b"
+    }
+  ],
+  "units": 8,
+  "quantile_estimator_fits": 24,
+  "conformalizations": 8,
+  "crosswalk_sha256": "3c089f4e044ec2711a197fe24b2971be61af730a3bb3a81184e8f24b3b1b53ae"
+}

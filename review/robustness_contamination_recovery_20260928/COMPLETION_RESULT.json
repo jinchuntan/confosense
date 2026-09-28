@@ -1,0 +1,47 @@
+{
+  "version": "robustness_contamination_recovery005_delivery_v1",
+  "status": "passed",
+  "completed_utc": "2026-09-28T16:41:47.410410+00:00",
+  "accepted_units": 60,
+  "accepted_cells": 900,
+  "pilot_units_reused": 1,
+  "new_units_executed": 59,
+  "independent_validations": 60,
+  "zero_fit_resumes": 60,
+  "owner_construction": {
+    "units": 8,
+    "quantile_estimator_fits": 24,
+    "conformalizations": 8
+  },
+  "replay_operation_counts": {
+    "historical_obligation_cells": 900,
+    "unique_corrupted_feature_rebuilds": 480,
+    "unique_saved_owner_inference_passes": 540,
+    "emitted_cell_streams": 900,
+    "contamination_reconstructions": 180,
+    "nonzero_contamination_reconstructions": 120,
+    "recovery_policy_computations": 180,
+    "group_recovery_rows": 2415,
+    "point_metric_rows_from_saved_predictions": 120
+  },
+  "replay_model_fits": 0,
+  "replay_conformalize_calls": 0,
+  "new_seeds": 0,
+  "worker_wall_seconds": 2429.420867000088,
+  "validation_wall_seconds": 4241.014423299959,
+  "peak_worker_rss_bytes": 1254297600,
+  "peak_worker_commit_bytes": 2498318336,
+  "completion_output_bytes": 45861360,
+  "legacy_completed_unit_bytes": 45861360,
+  "remaining_v2_bytes": 0,
+  "constructed_owner_bytes": 48680807,
+  "population_inference": "unavailable; seed aliases/groups/rows not treated as independent replicates",
+  "aggregation_wall_seconds": 55.370926100004,
+  "files": {
+    "AGGREGATE_CELL_METRICS.csv": "d8c5b94fe27c73f3d6fee349f300a461ec173b9718cae8590339901506a935e0",
+    "AGGREGATE_SEED_MEANS.csv": "259ac45b094509eaf825ee9ac2d529439682ea0291167892be76ce127c8c939a",
+    "AGGREGATE_RECOVERY_BY_GROUP.csv": "d7279c612e1d8b6e1ca5b46d5383e186cbdd8106986db50099a098a9f20e8fa8",
+    "AGGREGATE_POINT_ACCURACY.csv": "d8e90548648616d6992205fa0f0398ee291452f1c81c4094f6230cb601ad6911",
+    "INFERENCE_STATUS.csv": "5978412db0d15f5e6b6e8ae8e9ff74bbeb5f1b6a80c3090a27dcb8703fea0d14"
+  }
+}

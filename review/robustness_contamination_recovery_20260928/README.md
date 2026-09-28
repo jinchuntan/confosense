@@ -1,5 +1,11 @@
 # Robustness, contamination and recovery extension v1
 
+## Completion
+
+The frozen extension is complete: 60/60 units and 900/900 cells passed independent validation and zero-fit resume. The accepted 15-cell pilot was reused without scientific rerun; eight exact owners were constructed within the authorized 24-fit/eight-conformalization budget; the remaining 59 units were executed sequentially. Aggregation and the verified raw-evidence backup passed. See `COMPLETION_REPORT.md`, `COMPLETION_RESULT.json`, `BACKUP_VERIFICATION.json`, and the compact aggregate tables in this directory.
+
+Population intervals remain unavailable because correlated seed aliases, folds, groups, and stream rows are not independent population replicates. `INFERENCE_STATUS.csv` records the status explicitly. The separate operational grid remains paused.
+
 This directory is the compact, versioned control record for the original Amendment-003 extension. It does not alter the frozen scientific source, protocols, historical results or failed attempts. Operational replay remains paused and is not an input to this extension.
 
 ## Frozen scope and readiness
@@ -32,7 +38,7 @@ All ten groups recovered under each policy within the common 92,400-minute follo
 
 The preserved failed attempt predates checkpoint commit and records the nominal-level duplication correction in `PILOT_FAILED_ATTEMPT_001.json`.
 
-## Revised remaining budget
+## Planning estimate (superseded by completion)
 
 The crosswalk contains 947,710 test rows. Scaling the observed 45.53 MiB pilot by frozen row counts gives 1.22 GB for all live checkpoints; a 25% cross-dataset allowance raises this to 1.52 GiB. A separate 0.25 GiB allowance covers the eight missing owners and their fit/calibration stages.
 
@@ -40,6 +46,8 @@ From the current state, the conservative additional peak is 7.54 GiB: 1.73 GiB r
 
 Row-scaled pilot measurements imply a 44-minute lower bound for full production plus independent validation. Allowing for dataset/owner heterogeneity, missing-owner construction and checkpoint overhead gives 1–4 hours for science and validation. Including archive, backup, verification and Git delivery, the current planning range is 3–8 hours. This range includes the 24 missing-owner estimator fits, eight conformalizations and final delivery; it excludes the already completed pilot.
 
-## Remaining authorization
+Actual completion from first supervised launch through verified raw backup was 3 h 47 min 13 s. The completion evidence occupied 1.143 GiB, plus the separately preserved 45.53 MiB pilot. The planning figures above are retained as historical pre-execution estimates only.
 
-Completion of all 900 cells now requires one precise authorization: construct the eight exact higher-level CQR/quantile owners listed in `CROSSWALK_SUMMARY.json` within a budget of 24 quantile-estimator fits and eight conformalizations, then execute the remaining 59 frozen units (885 cells), independently validate them, verify zero-fit resume, aggregate, back up and deliver. Authorization must not permit 0.95 substitution, fault-definition changes, operational-policy reselection or resumption of the operational replay.
+## Authorization closure
+
+The authorized robustness extension is closed scientifically. It used exactly 24 quantile-estimator fits and eight wrapper conformalizations to construct the eight missing exact owners, then completed the remaining 59 frozen units. No additional robustness execution is authorized or required. This closure does not resume or complete the separate operational replay.
