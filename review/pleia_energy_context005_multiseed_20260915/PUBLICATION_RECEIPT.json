@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "branch": "review/pleia-energy-context005-multiseed-20260915",
+  "commit": "da8700eed1a77124eafee538ae4c7f57eb21b963",
+  "remote_commit": "da8700eed1a77124eafee538ae4c7f57eb21b963",
+  "url": "https://github.com/jinchuntan/confosense/tree/da8700eed1a77124eafee538ae4c7f57eb21b963",
+  "backup": "C:\\Users\\nigel\\ConfoSenseBackups\\pleia_energy_context005_multiseed_20260915\\completed_da8700ee.bundle",
+  "backup_bytes": 1592048720,
+  "backup_sha256": "d19c7a15e3f795c8d6c4e5c2bd8949cfabc49369b99cd6fe3c88959b4c2f9230",
+  "evidence_files": 404,
+  "evidence_bytes": 2412534454,
+  "representative_remote_checks": [
+    {
+      "path": "review/pleia_energy_context005_multiseed_20260915/EVIDENCE_INDEX.md",
+      "bytes": 10752,
+      "sha256": "e278ccc467e75b1851e8ee49554f58e2c02aaaafbbcb7cf97c7f18cd6a7baa73"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_five_seed_analysis_v1/five_seed_control_rule_channel.csv",
+      "bytes": 19123,
+      "sha256": "02508c4921976f874762a944c29526959151bffc030811d2bc588595a7ed9b4f"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_context005_five_seed_analysis_v1/independent_validation.json",
+      "bytes": 723,
+      "sha256": "65c2c67cda6b82e81136d60fd57c898e94202b564d8933f91f509a8e8eda080a"
+    },
+    {
+      "path": "smart_building_conformal/outputs/conditional_context005/pleia_energy_f2_s46_C_v1_publication_v1/parts_manifest.csv",
+      "bytes": 1122,
+      "sha256": "476bc86b5530641069e54cb8ca640dc961fd636cca65054e9657875dfddce3b1"
+    }
+  ],
+  "main_unchanged": true,
+  "utc": "2026-09-16T21:20:13.252479+00:00"
+}
