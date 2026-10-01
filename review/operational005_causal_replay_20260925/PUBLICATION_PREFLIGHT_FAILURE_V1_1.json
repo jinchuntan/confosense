@@ -1,0 +1,16 @@
+{
+  "version": "operational005_publication_preflight_failure_v1_1",
+  "status": "preserved_failure",
+  "failed_utc": "2026-09-30T21:55:23.627766+00:00",
+  "phase": "publication",
+  "completed_gates": {
+    "scientific_validation": "passed",
+    "aggregate_validation": "passed",
+    "external_backup": "passed",
+    "publication_started": false
+  },
+  "error": "publication allowlist file absent: review/operational005_causal_replay_20260925/PREPUBLICATION_MANIFEST.json",
+  "established_cause": "delivery v1.1 checked existence of the manifest entry before creating the manifest",
+  "classification": "publication-orchestration ordering defect; no commit, push, readback or scientific change occurred",
+  "failed_delivery_version": "operational005_causal_replay_delivery_v1.1"
+}

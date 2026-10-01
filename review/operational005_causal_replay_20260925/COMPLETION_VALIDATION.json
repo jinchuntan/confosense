@@ -1,0 +1,41 @@
+{
+  "version": "operational005_causal_replay_delivery_v1.2",
+  "status": "passed",
+  "validated_utc": "2026-10-01T10:54:17.289521+00:00",
+  "accepted_policy_blocks": 825,
+  "unique_accepted_blocks": 825,
+  "accepted_evaluation_rows": 2475,
+  "unique_accepted_evaluation_rows": 2475,
+  "validated_metric_view_rows": 4950,
+  "helper_accepted_blocks": 312,
+  "unavailable_candidates": 99,
+  "unavailable_evaluation_rows": 1485,
+  "unavailable_metric_view_rows": 2970,
+  "operation_counts": {
+    "saved_owner_inference": 4950,
+    "replay_conformalization_update": 4950,
+    "operational_metrics": 4950,
+    "policy_block": 825
+  },
+  "models_fitted": 0,
+  "maximum_validation_absolute_difference": 5.684341886080802e-14,
+  "raw_stage_bytes": 20607734712,
+  "coordinator_peak_scientific_rss_bytes": 964538368,
+  "minimum_free_disk_bytes": 37810307072,
+  "helper_orchestration_sha256": "32639ab8cae0d818e174131dd636f6f151dea44463170187b58ed4b431a58a49",
+  "protocol_sha256": "4138a93b1b79120bcd2b837b1ffb7a31896f8511bd7a671a2b182d9a55ff2c6a",
+  "scientific_source_sha256": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+  "descriptive_native_detection_rate_range": [
+    0.0601203229977096,
+    0.8067216566492483
+  ],
+  "descriptive_native_clean_workload_range": [
+    0.0031948587829274,
+    1.5013634768486777
+  ],
+  "population_inference": "unavailable; folds, model seeds, catalogue seeds and support views are not independent population replicates",
+  "full_study_ready": false,
+  "validation_wall_seconds": 63.73307650000788,
+  "aggregate_receipt_sha256": "d0e4a3c915146c86f31558a7dc48d023b6b4b19256532db746c2022e8bf2254e",
+  "supervisor_final_heartbeat_utc": "2026-09-30T21:33:28.832311+00:00"
+}

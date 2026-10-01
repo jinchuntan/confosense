@@ -1,0 +1,105 @@
+{
+  "version": "operational005_causal_replay_delivery_v1.3",
+  "created_utc": "2026-10-01T10:57:46.738693+00:00",
+  "base_commit": "3057f5a84f678596188943f6186ede4d6a8f2621",
+  "target_branch": "review/operational005-causal-replay-20260925",
+  "allowlist_files_excluding_this_manifest": [
+    {
+      "path": "review/operational005_causal_replay_20260925/parallel_reverse_v1.py",
+      "bytes": 17513,
+      "sha256": "32639ab8cae0d818e174131dd636f6f151dea44463170187b58ed4b431a58a49"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/completion_delivery_v1.py",
+      "bytes": 44183,
+      "sha256": "c3799738faddb4c54049330287c8c6b338a266dd2af8c08b0accdd30c054ea10"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/completion_supervisor_v1.py",
+      "bytes": 13386,
+      "sha256": "8a9f65f0c9509b349754a024c4d8343f971ac3c9f8684be4c336410fb765e17f"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/DELIVERY_VALIDATION_FAILURE_V1.json",
+      "bytes": 876,
+      "sha256": "a898797b08beffdc8b199d7602012bb812f7c83bd35b7d241896c33215a2f6bf"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/DELIVERY_VALIDATION_CORRECTION_V1_1.md",
+      "bytes": 784,
+      "sha256": "34bb31f382f89835e649675a5eb3c361805f7644c653356e34bf16ecf8fe03e9"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/PUBLICATION_PREFLIGHT_FAILURE_V1_1.json",
+      "bytes": 780,
+      "sha256": "e8f44a47acd28f5427e369f5ba71230f947dc8c590ce5322f55449e0db301426"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/PUBLICATION_PREFLIGHT_CORRECTION_V1_2.md",
+      "bytes": 764,
+      "sha256": "f4abaf87802a263069e83237b0d0228b536279b3fcac8d0ff528aba6a703fd3d"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/PUBLICATION_CREDENTIAL_GATE_FAILURE_V1_2.json",
+      "bytes": 648,
+      "sha256": "57473a167d4ea06a77cc83caa29418f27433ae6f25122f9b5228d5e08b3dc285"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/PUBLICATION_CREDENTIAL_GATE_CORRECTION_V1_3.md",
+      "bytes": 821,
+      "sha256": "876a8288a0e60345f70359887b3db0e940f5e87dfd8a6178ad5456996ee16e1e"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/COMPLETION_VALIDATION.json",
+      "bytes": 1762,
+      "sha256": "86278b1fcd2441a152a42d4fe0415abc3d15b2c56ff23e7ff756763cafe156ef"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/BACKUP_VERIFICATION.json",
+      "bytes": 1616,
+      "sha256": "b240e2467e2b33a49ed986ac293c5ca72b00b9d6511f7a3516605d3f785e77b8"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/OPERATIONAL_REPORT.md",
+      "bytes": 1426,
+      "sha256": "034c048db6eaca779e11bc53a06040c409bd97d120fa2dc04f8a54d67afc38bb"
+    },
+    {
+      "path": "review/operational005_causal_replay_20260925/EVIDENCE_INDEX.md",
+      "bytes": 1786,
+      "sha256": "52b8ec4dc4f7cce3d7dbd14d267e853e7aed0c99337e8ec13311bee7371d8e7e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/operational_metrics.csv",
+      "bytes": 2305974,
+      "sha256": "a09f0fe21d6beb5a44b853809505eedd4767933f33a0693773f2f08644a69ea4"
+    },
+    {
+      "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/unavailable_metrics.csv",
+      "bytes": 1135918,
+      "sha256": "96c88add47e54472147d49c6a3d51722a9603e461d9e276fabeacb58137206b3"
+    },
+    {
+      "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/candidate_summary.csv",
+      "bytes": 65130,
+      "sha256": "d49856d31ba31fc81e4fce387342a3b42b9216ba0d9826a3df7f189857999ed6"
+    },
+    {
+      "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/operational_tradeoff.png",
+      "bytes": 62265,
+      "sha256": "1a565cdc3317fe1a0308e426672915bb6a52eece6ba6046952844690ba0c0673"
+    },
+    {
+      "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/analysis_validation.json",
+      "bytes": 487,
+      "sha256": "d0e4a3c915146c86f31558a7dc48d023b6b4b19256532db746c2022e8bf2254e"
+    },
+    {
+      "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/REPORT.md",
+      "bytes": 670,
+      "sha256": "77794d793ba260fd4461a2e24aa5f162b4a5e23feb6ebd25cf70c1c78404c1e5"
+    }
+  ],
+  "allowlist_file_count_including_this_manifest": 20,
+  "bulk_output_directories_staged": false
+}

@@ -1,0 +1,17 @@
+{
+  "version": "operational005_delivery_validation_failure_v1",
+  "status": "preserved_failure",
+  "failed_utc": "2026-09-30T21:34:35.367871+00:00",
+  "phase": "completion_validation",
+  "scientific_state": {
+    "accepted_policy_blocks": 825,
+    "validated_policy_blocks": 825,
+    "zero_fit_resumed_policy_blocks": 825,
+    "accepted_evaluation_rows": 2475,
+    "aggregate_passed": true
+  },
+  "error": "independent delivery comparison required identical frame shapes: reconstructed raw metrics had 41 columns and the published aggregate had 42",
+  "established_cause": "aggregate.py intentionally adds the provenance column status=validated before writing operational_metrics.csv",
+  "classification": "delivery-validator implementation defect; scientific evidence and aggregate were not changed",
+  "failed_delivery_version": "operational005_causal_replay_delivery_v1"
+}

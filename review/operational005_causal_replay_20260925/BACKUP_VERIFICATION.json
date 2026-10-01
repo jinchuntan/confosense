@@ -1,0 +1,25 @@
+{
+  "version": "operational005_causal_replay_delivery_v1.1",
+  "status": "passed",
+  "verified_utc": "2026-09-30T21:55:22.656183+00:00",
+  "destination": "D:\\ConfoSenseStorage\\backups\\operational005_causal_replay_20260925\\raw_and_execution_v2",
+  "source_files": 13594,
+  "source_bytes": 20630873861,
+  "archives": 284,
+  "archive_bytes": 20480090130,
+  "maximum_archive_bytes": 83672032,
+  "source_manifest": "D:\\ConfoSenseStorage\\backups\\operational005_causal_replay_20260925\\raw_and_execution_v2\\external_file_manifest.csv",
+  "source_manifest_sha256": "5ebc6bed18dc5c3dfc2b2aba9fb46754ab25adeaf236748834bde8226b8a2ccd",
+  "archive_manifest": "D:\\ConfoSenseStorage\\backups\\operational005_causal_replay_20260925\\raw_and_execution_v2\\external_archive_manifest.csv",
+  "archive_manifest_sha256": "a6aa3449fb4f999260136463dcbd0f5f5bcaa543dc78bc4c58844e2f5da658cd",
+  "source_stable_after_copy": true,
+  "all_archive_members_byte_verified": true,
+  "scientific_scope": "all operational005 causal-replay v2 blocks, validations, zero-fit resumes, ledgers, coordinator/supervisor/helper evidence, aggregate outputs and versioned support available before publication",
+  "backup_wall_seconds": 575.5121993999928,
+  "remaining_d_free_bytes": 453752283136,
+  "historical_lineage": {
+    "prerequisite_commit": "1b94d7dc027fe2a15049c82ba3c9a721df329ece",
+    "recovery_repository": "D:\\ConfoSenseStorage\\backups\\robustness_contamination_recovery005_20260928\\git_delivery_v1\\recovery_22e774566",
+    "storage_relocation_record": "D:\\ConfoSenseStorage\\STORAGE_LOCATION.json"
+  }
+}
