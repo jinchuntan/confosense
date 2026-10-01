@@ -12,14 +12,17 @@ three source datasets: PLEIA temperature, PLEIA energy, RICO HVAC, and the
 selected Building Data Genome 2 cohort. It includes matched point forecasting,
 own-model conformal intervals, broader interval methods, seasonal baselines,
 two PLEIA conditional-context challenges, and the frozen robustness,
-contamination, and recovery extension.
+contamination, and recovery extension. It also includes the completed bounded
+BDG2 one-hour operational causal replay for every candidate supported by an
+exact saved owner.
 
 The results are conditional on the recorded datasets, folds, seeds, protocols,
 and fault definitions. They are not proof of universal robustness. The study
 does not establish a general computational advantage for Attention-LSTM over
 XGBoost. Population inference is unavailable because folds, model-seed aliases,
 groups, and stream rows are dependent rather than independent population
-replicates. The separate operational causal replay is partial and inactive.
+replicates. The operational replay is a bounded BDG2 one-hour evaluation, not
+evidence of universal deployment performance.
 
 ## Environment setup
 
@@ -56,6 +59,10 @@ replay. Open these compact starting points:
   `../review/pleia_temperature_context005_multiseed_20260923/PLEIA_TEMPERATURE_CONTEXT005_FIVE_SEED_REPORT.md`;
 - robustness, contamination, and recovery:
   `../review/robustness_contamination_recovery_20260928/COMPLETION_REPORT.md`.
+- BDG2 one-hour operational replay:
+  `../review/operational005_causal_replay_20260925/EVIDENCE_INDEX.md`;
+- consolidated candidature tables and writing facts:
+  `../review/candidature_evidence_package_20261002_v1/`.
 
 For machine-readable completion summaries from the repository root:
 
@@ -65,6 +72,7 @@ Get-Content review/matched_intervals_seasonal005_completion_20260924/PUBLICATION
 Get-Content review/pleia_energy_context005_multiseed_20260915/COMPLETION_VERIFICATION.json | ConvertFrom-Json
 Get-Content review/pleia_temperature_context005_multiseed_20260923/COMPLETION_VERIFICATION.json | ConvertFrom-Json
 Get-Content review/robustness_contamination_recovery_20260928/COMPLETION_RESULT.json | ConvertFrom-Json
+Get-Content review/operational005_causal_replay_20260925/DELIVERY_RECEIPT.json | ConvertFrom-Json
 ```
 
 The compact CSV tables and figures linked by those indexes are committed. Bulk
@@ -80,6 +88,7 @@ mean disposable.
 | Point models and matched forecasting | `src/matched_models005.py`, `src/matched_forecasting005.py`, `src/matched_validation005.py`, `src/unit_checkpoint.py` |
 | Conformal methods and interval comparison | `src/conformal_cqr.py`, `src/conformal_enbpi.py`, `src/conformal_dscp.py`, `src/conformal_acp.py`, `src/matched_intervals005.py`, `src/intervals005_common.py`, `src/intervals005_data.py`, `src/intervals005_owners.py`, `src/intervals005_stream.py`, `src/intervals005_validate.py` |
 | Conditional-context replay and alerts | `src/conditional_context005.py`, `src/context005_data.py`, `src/context005_features.py`, `src/context005_metrics.py`, `src/context005_owner.py`, `src/context005_spec.py`, `src/context005_validate.py`, `src/alerts_corrected.py`, `src/residuals.py` |
+| Operational alert design used by saved-owner replay | `src/operational004_design.py`, `src/operational004_engine.py`, `src/operational004_events.py`, `src/operational004_metrics.py`, `src/operational004_stream.py`, `src/operational004_verification.py` |
 | Study assembly and reporting | `src/corrected_study.py`, `src/reporting.py`, `src/statistics.py`, `src/seasonal.py` |
 
 The package-level modules contain reusable science. Dated scripts under
@@ -102,9 +111,12 @@ Some accepted results intentionally depend on versioned adapters outside
   directories bind exact protocols and accepted checkpoint identities. They are
   preserved reproduction dependencies, not a second maintained framework.
 
-The partial operational adapter under
-`../review/operational005_causal_replay_20260925/` remains historical work in
-progress. Its presence is not evidence that the operational grid completed.
+The completed operational adapter and delivery scripts under
+`../review/operational005_causal_replay_20260925/` bind the frozen candidate
+definitions, exact saved owners, independent block validation, zero-fit resume,
+aggregation, backup, and publication receipts. They are versioned dependencies
+for that bounded delivery, not a general-purpose replacement for maintained
+modules.
 
 ## Entry-point discovery and focused checks
 
@@ -151,7 +163,7 @@ python -B review/robustness_contamination_recovery_20260928/completion_v1.py run
 
 These are expensive/recovery commands, not reviewer inspection commands. The
 completed coordinators are closed, the robustness extension requires no further
-execution, and the operational supervisor must remain stopped. Any fresh
+execution, and the completed operational supervisor must remain stopped. Any fresh
 reproduction should be explicitly authorized and isolated from accepted output
 paths.
 

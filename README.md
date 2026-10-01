@@ -9,19 +9,23 @@ conditional faults, contamination, and recovery scenarios.
 
 1. [`RESULTS_INDEX.md`](RESULTS_INDEX.md) is the authoritative map of completed
    results, compact artifacts, validation evidence, and limitations.
-2. [`smart_building_conformal/README.md`](smart_building_conformal/README.md)
+2. [`review/candidature_evidence_package_20261002_v1/`](review/candidature_evidence_package_20261002_v1/)
+   is the report-writing package: a source/commit map, methodology facts,
+   supported findings, readiness assessment, and 11 consolidated CSV tables.
+3. [`smart_building_conformal/README.md`](smart_building_conformal/README.md)
    explains the maintained implementation, environment, lightweight inspection,
    and the guarded reproduction entry points.
-3. [`PANEL_RESPONSE_MATRIX.md`](PANEL_RESPONSE_MATRIX.md) separates validated
+4. [`PANEL_RESPONSE_MATRIX.md`](PANEL_RESPONSE_MATRIX.md) separates validated
    evidence from candidature writing and presentation work that is still needed.
-4. [`PROJECT_RECOVERY_STATUS.md`](PROJECT_RECOVERY_STATUS.md) is the operational
+5. [`PROJECT_RECOVERY_STATUS.md`](PROJECT_RECOVERY_STATUS.md) is the operational
    recovery record. It is useful when auditing historical recovery decisions,
    but is not the current results index.
 
 The current submission history contains the completed forecasting,
-interval-method, seasonal, PLEIA conditional-context, and robustness deliveries.
-Their prior review branches are preserved as provenance; the necessary compact
-code and result artifacts are also reachable from this submission branch.
+interval-method, seasonal, PLEIA conditional-context, robustness, and bounded
+BDG2 one-hour operational-replay deliveries. Their prior review branches are
+preserved as provenance; the necessary compact code and result artifacts are
+also reachable from this submission branch.
 
 ## Current scientific status
 
@@ -31,7 +35,7 @@ code and result artifacts are also reachable from this submission branch.
 | Interval methods and seasonal benchmark | Complete: 1,950/1,950 method cells and 27/27 unique seasonal computations |
 | PLEIA conditional-context challenge | Complete for the declared temperature and energy five-seed designs; each has 68 original contexts and 60 aggregate control/rule/channel cells |
 | Robustness, contamination, and recovery | Complete for the frozen extension: 60/60 units and 900/900 cells |
-| Operational causal replay | Partial and inactive: 72/825 policy blocks were accepted locally before the preserved run stopped; it is not a completed result |
+| Operational causal replay | Complete for the exact-owner-supported BDG2 one-hour design: 825/825 blocks and 2,475/2,475 evaluation rows independently validated and delivered |
 
 These are bounded results for the declared datasets, folds, seeds, methods, and
 fault protocols. They do not prove universal robustness. The matched study did
@@ -41,7 +45,7 @@ folds, model-seed aliases, groups, and stream rows are not treated as independen
 population replicates.
 
 No experiment should be started from a README command merely to inspect the
-submission. The operational replay remains paused, and all scientific execution
+submission. The operational replay is complete, and all scientific execution
 is inactive.
 
 ## Repository map
