@@ -1,0 +1,36 @@
+{
+  "owner_stage_records_scanned": 1234,
+  "high_level_owner_stages_any_dataset": [
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f0_s43/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s43/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_energy_h1_f1_s46/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s44/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f0_s46/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s44/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s45/stages/owner_fit_exact/stage.json",
+    "smart_building_conformal/outputs/robustness_contamination_recovery005/constructed_owners_v1/pleia_h1_f2_s46/stages/owner_fit_exact/stage.json"
+  ],
+  "exact_bdg2_h1_high_level_cqr_owners": [],
+  "zip_archives_scanned": 616,
+  "archive_high_level_bdg2_owner_entries": [],
+  "loose_backup_owner_pickles": [
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_energy_h1_f0_s43/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_energy_h1_f0_s43/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_energy_h1_f1_s43/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_energy_h1_f1_s43/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_energy_h1_f1_s46/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_energy_h1_f1_s46/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f0_s44/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f0_s44/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f0_s46/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f0_s46/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f2_s44/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f2_s44/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f2_s45/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f2_s45/stages/owner_fit_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f2_s46/stages/owner_cal_exact/owner.pkl",
+    "backups/robustness_contamination_recovery005_20260928/completion_v1/constructed_owners_v1/pleia_h1_f2_s46/stages/owner_fit_exact/owner.pkl"
+  ],
+  "reusable_owners": 0,
+  "decision": "no exact saved owner at 0.975/0.99/0.995 for BDG2 h1; fit 45 new CQR owners"
+}

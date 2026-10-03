@@ -1,0 +1,174 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "frozen_utc": "2026-10-03T10:13:25.998267+00:00",
+  "authorization": "explicit user instruction of 2026-10-03 (see AUTHORIZATION_REFERENCE.md): fit and conformalize the missing BDG2 one-hour CQR/uncalibrated-quantile owners at 0.975, 0.99 and 0.995 for this separate extension only",
+  "branch": "review/operational005-high-coverage-extension-20261003",
+  "base_commit": "d65147ff22e6c079603eda1337630254796c8990",
+  "frozen_tag": "candidature-evidence-20261002-v1",
+  "frozen_operational005": {
+    "path": "review/operational005_causal_replay_20260925",
+    "protocol_sha256": "4138a93b1b79120bcd2b837b1ffb7a31896f8511bd7a671a2b182d9a55ff2c6a",
+    "version": "operational005_causal_replay_v2.4",
+    "entry_commit": "bc9b30a93497b06f9cd7cb91f1c91b9092b51ead",
+    "historical_fit_budget": {
+      "forecasting_models": 0,
+      "quantile_estimators": 0,
+      "conformalizer_fits": 0,
+      "new_seeds": 0
+    },
+    "historical_fit_budget_note": "describes the delivered zero-fit replay; unchanged"
+  },
+  "source_identity": {
+    "source_content_digest": "84e42365c5615f5096092d56e0b48da51440904635b44c82d0fa881d6e6deb3b",
+    "historical_source_byte_digest": "a94b3835135749e2f18b89fb6017d8d0b8b9d419cb0a1f9be11122d93d0a217f",
+    "note": "git shows no src change between the entry commit and the base commit; the 2026-09 byte digest depended on a working-tree line-ending mix that the 2026-10-02 checkout replaced. The extension pins committed content (CRLF-normalised digest, equal to the git-blob digest)."
+  },
+  "source_content_digest": "84e42365c5615f5096092d56e0b48da51440904635b44c82d0fa881d6e6deb3b",
+  "science_root": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1\\science_root",
+  "science_root_manifest_lf_sha256": "bab991aee0cca6c40d914b44d8f887d7315d06e665e9fdc868059e57d9f47f87",
+  "runtime": {
+    "python": "C:\\cfs_venv\\Scripts\\python.exe",
+    "python_sha256": "bfff517165ad6d1f3bf02d1782eaf7588fb7c20cd78d1c81788c4444e7bc5d82",
+    "python_version": "3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit (AMD64)]",
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "xgboost": "3.2.0",
+      "MAPIE": "1.4.1",
+      "matplotlib": "3.11.1"
+    },
+    "threads": {
+      "OMP_NUM_THREADS": 1,
+      "OPENBLAS_NUM_THREADS": 1,
+      "MKL_NUM_THREADS": 1,
+      "NUMEXPR_NUM_THREADS": 1,
+      "torch": 1
+    }
+  },
+  "extension_code_lf_sha256": {
+    "hc_common.py": "1c130504867144169e3a708466bec73e8d41412f211c98477fc825ef46c77911",
+    "hc_materialize.py": "2344feee38702340ffa8580890ab1e27bff4bf90d2d8bea6f09b842bed520763",
+    "hc_freeze.py": "68fb2e0818835a204e73632ab63bfc8161840bcffac3fd46247bcfe069415d70",
+    "hc_owner.py": "28f40486004883bb733b0e501082695ad0f8caa6d5a53ce6c20bb3a5c78eaab0",
+    "hc_adapter.py": "02fb8ebcc71181ae99f3804a8cd809afb4611d6a865df2bb597204a2b92d246e",
+    "hc_validate.py": "68d7ed03cc8bb8aa71ff9bf35627fe01df3da6062cdd6f1ba890012bae11a7a9",
+    "hc_pilot_gate.py": "d64116ead6cd2bfa5202b35a7f9369e473a24dcf24fd3f11654dc9617dff6b0d",
+    "hc_aggregate.py": "2172ee7381560a38196090872430c918ad18394ccf51cde0f01bd4701ade3332",
+    "test_hc_guards.py": "4dff2ca6d216c75d8f39f52e45a27e5c4cf550b67ec8ca319742dcb1ccb7d2b2"
+  },
+  "orchestration_code_lf_sha256": {
+    "hc_supervisor.py": "4278e0a50b7a03a3b55d6a5d18f9bb2cf905607c904fa1cf4e85956f1ef38528"
+  },
+  "extension_artifact_lf_sha256": {
+    "extension_evaluation_queue.csv": "7055a7ffe034bcfc2e2aed1189e673278e063fa9c6ff11e57bad6fdfb9002115",
+    "extension_metric_view_queue.csv": "f3dfb307391dc7ebde90837d5b86b8598abec176a624ec590b0d1c16affae215",
+    "extension_block_queue.csv": "602a7e6432b16379caf4041ff9262caa3d479d673fddfc77855f70cac8aee768",
+    "extension_owner_queue.csv": "69250641f1f32697e39d149a965d972b35be1c048535350356e6465c58944216",
+    "LATER_WORK_CHECK.json": "9f9c4a6b6810b69d1e52381d16dde8fee1be00e7771c590c685169cf500f6e73",
+    "SAVED_OWNER_SEARCH.json": "0c243659648a0db077bae010d4f3d502147020188a535d3e2fe97ccbcb28e1ea"
+  },
+  "scope": {
+    "dataset": "bdg2",
+    "horizon": 1,
+    "levels": [
+      0.975,
+      0.99,
+      0.995
+    ],
+    "methods": [
+      "cqr",
+      "quantile_uncalibrated"
+    ],
+    "candidates": 99,
+    "cqr_candidates": 90,
+    "quantile_uncalibrated_candidates": 9,
+    "outer_folds": [
+      0,
+      1,
+      2
+    ],
+    "model_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "units": 15,
+    "evaluation_rows": 1485,
+    "metric_view_rows": 2970,
+    "policy_blocks_per_unit": 33,
+    "policy_blocks": 495,
+    "accepted_blocks_not_rerun": 825,
+    "accepted_evaluation_rows_not_rerun": 2475,
+    "combined_candidates_if_complete": 264,
+    "combined_evaluation_rows_if_complete": 3960,
+    "native_and_common_are_views_not_experiments": true
+  },
+  "fit_budget": {
+    "forecasting_models": 0,
+    "new_seeds": 0,
+    "owners": 45,
+    "cqr_wrapper_fits": 45,
+    "quantile_estimator_fits": 135,
+    "conformalize_operations": 90,
+    "factory": "src.intervals005_owners.fit_owner/conformalize_owner with src.conformal_cqr._quantile_estimator(seed)",
+    "roles": "original chronological fit and calibration roles of each fold/seed interval bundle",
+    "sharing": "one owner per unit and level, shared by CQR and uncalibrated-quantile candidates",
+    "forbidden": "refitting forecasting, EnbPI, DSCP or the accepted 95% owners; substituting 95% quantiles"
+  },
+  "frozen_replay_substitutions": [
+    "adapter.policy_blocks -> the 33 previously unavailable policy groups",
+    "adapter.UNITS -> extension storage on D:",
+    "adapter.SavedOwner -> ExtensionOwner (hash-verified extension owner; SavedOwner score construction)",
+    "adapter.load_unit -> frozen loader with the source-content gate",
+    "adapter.source_digest/VERSION -> current content digest and '<frozen>+<extension>' version labels"
+  ],
+  "comparability": {
+    "unchanged": [
+      "candidate IDs",
+      "fault catalogues and seeds",
+      "severity scaling",
+      "alert rules",
+      "update schedules",
+      "residual windows",
+      "minimum update support (50)",
+      "rank rule",
+      "observation support",
+      "native and common support views",
+      "metric definitions",
+      "causal feature reconstruction",
+      "delayed residual release"
+    ],
+    "insufficient_support": "held updates are preserved as recorded statuses; no interval is invented",
+    "selection": "no setting is selected from test outcomes; descriptive summaries only",
+    "population_inference": "not authorized"
+  },
+  "pilot": {
+    "unit": "bdg2_f0_s42",
+    "blocks": 33,
+    "levels": [
+      0.975,
+      0.99,
+      0.995
+    ],
+    "gate": "hc_pilot_gate.py; the full queue continues automatically only after it passes"
+  },
+  "resources": {
+    "initial_scientific_workers": 1,
+    "maximum_scientific_workers": 3,
+    "worker_launch_min_available_ram_bytes": 2147483648,
+    "worker_launch_min_commit_headroom_bytes": 3221225472,
+    "disk_floor_bytes": 8589934592,
+    "max_attempts_per_task": 3
+  },
+  "storage": {
+    "run_root": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1",
+    "owners": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1\\owners",
+    "units": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1\\units"
+  },
+  "later_work_check_lf_sha256": "9f9c4a6b6810b69d1e52381d16dde8fee1be00e7771c590c685169cf500f6e73",
+  "saved_owner_search_lf_sha256": "0c243659648a0db077bae010d4f3d502147020188a535d3e2fe97ccbcb28e1ea",
+  "full_study_ready": false
+}
