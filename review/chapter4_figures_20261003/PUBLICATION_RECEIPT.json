@@ -1,0 +1,75 @@
+{
+  "version": "chapter4_figure_package_publication_v1",
+  "status": "passed",
+  "created_utc": "2026-10-03T09:26:42.723692+00:00",
+  "scope": "figure generation, caption corrections, validation and publication only; no model was trained, no experiment was rerun and no frozen source was changed",
+  "branch": "review/chapter4-figures-20261003",
+  "base_commit": "d65147ff22e6c079603eda1337630254796c8990",
+  "substantive_commit": "9cd2885f5047ed2ab3b1e82a4eb1e0d38bc738f1",
+  "remote_commit_after_push": "9cd2885f5047ed2ab3b1e82a4eb1e0d38bc738f1",
+  "force_push": false,
+  "main_modified": false,
+  "unchanged_after_push": {
+    "tag candidature-evidence-20261002-v1": {
+      "tag_object": "1c076f7c11ea9123415167323de20ac6b2174277",
+      "commit": "d65147ff22e6c079603eda1337630254796c8990",
+      "remote_tag_object": "1c076f7c11ea9123415167323de20ac6b2174277"
+    },
+    "main": {
+      "local": "d65147ff22e6c079603eda1337630254796c8990",
+      "remote": "d65147ff22e6c079603eda1337630254796c8990"
+    },
+    "review/candidature-publication-20261002": {
+      "local": "d65147ff22e6c079603eda1337630254796c8990",
+      "remote": "d65147ff22e6c079603eda1337630254796c8990"
+    },
+    "frozen_sources": "no tracked change under review/candidature_evidence_package_20261002_v1, review/robustness_contamination_recovery_20260928 or smart_building_conformal"
+  },
+  "staging": {
+    "allowlist": "review/chapter4_figures_20261003/STAGING_ALLOWLIST.txt",
+    "method": "git --literal-pathspecs add --pathspec-from-file",
+    "files": 35,
+    "staged_set_equals_allowlist": true,
+    "diff_check": "passed",
+    "binary_files": 18,
+    "staged_blob_identity": "34 byte-identical to the working files; 1 text file identical after CRLF to LF normalisation"
+  },
+  "payload_scan": {
+    "record": "review/chapter4_figures_20261003/PUBLICATION_SCAN.json",
+    "script": "smart_building_conformal/scripts/audit_review_publication.py",
+    "head": "9cd2885f5047ed2ab3b1e82a4eb1e0d38bc738f1",
+    "blobs": 35,
+    "bytes": 2213218,
+    "findings": 0
+  },
+  "figure_validation": {
+    "builder": "report_figures/chapter4/build_chapter4_figures.py",
+    "interpreter": "C:/cfs_venv (matplotlib 3.11.1)",
+    "figures": "4.1 to 4.9",
+    "plotted_values_verified_against_frozen_sources": 1662,
+    "print_width": "every PNG and PDF at most 15.0 cm, the UM A4 text width, placed at 100%",
+    "printed_text": "9 to 10 pt; no overlapping text and no label crossing its panel frame",
+    "formats": "300 dpi PNG and vector-only PDF with embedded TrueType fonts",
+    "reproducibility": "two consecutive builds byte-identical; a further rebuild left every committed file unchanged",
+    "inventory": "report_figures/chapter4/CHAPTER4_FIGURE_INVENTORY.md",
+    "captions": "report_figures/chapter4/CHAPTER4_FIGURE_CAPTIONS.md"
+  },
+  "independent_render_check": "outside the package, pypdfium2 5.13.0 rendered every PDF; each matched its own PNG apart from anti-aliasing (2.3% to 6.0% of pixels), the Figure 4.3 PDF differed from the Figure 4.2 PNG by 10.0% of pixels, and PDF text layers carried the expected axis labels, legend counts, severity labels and estimates",
+  "excluded_local_folder": {
+    "path": "report_figures/chapter4_before_15cm_relayout/",
+    "files": 22,
+    "checksum_file": "SHA256SUMS.txt",
+    "checksums_verified": 22,
+    "committed": false
+  },
+  "https_readback": {
+    "record": "review/chapter4_figures_20261003/GITHUB_REMOTE_READBACK.json",
+    "manifest": "review/chapter4_figures_20261003/READBACK_MANIFEST.csv",
+    "status": "passed",
+    "files": 35,
+    "matched": 35,
+    "bytes": 2213218,
+    "base_url": "https://raw.githubusercontent.com/jinchuntan/confosense/9cd2885f5047ed2ab3b1e82a4eb1e0d38bc738f1/"
+  },
+  "receipt_scope": "this receipt records verification of the earlier substantive commit and does not claim to verify itself"
+}
