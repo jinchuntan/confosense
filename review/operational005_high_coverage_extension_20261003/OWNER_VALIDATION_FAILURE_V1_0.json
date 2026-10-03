@@ -1,0 +1,13 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "status": "failed_validator_defect",
+  "utc": "2026-10-03T10:17:16.354194+00:00",
+  "task": "owner_validate_bdg2_f0_s42",
+  "exit_code": 3,
+  "message": "SCIENTIFIC_VALIDATION_FAILURE: native conformity scores",
+  "stderr_log": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1\\supervisor\\attempts\\owner_validate_bdg2_f0_s42_a1_20261003T101616.stderr.log",
+  "stderr_sha256": "d493d6569d79c216d8ca0a6c2cab9a6cf5c5be987c86684982dcb79e629ee9bc",
+  "diagnosis": "MAPIE 1.4.1 stores CQR conformity_scores_ as a (3, n_calibration) array (the accepted 95% owner has the same (3, 34534) shape); the validator wrongly required shape (n_calibration,). All checks before it passed for level 0.975: chronology, calibration-feature identity, quantile levels, factory parameters, training bin thresholds, training/calibration target hashes and exact prediction reproduction.",
+  "scientific_outputs_affected": "none; owner checkpoints are unchanged and are not refitted",
+  "correction": "require the native score array to be finite and of the same shape as the accepted 95% owner's array (protocol revision 1.1)"
+}

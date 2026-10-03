@@ -95,6 +95,7 @@ def validate_owners(fold: int, seed: int) -> dict:
         reference_cal_ops = read(reference["owner_cal_h1_cqr_l95"] / "operation_counts.json")["operations"]
         reference_owner = load_owner(reference["owner_cal_h1_cqr_l95"] / "owner.pkl")
         reference_estimators, _ = _sub_estimators(reference_owner)
+        reference_scores = np.load(reference["owner_cal_h1_cqr_l95"] / "native_conformity_scores.npy")
         X = data["X"]
         fit_rows, cal_rows, test_rows = roles["fit"], roles["calibration"], roles["test"]
 
@@ -226,7 +227,9 @@ def validate_owners(fold: int, seed: int) -> dict:
             raw_cover = float(np.mean((y_cal >= np.minimum(cal_values.raw_lower, cal_values.raw_upper))
                                       & (y_cal <= np.maximum(cal_values.raw_lower, cal_values.raw_upper))))
             require(1 <= rank <= n_cal, "operational CQR calibration rank unsupported")
-            require(np.isfinite(scores).all() and scores.shape[0] == n_cal, "native conformity scores")
+            # MAPIE 1.4.1 stores CQR scores as a (3, n_calibration) array, as in the accepted 95% owner.
+            require(np.isfinite(scores).all() and scores.shape == reference_scores.shape
+                    and scores.shape[-1] == n_cal, "native conformity scores")
             report["levels"][tag] = {
                 "level": level,
                 "fitted_owner_sha256": record["fitted_owner_sha256"],
@@ -240,7 +243,7 @@ def validate_owners(fold: int, seed: int) -> dict:
                 "operational_cqr_rank": rank, "operational_cqr_rank_supported": True,
                 "rolling_window_rank_support": {str(w): math.ceil((w + 1) * level) <= w for w in (200, 500)},
                 "minimum_supported_pool": next(n for n in range(1, 10_000) if math.ceil((n + 1) * level) <= n),
-                "native_conformity_scores": int(scores.shape[0]),
+                "native_conformity_score_shape": list(scores.shape),
                 "prediction_reproduction_max_difference": prediction_difference,
                 "raw_quantile_crossings_calibration": int(np.sum(cal_values.raw_lower > cal_values.raw_upper)),
                 "calibration_raw_quantile_coverage": raw_cover,

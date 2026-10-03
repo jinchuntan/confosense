@@ -52,7 +52,7 @@
     "hc_freeze.py": "68fb2e0818835a204e73632ab63bfc8161840bcffac3fd46247bcfe069415d70",
     "hc_owner.py": "28f40486004883bb733b0e501082695ad0f8caa6d5a53ce6c20bb3a5c78eaab0",
     "hc_adapter.py": "02fb8ebcc71181ae99f3804a8cd809afb4611d6a865df2bb597204a2b92d246e",
-    "hc_validate.py": "57f83edd0e5038379b03147198d2f1f9ba2b77ef337aa91e53e95a3cfbf89094",
+    "hc_validate.py": "68d7ed03cc8bb8aa71ff9bf35627fe01df3da6062cdd6f1ba890012bae11a7a9",
     "hc_pilot_gate.py": "d64116ead6cd2bfa5202b35a7f9369e473a24dcf24fd3f11654dc9617dff6b0d",
     "hc_aggregate.py": "2172ee7381560a38196090872430c918ad18394ccf51cde0f01bd4701ade3332",
     "test_hc_guards.py": "4dff2ca6d216c75d8f39f52e45a27e5c4cf550b67ec8ca319742dcb1ccb7d2b2"
@@ -170,23 +170,5 @@
   },
   "later_work_check_lf_sha256": "9f9c4a6b6810b69d1e52381d16dde8fee1be00e7771c590c685169cf500f6e73",
   "saved_owner_search_lf_sha256": "0c243659648a0db077bae010d4f3d502147020188a535d3e2fe97ccbcb28e1ea",
-  "full_study_ready": false,
-  "protocol_revision": "1.1",
-  "revisions": [
-    {
-      "revision": "1.1",
-      "utc": "2026-10-03T10:50:00Z",
-      "predecessor": "EXTENSION_PROTOCOL_V1_0.json",
-      "predecessor_lf_sha256": "674e3cfa8c958c10cd7795741622717f06ef2c40be75e9f49d458c3c7c0a9848",
-      "failure_receipt": "OWNER_VALIDATION_FAILURE_V1_0.json",
-      "failure_receipt_lf_sha256": "f9ccf6fa661e5e2af15e6b3002a6421141afd2228b57823ed6b2f2c5db5fad48",
-      "changed_code": [
-        "hc_validate.py"
-      ],
-      "change": "owner validator compares the native CQR conformity-score array with the accepted 95% owner shape (3, n_calibration) instead of requiring (n_calibration,)",
-      "scientific_scope_changed": false,
-      "owner_checkpoints_refitted": false,
-      "pre_revision_dry_run": "pilot blocks 25 (0.995 rolling), 29 (0.995 static CQR) and 32 (0.995 uncalibrated) run and validated into a scratch directory outside the run root; all passed"
-    }
-  ]
+  "full_study_ready": false
 }
