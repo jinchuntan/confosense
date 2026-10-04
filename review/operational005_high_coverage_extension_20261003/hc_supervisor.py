@@ -127,6 +127,10 @@ def unit_name(fold: int, seed: int) -> str:
     return f"bdg2_f{fold}_s{seed}"
 
 
+def lane(kind: str) -> str:
+    return {"run": "run", "validate": "validate", "resume": "resume"}.get(kind, "exclusive")
+
+
 class Task:
     def __init__(self, kind: str, fold: int | None = None, seed: int | None = None, block: int | None = None):
         self.kind, self.fold, self.seed, self.block = kind, fold, seed, block
@@ -281,12 +285,21 @@ class Supervisor:
         return False
 
     def ready(self) -> list[Task]:
-        busy_units = {self.by_key[k].unit for k in self.running}
+        # Within one unit, at most one task per lane: owner tasks are exclusive; one
+        # block run (the only writer of the unit ledger) may overlap with one
+        # validation and one zero-fit resume of earlier blocks, which only read it.
+        busy: dict[str, set[str]] = {}
+        for key in self.running:
+            running_task = self.by_key[key]
+            busy.setdefault(running_task.unit, set()).add(lane(running_task.kind))
         out = []
         for task in self.tasks:
             if task.key in self.running or self.is_done(task):
                 continue
-            if task.unit in busy_units or time.time() < self.not_before.get(task.key, 0):
+            lanes = busy.get(task.unit, set())
+            if "exclusive" in lanes or (lanes and lane(task.kind) == "exclusive") or lane(task.kind) in lanes:
+                continue
+            if time.time() < self.not_before.get(task.key, 0):
                 continue
             if task.kind in ("pilot_gate", "aggregate") and self.running:
                 continue

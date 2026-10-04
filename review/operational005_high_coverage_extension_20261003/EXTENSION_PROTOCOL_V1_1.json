@@ -58,7 +58,7 @@
     "test_hc_guards.py": "4dff2ca6d216c75d8f39f52e45a27e5c4cf550b67ec8ca319742dcb1ccb7d2b2"
   },
   "orchestration_code_lf_sha256": {
-    "hc_supervisor.py": "8a9c6fca1ac2ea1b73543ac682a8473e8e67353567ddf6bc68e57a22f6549c3b"
+    "hc_supervisor.py": "4278e0a50b7a03a3b55d6a5d18f9bb2cf905607c904fa1cf4e85956f1ef38528"
   },
   "extension_artifact_lf_sha256": {
     "extension_evaluation_queue.csv": "7055a7ffe034bcfc2e2aed1189e673278e063fa9c6ff11e57bad6fdfb9002115",
@@ -171,7 +171,7 @@
   "later_work_check_lf_sha256": "9f9c4a6b6810b69d1e52381d16dde8fee1be00e7771c590c685169cf500f6e73",
   "saved_owner_search_lf_sha256": "0c243659648a0db077bae010d4f3d502147020188a535d3e2fe97ccbcb28e1ea",
   "full_study_ready": false,
-  "protocol_revision": "1.2",
+  "protocol_revision": "1.1",
   "revisions": [
     {
       "revision": "1.1",
@@ -187,20 +187,6 @@
       "scientific_scope_changed": false,
       "owner_checkpoints_refitted": false,
       "pre_revision_dry_run": "pilot blocks 25 (0.995 rolling), 29 (0.995 static CQR) and 32 (0.995 uncalibrated) run and validated into a scratch directory outside the run root; all passed"
-    },
-    {
-      "revision": "1.2",
-      "utc": "2026-10-04T01:20:00Z",
-      "predecessor": "EXTENSION_PROTOCOL_V1_1.json",
-      "predecessor_lf_sha256": "b1847051b480f3743717d6d3e6c70404703c79d09015e0174b70af47a0510e65",
-      "changed_code": [
-        "hc_supervisor.py"
-      ],
-      "change": "scheduling only: within a unit, one block run may overlap with one validation and one zero-fit resume of earlier blocks (the run is the only writer of the unit ledger); owner tasks remain exclusive; maximum workers unchanged at 3",
-      "reason": "with two units left, strict one-task-per-unit scheduling would idle a worker for the final ~4 hours",
-      "scientific_scope_changed": false,
-      "scientific_code_changed": false,
-      "state_at_revision": "423 of 495 blocks completed, validated and resumed; supervisor drained and restarted"
     }
   ]
 }
