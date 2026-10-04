@@ -232,7 +232,9 @@ def run() -> dict:
         mean_ordinary_precision=("mean_ordinary_episode_precision", "mean"),
         mean_clean_workload=("mean_clean_workload", "mean"),
         mean_restricted_detection_minutes=("mean_restricted_detection_minutes", "mean"))
-    by_level.to_csv(ANALYSIS / "combined_cqr_quantile_by_level.csv", index=False, lineterminator="\n")
+    by_level.insert(0, "source", np.where(by_level.method.isin(["cqr", "quantile_uncalibrated"])
+                                          & (by_level.level.astype(float) != 0.95), "extension", "original_accepted"))
+    by_level.to_csv(ANALYSIS / "combined_by_method_level_strategy.csv", index=False, lineterminator="\n")
     result = {
         "passed": True, "version": VERSION, "utc": utc(), **gate,
         "original_accepted_metrics": {"path": f"{ORIGINAL_ANALYSIS}/operational_metrics.csv", "commit": BASE_COMMIT,
@@ -247,7 +249,7 @@ def run() -> dict:
     atomic_json(ANALYSIS / "COMPLETION_VALIDATION.json", result)
     report = report_text(result, by_level)
     atomic_text(ANALYSIS / "REPORT.md", report)
-    for name in [*outputs, "combined_tradeoff_native.png", "combined_cqr_quantile_by_level.csv",
+    for name in [*outputs, "combined_tradeoff_native.png", "combined_by_method_level_strategy.csv",
                  "COMPLETION_VALIDATION.json", "REPORT.md"]:
         shutil.copyfile(ANALYSIS / name, RESULTS / name)
     print(json.dumps({k: result[k] for k in ("passed", "blocks", "evaluation_rows", "metric_view_rows",
@@ -278,19 +280,24 @@ def report_text(result: dict, by_level: pd.DataFrame) -> str:
         "",
         "## Native-support means by method, nominal level and recalibration strategy",
         "",
-        "| Method | Level | Strategy | Candidates | Macro recall | Micro recall | Custom F1 | Episode precision | Clean episodes per asset-day | Restricted detection (min) |",
-        "|---|---:|---|---:|---:|---:|---:|---:|---:|---:|",
+        "Each row averages the candidates' fold/seed means over the three temporal rules (single sample, 3 of 3",
+        "in 180 min, 4 of 6 in 360 min). Source: extension = completed here; original = accepted operational005 tables.",
+        "",
+        "| Method | Level | Strategy | Source | Candidates | Macro recall | Micro recall | Custom F1 | Episode precision | Clean episodes per asset-day | Restricted detection (min) |",
+        "|---|---:|---|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in by_level.sort_values(["method", "strategy", "level"]).itertuples():
-        lines.append(f"| {row.method} | {float(row.level):g} | {row.strategy} | {row.candidates} | "
+        source = "extension" if row.source == "extension" else "original"
+        lines.append(f"| {row.method} | {float(row.level):g} | {row.strategy} | {source} | {row.candidates} | "
                      f"{row.mean_macro_event_recall:.3f} | {row.mean_micro_recall:.3f} | {row.mean_custom_synthetic_f1:.3f} | "
                      f"{row.mean_ordinary_precision:.3f} | {row.mean_clean_workload:.3f} | "
                      f"{row.mean_restricted_detection_minutes:.1f} |")
     held = result["held_insufficient_support_rows"]
     lines += ["", "Rows held at the previous correction because a scheduled update lacked score or rank support "
               "(all streams, all folds and seeds): " + (", ".join(f"{k}: {v:,}" for k, v in held.items()) if held else "none") + ".",
-              "", "Level 0.95 rows come from the original accepted tables (read from their committed blobs); the other "
-              "levels come from this extension."]
+              "", "Original rows (every recentred EnbPI row, and the 0.95 CQR and uncalibrated-quantile rows) are "
+              "recomputed from the accepted operational005 metric table read from its committed blob. Extension rows "
+              "are the 0.975, 0.99 and 0.995 CQR and uncalibrated-quantile candidates completed here."]
     return "\n".join(lines) + "\n"
 
 

@@ -1,0 +1,121 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "unit": "bdg2_f1_s43",
+  "fold": 1,
+  "model_seed": 43,
+  "levels": {
+    "l0975": {
+      "level": 0.975,
+      "fitted_owner_sha256": "4feff550a37796800f9f19abcd082c3454331b0eb288c502b53b6ba606f8a9b2",
+      "calibrated_owner_sha256": "625f39a84adeb8ef1d673cd1933ca990986c365dbc9d7b6d97f4cb1d3d66eb79",
+      "quantiles": [
+        0.0125,
+        0.9875,
+        0.5
+      ],
+      "estimator_parameters_match_factory": true,
+      "training_rows": 77682,
+      "calibration_rows": 26002,
+      "test_rows": 34532,
+      "training_target_hash_matches_accepted_95_owner": true,
+      "calibration_target_hash_matches_accepted_95_owner": true,
+      "training_bin_thresholds_match_accepted_95_owner": true,
+      "operational_cqr_rank": 25353,
+      "operational_cqr_rank_supported": true,
+      "rolling_window_rank_support": {
+        "200": true,
+        "500": true
+      },
+      "minimum_supported_pool": 39,
+      "native_conformity_score_shape": [
+        3,
+        26002
+      ],
+      "prediction_reproduction_max_difference": 0.0,
+      "raw_quantile_crossings_calibration": 0,
+      "calibration_raw_quantile_coverage": 0.9365048842396738,
+      "calibration_static_cqr_coverage": 0.9750788400892239
+    },
+    "l0990": {
+      "level": 0.99,
+      "fitted_owner_sha256": "3b6c1d63aef6ac89dbabfd69bf422ca7349ea2c0d2ba9fca5aa25a885295cec0",
+      "calibrated_owner_sha256": "5a66097f967074f838bd93ce61c797e25aff0d63034d134551c285d9cb8aabbd",
+      "quantiles": [
+        0.005,
+        0.995,
+        0.5
+      ],
+      "estimator_parameters_match_factory": true,
+      "training_rows": 77682,
+      "calibration_rows": 26002,
+      "test_rows": 34532,
+      "training_target_hash_matches_accepted_95_owner": true,
+      "calibration_target_hash_matches_accepted_95_owner": true,
+      "training_bin_thresholds_match_accepted_95_owner": true,
+      "operational_cqr_rank": 25743,
+      "operational_cqr_rank_supported": true,
+      "rolling_window_rank_support": {
+        "200": true,
+        "500": true
+      },
+      "minimum_supported_pool": 99,
+      "native_conformity_score_shape": [
+        3,
+        26002
+      ],
+      "prediction_reproduction_max_difference": 0.0,
+      "raw_quantile_crossings_calibration": 0,
+      "calibration_raw_quantile_coverage": 0.9768479347742481,
+      "calibration_static_cqr_coverage": 0.9900776863318206
+    },
+    "l0995": {
+      "level": 0.995,
+      "fitted_owner_sha256": "c96d7c90025729b86b8489d72f4f83025480431b40450139eb2451895fca99e7",
+      "calibrated_owner_sha256": "ce6e322cc8eb09c6808bf34fa78c596c9b836b43247faacae0a2e0ba3af35d59",
+      "quantiles": [
+        0.0025,
+        0.9975,
+        0.5
+      ],
+      "estimator_parameters_match_factory": true,
+      "training_rows": 77682,
+      "calibration_rows": 26002,
+      "test_rows": 34532,
+      "training_target_hash_matches_accepted_95_owner": true,
+      "calibration_target_hash_matches_accepted_95_owner": true,
+      "training_bin_thresholds_match_accepted_95_owner": true,
+      "operational_cqr_rank": 25873,
+      "operational_cqr_rank_supported": true,
+      "rolling_window_rank_support": {
+        "200": true,
+        "500": true
+      },
+      "minimum_supported_pool": 199,
+      "native_conformity_score_shape": [
+        3,
+        26002
+      ],
+      "prediction_reproduction_max_difference": 0.0,
+      "raw_quantile_crossings_calibration": 0,
+      "calibration_raw_quantile_coverage": 0.9658487808630105,
+      "calibration_static_cqr_coverage": 0.9950773017460195
+    }
+  },
+  "chronology": {
+    "fit_max_target": "2016-11-28 16:00:00",
+    "calibration_min_origin": "2016-11-28 17:00:00",
+    "calibration_max_target": "2017-03-17 07:00:00",
+    "test_min_origin": "2017-03-17 08:00:00",
+    "global_calibration_targets_before_first_test_origin": true,
+    "groups": 10,
+    "groups_fit_before_calibration": 10,
+    "groups_calibration_before_test": 10
+  },
+  "calibration_feature_identity_max_difference": 0.0,
+  "passed": true,
+  "models_fitted": 0,
+  "calibrators_fitted": 0,
+  "owner_manifest_sha256": "ea870ada7890ca344719b03884935a26079aa44094d59d3a6fd7fb235c779800",
+  "source_content_digest": "84e42365c5615f5096092d56e0b48da51440904635b44c82d0fa881d6e6deb3b",
+  "utc": "2026-10-03T16:44:13.482758+00:00"
+}

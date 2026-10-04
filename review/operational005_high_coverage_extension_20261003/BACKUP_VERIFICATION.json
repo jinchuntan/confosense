@@ -1,0 +1,31 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "status": "passed",
+  "verified_utc": "2026-10-04T03:39:32.934780+00:00",
+  "source_root": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1",
+  "destination": "D:\\ConfoSenseStorage\\backups\\operational005_high_coverage_extension_20261003\\run_v1",
+  "source_files": 9321,
+  "source_bytes": 14363303362,
+  "archives": 194,
+  "archive_bytes": 14365280996,
+  "source_manifest_sha256": "835b10bf1df00def21c01f714fb9a451e5be88b25f6189e180d62a5a5b36f161",
+  "archive_manifest_sha256": "0cc44fcbd971e18617f2d3e14eefa1ec2b57e992a4b67077c5e503927ffdf7bc",
+  "all_archive_members_byte_verified": true,
+  "source_stable_after_copy": true,
+  "included": [
+    "owners",
+    "units",
+    "supervisor",
+    "analysis_v1",
+    "analysis_v1_superseded_r1_2",
+    "quarantine",
+    "fit_ledger.jsonl",
+    "PILOT_VALIDATION.json",
+    "SCIENCE_ROOT_MANIFEST.json"
+  ],
+  "excluded": "science_root (pinned copies of existing inputs; see SCIENCE_ROOT_MANIFEST.json)",
+  "physical_disk_note": "the run root and this backup share the D: SSD; GitHub holds the compact results",
+  "remaining_d_free_bytes": 408190574592,
+  "backup_wall_seconds": 97.1226808999927,
+  "completion_validation_sha256": "b84e11ee76eda338ef3b95975056259a0b687ba005519b22bbca00782d45019b"
+}

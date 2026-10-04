@@ -1,0 +1,301 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "unit": "bdg2_f0_s45",
+  "fold": 0,
+  "model_seed": 45,
+  "spec": {
+    "factory_fields_compared": [
+      "factory",
+      "estimator_parameters",
+      "wrapper_parameters",
+      "objects_per_horizon",
+      "estimators_per_object",
+      "sharing",
+      "crossing"
+    ],
+    "documentation_fields_differing_from_interval_protocol": [],
+    "version": "operational005_high_coverage_extension_v1",
+    "unit": "bdg2_f0_s45",
+    "fold": 0,
+    "model_seed": 45,
+    "horizon": 1,
+    "levels": [
+      0.975,
+      0.99,
+      0.995
+    ],
+    "owner_kind": "cqr",
+    "interval_protocol_sha256": "7968b4f04a8167b6e042f7973f090c37cb53370e42e8557f7ebe7a53ae2765b2",
+    "method_specification_signature": "d854def8b462790eac9e85fd615b08ece7ecd70f8e1ebabfaf173d265feca795",
+    "source_content_digest": "84e42365c5615f5096092d56e0b48da51440904635b44c82d0fa881d6e6deb3b",
+    "roles": {
+      "fit": "fit",
+      "calibration": "calibration",
+      "prediction": [
+        "calibration",
+        "test"
+      ]
+    }
+  },
+  "stage_identity": "e27e169f6e0102833fe675c30bf36ed6247405a9b08de0c8debcbbdf060ae36e",
+  "levels": {
+    "l0975": {
+      "level": 0.975,
+      "stages": {
+        "owner_fit_h1_cqr_l0975": {
+          "path": "owners/bdg2_f0_s45/stages/owner_fit_h1_cqr_l0975",
+          "complete_sha256": "cbd409a83f1e5eb84b4dbdd422f75bf61e5ee5bb500d37d2a0f284288188f6ca",
+          "files": {
+            "COMPLETE.json": "cbd409a83f1e5eb84b4dbdd422f75bf61e5ee5bb500d37d2a0f284288188f6ca",
+            "operation_counts.json": "0dfa7a99520db1231f2f2e08cc4523f0050cead0b9dbbb77f54712771bbd4ce8",
+            "owner.pkl": "101caea65e904a193d18b215ae5b18378c255e4edb58bb4c059c707ead2078d6",
+            "stage.json": "7c3244a224658aeada4162df72544c83778b350d3a2b06d4115a5a6e22e071f6"
+          },
+          "reused_existing_checkpoint": false
+        },
+        "owner_cal_h1_cqr_l0975": {
+          "path": "owners/bdg2_f0_s45/stages/owner_cal_h1_cqr_l0975",
+          "complete_sha256": "71e929291335b1305b2ed3b559e179915af718a719e62fb840ebc98290f61c9d",
+          "files": {
+            "COMPLETE.json": "71e929291335b1305b2ed3b559e179915af718a719e62fb840ebc98290f61c9d",
+            "native_conformity_scores.npy": "acd8586602d4312569ab0b6cc3c99a7d97f6937adb7f0bf072b0e6d9b29fb9b7",
+            "operation_counts.json": "bbb54c70383e0c8740db60a64a011b227148fbf348b5ec34528f708b9cc5fbf6",
+            "owner.pkl": "bcd654a01b4c6916d84f800fc3595e74a078ad2bcd836146e61375d159c34502",
+            "stage.json": "dd5f6aaf5d1099b208a05b8813b32cdcfcead0087eef4d0f2ab37591845184ee"
+          },
+          "reused_existing_checkpoint": false
+        },
+        "raw_h1_cqr_l0975": {
+          "path": "owners/bdg2_f0_s45/stages/raw_h1_cqr_l0975",
+          "complete_sha256": "ca267e35581b210aeda7c829e4b8886211a84b475d6b0470995af4e930c21738",
+          "files": {
+            "calibration_l0975.csv.gz": "d97a7b4e13f8e3c37bdffb4211b72d1d589f6efbfba1b0920aef655fa2b55b5f",
+            "calibration_metadata.csv.gz": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+            "COMPLETE.json": "ca267e35581b210aeda7c829e4b8886211a84b475d6b0470995af4e930c21738",
+            "stage.json": "c213b1f4a44ec6103fb0c5caf6d6c6e5f4152dfa004a98ad0bb207620cd1b8cb",
+            "test_l0975.csv.gz": "b84acf5719129764493646178fa1c868b6a1b0b7b654958b5234be63637fea26",
+            "test_metadata.csv.gz": "5335a6897b3b5626e41b4214d2e61a712c599c75801d96ca668a572ebb81cebf"
+          },
+          "reused_existing_checkpoint": false
+        }
+      },
+      "fitted_owner_sha256": "101caea65e904a193d18b215ae5b18378c255e4edb58bb4c059c707ead2078d6",
+      "calibrated_owner_sha256": "bcd654a01b4c6916d84f800fc3595e74a078ad2bcd836146e61375d159c34502",
+      "calibration_values_sha256": "d97a7b4e13f8e3c37bdffb4211b72d1d589f6efbfba1b0920aef655fa2b55b5f",
+      "calibration_metadata_sha256": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+      "test_values_sha256": "b84acf5719129764493646178fa1c868b6a1b0b7b654958b5234be63637fea26",
+      "operation_counts": {
+        "fit": {
+          "cqr_wrapper_fit": 1,
+          "quantile_estimator_fit": 3
+        },
+        "conformalize": {
+          "calibrator_conformalize": 2
+        }
+      },
+      "payload": {
+        "fit": {
+          "kind": "cqr",
+          "level": 0.975,
+          "seed": 45,
+          "n_fit": 103684,
+          "synthetic": false,
+          "owner_class": "mapie.regression.quantile_regression.ConformalizedQuantileRegressor"
+        },
+        "conformalize": {
+          "source_fitted_owner_sha256": "101caea65e904a193d18b215ae5b18378c255e4edb58bb4c059c707ead2078d6",
+          "n_calibration": 34534,
+          "nonfinite_native_scores": 0,
+          "score_symmetry": null,
+          "synthetic": false
+        },
+        "raw": {
+          "owner_sha256": "bcd654a01b4c6916d84f800fc3595e74a078ad2bcd836146e61375d159c34502",
+          "kind": "cqr",
+          "levels": [
+            0.975
+          ],
+          "rows": {
+            "calibration": 34534,
+            "test": 34426
+          }
+        }
+      }
+    },
+    "l0990": {
+      "level": 0.99,
+      "stages": {
+        "owner_fit_h1_cqr_l0990": {
+          "path": "owners/bdg2_f0_s45/stages/owner_fit_h1_cqr_l0990",
+          "complete_sha256": "d576d81664c3cac693a784af97d249ea20a8d016f1ef5df2d9a0fac5d89f31e3",
+          "files": {
+            "COMPLETE.json": "d576d81664c3cac693a784af97d249ea20a8d016f1ef5df2d9a0fac5d89f31e3",
+            "operation_counts.json": "4c8e25be144d94bf45ec3ecfe5f77dba3d6a303e89683ab1b0a236bd983b20cf",
+            "owner.pkl": "140b9c02b2c232bdb17c7cc27a2e19ef9c5038b05fc696f10610cfccad5f0cd7",
+            "stage.json": "ab4859116533466719417ee10954942efbeda6402eda9e94d2e1a1bb878df640"
+          },
+          "reused_existing_checkpoint": false
+        },
+        "owner_cal_h1_cqr_l0990": {
+          "path": "owners/bdg2_f0_s45/stages/owner_cal_h1_cqr_l0990",
+          "complete_sha256": "9bbc7aafcb9730a1b1704ab81f476ca0ee8cca60dee4fb1aa0f690a8e588e2f9",
+          "files": {
+            "COMPLETE.json": "9bbc7aafcb9730a1b1704ab81f476ca0ee8cca60dee4fb1aa0f690a8e588e2f9",
+            "native_conformity_scores.npy": "a303b2709d0dfed8e2a45948a8cb12e593b915fe9e1dcca94d68f51225e1eeb4",
+            "operation_counts.json": "84e3236177ea4718c42f21064c31044e47360b8a363dcfaddd212abe8495195d",
+            "owner.pkl": "e2dd10f5ae31ad58858b7fdcf17c1064b3566deda6b6d21a09b7442f0d0fe815",
+            "stage.json": "8b16b78de045371497315cff51730d6d9f0a12ae60e05f8a8ffea6e7180b74d9"
+          },
+          "reused_existing_checkpoint": false
+        },
+        "raw_h1_cqr_l0990": {
+          "path": "owners/bdg2_f0_s45/stages/raw_h1_cqr_l0990",
+          "complete_sha256": "3ec28f503ae3dbb47a95074402992ca21ce7cf38d9b8069f86a4f9f18d2e45f1",
+          "files": {
+            "calibration_l0990.csv.gz": "8b8415e2632cd8b7ec899287f5250d448c690a7b0f278b703a7690d4c6d80ea3",
+            "calibration_metadata.csv.gz": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+            "COMPLETE.json": "3ec28f503ae3dbb47a95074402992ca21ce7cf38d9b8069f86a4f9f18d2e45f1",
+            "stage.json": "30d47c4256708d56897fdd96cbb1da57c2e10d69c47ce965bf0e8b4804848fd6",
+            "test_l0990.csv.gz": "d18ea4057fe57c5d28b5bfd10cb172f8da544ac7f0d04e04b081565ee29fa91d",
+            "test_metadata.csv.gz": "5335a6897b3b5626e41b4214d2e61a712c599c75801d96ca668a572ebb81cebf"
+          },
+          "reused_existing_checkpoint": false
+        }
+      },
+      "fitted_owner_sha256": "140b9c02b2c232bdb17c7cc27a2e19ef9c5038b05fc696f10610cfccad5f0cd7",
+      "calibrated_owner_sha256": "e2dd10f5ae31ad58858b7fdcf17c1064b3566deda6b6d21a09b7442f0d0fe815",
+      "calibration_values_sha256": "8b8415e2632cd8b7ec899287f5250d448c690a7b0f278b703a7690d4c6d80ea3",
+      "calibration_metadata_sha256": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+      "test_values_sha256": "d18ea4057fe57c5d28b5bfd10cb172f8da544ac7f0d04e04b081565ee29fa91d",
+      "operation_counts": {
+        "fit": {
+          "cqr_wrapper_fit": 1,
+          "quantile_estimator_fit": 3
+        },
+        "conformalize": {
+          "calibrator_conformalize": 2
+        }
+      },
+      "payload": {
+        "fit": {
+          "kind": "cqr",
+          "level": 0.99,
+          "seed": 45,
+          "n_fit": 103684,
+          "synthetic": false,
+          "owner_class": "mapie.regression.quantile_regression.ConformalizedQuantileRegressor"
+        },
+        "conformalize": {
+          "source_fitted_owner_sha256": "140b9c02b2c232bdb17c7cc27a2e19ef9c5038b05fc696f10610cfccad5f0cd7",
+          "n_calibration": 34534,
+          "nonfinite_native_scores": 0,
+          "score_symmetry": null,
+          "synthetic": false
+        },
+        "raw": {
+          "owner_sha256": "e2dd10f5ae31ad58858b7fdcf17c1064b3566deda6b6d21a09b7442f0d0fe815",
+          "kind": "cqr",
+          "levels": [
+            0.99
+          ],
+          "rows": {
+            "calibration": 34534,
+            "test": 34426
+          }
+        }
+      }
+    },
+    "l0995": {
+      "level": 0.995,
+      "stages": {
+        "owner_fit_h1_cqr_l0995": {
+          "path": "owners/bdg2_f0_s45/stages/owner_fit_h1_cqr_l0995",
+          "complete_sha256": "3742451c0f04b8a0d43dd16c3c86c40e56cd8212073a8612ad2f9c87cf9a552d",
+          "files": {
+            "COMPLETE.json": "3742451c0f04b8a0d43dd16c3c86c40e56cd8212073a8612ad2f9c87cf9a552d",
+            "operation_counts.json": "f3e4e4c76a66808919abe014486b35c79490a6b06811dd12313bc76b59a74c73",
+            "owner.pkl": "25d2cbcb3a8e6b2556a49c248a74fd714311598381bb9e2ac2ecce323723f17b",
+            "stage.json": "706618e9049db5208622fb86501d3880aaee6052f45cceec77d15c134425feb8"
+          },
+          "reused_existing_checkpoint": false
+        },
+        "owner_cal_h1_cqr_l0995": {
+          "path": "owners/bdg2_f0_s45/stages/owner_cal_h1_cqr_l0995",
+          "complete_sha256": "68e61d101ffbb96237abe2e59123e6c641cc3c04149f0905184713ddbc434a10",
+          "files": {
+            "COMPLETE.json": "68e61d101ffbb96237abe2e59123e6c641cc3c04149f0905184713ddbc434a10",
+            "native_conformity_scores.npy": "e44c3fc5456597cadb34c560b0b570e2c18ca8d33a001ea002f215c66f7a4ed7",
+            "operation_counts.json": "995833d9aa9414aac17de1fdfbb790c331ae85084a343f14e2aced8b7cbda46d",
+            "owner.pkl": "dfd2361f5ced037b0124f64907c6b07c05c2abb181d095f0bfde8667c5a851c1",
+            "stage.json": "53c09a37b403e3760b6a99fc766c7eeb2df3e3afc76f448b8d396fbf8ab02319"
+          },
+          "reused_existing_checkpoint": false
+        },
+        "raw_h1_cqr_l0995": {
+          "path": "owners/bdg2_f0_s45/stages/raw_h1_cqr_l0995",
+          "complete_sha256": "3d39a4ce41cb5aeeffc05276444c162687f8e1ccb2e13d6fc436d54afba2f04e",
+          "files": {
+            "calibration_l0995.csv.gz": "e0c8813d74eabcf4f49526fb3762b27eb49a2b1405e0970e84943b65a6eac174",
+            "calibration_metadata.csv.gz": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+            "COMPLETE.json": "3d39a4ce41cb5aeeffc05276444c162687f8e1ccb2e13d6fc436d54afba2f04e",
+            "stage.json": "6d62f84141e213e6bfdf95179c8e107e2533888052e58641fb09013e24fc6568",
+            "test_l0995.csv.gz": "5c2ca66f0cf6d0827678cf4501adc0c0d57dbbe4d0b90793accfe1e390cb689c",
+            "test_metadata.csv.gz": "5335a6897b3b5626e41b4214d2e61a712c599c75801d96ca668a572ebb81cebf"
+          },
+          "reused_existing_checkpoint": false
+        }
+      },
+      "fitted_owner_sha256": "25d2cbcb3a8e6b2556a49c248a74fd714311598381bb9e2ac2ecce323723f17b",
+      "calibrated_owner_sha256": "dfd2361f5ced037b0124f64907c6b07c05c2abb181d095f0bfde8667c5a851c1",
+      "calibration_values_sha256": "e0c8813d74eabcf4f49526fb3762b27eb49a2b1405e0970e84943b65a6eac174",
+      "calibration_metadata_sha256": "420bf14f95f78ea9d7814f3efd5d4a81b130b237a441dcd764417f45fdc6c883",
+      "test_values_sha256": "5c2ca66f0cf6d0827678cf4501adc0c0d57dbbe4d0b90793accfe1e390cb689c",
+      "operation_counts": {
+        "fit": {
+          "cqr_wrapper_fit": 1,
+          "quantile_estimator_fit": 3
+        },
+        "conformalize": {
+          "calibrator_conformalize": 2
+        }
+      },
+      "payload": {
+        "fit": {
+          "kind": "cqr",
+          "level": 0.995,
+          "seed": 45,
+          "n_fit": 103684,
+          "synthetic": false,
+          "owner_class": "mapie.regression.quantile_regression.ConformalizedQuantileRegressor"
+        },
+        "conformalize": {
+          "source_fitted_owner_sha256": "25d2cbcb3a8e6b2556a49c248a74fd714311598381bb9e2ac2ecce323723f17b",
+          "n_calibration": 34534,
+          "nonfinite_native_scores": 0,
+          "score_symmetry": null,
+          "synthetic": false
+        },
+        "raw": {
+          "owner_sha256": "dfd2361f5ced037b0124f64907c6b07c05c2abb181d095f0bfde8667c5a851c1",
+          "kind": "cqr",
+          "levels": [
+            0.995
+          ],
+          "rows": {
+            "calibration": 34534,
+            "test": 34426
+          }
+        }
+      }
+    }
+  },
+  "fit_rows": 103684,
+  "calibration_rows": 34534,
+  "test_rows": 34426,
+  "new_estimator_fits_by_level": {
+    "l0975": 3,
+    "l0990": 3,
+    "l0995": 3
+  },
+  "utc": "2026-10-03T13:51:20.218950+00:00"
+}

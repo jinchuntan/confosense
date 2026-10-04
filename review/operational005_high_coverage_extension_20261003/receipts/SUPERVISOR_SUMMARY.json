@@ -1,0 +1,71 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "utc": "2026-10-04T03:37:49.233743+00:00",
+  "events": 3073,
+  "events_sha256": "023aec6c9160e27125f049335af7ee84f6eeeee7fb5846eb8e98c4c5417e2a5e",
+  "supervisor_starts": 3,
+  "tasks_returned": 1533,
+  "nonzero_exits": 1,
+  "retries_scheduled": 0,
+  "blocked_events": [
+    {
+      "utc": "2026-10-03T10:17:16.365751+00:00",
+      "event": "blocked",
+      "task": "owner_validate_bdg2_f0_s42",
+      "exit_code": 3,
+      "scientific": true,
+      "attempts": 1,
+      "message": ":root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nINFO:root:The predictions are ill-sorted.\nSCIENTIFIC_VALIDATION_FAILURE: native conformity scores\n"
+    }
+  ],
+  "resource_pauses": 0,
+  "quarantine_events": 0,
+  "task_seconds": {
+    "aggregate": {
+      "n": 1,
+      "mean": 40.0,
+      "max": 40.0
+    },
+    "owner_fit": {
+      "n": 15,
+      "mean": 96.9,
+      "max": 140.1
+    },
+    "owner_resume": {
+      "n": 15,
+      "mean": 25.4,
+      "max": 30.2
+    },
+    "owner_validate": {
+      "n": 16,
+      "mean": 65.8,
+      "max": 90.1
+    },
+    "pilot_gate": {
+      "n": 1,
+      "mean": 10.0,
+      "max": 10.0
+    },
+    "resume": {
+      "n": 495,
+      "mean": 10.0,
+      "max": 10.2
+    },
+    "run": {
+      "n": 495,
+      "mean": 201.9,
+      "max": 270.9
+    },
+    "validate": {
+      "n": 495,
+      "mean": 105.1,
+      "max": 140.3
+    }
+  },
+  "peak_task_rss_bytes": 785817600,
+  "final_state": "scientific_complete_delivery_pending",
+  "minimum_available_ram_bytes_last_supervisor": 4785582080,
+  "minimum_commit_available_bytes_last_supervisor": 6760198144,
+  "minimum_free_disk_bytes_last_supervisor": 422566862848,
+  "max_workers": 3
+}

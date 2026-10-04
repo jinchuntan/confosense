@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "version": "operational005_high_coverage_extension_v1",
+  "utc": "2026-10-04T03:37:09.342838+00:00",
+  "owners_validated": 15,
+  "owner_zero_fit_resumes": 15,
+  "blocks": 495,
+  "blocks_validated_frozen": 495,
+  "blocks_validated_extended": 495,
+  "blocks_zero_fit_resumed": 495,
+  "evaluation_rows": 1485,
+  "metric_view_rows": 2970,
+  "candidates": 99,
+  "frozen_validator_checks": 8910,
+  "extended_metric_checks": 62370,
+  "maximum_validation_absolute_difference": 4.547473508864641e-13,
+  "raw_block_bytes": 13747927353,
+  "fit_operations": {
+    "cqr_wrapper_fit": 45,
+    "quantile_estimator_fit": 135,
+    "calibrator_conformalize": 90
+  },
+  "held_insufficient_support_rows": {},
+  "original_accepted_metrics": {
+    "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/operational_metrics.csv",
+    "commit": "d65147ff22e6c079603eda1337630254796c8990",
+    "git_blob": "d8c1e47673a01086d175c22564ff9e4bd56cae2f",
+    "rows": 4950,
+    "candidates": 165
+  },
+  "original_candidate_summary": {
+    "path": "smart_building_conformal/outputs/operational005_causal_replay_v2/analysis_v1/candidate_summary.csv",
+    "commit": "d65147ff22e6c079603eda1337630254796c8990",
+    "git_blob": "9899061392708b1f7f1e3cff3416cd57fc278038",
+    "recomputed_equal": true
+  },
+  "combined_candidates": 264,
+  "combined_evaluation_rows": 3960,
+  "combined_metric_view_rows_reference_only": 7920,
+  "native_and_common_are_views_not_experiments": true,
+  "population_inference": "not performed",
+  "selection_from_test_outcomes": "none"
+}

@@ -1,0 +1,25 @@
+{
+  "version": "operational005_high_coverage_extension_v1",
+  "utc": "2026-10-04T03:50:00Z",
+  "purpose": "post-aggregation check, written separately from hc_aggregate.py, that the published extension tables equal the 495 validated block metric files",
+  "block_metric_files": 495,
+  "metric_view_rows": 2970,
+  "unique_evaluation_rows": 1485,
+  "evaluation_ids_equal_extension_queue": true,
+  "candidate_summary_rows": 198,
+  "every_candidate_support_view_has_15_fold_seed_rows": true,
+  "candidate_summary_max_abs_difference": {
+    "macro_event_recall": 9.71445146547012e-17,
+    "event_recall_micro": 9.71445146547012e-17,
+    "custom_synthetic_f1": 9.71445146547012e-17,
+    "ordinary_matched_event_episode_precision": 1.1102230246251565e-16,
+    "background_episodes_per_asset_day": 1.1102230246251565e-16,
+    "restricted_mean_detection_minutes": 5.684341886080802e-14
+  },
+  "published_metric_table_vs_block_files": {
+    "max_abs_difference": 5.684341886080802e-14,
+    "tolerance": 1e-09,
+    "note": "differences are last-digit decimal round trips from re-serialising CSV values; exact equality held for all columns except detected_delay_q90_minutes (0.13% of rows, e.g. 234.00000000000037 vs 234.0000000000004)"
+  },
+  "passed": true
+}

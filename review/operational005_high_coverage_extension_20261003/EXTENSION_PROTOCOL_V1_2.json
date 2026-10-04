@@ -54,7 +54,7 @@
     "hc_adapter.py": "02fb8ebcc71181ae99f3804a8cd809afb4611d6a865df2bb597204a2b92d246e",
     "hc_validate.py": "57f83edd0e5038379b03147198d2f1f9ba2b77ef337aa91e53e95a3cfbf89094",
     "hc_pilot_gate.py": "d64116ead6cd2bfa5202b35a7f9369e473a24dcf24fd3f11654dc9617dff6b0d",
-    "hc_aggregate.py": "a6227ba1f212e947d0a8ff32bd99804f8e4daf677b3d8dc2369ac1a532043ff5",
+    "hc_aggregate.py": "2172ee7381560a38196090872430c918ad18394ccf51cde0f01bd4701ade3332",
     "test_hc_guards.py": "4dff2ca6d216c75d8f39f52e45a27e5c4cf550b67ec8ca319742dcb1ccb7d2b2"
   },
   "orchestration_code_lf_sha256": {
@@ -171,7 +171,7 @@
   "later_work_check_lf_sha256": "9f9c4a6b6810b69d1e52381d16dde8fee1be00e7771c590c685169cf500f6e73",
   "saved_owner_search_lf_sha256": "0c243659648a0db077bae010d4f3d502147020188a535d3e2fe97ccbcb28e1ea",
   "full_study_ready": false,
-  "protocol_revision": "1.3",
+  "protocol_revision": "1.2",
   "revisions": [
     {
       "revision": "1.1",
@@ -201,19 +201,6 @@
       "scientific_scope_changed": false,
       "scientific_code_changed": false,
       "state_at_revision": "423 of 495 blocks completed, validated and resumed; supervisor drained and restarted"
-    },
-    {
-      "revision": "1.3",
-      "utc": "2026-10-04T03:45:00Z",
-      "predecessor": "EXTENSION_PROTOCOL_V1_2.json",
-      "predecessor_lf_sha256": "88f430c439008059c5164b75a322716c3b171f79b61b3777ddc7832e18926d60",
-      "changed_code": [
-        "hc_aggregate.py"
-      ],
-      "change": "report-only: the combined by-level table gains a source column and the closing note no longer says that every non-0.95 row is from the extension (recentred EnbPI rows at all levels are original accepted results); the table file is renamed combined_by_method_level_strategy.csv",
-      "superseded_outputs": "D:\\ConfoSenseStorage\\runs\\op005_hicov_v1\\analysis_v1_superseded_r1_2",
-      "scientific_scope_changed": false,
-      "blocks_or_owners_rerun": false
     }
   ]
 }
