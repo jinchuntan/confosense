@@ -1,0 +1,45 @@
+{
+  "purpose": "Reproduce the JBE operational and recovery figures from saved aggregate results. No model fitting or experiments are run.",
+  "sources": [
+    {
+      "file": "pleia_alerts.csv",
+      "repository": "jinchuntan/confosense",
+      "commit": "d65147ff22e6c079603eda1337630254796c8990",
+      "repository_path": "review/candidature_evidence_package_20261002_v1/REPORT_TABLES/CONDITIONAL_ALERTS_PLEIA.csv",
+      "git_blob_sha": "185f6cfbf5237eba8d57f3ac9d39d370d7f8416e",
+      "encoding": "utf-8",
+      "source_url": "https://github.com/jinchuntan/confosense/blob/d65147ff22e6c079603eda1337630254796c8990/review/candidature_evidence_package_20261002_v1/REPORT_TABLES/CONDITIONAL_ALERTS_PLEIA.csv",
+      "sha256": "e34f86bda48b53bbe754e5c0df544ef8f32b37c13d3a3761eee60343651b7624"
+    },
+    {
+      "file": "coverage_recovery.csv",
+      "repository": "jinchuntan/confosense",
+      "commit": "d65147ff22e6c079603eda1337630254796c8990",
+      "repository_path": "review/candidature_evidence_package_20261002_v1/REPORT_TABLES/ROBUSTNESS_RECOVERY_SUMMARY.csv",
+      "git_blob_sha": "c17c88fb49a0aa6c8f7ffa7d45d6751452cfdf0c",
+      "encoding": "utf-8",
+      "source_url": "https://github.com/jinchuntan/confosense/blob/d65147ff22e6c079603eda1337630254796c8990/review/candidature_evidence_package_20261002_v1/REPORT_TABLES/ROBUSTNESS_RECOVERY_SUMMARY.csv",
+      "sha256": "c88d3bf38d6f2ca59c57b4cb44c498b706e260b1bda11b947931976b0b882e24"
+    },
+    {
+      "file": "bdg2_candidate_summary.csv",
+      "repository": "jinchuntan/confosense",
+      "commit": "55e74b51eeea917ebbec9a213d7054b968f53a8b",
+      "repository_path": "review/operational005_high_coverage_extension_20261003/results/combined_candidate_summary.csv",
+      "git_blob_sha": "f1c7798145eb09b1cc07c4d096ab65f68c6eef6a",
+      "encoding": "utf-8",
+      "source_url": "https://github.com/jinchuntan/confosense/blob/55e74b51eeea917ebbec9a213d7054b968f53a8b/review/operational005_high_coverage_extension_20261003/results/combined_candidate_summary.csv",
+      "sha256": "66ed8586a95d4ac609448e7757cb3ee16228dafa8fd3ec3200b47ff28031e2aa"
+    },
+    {
+      "file": "bdg2_candidate_inventory.csv",
+      "repository": "jinchuntan/confosense",
+      "commit": "55e74b51eeea917ebbec9a213d7054b968f53a8b",
+      "repository_path": "review/operational005_high_coverage_extension_20261003/results/combined_candidate_inventory.csv",
+      "git_blob_sha": "38d8b9ba33fddbb4f40014b69faeef15364af24d",
+      "encoding": "utf-8",
+      "source_url": "https://github.com/jinchuntan/confosense/blob/55e74b51eeea917ebbec9a213d7054b968f53a8b/review/operational005_high_coverage_extension_20261003/results/combined_candidate_inventory.csv",
+      "sha256": "6951e52656b380796ff3c32ef83a80557d0029b5a17ee61a43b7686ac9a5e7a3"
+    }
+  ]
+}
