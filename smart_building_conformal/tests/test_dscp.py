@@ -64,10 +64,12 @@ def test_wider_level_gives_wider_intervals():
     P, Y = synthetic()
     cal = fit_dscp(P, Y, HORIZONS, seed=42)
     P_test, _ = synthetic(n=60, seed=7)
-    w90 = (cal.predict_interval(P_test, 0.90)["upper"]
-           - cal.predict_interval(P_test, 0.90)["lower"]).mean()
-    w99 = (cal.predict_interval(P_test, 0.99)["upper"]
-           - cal.predict_interval(P_test, 0.99)["lower"]).mean()
+    w90 = (
+        cal.predict_interval(P_test, 0.90)["upper"] - cal.predict_interval(P_test, 0.90)["lower"]
+    ).mean()
+    w99 = (
+        cal.predict_interval(P_test, 0.99)["upper"] - cal.predict_interval(P_test, 0.99)["lower"]
+    ).mean()
     assert w99 > w90
 
 
@@ -89,7 +91,7 @@ def test_shape_mismatches_are_rejected():
     with pytest.raises(ValueError):
         fit_dscp(P, Y[:, :2], HORIZONS)
     with pytest.raises(ValueError):
-        fit_dscp(P, Y, [1, 3])                     # wrong number of steps
+        fit_dscp(P, Y, [1, 3])  # wrong number of steps
     cal = fit_dscp(P, Y, HORIZONS)
     with pytest.raises(ValueError):
         cal.predict_interval(np.zeros((5, 2)), 0.9)
@@ -157,8 +159,7 @@ def test_intervals_are_anchored_on_the_point_forecast_within_a_cluster():
     assert np.allclose(shifted["lower"] - base["lower"], 100.0)
     assert np.allclose(shifted["upper"] - base["upper"], 100.0)
     # Width depends only on the residual pool, not on where the forecast sits.
-    assert np.allclose(shifted["upper"] - shifted["lower"],
-                       base["upper"] - base["lower"])
+    assert np.allclose(shifted["upper"] - shifted["lower"], base["upper"] - base["lower"])
 
 
 def test_cluster_assignment_depends_on_the_predicted_sequence():
@@ -173,8 +174,9 @@ def test_cluster_assignment_depends_on_the_predicted_sequence():
     low = rng.normal(loc=0.0, scale=0.2, size=(n, 3))
     high = rng.normal(loc=50.0, scale=0.2, size=(n, 3))
     P = np.vstack([low, high])
-    Y = np.vstack([low + rng.normal(scale=0.1, size=(n, 3)),
-                   high + rng.normal(scale=5.0, size=(n, 3))])
+    Y = np.vstack(
+        [low + rng.normal(scale=0.1, size=(n, 3)), high + rng.normal(scale=5.0, size=(n, 3))]
+    )
 
     cal = fit_dscp(P, Y, HORIZONS, seed=1)
     assert cal.n_clusters >= 2, "the two regimes should separate"

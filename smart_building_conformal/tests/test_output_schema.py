@@ -81,21 +81,46 @@ def test_pct_improvement_sign_and_degenerate_baseline():
 # --------------------------------------------------------------------------- #
 # Persisted output schemas
 # --------------------------------------------------------------------------- #
-POINT_COLUMNS = {"dataset", "target", "sampling_freq", "horizon_steps",
-                 "horizon_minutes", "point_model", "n_seeds"}
-INTERVAL_COLUMNS = {"dataset", "horizon_steps", "conformal_method",
-                    "nominal_coverage", "empirical_coverage",
-                    "coverage_deviation", "mean_interval_width",
-                    "normalized_mean_interval_width", "winkler_score"}
-ALERT_COLUMNS = {"dataset", "role", "rule", "k", "m", "precision", "recall",
-                 "f1", "far", "false_alert_events_per_day",
-                 "mean_detection_delay_min", "median_detection_delay_min"}
+POINT_COLUMNS = {
+    "dataset",
+    "target",
+    "sampling_freq",
+    "horizon_steps",
+    "horizon_minutes",
+    "point_model",
+    "n_seeds",
+}
+INTERVAL_COLUMNS = {
+    "dataset",
+    "horizon_steps",
+    "conformal_method",
+    "nominal_coverage",
+    "empirical_coverage",
+    "coverage_deviation",
+    "mean_interval_width",
+    "normalized_mean_interval_width",
+    "winkler_score",
+}
+ALERT_COLUMNS = {
+    "dataset",
+    "role",
+    "rule",
+    "k",
+    "m",
+    "precision",
+    "recall",
+    "f1",
+    "far",
+    "false_alert_events_per_day",
+    "mean_detection_delay_min",
+    "median_detection_delay_min",
+}
 
 
 def test_point_metrics_schema():
     df = _load("point_metrics.csv")
     assert POINT_COLUMNS <= set(df.columns)
-    ok = df[df.get("applicable", True) == True]           # noqa: E712
+    ok = df[df.get("applicable", True) == True]  # noqa: E712
     assert (ok["n_seeds"] >= 1).all()
     assert (ok["horizon_steps"] > 0).all()
 
@@ -106,8 +131,7 @@ def test_interval_metrics_schema_and_method_names():
     # Only the agreed method names may appear: the uncalibrated baseline must
     # never be merged into cqr, and EnbPI must always be labelled "recentred".
     assert set(df["conformal_method"]) <= set(INTERVAL_METHODS)
-    assert not any(m == "enbpi" or m.startswith("EnbPI")
-                   for m in df["conformal_method"])
+    assert not any(m == "enbpi" or m.startswith("EnbPI") for m in df["conformal_method"])
     assert (df["empirical_coverage"].between(0, 1)).all()
     assert (df["mean_interval_width"] >= 0).all()
 
@@ -134,25 +158,39 @@ def test_alert_metrics_schema_and_role_separation():
     if "selected_operating_rule" in df.columns:
         for (ds, role), sub in df.groupby(["dataset", "role"]):
             assert sub["selected_operating_rule"].sum() == 1, (
-                f"{ds}/{role} does not have exactly one selected rule")
+                f"{ds}/{role} does not have exactly one selected rule"
+            )
     assert (df["far"].dropna().between(0, 1)).all()
     assert (df["false_alert_events_per_day"].dropna() >= 0).all()
 
 
 def test_robustness_schema_distinguishes_observed_and_clean_truth():
     df = _load("robustness_metrics.csv")
-    required = {"dataset", "mode", "scenario", "severity", "empirical_coverage",
-                "empirical_coverage_vs_clean_truth", "mae", "mae_vs_clean_truth"}
+    required = {
+        "dataset",
+        "mode",
+        "scenario",
+        "severity",
+        "empirical_coverage",
+        "empirical_coverage_vs_clean_truth",
+        "mae",
+        "mae_vs_clean_truth",
+    }
     assert required <= set(df.columns)
-    assert set(df["mode"]) <= {"legacy_fixed_intervals", "closed_loop",
-                               "calibration_contamination"}
+    assert set(df["mode"]) <= {"legacy_fixed_intervals", "closed_loop", "calibration_contamination"}
 
 
 def test_recalibration_schema_records_the_residual_delay():
     df = _load("recalibration_metrics.csv")
-    required = {"dataset", "recalibration_strategy", "empirical_coverage",
-                "mean_interval_width", "winkler_score", "n_updates",
-                "residual_delay_steps"}
+    required = {
+        "dataset",
+        "recalibration_strategy",
+        "empirical_coverage",
+        "mean_interval_width",
+        "winkler_score",
+        "n_updates",
+        "residual_delay_steps",
+    }
     assert required <= set(df.columns)
     assert set(df["recalibration_strategy"]) == {"static", "periodic", "rolling"}
     # Static must never update; adaptive strategies must actually have updated.

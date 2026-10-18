@@ -15,8 +15,7 @@ import pytest
 from src import features, robustness_study as rob
 
 FREQ = pd.Timedelta("10min")
-FCFG = {"target_lags": [1, 2, 3], "rolling_windows": [6],
-        "include_weekly": False, "covariates": []}
+FCFG = {"target_lags": [1, 2, 3], "rolling_windows": [6], "include_weekly": False, "covariates": []}
 
 
 def _series(n=400):
@@ -25,8 +24,7 @@ def _series(n=400):
     return pd.Series(20 + np.sin(np.arange(n) / 25) + rng.normal(0, 0.05, n), index=idx)
 
 
-ALL_KINDS = ["random_missing", "block_missing", "bias", "level_shift",
-             "drift", "stuck", "dropout"]
+ALL_KINDS = ["random_missing", "block_missing", "bias", "level_shift", "drift", "stuck", "dropout"]
 
 
 @pytest.mark.parametrize("kind", ALL_KINDS)
@@ -78,7 +76,7 @@ def test_drift_ramps_from_zero_to_the_terminal_magnitude():
     delta = (out - s).to_numpy()
     assert delta[0] == pytest.approx(0.0)
     assert delta[-1] == pytest.approx(2.0)
-    assert np.all(np.diff(delta) >= -1e-12)          # monotone ramp
+    assert np.all(np.diff(delta) >= -1e-12)  # monotone ramp
 
 
 def test_stuck_freezes_the_reading():
@@ -87,15 +85,16 @@ def test_stuck_freezes_the_reading():
     out = rob.perturb_series(s, mask, rob.Scenario("s", "stuck", 0.1), scale=1.0, seed=0)
     changed = np.flatnonzero((out != s).to_numpy())
     assert len(changed) > 0
-    frozen = out.iloc[changed[0] - 1: changed[-1] + 1]
+    frozen = out.iloc[changed[0] - 1 : changed[-1] + 1]
     assert frozen.nunique() == 1
 
 
 def test_missingness_is_reimputed_so_the_model_sees_a_complete_series():
     s = _series()
     mask = np.ones(len(s), dtype=bool)
-    out = rob.perturb_series(s, mask, rob.Scenario("m", "random_missing", 0.05),
-                             scale=1.0, seed=1, max_gap=3)
+    out = rob.perturb_series(
+        s, mask, rob.Scenario("m", "random_missing", 0.05), scale=1.0, seed=1, max_gap=3
+    )
     # Short gaps are filled by the pipeline's own rule; long runs may remain NaN.
     assert out.isna().mean() < 0.05
     assert not out.equals(s)
@@ -103,8 +102,9 @@ def test_missingness_is_reimputed_so_the_model_sees_a_complete_series():
 
 def test_clean_scenario_is_an_exact_copy():
     s = _series()
-    out = rob.perturb_series(s, np.ones(len(s), bool),
-                             rob.Scenario("clean", "none", 0.0), 1.0, seed=0)
+    out = rob.perturb_series(
+        s, np.ones(len(s), bool), rob.Scenario("clean", "none", 0.0), 1.0, seed=0
+    )
     pd.testing.assert_series_equal(out, s)
 
 
@@ -128,10 +128,12 @@ def test_closed_loop_perturbation_propagates_forward_only():
     before = common[common < onset_time]
     after = common[common >= onset_time]
 
-    assert np.allclose(a["X"].loc[before].to_numpy(), b["X"].loc[before].to_numpy()), \
+    assert np.allclose(a["X"].loc[before].to_numpy(), b["X"].loc[before].to_numpy()), (
         "a future corruption changed a past feature row"
-    assert not np.allclose(a["X"].loc[after].to_numpy(), b["X"].loc[after].to_numpy()), \
+    )
+    assert not np.allclose(a["X"].loc[after].to_numpy(), b["X"].loc[after].to_numpy()), (
         "the corruption never reached the later features"
+    )
 
 
 def test_region_mask_from_a_datetime_index_is_a_plain_boolean_array():
@@ -148,12 +150,13 @@ def test_evaluation_separates_observed_from_clean_truth():
     n = 200
     y_clean = np.zeros(n)
     observed = np.zeros(n)
-    observed[100:] = 5.0                              # the sensor starts lying
+    observed[100:] = 5.0  # the sensor starts lying
     point = np.zeros(n)
     lower, upper = np.full(n, -1.0), np.full(n, 1.0)
 
     out = rob.evaluate_intervals_and_alerts(
-        y_clean, observed, point, lower, upper, 0.95, (1, 1), FREQ)
+        y_clean, observed, point, lower, upper, 0.95, (1, 1), FREQ
+    )
 
     # The forecast is perfect against reality...
     assert out["empirical_coverage_vs_clean_truth"] == pytest.approx(1.0)

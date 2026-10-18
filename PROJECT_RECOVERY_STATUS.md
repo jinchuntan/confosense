@@ -221,7 +221,6 @@ Paths below are relative to `smart_building_conformal/` unless stated otherwise.
 | Tracked changes at entry | None |
 | Nonignored untracked files at entry | None |
 | Remote verification | Read-only `git ls-remote` returned the same upstream SHA; no fetch or pull performed |
-| Repository instructions | No `AGENTS.md` or `CLAUDE.md` found in the project; no `AGENTS.md` found in the checked ancestor directories |
 | Files added by this assessment | Only repository-root `PROJECT_RECOVERY_STATUS.md` and `PANEL_RESPONSE_MATRIX.md` |
 
 The outgoing commits, oldest to newest, are:

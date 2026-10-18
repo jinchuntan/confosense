@@ -34,7 +34,7 @@ def test_physical_time_rule_infeasible_when_more_violations_than_steps():
 # ---- D2: group-safe state ----------------------------------------------- #
 def test_kofm_window_resets_at_group_boundary():
     # Two violations straddling a group boundary must NOT satisfy 2-of-3.
-    viol = np.array([0, 1, 1, 0])          # positions 1,2 are violations
+    viol = np.array([0, 1, 1, 0])  # positions 1,2 are violations
     groups = np.array(["A", "A", "B", "B"])  # boundary between pos 1 and 2
     alerts = AC.apply_rule_grouped(viol, k=2, m=3, groups=groups)
     # Within group A only one violation; within B only one -> no 2-of-3 anywhere.
@@ -45,7 +45,7 @@ def test_kofm_fires_within_a_single_group():
     viol = np.array([1, 1, 0, 0])
     groups = np.array(["A", "A", "A", "A"])
     alerts = AC.apply_rule_grouped(viol, k=2, m=3, groups=groups)
-    assert alerts[1]        # two of the last three at pos 1
+    assert alerts[1]  # two of the last three at pos 1
 
 
 def test_episodes_never_span_two_groups():
@@ -65,16 +65,36 @@ def test_alarm_active_before_onset_earns_no_credit():
     # Episode spans positions 0-5; event onset is at position 3. The episode was
     # already active before the onset, so it must NOT count as a detection.
     episodes = [{"group": "A", "start": 0, "end": 5, "onset": 0}]
-    cat = _catalog([{"event_id": 0, "event_type": "bias", "severity": "1.0sd",
-                     "group_id": "A", "start_index": 3, "end_index": 5}])
+    cat = _catalog(
+        [
+            {
+                "event_id": 0,
+                "event_type": "bias",
+                "severity": "1.0sd",
+                "group_id": "A",
+                "start_index": 3,
+                "end_index": 5,
+            }
+        ]
+    )
     res = AC.match_events(episodes, cat, tolerance_steps=1, freq_minutes=1.0)
     assert res["n_detected"] == 0
 
 
 def test_new_onset_inside_event_window_is_detected():
     episodes = [{"group": "A", "start": 4, "end": 6, "onset": 4}]
-    cat = _catalog([{"event_id": 0, "event_type": "bias", "severity": "1.0sd",
-                     "group_id": "A", "start_index": 3, "end_index": 6}])
+    cat = _catalog(
+        [
+            {
+                "event_id": 0,
+                "event_type": "bias",
+                "severity": "1.0sd",
+                "group_id": "A",
+                "start_index": 3,
+                "end_index": 6,
+            }
+        ]
+    )
     res = AC.match_events(episodes, cat, tolerance_steps=1, freq_minutes=1.0)
     assert res["n_detected"] == 1
     assert int(res["per_event"].iloc[0]["detection_delay_steps"]) == 1
@@ -83,12 +103,26 @@ def test_new_onset_inside_event_window_is_detected():
 def test_matching_is_one_to_one():
     # One episode cannot detect two events; the second event stays a miss.
     episodes = [{"group": "A", "start": 5, "end": 5, "onset": 5}]
-    cat = _catalog([
-        {"event_id": 0, "event_type": "bias", "severity": "1.0sd",
-         "group_id": "A", "start_index": 5, "end_index": 6},
-        {"event_id": 1, "event_type": "bias", "severity": "1.0sd",
-         "group_id": "A", "start_index": 5, "end_index": 6},
-    ])
+    cat = _catalog(
+        [
+            {
+                "event_id": 0,
+                "event_type": "bias",
+                "severity": "1.0sd",
+                "group_id": "A",
+                "start_index": 5,
+                "end_index": 6,
+            },
+            {
+                "event_id": 1,
+                "event_type": "bias",
+                "severity": "1.0sd",
+                "group_id": "A",
+                "start_index": 5,
+                "end_index": 6,
+            },
+        ]
+    )
     res = AC.match_events(episodes, cat, tolerance_steps=1, freq_minutes=1.0)
     assert res["n_detected"] == 1
     assert res["per_event"]["detected"].sum() == 1
@@ -96,19 +130,31 @@ def test_matching_is_one_to_one():
 
 def test_background_episode_outside_events_counted_not_as_false_positive():
     episodes = [{"group": "A", "start": 50, "end": 52, "onset": 50}]
-    cat = _catalog([{"event_id": 0, "event_type": "bias", "severity": "1.0sd",
-                     "group_id": "A", "start_index": 5, "end_index": 6}])
+    cat = _catalog(
+        [
+            {
+                "event_id": 0,
+                "event_type": "bias",
+                "severity": "1.0sd",
+                "group_id": "A",
+                "start_index": 5,
+                "end_index": 6,
+            }
+        ]
+    )
     res = AC.match_events(episodes, cat, tolerance_steps=1, freq_minutes=1.0)
     assert res["n_background_episodes"] == 1 and res["n_detected"] == 0
 
 
 # ---- D8: honest metrics ------------------------------------------------- #
 def test_macro_recall_weights_strata_equally():
-    per_event = pd.DataFrame({
-        "event_type": ["a", "a", "a", "b"],
-        "severity": ["s", "s", "s", "s"],
-        "detected": [True, True, True, False],
-    })
+    per_event = pd.DataFrame(
+        {
+            "event_type": ["a", "a", "a", "b"],
+            "severity": ["s", "s", "s", "s"],
+            "detected": [True, True, True, False],
+        }
+    )
     m = AC.macro_event_recall(per_event)
     # micro = 3/4 = 0.75; macro = mean(recall_a=1.0, recall_b=0.0) = 0.5
     assert abs(m["micro_recall"] - 0.75) < 1e-9
@@ -116,7 +162,7 @@ def test_macro_recall_weights_strata_equally():
 
 
 def test_background_workload_per_asset_day():
-    groups = np.array(["A"] * 1440)          # one day at 1-min sampling
+    groups = np.array(["A"] * 1440)  # one day at 1-min sampling
     w = AC.background_workload_per_asset_day(3, groups, freq_minutes=1.0)
     assert abs(w["monitored_asset_days"] - 1.0) < 1e-6
     assert abs(w["background_episodes_per_asset_day"] - 3.0) < 1e-6
@@ -124,24 +170,30 @@ def test_background_workload_per_asset_day():
 
 # ---- D7: abstention ----------------------------------------------------- #
 def test_no_feasible_configuration_when_constraints_unmet():
-    surface = pd.DataFrame({
-        "rule": ["1-of-1", "2-of-3"],
-        "macro_recall": [0.30, 0.20],
-        "background_episodes_per_asset_day": [5.0, 4.0],
-    })
-    out = AC.select_pipeline(surface, min_recall=0.60, workload_max=1.0,
-                             use_confidence_bounds=False)
+    surface = pd.DataFrame(
+        {
+            "rule": ["1-of-1", "2-of-3"],
+            "macro_recall": [0.30, 0.20],
+            "background_episodes_per_asset_day": [5.0, 4.0],
+        }
+    )
+    out = AC.select_pipeline(
+        surface, min_recall=0.60, workload_max=1.0, use_confidence_bounds=False
+    )
     assert out["decision"] == AC.NO_FEASIBLE
 
 
 def test_feasible_candidate_is_selected():
-    surface = pd.DataFrame({
-        "rule": ["1-of-1", "3-of-5"],
-        "macro_recall": [0.80, 0.70],
-        "background_episodes_per_asset_day": [0.5, 0.2],
-        "macro_fbeta": [0.75, 0.72],
-        "median_detection_delay_min": [3.0, 5.0],
-    })
-    out = AC.select_pipeline(surface, min_recall=0.60, workload_max=1.0,
-                             use_confidence_bounds=False)
+    surface = pd.DataFrame(
+        {
+            "rule": ["1-of-1", "3-of-5"],
+            "macro_recall": [0.80, 0.70],
+            "background_episodes_per_asset_day": [0.5, 0.2],
+            "macro_fbeta": [0.75, 0.72],
+            "median_detection_delay_min": [3.0, 5.0],
+        }
+    )
+    out = AC.select_pipeline(
+        surface, min_recall=0.60, workload_max=1.0, use_confidence_bounds=False
+    )
     assert out["decision"] == "selected" and out["rule"] == "1-of-1"

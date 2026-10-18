@@ -75,7 +75,7 @@ def test_executable_config_implements_protocol():
     p = P.load_protocol(PROTO)
     base = load_config(str(EXEC_CFG))
     resolved = P.compile_to_config(p, base)
-    P.assert_config_implements_protocol(p, resolved)   # raises on any gap
+    P.assert_config_implements_protocol(p, resolved)  # raises on any gap
     assert resolved["protocol"]["output_root"] == p.meta.output_root
     assert resolved["paths"]["full_study_dir"].startswith(p.meta.output_root)
 

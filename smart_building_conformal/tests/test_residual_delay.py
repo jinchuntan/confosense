@@ -39,26 +39,26 @@ def test_frontier_is_exactly_h_steps_behind():
 def test_horizon_one_still_respects_a_one_step_delay():
     origins, targets = _times(20, 1)
     frontier = availability_frontier(origins, targets)
-    assert frontier[0] == 0            # nothing observed before the first origin
+    assert frontier[0] == 0  # nothing observed before the first origin
     assert list(frontier) == list(range(20))
 
 
 def test_pool_never_returns_an_unobserved_residual():
     n, h = 60, 6
     origins, targets = _times(n, h)
-    test_resid = np.arange(n, dtype=float)          # residual j has value j
+    test_resid = np.arange(n, dtype=float)  # residual j has value j
     calib_resid = -np.ones(5)
     calib_targets = pd.date_range("2021-05-01", periods=5, freq="10min")
 
-    pool = DelayedResidualPool.build(calib_resid, calib_targets, test_resid,
-                                     origins, targets, h)
+    pool = DelayedResidualPool.build(calib_resid, calib_targets, test_resid, origins, targets, h)
     for i in range(n):
         usable = pool.pool_at(i, include_calibration=False)
         # Values are the indices, so the maximum tells us the newest residual used.
         if len(usable):
             newest = int(usable.max())
             assert targets[newest] <= origins[i], (
-                f"residual {newest} used at origin {i} but its truth lands later")
+                f"residual {newest} used at origin {i} but its truth lands later"
+            )
         assert len(usable) == int(np.sum(targets <= origins[i]))
 
 
@@ -68,16 +68,15 @@ def test_pool_rejects_calibration_overlapping_the_test_period():
     # Calibration truth that lands *after* the first test origin must be refused.
     bad_targets = pd.DatetimeIndex([origins[5]] * 4)
     with pytest.raises(ValueError, match="overlap"):
-        DelayedResidualPool.build(np.zeros(4), bad_targets, np.zeros(n),
-                                  origins, targets, h)
+        DelayedResidualPool.build(np.zeros(4), bad_targets, np.zeros(n), origins, targets, h)
 
 
 def test_rolling_window_keeps_only_the_most_recent_available_residuals():
     n, h = 80, 4
     origins, targets = _times(n, h)
     pool = DelayedResidualPool.build(
-        np.zeros(0), pd.DatetimeIndex([]), np.arange(n, dtype=float),
-        origins, targets, h)
+        np.zeros(0), pd.DatetimeIndex([]), np.arange(n, dtype=float), origins, targets, h
+    )
     win = 10
     for i in range(30, n):
         usable = pool.pool_at(i, window=win, include_calibration=False)
@@ -111,12 +110,10 @@ def test_adaptive_strategy_ignores_residuals_that_have_not_landed_yet():
     resid = rng.normal(size=n)
     point = np.zeros(n)
 
-    clean = DelayedResidualPool.build(calib, calib_targets, resid.copy(),
-                                      origins, targets, h)
+    clean = DelayedResidualPool.build(calib, calib_targets, resid.copy(), origins, targets, h)
     tainted_resid = resid.copy()
-    tainted_resid[60:] = 1e6                      # only the later half is absurd
-    tainted = DelayedResidualPool.build(calib, calib_targets, tainted_resid,
-                                        origins, targets, h)
+    tainted_resid[60:] = 1e6  # only the later half is absurd
+    tainted = DelayedResidualPool.build(calib, calib_targets, tainted_resid, origins, targets, h)
 
     a = recal.apply_strategy(point, clean, 0.9, "periodic", update_every=1, min_samples=5)
     b = recal.apply_strategy(point, tainted, 0.9, "periodic", update_every=1, min_samples=5)
@@ -146,7 +143,12 @@ def test_settings_selection_embargoes_the_calibration_replay_split():
     truth = point + rng.normal(scale=0.3, size=n)
 
     out = recal.select_settings(
-        point, truth, origins, targets, level=0.9, horizon=h,
+        point,
+        truth,
+        origins,
+        targets,
+        level=0.9,
+        horizon=h,
         grid={"update_every": [30, 60], "window": [100, 200], "min_samples": 20},
     )
     assert out["selection"] == "calibration_replay"
@@ -163,8 +165,13 @@ def test_settings_selection_reports_when_calibration_is_too_short():
     n, h = 30, 10
     origins = pd.date_range("2024-02-04", periods=n, freq="1min")
     out = recal.select_settings(
-        np.zeros(n), np.zeros(n), origins, origins + h * pd.Timedelta("1min"),
-        level=0.9, horizon=h, grid={"update_every": [12], "window": [50]},
+        np.zeros(n),
+        np.zeros(n),
+        origins,
+        origins + h * pd.Timedelta("1min"),
+        level=0.9,
+        horizon=h,
+        grid={"update_every": [12], "window": [50]},
     )
     assert out["selection"] == "insufficient_calibration_data"
     assert out["update_every"] == 12

@@ -18,27 +18,42 @@ from src.datasets.base import (
     Provenance,
 )
 
-FCFG = {"target_lags": [1, 2, 3], "rolling_windows": [6],
-        "include_weekly": False, "covariates": ["tmed"]}
+FCFG = {
+    "target_lags": [1, 2, 3],
+    "rolling_windows": [6],
+    "include_weekly": False,
+    "covariates": ["tmed"],
+}
 
 
 def _series(n, group, start, season=144, freq="10min", offset=0.0):
     idx = pd.date_range(start, periods=n, freq=freq)
     rng = np.random.default_rng(abs(hash(group)) % 2**32)
-    frame = pd.DataFrame({
-        "target": offset + 20 + np.sin(np.arange(n) / 20) + rng.normal(0, .05, n),
-        "target_was_missing": np.zeros(n, dtype=int),
-        "tmed": rng.normal(size=n),
-    }, index=idx)
-    return PreparedSeries("synthetic", "t", frame, pd.Timedelta(freq),
-                          group_id=group, season_steps=season, covariates=["tmed"])
+    frame = pd.DataFrame(
+        {
+            "target": offset + 20 + np.sin(np.arange(n) / 20) + rng.normal(0, 0.05, n),
+            "target_was_missing": np.zeros(n, dtype=int),
+            "tmed": rng.normal(size=n),
+        },
+        index=idx,
+    )
+    return PreparedSeries(
+        "synthetic",
+        "t",
+        frame,
+        pd.Timedelta(freq),
+        group_id=group,
+        season_steps=season,
+        covariates=["tmed"],
+    )
 
 
 def grouped_dataset(n_groups=6, n=300, season=None):
     # Runs one day apart so their timestamps cannot be confused for one series.
-    series = [_series(n, f"run{i}", f"2021-03-{i+1:02d}", season=season,
-                      freq="1min", offset=10.0 * i)
-              for i in range(n_groups)]
+    series = [
+        _series(n, f"run{i}", f"2021-03-{i + 1:02d}", season=season, freq="1min", offset=10.0 * i)
+        for i in range(n_groups)
+    ]
     part = GroupPartitioner(fractions=(0.6, 0.2, 0.2)).fit(series)
     return PreparedDataset("synthetic", series, part, Provenance("synthetic", "s"))
 
@@ -89,11 +104,13 @@ def test_group_partitions_are_disjoint_in_time_and_membership():
 
 
 def test_chronological_partitions_do_not_overlap_within_a_building():
-    series = [_series(600, f"b{i}", "2021-01-01", season=24, freq="1h")
-              for i in range(3)]
-    ds = PreparedDataset("synthetic", series,
-                         ChronologicalPartitioner(fractions=(0.6, 0.2, 0.2)),
-                         Provenance("synthetic", "s"))
+    series = [_series(600, f"b{i}", "2021-01-01", season=24, freq="1h") for i in range(3)]
+    ds = PreparedDataset(
+        "synthetic",
+        series,
+        ChronologicalPartitioner(fractions=(0.6, 0.2, 0.2)),
+        Provenance("synthetic", "s"),
+    )
     w = windowing.build_dataset_windows(ds, horizon=3, fcfg=FCFG)
     meta = w["meta"]
     for gid, sub in meta.groupby("group_id"):
@@ -114,8 +131,7 @@ def test_direct_horizon_targets_differ_between_horizons():
     common = m1.index.intersection(m5.index)[:50]
     assert len(common) > 0
     step = ds.freq
-    assert ((m5.loc[common, "target_time"] - m1.loc[common, "target_time"])
-            == 4 * step).all()
+    assert ((m5.loc[common, "target_time"] - m1.loc[common, "target_time"]) == 4 * step).all()
 
 
 def test_seasonal_features_absent_when_no_seasonal_cycle_exists():
@@ -130,11 +146,13 @@ def test_seasonal_features_absent_when_no_seasonal_cycle_exists():
 def test_no_target_time_leakage_across_partitions_chronological():
     """The horizon embargo must stop a train/calibration *target* from landing in
     the next partition, not merely the origin."""
-    series = [_series(600, f"b{i}", "2021-01-01", season=24, freq="1h")
-              for i in range(2)]
-    ds = PreparedDataset("synthetic", series,
-                         ChronologicalPartitioner(fractions=(0.6, 0.2, 0.2)),
-                         Provenance("synthetic", "s"))
+    series = [_series(600, f"b{i}", "2021-01-01", season=24, freq="1h") for i in range(2)]
+    ds = PreparedDataset(
+        "synthetic",
+        series,
+        ChronologicalPartitioner(fractions=(0.6, 0.2, 0.2)),
+        Provenance("synthetic", "s"),
+    )
     w = windowing.build_dataset_windows(ds, horizon=6, fcfg=FCFG)
     meta = w["meta"]
     assert w["n_embargoed"] > 0, "embargo never fired; boundary rows would leak"
@@ -142,10 +160,12 @@ def test_no_target_time_leakage_across_partitions_chronological():
         tr = sub[sub["partition"] == "train"]
         ca = sub[sub["partition"] == "calibration"]
         te = sub[sub["partition"] == "test"]
-        assert tr["target_time"].max() < ca["origin_time"].min(), \
+        assert tr["target_time"].max() < ca["origin_time"].min(), (
             f"{gid}: a training target reaches the calibration window"
-        assert ca["target_time"].max() < te["origin_time"].min(), \
+        )
+        assert ca["target_time"].max() < te["origin_time"].min(), (
             f"{gid}: a calibration target reaches the test window"
+        )
 
 
 def test_horizon_embargo_is_noop_for_group_partitioner():
@@ -174,11 +194,11 @@ def test_feature_config_injects_lag_zero_equal_to_yt():
 
 def test_series_too_short_are_reported_not_silently_dropped():
     short = [_series(20, "tiny", "2021-04-01", season=None, freq="1min")]
-    long = [_series(300, f"ok{i}", f"2021-04-{i+2:02d}", season=None, freq="1min")
-            for i in range(4)]
+    long = [
+        _series(300, f"ok{i}", f"2021-04-{i + 2:02d}", season=None, freq="1min") for i in range(4)
+    ]
     series = short + long
-    ds = PreparedDataset("synthetic", series,
-                         GroupPartitioner().fit(series), Provenance("s", "s"))
+    ds = PreparedDataset("synthetic", series, GroupPartitioner().fit(series), Provenance("s", "s"))
     w = windowing.build_dataset_windows(ds, horizon=30, fcfg=FCFG)
     assert "tiny" in w["skipped_groups"]
     assert "tiny" not in set(w["meta"]["group_id"])
