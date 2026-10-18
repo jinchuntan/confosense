@@ -21,6 +21,11 @@ conditional faults, contamination, and recovery scenarios.
    recovery record. It is useful when auditing historical recovery decisions,
    but is not the current results index.
 
+6. [`report_figures/jbe_operational_20261018/`](report_figures/jbe_operational_20261018/)
+   provides the JBE manuscript alert-tradeoff and coverage-recovery figures,
+   their pinned result tables, captions, and a standalone plotting script.
+   Reproducing these figures only redraws saved results; it does not run experiments.
+
 The current submission history contains the completed forecasting,
 interval-method, seasonal, PLEIA conditional-context, robustness, and bounded
 BDG2 one-hour operational-replay deliveries. Their prior review branches are

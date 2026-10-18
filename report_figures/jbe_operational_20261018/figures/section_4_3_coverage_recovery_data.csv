@@ -1,0 +1,13 @@
+dataset,task,recovery_policy,group_policy_rows,observed_recoveries,right_censored,observed_percent,not_observed_percent,horizon_minutes
+bdg2,BDG2 electricity,periodic,150,150,0,100,0,60
+bdg2,BDG2 electricity,rolling,150,150,0,100,0,60
+bdg2,BDG2 electricity,static,150,150,0,100,0,60
+pleia,PLEIAData temperature,periodic,15,13,2,86.6666666667,13.3333333333,10
+pleia,PLEIAData temperature,rolling,15,15,0,100,0,10
+pleia,PLEIAData temperature,static,15,10,5,66.6666666667,33.3333333333,10
+pleia_energy,PLEIAData energy,periodic,15,13,2,86.6666666667,13.3333333333,10
+pleia_energy,PLEIAData energy,rolling,15,15,0,100,0,10
+pleia_energy,PLEIAData energy,static,15,12,3,80,20,10
+rico,RICO HVAC,periodic,625,523,102,83.68,16.32,5
+rico,RICO HVAC,rolling,625,312,313,49.92,50.08,5
+rico,RICO HVAC,static,625,578,47,92.48,7.52,5
