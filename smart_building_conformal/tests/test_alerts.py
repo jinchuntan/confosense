@@ -25,10 +25,20 @@ def test_inject_events_are_reproducible_and_non_overlapping():
     n = 2000
     clean = np.zeros(n)
     times = pd.date_range("2023-01-01", periods=n, freq="10min")
-    cfg = {"instances_per_type": 2, "level_shift_steps": 12, "drift_steps": 24,
-           "stuck_steps": 12, "warmup_steps": 6, "guard_steps": 6}
-    p1, cat1 = alerts.inject_events(clean, 1.0, pd.Timedelta("10min"), times, cfg, seed=42, dataset_label="test")
-    p2, cat2 = alerts.inject_events(clean, 1.0, pd.Timedelta("10min"), times, cfg, seed=42, dataset_label="test")
+    cfg = {
+        "instances_per_type": 2,
+        "level_shift_steps": 12,
+        "drift_steps": 24,
+        "stuck_steps": 12,
+        "warmup_steps": 6,
+        "guard_steps": 6,
+    }
+    p1, cat1 = alerts.inject_events(
+        clean, 1.0, pd.Timedelta("10min"), times, cfg, seed=42, dataset_label="test"
+    )
+    p2, cat2 = alerts.inject_events(
+        clean, 1.0, pd.Timedelta("10min"), times, cfg, seed=42, dataset_label="test"
+    )
     assert np.allclose(p1, p2)
     assert cat1.equals(cat2)
     # no two events overlap
@@ -40,10 +50,18 @@ def test_inject_events_are_reproducible_and_non_overlapping():
 def test_evaluate_alerts_detects_injected_event():
     n = 500
     times = pd.date_range("2023-01-01", periods=n, freq="10min")
-    catalog = pd.DataFrame([{
-        "start_index": 100, "end_index": 110, "start_time": times[100],
-        "end_time": times[110], "event_type": "level_shift", "severity": "1.0sd",
-    }])
+    catalog = pd.DataFrame(
+        [
+            {
+                "start_index": 100,
+                "end_index": 110,
+                "start_time": times[100],
+                "end_time": times[110],
+                "event_type": "level_shift",
+                "severity": "1.0sd",
+            }
+        ]
+    )
     alerts_flags = np.zeros(n, dtype=bool)
     alerts_flags[103] = True  # a single alert inside the event window
     res = alerts.evaluate_alerts(alerts_flags, catalog, n, pd.Timedelta("10min"), tolerance=6)
@@ -62,8 +80,14 @@ def test_select_rule_returns_valid_rule():
     up = np.full(n, 2.0)
     times = pd.date_range("2023-01-01", periods=n, freq="10min")
     cfg = {
-        "events": {"instances_per_type": 2, "level_shift_steps": 12, "drift_steps": 24,
-                   "stuck_steps": 12, "warmup_steps": 6, "guard_steps": 6},
+        "events": {
+            "instances_per_type": 2,
+            "level_shift_steps": 12,
+            "drift_steps": 24,
+            "stuck_steps": 12,
+            "warmup_steps": 6,
+            "guard_steps": 6,
+        },
         "detection_tolerance_steps": 6,
         "max_false_alerts_per_day": 5.0,
     }

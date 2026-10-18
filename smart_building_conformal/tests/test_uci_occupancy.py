@@ -42,15 +42,17 @@ def _write_archive(raw_dir, jitter=True):
         else:
             stamps = idx
         t = np.linspace(0, 4 * np.pi, n)
-        frame = pd.DataFrame({
-            "date": stamps.strftime("%Y-%m-%d %H:%M:%S"),
-            "Temperature": 21.0 + np.sin(t),
-            "Humidity": 27.0 + np.cos(t),
-            "Light": 400.0 + 50 * np.sin(2 * t),
-            "CO2": 700.0 + 100 * np.cos(2 * t),
-            "HumidityRatio": 0.0047 + 0.0001 * np.sin(t),
-            "Occupancy": (np.sin(t) > 0).astype(int),
-        })
+        frame = pd.DataFrame(
+            {
+                "date": stamps.strftime("%Y-%m-%d %H:%M:%S"),
+                "Temperature": 21.0 + np.sin(t),
+                "Humidity": 27.0 + np.cos(t),
+                "Light": 400.0 + 50 * np.sin(2 * t),
+                "CO2": 700.0 + 100 * np.cos(2 * t),
+                "HumidityRatio": 0.0047 + 0.0001 * np.sin(t),
+                "Occupancy": (np.sin(t) > 0).astype(int),
+            }
+        )
         frame.to_csv(raw_dir / name, index=False)
     return raw_dir
 
@@ -59,10 +61,8 @@ def _cfg(tmp_path, **over):
     cfg = {
         "paths": {"raw_dir": str(tmp_path)},
         "split": {"train_frac": 0.6, "calib_frac": 0.2},
-        "uci_occupancy": {"subdir": "uci_occupancy", "auto_download": False,
-                          "freq": "1min"},
-        "features": {"target_lags": [1, 2, 3], "rolling_windows": [5],
-                     "include_weekly": False},
+        "uci_occupancy": {"subdir": "uci_occupancy", "auto_download": False, "freq": "1min"},
+        "features": {"target_lags": [1, 2, 3], "rolling_windows": [5], "include_weekly": False},
         "horizons": [5, 15],
         "seed": 42,
     }
@@ -109,8 +109,7 @@ def test_reader_refuses_a_file_with_a_hidden_gap(tmp_path):
 
 def test_preparation_keeps_one_series_per_archive_member(prepared):
     assert len(prepared.series) == len(MEMBERS)
-    assert {s.group_id for s in prepared.series} == {
-        m.replace(".txt", "") for m in MEMBERS}
+    assert {s.group_id for s in prepared.series} == {m.replace(".txt", "") for m in MEMBERS}
     assert all(s.units == "degC" for s in prepared.series)
     assert all(s.season_steps is None for s in prepared.series)
 
@@ -128,8 +127,10 @@ def test_target_is_temperature_and_occupancy_is_not_used(prepared):
         assert "target" in s.frame.columns
         assert "Occupancy" not in s.frame.columns
     assert prepared.metadata["target_column"] == "Temperature"
-    assert "performance" in prepared.metadata["target_rationale"] or \
-           "no performance criterion" in prepared.metadata["target_rationale"]
+    assert (
+        "performance" in prepared.metadata["target_rationale"]
+        or "no performance criterion" in prepared.metadata["target_rationale"]
+    )
 
 
 def test_preparation_is_reproducible(tmp_path):
@@ -151,22 +152,26 @@ def test_partitions_are_chronological_and_do_not_interleave(prepared):
     segment 2's training rows, so a model would be fitted on observations
     recorded after forecasts it is scored on.
     """
-    fcfg = windowing.feature_config({"features": {"target_lags": [1, 2],
-                                                  "rolling_windows": [5]}},
-                                    prepared.series[0].covariates)
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2], "rolling_windows": [5]}}, prepared.series[0].covariates
+    )
     w = windowing.build_dataset_windows(prepared, 5, fcfg)
     meta = w["meta"]
-    spans = {p: (meta.loc[meta.partition == p, "origin_time"].min(),
-                 meta.loc[meta.partition == p, "origin_time"].max())
-             for p in ("train", "calibration", "test")}
+    spans = {
+        p: (
+            meta.loc[meta.partition == p, "origin_time"].min(),
+            meta.loc[meta.partition == p, "origin_time"].max(),
+        )
+        for p in ("train", "calibration", "test")
+    }
     assert spans["train"][1] < spans["calibration"][0]
     assert spans["calibration"][1] < spans["test"][0]
 
 
 def test_no_observation_appears_in_two_partitions(prepared):
-    fcfg = windowing.feature_config({"features": {"target_lags": [1, 2],
-                                                  "rolling_windows": [5]}},
-                                    prepared.series[0].covariates)
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2], "rolling_windows": [5]}}, prepared.series[0].covariates
+    )
     w = windowing.build_dataset_windows(prepared, 5, fcfg)
     meta = w["meta"]
     keys = {}
@@ -189,11 +194,10 @@ def test_pooled_partitioner_needs_its_boundaries(prepared):
 # --------------------------------------------------------------------------- #
 def test_no_window_spans_a_recording_gap(prepared):
     """Every window's origin and target must lie inside one segment."""
-    fcfg = windowing.feature_config({"features": {"target_lags": [1, 2],
-                                                  "rolling_windows": [5]}},
-                                    prepared.series[0].covariates)
-    bounds = {s.group_id: (s.frame.index[0], s.frame.index[-1])
-              for s in prepared.series}
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2], "rolling_windows": [5]}}, prepared.series[0].covariates
+    )
+    bounds = {s.group_id: (s.frame.index[0], s.frame.index[-1]) for s in prepared.series}
     for h in (5, 15):
         meta = windowing.build_dataset_windows(prepared, h, fcfg)["meta"]
         for gid, sub in meta.groupby("group_id"):
@@ -203,18 +207,18 @@ def test_no_window_spans_a_recording_gap(prepared):
 
 
 def test_direct_horizon_target_is_the_value_h_steps_ahead(prepared):
-    fcfg = windowing.feature_config({"features": {"target_lags": [1, 2],
-                                                  "rolling_windows": [5]}},
-                                    prepared.series[0].covariates)
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2], "rolling_windows": [5]}}, prepared.series[0].covariates
+    )
     for h in (5, 15):
         w = windowing.build_dataset_windows(prepared, h, fcfg)
         meta, y = w["meta"], w["y"]
         step = prepared.series[0].freq
-        assert (pd.DatetimeIndex(meta["target_time"])
-                - pd.DatetimeIndex(meta["origin_time"]) == h * step).all()
-        lookup = {(s.group_id, t): v
-                  for s in prepared.series
-                  for t, v in s.frame["target"].items()}
+        assert (
+            pd.DatetimeIndex(meta["target_time"]) - pd.DatetimeIndex(meta["origin_time"])
+            == h * step
+        ).all()
+        lookup = {(s.group_id, t): v for s in prepared.series for t, v in s.frame["target"].items()}
         sample = meta.sample(min(50, len(meta)), random_state=0)
         for pos, row in zip(sample.index, sample.itertuples()):
             assert np.isclose(y[pos], lookup[(row.group_id, row.target_time)])
@@ -222,12 +226,14 @@ def test_direct_horizon_target_is_the_value_h_steps_ahead(prepared):
 
 def test_features_never_use_information_after_the_forecast_origin(prepared):
     """Perturb the target strictly after an origin; its features must not move."""
-    fcfg = windowing.feature_config({"features": {"target_lags": [1, 2, 3],
-                                                  "rolling_windows": [5]}},
-                                    prepared.series[0].covariates)
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2, 3], "rolling_windows": [5]}},
+        prepared.series[0].covariates,
+    )
     base = windowing.build_dataset_windows(prepared, 5, fcfg)
 
     import copy
+
     tampered = copy.deepcopy(prepared)
     s = tampered.series[1]
     cut = s.frame.index[len(s.frame) // 2]
@@ -236,8 +242,9 @@ def test_features_never_use_information_after_the_forecast_origin(prepared):
     after = windowing.build_dataset_windows(tampered, 5, fcfg)
 
     meta = base["meta"]
-    keep = ((meta["group_id"] == s.group_id)
-            & (pd.DatetimeIndex(meta["origin_time"]) <= cut)).to_numpy()
+    keep = (
+        (meta["group_id"] == s.group_id) & (pd.DatetimeIndex(meta["origin_time"]) <= cut)
+    ).to_numpy()
     assert keep.sum() > 0
     pd.testing.assert_frame_equal(
         base["X"].loc[keep].reset_index(drop=True),
@@ -252,17 +259,22 @@ def test_features_never_use_information_after_the_forecast_origin(prepared):
 def test_cqr_bounds_are_ordered_on_the_uci_adapter(prepared):
     from src import conformal_cqr
 
-    fcfg = windowing.feature_config({"features": {"target_lags": [1, 2],
-                                                  "rolling_windows": [5]}},
-                                    prepared.series[0].covariates)
+    fcfg = windowing.feature_config(
+        {"features": {"target_lags": [1, 2], "rolling_windows": [5]}}, prepared.series[0].covariates
+    )
     w = windowing.build_dataset_windows(prepared, 5, fcfg)
     idx, X, y = w["idx"], w["X"], w["y"]
     tr, ca, te = idx["train"], idx["calibration"], idx["test"]
     if min(tr.sum(), ca.sum(), te.sum()) < 30:
         pytest.skip("synthetic fixture too small for a conformal fit")
     model = conformal_cqr.fit_cqr(
-        windowing.subset(X, tr), pd.Series(y[tr]),
-        windowing.subset(X, ca), pd.Series(y[ca]), 0.9, 42)
+        windowing.subset(X, tr),
+        pd.Series(y[tr]),
+        windowing.subset(X, ca),
+        pd.Series(y[ca]),
+        0.9,
+        42,
+    )
     res = conformal_cqr.cqr_interval(model, windowing.subset(X, te))
     assert (res["lower"] <= res["upper"]).all()
     assert res["n_crossed_repaired"] >= 0

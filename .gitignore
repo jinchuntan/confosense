@@ -8,5 +8,18 @@ __pycache__/
 .coverage
 htmlcov/
 
+# Local environments, credentials and packaging output.
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+build/
+dist/
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
 # Chromium/Crashpad occasionally writes this unrelated diagnostic at repo root.
 /debug.log

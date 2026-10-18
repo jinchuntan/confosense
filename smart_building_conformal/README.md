@@ -1,197 +1,77 @@
-# ConfoSense scientific package
+# Scientific package
 
-This directory contains the maintained scientific implementation, frozen
-protocols, focused tests, and result artifacts for the ConfoSense dissertation.
-Start with the repository-level [`RESULTS_INDEX.md`](../RESULTS_INDEX.md) for the
-status and evidence links for every completed workstream.
+This directory contains ConfoSense's implementation, tests, experiment definitions
+and saved outputs. Start with the [results index](../RESULTS_INDEX.md) for the
+completed studies and the [development guide](../docs/development.md) for a module map.
 
-## Scope and interpretation
+## Install
 
-The current candidature evidence covers four separately evaluated tasks from
-three source datasets: PLEIA temperature, PLEIA energy, RICO HVAC, and the
-selected Building Data Genome 2 cohort. It includes matched point forecasting,
-own-model conformal intervals, broader interval methods, seasonal baselines,
-two PLEIA conditional-context challenges, and the frozen robustness,
-contamination, and recovery extension. It also includes the completed bounded
-BDG2 one-hour operational causal replay for every candidate supported by an
-exact saved owner.
+The recorded scientific environment used Python 3.11. Exact package versions are
+in [requirements-lock.txt](requirements-lock.txt); supported dependency ranges are
+in [requirements.txt](requirements.txt).
 
-The results are conditional on the recorded datasets, folds, seeds, protocols,
-and fault definitions. They are not proof of universal robustness. The study
-does not establish a general computational advantage for Attention-LSTM over
-XGBoost. Population inference is unavailable because folds, model-seed aliases,
-groups, and stream rows are dependent rather than independent population
-replicates. The operational replay is a bounded BDG2 one-hour evaluation, not
-evidence of universal deployment performance.
+From the repository root:
 
-## Environment setup
-
-The delivered runs used Python 3.11 in a dedicated Windows environment. Exact
-scientific versions are pinned in `requirements-lock.txt`, including MAPIE
-1.4.1, NumPy 2.1.3, pandas 2.2.3, scikit-learn 1.5.2, PyTorch 2.13.0, and XGBoost
-3.2.0.
-
-From this directory on Windows PowerShell:
-
-```powershell
-py -3.11 -m venv .venv
-& .venv/Scripts/python.exe -m pip install --upgrade pip
-& .venv/Scripts/python.exe -m pip install -r requirements-lock.txt
+```sh
+python -m venv .venv
+# Linux/macOS: source .venv/bin/activate
+# PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -r smart_building_conformal/requirements-lock.txt
+python -m pip install -r requirements-dev.txt
 ```
 
-On Linux or macOS, replace `.venv/Scripts/python.exe` with
-`.venv/bin/python`. Raw datasets are not stored in Git; provenance, checksums,
-and exact memberships live in the manifests and frozen protocols. Installing an
-environment does not authorize a scientific rerun.
+Activate the environment before running the install commands. Use Python 3.11
+when creating the environment for scientific reproduction.
 
-## Inspect existing results: lightweight and zero-fit
+## Check the code
 
-Inspection does not require a dataset download, model fit, conformalization, or
-replay. Open these compact starting points:
+From the repository root:
 
-- matched forecasting:
-  `../review/matched_forecasting005_completion_20260923/EVIDENCE_INDEX.md`;
-- interval methods and seasonal benchmark:
-  `../review/matched_intervals_seasonal005_completion_20260924/EVIDENCE_INDEX.md`;
-- PLEIA energy conditional context:
-  `../review/pleia_energy_context005_multiseed_20260915/PLEIA_ENERGY_CONTEXT005_MULTISEED_REPORT.md`;
-- PLEIA temperature conditional context:
-  `../review/pleia_temperature_context005_multiseed_20260923/PLEIA_TEMPERATURE_CONTEXT005_FIVE_SEED_REPORT.md`;
-- robustness, contamination, and recovery:
-  `../review/robustness_contamination_recovery_20260928/COMPLETION_REPORT.md`.
-- BDG2 one-hour operational replay:
-  `../review/operational005_causal_replay_20260925/EVIDENCE_INDEX.md`;
-- consolidated candidature tables and writing facts:
-  `../review/candidature_evidence_package_20261002_v1/`.
-
-For machine-readable completion summaries from the repository root:
-
-```powershell
-Get-Content review/matched_forecasting005_completion_20260923/DELIVERY_RECEIPT.json | ConvertFrom-Json
-Get-Content review/matched_intervals_seasonal005_completion_20260924/PUBLICATION_RECEIPT.json | ConvertFrom-Json
-Get-Content review/pleia_energy_context005_multiseed_20260915/COMPLETION_VERIFICATION.json | ConvertFrom-Json
-Get-Content review/pleia_temperature_context005_multiseed_20260923/COMPLETION_VERIFICATION.json | ConvertFrom-Json
-Get-Content review/robustness_contamination_recovery_20260928/COMPLETION_RESULT.json | ConvertFrom-Json
-Get-Content review/operational005_causal_replay_20260925/DELIVERY_RECEIPT.json | ConvertFrom-Json
+```sh
+python tools/check_repository.py
+python tools/check_repository.py --tests
+ruff check .
+ruff format --check .
 ```
 
-The compact CSV tables and figures linked by those indexes are committed. Bulk
-run trees, checkpoints, and archives may be ignored by Git but remain scientific
-evidence governed by their verified external-backup manifests; ignored does not
-mean disposable.
+The first command parses Python and checks links without importing experiment
+runners. `--tests` adds a small synthetic suite covering metrics, temporal leakage,
+alerts, windowing, statistics, recalibration and figure generation. It does not
+need raw data or train models.
 
-## Maintained implementation
+Run the wider package suite from this directory after installing the scientific
+dependencies:
 
-| Responsibility | Maintained modules |
-|---|---|
-| Dataset adapters and temporal identities | `src/datasets/`, `src/matched_data005.py`, `src/split_integrity.py`, `src/timebase.py` |
-| Point models and matched forecasting | `src/matched_models005.py`, `src/matched_forecasting005.py`, `src/matched_validation005.py`, `src/unit_checkpoint.py` |
-| Conformal methods and interval comparison | `src/conformal_cqr.py`, `src/conformal_enbpi.py`, `src/conformal_dscp.py`, `src/conformal_acp.py`, `src/matched_intervals005.py`, `src/intervals005_common.py`, `src/intervals005_data.py`, `src/intervals005_owners.py`, `src/intervals005_stream.py`, `src/intervals005_validate.py` |
-| Conditional-context replay and alerts | `src/conditional_context005.py`, `src/context005_data.py`, `src/context005_features.py`, `src/context005_metrics.py`, `src/context005_owner.py`, `src/context005_spec.py`, `src/context005_validate.py`, `src/alerts_corrected.py`, `src/residuals.py` |
-| Operational alert design used by saved-owner replay | `src/operational004_design.py`, `src/operational004_engine.py`, `src/operational004_events.py`, `src/operational004_metrics.py`, `src/operational004_stream.py`, `src/operational004_verification.py` |
-| Study assembly and reporting | `src/corrected_study.py`, `src/reporting.py`, `src/statistics.py`, `src/seasonal.py` |
-
-The package-level modules contain reusable science. Dated scripts under
-`../review/` bind frozen protocols, hash identities, validation, recovery, and
-delivery for a particular completed execution.
-
-## Required versioned adapters
-
-Some accepted results intentionally depend on versioned adapters outside
-`src/`; moving their logic into frozen source would erase provenance.
-
-- `../review/matched_intervals_seasonal005_completion_20260924/corrected_validator_v1.py`
-  preserves the independently derived MAPIE 1.4.1 rank-arithmetic correction.
-  `corrected_validator_v2.py` adds the fresh-process import bootstrap without
-  changing that arithmetic, tolerances, or scientific outputs.
-- `../review/robustness_contamination_recovery_20260928/robustness_saved_owner_v1.py`
-  replays exact saved owners for the frozen 900-cell extension;
-  `validate_saved_owner_v1.py` is its independent validator.
-- Conditional-context and completion coordinators in their dated review
-  directories bind exact protocols and accepted checkpoint identities. They are
-  preserved reproduction dependencies, not a second maintained framework.
-
-The completed operational adapter and delivery scripts under
-`../review/operational005_causal_replay_20260925/` bind the frozen candidate
-definitions, exact saved owners, independent block validation, zero-fit resume,
-aggregation, backup, and publication receipts. They are versioned dependencies
-for that bounded delivery, not a general-purpose replacement for maintained
-modules.
-
-## Entry-point discovery and focused checks
-
-These commands only show the maintained command surfaces:
-
-```powershell
-python -m src.matched_forecasting005 --help
-python -m src.matched_intervals005 --help
-python -m src.conditional_context005 --help
-python ../review/robustness_contamination_recovery_20260928/completion_v1.py --help
+```sh
+python -m pytest
 ```
 
-These focused tests use synthetic or saved fixtures and perform no model fit or
-scientific replay:
+Some integration tests require committed protocol files, saved evidence or small
+model fits. The smoke suite is the lightweight option for routine maintenance.
 
-```powershell
-python -m pytest -q tests/test_residual_delay.py
-python -m pytest -q tests/test_matched_forecasting005.py::test_future_observations_do_not_change_training_inputs tests/test_matched_forecasting005.py::test_tuning_rejects_calibration_test_contamination_and_future_targets tests/test_matched_forecasting005.py::test_forbidden_fit_guard_stops_before_model_body
-python -m pytest -q ../review/matched_intervals_seasonal005_completion_20260924/test_corrected_validator_v1.py ../review/robustness_contamination_recovery_20260928/test_saved_owner_v1.py ../review/robustness_contamination_recovery_20260928/test_completion_v1.py
-```
+## Implementation
 
-## Reproduce experiments: expensive and protocol-bound
+| Area | Modules |
+| --- | --- |
+| Data and temporal splits | [datasets](src/datasets/), [split_integrity](src/split_integrity.py), [windowing](src/windowing.py) |
+| Matched forecasts | [matched_forecasting005](src/matched_forecasting005.py), [matched_models005](src/matched_models005.py) |
+| Conformal intervals | [conformal_cqr](src/conformal_cqr.py), [conformal_enbpi](src/conformal_enbpi.py), [conformal_dscp](src/conformal_dscp.py), [matched_intervals005](src/matched_intervals005.py) |
+| Monitoring | [conditional_context005](src/conditional_context005.py), [alerts_corrected](src/alerts_corrected.py), [residuals](src/residuals.py), [recalibration](src/recalibration.py) |
+| Metrics and reporting | [metrics](src/metrics.py), [reporting](src/reporting.py), [statistics](src/statistics.py) |
+| Checkpoint integrity | [unit_checkpoint](src/unit_checkpoint.py) |
 
-Scientific reproduction is deliberately separate from inspection. It requires
-the original data, the exact locked environment, sufficient RAM and storage,
-the frozen protocol and authorization files, and a new non-overwriting output
-path. The exact instantiated argument arrays are recorded in each dated
-coordinator's attempt receipts. Those arrays, rather than an edited README
-example, are authoritative for a bit-for-bit scope audit.
+The dated [review adapters](../review/) supply the exact saved-owner replay,
+independent interval-rank correction and completion validation used by particular
+published runs. The [reproducibility guide](../docs/reproducibility.md) identifies them.
 
-The family-level execution entry points retained by the delivered workflows
-are:
+## Recorded experiments
 
-```powershell
-# Repository root; completed queues are identity-checked and should be no-ops.
-python -B review/matched_forecasting005_completion_20260923/batch.py coordinate
-python -B review/matched_intervals_seasonal005_completion_20260924/coordinator.py --run
-python -B review/pleia_energy_context005_multiseed_20260915/coordinator.py
-python -B review/pleia_temperature_context005_multiseed_20260923/coordinator.py
+Saved checkpoints include hashes of the scientific source, configuration and
+input identities. Formatting a source file changes that identity, even when its
+calculations stay the same. The development formatter therefore covers tests and
+tools; it leaves the recorded scientific source and evidence outside its scope.
 
-# One frozen robustness unit; UNIT_KEY must come from CROSSWALK.csv.
-python -B review/robustness_contamination_recovery_20260928/completion_v1.py run-unit --unit UNIT_KEY
-```
-
-These are expensive/recovery commands, not reviewer inspection commands. The
-completed coordinators are closed, the robustness extension requires no further
-execution, and the completed operational supervisor must remain stopped. Any fresh
-reproduction should be explicitly authorized and isolated from accepted output
-paths.
-
-## Superseded historical commands
-
-The following remain in the repository solely for historical reproduction and
-comparison with earlier dissertation stages:
-
-- `python -m src.run_experiment --config configs/pleia_preliminary.yaml` — the
-  preliminary PLEIA experiment;
-- `python -m src.run_study --config configs/study_full.yaml --all` — the generic
-  pre-amendment full-study driver;
-- `python -m src.run_uci_auxiliary --config configs/uci_auxiliary.yaml` — the
-  auxiliary portability check.
-
-They are not authoritative entry points for the accepted matched, interval,
-conditional-context, or robustness results and must not overwrite their frozen
-artifacts.
-
-## Repository conventions
-
-- Never treat seed aliases, folds, groups, or stream rows as independent
-  population replicates without a justified design.
-- Keep unavailable metrics explicit; do not manufacture scalar summaries for
-  unsupported multi-group outcomes.
-- Use explicit Git staging lists. Bulk output exclusions are narrow preservation
-  boundaries, not permission to delete evidence.
-- Preserve frozen protocols, failed attempts, saved owners, operation ledgers,
-  validation receipts, and backup manifests.
-- Main is not the candidature integration branch; use the submission review
-  branch named in the root results index and delivery handoff.
+Use the protocol, source version, dependency environment and output paths recorded
+by the study being reproduced. Historical commands such as `src.run_experiment`,
+`src.run_study --all` and `src.run_uci_auxiliary` remain available, but do not
+regenerate every completed study. Use a separate output directory for fresh runs.

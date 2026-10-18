@@ -19,7 +19,7 @@ def _times(n):
 def test_k_of_m_fires_exactly_when_k_of_the_last_m_are_violations():
     v = np.array([0, 1, 1, 0, 0, 1, 1, 1, 0], dtype=bool)
     got = base.apply_rule(v, 2, 3)
-    expected = [sum(v[max(0, i - 2): i + 1]) >= 2 for i in range(len(v))]
+    expected = [sum(v[max(0, i - 2) : i + 1]) >= 2 for i in range(len(v))]
     assert list(got) == expected
 
     # 1-of-1 is just the violation series itself.
@@ -29,11 +29,10 @@ def test_k_of_m_fires_exactly_when_k_of_the_last_m_are_violations():
 
 
 def test_rule_parsing_accepts_configured_names_and_rejects_nonsense():
-    assert alert_study.parse_rules(["2-of-3", "4-of-7"]) == {
-        "2-of-3": (2, 3), "4-of-7": (4, 7)}
+    assert alert_study.parse_rules(["2-of-3", "4-of-7"]) == {"2-of-3": (2, 3), "4-of-7": (4, 7)}
     assert alert_study.parse_rules(["5-of-9"])["5-of-9"] == (5, 9)
     with pytest.raises(ValueError):
-        alert_study.parse_rules(["7-of-3"])          # k > m
+        alert_study.parse_rules(["7-of-3"])  # k > m
     with pytest.raises(ValueError):
         alert_study.parse_rules(["nonsense"])
 
@@ -53,22 +52,22 @@ def test_far_is_a_point_rate_over_non_event_timesteps():
 
 def test_far_and_false_alerts_per_day_are_different_quantities():
     """A single long alert run is one workload event but many false points."""
-    n = 144                                        # one day at 10-min sampling
+    n = 144  # one day at 10-min sampling
     alerts = np.zeros(n, dtype=bool)
-    alerts[100:140] = True                         # one contiguous cluster
+    alerts[100:140] = True  # one contiguous cluster
     event = np.zeros(n, dtype=bool)
 
     far = alert_study.false_alarm_rate(alerts, event)["far"]
     per_day = base.natural_false_alerts(alerts, n, FREQ)
 
-    assert far == pytest.approx(40 / n)            # 40 offending timesteps
-    assert per_day["false_positives"] == 1         # but only one cluster
+    assert far == pytest.approx(40 / n)  # 40 offending timesteps
+    assert per_day["false_positives"] == 1  # but only one cluster
     assert per_day["false_alert_events_per_day"] == pytest.approx(1.0)
     assert far != per_day["false_alert_events_per_day"]
 
 
 def test_false_alerts_per_day_scales_with_the_observation_span():
-    n = 144 * 2                                    # two days at 10-min sampling
+    n = 144 * 2  # two days at 10-min sampling
     alerts = np.zeros(n, dtype=bool)
     alerts[10] = alerts[100] = alerts[200] = True  # three separate clusters
     out = base.natural_false_alerts(alerts, n, FREQ)
@@ -86,7 +85,7 @@ def _catalog(rows):
 def test_event_is_detected_when_an_alert_falls_in_its_tolerance_window():
     n = 100
     alerts = np.zeros(n, dtype=bool)
-    alerts[52] = True                              # inside the event
+    alerts[52] = True  # inside the event
     cat = _catalog([(50, 55)])
     out = base.evaluate_alerts(alerts, cat, n, FREQ, tolerance=6)
     assert out["true_positives"] == 1
@@ -99,7 +98,7 @@ def test_event_is_detected_when_an_alert_falls_in_its_tolerance_window():
 def test_alert_just_past_the_tolerance_is_a_miss_and_a_false_alert():
     n = 100
     alerts = np.zeros(n, dtype=bool)
-    alerts[70] = True                              # event ends 55, +6 tolerance
+    alerts[70] = True  # event ends 55, +6 tolerance
     cat = _catalog([(50, 55)])
     out = base.evaluate_alerts(alerts, cat, n, FREQ, tolerance=6)
     assert out["true_positives"] == 0
@@ -120,8 +119,8 @@ def test_detection_delay_uses_the_first_alert_in_the_window():
 def test_precision_recall_f1_are_consistent():
     n = 200
     alerts = np.zeros(n, dtype=bool)
-    alerts[20] = True                              # detects event 1
-    alerts[150] = True                             # spurious
+    alerts[20] = True  # detects event 1
+    alerts[150] = True  # spurious
     cat = _catalog([(18, 25), (100, 110)])
     out = base.evaluate_alerts(alerts, cat, n, FREQ, tolerance=4)
     assert out["true_positives"] == 1
@@ -145,8 +144,8 @@ def test_injection_never_modifies_the_clean_array_in_place():
     snapshot = clean.copy()
     cfg = {"instances_per_type": 2, "warmup_steps": 5, "guard_steps": 5}
     perturbed, cat = alert_study.inject_events(
-        clean, 1.0, FREQ, _times(len(clean)), cfg, seed=1,
-        dataset="d", target="t", partition="test")
+        clean, 1.0, FREQ, _times(len(clean)), cfg, seed=1, dataset="d", target="t", partition="test"
+    )
     assert np.array_equal(clean, snapshot), "the held-out clean array was mutated"
     assert perturbed is not clean
     assert not np.array_equal(perturbed, clean)
@@ -157,11 +156,29 @@ def test_catalog_records_every_required_field():
     clean = _clean()
     cfg = {"instances_per_type": 2, "warmup_steps": 5, "guard_steps": 5}
     _, cat = alert_study.inject_events(
-        clean, 1.0, FREQ, _times(len(clean)), cfg, seed=7,
-        dataset="pleia", target="V2", partition="test")
-    required = {"dataset", "target", "event_type", "severity", "start_index",
-                "end_index", "start_time", "end_time", "duration_steps",
-                "injected_magnitude", "seed"}
+        clean,
+        1.0,
+        FREQ,
+        _times(len(clean)),
+        cfg,
+        seed=7,
+        dataset="pleia",
+        target="V2",
+        partition="test",
+    )
+    required = {
+        "dataset",
+        "target",
+        "event_type",
+        "severity",
+        "start_index",
+        "end_index",
+        "start_time",
+        "end_time",
+        "duration_steps",
+        "injected_magnitude",
+        "seed",
+    }
     assert required <= set(cat.columns)
     assert (cat["end_index"] >= cat["start_index"]).all()
     assert (cat["duration_steps"] >= 1).all()
@@ -187,10 +204,19 @@ def test_events_do_not_straddle_a_group_boundary():
     groups = np.array(["A"] * 300 + ["B"] * 300)
     cfg = {"instances_per_type": 3, "warmup_steps": 5, "guard_steps": 5}
     _, cat = alert_study.inject_events(
-        clean, 1.0, FREQ, _times(n), cfg, seed=2,
-        dataset="rico", target="t", partition="test", group_ids=groups)
+        clean,
+        1.0,
+        FREQ,
+        _times(n),
+        cfg,
+        seed=2,
+        dataset="rico",
+        target="t",
+        partition="test",
+        group_ids=groups,
+    )
     for _, r in cat.iterrows():
-        span = set(groups[int(r["start_index"]): int(r["end_index"]) + 1])
+        span = set(groups[int(r["start_index"]) : int(r["end_index"]) + 1])
         assert len(span) == 1, "an event crossed a run boundary"
 
 
@@ -198,26 +224,50 @@ def test_events_do_not_straddle_a_group_boundary():
 # Rule selection
 # --------------------------------------------------------------------------- #
 def test_rule_selection_prefers_recall_within_the_false_alert_budget():
-    surface = pd.DataFrame([
-        {"rule": "1-of-1", "recall": 1.00, "median_detection_delay_min": 0.0,
-         "false_alert_events_per_day": 9.0},
-        {"rule": "2-of-3", "recall": 0.90, "median_detection_delay_min": 10.0,
-         "false_alert_events_per_day": 0.8},
-        {"rule": "3-of-5", "recall": 0.70, "median_detection_delay_min": 20.0,
-         "false_alert_events_per_day": 0.4},
-    ])
+    surface = pd.DataFrame(
+        [
+            {
+                "rule": "1-of-1",
+                "recall": 1.00,
+                "median_detection_delay_min": 0.0,
+                "false_alert_events_per_day": 9.0,
+            },
+            {
+                "rule": "2-of-3",
+                "recall": 0.90,
+                "median_detection_delay_min": 10.0,
+                "false_alert_events_per_day": 0.8,
+            },
+            {
+                "rule": "3-of-5",
+                "recall": 0.70,
+                "median_detection_delay_min": 20.0,
+                "false_alert_events_per_day": 0.4,
+            },
+        ]
+    )
     chosen, reason = alert_study.select_rule(surface, budget=1.0)
-    assert chosen == "2-of-3"          # 1-of-1 has the best recall but busts budget
+    assert chosen == "2-of-3"  # 1-of-1 has the best recall but busts budget
     assert "calibration data only" in reason
 
 
 def test_rule_selection_falls_back_and_says_so_when_no_rule_meets_budget():
-    surface = pd.DataFrame([
-        {"rule": "2-of-3", "recall": 0.9, "median_detection_delay_min": 10.0,
-         "false_alert_events_per_day": 8.0},
-        {"rule": "3-of-5", "recall": 0.8, "median_detection_delay_min": 20.0,
-         "false_alert_events_per_day": 5.0},
-    ])
+    surface = pd.DataFrame(
+        [
+            {
+                "rule": "2-of-3",
+                "recall": 0.9,
+                "median_detection_delay_min": 10.0,
+                "false_alert_events_per_day": 8.0,
+            },
+            {
+                "rule": "3-of-5",
+                "recall": 0.8,
+                "median_detection_delay_min": 20.0,
+                "false_alert_events_per_day": 5.0,
+            },
+        ]
+    )
     chosen, reason = alert_study.select_rule(surface, budget=1.0)
     assert chosen == "3-of-5"
     assert "no candidate met the budget" in reason
@@ -231,14 +281,30 @@ def test_rule_surface_labels_its_role_and_scores_every_candidate():
     cat = _catalog([(50, 60)])
     rules = alert_study.parse_rules(["1-of-1", "2-of-3", "3-of-5"])
     surf = alert_study.rule_surface(
-        clean, lower, upper, cat, rules, FREQ, 5,
-        context={"dataset": "d"}, role="calibration_selection")
+        clean,
+        lower,
+        upper,
+        cat,
+        rules,
+        FREQ,
+        5,
+        context={"dataset": "d"},
+        role="calibration_selection",
+    )
     assert len(surf) == 3
     assert set(surf["rule"]) == set(rules)
     assert (surf["role"] == "calibration_selection").all()
-    for col in ("precision", "recall", "f1", "far",
-                "false_alert_events_per_day", "mean_detection_delay_min",
-                "median_detection_delay_min", "k", "m"):
+    for col in (
+        "precision",
+        "recall",
+        "f1",
+        "far",
+        "false_alert_events_per_day",
+        "mean_detection_delay_min",
+        "median_detection_delay_min",
+        "k",
+        "m",
+    ):
         assert col in surf.columns
 
 
@@ -343,11 +409,27 @@ def test_selected_rule_is_deterministic_under_a_fixed_seed():
 
     def choose():
         pert, cat = alert_study.inject_events(
-            clean, 1.0, FREQ, times, {"instances_per_type": 2}, seed=7,
-            dataset="d", target="t", partition="calibration_rule_block")
+            clean,
+            1.0,
+            FREQ,
+            times,
+            {"instances_per_type": 2},
+            seed=7,
+            dataset="d",
+            target="t",
+            partition="calibration_rule_block",
+        )
         surf = alert_study.rule_surface(
-            pert, clean - 1.0, clean + 1.0, cat, rules, FREQ, 5,
-            context={"dataset": "d"}, role="calibration_selection")
+            pert,
+            clean - 1.0,
+            clean + 1.0,
+            cat,
+            rules,
+            FREQ,
+            5,
+            context={"dataset": "d"},
+            role="calibration_selection",
+        )
         return alert_study.select_rule(surf, 1.0)
 
     first, second = choose(), choose()

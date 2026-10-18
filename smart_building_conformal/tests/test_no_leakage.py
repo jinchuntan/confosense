@@ -12,17 +12,24 @@ def _make_df(n=2000):
     idx = pd.date_range("2021-01-01", periods=n, freq="10min")
     rng = np.random.default_rng(0)
     target = 20 + np.sin(np.arange(n) * 2 * np.pi / SEASON) + rng.normal(scale=0.1, size=n)
-    df = pd.DataFrame({
-        "target": target,
-        "target_was_missing": np.zeros(n, dtype=int),
-        "tmed": rng.normal(size=n),
-    }, index=idx)
+    df = pd.DataFrame(
+        {
+            "target": target,
+            "target_was_missing": np.zeros(n, dtype=int),
+            "tmed": rng.normal(size=n),
+        },
+        index=idx,
+    )
     df.index.name = "timestamp"
     return df
 
 
-CFG = {"target_lags": [1, 2, 3], "rolling_windows": [6], "include_weekly": False,
-       "covariates": ["tmed"]}
+CFG = {
+    "target_lags": [1, 2, 3],
+    "rolling_windows": [6],
+    "include_weekly": False,
+    "covariates": ["tmed"],
+}
 
 
 def test_targets_and_baselines_are_leak_free():

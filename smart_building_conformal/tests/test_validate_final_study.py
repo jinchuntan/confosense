@@ -17,8 +17,7 @@ def test_validator_passes_design_checks_now():
 
 
 def test_publication_mode_rejects_historical_evidence_after_integration_defects():
-    rep = V.run("outputs/final_dissertation_v2", run_tests=False,
-                mode="publication")
+    rep = V.run("outputs/final_dissertation_v2", run_tests=False, mode="publication")
     by = {c.name: c for c in rep.checks}
     # Historical files remain present; existence does not validate repaired code.
     assert by["full_nonfast_run_present"].ok
