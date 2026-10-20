@@ -1,4 +1,5 @@
 # ConfoSense
+<img width="6333" height="3240" alt="Building_Context_and_Data_Sources" src="https://github.com/user-attachments/assets/4ed36412-06d2-4830-b4e1-4fd37f4b588c" />
 
 Uncertainty-aware forecasting and alerting for smart-building sensor data.
 
