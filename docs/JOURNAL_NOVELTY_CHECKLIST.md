@@ -2,6 +2,8 @@
 
 Updated: 2 November 2026. Project: ConfoSense. Continuation of “Verify paper data”.
 
+The current submission plan for the stuck-sensor paper is the [prioritized checklist in the paired replay report](../experiments/injection_feedback_20261102/README.md#submission-checklist). The entries below record the earlier matched-workload study and its original research question.
+
 ## Scientific objective
 
 Establish a specific, useful finding about when calibrated uncertainty improves

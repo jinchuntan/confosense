@@ -59,13 +59,28 @@ A defensible lead is that overall event recall can conceal an almost complete lo
 
 ## Submission checklist
 
-- [x] Compare the same events and alert policies with and without meter feedback. Report both individual switches and changes in aggregate recall.
-- [x] Separate first alarms during the disturbance from alarms that start after it, and verify the previously reported live margins.
-- [x] Include a deployable specialist rule, its achieved workload and its short-duration limitations. Report the delayed-input control even where it fails.
-- [x] Repeat the stuck-sensor comparison on a separate temperature stream with a different forecaster.
-- [ ] Verify the submission-bound XGBoost implementation and audit the original manuscript's event-injection path before reusing its headline numbers.
-- [ ] Validate against naturally occurring, independently documented freezes and legitimate steady readings. Seek a device heartbeat, a redundant instrument, or a fault ticket with start and clearance times. Ground truth determined by the repeated-value rule itself would make this comparison circular.
-- [ ] Rewrite the abstract, first figure and discussion around the paired experiment. Present general interval coverage and the earlier recovery result as supporting analyses. Report the fault mixture, prospective alarm budget, achieved workload and operational limitations.
+**Proposed article.** How much timely detection of frozen building sensors disappears when a benchmark feeds faulty readings back into the forecast, and what can a building operator use to catch those freezes? The primary result is paired by event. Across the two BDG2 cohorts, 23 of 343 previously timely detections remained timely under feedback. One other event became timely, giving 24 timely detections in the feedback replay.
+
+### Evidence already in hand
+
+- [x] Compare the same injected events, numerical detector, locked thresholds, scoring window and background workload under both forecast histories on 20 buildings across 16 BDG2 sites.
+- [x] Trace each credited first alarm to during the freeze, after clearance or a miss. Report the individual event switches alongside overall recall.
+- [x] Compare the forecast alarm with a consecutive-identical-readings rule and a delayed-input forecast. Report their achieved workload, fault-family results and failure cases.
+- [x] Repeat the comparison on a separate ten-minute temperature stream with a different forecaster. Record the short freezes missed by both deployable rules. Both datasets use simulated faults.
+
+### Work to complete, in order
+
+Start items 1 and 2 in parallel. Their outcomes determine the main claim before the manuscript rewrite.
+
+1. [ ] **Reproduce the result with the submitted XGBoost pipeline.** Trace where the original code injects faults relative to lag construction and prediction. Freeze one model and threshold, log the history used for each forecast, and replay identical events both ways. Save the paired event table and the achieved workload. Establish which setup generated the original Table 6 before reusing its 25.53% figure.
+2. [ ] **Obtain independently verified freezes and legitimate steady periods.** Identify a raw building stream with a frozen-primary-sensor incident confirmed by a redundant instrument, device log or maintenance record, including onset and clearance. Label confirmed faults, confirmed steady operation and ambiguous intervals before examining detector output. Keep a separate untouched test set. A flatline alone cannot establish the label.
+3. [ ] **Evaluate the operational claim on those labels.** Lock thresholds on earlier data. Compare the forecast and repeated-reading alarms on the same incidents. Count first alarms during the fault, alarms after clearance, misses, and alerts during verified steady operation. Report incident counts, exposure and background episodes per meter-day. Reconstruct the clean-history comparison on a field incident only when an independent reference supports the missing counterfactual readings.
+4. [ ] **Check robustness and uncertainty.** Show paired results by site, fault duration and meter resolution, including legitimate plateaus and small fluctuations if available. Report achieved workload and time in alert across the selected budgets. Estimate uncertainty at the site or incident level as supported by the sample, and show how the result changes when each site is omitted. Repeated placements on one meter share evidence.
+5. [ ] **Establish the precise literature gap.** Read the methods and available code of the closest building and industrial-monitoring papers. For each, record whether altered readings enter later forecasts, how late alarms earn credit, how faults are confirmed, and whether a repeated-reading baseline is tested. Mark unclear cases as unknown. State the contribution in terms of the comparison the evidence supports.
+6. [ ] **Rewrite the manuscript and resolve the reviews.** Lead the abstract with the supported claim. Put one timestamped replay in Figure 1, show paired transitions and background workload in the main results, and explicitly identify the exploratory stuck-sensor analysis. Map each original reviewer objection to a revision or a stated limitation. Keep any claim about naturally occurring faults proportional to the field evidence.
+7. [ ] **Make the submission reproducible and choose the journal.** Regenerate the headline counts and figures from a clean checkout, reconcile the 23 retained versus 24 total timely hits, tag the revision, and document the data rights. Check the journal's current scope, quartile under the relevant index and UM eligibility before submission.
+
+**Submission decision.** A Q1 building-monitoring submission is worth pursuing if the manuscript-model audit confirms the mechanism, independently documented cases establish its practical relevance, and the closest-work comparison supports the scoped contribution. If field labels remain unavailable, frame the paper around the controlled benchmark and reserve field-performance claims for later work. If XGBoost or the field cases behave differently, report the conditions under which the effect appears and reassess the headline before choosing the target.
 
 ## Reproduction and scope
 
