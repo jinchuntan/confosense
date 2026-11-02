@@ -1,0 +1,164 @@
+[
+  {
+    "cohort": "pilot",
+    "fold": 0,
+    "arm": "delay",
+    "policy": {
+      "method": "asymmetric_cqr",
+      "level": 0.96119,
+      "lower_correction": 5.638582638523417,
+      "upper_correction": 37.92433105309374,
+      "selection_workload": 0.47557603686635946,
+      "selection_time_in_alert": 0.033640552995391704
+    },
+    "test_rows": 34722,
+    "background_episodes": 608,
+    "background_rate": 0.42025228961465355,
+    "time_in_alert": 0.035539427452335695
+  },
+  {
+    "cohort": "pilot",
+    "fold": 1,
+    "arm": "delay",
+    "policy": {
+      "method": "asymmetric_cqr",
+      "level": 0.9592,
+      "lower_correction": 2.4656803470583073,
+      "upper_correction": 20.811458266440127,
+      "selection_workload": 0.47159963156278784,
+      "selection_time_in_alert": 0.039530242554498
+    },
+    "test_rows": 34635,
+    "background_episodes": 735,
+    "background_rate": 0.509311390212213,
+    "time_in_alert": 0.046484769741590874
+  },
+  {
+    "cohort": "pilot",
+    "fold": 2,
+    "arm": "delay",
+    "policy": {
+      "method": "asymmetric_cqr",
+      "level": 0.95721,
+      "lower_correction": 2.944696972594972,
+      "upper_correction": 20.644868463349383,
+      "selection_workload": 0.49061384314177126,
+      "selection_time_in_alert": 0.04295750316710814
+    },
+    "test_rows": 34500,
+    "background_episodes": 781,
+    "background_rate": 0.5433043478260869,
+    "time_in_alert": 0.042782608695652175
+  },
+  {
+    "cohort": "replication",
+    "fold": 0,
+    "arm": "delay",
+    "policy": {
+      "method": "asymmetric_cqr",
+      "level": 0.95,
+      "lower_correction": 1.609302667230434,
+      "upper_correction": 9.545513727790677,
+      "selection_workload": 0.4979714848730729,
+      "selection_time_in_alert": 0.04091804798887214
+    },
+    "test_rows": 33245,
+    "background_episodes": 765,
+    "background_rate": 0.5522634982704167,
+    "time_in_alert": 0.04915024815761769
+  },
+  {
+    "cohort": "replication",
+    "fold": 1,
+    "arm": "delay",
+    "policy": {
+      "method": "asymmetric_cqr",
+      "level": 0.94527,
+      "lower_correction": 3.3488585806670983,
+      "upper_correction": 6.503797797142852,
+      "selection_workload": 0.4809066272480907,
+      "selection_time_in_alert": 0.04639894883797323
+    },
+    "test_rows": 32646,
+    "background_episodes": 644,
+    "background_rate": 0.47344238191508914,
+    "time_in_alert": 0.04689701647981376
+  },
+  {
+    "cohort": "replication",
+    "fold": 2,
+    "arm": "delay",
+    "policy": {
+      "method": "asymmetric_cqr",
+      "level": 0.9592,
+      "lower_correction": 1.234838911536876,
+      "upper_correction": 1.6248785033502458,
+      "selection_workload": 0.47267923621952684,
+      "selection_time_in_alert": 0.037768704215203557
+    },
+    "test_rows": 32354,
+    "background_episodes": 844,
+    "background_rate": 0.6260740557581752,
+    "time_in_alert": 0.05062743401125054
+  },
+  {
+    "cohort": "pilot",
+    "fold": 0,
+    "arm": "flat",
+    "min_repeats": 1,
+    "test_rows": 34722,
+    "background_episodes": 592,
+    "background_rate": 0.40919301883532055,
+    "time_in_alert": 0.06937964402972178
+  },
+  {
+    "cohort": "pilot",
+    "fold": 1,
+    "arm": "flat",
+    "min_repeats": 1,
+    "test_rows": 34635,
+    "background_episodes": 371,
+    "background_rate": 0.25708098744045044,
+    "time_in_alert": 0.20496607477984696
+  },
+  {
+    "cohort": "pilot",
+    "fold": 2,
+    "arm": "flat",
+    "min_repeats": 24,
+    "test_rows": 34500,
+    "background_episodes": 4,
+    "background_rate": 0.002782608695652174,
+    "time_in_alert": 0.1718550724637681
+  },
+  {
+    "cohort": "replication",
+    "fold": 0,
+    "arm": "flat",
+    "min_repeats": 1,
+    "test_rows": 33245,
+    "background_episodes": 614,
+    "background_rate": 0.44325462475560234,
+    "time_in_alert": 0.06196420514363062
+  },
+  {
+    "cohort": "replication",
+    "fold": 1,
+    "arm": "flat",
+    "min_repeats": 1,
+    "test_rows": 32646,
+    "background_episodes": 671,
+    "background_rate": 0.4932916743245727,
+    "time_in_alert": 0.13269619555228818
+  },
+  {
+    "cohort": "replication",
+    "fold": 2,
+    "arm": "flat",
+    "min_repeats": 1,
+    "test_rows": 32354,
+    "background_episodes": 570,
+    "background_rate": 0.42282252580824625,
+    "time_in_alert": 0.13809729863386289
+  }
+]
