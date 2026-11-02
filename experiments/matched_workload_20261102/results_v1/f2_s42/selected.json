@@ -1,0 +1,107 @@
+[
+  {
+    "method": "asymmetric_cqr",
+    "level": 0.99104,
+    "lower_correction": 18.659122747573406,
+    "upper_correction": 40.63317104300347,
+    "selection_workload": 0.24323390533225844,
+    "selection_time_in_alert": 0.012438097431763216,
+    "budget": 0.25
+  },
+  {
+    "method": "asymmetric_cqr",
+    "level": 0.98308,
+    "lower_correction": 8.388700213936147,
+    "upper_correction": 20.433351441920365,
+    "selection_workload": 0.4837037890130139,
+    "selection_time_in_alert": 0.023724519175400208,
+    "budget": 0.5
+  },
+  {
+    "method": "asymmetric_cqr",
+    "level": 0.96716,
+    "lower_correction": 2.186710050591728,
+    "upper_correction": 7.909332571437062,
+    "selection_workload": 0.9577335022457676,
+    "selection_time_in_alert": 0.046412530231486816,
+    "budget": 1.0
+  },
+  {
+    "method": "symmetric_cqr",
+    "level": 0.99104,
+    "threshold": 29.49566296129308,
+    "selection_workload": 0.22803178624899229,
+    "selection_time_in_alert": 0.012438097431763216,
+    "budget": 0.25
+  },
+  {
+    "method": "symmetric_cqr",
+    "level": 0.98507,
+    "threshold": 16.967007562211393,
+    "selection_workload": 0.43395139928596105,
+    "selection_time_in_alert": 0.021824254289991938,
+    "budget": 0.5
+  },
+  {
+    "method": "symmetric_cqr",
+    "level": 0.96517,
+    "threshold": 3.6277022471376874,
+    "selection_workload": 0.9978118161925602,
+    "selection_time_in_alert": 0.04906138431417713,
+    "budget": 1.0
+  },
+  {
+    "method": "scaled_quantile",
+    "threshold": 1.94278728992222,
+    "selection_workload": 0.21282966716572613,
+    "selection_time_in_alert": 0.00921340550500979,
+    "budget": 0.25
+  },
+  {
+    "method": "scaled_quantile",
+    "threshold": 1.432388863705237,
+    "selection_workload": 0.49061384314177126,
+    "selection_time_in_alert": 0.022112173212023495,
+    "budget": 0.5
+  },
+  {
+    "method": "scaled_quantile",
+    "threshold": 1.1493681264000004,
+    "selection_workload": 0.9743176321547852,
+    "selection_time_in_alert": 0.04721870321317517,
+    "budget": 1.0
+  },
+  {
+    "method": "seasonal_residual",
+    "threshold": 16.303888670202753,
+    "selection_workload": 0.2487619486352643,
+    "selection_time_in_alert": 0.013301854197857883,
+    "budget": 0.25
+  },
+  {
+    "method": "seasonal_residual",
+    "threshold": 10.443706767445903,
+    "selection_workload": 0.4892318323160198,
+    "selection_time_in_alert": 0.03011631924450075,
+    "budget": 0.5
+  },
+  {
+    "method": "seasonal_residual",
+    "threshold": 5.247655892932861,
+    "selection_workload": 0.9867557295865484,
+    "selection_time_in_alert": 0.07422549809973511,
+    "budget": 1.0
+  },
+  {
+    "method": "raw_reference",
+    "budget": -1.0,
+    "threshold": 0.0
+  },
+  {
+    "method": "asymmetric_cqr",
+    "level": 0.95,
+    "lower_correction": 0.284650511184509,
+    "upper_correction": 1.5055057340028384,
+    "budget": -1.0
+  }
+]

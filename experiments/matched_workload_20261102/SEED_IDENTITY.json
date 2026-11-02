@@ -1,0 +1,38 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "distinct_clean_prediction_streams": 1,
+      "uncompressed_stream_sha256_by_seed": {
+        "42": "d3f59d36e043240909617396cdcc2c2f2073ab56c082980c2e2ff3a32af1dc52",
+        "43": "d3f59d36e043240909617396cdcc2c2f2073ab56c082980c2e2ff3a32af1dc52",
+        "44": "d3f59d36e043240909617396cdcc2c2f2073ab56c082980c2e2ff3a32af1dc52",
+        "45": "d3f59d36e043240909617396cdcc2c2f2073ab56c082980c2e2ff3a32af1dc52",
+        "46": "d3f59d36e043240909617396cdcc2c2f2073ab56c082980c2e2ff3a32af1dc52"
+      }
+    },
+    {
+      "fold": 1,
+      "distinct_clean_prediction_streams": 1,
+      "uncompressed_stream_sha256_by_seed": {
+        "42": "22a3967f1c3d5f111b5c6bd42f0d781a6b29b4d2fafe535600a24a6e063edc5d",
+        "43": "22a3967f1c3d5f111b5c6bd42f0d781a6b29b4d2fafe535600a24a6e063edc5d",
+        "44": "22a3967f1c3d5f111b5c6bd42f0d781a6b29b4d2fafe535600a24a6e063edc5d",
+        "45": "22a3967f1c3d5f111b5c6bd42f0d781a6b29b4d2fafe535600a24a6e063edc5d",
+        "46": "22a3967f1c3d5f111b5c6bd42f0d781a6b29b4d2fafe535600a24a6e063edc5d"
+      }
+    },
+    {
+      "fold": 2,
+      "distinct_clean_prediction_streams": 1,
+      "uncompressed_stream_sha256_by_seed": {
+        "42": "c43e152517036eb7797cddeb73a0a2984ca66a2b61fc1948f25c4aa7dc9563a1",
+        "43": "c43e152517036eb7797cddeb73a0a2984ca66a2b61fc1948f25c4aa7dc9563a1",
+        "44": "c43e152517036eb7797cddeb73a0a2984ca66a2b61fc1948f25c4aa7dc9563a1",
+        "45": "c43e152517036eb7797cddeb73a0a2984ca66a2b61fc1948f25c4aa7dc9563a1",
+        "46": "c43e152517036eb7797cddeb73a0a2984ca66a2b61fc1948f25c4aa7dc9563a1"
+      }
+    }
+  ],
+  "interpretation": "The five HGB fitting seeds yield identical clean predictions within each fold. They add no observed model variability and are not independent replicates."
+}

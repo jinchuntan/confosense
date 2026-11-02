@@ -16,13 +16,31 @@ def digest(path):
 
 def episode_starts(meta, flags):
     # This implementation is separate from study.starts.
-    t = pd.to_datetime(meta.time).to_numpy(dtype="datetime64[ns]")
-    b = meta.building.to_numpy()
-    onsets = np.zeros(len(meta), bool)
-    for i in range(len(meta)):
-        new_segment = i == 0 or b[i] != b[i - 1] or t[i] - t[i - 1] != np.timedelta64(1, "h")
-        onsets[i] = flags[i] and (new_segment or not flags[i - 1])
-    return onsets
+    t = pd.to_datetime(meta.time)
+    same_segment = meta.building.eq(meta.building.shift()) & t.diff().eq(pd.Timedelta(hours=1))
+    previous_flag = pd.Series(flags).shift(fill_value=False)
+    return np.asarray(flags, bool) & ~(same_segment.to_numpy() & previous_flag.to_numpy())
+
+
+def reconstruct_matches(meta, onsets, events):
+    """Independently match disjoint event windows by searching emitted onsets."""
+    starts = np.flatnonzero(onsets)
+    first = np.searchsorted(starts, events.start.to_numpy())
+    in_range = first < len(starts)
+    candidates = np.full(len(events), -1, dtype=int)
+    candidates[in_range] = starts[first[in_range]]
+    hits = in_range & (candidates <= events.tolerance_end.to_numpy())
+    # This study guarantees disjoint windows. Reject ambiguous input rather than
+    # silently counting a single emitted onset for two events.
+    assert len(np.unique(candidates[hits])) == int(hits.sum()), "reused event onset"
+    if hits.any():
+        detected_buildings = meta.building.to_numpy()[candidates[hits]]
+        np.testing.assert_array_equal(detected_buildings, events.building.to_numpy()[hits])
+    delays = np.full(len(events), 360., dtype=float)
+    times = pd.to_datetime(meta.time).to_numpy(dtype="datetime64[ns]")
+    onset_times = pd.to_datetime(events.onset).to_numpy(dtype="datetime64[ns]")
+    delays[hits] = (times[candidates[hits]] - onset_times[hits]) / np.timedelta64(1, "m")
+    return hits, delays
 
 
 def validate(directory, protocol_hash, source_hash):
@@ -56,16 +74,13 @@ def validate(directory, protocol_hash, source_hash):
             cached_starts[key] = episode_starts(pred,
                 np.unpackbits(flags[key])[:len(pred)].astype(bool))
         onsets = cached_starts[key]
-        used = set()
-        for row in part.sort_values(["building", "start"]).itertuples():
-            possibilities = [int(i) for i in np.flatnonzero(onsets[row.start:row.tolerance_end + 1]) + row.start if int(i) not in used]
-            hit = bool(possibilities)
-            if hit:
-                used.add(possibilities[0])
-            delay = (pd.Timestamp(pred.iloc[possibilities[0]].time) - pd.Timestamp(row.onset)).total_seconds() / 60 if hit else 360.
-            assert hit == row.detected, (directory, row.event_id, channel)
-            assert delay == row.restricted_delay_minutes
-            checks += 1
+        part = part.sort_values(["building", "start"])
+        for _, group in part.groupby("building", sort=False):
+            assert np.all(group.start.to_numpy()[1:] > group.tolerance_end.to_numpy()[:-1]), "overlapping event windows"
+        hits, delays = reconstruct_matches(pred, onsets, part)
+        np.testing.assert_array_equal(hits, part.detected.to_numpy(), err_msg=str(directory))
+        np.testing.assert_array_equal(delays, part.restricted_delay_minutes.to_numpy(), err_msg=str(directory))
+        checks += len(part)
     # Check all calibration/selection predictions precede the test origins.
     splits = json.loads((directory / "split.json").read_text())
     names = ["fit", "calibration", "selection", "test"]
@@ -78,6 +93,8 @@ def summarize(results):
     here = Path(__file__).parent
     protocol = json.loads((here / "protocol.json").read_text())
     env = json.loads((results / "environment.json").read_text())
+    assert digest(here / "study.py") == env["code_sha256"], "execution source differs"
+    assert digest(here / "protocol.json") == env["protocol_sha256"], "protocol differs"
     directories = [results / f"f{f}_s{s}" for f in range(3) for s in protocol["seeds"]]
     workloads, event_tables = [], []
     checks = 0
@@ -86,6 +103,7 @@ def summarize(results):
         workloads.append(w)
         event_tables.append(e)
         checks += n
+        print(f"Audited {directory.name}: {n} reconstructed checks", flush=True)
     w = pd.concat(workloads, ignore_index=True)
     e = pd.concat(event_tables, ignore_index=True)
     keys = ["fold", "seed", "method", "budget", "building", "channel", "family", "severity"]
@@ -139,6 +157,7 @@ def summarize(results):
         minimum_observed_strata=int(metrics.observed_strata.min()),
         conformal_score_equivalence_checks=sum(json.loads((d / "COMPLETE.json").read_text())["alias_checks"] for d in directories),
         source_sha256=env["code_sha256"], protocol_sha256=env["protocol_sha256"],
+        analysis_sha256=digest(__file__),
         interpretation="Retrospective descriptive comparison. Six observed sites; intervals condition on fitted models and do not establish population generalisation or noninferiority.")
     (results / "VALIDATION.json").write_text(json.dumps(json_out, indent=2) + "\n")
     print(json.dumps(json_out, indent=2))

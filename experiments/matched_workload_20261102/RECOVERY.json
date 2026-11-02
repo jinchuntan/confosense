@@ -1,0 +1,7 @@
+{
+  "affected_unit": "f2_s43",
+  "failed_artifact": "events.csv.gz",
+  "action": "Retain original evidence in previous workspace; regenerate the affected unit with unchanged code, protocol, inputs, fold and seed. Copy the 14 checksum-valid units unchanged. Never overwrite completion hashes to accept a failed file.",
+  "original_recorded_hash": "204da8a2169d23ead259b92026208f436bc6d631338d6e1cd1d32cc792493c85",
+  "original_observed_hash": "0997ef3e90390e05cb38a5ed87edae576c594667b3c3ffdaa975988071f8bfef"
+}

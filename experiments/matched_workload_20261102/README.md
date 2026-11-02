@@ -66,7 +66,7 @@ not republished in this experiment.
 
 ```sh
 python -m pip install -r experiments/matched_workload_20261102/requirements.txt
-python -m unittest discover -s experiments/matched_workload_20261102 -p test_study.py -v
+python -m unittest discover -s experiments/matched_workload_20261102 -p 'test_*.py' -v
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 python experiments/matched_workload_20261102/study.py \
   --raw /path/to/bdg2_files --out /path/to/fresh_results --workers 2
@@ -99,3 +99,15 @@ Background episodes are a workload measure, not verified false alarms. Injected
 sensor disturbances do not establish detection of maintenance-confirmed physical
 equipment failures. Fewer episodes do not by themselves establish less operator
 time, cost or alarm fatigue.
+
+## Audited checkpoint, 2 November 2026
+
+See [PILOT_REPORT.md](PILOT_REPORT.md) for the interpretation and
+[the journal checklist](../../docs/JOURNAL_NOVELTY_CHECKLIST.md) for remaining work.
+All fifteen units passed 2,065,350 independent workload/event checks and 225
+score-equivalence checks. The results do not establish a general CQR advantage.
+
+Small result tables, policies, split records, workload counts and completion
+hashes are committed. Large generated model/prediction/event/flag files are
+currently local. Regenerate them before running the stored-flag audit on a
+summary-only checkout. Use a fresh output directory for regeneration.
